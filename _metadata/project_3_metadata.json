@@ -1,3 +1,9 @@
-# Project 3 Metadata
-
-See original _metadata/project_3_metadata.json for full details.
+{
+  "project": "Project 3",
+  "project_phase": "Phase 1 - Data Acquisition",
+  "current_stage": "1.1 - Storage Architecture",
+  "started_date": null,
+  "data_lake_root": "/home/harveybc/Documents/financial_data",
+  "owner": "harveybc",
+  "machine_local": "Omega"
+}

@@ -1,3 +1,1 @@
-# Acquisition log
-
-See original _metadata/acquisition_log.csv for full details.
+timestamp,stage,dataset,source,status,notes

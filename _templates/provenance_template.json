@@ -1,4 +1,41 @@
 {
-  "template": "provenance",
-  "fields": ["source", "provider", "acquisition_method", "date", "notes"]
+  "dataset_name": "DATASET_NAME_HERE",
+  "source": {
+    "provider": "PROVIDER_NAME",
+    "url": "https://provider.example.com",
+    "api_endpoint": "/v1/endpoint",
+    "api_version": "v1"
+  },
+  "acquisition": {
+    "acquired_date": "YYYY-MM-DD",
+    "acquired_by": "Project 3 Stage 1.X",
+    "acquisition_method": "API|bulk_download|manual",
+    "script_used": "scripts/fetch_X.py",
+    "script_git_sha": "GIT_HASH_HERE"
+  },
+  "coverage": {
+    "start_date": "YYYY-MM-DD",
+    "end_date": "YYYY-MM-DD",
+    "frequency": "1h",
+    "total_observations": 0
+  },
+  "license": {
+    "type": "Public Domain|CC-BY|Proprietary-Subscription|Other",
+    "details": "License details if relevant"
+  },
+  "cost": {
+    "type": "free|subscription",
+    "monthly_cost_usd": 0,
+    "subscription_provider": null
+  },
+  "validation": {
+    "validated_date": null,
+    "tests_passed": [],
+    "tests_failed": [],
+    "validation_report_path": null
+  },
+  "checksum": {
+    "algorithm": "sha256",
+    "value": null
+  }
 }
