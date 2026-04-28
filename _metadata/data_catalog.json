@@ -1,0 +1,37 @@
+{
+  "phase": "1.2",
+  "categories": [
+    "equities",
+    "forex",
+    "crypto",
+    "commodities",
+    "bonds",
+    "macro_economic",
+    "alternative_data",
+    "microstructure",
+    "derivatives",
+    "fundamental",
+    "reference_data"
+  ],
+  "subscription_summary": {
+    "recommended": [
+      {"service": "Glassnode Standard", "cost": 30, "currency": "USD", "justification": "Premier crypto on-chain metrics, no good free alternative"},
+      {"service": "CryptoQuant Standard", "cost": 39, "currency": "USD", "justification": "Exchange flows, whale data, complementary to Glassnode"},
+      {"service": "Polygon.io Developer", "cost": 79, "currency": "USD", "justification": "US equities intraday + options + news, single best paid source for stocks"},
+      {"service": "FMP Starter", "cost": 14, "currency": "USD", "justification": "Fundamental data, 30+ years coverage"}
+    ],
+    "optional": [
+      {"service": "Quandl/Nasdaq Data Link", "cost": "variable", "currency": "USD", "justification": "Selected datasets as needed"},
+      {"service": "Polygon.io upgrade", "cost": "variable", "currency": "USD", "justification": "Higher tier if needed"},
+      {"service": "TokenTerminal", "cost": 200, "currency": "USD", "justification": "DeFi metrics if critical"}
+    ],
+    "excluded": [
+      "Bloomberg Terminal",
+      "Refinitiv Eikon",
+      "LOBSTER NASDAQ tick data",
+      "Bloomberg/Citi Economic Surprise Index"
+    ],
+    "total_monthly_core": 162
+  },
+  "note": "Full catalog details are in 12_STAGE_1.2_DATA_CATALOG.md. This file is a summary for machine use."
+}
