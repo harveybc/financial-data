@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series FEDFUNDS",
+  "acquired_at": "2026-05-01T15:42:25.702535+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/fedfunds/observations.parquet",
+      "sha256": "8fdc1a17b2691324e0e6237aa316c70e6345d695e20b9cc148ebec4de1bc795c"
+    }
+  ]
+}

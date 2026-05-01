@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^GSPC daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:38.935049+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/us_indices/gspc/daily.parquet",
+      "sha256": "74ad8c9a01c3e790a941b8c90b776a8acd536033e0762af74f74ddb0a1e99f22"
+    }
+  ]
+}

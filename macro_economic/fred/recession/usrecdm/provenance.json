@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series USRECDM",
+  "acquired_at": "2026-05-01T15:47:52.249810+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/recession/usrecdm/observations.parquet",
+      "sha256": "2bb2a50a212bab02d158318e46e1c74e0aa9a091d10e3e9f552e30332386a30e"
+    }
+  ]
+}

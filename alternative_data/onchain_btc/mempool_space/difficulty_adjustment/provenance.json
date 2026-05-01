@@ -1,0 +1,11 @@
+{
+  "source": "mempool.space",
+  "description": "BTC mempool.space difficulty_adjustment snapshot",
+  "acquired_at": "2026-05-01T15:48:06.716613+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/mempool_space/difficulty_adjustment/snapshot.parquet",
+      "sha256": "fe1bc3ad3fc8656f5cbec6a3b3f80ee941f99b3daf5feeef789997bd85f492df"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series CAPUTLB50001SQ",
+  "acquired_at": "2026-05-01T15:42:41.218215+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/caputlb50001sq/observations.parquet",
+      "sha256": "34e27ecbcf34b50a8787a700819edf2cad0f106c4334de678f9c578225df4d2d"
+    }
+  ]
+}

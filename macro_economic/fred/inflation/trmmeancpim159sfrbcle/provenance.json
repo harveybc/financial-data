@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series TRMMEANCPIM159SFRBCLE",
+  "acquired_at": "2026-05-01T15:42:08.329114+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/trmmeancpim159sfrbcle/observations.parquet",
+      "sha256": "c6d2e074788d7b22bb3b1c726b36219ef44454697ecb98380060adfe12192905"
+    }
+  ]
+}

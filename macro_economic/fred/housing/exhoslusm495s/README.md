@@ -1,0 +1,6 @@
+# exhoslusm495s
+
+FRED series EXHOSLUSM495S
+
+Source: FRED
+Acquired: 2026-05-01T15:42:38.645717+00:00

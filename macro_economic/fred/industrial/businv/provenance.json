@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series BUSINV",
+  "acquired_at": "2026-05-01T15:47:43.591674+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/businv/observations.parquet",
+      "sha256": "59b9d392faad73612096a72a82f2b57501b87461b4bf19111b82ce6ce7e9b22a"
+    }
+  ]
+}

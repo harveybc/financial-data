@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for Nonfarm Payrolls MoM from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:57.463292+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/nonfarm_payrolls_mom/actuals.parquet",
+      "sha256": "bd7f18f92c84ead2b84a928e5257f01f4d9f8a3f87f7af6e94cebc34fae62c96"
+    }
+  ]
+}

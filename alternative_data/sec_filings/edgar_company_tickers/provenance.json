@@ -1,0 +1,11 @@
+{
+  "source": "SEC EDGAR",
+  "description": "SEC company tickers metadata",
+  "acquired_at": "2026-05-01T15:48:07.373633+00:00",
+  "files": [
+    {
+      "path": "alternative_data/sec_filings/edgar_company_tickers/company_tickers.parquet",
+      "sha256": "c9229a6de542fe274d32f8d90ad191fffb096a65b53218267655a82c93c3bde5"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^RUT daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:41.963859+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/us_indices/rut/daily.parquet",
+      "sha256": "07fd74705f3a8bf742c2c1ee0d62bf465a670125ca06358b9da36398c1a02ae4"
+    }
+  ]
+}

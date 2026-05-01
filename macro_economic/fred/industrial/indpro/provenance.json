@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series INDPRO",
+  "acquired_at": "2026-05-01T15:42:40.699559+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/indpro/observations.parquet",
+      "sha256": "679d03b103d94265b27bfe7944010b6465527decfa3591bf2d07dca098c31234"
+    }
+  ]
+}

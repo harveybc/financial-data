@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series CIVPART",
+  "acquired_at": "2026-05-01T15:42:10.731232+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/civpart/observations.parquet",
+      "sha256": "d653a53d1b0512ceb88cd9cfd829eccb9deae43b8404d307727af5bc7330451b"
+    }
+  ]
+}

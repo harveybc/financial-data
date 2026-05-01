@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^IXIC daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:41.146624+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/us_indices/ixic/daily.parquet",
+      "sha256": "e99866b15f65d11987d9ee870be79adcc1e238d6c471f90066653921fbfa51b0"
+    }
+  ]
+}

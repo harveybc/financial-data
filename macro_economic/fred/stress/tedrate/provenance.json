@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series TEDRATE",
+  "acquired_at": "2026-05-01T15:47:49.786000+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/stress/tedrate/observations.parquet",
+      "sha256": "e0012d8394c3bb96b7a9fe798296954e2230a06c2a77a944ac95268b161c0cdc"
+    }
+  ]
+}

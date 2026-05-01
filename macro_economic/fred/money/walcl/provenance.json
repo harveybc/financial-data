@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series WALCL",
+  "acquired_at": "2026-05-01T15:42:23.377362+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/walcl/observations.parquet",
+      "sha256": "7f6ccb493b18cc0733b288307b5752907ec86a4a270f7f4f8556fd5c3337200a"
+    }
+  ]
+}

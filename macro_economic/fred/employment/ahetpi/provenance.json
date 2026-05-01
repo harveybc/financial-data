@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series AHETPI",
+  "acquired_at": "2026-05-01T15:42:12.415657+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/ahetpi/observations.parquet",
+      "sha256": "d137e3b381cf9b082d0e3e22ee56897ba4049ce39a325dd2ad2c224a2a32a008"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series ICSA",
+  "acquired_at": "2026-05-01T15:42:12.978676+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/icsa/observations.parquet",
+      "sha256": "d2c0a0dac08bc32c2f97037da19aca2d3bd8a9785f0f4dd6821f24116f77abe9"
+    }
+  ]
+}

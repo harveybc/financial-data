@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series WTREGEN",
+  "acquired_at": "2026-05-01T15:42:23.982321+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/wtregen/observations.parquet",
+      "sha256": "d572cc654f3206fff790733ba0d464d008c5c9d0fd3b3abb76efbe7eaa49dd9b"
+    }
+  ]
+}

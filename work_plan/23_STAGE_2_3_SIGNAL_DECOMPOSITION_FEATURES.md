@@ -349,7 +349,7 @@ The optimal d is asset-specific (typically 0.3-0.5 for crypto, 0.4-0.6 for FX). 
 
 ```python
 import sys
-sys.path.insert(0, "/home/harveybc/Documents/financial_data/_scripts/lib")
+sys.path.insert(0, "/home/harveybc/Documents/GitHub/financial-data/_scripts/lib")
 from gpu_lock import acquire_gpu_lock, release_gpu_lock
 
 # Wrap heavy computations

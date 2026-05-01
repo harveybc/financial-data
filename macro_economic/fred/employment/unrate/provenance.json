@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series UNRATE",
+  "acquired_at": "2026-05-01T15:42:09.477129+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/unrate/observations.parquet",
+      "sha256": "6a97daec24b34f02cbc18e50b51f8bb3f2e41ca2ca62f35d135907827dfef58d"
+    }
+  ]
+}

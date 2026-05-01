@@ -1,0 +1,6 @@
+# a191rl1q225sbea
+
+FRED series A191RL1Q225SBEA
+
+Source: FRED
+Acquired: 2026-05-01T15:42:15.295388+00:00

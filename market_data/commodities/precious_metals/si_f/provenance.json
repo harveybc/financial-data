@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "SI=F daily OHLCV",
+  "acquired_at": "2026-05-01T15:46:00.196785+00:00",
+  "files": [
+    {
+      "path": "market_data/commodities/precious_metals/si_f/daily.parquet",
+      "sha256": "c76265e148316a160fdf123ac197e2a7c7a97ff80191b2ccc7849a973a05c178"
+    }
+  ]
+}

@@ -24,7 +24,7 @@
     "reference_data"
   ],
 
-  "data_lake_root": "~/Documents/financial_data/",
+  "data_lake_root": "/home/harveybc/Documents/GitHub/financial-data/",
 
   "held_out_boundary": {
     "in_sample_end": "2024-12-31",

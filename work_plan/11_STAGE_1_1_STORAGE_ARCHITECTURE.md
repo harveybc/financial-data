@@ -5,8 +5,8 @@
 **Inputs:** None (this is foundation stage).
 
 **Outputs:**
-- Complete empty folder structure at `~/Documents/financial_data/`
-- Templates in `~/Documents/financial_data/_templates/`
+- Complete empty folder structure at `/home/harveybc/Documents/GitHub/financial-data/`
+- Templates in `/home/harveybc/Documents/GitHub/financial-data/_templates/`
 - `STAGE_1.1_DELIVERABLE.md` confirming structure created
 
 **Machine:** Omega (local).
@@ -174,11 +174,11 @@ This creates ~62 folders (down from ~70 in original). Do not create additional f
 
 ## 3. Templates Directory Contents
 
-Create these template files at `~/Documents/financial_data/_templates/`:
+Create these template files at `/home/harveybc/Documents/GitHub/financial-data/_templates/`:
 
 ### Template 1: README.md template
 
-File: `~/Documents/financial_data/_templates/README_template.md`
+File: `/home/harveybc/Documents/GitHub/financial-data/_templates/README_template.md`
 
 ```markdown
 # [Folder Name]
@@ -214,7 +214,7 @@ File: `~/Documents/financial_data/_templates/README_template.md`
 
 ### Template 2: data_dictionary.md template
 
-File: `~/Documents/financial_data/_templates/data_dictionary_template.md`
+File: `/home/harveybc/Documents/GitHub/financial-data/_templates/data_dictionary_template.md`
 
 ```markdown
 # Data Dictionary: [Dataset Name]
@@ -264,7 +264,7 @@ See `provenance.json` in same folder.
 
 ### Template 3: provenance.json template
 
-File: `~/Documents/financial_data/_templates/provenance_template.json`
+File: `/home/harveybc/Documents/GitHub/financial-data/_templates/provenance_template.json`
 
 ```json
 {
@@ -326,7 +326,7 @@ File: `~/Documents/financial_data/_templates/provenance_template.json`
 
 ## 4. Top-Level README
 
-Create file: `~/Documents/financial_data/README.md`
+Create file: `/home/harveybc/Documents/GitHub/financial-data/README.md`
 
 ```markdown
 # Financial Data Lake — Project 3
@@ -380,7 +380,7 @@ Each data folder's README documents its update procedure (one-time historical pu
 
 ## 5. Metadata Files
 
-Create these initial metadata files at `~/Documents/financial_data/_metadata/`:
+Create these initial metadata files at `/home/harveybc/Documents/GitHub/financial-data/_metadata/`:
 
 ### File 1: `acquisition_log.csv`
 
@@ -411,7 +411,7 @@ timestamp,stage,dataset,source,status,notes
   "project_phase": "Phase 1 - Data Acquisition",
   "current_stage": "1.1 - Storage Architecture",
   "started_date": null,
-  "data_lake_root": "/home/harveybc/Documents/financial_data",
+  "data_lake_root": "/home/harveybc/Documents/GitHub/financial-data",
   "owner": "harveybc",
   "machine_local": "Omega",
   "periodicities_supported": ["5m", "15m", "1h", "4h", "daily", "monthly", "quarterly"],
@@ -475,7 +475,7 @@ timestamp,stage,dataset,source,status,notes
 After creating all folders and templates, agent runs:
 
 ```bash
-cd ~/Documents/financial_data
+cd /home/harveybc/Documents/GitHub/financial-data
 find . -type d | wc -l  # should be ~62 folders
 find _templates -type f | wc -l  # should be 3 files
 ls -la README.md  # must exist
@@ -501,24 +501,24 @@ Content:
 
 Total folders created: [N]
 Tree structure:
-[paste output of `tree -L 3 ~/Documents/financial_data/`]
+[paste output of `tree -L 3 /home/harveybc/Documents/GitHub/financial-data/`]
 
 ## Templates Created
 
-- ~/Documents/financial_data/_templates/README_template.md ✓
-- ~/Documents/financial_data/_templates/data_dictionary_template.md ✓
-- ~/Documents/financial_data/_templates/provenance_template.json ✓
+- /home/harveybc/Documents/GitHub/financial-data/_templates/README_template.md ✓
+- /home/harveybc/Documents/GitHub/financial-data/_templates/data_dictionary_template.md ✓
+- /home/harveybc/Documents/GitHub/financial-data/_templates/provenance_template.json ✓
 
 ## Metadata Files Created
 
-- ~/Documents/financial_data/_metadata/acquisition_log.csv ✓
-- ~/Documents/financial_data/_metadata/subscriptions.json ✓
-- ~/Documents/financial_data/_metadata/project_3_metadata.json ✓
-- ~/Documents/financial_data/_metadata/redundancy_analysis.json ✓
+- /home/harveybc/Documents/GitHub/financial-data/_metadata/acquisition_log.csv ✓
+- /home/harveybc/Documents/GitHub/financial-data/_metadata/subscriptions.json ✓
+- /home/harveybc/Documents/GitHub/financial-data/_metadata/project_3_metadata.json ✓
+- /home/harveybc/Documents/GitHub/financial-data/_metadata/redundancy_analysis.json ✓
 
 ## Top-level README
 
-Created at ~/Documents/financial_data/README.md ✓
+Created at /home/harveybc/Documents/GitHub/financial-data/README.md ✓
 
 ## Verification
 
@@ -588,8 +588,8 @@ This is large (~17 GB per machine for Q4 quantization) but is a one-time operati
 Copy `_scripts/lib/gpu_lock.py` to all three machines:
 
 ```bash
-mkdir -p ~/Documents/financial_data/_scripts/lib
-cat > ~/Documents/financial_data/_scripts/lib/gpu_lock.py << 'PYEOF'
+mkdir -p /home/harveybc/Documents/GitHub/financial-data/_scripts/lib
+cat > /home/harveybc/Documents/GitHub/financial-data/_scripts/lib/gpu_lock.py << 'PYEOF'
 import json, os, atexit
 from datetime import datetime, timezone
 
@@ -617,8 +617,8 @@ def release_gpu_lock():
 PYEOF
 
 # Copy to Dragon and Gamma
-scp ~/Documents/financial_data/_scripts/lib/gpu_lock.py dragon:~/Documents/financial_data/_scripts/lib/
-scp ~/Documents/financial_data/_scripts/lib/gpu_lock.py gamma:~/Documents/financial_data/_scripts/lib/
+scp /home/harveybc/Documents/GitHub/financial-data/_scripts/lib/gpu_lock.py dragon:/home/harveybc/Documents/GitHub/financial-data/_scripts/lib/
+scp /home/harveybc/Documents/GitHub/financial-data/_scripts/lib/gpu_lock.py gamma:/home/harveybc/Documents/GitHub/financial-data/_scripts/lib/
 ```
 
 ### 8.4 Cron entries
@@ -626,21 +626,21 @@ scp ~/Documents/financial_data/_scripts/lib/gpu_lock.py gamma:~/Documents/financ
 Cron jobs are version-controlled in `_scripts/cron/`. The bootstrap creates and installs them:
 
 ```bash
-mkdir -p ~/Documents/financial_data/_scripts/cron
+mkdir -p /home/harveybc/Documents/GitHub/financial-data/_scripts/cron
 
 # Tier 1 supervisor cron template (deployed to Dragon and Gamma)
-cat > ~/Documents/financial_data/_scripts/cron/tier1_supervisor.cron << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/tier1_supervisor.cron << 'EOF'
 # Project 3 Tier 1 supervisor — phase-dependent cadence
 # Phase 1 (acquisition): every 5 min. Update for Phase 2 (15 min) and Phase 3 (30 min).
-*/5 * * * * harveybc /home/harveybc/Documents/financial_data/_scripts/cron/run_tier1_supervisor.sh
+*/5 * * * * harveybc /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier1_supervisor.sh
 EOF
 
-cat > ~/Documents/financial_data/_scripts/cron/run_tier1_supervisor.sh << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier1_supervisor.sh << 'EOF'
 #!/usr/bin/env bash
 # Tier 1 supervisor wrapper. Checks GPU lock before invoking Hermes.
 set -e
 LOCKFILE=/tmp/gpu_busy.lock
-LOG_DIR=$HOME/Documents/financial_data/_logs/supervisor_reports
+LOG_DIR=/home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports
 mkdir -p "$LOG_DIR"
 MACHINE=$(hostname)
 
@@ -655,24 +655,24 @@ fi
 python3 -c "from gpu_lock import acquire_gpu_lock; acquire_gpu_lock('hermes_supervisor', 5, 'tier1')" || exit 1
 hermes --skill watch_logs --output "$LOG_DIR/${MACHINE}_status.json"
 EOF
-chmod +x ~/Documents/financial_data/_scripts/cron/run_tier1_supervisor.sh
+chmod +x /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier1_supervisor.sh
 
 # Tier 2 orchestrator cron (Omega only)
-cat > ~/Documents/financial_data/_scripts/cron/tier2_orchestrator.cron << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/tier2_orchestrator.cron << 'EOF'
 # Project 3 Tier 2 meta-supervisor (OpenCode Go) — every 12 min
-*/12 * * * * harveybc /home/harveybc/Documents/financial_data/_scripts/cron/run_tier2_orchestrator.sh
+*/12 * * * * harveybc /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier2_orchestrator.sh
 EOF
 
-cat > ~/Documents/financial_data/_scripts/cron/run_tier2_orchestrator.sh << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier2_orchestrator.sh << 'EOF'
 #!/usr/bin/env bash
 set -e
-cd $HOME/Documents/financial_data
+cd /home/harveybc/Documents/GitHub/financial-data
 opencode-go run --skill orchestrate \
     --inputs _logs/supervisor_reports/dragon_status.json,_logs/supervisor_reports/gamma_status.json \
     --output _logs/supervisor_reports/global_status.md \
     --queue _logs/supervisor_reports/escalation_queue.json
 EOF
-chmod +x ~/Documents/financial_data/_scripts/cron/run_tier2_orchestrator.sh
+chmod +x /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier2_orchestrator.sh
 ```
 
 (The `hermes --skill watch_logs` and `opencode-go run --skill orchestrate` invocations assume the user has the appropriate skills configured in their Hermes / OpenCode Go installations. If the skill names differ in the user's setup, adjust accordingly.)
@@ -681,18 +681,18 @@ Install cron entries:
 
 ```bash
 # On Omega
-sudo cp ~/Documents/financial_data/_scripts/cron/tier2_orchestrator.cron /etc/cron.d/project3_orchestrator
+sudo cp /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/tier2_orchestrator.cron /etc/cron.d/project3_orchestrator
 # On Dragon and Gamma
-ssh dragon "sudo cp ~/Documents/financial_data/_scripts/cron/tier1_supervisor.cron /etc/cron.d/project3_supervisor"
-ssh gamma  "sudo cp ~/Documents/financial_data/_scripts/cron/tier1_supervisor.cron /etc/cron.d/project3_supervisor"
+ssh dragon "sudo cp /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/tier1_supervisor.cron /etc/cron.d/project3_supervisor"
+ssh gamma  "sudo cp /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/tier1_supervisor.cron /etc/cron.d/project3_supervisor"
 ```
 
 ### 8.5 Initialize escalation queue and supervisor report folder
 
 ```bash
-mkdir -p ~/Documents/financial_data/_logs/supervisor_reports
-echo '{"queue": []}' > ~/Documents/financial_data/_logs/supervisor_reports/escalation_queue.json
-echo '# Global Status (initialized — Tier 2 will overwrite)' > ~/Documents/financial_data/_logs/supervisor_reports/global_status.md
+mkdir -p /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports
+echo '{"queue": []}' > /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/escalation_queue.json
+echo '# Global Status (initialized — Tier 2 will overwrite)' > /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/global_status.md
 ```
 
 ### 8.6 Tier 4 handoff folder
@@ -700,8 +700,8 @@ echo '# Global Status (initialized — Tier 2 will overwrite)' > ~/Documents/fin
 Tier 3 stages structured handoff documents here when an escalation needs the human:
 
 ```bash
-mkdir -p ~/Documents/financial_data/_logs/supervisor_reports/tier4_handoffs
-cat > ~/Documents/financial_data/_logs/supervisor_reports/tier4_handoffs/README.md << 'EOF'
+mkdir -p /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/tier4_handoffs
+cat > /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/tier4_handoffs/README.md << 'EOF'
 # Tier 4 Handoffs
 
 When local Tier 3 (Hermes + Gemma 31B) cannot resolve an escalation within its
@@ -725,10 +725,10 @@ EOF
 
 ### 8.7 .gitignore for credentials and private docs
 
-Create `~/Documents/financial_data/.gitignore` with the security-critical patterns:
+Create `/home/harveybc/Documents/GitHub/financial-data/.gitignore` with the security-critical patterns:
 
 ```bash
-cat > ~/Documents/financial_data/.gitignore << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/.gitignore << 'EOF'
 # Credentials and secrets — NEVER commit
 _metadata/.env
 _metadata/credential_validation.json
@@ -760,7 +760,7 @@ Verification:
 ```bash
 # Confirm critical entries present
 grep -E '^_metadata/\.env$|^\*\.env$|^STAGE_1_3_API_KEYS_PRIVATE\.md$' \
-  ~/Documents/financial_data/.gitignore
+  /home/harveybc/Documents/GitHub/financial-data/.gitignore
 ```
 
 If the grep does not return all three lines, halt bootstrap and escalate `infra:gitignore_misconfigured` (blocker severity).
@@ -771,7 +771,7 @@ This `.env` holds your free-tier data API keys. There are NO AI API keys here in
 
 ```bash
 # Create or update _metadata/.env with data-source API keys
-cat > ~/Documents/financial_data/_metadata/.env << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/_metadata/.env << 'EOF'
 # Project 3 data-source credentials — DO NOT COMMIT
 # Auto-loaded by all acquisition scripts via python-dotenv
 
@@ -787,7 +787,7 @@ export CRYPTOQUANT_API_KEY=""
 export POLYGON_API_KEY=""
 export FMP_API_KEY=""
 EOF
-chmod 600 ~/Documents/financial_data/_metadata/.env
+chmod 600 /home/harveybc/Documents/GitHub/financial-data/_metadata/.env
 ```
 
 Actual key values for the free APIs are pasted in by the user (not stored in version-controlled docs). The companion document `STAGE_1.3_API_KEYS_PRIVATE.md` (NOT version controlled) holds the actual values for personal reference; see Stage 1.3 manual tasks for the secure pattern.
@@ -795,7 +795,7 @@ Actual key values for the free APIs are pasted in by the user (not stored in ver
 ### 8.9 AI subscription tracker
 
 ```bash
-cat > ~/Documents/financial_data/_metadata/ai_subscriptions.json << 'EOF'
+cat > /home/harveybc/Documents/GitHub/financial-data/_metadata/ai_subscriptions.json << 'EOF'
 {
   "active": [
     {

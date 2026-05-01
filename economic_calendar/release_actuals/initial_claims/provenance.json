@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for Initial Claims from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:44:02.768976+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/initial_claims/actuals.parquet",
+      "sha256": "ecec7d30359cb1061b107d91a731a635acef05b92c894e07daba8b2d0bb45f84"
+    }
+  ]
+}

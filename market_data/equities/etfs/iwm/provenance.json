@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "IWM daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:45.905422+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/iwm/daily.parquet",
+      "sha256": "d19aa73262e87433144090b0f8c6637ca64863d8316d31793c5a9e87d73a216e"
+    }
+  ]
+}

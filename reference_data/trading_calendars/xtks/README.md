@@ -1,0 +1,6 @@
+# xtks
+
+XTKS fallback trading schedule generated from weekdays and public holidays
+
+Source: fallback calendar generator
+Acquired: 2026-05-01T16:04:42.681320+00:00

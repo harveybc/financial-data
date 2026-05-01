@@ -69,7 +69,7 @@ Training script template (use this pattern for all variants):
 
 ```python
 import sys
-sys.path.insert(0, "/home/harveybc/Documents/financial_data/_scripts/lib")
+sys.path.insert(0, "/home/harveybc/Documents/GitHub/financial-data/_scripts/lib")
 from gpu_lock import acquire_gpu_lock, release_gpu_lock
 
 acquire_gpu_lock(
@@ -148,9 +148,9 @@ ssh dragon "source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda acti
   python -m feature_extractor train \
     --plugin transformer \
     --config examples/config/transformer_p3_btcusdt_1h.json \
-    --train_data /home/harveybc/Documents/financial_data/features/.../d4_norm.csv \
-    --val_data /home/harveybc/Documents/financial_data/features/.../d5_norm.csv \
-    --output_dir /home/harveybc/Documents/financial_data/features/learned_models/btcusdt/1h/transformer/"
+    --train_data /home/harveybc/Documents/GitHub/financial-data/features/.../d4_norm.csv \
+    --val_data /home/harveybc/Documents/GitHub/financial-data/features/.../d5_norm.csv \
+    --output_dir /home/harveybc/Documents/GitHub/financial-data/features/learned_models/btcusdt/1h/transformer/"
 ```
 
 **Output:**

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series EMRATIO",
+  "acquired_at": "2026-05-01T15:42:11.893315+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/emratio/observations.parquet",
+      "sha256": "f5e5ca60a87f461a0293c9508918f588d325aa548207b288afb3927f6e45e8ef"
+    }
+  ]
+}

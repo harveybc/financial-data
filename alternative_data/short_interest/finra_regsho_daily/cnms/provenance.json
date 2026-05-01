@@ -1,0 +1,11 @@
+{
+  "source": "FINRA Reg SHO Daily Short Sale Volume",
+  "description": "FINRA Reg SHO daily short sale volume for CNMS, 2025. This is related free short-volume data; bi-weekly short-interest mapping remains a validation follow-up.",
+  "acquired_at": "2026-05-01T16:45:13.278653+00:00",
+  "files": [
+    {
+      "path": "alternative_data/short_interest/finra_regsho_daily/cnms/2025_daily_short_volume.parquet",
+      "sha256": "dd8f7a9c67975a89057ee707984153b3b8a3edcd14cc7b85a832e8e64ed54d53"
+    }
+  ]
+}

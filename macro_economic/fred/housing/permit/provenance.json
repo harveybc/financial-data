@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series PERMIT",
+  "acquired_at": "2026-05-01T15:42:40.183707+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/permit/observations.parquet",
+      "sha256": "9ae948f1632450612121e948a45f697272a800b7c9f5602ec74c65cca69612d1"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series NFCI",
+  "acquired_at": "2026-05-01T15:47:48.009812+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/stress/nfci/observations.parquet",
+      "sha256": "1c2555ab75002b67eba5818c39742951868040a6e9e3c29526921a945c53414e"
+    }
+  ]
+}

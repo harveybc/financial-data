@@ -1,0 +1,11 @@
+{
+  "source": "DeFiLlama",
+  "description": "Protocol TVL metadata snapshot",
+  "acquired_at": "2026-05-01T15:43:06.136091+00:00",
+  "files": [
+    {
+      "path": "alternative_data/defi_metrics/defillama/protocols.csv",
+      "sha256": "7c84b1c4e945b2a30704d6b6ff5c458dce70028ba77532b7cb73e2b7fff003dd"
+    }
+  ]
+}

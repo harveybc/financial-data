@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series PCEC",
+  "acquired_at": "2026-05-01T15:42:36.589891+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/pcec/observations.parquet",
+      "sha256": "1eebc61a42d1d90df6a2da0fc0207609a6f06f19c2ee237761bfdd0822e41a51"
+    }
+  ]
+}

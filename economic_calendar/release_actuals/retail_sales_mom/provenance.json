@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for Retail Sales from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:44:03.095061+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/retail_sales_mom/actuals.parquet",
+      "sha256": "e864c3e915675ee8dc8029f1d63a18b5400514405f24d30bfc105ac401728640"
+    }
+  ]
+}

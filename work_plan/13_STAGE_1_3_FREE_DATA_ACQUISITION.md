@@ -28,6 +28,15 @@ This stage is executed by the multi-tier agent system defined in `01_AGENT_INFRA
   - **No automated frontier API calls anywhere.** Frontier models are human-driven only.
 
 The "machine assignment" tables below describe which machine runs which workers. The dispatcher (Tier 2) handles SSH, conda activation, and result collection.
+
+**Autonomy rule for Stage 1.3:** Tier 2 must not wait for Codex or the user to manually assign the next safe acquisition slice. On every 12-minute Omega cron tick, `_scripts/workers/stage13_autonomous_orchestrator.py` checks Omega, Dragon, and Gamma worker PID files, GPU locks, completion markers, and sync state. It then:
+
+- keeps active workers running;
+- starts any safe pending worker on an idle eligible machine;
+- leaves GPU-heavy work alone when `/tmp/gpu_busy.lock` is present;
+- treats completed idempotent workers as `completed_idle`;
+- syncs completed Dragon/Gamma outputs back to the canonical Omega repo;
+- writes `_logs/supervisor_reports/autonomous_dispatch_report.md` and updates `global_status.md`.
 ---
 
 ## 1. Pre-Flight Checks
@@ -61,7 +70,7 @@ python -c "import yfinance, fredapi, pandas as pd, requests; print('OK')"
 
 For each source:
 
-1. Build acquisition script at `~/Documents/financial_data/_scripts/fetch_<source>.py`
+1. Build acquisition script at `/home/harveybc/Documents/GitHub/financial-data/_scripts/fetch_<source>.py`
 2. Execute acquisition with progress logging
 3. Validate (Stage II-0b 6-test battery for time-series price data; appropriate variants otherwise)
 4. Write README.md, data_dictionary.md, provenance.json using Stage 1.1 templates
@@ -75,10 +84,10 @@ For each source:
 ### Task 1.3.A: Setup (Omega)
 
 ```bash
-mkdir -p ~/Documents/financial_data/_scripts/lib
+mkdir -p /home/harveybc/Documents/GitHub/financial-data/_scripts/lib
 ```
 
-Create shared utilities at `~/Documents/financial_data/_scripts/lib/`:
+Create shared utilities at `/home/harveybc/Documents/GitHub/financial-data/_scripts/lib/`:
 - `validation.py` — Stage II-0b 6-test battery as reusable functions
 - `provenance.py` — provenance.json builder
 - `documentation.py` — README + data_dictionary writer
@@ -295,7 +304,7 @@ Per catalog Section 10.1:
 from sec_edgar_downloader import Downloader
 
 dl = Downloader("ProjectName", "harveybc@example.com",
-                "/home/harveybc/Documents/financial_data/alternative_data/sec_filings/edgar/")
+                "/home/harveybc/Documents/GitHub/financial-data/alternative_data/sec_filings/edgar/")
 
 # For each S&P 500 ticker
 for ticker in SP500_TICKERS:

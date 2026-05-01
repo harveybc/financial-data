@@ -14,8 +14,10 @@ This document contains the manual tasks the user completes for Stage 1.3. The ag
 
 **Status: M1–M5 complete as of 2026-05-01.** M6 and M7 are agent-handled per the v2 infrastructure (Tier 2 probes machines and verifies `.gitignore` automatically).
 
+**Credential update:** the existing private companion document is the accepted source of truth for Stage 1.3 free-tier API key values in this private repo. Runtime values are loaded from `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env`, generated from that private companion file.
+
 The actual API key values are NOT stored in this document. They live in:
-- `~/Documents/financial_data/_metadata/.env` (chmod 600, in `.gitignore`) — runtime values
+- `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` (chmod 600, in `.gitignore`) — runtime values
 - `STAGE_1_3_API_KEYS_PRIVATE.md` (in `.gitignore`, NOT committed) — personal reference companion to this doc
 
 This document references keys by environment variable name only, so it can be safely committed to the repo.
@@ -68,7 +70,7 @@ The Tier 1 supervisor on Omega will validate file counts, coverage, and integrit
 **Status:** Existing Project 2 FRED key verified valid.
 
 **Env var:** `FRED_API_KEY`
-**Location of value:** `~/Documents/financial_data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
+**Location of value:** `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
 
 ---
 
@@ -77,7 +79,7 @@ The Tier 1 supervisor on Omega will validate file counts, coverage, and integrit
 **Status:** Free Etherscan account registered, API key generated (5 calls/sec free tier).
 
 **Env var:** `ETHERSCAN_API_KEY`
-**Location of value:** `~/Documents/financial_data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
+**Location of value:** `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
 
 **Provides:** ETH on-chain metrics (transactions, gas, contracts) for Stage 1.3 task 1.3.I (ETH on-chain via Etherscan supplementary).
 
@@ -88,7 +90,7 @@ The Tier 1 supervisor on Omega will validate file counts, coverage, and integrit
 **Status:** Free CoinMarketCap account registered, API key generated (333 calls/day free tier).
 
 **Env var:** `COINMARKETCAP_API_KEY`
-**Location of value:** `~/Documents/financial_data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
+**Location of value:** `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
 
 **Provides:** Backup verification of top 50 crypto list (CoinGecko free is primary; CMC is secondary cross-check).
 
@@ -99,7 +101,7 @@ The Tier 1 supervisor on Omega will validate file counts, coverage, and integrit
 **Status:** Alpha Vantage free key generated (5 calls/min free tier — very limited, backup only).
 
 **Env var:** `ALPHA_VANTAGE_API_KEY`
-**Location of value:** `~/Documents/financial_data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
+**Location of value:** `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` and `STAGE_1_3_API_KEYS_PRIVATE.md` (NOT version controlled)
 
 **Provides:** Backup commodities + FX daily data if yfinance fails. Stage 1.3 prefers yfinance; Alpha Vantage is fallback only.
 
@@ -157,7 +159,7 @@ While you complete the manual tasks above, agent runs in parallel:
 
 **M1–M5 are complete.** The remaining setup is:
 
-1. Populate `~/Documents/financial_data/_metadata/.env` with the 4 key values from `STAGE_1_3_API_KEYS_PRIVATE.md` (the private companion doc generated alongside this one). Make sure the file is `chmod 600` and listed in `.gitignore`.
+1. Populate `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` with the 4 key values from `STAGE_1_3_API_KEYS_PRIVATE.md` (the private companion doc generated alongside this one). Make sure the file is `chmod 600` and listed in `.gitignore`.
 2. Confirm Dragon and Gamma are powered on (and SSH-reachable from Omega). If their IPs have changed, update `~/.ssh/config` per `01_AGENT_INFRASTRUCTURE.md` §3.
 3. Send the "Stage 1.3 manual work complete" message below.
 

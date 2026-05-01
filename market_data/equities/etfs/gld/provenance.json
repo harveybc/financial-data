@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "GLD daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:58.131161+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/gld/daily.parquet",
+      "sha256": "a968537a2775f6e2e14172ed6dd76b48749afa647644765491d4db6fd029a3b8"
+    }
+  ]
+}

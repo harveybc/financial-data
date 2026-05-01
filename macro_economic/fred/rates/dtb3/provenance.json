@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series DTB3",
+  "acquired_at": "2026-05-01T15:42:32.502440+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/dtb3/observations.parquet",
+      "sha256": "d26c46e13060b1e36e97ed2986d8a3f40fd0e137e6ab6478829f4bcafdab845f"
+    }
+  ]
+}

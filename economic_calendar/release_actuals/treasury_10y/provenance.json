@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for 10Y Treasury from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:58.681681+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/treasury_10y/actuals.parquet",
+      "sha256": "d2b6309bc92778969480bfb0ef9d02f2727b198f0120243c5fb43880030b8929"
+    }
+  ]
+}

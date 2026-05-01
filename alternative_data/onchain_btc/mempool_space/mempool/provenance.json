@@ -1,0 +1,11 @@
+{
+  "source": "mempool.space",
+  "description": "BTC mempool.space mempool snapshot",
+  "acquired_at": "2026-05-01T15:48:05.956215+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/mempool_space/mempool/snapshot.parquet",
+      "sha256": "664ab8ecfcbe7358a8a2e3002ca0e4bee7c7c423253a43aaf3dcb9f47913f45f"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FINRA Reg SHO Daily Short Sale Volume",
+  "description": "FINRA Reg SHO daily short sale volume for FNSQ, 2025. This is related free short-volume data; bi-weekly short-interest mapping remains a validation follow-up.",
+  "acquired_at": "2026-05-01T16:47:46.793928+00:00",
+  "files": [
+    {
+      "path": "alternative_data/short_interest/finra_regsho_daily/fnsq/2025_daily_short_volume.parquet",
+      "sha256": "daa0a276dc1eed76275df9dc0f849db6d25a16a0ad5e2fd68a0955cad6a9d89b"
+    }
+  ]
+}

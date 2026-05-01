@@ -1,0 +1,11 @@
+{
+  "source": "fallback calendar generator",
+  "description": "XETR fallback trading schedule generated from weekdays and public holidays",
+  "acquired_at": "2026-05-01T16:04:42.631231+00:00",
+  "files": [
+    {
+      "path": "reference_data/trading_calendars/xetr/schedule.parquet",
+      "sha256": "db7ec7ccfcd3fb362a92ff709173561f9ef585f6bef35925c35bae39d1fb1f5a"
+    }
+  ]
+}

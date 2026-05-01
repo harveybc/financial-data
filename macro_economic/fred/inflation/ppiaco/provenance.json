@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series PPIACO",
+  "acquired_at": "2026-05-01T15:42:06.044232+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/ppiaco/observations.parquet",
+      "sha256": "dcdd2eb498eba6ad9af5d28959811787546f51526901af14cce3f7cb8ba686d5"
+    }
+  ]
+}

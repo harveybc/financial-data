@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for Unemployment Rate from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:57.702030+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/unemployment_rate/actuals.parquet",
+      "sha256": "c6b67853acbc2c6f568d3ae9bc379c5fd9cb54ce24936ac6c70b315799221ca3"
+    }
+  ]
+}

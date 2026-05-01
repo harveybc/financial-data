@@ -1,0 +1,32 @@
+# Credentials and secrets
+_metadata/.env
+_metadata/credential_validation.json
+_metadata/ai_subscriptions.json
+*.env
+.env
+
+# Private companion docs containing actual key values
+*_PRIVATE.md
+
+# Tier 4 handoff docs may contain sensitive excerpts
+_logs/supervisor_reports/tier4_handoffs/*.md
+!_logs/supervisor_reports/tier4_handoffs/README.md
+
+# Generated logs and runtime state
+_logs/**/*.log
+_logs/**/*.out
+_logs/supervisor_reports/*_status.json
+_logs/supervisor_reports/global_status.md
+_logs/supervisor_reports/escalation_queue.json
+
+# Large data lake artifacts
+*.parquet
+*.csv
+*.zip
+*.gz
+*.jsonl
+
+# Python and OS noise
+__pycache__/
+*.pyc
+.DS_Store

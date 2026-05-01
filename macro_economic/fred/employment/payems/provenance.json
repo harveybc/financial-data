@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series PAYEMS",
+  "acquired_at": "2026-05-01T15:42:10.122913+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/payems/observations.parquet",
+      "sha256": "0dd00e880409bf8101745b97a81ec907ed559948a201359ce5e5552564642512"
+    }
+  ]
+}

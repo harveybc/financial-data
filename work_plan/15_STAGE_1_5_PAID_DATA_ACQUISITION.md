@@ -33,7 +33,7 @@ The "machine assignment" tables below describe which machine runs which workers.
 ## 1. Pre-Flight Checks
 
 ```bash
-source ~/Documents/financial_data/_metadata/.env
+source /home/harveybc/Documents/GitHub/financial-data/_metadata/.env
 
 # Verify only approved paid credentials present
 # (some may be empty if user didn't approve those subscriptions)
@@ -53,7 +53,7 @@ Before fetching any paid data, agent reads Stage 1.3 inventory and verifies what
 ```python
 import json
 
-inventory = json.load(open("~/Documents/financial_data/_metadata/STAGE_1.3_INVENTORY.json"))
+inventory = json.load(open("/home/harveybc/Documents/GitHub/financial-data/_metadata/STAGE_1.3_INVENTORY.json"))
 
 # For each paid subscription approved, identify SPECIFIC metrics/data NOT in free
 gaps_to_fill = []
@@ -156,7 +156,7 @@ ETH_EXCLUSIVE = [
 ASSETS = ["BTC", "ETH"]
 
 for asset in ASSETS:
-    target_dir = f"~/Documents/financial_data/alternative_data/onchain_{asset.lower()}/glassnode/"
+    target_dir = f"/home/harveybc/Documents/GitHub/financial-data/alternative_data/onchain_{asset.lower()}/glassnode/"
     
     metrics_for_asset = GLASSNODE_EXCLUSIVE + (ETH_EXCLUSIVE if asset == "ETH" else [])
     

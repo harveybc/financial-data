@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "QQQ daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:44.716142+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/qqq/daily.parquet",
+      "sha256": "1c2a62366b6f56a1b1be55f65a2ae248cdeff6482a81b187da06f2781415e3cc"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "US Treasury FiscalData",
+  "description": "Average interest rates on U.S. Treasury securities",
+  "acquired_at": "2026-05-01T15:51:43.078738+00:00",
+  "files": [
+    {
+      "path": "macro_economic/yield_curves/treasury_average_interest_rates/average_interest_rates.parquet",
+      "sha256": "6eafab9006ffa7acc1caa0a11177918d3984f30e59dbad05f6dff43f453c4b62"
+    }
+  ]
+}

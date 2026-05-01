@@ -98,7 +98,7 @@ This is the final test of the Rule M.10 mediocrity rejection criterion.
 ## 5. Phase 3 Output Structure
 
 ```
-~/Documents/financial_data/experiments/
+/home/harveybc/Documents/GitHub/financial-data/experiments/
 ├── README.md
 ├── design/
 │   ├── pre_registered_design.md

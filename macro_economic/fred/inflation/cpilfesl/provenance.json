@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series CPILFESL",
+  "acquired_at": "2026-05-01T15:42:05.398601+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/cpilfesl/observations.parquet",
+      "sha256": "bcd9c0e5700a39f1a868ad48183d9c215b44497302aaebbd1afad029e2e5aa2b"
+    }
+  ]
+}

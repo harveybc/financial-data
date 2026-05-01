@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "XLRE daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:55.694996+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/xlre/daily.parquet",
+      "sha256": "ff392735ed422d0f71c3c0ebd35ed5647f1ba2ceebf4012d3aeb0a89df2d1f81"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "IEF daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:57.751216+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/ief/daily.parquet",
+      "sha256": "fc808f437cb667e4ac218c02d14571c3201f7f03c2313ee948ca5b640f91df5d"
+    }
+  ]
+}

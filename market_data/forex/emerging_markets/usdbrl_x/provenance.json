@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "USDBRL=X daily OHLCV",
+  "acquired_at": "2026-05-01T15:46:14.345038+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/emerging_markets/usdbrl_x/daily.parquet",
+      "sha256": "f7a21298c807ea3d40ed4c4405d4f0c22204f6d4ed1bfb0ebc52d9bf61c6ea58"
+    }
+  ]
+}

@@ -52,7 +52,7 @@ import os
 import json
 from pathlib import Path
 
-DATA_LAKE = Path.home() / "Documents/financial_data"
+DATA_LAKE = Path("/home/harveybc/Documents/GitHub/financial-data")
 SKIP_FOLDERS = {"_templates", "_metadata", "_scripts"}
 
 audit_results = {
@@ -183,7 +183,7 @@ If any HIGH-priority sources missing AND not in redundancy exclusions → ESCALA
 
 Script: `_scripts/generate_inventory.py`
 
-`~/Documents/financial_data/INVENTORY.md`:
+`/home/harveybc/Documents/GitHub/financial-data/INVENTORY.md`:
 
 ```markdown
 # Financial Data Lake — Master Inventory
@@ -277,7 +277,7 @@ Master deliverable: `PHASE_1_COMPLETION_REPORT.md`
 
 ## Executive Summary
 
-Phase 1 (Data Acquisition) of Project 3 is complete. Comprehensive multi-asset, multi-source financial data lake established at `~/Documents/financial_data/` with full documentation and validation.
+Phase 1 (Data Acquisition) of Project 3 is complete. Comprehensive multi-asset, multi-source financial data lake established at `/home/harveybc/Documents/GitHub/financial-data/` with full documentation and validation.
 
 ## Quantitative Summary
 
@@ -375,14 +375,14 @@ Phase 2 may proceed.
 
 ## Files
 
-- Master inventory: `~/Documents/financial_data/INVENTORY.md`
-- Data catalog: `~/Documents/financial_data/_metadata/data_catalog.json`
-- Documentation audit: `~/Documents/financial_data/_metadata/audit_documentation.json`
-- Validation audit: `~/Documents/financial_data/_metadata/audit_validation.json`
-- Coverage audit: `~/Documents/financial_data/_metadata/audit_coverage.json`
-- Subscriptions: `~/Documents/financial_data/_metadata/subscriptions.json`
-- Acquisition log: `~/Documents/financial_data/_metadata/acquisition_log.csv`
-- Redundancy analysis: `~/Documents/financial_data/_metadata/redundancy_analysis.json`
+- Master inventory: `/home/harveybc/Documents/GitHub/financial-data/INVENTORY.md`
+- Data catalog: `/home/harveybc/Documents/GitHub/financial-data/_metadata/data_catalog.json`
+- Documentation audit: `/home/harveybc/Documents/GitHub/financial-data/_metadata/audit_documentation.json`
+- Validation audit: `/home/harveybc/Documents/GitHub/financial-data/_metadata/audit_validation.json`
+- Coverage audit: `/home/harveybc/Documents/GitHub/financial-data/_metadata/audit_coverage.json`
+- Subscriptions: `/home/harveybc/Documents/GitHub/financial-data/_metadata/subscriptions.json`
+- Acquisition log: `/home/harveybc/Documents/GitHub/financial-data/_metadata/acquisition_log.csv`
+- Redundancy analysis: `/home/harveybc/Documents/GitHub/financial-data/_metadata/redundancy_analysis.json`
 
 ## User Gate
 

@@ -5,7 +5,7 @@
 **Inputs:** Stage 1.1 complete (folder structure exists).
 
 **Outputs:**
-- `~/Documents/financial_data/_metadata/data_catalog.json` — machine-readable
+- `/home/harveybc/Documents/GitHub/financial-data/_metadata/data_catalog.json` — machine-readable
 - `STAGE_1.2_DELIVERABLE.md` — human-readable
 - User-approved acquisition list (subscription decisions deferred to after Stage 1.3)
 
@@ -573,7 +573,7 @@ Subscription decisions are NOT made yet. They are made after Stage 1.3.
 Awaiting user approval to proceed to Stage 1.3.
 ```
 
-The catalog itself (this entire document) is also written to `~/Documents/financial_data/_metadata/data_catalog.json` (machine-readable) and referenced from deliverable.
+The catalog itself (this entire document) is also written to `/home/harveybc/Documents/GitHub/financial-data/_metadata/data_catalog.json` (machine-readable) and referenced from deliverable.
 
 ---
 

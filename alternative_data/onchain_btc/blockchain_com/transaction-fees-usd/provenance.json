@@ -1,0 +1,11 @@
+{
+  "source": "Blockchain.com",
+  "description": "BTC transaction-fees-usd",
+  "acquired_at": "2026-05-01T15:43:00.263617+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/blockchain_com/transaction-fees-usd/daily.parquet",
+      "sha256": "bda460cc9419f268a15a961e29b22753eb07d742ff6d4a0696c1b73e8a9220af"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Etherscan API V2",
+  "description": "Free Etherscan ETH price, supply, and gas oracle snapshots.",
+  "acquired_at": "2026-05-01T16:43:02.817352+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_eth/etherscan_free_snapshots/snapshots.parquet",
+      "sha256": "b5a4f0a14eea553539cb6a4577b8030e528023ceb34d074d801f53be8583638f"
+    }
+  ]
+}

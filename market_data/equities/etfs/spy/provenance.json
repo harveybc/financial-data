@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "SPY daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:43.674682+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/spy/daily.parquet",
+      "sha256": "973c2d6f4a67c861df6d31881415c2e97990f20be8485c99b1d1865128d2d069"
+    }
+  ]
+}

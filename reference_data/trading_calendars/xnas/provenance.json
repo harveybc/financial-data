@@ -1,0 +1,11 @@
+{
+  "source": "fallback calendar generator",
+  "description": "XNAS fallback trading schedule generated from weekdays and public holidays",
+  "acquired_at": "2026-05-01T16:04:42.540197+00:00",
+  "files": [
+    {
+      "path": "reference_data/trading_calendars/xnas/schedule.parquet",
+      "sha256": "441537db88d34d3bea52a896f47341ddd43dbcd41b64f4fcf14252e8b396f852"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series GDPPOT",
+  "acquired_at": "2026-05-01T15:42:16.478856+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/gdppot/observations.parquet",
+      "sha256": "5defd0ecb4f2b74a0f584b43dd3ed58a3b6f75a4dcc9e79b366981ed9468197e"
+    }
+  ]
+}

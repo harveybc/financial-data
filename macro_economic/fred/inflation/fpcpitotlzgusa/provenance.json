@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series FPCPITOTLZGUSA",
+  "acquired_at": "2026-05-01T15:42:08.903077+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/fpcpitotlzgusa/observations.parquet",
+      "sha256": "af0a244a156b9e305c87e5dced44cef7a85fc6475752aa0101ffa491f0fa3a00"
+    }
+  ]
+}

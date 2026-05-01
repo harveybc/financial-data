@@ -1,0 +1,11 @@
+{
+  "source": "python-holidays",
+  "description": "Public holiday calendar for market-aligned countries",
+  "acquired_at": "2026-05-01T16:04:42.766029+00:00",
+  "files": [
+    {
+      "path": "reference_data/holidays/holidays.parquet",
+      "sha256": "11edefa1be3e147260a1ec51761deedaac47030d024953dc2c23cf38e4e0bc9a"
+    }
+  ]
+}

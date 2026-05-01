@@ -1,0 +1,11 @@
+{
+  "source": "OECD SDMX",
+  "description": "OECD Composite Leading Indicator selected free SDMX data.",
+  "acquired_at": "2026-05-01T16:43:10.248112+00:00",
+  "files": [
+    {
+      "path": "macro_economic/oecd/cli/monthly.parquet",
+      "sha256": "d74b5aa2d0c8c0a2c96489a6343ae01b8a8e0bcea1158a539535534485fd3325"
+    }
+  ]
+}

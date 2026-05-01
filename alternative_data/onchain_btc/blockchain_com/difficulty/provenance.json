@@ -1,0 +1,11 @@
+{
+  "source": "Blockchain.com",
+  "description": "BTC difficulty",
+  "acquired_at": "2026-05-01T15:42:58.092740+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/blockchain_com/difficulty/daily.parquet",
+      "sha256": "2a7e7171e2ed03cb6a05baedd681fc844ee0850adc13ec62b220e060ebf39e50"
+    }
+  ]
+}

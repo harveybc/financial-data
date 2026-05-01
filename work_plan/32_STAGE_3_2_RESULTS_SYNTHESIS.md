@@ -310,9 +310,9 @@ Final monthly subscription cost: $XX/month
 
 ## Files
 
-- Full Phase 1 inventory: `~/Documents/financial_data/INVENTORY.md`
-- Full Phase 2 feature library: `~/Documents/financial_data/features/`
-- Full Phase 3 experiment runs: `~/Documents/financial_data/experiments/`
+- Full Phase 1 inventory: `/home/harveybc/Documents/GitHub/financial-data/INVENTORY.md`
+- Full Phase 2 feature library: `/home/harveybc/Documents/GitHub/financial-data/features/`
+- Full Phase 3 experiment runs: `/home/harveybc/Documents/GitHub/financial-data/experiments/`
 - Data source ranking: `data_source_value_ranking.md`
 - Feature technique ranking: `feature_technique_value_ranking.md`
 - Subscription decisions: `subscription_cancellation_recommendations.md`

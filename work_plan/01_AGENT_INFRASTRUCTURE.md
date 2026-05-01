@@ -44,17 +44,19 @@ A GPU lockfile prevents contention between local supervisors and heavy training 
 
 ## 3. Network and IP Configuration
 
-**TODO at project start (user fills in current IPs):**
+**Current SSH config on Omega:**
 
 ```
 # ~/.ssh/config on Omega
 Host dragon
-    HostName  <DRAGON_IP_HERE>
+    HostName  192.0.2.13
+    Port      22022
     User      harveybc
     IdentityFile ~/.ssh/id_ed25519
 
 Host gamma
-    HostName  <GAMMA_IP_HERE>
+    HostName  192.0.2.15
+    Port      22022
     User      harveybc
     IdentityFile ~/.ssh/id_ed25519
 ```
@@ -168,10 +170,10 @@ The cron entries live in `_scripts/cron/`, are version-controlled, and are docum
 
 **What Tier 1 does:**
 
-- Tails worker logs in `~/Documents/financial_data/_logs/<machine>/`
+- Tails worker logs in `/home/harveybc/Documents/GitHub/financial-data/_logs/<machine>/`
 - On each cron tick: checks GPU lockfile, loads model if free, produces a structured JSON status report, exits
 - Detects: stalled processes, repeated errors, unexpected log silence, validation failures
-- Writes: `~/Documents/financial_data/_logs/supervisor_reports/<machine>_status.json`
+- Writes: `/home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/<machine>_status.json`
 
 **Why Hermes wrapper specifically:** persistent context across cron ticks via Hermes's skill/memory system. The agent learns common log patterns over project lifetime so future occurrences resolve faster. We do not use plain `ollama run` because we lose skill accumulation.
 
@@ -185,11 +187,21 @@ OpenCode Go on Omega, capped to one invocation every 10–15 minutes via cron.
 
 - Reads the two Tier 1 status reports (Dragon, Gamma)
 - Reads Omega's own worker logs directly (Omega has no local Tier 1)
-- Aggregates into `~/Documents/financial_data/_logs/supervisor_reports/global_status.md`
+- Aggregates into `/home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/global_status.md`
 - Maintains the escalation queue: `_logs/supervisor_reports/escalation_queue.json`
 - Dispatches new acquisition / preprocessing tasks to idle machines per the active stage doc
+- Detects idle machines every cron tick and starts the next safe pending worker without human intervention
+- Keeps active workers running rather than relaunching them, treats completed idempotent workers as `completed_idle`, and syncs completed remote outputs back to Omega
 - Commits status reports to the git repo on Omega
 - For genuine anomalies, adds an entry to the escalation queue and notifies Tier 3
+
+**Autonomous dispatch implementation:** `_scripts/cron/run_tier2_orchestrator.sh` invokes `_scripts/workers/stage13_autonomous_orchestrator.py` on every Tier 2 tick. The dispatcher checks local and remote worker PID files, `/tmp/gpu_busy.lock`, stage completion log markers, and remote deliverable sync status. It writes both machine-readable and human-readable reports:
+
+- `_logs/supervisor_reports/autonomous_dispatch_report.json`
+- `_logs/supervisor_reports/autonomous_dispatch_report.md`
+- `_logs/supervisor_reports/global_status.md`
+
+When the user asks for status, report the exact work-plan stage, current task, busy/idle reason, and expected/generated deliverable from these files.
 
 **Why capped to 10–15 min cron:** OpenCode Go is paid-per-call. High-frequency log watching is Tier 1's job. Tier 2 only runs when there's enough new information to justify a paid model call.
 

@@ -1,0 +1,11 @@
+{
+  "source": "Blockchain.com",
+  "description": "BTC miners-revenue",
+  "acquired_at": "2026-05-01T15:42:59.179663+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/blockchain_com/miners-revenue/daily.parquet",
+      "sha256": "9cfce55745731f5e0c61e51d591567b038bda3b3162f1abbc6640741b4adc0fd"
+    }
+  ]
+}

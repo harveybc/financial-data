@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "CL=F daily OHLCV",
+  "acquired_at": "2026-05-01T15:46:02.443356+00:00",
+  "files": [
+    {
+      "path": "market_data/commodities/energy/cl_f/daily.parquet",
+      "sha256": "d5336819eb42310f3db116ad2cf92224c67fb8dfd7c206890594f9ba8a2d2c78"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "USDTRY=X daily OHLCV",
+  "acquired_at": "2026-05-01T15:46:12.902890+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/emerging_markets/usdtry_x/daily.parquet",
+      "sha256": "3bfc36f7fa578b30863720e01d1063cf87ae13b92f654c88dca5b3e1e23a32f4"
+    }
+  ]
+}

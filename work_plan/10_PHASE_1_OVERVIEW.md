@@ -2,7 +2,7 @@
 
 **Phase goal:** Acquire ALL plausibly relevant data sources for RL trading research, organized into a documented data lake. Acquire defensively but avoid redundancy.
 
-**Phase output:** Complete data lake at `~/Documents/financial_data/` with:
+**Phase output:** Complete data lake at `/home/harveybc/Documents/GitHub/financial-data/` with:
 - All raw data acquired
 - Per-folder READMEs describing contents
 - Per-dataset data dictionaries
@@ -87,7 +87,7 @@ After each stage, agent produces deliverable, halts, awaits user approval:
 
 By end of Phase 1, the following must exist:
 
-1. Complete data lake at `~/Documents/financial_data/` with all subfolders populated
+1. Complete data lake at `/home/harveybc/Documents/GitHub/financial-data/` with all subfolders populated
 2. README.md in every folder
 3. data_dictionary.md for every dataset folder
 4. provenance.json for every dataset folder

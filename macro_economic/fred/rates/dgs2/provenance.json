@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series DGS2",
+  "acquired_at": "2026-05-01T15:42:28.455815+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/dgs2/observations.parquet",
+      "sha256": "024b8547164d21ad0f21c5703c0e24eaabcb9bcf700bc91e01aea925d772c2c9"
+    }
+  ]
+}

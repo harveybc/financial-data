@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series TB3MS",
+  "acquired_at": "2026-05-01T15:42:31.836116+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/tb3ms/observations.parquet",
+      "sha256": "3107fd03d7d80ba1f63cac050c649e54848e7ea6e4be28cd8e5978fa75347460"
+    }
+  ]
+}

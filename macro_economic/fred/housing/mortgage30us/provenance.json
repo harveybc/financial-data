@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series MORTGAGE30US",
+  "acquired_at": "2026-05-01T15:42:39.700104+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/mortgage30us/observations.parquet",
+      "sha256": "e28cb8314bf933af53bc93c90676b1b319cae42c92680647bfbc5aef140da818"
+    }
+  ]
+}

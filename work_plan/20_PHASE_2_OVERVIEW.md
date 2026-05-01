@@ -2,7 +2,7 @@
 
 **Phase goal:** Convert raw data acquired in Phase 1 into a comprehensive feature library across multiple periodicities and engineering techniques. Produce features ready for use as RL agent observation inputs.
 
-**Phase output:** Feature library at `~/Documents/financial_data/features/` with:
+**Phase output:** Feature library at `/home/harveybc/Documents/GitHub/financial-data/features/` with:
 - Trading asset price features at 5m, 15m, 1h, 4h
 - Forward-filled feature inputs aligned to each simulation timeframe
 - Multiple feature engineering technique outputs (technical, statistical, signal decomposition, learned representations)
@@ -120,7 +120,7 @@ After each stage, agent produces deliverable, halts, awaits user approval:
 After Phase 2 complete, feature library structure:
 
 ```
-~/Documents/financial_data/features/
+/home/harveybc/Documents/GitHub/financial-data/features/
 ├── README.md
 ├── trading_asset_features/
 │   ├── eurusd/

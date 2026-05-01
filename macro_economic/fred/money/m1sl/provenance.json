@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series M1SL",
+  "acquired_at": "2026-05-01T15:42:17.160503+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/m1sl/observations.parquet",
+      "sha256": "db357e1d514c126221f950df9152de8de087c38382217590eb2d243cdca0af93"
+    }
+  ]
+}

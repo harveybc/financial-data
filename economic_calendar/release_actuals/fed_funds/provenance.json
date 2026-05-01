@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for Fed Funds from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:58.274316+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/fed_funds/actuals.parquet",
+      "sha256": "9900a81605e7968b4cd48d08a89deb4495082d788c4aae82ae692cee21b6db3c"
+    }
+  ]
+}

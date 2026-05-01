@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "XLK daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:47.970001+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/xlk/daily.parquet",
+      "sha256": "2548ecd1b5369517ae7e15a1ca06e62735ba18574de1d53e0ee4cb121a48d188"
+    }
+  ]
+}

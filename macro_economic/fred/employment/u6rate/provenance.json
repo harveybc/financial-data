@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series U6RATE",
+  "acquired_at": "2026-05-01T15:42:11.273241+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/u6rate/observations.parquet",
+      "sha256": "1178f51d2073fa138313cb51cea8e210e2f954c5515d3e1fa739539b7b3ace4a"
+    }
+  ]
+}

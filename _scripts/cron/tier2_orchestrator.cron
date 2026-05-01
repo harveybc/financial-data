@@ -1,0 +1,1 @@
+*/12 * * * * /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier2_orchestrator.sh >> /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/tier2_cron.log 2>&1 # project3-tier2

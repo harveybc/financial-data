@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series PSAVERT",
+  "acquired_at": "2026-05-01T15:42:37.107125+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/psavert/observations.parquet",
+      "sha256": "fdcb6d4e1ae3eba9ca6504f05aab01d3b41c75b4d7250e5509a4ef68f7a16ee0"
+    }
+  ]
+}

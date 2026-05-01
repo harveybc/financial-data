@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "USDINR=X daily OHLCV",
+  "acquired_at": "2026-05-01T15:46:15.567982+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/emerging_markets/usdinr_x/daily.parquet",
+      "sha256": "9fcb5ce56b04041dd111cc50556114e23455e564e05240c7e419b4ffffe44632"
+    }
+  ]
+}

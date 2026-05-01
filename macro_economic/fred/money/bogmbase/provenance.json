@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series BOGMBASE",
+  "acquired_at": "2026-05-01T15:42:20.103771+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/bogmbase/observations.parquet",
+      "sha256": "2f042875826f064ebba8eb47435f19b8d2b84e32334be0e2864f62d455854ee5"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series T10Y2Y",
+  "acquired_at": "2026-05-01T15:42:34.392842+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/t10y2y/observations.parquet",
+      "sha256": "3562dd0c9c18f7d0d0ece4fef99ba82d749c4aa192da081c0015fcd567283981"
+    }
+  ]
+}

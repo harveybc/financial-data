@@ -1,0 +1,11 @@
+{
+  "source": "fallback calendar generator",
+  "description": "XTKS fallback trading schedule generated from weekdays and public holidays",
+  "acquired_at": "2026-05-01T16:04:42.681573+00:00",
+  "files": [
+    {
+      "path": "reference_data/trading_calendars/xtks/schedule.parquet",
+      "sha256": "a0f393c2355ca1d85635407ff18f8c4ee1a0351ccfb46d15ff34ea19059435c6"
+    }
+  ]
+}

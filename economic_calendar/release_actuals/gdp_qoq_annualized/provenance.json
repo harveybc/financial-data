@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for GDP QoQ Annualized from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:57.969580+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/gdp_qoq_annualized/actuals.parquet",
+      "sha256": "5e47f6c40fac038b8402c21f944fafa5b26cbbb4cd6ca61a72c72d08dacd2b40"
+    }
+  ]
+}

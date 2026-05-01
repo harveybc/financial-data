@@ -159,7 +159,7 @@ Reuse + extend `agent-multi/tools/seed_sweep.py` from Project 2 Part III plan.
 
 ```python
 import sys
-sys.path.insert(0, "/home/harveybc/Documents/financial_data/_scripts/lib")
+sys.path.insert(0, "/home/harveybc/Documents/GitHub/financial-data/_scripts/lib")
 from gpu_lock import acquire_gpu_lock, release_gpu_lock
 
 acquire_gpu_lock(
@@ -186,7 +186,7 @@ ssh dragon "source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda acti
     --feature_preset tech_full \
     --total_timesteps 100000 \
     --seed 0 \
-    --output_dir /home/harveybc/Documents/financial_data/experiments/stage_a_screening/runs/<run_id>/"
+    --output_dir /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/<run_id>/"
 ```
 
 ### 2.2 Run registry

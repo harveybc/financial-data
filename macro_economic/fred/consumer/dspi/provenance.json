@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series DSPI",
+  "acquired_at": "2026-05-01T15:42:37.678842+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/dspi/observations.parquet",
+      "sha256": "14fb40f979fb6f18603886b3d03528204a02c1715366a81f2f33ecb4a78bb34f"
+    }
+  ]
+}

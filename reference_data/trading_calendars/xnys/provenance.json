@@ -1,0 +1,11 @@
+{
+  "source": "fallback calendar generator",
+  "description": "XNYS fallback trading schedule generated from weekdays and public holidays",
+  "acquired_at": "2026-05-01T16:04:42.494369+00:00",
+  "files": [
+    {
+      "path": "reference_data/trading_calendars/xnys/schedule.parquet",
+      "sha256": "50608ebe2777f53ad38bfba958ca7893796f29421237a8f2a578b39090d001ee"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series GDPNOW",
+  "acquired_at": "2026-05-01T15:42:15.803007+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/gdpnow/observations.parquet",
+      "sha256": "21633a5a62be2f5f7ba48d7e8925c6fd4055b44acd65468d1bdffb7f2f204d94"
+    }
+  ]
+}

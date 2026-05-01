@@ -1,0 +1,6 @@
+# trmmeancpim159sfrbcle
+
+FRED series TRMMEANCPIM159SFRBCLE
+
+Source: FRED
+Acquired: 2026-05-01T15:42:08.328599+00:00

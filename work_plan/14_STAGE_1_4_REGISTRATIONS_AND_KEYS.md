@@ -113,7 +113,7 @@ Reply to chat with credentials as each is completed.
 
 ## G. FRED API key
 
-The FRED API key from Project 2 has already been verified valid at Stage 1.3 (see `STAGE_1_3_MANUAL_TASKS_FOR_USER.md` task M2). The actual value is stored in `~/Documents/financial_data/_metadata/.env` as `FRED_API_KEY`, with a personal-reference copy in `STAGE_1_3_API_KEYS_PRIVATE.md` (gitignored).
+The FRED API key from Project 2 has already been verified valid at Stage 1.3 (see `STAGE_1_3_MANUAL_TASKS_FOR_USER.md` task M2). The actual value is stored in `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` as `FRED_API_KEY`, with a personal-reference copy in `STAGE_1_3_API_KEYS_PRIVATE.md` (gitignored).
 
 If a regeneration is ever needed:
 - Visit https://fred.stlouisfed.org/docs/api/api_key.html
@@ -138,14 +138,14 @@ These can be added later if Phase 3 experiments demonstrate value.
 
 ## Status: WAITING
 
-Reply each item as completed. Agent stores all in /home/harveybc/Documents/financial_data/_metadata/.env (NOT committed to git).
+Reply each item as completed. Agent stores all in /home/harveybc/Documents/GitHub/financial-data/_metadata/.env (NOT committed to git).
 ```
 
 ---
 
 ## 3. Credential Storage
 
-Agent creates `~/Documents/financial_data/_metadata/.env` (template — values come from `STAGE_1_3_API_KEYS_PRIVATE.md` and any newly approved paid subscriptions):
+Agent creates `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env` (template — values come from `STAGE_1_3_API_KEYS_PRIVATE.md` and any newly approved paid subscriptions):
 
 ```bash
 # Project 3 credentials — DO NOT COMMIT
@@ -170,7 +170,7 @@ export FMP_API_KEY=""
 
 `.env` permissions: `chmod 600`
 
-`.gitignore` includes `.env` at top of `~/Documents/financial_data/.gitignore`.
+`.gitignore` includes `.env` at top of `/home/harveybc/Documents/GitHub/financial-data/.gitignore`.
 
 ---
 
@@ -196,7 +196,7 @@ assert r.status_code == 200
 
 ## 5. Validation Results Documentation
 
-Per credential, agent records to `~/Documents/financial_data/_metadata/credential_validation.json`:
+Per credential, agent records to `/home/harveybc/Documents/GitHub/financial-data/_metadata/credential_validation.json`:
 
 ```json
 {
@@ -214,7 +214,7 @@ Per credential, agent records to `~/Documents/financial_data/_metadata/credentia
 
 ## 6. Subscription Tracking
 
-Update `~/Documents/financial_data/_metadata/subscriptions.json`:
+Update `/home/harveybc/Documents/GitHub/financial-data/_metadata/subscriptions.json`:
 
 ```json
 {
@@ -275,7 +275,7 @@ $[X]/month (out of $500/month cap)
 
 ## Storage
 
-All credentials stored at: `/home/harveybc/Documents/financial_data/_metadata/.env`
+All credentials stored at: `/home/harveybc/Documents/GitHub/financial-data/_metadata/.env`
 Permissions: 600
 Listed in .gitignore: YES
 

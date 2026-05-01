@@ -1,0 +1,11 @@
+{
+  "source": "fallback calendar generator",
+  "description": "CME fallback trading schedule generated from weekdays and public holidays",
+  "acquired_at": "2026-05-01T16:04:42.589298+00:00",
+  "files": [
+    {
+      "path": "reference_data/trading_calendars/cme/schedule.parquet",
+      "sha256": "a1d5e330f8d53203d061b3a69c43e6c4720bb1dab6be9d9089b7364f678f74d3"
+    }
+  ]
+}

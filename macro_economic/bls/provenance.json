@@ -1,0 +1,11 @@
+{
+  "source": "BLS Public API",
+  "description": "Selected BLS public macro series",
+  "acquired_at": "2026-05-01T15:51:44.209503+00:00",
+  "files": [
+    {
+      "path": "macro_economic/bls/public_series.csv",
+      "sha256": "94b42d96e32c96248b7e133588f738a032f8e59e9e316e62617460d50c5d34c3"
+    }
+  ]
+}

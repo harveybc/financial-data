@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series CSUSHPISA",
+  "acquired_at": "2026-05-01T15:42:39.171373+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/csushpisa/observations.parquet",
+      "sha256": "ce1fbce9fea956e1b964949aee41f4bbbbcc41bc2c7037fda9c5efd7ead68667"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Blockchain.com",
+  "description": "BTC hash-rate",
+  "acquired_at": "2026-05-01T15:42:56.841934+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/blockchain_com/hash-rate/daily.parquet",
+      "sha256": "18173bea957716130416dea8394cd411786ca2c200f1b68a6e5898677212dfe4"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series PCECTPI",
+  "acquired_at": "2026-05-01T15:42:07.175108+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/pcectpi/observations.parquet",
+      "sha256": "0a3ee38b64ec5ebd1d2949074d66e0d9772674ad53de249e668115774c5201fe"
+    }
+  ]
+}

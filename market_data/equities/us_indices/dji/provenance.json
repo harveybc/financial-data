@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^DJI daily OHLCV",
+  "acquired_at": "2026-05-01T15:45:39.907717+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/us_indices/dji/daily.parquet",
+      "sha256": "6bd37a1d74a1ea31e3bf59691feb791a40f851f126407ef2fb8f10d320d48908"
+    }
+  ]
+}

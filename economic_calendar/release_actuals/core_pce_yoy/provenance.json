@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for PCE Core YoY from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:57.102412+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/core_pce_yoy/actuals.parquet",
+      "sha256": "c6a07bc52da8466b3cf132a48f45fe3155ad8494dd775743d46102709e4a4e13"
+    }
+  ]
+}

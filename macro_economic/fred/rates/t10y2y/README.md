@@ -1,0 +1,6 @@
+# t10y2y
+
+FRED series T10Y2Y
+
+Source: FRED
+Acquired: 2026-05-01T15:42:34.392739+00:00

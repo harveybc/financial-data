@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series A191RL1Q225SBEA",
+  "acquired_at": "2026-05-01T15:42:15.295490+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/a191rl1q225sbea/observations.parquet",
+      "sha256": "ed8b491b501250ccf5c0b980d16dded7bf68e7e0bf047a13529e8138c152e6e3"
+    }
+  ]
+}

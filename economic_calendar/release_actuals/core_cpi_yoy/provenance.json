@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Economic release actuals for Core CPI YoY from FRED; consensus fields are intentionally blank until a free scheduled-events source is validated.",
+  "acquired_at": "2026-05-01T16:42:56.811471+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/core_cpi_yoy/actuals.parquet",
+      "sha256": "91723a03622489b8dacee66691465e21a652588d5db42b5f137deb890b60f934"
+    }
+  ]
+}

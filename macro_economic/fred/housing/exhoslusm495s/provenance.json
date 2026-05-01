@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series EXHOSLUSM495S",
+  "acquired_at": "2026-05-01T15:42:38.645805+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/exhoslusm495s/observations.parquet",
+      "sha256": "56c9383e96cd07a4c96c2cc7678cf2e6c8756251073264d0eaac2dd7731b24a4"
+    }
+  ]
+}

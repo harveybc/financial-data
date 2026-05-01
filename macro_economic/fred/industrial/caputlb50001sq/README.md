@@ -1,0 +1,6 @@
+# caputlb50001sq
+
+FRED series CAPUTLB50001SQ
+
+Source: FRED
+Acquired: 2026-05-01T15:42:41.218107+00:00

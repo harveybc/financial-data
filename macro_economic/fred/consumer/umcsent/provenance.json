@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series UMCSENT",
+  "acquired_at": "2026-05-01T15:42:35.559869+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/umcsent/observations.parquet",
+      "sha256": "d97db54646b6919a961e6d7ef5d3be0ca18e21ee77277ef91aac51b77859c125"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series T5YIFR",
+  "acquired_at": "2026-05-01T15:47:53.430263+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation_expectations/t5yifr/observations.parquet",
+      "sha256": "e262901990ff6f624ac6c8558d82a3d55d634518c99a9f45016b3035163b48a8"
+    }
+  ]
+}

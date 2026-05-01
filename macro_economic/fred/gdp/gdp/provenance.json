@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series GDP",
+  "acquired_at": "2026-05-01T15:42:14.179874+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/gdp/observations.parquet",
+      "sha256": "bd86e751fd6c18845f92bd439e6cff711cc10baba83a3044e5399169c22ed96c"
+    }
+  ]
+}

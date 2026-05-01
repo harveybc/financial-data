@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "FRED series DPRIME",
+  "acquired_at": "2026-05-01T15:42:26.613805+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/dprime/observations.parquet",
+      "sha256": "64938482bef843e654d8281d450f6e55654810b04c6b3c73adb705e357ba261a"
+    }
+  ]
+}

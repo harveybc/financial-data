@@ -1,0 +1,11 @@
+{
+  "source": "Blockchain.com",
+  "description": "BTC mempool-size",
+  "acquired_at": "2026-05-01T15:43:03.773185+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/blockchain_com/mempool-size/daily.parquet",
+      "sha256": "9ac447102910839e779b5a390c9ef6e2b23d64bce375e55a3c66dfa54a27ab85"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-05-01T17:24:17.913067+00:00",
+  "policy": "Detect idle machines each Tier 2 cron tick; keep busy workers running; start safe pending Stage 1.3 workers; sync completed remote outputs to Omega.",
+  "decisions": [
+    {
+      "machine": "omega",
+      "stage": "Stage 1.3 Free Data Acquisition",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "market_data/equities, commodities, forex, HistData-derived parquet/csv"
+    },
+    {
+      "machine": "omega",
+      "stage": "Stage 1.3 Free Data Acquisition",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "CFTC, holidays, trading calendars, reference provenance"
+    },
+    {
+      "machine": "omega",
+      "stage": "Stage 1.3 Task 1.3.P Economic calendar",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "economic_calendar/release_actuals with FRED actuals and scheduled-events gap note"
+    },
+    {
+      "machine": "dragon",
+      "stage": "Stage 1.3 Task 1.3.F Binance crypto comprehensive",
+      "state": "busy",
+      "action": "kept_running",
+      "deliverable": "market_data/crypto spot/perpetual/funding outputs"
+    },
+    {
+      "machine": "gamma",
+      "stage": "Stage 1.3 macro/on-chain public acquisition",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "FRED, CoinMetrics attempts, Blockchain.com, mempool, SEC, DeFiLlama"
+    },
+    {
+      "machine": "gamma",
+      "stage": "Stage 1.3 supplemental public macro",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "Treasury FiscalData, BLS public series, gap notes"
+    },
+    {
+      "machine": "gamma",
+      "stage": "Stage 1.3 Tasks 1.3.I/1.3.M/1.3.Q/1.3.R remaining free-source follow-up",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "Etherscan free snapshots, FINRA Reg SHO daily short-volume, OECD CLI, BEA gap note"
+    },
+    {
+      "machine": "gamma",
+      "stage": "Stage 1.3 Task 1.3.F Binance crypto acceleration",
+      "state": "busy",
+      "action": "kept_running",
+      "deliverable": "market_data/crypto/perpetuals and funding_rates fetched on Gamma, then synced to Dragon/Omega"
+    },
+    {
+      "machine": "gamma->omega",
+      "stage": "Stage 1.3 canonical sync",
+      "state": "deferred_busy",
+      "action": "gamma_sync",
+      "deliverable": "Gamma completed macro/on-chain outputs copied to Omega"
+    },
+    {
+      "machine": "gamma->dragon",
+      "stage": "Stage 1.3 crypto acceleration sync",
+      "state": "deferred_busy",
+      "action": "gamma_crypto_to_dragon_sync",
+      "deliverable": "Gamma perpetual/funding outputs copied to Dragon so Dragon skips duplicated work"
+    },
+    {
+      "machine": "dragon->omega",
+      "stage": "Stage 1.3 canonical sync",
+      "state": "deferred_busy",
+      "action": "dragon_sync",
+      "deliverable": "Dragon crypto outputs copied to Omega after worker completion"
+    }
+  ],
+  "anomalies": []
+}

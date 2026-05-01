@@ -1,0 +1,11 @@
+{
+  "source": "mempool.space",
+  "description": "BTC mempool.space fees_recommended snapshot",
+  "acquired_at": "2026-05-01T15:48:05.573834+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/mempool_space/fees_recommended/snapshot.parquet",
+      "sha256": "704ecb12214aea35beefa1e34b295642a381871ebcd6a3175089862de4a0b55d"
+    }
+  ]
+}
