@@ -9,10 +9,13 @@ PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor
 PROJECT3_TIER1_HERMES_MODEL="${PROJECT3_TIER1_HERMES_MODEL:-}"
 PROJECT3_TIER1_HERMES_FALLBACK_MODELS="${PROJECT3_TIER1_HERMES_FALLBACK_MODELS:-}"
 PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL="${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-}"
-PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS:-75}"
+PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS:-240}"
+PROJECT3_TIER1_LOG_TAIL_LINES="${PROJECT3_TIER1_LOG_TAIL_LINES:-8}"
+PROJECT3_TIER1_LOG_LINE_CHARS="${PROJECT3_TIER1_LOG_LINE_CHARS:-220}"
 HOST="$(hostname)"
 STATUS_FILE="$LOG_DIR/${HOST}_status.json"
 CONTEXT_PACKET="$LOG_DIR/${HOST}_context_packet.md"
+RUN_LOCK="$LOG_DIR/${HOST}_tier1_supervisor.lock"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 uses_cloud_model="0"
 MODEL_CANDIDATES=()
@@ -101,6 +104,12 @@ with open(path, "w", encoding="utf-8") as f:
 PY
 }
 
+if ! mkdir "$RUN_LOCK" 2>/dev/null; then
+  write_status "skipped_supervisor_already_running" "previous Tier 1 supervisor tick is still running" "0.9"
+  exit 0
+fi
+trap 'rm -rf "$RUN_LOCK"' EXIT
+
 if [ "$uses_cloud_model" = "1" ]; then
   stale_note="cloud_model_no_local_gpu_lock model_policy=${MODEL_POLICY}"
 else
@@ -164,7 +173,7 @@ payload = {
 with open(path, "w", encoding="utf-8") as f:
     json.dump(payload, f)
 PY
-  trap 'rm -f "$LOCKFILE"' EXIT
+  trap 'rm -rf "$RUN_LOCK"; rm -f "$LOCKFILE"' EXIT
 fi
 
 gpu_summary="$(nvidia-smi --query-gpu=name,memory.total,memory.used --format=csv,noheader 2>/dev/null || echo "nvidia-smi unavailable")"
@@ -205,7 +214,7 @@ log_tail="$(
     esac
     if [ -f "$PROJECT_ROOT/$log" ]; then
       echo "### $log"
-      tail -n 25 "$PROJECT_ROOT/$log"
+      tail -n "$PROJECT3_TIER1_LOG_TAIL_LINES" "$PROJECT_ROOT/$log" | cut -c "1-$PROJECT3_TIER1_LOG_LINE_CHARS"
     fi
   done
 )"
@@ -221,6 +230,8 @@ agent_role: Hermes/DeepSeek Tier 1 supervisor; observe logs/status, detect anoma
 inference_mode: ${MODEL_POLICY}
 experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 per_model_timeout_seconds: ${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS}
+log_tail_lines: ${PROJECT3_TIER1_LOG_TAIL_LINES}
+log_line_chars: ${PROJECT3_TIER1_LOG_LINE_CHARS}
 expected_deliverable: ${expected_deliverable}
 relevant_docs: ${relevant_docs}
 relevant_logs: ${relevant_logs}
@@ -241,6 +252,8 @@ Lock note: ${stale_note:-none}
 Inference mode: ${MODEL_POLICY}
 Experiment until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 Per-model timeout seconds: ${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS}
+Log tail lines per file: ${PROJECT3_TIER1_LOG_TAIL_LINES}
+Log line max chars: ${PROJECT3_TIER1_LOG_LINE_CHARS}
 Worker log excerpts:
 ${log_tail:-no worker log excerpts available}
 Evidence rule: only report anomalies supported by the worker log excerpts, current PID/GPU evidence, or files you actually inspect. Do not report prior status JSON as corrupted unless you read the current file and quote direct evidence.

@@ -51,7 +51,9 @@ Current recommendation:
 - Omega Tier 2 remains on the existing OpenCode DeepSeek V4 Pro path. Do not spend Ollama Pro quota duplicating Omega's decision supervisor unless OpenCode is unavailable.
 - Omega may also run a separate Tier 1-style Flash worker lane for routine local observation, inventory/validation log watching, and cheap next-action suggestions. This lane is not the supervisor of record; the OpenCode DeepSeek V4 Pro Tier 2 remains the decision-maker.
 - Dragon/Gamma Tier 1 supervisors should use `deepseek-v4-flash:cloud` as the recurring cloud model, with `gemma4:31b-cloud` fallback.
+- Dragon/Gamma default Hermes config should also show `model.default: deepseek-v4-flash:cloud` with the custom Ollama-compatible endpoint, so ad hoc `hermes status` agrees with the cron worker policy. Local `gemma4:31b` is no longer the default; it remains an offline/fallback option.
 - Reserve DeepSeek Pro for Omega/OpenCode and hard escalations. A live May 1 test showed Pro can be slow or overloaded for cron-style 5-minute heartbeats, while Flash gives most of the reasoning upgrade with better responsiveness.
+- Tier 1 Flash attempts use bounded non-overlapping cron execution. Full supervisor prompts may need up to 240 seconds, so the wrapper compacts log excerpts and skips a tick if the previous supervisor is still running.
 - Before Phase 2/3 GPU-heavy training, strongly prefer cloud-supervisor mode or lower-frequency deterministic-only supervision so the local GPUs stay available for training.
 - Keep local Gemma as fallback for offline work, cloud quota exhaustion, or privacy-sensitive prompts.
 - Record the subscription in `_metadata/ai_subscriptions.json` if enabled.
@@ -210,6 +212,7 @@ Install cloud mode on Dragon/Gamma after `ollama signin` succeeds:
 PROJECT3_TIER1_HERMES_MODEL=deepseek-v4-flash:cloud \
 PROJECT3_TIER1_HERMES_FALLBACK_MODELS=gemma4:31b-cloud \
 PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL=2026-05-03T23:59:59Z \
+PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS=240 \
   /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/install_tier1_cloud_supervisor.sh
 ```
 

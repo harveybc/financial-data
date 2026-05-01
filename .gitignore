@@ -16,6 +16,7 @@ _logs/supervisor_reports/tier4_handoffs/*.md
 _logs/**/*.log
 _logs/**/*.out
 _logs/**/*.pid
+_logs/supervisor_reports/*.lock/
 _logs/supervisor_reports/*_status.json
 _logs/supervisor_reports/*_context_packet.md
 !_logs/supervisor_reports/tier2_context_packet.md

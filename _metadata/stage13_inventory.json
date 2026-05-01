@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T19:17:04.457554+00:00",
+  "generated_at": "2026-05-01T19:36:09.516789+00:00",
   "stage": "Stage 1.3 Free Data Acquisition validation/inventory",
   "inventory": {
     "roots": {
@@ -603,7 +603,7 @@
   ],
   "dispatch": {
     "exists": true,
-    "generated_at": "2026-05-01T19:12:53.706377+00:00",
+    "generated_at": "2026-05-01T19:24:37.554404+00:00",
     "decisions": [
       {
         "machine": "omega",
@@ -685,7 +685,7 @@
       {
         "machine": "dragon->omega",
         "stage": "Stage 1.3 canonical sync",
-        "state": "ok",
+        "state": "deferred_busy",
         "action": "dragon_sync",
         "deliverable": "Dragon crypto outputs copied to Omega after worker completion"
       }
@@ -695,6 +695,7 @@
   "improvement_suggestions": [
     "Review non-ok acquisition_log rows and convert true provider limitations into Tier 4 handoffs.",
     "Treat completed_idle as available capacity and dispatch non-overlapping validation, sync, or acquisition slices.",
+    "Keep sync jobs deferred while workers are active, then sync immediately on the next idle tick.",
     "Every agent handoff should pass current stage, task, deliverable, evidence, anomalies, confidence, and context_to_pass_forward."
   ]
 }

@@ -3,5 +3,5 @@
 # PROJECT3_TIER1_HERMES_MODEL=deepseek-v4-flash:cloud
 # PROJECT3_TIER1_HERMES_FALLBACK_MODELS=gemma4:31b-cloud
 # PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL=2026-05-03T23:59:59Z
-# PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS=75
+# PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS=240
 */5 * * * * /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier1_supervisor.sh >> /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/tier1_cron.log 2>&1 # project3-tier1

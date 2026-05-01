@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "NEARUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T19:29:25.119299+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/nearusdt/4h.parquet",
+      "sha256": "31f41e580fee59d58c09a9e28ce927ae0daaf2069c3f99f5550c625ab5bf93cd"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Stage 1.3 Validation Inventory
 
-Generated: 2026-05-01T19:17:04.457554+00:00
+Generated: 2026-05-01T19:36:09.516789+00:00
 
 ## File Counts
 
@@ -44,10 +44,11 @@ Generated: 2026-05-01T19:17:04.457554+00:00
 - gamma: Stage 1.3 Task 1.3.F Binance crypto acceleration | completed_idle | market_data/crypto/perpetuals and funding_rates fetched on Gamma, then synced to Dragon/Omega
 - gamma->omega: Stage 1.3 canonical sync | ok | Gamma completed macro/on-chain outputs copied to Omega
 - gamma->dragon: Stage 1.3 crypto acceleration sync | ok | Gamma perpetual/funding outputs copied to Dragon so Dragon skips duplicated work
-- dragon->omega: Stage 1.3 canonical sync | ok | Dragon crypto outputs copied to Omega after worker completion
+- dragon->omega: Stage 1.3 canonical sync | deferred_busy | Dragon crypto outputs copied to Omega after worker completion
 
 ## Improvement Suggestions
 
 - Review non-ok acquisition_log rows and convert true provider limitations into Tier 4 handoffs.
 - Treat completed_idle as available capacity and dispatch non-overlapping validation, sync, or acquisition slices.
+- Keep sync jobs deferred while workers are active, then sync immediately on the next idle tick.
 - Every agent handoff should pass current stage, task, deliverable, evidence, anomalies, confidence, and context_to_pass_forward.

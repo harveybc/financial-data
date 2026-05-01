@@ -5,7 +5,7 @@ PROJECT_ROOT="${PROJECT_ROOT:-/home/harveybc/Documents/GitHub/financial-data}"
 MODEL="${PROJECT3_TIER1_HERMES_MODEL:-deepseek-v4-flash:cloud}"
 FALLBACK_MODELS="${PROJECT3_TIER1_HERMES_FALLBACK_MODELS:-gemma4:31b-cloud}"
 EXPERIMENT_UNTIL="${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-2026-05-03T23:59:59Z}"
-MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS:-75}"
+MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS:-240}"
 CRON_LOG="$PROJECT_ROOT/_logs/supervisor_reports/tier1_cron.log"
 WRAPPER="$PROJECT_ROOT/_scripts/cron/run_tier1_supervisor.sh"
 
@@ -23,6 +23,10 @@ pull_model() {
   model="${model%"${model##*[![:space:]]}"}"
   [ -n "$model" ] || return 0
   if ! ollama pull "$model" >/dev/null 2>&1; then
+    if ollama list 2>/dev/null | awk '{print $1}' | grep -Fx "$model" >/dev/null 2>&1; then
+      echo "Warning: pull failed for $model, but the model manifest already exists locally; continuing." >&2
+      return 0
+    fi
     echo "Unable to pull $model. Run 'ollama signin' on this machine and approve the device in ollama.com first." >&2
     exit 1
   fi
