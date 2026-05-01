@@ -1,0 +1,121 @@
+nohup: ignoring input
+======================================================================
+PHASE 3.5 — TASK 1: AUDIT 10σ NOISE BUDGET CEILING
+======================================================================
+
+--- Task 1.1–1.2: Detailed Trace of 10σ Cells ---
+
+  Tracing BTC/USD / weekly / momentum...
+    Sign-flip prob: 49.5%
+    Median SNR at 10σ: 0.0497
+    Sharpe@0σ: +1.906, Sharpe@10σ: +0.634, B&H: +0.703
+    Classification: honest_ceiling
+
+  Tracing BTC/USD / weekly / carry_momentum...
+    Sign-flip prob: 49.5%
+    Median SNR at 10σ: 0.0497
+    Sharpe@0σ: +1.906, Sharpe@10σ: +0.634, B&H: +0.703
+    Classification: honest_ceiling
+
+  Tracing XAU/USD / weekly / momentum...
+    Sign-flip prob: 46.3%
+    Median SNR at 10σ: 0.0596
+    Sharpe@0σ: +2.036, Sharpe@10σ: +0.325, B&H: +0.636
+    Classification: honest_ceiling
+
+  Tracing XAU/USD / weekly / carry_momentum...
+    Sign-flip prob: 46.3%
+    Median SNR at 10σ: 0.0596
+    Sharpe@0σ: +2.036, Sharpe@10σ: +0.325, B&H: +0.636
+    Classification: honest_ceiling
+
+  Tracing XAG/USD / weekly / momentum...
+    Sign-flip prob: 46.6%
+    Median SNR at 10σ: 0.0553
+    Sharpe@0σ: +0.857, Sharpe@10σ: +0.397, B&H: +0.350
+    Classification: honest_ceiling
+
+  Tracing XAG/USD / weekly / carry_momentum...
+    Sign-flip prob: 46.6%
+    Median SNR at 10σ: 0.0553
+    Sharpe@0σ: +0.857, Sharpe@10σ: +0.397, B&H: +0.350
+    Classification: honest_ceiling
+
+  Tracing EUR/USD / daily / mean_reversion...
+    Sign-flip prob: 0.4%
+    Median SNR at 10σ: 0.0448
+    Sharpe@0σ: +0.389, Sharpe@10σ: +0.390, B&H: -0.056
+    Classification: trivially_saturated
+
+  Tracing USD/JPY / daily / mean_reversion...
+    Sign-flip prob: 0.2%
+    Median SNR at 10σ: 0.0450
+    Sharpe@0σ: +0.305, Sharpe@10σ: +0.306, B&H: +0.166
+    Classification: trivially_saturated
+
+  Tracing GBP/USD / 4h / vol_regime_switch...
+    Sign-flip prob: 27.6%
+    Median SNR at 10σ: 0.0469
+    Sharpe@0σ: +0.605, Sharpe@10σ: +0.193, B&H: +0.160
+    Classification: ambiguous
+
+  Tracing AUD/USD / weekly / vol_regime_switch...
+    Sign-flip prob: 26.9%
+    Median SNR at 10σ: 0.0538
+    Sharpe@0σ: +0.453, Sharpe@10σ: +0.426, B&H: -0.050
+    Classification: ambiguous
+
+  Tracing EUR/JPY / weekly / vol_regime_switch...
+    Sign-flip prob: 28.0%
+    Median SNR at 10σ: 0.0537
+    Sharpe@0σ: +0.331, Sharpe@10σ: +0.167, B&H: +0.130
+    Classification: ambiguous
+
+======================================================================
+TASK 1.3: CLASSIFICATION SUMMARY
+======================================================================
+
+  Honest ceiling (sign-flip ≥ 40%): 6
+    BTC/USD/weekly/momentum: flip=49.5%
+    BTC/USD/weekly/carry_momentum: flip=49.5%
+    XAU/USD/weekly/momentum: flip=46.3%
+    XAU/USD/weekly/carry_momentum: flip=46.3%
+    XAG/USD/weekly/momentum: flip=46.6%
+    XAG/USD/weekly/carry_momentum: flip=46.6%
+
+  Trivially saturated (sign-flip < 20%): 2
+    EUR/USD/daily/mean_reversion: flip=0.4%
+    USD/JPY/daily/mean_reversion: flip=0.2%
+
+  Ambiguous (20-40%): 3
+    GBP/USD/4h/vol_regime_switch: flip=27.6%
+    AUD/USD/weekly/vol_regime_switch: flip=26.9%
+    EUR/JPY/weekly/vol_regime_switch: flip=28.0%
+
+======================================================================
+TASK 1.4: REPLACEMENT METRICS FOR NON-HONEST CELLS
+======================================================================
+    Computing replacement metrics for EUR/USD/daily/mean_reversion...
+      Min accuracy for breakeven: 0.5
+      Magnitude sensitivity range: 0.389 to 0.389
+    Computing replacement metrics for USD/JPY/daily/mean_reversion...
+      Min accuracy for breakeven: 0.5
+      Magnitude sensitivity range: 0.305 to 0.305
+    Computing replacement metrics for GBP/USD/4h/vol_regime_switch...
+      Min accuracy for breakeven: 0.9
+      Magnitude sensitivity range: 0.605 to 0.605
+    Computing replacement metrics for AUD/USD/weekly/vol_regime_switch...
+      Min accuracy for breakeven: 0.8
+      Magnitude sensitivity range: 0.454 to 0.454
+    Computing replacement metrics for EUR/JPY/weekly/vol_regime_switch...
+      Min accuracy for breakeven: 1.0
+      Magnitude sensitivity range: 0.331 to 0.331
+
+======================================================================
+KILL CRITERION CHECK
+======================================================================
+
+  2 of 11 10σ cells are trivially saturated
+  ✓ Kill criterion not triggered
+
+  Saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/noise_budget_audit.json

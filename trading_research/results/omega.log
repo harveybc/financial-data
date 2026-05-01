@@ -1,0 +1,73 @@
+nohup: ignoring input
+================================================================================
+ORACLE SENSITIVITY SWEEP — Worker 0/1
+================================================================================
+Total cells: 60, this worker: 60
+Assets: ['AUD/JPY', 'EUR/JPY', 'GBP/JPY']
+Timeframes: ['daily', 'weekly', '4h', '1h']
+Strategies: ['momentum', 'mean_reversion', 'breakout', 'carry_momentum', 'vol_regime_switch']
+Noise grid: [0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 10.0]
+Output: trading_research/results/oracle_sweep_omega.json
+================================================================================
+  [1/60] AUD/JPY / daily / momentum... oracle SR=-0.929, budget=0.00σ (0.6s)
+  [2/60] AUD/JPY / daily / mean_reversion... oracle SR=-0.345, budget=0.00σ (1.9s)
+  [3/60] AUD/JPY / daily / breakout... oracle SR=-0.012, budget=10.00σ (0.6s)
+  [4/60] AUD/JPY / daily / carry_momentum... oracle SR=-0.929, budget=0.00σ (0.6s)
+  [5/60] AUD/JPY / daily / vol_regime_switch... oracle SR=+0.676, budget=0.50σ (2.7s)
+  [6/60] AUD/JPY / weekly / momentum... oracle SR=+0.090, budget=0.00σ (0.1s)
+  [7/60] AUD/JPY / weekly / mean_reversion... oracle SR=-0.042, budget=0.00σ (0.4s)
+  [8/60] AUD/JPY / weekly / breakout... oracle SR=+0.342, budget=0.00σ (0.1s)
+  [9/60] AUD/JPY / weekly / carry_momentum... oracle SR=+0.090, budget=0.00σ (0.1s)
+  [10/60] AUD/JPY / weekly / vol_regime_switch... oracle SR=+0.729, budget=1.50σ (0.5s)
+  [11/60] AUD/JPY / 4h / momentum... oracle SR=-3.156, budget=0.00σ (0.5s)
+  [12/60] AUD/JPY / 4h / mean_reversion... oracle SR=-0.668, budget=0.00σ (1.6s)
+  [13/60] AUD/JPY / 4h / breakout... oracle SR=-0.749, budget=0.00σ (0.5s)
+  [14/60] AUD/JPY / 4h / carry_momentum... oracle SR=-3.156, budget=0.00σ (0.5s)
+  [15/60] AUD/JPY / 4h / vol_regime_switch... oracle SR=+0.256, budget=0.10σ (2.1s)
+  [16/60] AUD/JPY / 1h / momentum... oracle SR=-14.343, budget=0.00σ (2.0s)
+  [17/60] AUD/JPY / 1h / mean_reversion... oracle SR=-4.415, budget=0.00σ (5.9s)
+  [18/60] AUD/JPY / 1h / breakout... oracle SR=-2.741, budget=0.00σ (2.1s)
+  [19/60] AUD/JPY / 1h / carry_momentum... oracle SR=-14.343, budget=0.00σ (2.0s)
+  [20/60] AUD/JPY / 1h / vol_regime_switch... oracle SR=-5.664, budget=0.00σ (9.9s)
+  [21/60] EUR/JPY / daily / momentum... oracle SR=-0.561, budget=0.00σ (0.6s)
+  [22/60] EUR/JPY / daily / mean_reversion... oracle SR=-0.057, budget=0.00σ (1.9s)
+  [23/60] EUR/JPY / daily / breakout... oracle SR=-0.228, budget=0.00σ (0.6s)
+  [24/60] EUR/JPY / daily / carry_momentum... oracle SR=-0.561, budget=0.00σ (0.6s)
+  [25/60] EUR/JPY / daily / vol_regime_switch... oracle SR=+0.071, budget=0.00σ (2.8s)
+  [26/60] EUR/JPY / weekly / momentum... oracle SR=+0.327, budget=0.25σ (0.1s)
+  [27/60] EUR/JPY / weekly / mean_reversion... oracle SR=-0.008, budget=0.00σ (0.4s)
+  [28/60] EUR/JPY / weekly / breakout... oracle SR=+0.038, budget=0.00σ (0.1s)
+  [29/60] EUR/JPY / weekly / carry_momentum... oracle SR=+0.327, budget=0.25σ (0.1s)
+  [30/60] EUR/JPY / weekly / vol_regime_switch... oracle SR=+0.535, budget=10.00σ (0.5s)
+  [31/60] EUR/JPY / 4h / momentum... oracle SR=-3.607, budget=0.00σ (0.5s)
+  [32/60] EUR/JPY / 4h / mean_reversion... oracle SR=-0.926, budget=0.00σ (1.5s)
+  [33/60] EUR/JPY / 4h / breakout... oracle SR=+0.732, budget=1.00σ (0.6s)
+  [34/60] EUR/JPY / 4h / carry_momentum... oracle SR=-3.607, budget=0.00σ (0.5s)
+  [35/60] EUR/JPY / 4h / vol_regime_switch... oracle SR=+0.805, budget=0.25σ (2.2s)
+  [36/60] EUR/JPY / 1h / momentum... oracle SR=-18.333, budget=0.00σ (2.1s)
+  [37/60] EUR/JPY / 1h / mean_reversion... oracle SR=-6.308, budget=0.00σ (6.0s)
+  [38/60] EUR/JPY / 1h / breakout... oracle SR=-2.163, budget=0.00σ (2.1s)
+  [39/60] EUR/JPY / 1h / carry_momentum... oracle SR=-18.333, budget=0.00σ (2.1s)
+  [40/60] EUR/JPY / 1h / vol_regime_switch... oracle SR=-8.381, budget=0.00σ (10.1s)
+  [41/60] GBP/JPY / daily / momentum... oracle SR=-0.906, budget=0.00σ (0.7s)
+  [42/60] GBP/JPY / daily / mean_reversion... oracle SR=-0.374, budget=0.00σ (1.9s)
+  [43/60] GBP/JPY / daily / breakout... oracle SR=-0.341, budget=0.00σ (0.7s)
+  [44/60] GBP/JPY / daily / carry_momentum... oracle SR=-0.906, budget=0.00σ (0.7s)
+  [45/60] GBP/JPY / daily / vol_regime_switch... oracle SR=+0.131, budget=0.00σ (2.7s)
+  [46/60] GBP/JPY / weekly / momentum... oracle SR=-0.119, budget=0.00σ (0.1s)
+  [47/60] GBP/JPY / weekly / mean_reversion... oracle SR=-0.123, budget=0.00σ (0.4s)
+  [48/60] GBP/JPY / weekly / breakout... oracle SR=+0.173, budget=5.00σ (0.1s)
+  [49/60] GBP/JPY / weekly / carry_momentum... oracle SR=-0.119, budget=0.00σ (0.1s)
+  [50/60] GBP/JPY / weekly / vol_regime_switch... oracle SR=+0.445, budget=0.25σ (0.5s)
+  [51/60] GBP/JPY / 4h / momentum... oracle SR=-3.365, budget=0.00σ (0.5s)
+  [52/60] GBP/JPY / 4h / mean_reversion... oracle SR=-0.638, budget=0.00σ (1.5s)
+  [53/60] GBP/JPY / 4h / breakout... oracle SR=-0.582, budget=0.00σ (0.5s)
+  [54/60] GBP/JPY / 4h / carry_momentum... oracle SR=-3.365, budget=0.00σ (0.5s)
+  [55/60] GBP/JPY / 4h / vol_regime_switch... oracle SR=+1.306, budget=0.50σ (2.2s)
+  [56/60] GBP/JPY / 1h / momentum... oracle SR=-17.409, budget=0.00σ (2.1s)
+  [57/60] GBP/JPY / 1h / mean_reversion... oracle SR=-5.516, budget=0.00σ (6.1s)
+  [58/60] GBP/JPY / 1h / breakout... oracle SR=-1.643, budget=0.00σ (2.1s)
+  [59/60] GBP/JPY / 1h / carry_momentum... oracle SR=-17.409, budget=0.00σ (2.0s)
+  [60/60] GBP/JPY / 1h / vol_regime_switch... oracle SR=-7.057, budget=0.00σ (10.1s)
+
+Saved 60 results to trading_research/results/oracle_sweep_omega.json

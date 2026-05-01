@@ -1,0 +1,2 @@
+experiment_id,path,window_id,model_type,train_start,train_end,val_start,val_end,test_start,test_end,embargo_bars,train_sharpe,val_sharpe,test_sharpe,train_mae,val_mae,test_mae,max_dd,num_trades,cost_ratio,params_json,model_hash,timestamp,status,error
+pilot_002,A,1,ls_pred_strategy,2005-01-03,2013-12-31,2014-01-01,2014-12-31,2015-01-01,2015-12-31,6,,,,,,,,,,{},,2026-04-19T02:31:11.369756,FAILED,ModuleNotFoundError: No module named 'data_processor'

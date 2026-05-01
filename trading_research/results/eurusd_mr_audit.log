@@ -1,0 +1,118 @@
+nohup: ignoring input
+======================================================================
+PHASE 2: DEEP AUDIT — EUR/USD MEAN REVERSION
+======================================================================
+  Data: 93084 bars, 2005-05-02 00:00:00 to 2020-04-29 22:00:00
+  Detected: hourly data, PPY=8766
+
+======================================================================
+TASK 2.1: FULL CHARACTERIZATION
+======================================================================
+  Best params: lookback=20, z_entry=2.0, z_exit=0.0
+  Best net Sharpe: -0.0156
+  Rolling robustness: 22.22%
+  Full-period Sharpe: -0.0156
+  Worst window Sharpe: -0.5622
+  Max DD: 22.78%
+  Is interesting: False
+  Trades/year: 220.3
+  Hit rate: 50.7%
+  Avg winner: +7.6 bps
+  Avg loser: -7.9 bps
+
+  Stress regime performance:
+    2008 GFC: Sharpe=-0.0919, DD=12.98%
+    2011-12 Euro crisis: Sharpe=+0.3175, DD=9.60%
+    2015 SNB/China: Sharpe=-1.3286, DD=19.17%
+    2020 COVID: Sharpe=-4.3772, DD=11.72%
+
+======================================================================
+TASK 2.2: PARAMETER PERTURBATION ROBUSTNESS
+======================================================================
+  lookback: range=0.4378, plateau=0%
+    values: [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+    sharpes: [np.float64(-0.2532), np.float64(-0.4534), np.float64(-0.4435), np.float64(-0.2405), np.float64(-0.1816), np.float64(-0.0156), np.float64(-0.2517), np.float64(-0.1582), np.float64(-0.2012), np.float64(-0.0791), np.float64(-0.1667)]
+  z_entry: range=0.6765, plateau=9%
+    values: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.8, 3.0]
+    sharpes: [np.float64(-0.6267), np.float64(-0.4454), np.float64(-0.3705), np.float64(-0.3188), np.float64(-0.1379), np.float64(-0.0156), np.float64(0.0498), np.float64(-0.18), np.float64(-0.2095), np.float64(-0.1805), np.float64(-0.3518)]
+  z_exit: range=0.0000, plateau=0%
+    values: []
+    sharpes: []
+
+  Verdict: FRAGILE (narrow spike)
+
+======================================================================
+TASK 2.3: COST SENSITIVITY
+======================================================================
+    0.0 bps: Sharpe=+0.2748, Robustness=0.44
+    1.0 bps: Sharpe=+0.0815, Robustness=0.33
+    1.5 bps: Sharpe=-0.0156, Robustness=0.22
+    2.0 bps: Sharpe=-0.1131, Robustness=0.17
+    3.0 bps: Sharpe=-0.3092, Robustness=0.17
+    5.0 bps: Sharpe=-0.7048, Robustness=0.00
+    8.0 bps: Sharpe=-1.3063, Robustness=0.00
+   10.0 bps: Sharpe=-1.7114, Robustness=0.00
+
+  Break-even cost: 0 bps
+  Survives at 3 bps: NO — KILL
+
+======================================================================
+TASK 2.4: STRUCTURAL EXPLANATION
+======================================================================
+
+  Time-of-day distribution of trades:
+    Hour 00: Sharpe=+2.8906 ████████████████████████████
+    Hour 01: Sharpe=+4.0441 ████████████████████████████████████████
+    Hour 02: Sharpe=-2.3846 
+    Hour 03: Sharpe=-2.4645 
+    Hour 04: Sharpe=-0.7385 
+    Hour 05: Sharpe=+0.7365 ███████
+    Hour 06: Sharpe=+2.7579 ███████████████████████████
+    Hour 07: Sharpe=-0.0321 
+    Hour 08: Sharpe=+2.2295 ██████████████████████
+    Hour 09: Sharpe=-0.5859 
+    Hour 10: Sharpe=-1.0502 
+    Hour 11: Sharpe=-1.6355 
+    Hour 12: Sharpe=+0.3780 ███
+    Hour 13: Sharpe=-0.5118 
+    Hour 14: Sharpe=-1.0605 
+    Hour 15: Sharpe=+0.9644 █████████
+    Hour 16: Sharpe=+5.6262 ████████████████████████████████████████████████████████
+    Hour 17: Sharpe=-1.4154 
+    Hour 18: Sharpe=-3.8659 
+    Hour 19: Sharpe=-0.7369 
+    Hour 20: Sharpe=-1.7711 
+    Hour 21: Sharpe=-2.2108 
+    Hour 22: Sharpe=+0.3413 ███
+    Hour 23: Sharpe=-1.9176 
+
+  Session analysis:
+    Asian (0-8 UTC): Sharpe=+0.8046
+    London (8-16 UTC): Sharpe=-0.1036
+    New York (13-21 UTC): Sharpe=-0.2772
+    Off-hours (21-0 UTC): Sharpe=-1.3293
+
+  Day-of-week analysis:
+    Mon: Sharpe=+2.8360
+    Tue: Sharpe=-0.5908
+    Wed: Sharpe=-0.5913
+    Thu: Sharpe=+0.1759
+    Fri: Sharpe=-0.9768
+
+  Autocorrelation structure:
+    AC(1): -0.0091
+    AC(2): +0.0031
+    AC(5): -0.0020
+    AC(10): -0.0044
+    AC(20): +0.0044
+
+======================================================================
+PHASE 2: FINAL VERDICT
+======================================================================
+  ✗ FAIL: Rolling robustness >= 0.4
+  ✗ FAIL: Parameter plateau robust
+  ✗ FAIL: Survives 3 bps cost
+
+  ✗ EUR/USD MR KILLED — discard and do not revisit
+
+  Saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/eurusd_mr_audit.json

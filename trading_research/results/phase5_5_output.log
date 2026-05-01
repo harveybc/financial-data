@@ -1,0 +1,252 @@
+╔════════════════════════════════════════════════════════════════════╗
+║  PHASE 5.5 — CORRECTIVE AUDIT BEFORE TERMINAL STATE DECISION     ║
+╚════════════════════════════════════════════════════════════════════╝
+
+======================================================================
+TASK 5.5.1 — ORACLE-FREE PORTFOLIO REBUILD
+======================================================================
+
+--- 5.5.1.1: Cell Classification ---
+
+  Cell                                          Oracle-Free?    Source
+  ---------------------------------------------------------------------------
+  EUR/USD_daily_pure_mr                         YES             phase4_trackA
+  USD/JPY_daily_pure_mr                         YES             phase4_trackA
+  USD/JPY_daily_tsmom                           YES             phase4_trackC
+  XAU/USD_daily_tsmom                           YES             phase4_trackC
+  USD/JPY_daily_dual_momentum                   YES             phase4_trackC
+  EUR/USD_daily_mean_reversion                  NO (σ=10)       phase3_oracle
+  USD/JPY_daily_mean_reversion                  NO (σ=10)       phase3_oracle
+  XAU/USD_daily_momentum                        NO (σ=10)       phase3_oracle
+  XAU/USD_weekly_momentum                       NO (σ=10)       phase3_oracle
+  BTC/USD_weekly_momentum                       NO (σ=10)       phase3_oracle
+  AUD/USD_weekly_vol_regime_switch              NO (σ=10)       phase3_oracle
+  EUR/JPY_weekly_vol_regime_switch              NO (σ=10)       phase3_oracle
+
+  Oracle-free cells: 5
+  Oracle-dependent cells: 7 (EXCLUDED from portfolio)
+
+--- Loading FX data ---
+  EUR/USD: 5806 bars
+  USD/JPY: 6044 bars
+  GBP/USD: 5818 bars
+  AUD/USD: 5182 bars
+
+--- 5.5.1.2: Computing oracle-free cell returns + edge > 0 filter ---
+  INCLUDED EUR/USD_daily_pure_mr: SR=+0.186, Edge=+0.193, Worst2Y=-1.431
+  INCLUDED USD/JPY_daily_pure_mr: SR=+0.133, Edge=+0.027, Worst2Y=-1.329
+  INCLUDED USD/JPY_daily_tsmom: SR=+0.296, Edge=+0.190, Worst2Y=-0.598
+  EXCLUDED XAU/USD_daily_tsmom: edge=-0.2404 <= 0
+  INCLUDED USD/JPY_daily_dual_momentum: SR=+0.406, Edge=+0.299, Worst2Y=-0.973
+
+--- 5.5.1.3: Asset over-representation check ---
+  EUR/USD: 1 cell(s) — OK
+  ⚠ USD/JPY has 3 cells: ['USD/JPY_daily_pure_mr', 'USD/JPY_daily_tsmom', 'USD/JPY_daily_dual_momentum']
+    DROPPED USD/JPY_daily_pure_mr (edge=+0.027)
+
+  Final oracle-free candidate set: 3 cells
+
+--- 5.5.1.4-5: Portfolio construction at weekly frequency ---
+  (Using Option B: weekly aggregation to avoid forward-fill artifacts)
+  Weekly return matrix: 977 weeks × 3 cells
+  Period: 2004-02-06 to 2026-04-17
+
+  Weekly return correlations:
+    EUR/USD_daily_pure_mr / USD/JPY_daily_tsmom: -0.018
+    EUR/USD_daily_pure_mr / USD/JPY_daily_dual_momentum: +0.029
+    USD/JPY_daily_tsmom / USD/JPY_daily_dual_momentum: +0.556
+
+  --- Portfolio Results (realized vol) ---
+
+  P1_equal_weight:
+    SR=+0.476, Worst2Y=-1.008, MaxDD=14.4%, Vol=7.2%, TotalRet=+90.5%
+
+  P2_inverse_vol:
+    SR=+0.473, Worst2Y=-0.997, MaxDD=14.5%, Vol=7.2%, TotalRet=+89.7%
+
+  P3_inverse_worst_window:
+    SR=+0.449, Worst2Y=-0.632, MaxDD=15.0%, Vol=7.8%, TotalRet=+92.4%
+
+  P4_risk_parity:
+    SR=+0.471, Worst2Y=-0.986, MaxDD=14.6%, Vol=7.2%, TotalRet=+89.0%
+
+  P5_hedged_pairs:
+    SR=+0.476, Worst2Y=-1.008, MaxDD=14.4%, Vol=7.2%, TotalRet=+90.5%
+
+  --- Portfolio Results (scaled to 10% target vol) ---
+
+  P1_equal_weight @10% vol:
+    SR=+0.476, Worst2Y=-1.008, MaxDD=19.4%, Leverage=1.4x
+
+  P2_inverse_vol @10% vol:
+    SR=+0.473, Worst2Y=-0.997, MaxDD=19.5%, Leverage=1.4x
+
+  P3_inverse_worst_window @10% vol:
+    SR=+0.449, Worst2Y=-0.632, MaxDD=18.9%, Leverage=1.3x
+
+  P4_risk_parity @10% vol:
+    SR=+0.471, Worst2Y=-0.986, MaxDD=19.7%, Leverage=1.4x
+
+  P5_hedged_pairs @10% vol:
+    SR=+0.476, Worst2Y=-1.008, MaxDD=19.4%, Leverage=1.4x
+
+  Regime analysis (P3_inverse_worst_window):
+    pre_gfc: SR=-0.355 (140 weeks)
+    gfc: SR=+0.811 (82 weeks)
+    qe_era: SR=+0.493 (471 weeks)
+    covid: SR=+0.771 (80 weeks)
+    inflation: SR=+0.543 (204 weeks)
+
+======================================================================
+TASK 5.5.2 — OUT-OF-SAMPLE PORTFOLIO VALIDATION
+======================================================================
+
+  Training period: 2004-02-06 to 2018-12-28 (643 weeks)
+  Test period:     2019-01-04 to 2023-12-29 (230 weeks)
+
+--- 5.5.2.2: In-sample weight construction ---
+
+  Frozen weights (from training period only):
+    P1: EUR/USD_daily_pure_mr=0.333, USD/JPY_daily_tsmom=0.333, USD/JPY_daily_dual_momentum=0.333
+    P2: EUR/USD_daily_pure_mr=0.286, USD/JPY_daily_tsmom=0.340, USD/JPY_daily_dual_momentum=0.373
+    P3: EUR/USD_daily_pure_mr=0.249, USD/JPY_daily_tsmom=0.368, USD/JPY_daily_dual_momentum=0.383
+    P4: EUR/USD_daily_pure_mr=0.243, USD/JPY_daily_tsmom=0.344, USD/JPY_daily_dual_momentum=0.413
+    P5: USD/JPY_daily_dual_momentum=0.333, USD/JPY_daily_tsmom=0.333, EUR/USD_daily_pure_mr=0.333
+
+--- 5.5.2.3-4: IS vs OOS evaluation ---
+
+  P1:
+    IS:  SR=+0.474, Worst2Y=-1.008, MaxDD=14.4%
+    OOS: SR=+0.609, Worst2Y=-0.008, MaxDD=14.1%
+    Degradation: -28%
+
+  P2:
+    IS:  SR=+0.471, Worst2Y=-0.944, MaxDD=14.2%
+    OOS: SR=+0.636, Worst2Y=-0.027, MaxDD=15.0%
+    Degradation: -35%
+
+  P3:
+    IS:  SR=+0.459, Worst2Y=-0.852, MaxDD=14.6%
+    OOS: SR=+0.655, Worst2Y=-0.030, MaxDD=15.4%
+    Degradation: -43%
+
+  P4:
+    IS:  SR=+0.465, Worst2Y=-0.870, MaxDD=15.0%
+    OOS: SR=+0.657, Worst2Y=-0.047, MaxDD=15.9%
+    Degradation: -41%
+
+  P5:
+    IS:  SR=+0.474, Worst2Y=-1.008, MaxDD=14.4%
+    OOS: SR=+0.609, Worst2Y=-0.008, MaxDD=14.1%
+    Degradation: -28%
+
+  --- Degradation Summary ---
+  Robust (≤30% degradation): P1, P2, P3, P4, P5
+
+======================================================================
+TASK 5.5.3 — PROPER BENCHMARK COMPARISON (ACTIVE STRATEGIES ONLY)
+======================================================================
+
+--- 5.5.3.1-2: Downloading and analyzing active benchmarks ---
+
+  WTMF — WisdomTree Managed Futures (since 2011):
+    SR=+0.149, Vol=6.6%, Worst2Y=-1.540
+
+  FMF — First Trust Managed Futures (since 2013):
+    SR=+0.244, Vol=8.0%, Worst2Y=-0.804
+
+  DBMF — iMGP DBi Managed Futures (since 2019):
+    SR=+0.738, Vol=11.6%, Worst2Y=-0.410
+
+  KMLM — KFA Mount Lucas ML Futures (since 2020):
+    SR=+0.417, Vol=13.5%, Worst2Y=-0.699
+
+  PQTAX — PIMCO TRENDS Managed Futures (since ~2014):
+    SR=+0.432, Vol=10.0%, Worst2Y=-0.941
+
+  GMOM — Cambria Global Momentum (since 2014):
+    SR=+0.631, Vol=13.3%, Worst2Y=-0.248
+
+--- 5.5.3.3-4: Side-by-side comparison ---
+
+  Entity                              Period                   Sharpe   Worst2Y  Pass-0.5  Pass-0.7  Pass-1.0
+  ----------------------------------------------------------------------------------------------------
+  WTMF                                2011-01-05→2026-04-17    +0.149    -1.540        no        no        no
+  FMF                                 2013-08-02→2026-04-17    +0.244    -0.804        no        no       YES
+  DBMF                                2019-05-08→2026-04-17    +0.738    -0.410       YES       YES       YES
+  KMLM                                2020-12-02→2026-04-17    +0.417    -0.699        no       YES       YES
+  PQTAX                               2014-01-06→2026-04-16    +0.432    -0.941        no        no       YES
+  GMOM                                2018-12-19→2026-04-17    +0.631    -0.248       YES       YES       YES
+  Our P1_equal_weight                full period              +0.476    -1.008        no        no        no
+  Our P2_inverse_vol                 full period              +0.473    -0.997        no        no       YES
+  Our P3_inverse_worst_window        full period              +0.449    -0.632        no       YES       YES
+  Our P4_risk_parity                 full period              +0.471    -0.986        no        no       YES
+  Our P5_hedged_pairs                full period              +0.476    -1.008        no        no        no
+
+--- 5.5.3.5: Threshold recalibration ---
+
+  Benchmark worst-2Y distribution:
+    Median: -0.752
+    25th percentile: -0.907
+    Pass -0.5: 2/6 (33%)
+    Pass -0.7: 3/6 (50%)
+    Pass -1.0: 5/6 (83%)
+
+  RECOMMENDED THRESHOLD: -0.9
+  Justification: 25th percentile of 6 active managed-futures benchmarks
+  Our portfolios passing at -0.9: 1/5
+
+======================================================================
+TASK 5.5.4 — Q3 DEPLOYMENT AUDIT
+======================================================================
+
+--- 5.5.4.1: Auto-pause contradiction ---
+  Historical max DD: 23.5%
+  Current auto-pause: 15.0%
+  Gap: strategy WOULD HAVE been paused 8.5% before worst DD
+
+  Resolution: OPTION C — keep 15% auto-pause + explicit resume protocol
+  Rationale: For demo phase, information-gathering > return-maximization
+  If paused, resume criteria:
+    1. Human review within 48 hours
+    2. Check: has volatility normalized? (trailing 20-day vol < 1.5× long-term)
+    3. Check: are costs within modeled range? (slippage < 2× expected)
+    4. Check: has strategy entered new signal regime? (z-score near zero = no signal)
+    5. If 2 of 3 checks pass → resume. Otherwise → continue pause.
+
+--- 5.5.4.2: Deployment status ---
+  Strategy plugin: EXISTS (/home/harveybc/Documents/GitHub/lts/plugins_strategy/eurusd_mr_strategy.py)
+  Log directory: EXISTS (/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/q3_deployment_logs)
+  OANDA_ACCOUNT_ID: NOT SET
+  OANDA_ACCESS_TOKEN: NOT SET
+
+  ⚠ OANDA credentials not set — demo trading NOT live
+  To activate: export OANDA_ACCOUNT_ID=xxx OANDA_ACCESS_TOKEN=xxx
+  Trades logged: 0
+
+  DEPLOYMENT STATUS: NOT_LIVE_CREDENTIALS_MISSING
+  Action required: Set OANDA practice account credentials to begin demo trading
+  The strategy plugin and monitoring infrastructure are ready
+
+======================================================================
+TASK 5.5.5 — REVISED SYNTHESIS AND TERMINAL STATE
+======================================================================
+
+--- Decision inputs ---
+  Recalibrated threshold: -0.9
+  Best corrected portfolio: P3_inverse_worst_window
+  Best IS worst-2Y: -0.632
+  Best OOS Sharpe: +0.655
+  Best OOS worst-2Y: -0.030
+  Oracle-free cells: 3
+  Robust portfolios (≤30% OOS degradation): ['P1', 'P2', 'P3', 'P4', 'P5']
+  Q3 deployment status: NOT_LIVE_CREDENTIALS_MISSING
+
+--- Terminal state determination ---
+
+  TERMINAL STATE: TERMINAL_1
+  Description: DEPLOY PORTFOLIO
+  Evidence: P3_inverse_worst_window passes IS (worst2Y=-0.632 > -0.9) AND OOS (worst2Y=-0.030 > -0.9) with ≤30% SR degradation
+
+  Full results saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/phase5_5_results.json
+

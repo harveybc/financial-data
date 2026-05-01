@@ -1,0 +1,14 @@
+{
+  "total_features": 13,
+  "horizons_tested": [
+    1,
+    6,
+    24
+  ],
+  "rolling_window": 1560,
+  "significant_ics": 17,
+  "total_tests": 39,
+  "f6_contradiction_flags": [],
+  "interpretation": "No features exceed IC \u00b10.1 threshold. Consistent with F-6 null finding at 4h.",
+  "generated_at": "2026-04-19T02:23:35.976352"
+}

@@ -1,0 +1,58 @@
+nohup: ignoring input
+======================================================================
+PHASE 3: EXOGENOUS DATA ENRICHMENT
+======================================================================
+  Downloading macro features...
+    DGS10 (US 10Y yield)... 5253 obs
+    DGS2 (US 2Y yield)... 5253 obs
+    T10Y2Y (10Y-2Y spread)... 5253 obs
+    DFF (Fed Funds Rate)... 7670 obs
+    VIX... 5282 obs
+    DXY... 5288 obs
+  ✓ Macro features: ['DGS10', 'DGS2', 'T10Y2Y', 'DFF', 'VIX', 'DXY', 'yield_spread', 'VIX_pctile_60d', 'DXY_ret_20d'], 7670 rows
+  Downloading crypto features...
+    BTC volume data... 2921 obs
+    ETH volume data... 2921 obs
+    BTC dominance: not available from yfinance, skipping
+  ✓ Crypto features: ['BTC_volume', 'BTC_vol_20d', 'BTC_ret_20d', 'ETH_volume', 'ETH_vol_20d', 'ETH_ret_20d'], 2921 rows
+  Downloading COT data...
+    Trying CFTC direct download...
+    ⚠ COT download failed: HTTP Error 403: Forbidden
+    → COT data will be added manually later if needed
+
+  Building: EUR/USD / daily...
+    ✓ 5445 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/EUR_USD_daily.csv
+
+  Building: USD/JPY / daily...
+    ✓ 5445 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/USD_JPY_daily.csv
+
+  Building: GBP/USD / daily...
+    ✓ 5457 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/GBP_USD_daily.csv
+
+  Building: AUD/USD / daily...
+    ✓ 5105 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/AUD_USD_daily.csv
+
+  Building: AUD/JPY / daily...
+    ✓ 5464 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/AUD_JPY_daily.csv
+
+  Building: EUR/JPY / daily...
+    ✓ 5448 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/EUR_JPY_daily.csv
+
+  Building: GBP/JPY / daily...
+    ✓ 5461 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/GBP_JPY_daily.csv
+
+  Building: XAU/USD / daily...
+    ✓ 5277 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/XAU_USD_daily.csv
+
+  Building: CL / daily...
+/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/exogenous_data.py:253: RuntimeWarning: invalid value encountered in log
+  ret = np.diff(np.log(close + 1e-12))
+    ✓ 5281 rows, 19 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/CL_daily.csv
+
+  Building: BTC/USD / daily...
+    ✓ 4123 rows, 25 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/BTC_USD_daily.csv
+
+  Building: ETH/USD / daily...
+    ✓ 2974 rows, 25 features → /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/ETH_USD_daily.csv
+
+  Feature store manifest saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/manifest.json

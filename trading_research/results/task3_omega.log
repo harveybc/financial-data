@@ -1,0 +1,34 @@
+nohup: ignoring input
+======================================================================
+PHASE 3.5 — TASK 3: HISTORICAL DATA EXTENSION
+======================================================================
+
+--- Task 3.1: Download Extended Historical Data ---
+    Downloading EUR/JPY (EURJPY=X) weekly from 2003-01-01... (1 gaps > 14d) 1195 bars, 2003-01-20 to 2025-12-29
+
+--- Task 3.2: Recompute Oracle Sweep on Extended Data ---
+
+  EUR/JPY / weekly / vol_regime_switch...
+    Oracle SR: +0.447, B&H: +0.140, Edge: +0.307
+    Noise budget: 1.00σ, Robustness: 0.62
+    Worst window: -3.095, Max DD: 61.5%
+    Regime analysis: positive edge in 4/5 regimes
+      pre_gfc (2000-2007): edge=+1.171, n=258
+      gfc_euro_crisis (2008-2012): edge=-0.206, n=258
+      post_crisis_qe (2013-2019): edge=+0.054, n=365
+      covid_stimulus (2020-2021): edge=+0.069, n=104
+      inflation_hikes (2022-2025): edge=+1.346, n=209
+    ✗ KILLED: worst window Sharpe = -3.095 (threshold: -0.5)
+
+======================================================================
+TASK 3 SUMMARY
+======================================================================
+
+  Total cells evaluated: 1
+  Survived: 0
+  Killed: 1
+
+  Killed cells:
+    EUR/JPY/weekly/vol_regime_switch: worst window Sharpe = -3.095 (threshold: -0.5)
+
+  Saved to trading_research/results/task3_omega.json

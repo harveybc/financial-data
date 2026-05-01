@@ -1,0 +1,62 @@
+{
+  "eurusd": {
+    "1h": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/eurusd_1h.csv",
+      "bars": 129782
+    },
+    "4h": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/eurusd_4h.csv",
+      "bars": 33730
+    },
+    "daily": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/eurusd_daily.csv",
+      "bars": 6550
+    },
+    "weekly": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/eurusd_weekly.csv",
+      "bars": 1096
+    }
+  },
+  "usdjpy": {
+    "1h": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/usdjpy_1h.csv",
+      "bars": 129761
+    },
+    "4h": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/usdjpy_4h.csv",
+      "bars": 33725
+    },
+    "daily": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/usdjpy_daily.csv",
+      "bars": 6550
+    },
+    "weekly": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/usdjpy_weekly.csv",
+      "bars": 1096
+    }
+  },
+  "spy": {
+    "daily": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/spy_daily.csv",
+      "bars": 8287
+    },
+    "weekly": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/spy_weekly.csv",
+      "bars": 1719
+    }
+  },
+  "btcusd": {
+    "4h": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/btcusd_4h.csv",
+      "bars": 18332
+    },
+    "daily": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/btcusd_daily.csv",
+      "bars": 3059
+    },
+    "weekly": {
+      "path": "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/project2/part_II_redux/data/processed/btcusd_weekly.csv",
+      "bars": 438
+    }
+  }
+}

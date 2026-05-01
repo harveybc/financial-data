@@ -1,0 +1,354 @@
+{
+  "experiment_id": "A2_quarterly_ga",
+  "path": "A",
+  "aggregate_test_sharpe": 0.0,
+  "mean_test_sharpe": 0.0,
+  "std_test_sharpe": 0.0,
+  "mean_val_sharpe": 0.0,
+  "max_drawdown": 0.0,
+  "total_test_trades": 0,
+  "window_consistency": 0.0,
+  "positive_windows": 0,
+  "total_windows": 47,
+  "final_equity": 10000.0,
+  "param_stability_cv": {
+    "atr_period": 0.413,
+    "atr_tp_multiplier": 0.6176,
+    "atr_sl_multiplier": 0.4488,
+    "cluster_confidence": 0.3933
+  },
+  "window_metrics": [
+    {
+      "window": 1,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 2,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 3,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 4,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 5,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 6,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 7,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 8,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 9,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 10,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 11,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 12,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 13,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 14,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 15,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 16,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 17,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 18,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 19,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 20,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 21,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 22,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 23,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 24,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 25,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 26,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 27,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 28,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 29,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 30,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 31,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 32,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 33,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 34,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 35,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 36,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 37,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 38,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 39,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 40,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 41,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 42,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 43,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 44,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 45,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 46,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 47,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    }
+  ],
+  "total_time_sec": 19743.94275212288,
+  "windows_completed": 47,
+  "windows_total": 47
+}

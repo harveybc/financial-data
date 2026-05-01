@@ -1,0 +1,132 @@
+
+######################################################################
+# CI-2a: DAILY TIMEFRAME
+######################################################################
+
+  Loading Daily OHLCV: data/processed/eurusd_daily_2005_2024.csv
+    Bars: 5,217  Range: 2005-01-03 00:00:00 to 2024-12-31 00:00:00
+    Daily features: 5,073 bars × 12 features
+
+======================================================================
+PCMCI+ CAUSAL DISCOVERY — DAILY (CI-2A)
+======================================================================
+  Variables: 13 (12 features + fwd_ret_6)
+  Samples: 5,073
+  Max lag: 10
+  pc_alpha=0.01, alpha_level=0.05
+  Running PCMCI+ ...
+  Completed in 230.1s
+
+  Significant causal links → fwd_ret_6 (alpha=0.05):
+           Feature   Lag         MCI     p-value  Link
+  ────────────────  ────  ──────────  ──────────  ────────
+       bb_position  t=0      -0.0845    0.000000  -->
+               rsi  t=0      -0.2839    0.000000  -->
+         fwd_ret_6  t-1      +0.6590    0.000000  -->  (auto)
+
+  Summary:
+    Total significant links → target: 2
+    Contemporaneous (tau=0): 2
+    Lagged (tau>0): 0
+    Autodependency links: 1
+  [CHECKPOINT] Saved after CI-2a Daily → deliverables/ci2_results.json
+
+######################################################################
+# CI-2b: WEEKLY TIMEFRAME
+######################################################################
+
+  Resampling 1h → weekly from: data/raw/eurusd_1h_2005_2024.csv
+    1h bars: 125,185 → Weekly bars: 1,044
+    Range: 2005-01-09 00:00:00 to 2025-01-05 00:00:00
+    Weekly features: 900 bars × 12 features
+
+======================================================================
+PCMCI+ CAUSAL DISCOVERY — WEEKLY (CI-2B)
+======================================================================
+  Variables: 13 (12 features + fwd_ret_6)
+  Samples: 900
+  Max lag: 10
+  pc_alpha=0.01, alpha_level=0.05
+  Running PCMCI+ ...
+  Completed in 37.8s
+
+  Significant causal links → fwd_ret_6 (alpha=0.05):
+           Feature   Lag         MCI     p-value  Link
+  ────────────────  ────  ──────────  ──────────  ────────
+               rsi  t=0      -0.1094    0.001249  -->
+         fwd_ret_6  t-1      +0.6336    0.000000  -->  (auto)
+
+  Summary:
+    Total significant links → target: 1
+    Contemporaneous (tau=0): 1
+    Lagged (tau>0): 0
+    Autodependency links: 1
+  [CHECKPOINT] Saved after CI-2b Weekly → deliverables/ci2_results.json
+
+######################################################################
+# CI-3: MACRO FEATURES (daily + macro)
+######################################################################
+
+  Loading Daily OHLCV (for CI-3): data/processed/eurusd_daily_2005_2024.csv
+    Bars: 5,217  Range: 2005-01-03 00:00:00 to 2024-12-31 00:00:00
+    Daily+Macro features: 5,073 bars × 12 features
+
+  Preparing macro features for CI-3...
+    Macro: 240 monthly rows, cols: ['US_10Y_Yield', 'DXY_Broad', 'VIX', 'CPI', 'Unemployment', 'Fed_Funds_Rate', 'EU_3M_Rate', 'US_EU_Rate_Diff']
+    CFTC: 1044 weekly rows, cols: ['EUR_Net_Long', 'EUR_Long', 'EUR_Short', 'EUR_Net_Change']
+    After merge: 5073 bars with 4 macro features
+    Macro cols: ['us_eu_rate_diff', 'dxy', 'vix', 'eur_net_pos']
+
+======================================================================
+PCMCI+ CAUSAL DISCOVERY — DAILY + MACRO (CI-3)
+======================================================================
+  Variables: 17 (16 features + fwd_ret_6)
+  Samples: 5,073
+  Max lag: 10
+  pc_alpha=0.01, alpha_level=0.05
+  Running PCMCI+ ...
+  Completed in 229.2s
+
+  Significant causal links → fwd_ret_6 (alpha=0.05):
+           Feature   Lag         MCI     p-value  Link
+  ────────────────  ────  ──────────  ──────────  ────────
+       bb_position  t=0      -0.0845    0.000000  -->
+               rsi  t=0      -0.2839    0.000000  -->
+         fwd_ret_6  t-1      +0.6590    0.000000  -->  (auto)
+
+  Summary:
+    Total significant links → target: 2
+    Contemporaneous (tau=0): 2
+    Lagged (tau>0): 0
+    Autodependency links: 1
+  [CHECKPOINT] Saved after CI-3 Macro → deliverables/ci2_results.json
+
+######################################################################
+# RPCMCI — REGIME-DEPENDENT (time-boxed)
+######################################################################
+
+======================================================================
+RPCMCI REGIME-DEPENDENT CAUSAL DISCOVERY — DAILY
+======================================================================
+  RPCMCI import failed: No module named 'ortools'
+  [CHECKPOINT] Saved after RPCMCI → deliverables/ci2_results.json
+
+######################################################################
+# OUTCOME CLASSIFICATION
+######################################################################
+
+  Classification: CI-gamma
+  Description: No lagged causal structure at any tested timeframe or feature set. Path B is predictably non-viable — predicting noise. Recommend halting Path B.
+  Path B go/no-go: NO-GO
+
+  Results saved to: deliverables/ci2_results.json
+
+======================================================================
+CI-2/CI-3 ANALYSIS COMPLETE
+======================================================================
+  Daily  — lagged:0  contemp:2
+  Weekly — lagged:0  contemp:1
+  Macro  — lagged:0  contemp:2
+
+  OUTCOME: CI-gamma
+  Path B: NO-GO

@@ -1,0 +1,26 @@
+{
+  "design": "pilot_single_window",
+  "asset": "EURUSD",
+  "timeframe": "4h",
+  "embargo_bars": 6,
+  "total_windows": 1,
+  "windows": [
+    {
+      "id": 1,
+      "train_start": "2005-01-03",
+      "train_end": "2013-12-31",
+      "val_start": "2014-01-01",
+      "val_end": "2014-12-31",
+      "test_start": "2015-01-01",
+      "test_end": "2015-12-31",
+      "train_bars": 0,
+      "val_bars": 0,
+      "test_bars": 0,
+      "embargo_bars": 6
+    }
+  ],
+  "held_out": {
+    "start": "2020-01-01",
+    "end": "2024-12-31"
+  }
+}

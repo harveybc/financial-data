@@ -1,0 +1,9 @@
+{
+  "atr_period": 7.000000000000001,
+  "atr_tp_multiplier": 4.928827538231727,
+  "atr_sl_multiplier": 1.6745763924638681,
+  "bb_low": 0.38260172477780574,
+  "bb_high": 0.8556560449217643,
+  "atr_ratio_high": 2.0,
+  "ema_align_thresh": -0.2566204373609916
+}

@@ -1,0 +1,75 @@
+nohup: ignoring input
+Testing top 30 cells against baselines...
+================================================================================
+  BTC/USD / weekly / momentum... oracle=+1.904 bh=+0.703 rng_p=0.000 → SURVIVES ★
+  BTC/USD / weekly / carry_momentum... oracle=+1.904 bh=+0.703 rng_p=0.000 → SURVIVES ★
+  ETH/USD / daily / breakout... oracle=+0.474 bh=+0.315 rng_p=0.110 → killed
+  CL / 4h / breakout... oracle=+0.188 bh=+0.043 rng_p=0.220 → killed
+  XAU/USD / weekly / momentum... oracle=+2.009 bh=+0.636 rng_p=0.000 → SURVIVES ★
+  XAU/USD / weekly / carry_momentum... oracle=+2.009 bh=+0.636 rng_p=0.000 → SURVIVES ★
+  XAG/USD / weekly / momentum... oracle=+0.827 bh=+0.350 rng_p=0.000 → SURVIVES ★
+  XAG/USD / weekly / breakout... oracle=+0.182 bh=+0.350 rng_p=0.160 → killed
+  XAG/USD / weekly / carry_momentum... oracle=+0.827 bh=+0.350 rng_p=0.000 → SURVIVES ★
+  EUR/USD / daily / mean_reversion... oracle=+0.469 bh=-0.068 rng_p=0.000 → SURVIVES ★
+  USD/JPY / daily / mean_reversion... oracle=+0.368 bh=+0.200 rng_p=0.020 → SURVIVES ★
+  GBP/USD / 4h / vol_regime_switch... oracle=+1.760 bh=+0.379 rng_p=0.000 → SURVIVES ★
+  AUD/USD / weekly / momentum... oracle=-0.752 bh=-0.050 rng_p=1.000 → killed
+  AUD/USD / weekly / breakout... oracle=-0.246 bh=-0.050 rng_p=0.890 → killed
+  AUD/USD / weekly / carry_momentum... oracle=-0.752 bh=-0.050 rng_p=1.000 → killed
+  AUD/USD / weekly / vol_regime_switch... oracle=+0.492 bh=-0.050 rng_p=0.040 → SURVIVES ★
+  AUD/USD / 4h / mean_reversion... oracle=+0.364 bh=+0.326 rng_p=0.090 → killed
+  AUD/USD / 4h / breakout... oracle=-0.458 bh=+0.326 rng_p=0.490 → killed
+  AUD/JPY / daily / breakout... oracle=-0.012 bh=+0.097 rng_p=0.400 → killed
+  EUR/JPY / weekly / vol_regime_switch... oracle=+0.535 bh=+0.130 rng_p=0.020 → SURVIVES ★
+  EUR/USD / 4h / breakout... oracle=+0.095 bh=+0.465 rng_p=0.210 → killed
+  GBP/USD / 4h / breakout... oracle=+0.637 bh=+0.379 rng_p=0.080 → killed
+  GBP/JPY / weekly / breakout... oracle=+0.173 bh=+0.027 rng_p=0.230 → killed
+  ETH/USD / weekly / breakout... oracle=+0.253 bh=+0.309 rng_p=0.210 → killed
+  XAU/USD / daily / momentum... oracle=+1.396 bh=+0.622 rng_p=0.000 → SURVIVES ★
+  XAU/USD / daily / carry_momentum... oracle=+1.396 bh=+0.622 rng_p=0.000 → SURVIVES ★
+  XAU/USD / daily / vol_regime_switch... oracle=+1.110 bh=+0.622 rng_p=0.000 → SURVIVES ★
+  XAG/USD / weekly / vol_regime_switch... oracle=+0.434 bh=+0.350 rng_p=0.020 → killed
+  BTC/USD / weekly / vol_regime_switch... oracle=+0.668 bh=+0.703 rng_p=0.030 → killed
+  ETH/USD / weekly / momentum... oracle=+0.644 bh=+0.309 rng_p=0.060 → killed
+
+================================================================================
+RESULTS: 14 of 30 cells survive
+================================================================================
+
+✓ 14 cells pass baseline test. Ready for Phase 4.
+  ★ BTC/USD/weekly/momentum: SR=+1.904, budget=10.00σ
+  ★ BTC/USD/weekly/carry_momentum: SR=+1.904, budget=10.00σ
+  ★ XAU/USD/weekly/momentum: SR=+2.009, budget=10.00σ
+  ★ XAU/USD/weekly/carry_momentum: SR=+2.009, budget=10.00σ
+  ★ XAG/USD/weekly/momentum: SR=+0.827, budget=10.00σ
+  ★ XAG/USD/weekly/carry_momentum: SR=+0.827, budget=10.00σ
+  ★ EUR/USD/daily/mean_reversion: SR=+0.469, budget=10.00σ
+  ★ USD/JPY/daily/mean_reversion: SR=+0.368, budget=10.00σ
+  ★ GBP/USD/4h/vol_regime_switch: SR=+1.760, budget=10.00σ
+  ★ AUD/USD/weekly/vol_regime_switch: SR=+0.492, budget=10.00σ
+  ★ EUR/JPY/weekly/vol_regime_switch: SR=+0.535, budget=10.00σ
+  ★ XAU/USD/daily/momentum: SR=+1.396, budget=3.00σ
+  ★ XAU/USD/daily/carry_momentum: SR=+1.396, budget=3.00σ
+  ★ XAU/USD/daily/vol_regime_switch: SR=+1.110, budget=3.00σ
+Traceback (most recent call last):
+  File "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/naive_baseline.py", line 207, in <module>
+    main()
+  File "/home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/naive_baseline.py", line 196, in main
+    json.dump({
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

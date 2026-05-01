@@ -1,0 +1,20 @@
+{
+  "total_bars": 125185,
+  "date_range": "2005-01-03 00:00:00 to 2024-12-31 00:00:00",
+  "years_covered": 19.991786447638603,
+  "duplicates": 0,
+  "expected_bars": 124800,
+  "actual_bars": 125185,
+  "missing_bar_pct": 0,
+  "Open_min": 1.0904084793952196,
+  "Open_max": 1.3973450157782568,
+  "High_min": 1.0906079407631544,
+  "High_max": 1.39845082886259,
+  "Low_min": 1.0898412515941425,
+  "Low_max": 1.3972215845456664,
+  "Close_min": 1.0904084793952196,
+  "Close_max": 1.3973450157782568,
+  "nan_count": 0,
+  "weekend_bars": 0,
+  "invalid_high_low": 0
+}

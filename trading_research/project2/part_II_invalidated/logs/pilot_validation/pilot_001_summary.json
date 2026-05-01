@@ -1,0 +1,27 @@
+{
+  "experiment_id": "pilot_001",
+  "path": "A",
+  "aggregate_test_sharpe": -0.17455676354316896,
+  "mean_test_sharpe": -0.17455676354316896,
+  "std_test_sharpe": 0.0,
+  "mean_val_sharpe": 0.5026897506753328,
+  "max_drawdown": 0.09958669896749835,
+  "total_test_trades": 7,
+  "window_consistency": 0.0,
+  "positive_windows": 0,
+  "total_windows": 1,
+  "final_equity": 9351.540760511965,
+  "param_stability_cv": {},
+  "window_metrics": [
+    {
+      "window": 1,
+      "test_sharpe": -0.17455676354316896,
+      "val_sharpe": 0.5026897506753328,
+      "test_trades": 7,
+      "test_max_dd": 0.09958669896749835
+    }
+  ],
+  "total_time_sec": 195.39090156555176,
+  "windows_completed": 1,
+  "windows_total": 1
+}

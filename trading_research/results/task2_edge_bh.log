@@ -1,0 +1,130 @@
+nohup: ignoring input
+======================================================================
+PHASE 3.5 — TASK 2: EDGE-OVER-BUY-AND-HOLD RERANKING
+======================================================================
+
+  BTC/USD / weekly / momentum...
+    Oracle SR: +1.906, B&H SR: +0.703, Edge SR: +1.203
+    Budget vs B&H: 5.00σ 
+    Long-only: +1.756, Short-only: +0.674
+    Long 50% / Short 46% / Flat 4%
+
+  BTC/USD / weekly / carry_momentum...
+    Oracle SR: +1.906, B&H SR: +0.703, Edge SR: +1.203
+    Budget vs B&H: 5.00σ 
+    Long-only: +1.756, Short-only: +0.674
+    Long 50% / Short 46% / Flat 4%
+
+  XAU/USD / weekly / momentum...
+    Oracle SR: +2.036, B&H SR: +0.636, Edge SR: +1.400
+    Budget vs B&H: 3.00σ 
+    Long-only: +1.782, Short-only: +0.909
+    Long 53% / Short 45% / Flat 2%
+
+  XAU/USD / weekly / carry_momentum...
+    Oracle SR: +2.036, B&H SR: +0.636, Edge SR: +1.400
+    Budget vs B&H: 3.00σ 
+    Long-only: +1.782, Short-only: +0.909
+    Long 53% / Short 45% / Flat 2%
+
+  XAG/USD / weekly / momentum...
+    Oracle SR: +0.857, B&H SR: +0.350, Edge SR: +0.507
+    Budget vs B&H: 3.00σ 
+    Long-only: +0.765, Short-only: +0.331
+    Long 51% / Short 47% / Flat 2%
+
+  XAG/USD / weekly / carry_momentum...
+    Oracle SR: +0.857, B&H SR: +0.350, Edge SR: +0.507
+    Budget vs B&H: 3.00σ 
+    Long-only: +0.765, Short-only: +0.331
+    Long 51% / Short 47% / Flat 2%
+
+  EUR/USD / daily / mean_reversion...
+    Oracle SR: +0.389, B&H SR: -0.056, Edge SR: +0.445
+    Budget vs B&H: 10.00σ 
+    Long-only: +0.134, Short-only: +0.401
+    Long 28% / Short 29% / Flat 43%
+
+  USD/JPY / daily / mean_reversion...
+    Oracle SR: +0.305, B&H SR: +0.166, Edge SR: +0.139
+    Budget vs B&H: 10.00σ 
+    Long-only: +0.402, Short-only: +0.022
+    Long 24% / Short 31% / Flat 44%
+
+  GBP/USD / 4h / vol_regime_switch...
+    Oracle SR: +0.605, B&H SR: +0.160, Edge SR: +0.445
+    Budget vs B&H: 1.50σ 
+    Long-only: -0.001, Short-only: -0.115
+    Long 50% / Short 48% / Flat 2%
+
+  AUD/USD / weekly / vol_regime_switch...
+    Oracle SR: +0.453, B&H SR: -0.050, Edge SR: +0.504
+    Budget vs B&H: 10.00σ 
+    Long-only: +0.192, Short-only: +0.474
+    Long 51% / Short 43% / Flat 6%
+
+  EUR/JPY / weekly / vol_regime_switch...
+    Oracle SR: +0.331, B&H SR: +0.130, Edge SR: +0.201
+    Budget vs B&H: 1.50σ 
+    Long-only: +0.248, Short-only: +0.100
+    Long 48% / Short 46% / Flat 6%
+
+  XAU/USD / daily / momentum...
+    Oracle SR: +1.554, B&H SR: +0.622, Edge SR: +0.933
+    Budget vs B&H: 1.50σ 
+    Long-only: +1.262, Short-only: +0.349
+    Long 51% / Short 48% / Flat 1%
+
+  XAU/USD / daily / carry_momentum...
+    Oracle SR: +1.554, B&H SR: +0.622, Edge SR: +0.933
+    Budget vs B&H: 1.50σ 
+    Long-only: +1.262, Short-only: +0.349
+    Long 51% / Short 48% / Flat 1%
+
+  XAU/USD / daily / vol_regime_switch...
+    Oracle SR: +1.129, B&H SR: +0.622, Edge SR: +0.507
+    Budget vs B&H: 1.00σ (B&H DOMINATED)
+    Long-only: +1.022, Short-only: +0.143
+    Long 49% / Short 50% / Flat 2%
+
+======================================================================
+UPDATED RANKING BY EDGE SHARPE
+======================================================================
+Rank Asset      TF      Strategy              Oracle     B&H    Edge   BvBH    Long   Short  Dom
+----------------------------------------------------------------------------------------------------
+   1 XAU/USD    weekly  momentum              +2.036  +0.636  +1.400   3.0σ  +1.782  +0.909     
+   2 XAU/USD    weekly  carry_momentum        +2.036  +0.636  +1.400   3.0σ  +1.782  +0.909     
+   3 BTC/USD    weekly  momentum              +1.906  +0.703  +1.203   5.0σ  +1.756  +0.674     
+   4 BTC/USD    weekly  carry_momentum        +1.906  +0.703  +1.203   5.0σ  +1.756  +0.674     
+   5 XAU/USD    daily   momentum              +1.554  +0.622  +0.933   1.5σ  +1.262  +0.349     
+   6 XAU/USD    daily   carry_momentum        +1.554  +0.622  +0.933   1.5σ  +1.262  +0.349     
+   7 XAU/USD    daily   vol_regime_switch     +1.129  +0.622  +0.507   1.0σ  +1.022  +0.143  YES
+   8 XAG/USD    weekly  momentum              +0.857  +0.350  +0.507   3.0σ  +0.765  +0.331     
+   9 XAG/USD    weekly  carry_momentum        +0.857  +0.350  +0.507   3.0σ  +0.765  +0.331     
+  10 AUD/USD    weekly  vol_regime_switch     +0.454  -0.050  +0.504  10.0σ  +0.192  +0.474     
+  11 GBP/USD    4h      vol_regime_switch     +0.605  +0.160  +0.445   1.5σ  -0.001  -0.115     
+  12 EUR/USD    daily   mean_reversion        +0.389  -0.056  +0.445  10.0σ  +0.134  +0.401     
+  13 EUR/JPY    weekly  vol_regime_switch     +0.331  +0.130  +0.201   1.5σ  +0.248  +0.101     
+  14 USD/JPY    daily   mean_reversion        +0.305  +0.166  +0.139  10.0σ  +0.402  +0.022     
+
+  B&H dominated (removed): 1
+    XAU/USD/daily/vol_regime_switch: edge=+0.507, budget_vs_bh=1.0σ
+
+  Surviving (not B&H dominated): 13
+    XAU/USD/weekly/momentum: edge=+1.400, budget_vs_bh=3.0σ
+    XAU/USD/weekly/carry_momentum: edge=+1.400, budget_vs_bh=3.0σ
+    BTC/USD/weekly/momentum: edge=+1.203, budget_vs_bh=5.0σ
+    BTC/USD/weekly/carry_momentum: edge=+1.203, budget_vs_bh=5.0σ
+    XAU/USD/daily/momentum: edge=+0.933, budget_vs_bh=1.5σ
+    XAU/USD/daily/carry_momentum: edge=+0.933, budget_vs_bh=1.5σ
+    XAG/USD/weekly/momentum: edge=+0.507, budget_vs_bh=3.0σ
+    XAG/USD/weekly/carry_momentum: edge=+0.507, budget_vs_bh=3.0σ
+    AUD/USD/weekly/vol_regime_switch: edge=+0.504, budget_vs_bh=10.0σ
+    GBP/USD/4h/vol_regime_switch: edge=+0.445, budget_vs_bh=1.5σ
+    EUR/USD/daily/mean_reversion: edge=+0.445, budget_vs_bh=10.0σ
+    EUR/JPY/weekly/vol_regime_switch: edge=+0.201, budget_vs_bh=1.5σ
+    USD/JPY/daily/mean_reversion: edge=+0.139, budget_vs_bh=10.0σ
+
+  ✓ 13 cells survive B&H filter
+
+  Saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/edge_over_bh_ranking.json

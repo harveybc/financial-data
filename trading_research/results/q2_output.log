@@ -1,0 +1,63 @@
+======================================================================
+PHASE 5 — Q2: INDUSTRY BENCHMARK COMPARISON
+======================================================================
+
+--- Tasks 2.1-2.2: Benchmark analysis ---
+
+  DBMF (DBMF):
+    SR=+0.693, Worst2Y=-0.513, Median2Y=+0.466, %Negative=9%
+
+  SPY (SPY):
+    SR=+0.573, Worst2Y=-1.038, Median2Y=+0.758, %Negative=10%
+
+  GLD (GLD):
+    SR=+0.595, Worst2Y=-1.170, Median2Y=+0.553, %Negative=23%
+
+  TLT (TLT):
+    SR=+0.239, Worst2Y=-1.547, Median2Y=+0.402, %Negative=29%
+
+  DBA (DBA):
+    SR=+0.080, Worst2Y=-1.562, Median2Y=-0.182, %Negative=55%
+
+  USO (USO):
+    SR=-0.208, Worst2Y=-2.047, Median2Y=-0.111, %Negative=58%
+
+--- Task 2.3: Moskowitz TSMOM analysis ---
+  In-sample (1985-2009): SR=1.03, worst2Y=-0.4982
+  Post-publication (2010-2023): SR≈0.3, worst2Y=-1.2956
+
+--- Task 2.4: Comparison with our cells ---
+  Loaded 0 cells from our research
+
+--- Task 2.5: Threshold recalibration ---
+
+  Case determination: Case A: threshold too strict
+  Current threshold: -0.5
+  Recommended threshold: -1.56
+  Evidence: Most benchmarks fail at -0.5; 25th percentile worst2Y = -1.56
+  Benchmark worst-2Y values:
+    DBMF: -0.513
+    SPY: -1.038
+    GLD: -1.170
+    TLT: -1.547
+    DBA: -1.562
+    USO: -2.047
+
+======================================================================
+Q2 — BENCHMARK COMPARISON SUMMARY
+======================================================================
+
+  Benchmark                    Full SR    Worst2Y     %Neg
+  -------------------------------------------------------
+  DBMF                          +0.693     -0.513       9%
+  SPY                           +0.573     -1.038      10%
+  GLD                           +0.595     -1.170      23%
+  TLT                           +0.239     -1.547      29%
+  DBA                           +0.080     -1.562      55%
+  USO                           -0.208     -2.047      58%
+
+  Moskowitz TSMOM (in-sample)     +1.030    -0.4982      N/A
+  Moskowitz TSMOM (post-pub)     +0.300    -1.2956      N/A
+
+  Saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/phase5_q2_benchmark_results.json
+

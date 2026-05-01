@@ -1,0 +1,119 @@
+
+======================================================================
+ROLLING ORCHESTRATOR — Experiment A5_wfo_yearly_ga
+======================================================================
+Path:        A
+Windows:     11
+Data:        data/processed/eurusd_4h_2005_2024.csv (31297 bars)
+Embargo:     6 bars
+GMM refit:   False
+Normalize:   z-score
+Output:      logs/exp_A5
+======================================================================
+
+
+--- Window 1/11 ---
+    Train: 2005-01-01 → 2007-12-31
+    Val:   2008-01-01 → 2008-12-31
+    Test:  2009-01-01 → 2009-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=1, MaxDD=0.051
+
+--- Window 2/11 ---
+    Train: 2005-01-01 → 2008-12-31
+    Val:   2009-01-01 → 2009-12-31
+    Test:  2010-01-01 → 2010-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 3/11 ---
+    Train: 2005-01-01 → 2009-12-31
+    Val:   2010-01-01 → 2010-12-31
+    Test:  2011-01-01 → 2011-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=-0.137, Trades=24, MaxDD=0.222
+
+--- Window 4/11 ---
+    Train: 2005-01-01 → 2010-12-31
+    Val:   2011-01-01 → 2011-12-31
+    Test:  2012-01-01 → 2012-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.312, Trades=4, MaxDD=0.042
+
+--- Window 5/11 ---
+    Train: 2005-01-01 → 2011-12-31
+    Val:   2012-01-01 → 2012-12-31
+    Test:  2013-01-01 → 2013-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=-0.387, Trades=6, MaxDD=0.080
+
+--- Window 6/11 ---
+    Train: 2005-01-01 → 2012-12-31
+    Val:   2013-01-01 → 2013-12-31
+    Test:  2014-01-01 → 2014-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.002, Trades=5, MaxDD=0.133
+
+--- Window 7/11 ---
+    Train: 2005-01-01 → 2013-12-31
+    Val:   2014-01-01 → 2014-12-31
+    Test:  2015-01-01 → 2015-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=-0.089, Trades=25, MaxDD=0.195
+
+--- Window 8/11 ---
+    Train: 2005-01-01 → 2014-12-31
+    Val:   2015-01-01 → 2015-12-31
+    Test:  2016-01-01 → 2016-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.116, Trades=11, MaxDD=0.084
+
+--- Window 9/11 ---
+    Train: 2005-01-01 → 2015-12-31
+    Val:   2016-01-01 → 2016-12-31
+    Test:  2017-01-01 → 2017-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=-0.539, Trades=2, MaxDD=0.039
+
+--- Window 10/11 ---
+    Train: 2005-01-01 → 2016-12-31
+    Val:   2017-01-01 → 2017-12-31
+    Test:  2018-01-01 → 2018-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.372, Trades=14, MaxDD=0.068
+
+--- Window 11/11 ---
+    Train: 2005-01-01 → 2017-12-31
+    Val:   2018-01-01 → 2018-12-31
+    Test:  2019-01-01 → 2019-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.265, Trades=10, MaxDD=0.065
+
+======================================================================
+EXPERIMENT SUMMARY — A5_wfo_yearly_ga
+======================================================================
+Windows completed:     11/11
+Aggregate test Sharpe: 0.0394
+Mean test Sharpe:      -0.0076 ± 0.2674
+Max drawdown:          0.2897
+Total test trades:     102
+Window consistency:    45.5% (K-5 requires ≥60%)
+Final equity:          $11780.04
+Time:                  11046s
+
+Parameter Stability (CV):
+  atr_period                    : 0.3214  ✓ STABLE
+  atr_tp_multiplier             : 0.4720  ◐ AMBIGUOUS
+  atr_sl_multiplier             : 0.3010  ✓ STABLE
+  bb_low                        : 0.4008  ◐ AMBIGUOUS
+  bb_high                       : 0.1838  ✓ STABLE
+  atr_ratio_high                : 0.1857  ✓ STABLE
+  ema_align_thresh              : 9.4724  ⚠️ HIGH
+
+Kill Criteria Pre-Check:
+  K-1 (held-out SR > 0):      [evaluated at Stage II-3 end on 2020-2024]
+  K-2 (worst 2yr SR > -0.9):  [evaluated at Stage II-3 end]
+  K-3 (cost ratio ≥ 2.0):     FAIL (window CR=-10.00)
+  K-5 (window consistency):    FAIL (45.5%)
+======================================================================
+

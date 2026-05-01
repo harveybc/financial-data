@@ -19,7 +19,7 @@ This document contains ALL manual tasks user must complete for Stage 1.3 to proc
 
 ## Task Checklist
 
-- [ ] **Task M1:** Download HistData FX additional pairs (8 pairs, 168 zips)
+- [ok] **Task M1:** Download HistData FX additional pairs (8 pairs, 168 zips)
 - [ ] **Task M2:** Verify FRED API key still valid
 - [ ] **Task M3:** Register free Etherscan API key
 - [ ] **Task M4 (optional):** Register CoinMarketCap free key
@@ -119,7 +119,7 @@ This key is used for the comprehensive FRED macro pull (~150 series). Need to ve
 If still valid:
 - Reply: `FRED key valid: yes`
 
-If revoked or you want to regenerate:
+i dont want: If revoked or you want to regenerate:
 1. Generate new key on the FRED page
 2. Reply: `FRED key valid: no, new key: <NEW_KEY_HERE>`
 

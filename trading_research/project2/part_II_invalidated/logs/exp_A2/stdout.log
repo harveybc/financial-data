@@ -1,0 +1,368 @@
+
+======================================================================
+ROLLING ORCHESTRATOR — Experiment A2_quarterly_ga
+======================================================================
+Path:        A
+Windows:     47
+Data:        data/processed/eurusd_4h_2005_2024.csv (31297 bars)
+Embargo:     6 bars
+GMM refit:   False
+Normalize:   z-score
+Output:      logs/exp_A2
+======================================================================
+
+
+--- Window 1/47 ---
+    Train: 2005-01-01 → 2007-12-31
+    Val:   2008-01-01 → 2008-03-31
+    Test:  2008-04-01 → 2008-06-30
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 2/47 ---
+    Train: 2005-01-01 → 2008-03-31
+    Val:   2008-04-01 → 2008-06-30
+    Test:  2008-07-01 → 2008-09-30
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 3/47 ---
+    Train: 2005-01-01 → 2008-06-30
+    Val:   2008-07-01 → 2008-09-30
+    Test:  2008-10-01 → 2008-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 4/47 ---
+    Train: 2005-01-01 → 2008-09-30
+    Val:   2008-10-01 → 2008-12-31
+    Test:  2009-01-01 → 2009-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 5/47 ---
+    Train: 2005-01-01 → 2008-12-30
+    Val:   2008-12-31 → 2009-03-30
+    Test:  2009-03-31 → 2009-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 6/47 ---
+    Train: 2005-01-01 → 2009-03-30
+    Val:   2009-03-31 → 2009-06-29
+    Test:  2009-06-30 → 2009-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 7/47 ---
+    Train: 2005-01-01 → 2009-06-30
+    Val:   2009-07-01 → 2009-09-30
+    Test:  2009-10-01 → 2009-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 8/47 ---
+    Train: 2005-01-01 → 2009-09-30
+    Val:   2009-10-01 → 2009-12-31
+    Test:  2010-01-01 → 2010-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 9/47 ---
+    Train: 2005-01-01 → 2009-12-30
+    Val:   2009-12-31 → 2010-03-30
+    Test:  2010-03-31 → 2010-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 10/47 ---
+    Train: 2005-01-01 → 2010-03-30
+    Val:   2010-03-31 → 2010-06-29
+    Test:  2010-06-30 → 2010-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 11/47 ---
+    Train: 2005-01-01 → 2010-06-30
+    Val:   2010-07-01 → 2010-09-30
+    Test:  2010-10-01 → 2010-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 12/47 ---
+    Train: 2005-01-01 → 2010-09-30
+    Val:   2010-10-01 → 2010-12-31
+    Test:  2011-01-01 → 2011-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 13/47 ---
+    Train: 2005-01-01 → 2010-12-30
+    Val:   2010-12-31 → 2011-03-30
+    Test:  2011-03-31 → 2011-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 14/47 ---
+    Train: 2005-01-01 → 2011-03-30
+    Val:   2011-03-31 → 2011-06-29
+    Test:  2011-06-30 → 2011-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 15/47 ---
+    Train: 2005-01-01 → 2011-06-30
+    Val:   2011-07-01 → 2011-09-30
+    Test:  2011-10-01 → 2011-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 16/47 ---
+    Train: 2005-01-01 → 2011-09-30
+    Val:   2011-10-01 → 2011-12-31
+    Test:  2012-01-01 → 2012-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 17/47 ---
+    Train: 2005-01-01 → 2011-12-30
+    Val:   2011-12-31 → 2012-03-30
+    Test:  2012-03-31 → 2012-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 18/47 ---
+    Train: 2005-01-01 → 2012-03-30
+    Val:   2012-03-31 → 2012-06-29
+    Test:  2012-06-30 → 2012-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 19/47 ---
+    Train: 2005-01-01 → 2012-06-30
+    Val:   2012-07-01 → 2012-09-30
+    Test:  2012-10-01 → 2012-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 20/47 ---
+    Train: 2005-01-01 → 2012-09-30
+    Val:   2012-10-01 → 2012-12-31
+    Test:  2013-01-01 → 2013-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 21/47 ---
+    Train: 2005-01-01 → 2012-12-30
+    Val:   2012-12-31 → 2013-03-30
+    Test:  2013-03-31 → 2013-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 22/47 ---
+    Train: 2005-01-01 → 2013-03-30
+    Val:   2013-03-31 → 2013-06-29
+    Test:  2013-06-30 → 2013-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 23/47 ---
+    Train: 2005-01-01 → 2013-06-30
+    Val:   2013-07-01 → 2013-09-30
+    Test:  2013-10-01 → 2013-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 24/47 ---
+    Train: 2005-01-01 → 2013-09-30
+    Val:   2013-10-01 → 2013-12-31
+    Test:  2014-01-01 → 2014-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 25/47 ---
+    Train: 2005-01-01 → 2013-12-30
+    Val:   2013-12-31 → 2014-03-30
+    Test:  2014-03-31 → 2014-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 26/47 ---
+    Train: 2005-01-01 → 2014-03-30
+    Val:   2014-03-31 → 2014-06-29
+    Test:  2014-06-30 → 2014-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 27/47 ---
+    Train: 2005-01-01 → 2014-06-30
+    Val:   2014-07-01 → 2014-09-30
+    Test:  2014-10-01 → 2014-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 28/47 ---
+    Train: 2005-01-01 → 2014-09-30
+    Val:   2014-10-01 → 2014-12-31
+    Test:  2015-01-01 → 2015-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 29/47 ---
+    Train: 2005-01-01 → 2014-12-30
+    Val:   2014-12-31 → 2015-03-30
+    Test:  2015-03-31 → 2015-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 30/47 ---
+    Train: 2005-01-01 → 2015-03-30
+    Val:   2015-03-31 → 2015-06-29
+    Test:  2015-06-30 → 2015-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 31/47 ---
+    Train: 2005-01-01 → 2015-06-30
+    Val:   2015-07-01 → 2015-09-30
+    Test:  2015-10-01 → 2015-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 32/47 ---
+    Train: 2005-01-01 → 2015-09-30
+    Val:   2015-10-01 → 2015-12-31
+    Test:  2016-01-01 → 2016-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 33/47 ---
+    Train: 2005-01-01 → 2015-12-30
+    Val:   2015-12-31 → 2016-03-30
+    Test:  2016-03-31 → 2016-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 34/47 ---
+    Train: 2005-01-01 → 2016-03-30
+    Val:   2016-03-31 → 2016-06-29
+    Test:  2016-06-30 → 2016-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 35/47 ---
+    Train: 2005-01-01 → 2016-06-30
+    Val:   2016-07-01 → 2016-09-30
+    Test:  2016-10-01 → 2016-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 36/47 ---
+    Train: 2005-01-01 → 2016-09-30
+    Val:   2016-10-01 → 2016-12-31
+    Test:  2017-01-01 → 2017-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 37/47 ---
+    Train: 2005-01-01 → 2016-12-30
+    Val:   2016-12-31 → 2017-03-30
+    Test:  2017-03-31 → 2017-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 38/47 ---
+    Train: 2005-01-01 → 2017-03-30
+    Val:   2017-03-31 → 2017-06-29
+    Test:  2017-06-30 → 2017-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 39/47 ---
+    Train: 2005-01-01 → 2017-06-30
+    Val:   2017-07-01 → 2017-09-30
+    Test:  2017-10-01 → 2017-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 40/47 ---
+    Train: 2005-01-01 → 2017-09-30
+    Val:   2017-10-01 → 2017-12-31
+    Test:  2018-01-01 → 2018-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 41/47 ---
+    Train: 2005-01-01 → 2017-12-30
+    Val:   2017-12-31 → 2018-03-30
+    Test:  2018-03-31 → 2018-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 42/47 ---
+    Train: 2005-01-01 → 2018-03-30
+    Val:   2018-03-31 → 2018-06-29
+    Test:  2018-06-30 → 2018-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 43/47 ---
+    Train: 2005-01-01 → 2018-06-30
+    Val:   2018-07-01 → 2018-09-30
+    Test:  2018-10-01 → 2018-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 44/47 ---
+    Train: 2005-01-01 → 2018-09-30
+    Val:   2018-10-01 → 2018-12-31
+    Test:  2019-01-01 → 2019-03-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 45/47 ---
+    Train: 2005-01-01 → 2018-12-30
+    Val:   2018-12-31 → 2019-03-30
+    Test:  2019-03-31 → 2019-06-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 46/47 ---
+    Train: 2005-01-01 → 2019-03-30
+    Val:   2019-03-31 → 2019-06-29
+    Test:  2019-06-30 → 2019-09-29
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+--- Window 47/47 ---
+    Train: 2005-01-01 → 2019-06-30
+    Val:   2019-07-01 → 2019-09-30
+    Test:  2019-10-01 → 2019-12-31
+    Embargo: removed 6 bars from val start
+    ✓ Test Sharpe=0.000, Trades=0, MaxDD=0.000
+
+======================================================================
+EXPERIMENT SUMMARY — A2_quarterly_ga
+======================================================================
+Windows completed:     47/47
+Aggregate test Sharpe: 0.0000
+Mean test Sharpe:      0.0000 ± 0.0000
+Max drawdown:          0.0000
+Total test trades:     0
+Window consistency:    0.0% (K-5 requires ≥60%)
+Final equity:          $10000.00
+Time:                  19744s
+
+Parameter Stability (CV):
+  atr_period                    : 0.4130  ◐ AMBIGUOUS
+  atr_tp_multiplier             : 0.6176  ⚠️ HIGH
+  atr_sl_multiplier             : 0.4488  ◐ AMBIGUOUS
+  cluster_confidence            : 0.3933  ✓ STABLE
+
+Kill Criteria Pre-Check:
+  K-1 (held-out SR > 0):      [evaluated at Stage II-3 end on 2020-2024]
+  K-2 (worst 2yr SR > -0.9):  [evaluated at Stage II-3 end]
+  K-3 (cost ratio ≥ 2.0):     FAIL (window CR=0.00)
+  K-5 (window consistency):    FAIL (0.0%)
+======================================================================
+

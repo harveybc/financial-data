@@ -1,0 +1,48 @@
+nohup: ignoring input
+======================================================================
+PHASE 3.5 — TASK 4: FIX COT DATA DOWNLOAD
+======================================================================
+  Downloading COT data from CFTC Socrata API...
+
+    EUR/USD (code: 099741)...
+      Socrata: 1434 weekly observations, 1986-01-15 to 2026-04-14
+
+    USD/JPY (code: 097741)...
+      Socrata: 1913 weekly observations, 1986-01-15 to 2026-04-14
+
+    GBP/USD (code: 096742)...
+      Socrata: 1858 weekly observations, 1988-04-29 to 2026-04-14
+
+    AUD/USD (code: 232741)...
+      Socrata: 1776 weekly observations, 1987-01-30 to 2026-04-14
+
+    XAU/USD (code: 088691)...
+      Socrata: 1912 weekly observations, 1986-01-15 to 2026-04-14
+
+    XAG/USD (code: 084691)...
+      Socrata: 1912 weekly observations, 1986-01-15 to 2026-04-14
+
+    CL (code: 067651)...
+      Socrata: 1911 weekly observations, 1986-01-15 to 2026-04-14
+
+  Successfully downloaded COT data for 7 assets:
+    EUR/USD: 1434 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+    USD/JPY: 1913 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+    GBP/USD: 1858 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+    AUD/USD: 1776 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+    XAU/USD: 1912 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+    XAG/USD: 1912 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+    CL: 1911 obs, columns: ['net_noncommercial', 'net_commercial', 'open_interest', 'net_nc_zscore_3y', 'net_nc_change', 'oi_pct_change']
+
+  Integrating COT features into feature store...
+    EUR/USD: added 6 COT columns, 100% coverage
+    USD/JPY: added 6 COT columns, 100% coverage
+    GBP/USD: added 6 COT columns, 100% coverage
+    AUD/USD: added 6 COT columns, 100% coverage
+    XAU/USD: added 6 COT columns, 100% coverage
+    ⚠ No feature file for XAG/USD, skipping
+    CL: added 6 COT columns, 100% coverage
+
+  COT summary saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/feature_store/cot_data.json
+
+  Results saved to /home/harveybc/Documents/GitHub/heuristic-strategy/trading_research/results/cot_download_results.json

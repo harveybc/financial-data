@@ -1,0 +1,102 @@
+{
+  "experiment_id": "A4_yearly_gmm",
+  "path": "A",
+  "aggregate_test_sharpe": 0.06296348273490392,
+  "mean_test_sharpe": -0.5877882086128028,
+  "std_test_sharpe": 1.8787890905566889,
+  "mean_val_sharpe": -0.05119029415358425,
+  "max_drawdown": 0.18867471696709412,
+  "total_test_trades": 55,
+  "window_consistency": 0.45454545454545453,
+  "positive_windows": 5,
+  "total_windows": 11,
+  "final_equity": 11660.32178556935,
+  "param_stability_cv": {
+    "atr_period": 0.6043,
+    "atr_tp_multiplier": 0.1281,
+    "atr_sl_multiplier": 0.6516,
+    "cluster_confidence": 0.2631
+  },
+  "window_metrics": [
+    {
+      "window": 1,
+      "test_sharpe": 0.673674674202384,
+      "val_sharpe": 0.0,
+      "test_trades": 2,
+      "test_max_dd": 0.002470795151183847
+    },
+    {
+      "window": 2,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 0,
+      "test_max_dd": 0.0
+    },
+    {
+      "window": 3,
+      "test_sharpe": 0.012105301211242113,
+      "val_sharpe": -1.0899926032483431,
+      "test_trades": 12,
+      "test_max_dd": 0.07414641491767052
+    },
+    {
+      "window": 4,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.0,
+      "test_trades": 1,
+      "test_max_dd": 0.03331811638195377
+    },
+    {
+      "window": 5,
+      "test_sharpe": -6.3628146673241535,
+      "val_sharpe": 0.0,
+      "test_trades": 2,
+      "test_max_dd": 0.1376660380707044
+    },
+    {
+      "window": 6,
+      "test_sharpe": 0.35592291467081744,
+      "val_sharpe": 0.5322221639455308,
+      "test_trades": 2,
+      "test_max_dd": 0.022405644538410985
+    },
+    {
+      "window": 7,
+      "test_sharpe": 0.025746239872253617,
+      "val_sharpe": 0.0,
+      "test_trades": 2,
+      "test_max_dd": 0.016640870807358703
+    },
+    {
+      "window": 8,
+      "test_sharpe": 0.0,
+      "val_sharpe": 0.4547654914036218,
+      "test_trades": 1,
+      "test_max_dd": 0.03855013847966802
+    },
+    {
+      "window": 9,
+      "test_sharpe": -0.3169052744301096,
+      "val_sharpe": 0.37597465282475895,
+      "test_trades": 2,
+      "test_max_dd": 0.05921197405198314
+    },
+    {
+      "window": 10,
+      "test_sharpe": 0.3140649976036448,
+      "val_sharpe": -1.016748769923861,
+      "test_trades": 19,
+      "test_max_dd": 0.11881673739155693
+    },
+    {
+      "window": 11,
+      "test_sharpe": -1.1674644805469108,
+      "val_sharpe": 0.18068582930886595,
+      "test_trades": 12,
+      "test_max_dd": 0.1219798528914327
+    }
+  ],
+  "total_time_sec": 11265.770539999008,
+  "windows_completed": 11,
+  "windows_total": 11
+}
