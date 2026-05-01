@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T22:13:01.831000+00:00",
+  "generated_at": "2026-05-01T23:44:07.181209+00:00",
   "stage": "Stage 1.6 preflight",
   "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
   "inventory": {
@@ -55,25 +55,25 @@
       },
       "economic_calendar": {
         "exists": true,
-        "files": 49,
-        "bytes": 306881,
+        "files": 57,
+        "bytes": 511397,
         "suffix_counts": {
-          ".json": 11,
-          ".md": 24,
-          ".parquet": 11,
+          ".json": 13,
+          ".md": 28,
+          ".parquet": 13,
           "<none>": 3
         }
       }
     },
     "totals": {
-      "files": 1530,
-      "bytes": 2615537182,
-      "data_directories": 319,
+      "files": 1538,
+      "bytes": 2615741698,
+      "data_directories": 321,
       "suffix_counts": {
         ".csv": 2,
-        ".json": 325,
-        ".md": 647,
-        ".parquet": 472,
+        ".json": 327,
+        ".md": 651,
+        ".parquet": 474,
         ".txt": 16,
         ".xml": 1,
         ".zip": 16,
@@ -106,6 +106,7 @@
       "economic_calendar/release_actuals/core_pce_yoy",
       "economic_calendar/release_actuals/cpi_yoy",
       "economic_calendar/release_actuals/fed_funds",
+      "economic_calendar/release_actuals/fxmacrodata",
       "economic_calendar/release_actuals/gdp_qoq_annualized",
       "economic_calendar/release_actuals/initial_claims",
       "economic_calendar/release_actuals/nonfarm_payrolls_mom",
@@ -113,6 +114,7 @@
       "economic_calendar/release_actuals/treasury_10y",
       "economic_calendar/release_actuals/unemployment_rate",
       "economic_calendar/scheduled_events/fred_release_date_proxy",
+      "economic_calendar/scheduled_events/fxmacrodata",
       "macro_economic/bea/nipa",
       "macro_economic/bea/nipa/gdp_current_dollars",
       "macro_economic/bea/nipa/gdp_percent_change",
@@ -403,16 +405,16 @@
     ]
   },
   "documentation": {
-    "total_data_directories": 319,
-    "complete_data_directories": 319,
+    "total_data_directories": 321,
+    "complete_data_directories": 321,
     "missing_doc_directories": 0,
     "missing_examples": []
   },
   "acquisition_log": {
     "exists": true,
-    "rows": 189,
+    "rows": 193,
     "status_counts": {
-      "ok": 144,
+      "ok": 148,
       "schema_shifted_or_malformed": 45
     },
     "top_sources": {
@@ -421,6 +423,7 @@
       "Yahoo Finance": 41,
       "HistData": 10,
       "Blockchain.com": 6,
+      "FXMacroData": 4,
       "mempool.space": 3,
       "BEA Data API": 3,
       "DeFiLlama": 1,
@@ -430,38 +433,6 @@
       "FRED-derived release-date proxy": 1
     },
     "recent_rows": [
-      {
-        "timestamp": "2026-05-01T21:19:16.902228+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "tip",
-        "status": "ok",
-        "path": "market_data/equities/etfs/tip/daily.parquet",
-        "notes": "rows=5552"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:17.514007+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "shy",
-        "status": "ok",
-        "path": "market_data/equities/etfs/shy/daily.parquet",
-        "notes": "rows=5894"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:18.174156+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "iyr",
-        "status": "ok",
-        "path": "market_data/equities/etfs/iyr/daily.parquet",
-        "notes": "rows=6422"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:18.745155+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "vnq",
-        "status": "ok",
-        "path": "market_data/equities/etfs/vnq/daily.parquet",
-        "notes": "rows=5348"
-      },
       {
         "timestamp": "2026-05-01T21:19:19.523224+00:00",
         "source": "Yahoo Finance",
@@ -589,6 +560,38 @@
         "status": "ok",
         "path": "economic_calendar/scheduled_events/fred_release_date_proxy/scheduled_events.parquet",
         "notes": "rows=1200"
+      },
+      {
+        "timestamp": "2026-05-01T23:33:04.496035+00:00",
+        "source": "FXMacroData",
+        "dataset": "scheduled_events_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+        "notes": "rows=897 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:33:04.513367+00:00",
+        "source": "FXMacroData",
+        "dataset": "release_actuals_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+        "notes": "rows=18163 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:38:43.532927+00:00",
+        "source": "FXMacroData",
+        "dataset": "scheduled_events_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+        "notes": "rows=896 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:38:43.551478+00:00",
+        "source": "FXMacroData",
+        "dataset": "release_actuals_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+        "notes": "rows=18147 currencies=14"
       }
     ]
   },

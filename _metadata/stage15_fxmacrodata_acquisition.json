@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-05-01T23:38:43.553046+00:00",
+  "stage": "Stage 1.5 paid/credentialed macro data acquisition",
+  "provider": "FXMacroData",
+  "status": "ok",
+  "calendar_rows": 896,
+  "announcement_rows": 18147,
+  "currencies_requested": [
+    "USD",
+    "EUR",
+    "GBP",
+    "JPY",
+    "AUD",
+    "CAD",
+    "CHF",
+    "NZD",
+    "CNY",
+    "SGD",
+    "SEK",
+    "DKK",
+    "PLN",
+    "BRL",
+    "HKD",
+    "NOK",
+    "KRW",
+    "MXN"
+  ],
+  "currencies_with_calendar": [
+    "AUD",
+    "BRL",
+    "CAD",
+    "CHF",
+    "CNY",
+    "DKK",
+    "EUR",
+    "GBP",
+    "JPY",
+    "NZD",
+    "PLN",
+    "SEK",
+    "SGD",
+    "USD"
+  ],
+  "currencies_with_announcements": [
+    "AUD",
+    "BRL",
+    "CAD",
+    "CHF",
+    "CNY",
+    "DKK",
+    "EUR",
+    "GBP",
+    "JPY",
+    "NZD",
+    "PLN",
+    "SEK",
+    "SGD",
+    "USD"
+  ],
+  "columns": {
+    "calendar": [
+      "currency",
+      "release",
+      "announcement_datetime",
+      "announcement_datetime_local",
+      "announcement_datetime_utc",
+      "announcement_datetime_local_utc"
+    ],
+    "announcements": [
+      "currency",
+      "indicator",
+      "date",
+      "val",
+      "announcement_datetime",
+      "announcement_datetime_utc",
+      "pct_change_mom",
+      "pct_change_yoy",
+      "val_mom",
+      "pct_change_qoq",
+      "value"
+    ]
+  },
+  "consensus_or_forecast_columns_present": [],
+  "failures": [
+    {
+      "currency": "nzd",
+      "indicator": "cb_assets",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/nzd/cb_assets?api_key=<redacted>"
+    },
+    {
+      "currency": "nzd",
+      "indicator": "foreign_reserves",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/nzd/foreign_reserves?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "business_confidence",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/business_confidence?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "consumer_confidence",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/consumer_confidence?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "current_account_balance",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/current_account_balance?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "full_time_employment",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/full_time_employment?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "inflation_linked_bond",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/inflation_linked_bond?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "m1",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/m1?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "m2",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/m2?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "m3",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/m3?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "part_time_employment",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/part_time_employment?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "participation_rate",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/participation_rate?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "ppi",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/ppi?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "retail_sales",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/retail_sales?api_key=<redacted>"
+    },
+    {
+      "currency": "sek",
+      "indicator": "wages",
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://fxmacrodata.com/api/v1/announcements/sek/wages?api_key=<redacted>"
+    },
+    {
+      "currency": "hkd",
+      "indicator": "*currency*",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://fxmacrodata.com/api/v1/data_catalogue/hkd?api_key=<redacted>"
+    },
+    {
+      "currency": "nok",
+      "indicator": "*currency*",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://fxmacrodata.com/api/v1/data_catalogue/nok?api_key=<redacted>"
+    },
+    {
+      "currency": "krw",
+      "indicator": "*currency*",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://fxmacrodata.com/api/v1/data_catalogue/krw?api_key=<redacted>"
+    },
+    {
+      "currency": "mxn",
+      "indicator": "*currency*",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://fxmacrodata.com/api/v1/data_catalogue/mxn?api_key=<redacted>"
+    }
+  ],
+  "failure_count": 19,
+  "outputs": [
+    "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+    "economic_calendar/release_actuals/fxmacrodata/announcements.parquet"
+  ]
+}

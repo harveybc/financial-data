@@ -1,0 +1,11 @@
+{
+  "source": "FXMacroData",
+  "description": "Upcoming macro release calendar with announcement timestamps for supported currencies.",
+  "acquired_at": "2026-05-01T23:38:43.532056+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+      "sha256": "8a50bf16ef06a423015a67b777a3e5feb961891b3506c39de27535f0471db226"
+    }
+  ]
+}

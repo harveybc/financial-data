@@ -1,15 +1,15 @@
 # Financial Data Lake - Master Inventory
 
-Generated: 2026-05-01T22:13:01.831938+00:00
+Generated: 2026-05-01T23:44:07.182810+00:00
 
 **Status:** Stage 1.6 preflight inventory. Formal Phase 1 completion waits for Stage 1.4/1.5 subscription decisions.
 
 ## Summary
 
-- Total documented data directories: 319
-- Total files across data roots: 1530
+- Total documented data directories: 321
+- Total files across data roots: 1538
 - Total size: 2.44 GB
-- Suffix counts: {".csv": 2, ".json": 325, ".md": 647, ".parquet": 472, ".txt": 16, ".xml": 1, ".zip": 16, "<none>": 51}
+- Suffix counts: {".csv": 2, ".json": 327, ".md": 651, ".parquet": 474, ".txt": 16, ".xml": 1, ".zip": 16, "<none>": 51}
 
 ## Roots
 
@@ -19,7 +19,7 @@ Generated: 2026-05-01T22:13:01.831938+00:00
 | macro_economic | True | 580 | 0.01 |
 | alternative_data | True | 140 | 0.37 |
 | reference_data | True | 33 | 0.00 |
-| economic_calendar | True | 49 | 0.00 |
+| economic_calendar | True | 57 | 0.00 |
 
 ## Validation Preflight
 

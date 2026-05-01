@@ -1,0 +1,11 @@
+{
+  "source": "FXMacroData",
+  "description": "Historical macro announcement values with no-lookahead announcement timestamps. Consensus/forecast fields are not present unless supplied by the provider payload.",
+  "acquired_at": "2026-05-01T23:38:43.550573+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+      "sha256": "d8dd8c13ed3cb4dea4265f058ef3020eff2587a3ceb6e9eec743fc5f2ca138a0"
+    }
+  ]
+}

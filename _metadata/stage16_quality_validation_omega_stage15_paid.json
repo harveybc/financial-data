@@ -1,0 +1,437 @@
+{
+  "generated_at": "2026-05-01T23:38:44.751164+00:00",
+  "machine": "omega_stage15_paid",
+  "stage": "Stage 1.6 quality validation",
+  "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
+  "summary": {
+    "roots": [
+      "economic_calendar"
+    ],
+    "files_checked": 13,
+    "files_with_warnings": 1,
+    "warning_counts": {
+      "duplicate_time_natural_key": 1,
+      "non_monotonic_time": 1
+    }
+  },
+  "checks": [
+    {
+      "path": "economic_calendar/release_actuals/core_cpi_yoy/actuals.parquet",
+      "rows": 432,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/core_pce_yoy/actuals.parquet",
+      "rows": 432,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/cpi_yoy/actuals.parquet",
+      "rows": 432,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/fed_funds/actuals.parquet",
+      "rows": 432,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+      "rows": 18147,
+      "columns": [
+        "currency",
+        "indicator",
+        "date",
+        "val",
+        "announcement_datetime",
+        "announcement_datetime_utc",
+        "pct_change_mom",
+        "pct_change_yoy",
+        "val_mom",
+        "pct_change_qoq",
+        "value"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date",
+          "currency",
+          "indicator",
+          "val"
+        ],
+        "natural_key_columns": [
+          "currency",
+          "indicator",
+          "val"
+        ],
+        "monotonic_increasing": true,
+        "min": "2025-01-31 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/gdp_qoq_annualized/actuals.parquet",
+      "rows": 144,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-10-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/initial_claims/actuals.parquet",
+      "rows": 1878,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-06 00:00:00+00:00",
+        "max": "2025-12-27 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/nonfarm_payrolls_mom/actuals.parquet",
+      "rows": 432,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/retail_sales_mom/actuals.parquet",
+      "rows": 408,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1992-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/treasury_10y/actuals.parquet",
+      "rows": 9393,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-31 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/release_actuals/unemployment_rate/actuals.parquet",
+      "rows": 432,
+      "columns": [
+        "date",
+        "actual",
+        "event_name",
+        "fred_series",
+        "transform",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "1990-01-01 00:00:00+00:00",
+        "max": "2025-12-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "economic_calendar/scheduled_events/fred_release_date_proxy/scheduled_events.parquet",
+      "rows": 1200,
+      "columns": [
+        "index",
+        "event_slug",
+        "event_name",
+        "scheduled_date_proxy",
+        "fred_series",
+        "actual",
+        "transformed_actual",
+        "consensus_estimate",
+        "surprise",
+        "source_note"
+      ],
+      "time_column": "scheduled_date_proxy",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 768,
+        "duplicate_key_columns": [
+          "scheduled_date_proxy"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": false,
+        "min": "1996-01-01 00:00:00+00:00",
+        "max": "2025-12-31 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": [
+        "duplicate_time_natural_key",
+        "non_monotonic_time"
+      ]
+    },
+    {
+      "path": "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+      "rows": 896,
+      "columns": [
+        "currency",
+        "release",
+        "announcement_datetime",
+        "announcement_datetime_local",
+        "announcement_datetime_utc",
+        "announcement_datetime_local_utc"
+      ],
+      "time_column": "announcement_datetime",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "announcement_datetime",
+          "currency",
+          "release"
+        ],
+        "natural_key_columns": [
+          "currency",
+          "release"
+        ],
+        "monotonic_increasing": true,
+        "min": "1970-01-01 00:00:01.770292800+00:00",
+        "max": "1970-01-01 00:00:01.815588+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    }
+  ]
+}

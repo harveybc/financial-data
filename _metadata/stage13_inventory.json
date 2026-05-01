@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T22:12:11.384976+00:00",
+  "generated_at": "2026-05-01T23:43:15.817663+00:00",
   "stage": "Stage 1.3 Free Data Acquisition validation/inventory",
   "inventory": {
     "roots": {
@@ -54,33 +54,33 @@
       },
       "economic_calendar": {
         "exists": true,
-        "files": 49,
-        "bytes": 306881,
+        "files": 57,
+        "bytes": 511397,
         "suffix_counts": {
-          ".json": 11,
-          ".md": 24,
-          ".parquet": 11,
+          ".json": 13,
+          ".md": 28,
+          ".parquet": 13,
           "<none>": 3
         }
       }
     },
     "totals": {
-      "files": 1530,
-      "bytes": 2615537182,
-      "data_directories": 319
+      "files": 1538,
+      "bytes": 2615741698,
+      "data_directories": 321
     },
     "documentation": {
-      "data_directories_checked": 319,
+      "data_directories_checked": 321,
       "directories_missing_docs": 0,
       "missing_doc_examples": []
     }
   },
   "acquisition_log": {
     "exists": true,
-    "rows": 189,
-    "latest_timestamp": "2026-05-01T21:19:26.306201+00:00",
+    "rows": 193,
+    "latest_timestamp": "2026-05-01T23:38:43.551478+00:00",
     "status_counts": {
-      "ok": 144,
+      "ok": 148,
       "schema_shifted_or_malformed": 45
     },
     "top_sources": {
@@ -89,6 +89,7 @@
       "Yahoo Finance": 41,
       "HistData": 10,
       "Blockchain.com": 6,
+      "FXMacroData": 4,
       "mempool.space": 3,
       "BEA Data API": 3,
       "DeFiLlama": 1,
@@ -421,38 +422,6 @@
     ],
     "recent_rows": [
       {
-        "timestamp": "2026-05-01T21:19:16.902228+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "tip",
-        "status": "ok",
-        "path": "market_data/equities/etfs/tip/daily.parquet",
-        "notes": "rows=5552"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:17.514007+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "shy",
-        "status": "ok",
-        "path": "market_data/equities/etfs/shy/daily.parquet",
-        "notes": "rows=5894"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:18.174156+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "iyr",
-        "status": "ok",
-        "path": "market_data/equities/etfs/iyr/daily.parquet",
-        "notes": "rows=6422"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:18.745155+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "vnq",
-        "status": "ok",
-        "path": "market_data/equities/etfs/vnq/daily.parquet",
-        "notes": "rows=5348"
-      },
-      {
         "timestamp": "2026-05-01T21:19:19.523224+00:00",
         "source": "Yahoo Finance",
         "dataset": "dia",
@@ -579,6 +548,38 @@
         "status": "ok",
         "path": "economic_calendar/scheduled_events/fred_release_date_proxy/scheduled_events.parquet",
         "notes": "rows=1200"
+      },
+      {
+        "timestamp": "2026-05-01T23:33:04.496035+00:00",
+        "source": "FXMacroData",
+        "dataset": "scheduled_events_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+        "notes": "rows=897 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:33:04.513367+00:00",
+        "source": "FXMacroData",
+        "dataset": "release_actuals_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+        "notes": "rows=18163 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:38:43.532927+00:00",
+        "source": "FXMacroData",
+        "dataset": "scheduled_events_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet",
+        "notes": "rows=896 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:38:43.551478+00:00",
+        "source": "FXMacroData",
+        "dataset": "release_actuals_fxmacrodata",
+        "status": "ok",
+        "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+        "notes": "rows=18147 currencies=14"
       }
     ]
   },
@@ -606,7 +607,7 @@
   ],
   "dispatch": {
     "exists": true,
-    "generated_at": "2026-05-01T22:05:29.662707+00:00",
+    "generated_at": "2026-05-01T23:36:40.900676+00:00",
     "decisions": [
       {
         "machine": "omega",

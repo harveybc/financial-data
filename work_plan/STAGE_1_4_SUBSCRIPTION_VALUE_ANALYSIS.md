@@ -55,9 +55,9 @@ Checked on 2026-05-01. Prices can change; contact-sales entries must be confirme
 
 ## 2026-05-01 Decision Update
 
-- **CryptoQuant Professional:** User subscribed monthly. Treat Stage 1.5 CryptoQuant acquisition as approved once the private access token is available in `_metadata/.env` as `CRYPTOQUANT_API_KEY`.
+- **CryptoQuant Professional:** User subscribed monthly and supplied a private token. Stage 1.5 acquisition is approved, but API validation currently returns 403 for both documented Bearer-token and `api_key` query-parameter forms. Next action: user should confirm the exact active access token in the CryptoQuant profile API tab; agents must not spend cycles retrying bulk acquisition until the credential check passes.
 - **FXStreet Premium:** Do not purchase for Project 3 automation. FXStreet's public API documentation says Economic Calendar API credentials are provided by the sales department and all Calendar API endpoints require OAuth2 authentication. The Premium retail/news plan should not be assumed to include API credentials.
-- **FXMacroData Individual:** Recommended as the budget macro-calendar/data option if the user wants to spend now. It is self-service, $25/month, has a 14-day trial, includes REST API access, historical data, announcement timestamps, release-calendar endpoints, Python SDK, and MCP access. Caveat: validate whether it includes consensus/forecast fields; if it only provides timestamped actuals, it improves no-lookahead macro features but does not fully replace FXStreet/Trading Economics consensus-surprise data.
+- **FXMacroData Individual:** User supplied a private key and Stage 1.5 acquisition succeeded. Deliverables: `economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet` and `economic_calendar/release_actuals/fxmacrodata/announcements.parquet`. It improves no-lookahead macro features through announcement timestamps, but acquired payloads do not include consensus/forecast/surprise fields, so it does not fully replace FXStreet/Trading Economics consensus-surprise data.
 - **Massive/Polygon:** Defer. If later needed for US equity intraday/tick research, choose Stocks Developer at $79/month; Starter is only a cheap aggregate-data test, and Advanced is only justified for real-time/quotes/financials.
 
 ## Detailed Analysis

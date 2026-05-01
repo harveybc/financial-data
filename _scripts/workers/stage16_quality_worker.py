@@ -99,6 +99,8 @@ def natural_key_columns(columns: list[str], time_column: str | None) -> list[str
             "methodology",
         ),
         ("record_date", "security_type_desc", "security_desc"),
+        ("date", "currency", "indicator", "val"),
+        ("announcement_datetime", "currency", "release"),
     ]
     for rule in rules:
         if all(name in available for name in rule):

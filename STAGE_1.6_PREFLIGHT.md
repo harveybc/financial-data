@@ -1,6 +1,6 @@
 # Stage 1.6 Preflight - Validation and Documentation Audit
 
-Generated: 2026-05-01T22:13:01.831000+00:00
+Generated: 2026-05-01T23:44:07.181209+00:00
 
 **Status:** IN PROGRESS / PREFLIGHT ONLY.
 
@@ -8,8 +8,8 @@ Formal Stage 1.6 requires Stage 1.4 and Stage 1.5 completion. This preflight kee
 
 ## Documentation Audit
 
-- Data directories checked: 319
-- Complete directories: 319
+- Data directories checked: 321
+- Complete directories: 321
 - Missing-doc directories: 0
 
 ## Validation Workers
@@ -31,8 +31,8 @@ Formal Stage 1.6 requires Stage 1.4 and Stage 1.5 completion. This preflight kee
 
 ## Acquisition Log
 
-- Rows: 189
-- Status counts: {"ok": 144, "schema_shifted_or_malformed": 45}
+- Rows: 193
+- Status counts: {"ok": 148, "schema_shifted_or_malformed": 45}
 
 ## Stage 1.4/1.5 Decision Gaps
 
