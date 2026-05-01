@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series ASPUS",
+  "acquired_at": "2026-05-01T21:19:50.097386+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/aspus/observations.parquet",
+      "sha256": "006ca99fef5f6a3e40dc5df7722727abbac5225fb4ab51f0ceac0b71b88d8b7e"
+    }
+  ]
+}

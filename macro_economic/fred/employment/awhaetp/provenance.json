@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series AWHAETP",
+  "acquired_at": "2026-05-01T21:19:25.706706+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/awhaetp/observations.parquet",
+      "sha256": "b730fb928c561d4236c36d718b204525165f0bc7c1828c7a268c392d3fdf49de"
+    }
+  ]
+}

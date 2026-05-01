@@ -1,0 +1,270 @@
+{
+  "generated_at": "2026-05-01T21:20:53.493647+00:00",
+  "failures": [
+    {
+      "asset": "btc",
+      "metric": "DiffMean",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'DiffMean' with frequency '1d' for asset 'btc' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "btc",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'btc' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "btc",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'btc' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "eth",
+      "metric": "DiffMean",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'DiffMean' with frequency '1d' for asset 'eth' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "eth",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'eth' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "eth",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'eth' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "ltc",
+      "metric": "DiffMean",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'DiffMean' with frequency '1d' for asset 'ltc' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "ltc",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'ltc' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "ltc",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'ltc' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "bch",
+      "metric": "DiffMean",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'DiffMean' with frequency '1d' for asset 'bch' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "bch",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'bch' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "bch",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'bch' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "doge",
+      "metric": "DiffMean",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'DiffMean' with frequency '1d' for asset 'doge' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "doge",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'doge' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "doge",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'doge' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "ada",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'ada' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "ada",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'ada' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "ada",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'ada' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "ada",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'ada' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "dot",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'dot' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "dot",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'dot' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "dot",
+      "metric": "BlkCnt",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'dot' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "dot",
+      "metric": "FeeMeanUSD",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'dot' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "dot",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'dot' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "AdrActCnt",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'AdrActCnt' with frequency '1d' for asset 'sol' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "TxCnt",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxCnt' with frequency '1d' for asset 'sol' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'sol' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'sol' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "BlkCnt",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'BlkCnt' with frequency '1d' for asset 'sol' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'sol' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "TxTfrCnt",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrCnt' with frequency '1d' for asset 'sol' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "sol",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'sol' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "AdrActCnt",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "TxCnt",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "BlkCnt",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "FeeMeanUSD",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "TxTfrCnt",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "atom",
+      "metric": "TxTfrValAdjUSD",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'atom' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "trx",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'trx' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "trx",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'trx' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "trx",
+      "metric": "FeeMeanUSD",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'trx' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "trx",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'trx' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "xlm",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'xlm' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "xlm",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'xlm' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "xlm",
+      "metric": "FeeMeanUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'FeeMeanUSD' with frequency '1d' for asset 'xlm' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "xlm",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'xlm' is not available with supplied credentials.\"}}"
+    },
+    {
+      "asset": "link",
+      "metric": "HashRate",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'link' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "link",
+      "metric": "DiffMean",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'link' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "link",
+      "metric": "BlkCnt",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'link' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "link",
+      "metric": "FeeMeanUSD",
+      "error": "400: {\"error\":{\"type\":\"bad_parameter\",\"message\":\"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'link' and frequency '1d'.\"}}"
+    },
+    {
+      "asset": "link",
+      "metric": "TxTfrValAdjUSD",
+      "error": "403: {\"error\":{\"type\":\"forbidden\",\"message\":\"Requested metric 'TxTfrValAdjUSD' with frequency '1d' for asset 'link' is not available with supplied credentials.\"}}"
+    }
+  ]
+}

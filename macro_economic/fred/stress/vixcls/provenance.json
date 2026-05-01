@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series VIXCLS",
+  "acquired_at": "2026-05-01T21:19:59.609162+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/stress/vixcls/observations.parquet",
+      "sha256": "011cc2fd32fb23e7d52fd2458d45d5a5384ddc296d5baeeab1c7ffdf37658f57"
+    }
+  ]
+}

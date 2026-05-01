@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "IYR daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:18.173472+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/iyr/daily.parquet",
+      "sha256": "8a14d1b4ad632a12d81c80293629f29bbf342e9c33cc9934b0a670e5c969eed6"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series NONBORRES",
+  "acquired_at": "2026-05-01T21:19:31.062326+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/nonborres/observations.parquet",
+      "sha256": "dd0e86705af7041d47e55ac37e261bfab021af2f90523b98e6714b380cbe3d33"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series NEWORDER",
+  "acquired_at": "2026-05-01T21:19:54.014608+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/neworder/observations.parquet",
+      "sha256": "4ec4e410d3a1799952ec48b50d82920aad3a4485d5c31c52e83fbd3dc2a89c4f"
+    }
+  ]
+}

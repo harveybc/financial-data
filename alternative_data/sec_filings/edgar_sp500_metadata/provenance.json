@@ -1,0 +1,11 @@
+{
+  "source": "SEC EDGAR submissions API",
+  "description": "S&P 500 recent 10-K, 10-Q, 8-K, and Form 4 metadata",
+  "acquired_at": "2026-05-01T21:36:10.222785+00:00",
+  "files": [
+    {
+      "path": "alternative_data/sec_filings/edgar_sp500_metadata/filing_metadata.parquet",
+      "sha256": "db1c13dfaacf945bdbdcdfa5726cdd19fafb3b5ff6d25b2e3fe82c2051b2556d"
+    }
+  ]
+}

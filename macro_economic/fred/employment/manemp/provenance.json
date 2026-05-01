@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series MANEMP",
+  "acquired_at": "2026-05-01T21:19:24.872993+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/manemp/observations.parquet",
+      "sha256": "af69f3604039c3dbf1df330ca31f2a3db283797cb82fc59c58dd0eb2a2f21692"
+    }
+  ]
+}

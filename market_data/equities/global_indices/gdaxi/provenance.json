@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^GDAXI daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:05.872022+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/gdaxi/daily.parquet",
+      "sha256": "a9b28d374a7fe687de3ce3d91f588745afb9b4edf877965b58f75f26069da313"
+    }
+  ]
+}

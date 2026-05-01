@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^GSPTSE daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:09.684874+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/gsptse/daily.parquet",
+      "sha256": "e1df72fb8de1d4c4e90c2cd159a99bb266f6332c873442f7da0419b4fe36c341"
+    }
+  ]
+}

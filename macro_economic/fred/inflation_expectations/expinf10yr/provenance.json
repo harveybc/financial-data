@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series EXPINF10YR",
+  "acquired_at": "2026-05-01T21:19:59.999689+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation_expectations/expinf10yr/observations.parquet",
+      "sha256": "3288ac1ac2a1a36d790b9e7125ece85228182c0cf85ae8c5c803aac4ebbf0cc6"
+    }
+  ]
+}

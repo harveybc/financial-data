@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "VOO daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:19.952390+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/voo/daily.parquet",
+      "sha256": "a3e85c54cb8384bbb1c6e22e6d506549518f622b3f46f6b087e302401b007a46"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series AAA",
+  "acquired_at": "2026-05-01T21:19:44.531095+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/credit/aaa/observations.parquet",
+      "sha256": "0257bea8517663c4a596ec409d2f28fe0ff0da72227314cd66d44728d24ae778"
+    }
+  ]
+}

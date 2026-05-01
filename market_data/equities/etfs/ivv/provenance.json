@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "IVV daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:20.563014+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/ivv/daily.parquet",
+      "sha256": "9c1d38a59bc8bbc486645ca6623f7f58f7693da83416ffdc42bd0ebd552fd959"
+    }
+  ]
+}

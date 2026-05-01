@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^BSESN daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:12.154113+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/bsesn/daily.parquet",
+      "sha256": "c7a779b594f9cb3abf066b9cea6a0ceec6a5d4faf20319afdce752cdab807b71"
+    }
+  ]
+}

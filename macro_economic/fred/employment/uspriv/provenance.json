@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series USPRIV",
+  "acquired_at": "2026-05-01T21:19:25.276654+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/uspriv/observations.parquet",
+      "sha256": "c3cde5936314852ff3ae186901252c1478417f43eb72dce742a8ff9432a21afa"
+    }
+  ]
+}

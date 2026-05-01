@@ -144,8 +144,9 @@ def sync_gamma_outputs() -> dict[str, str]:
     macro_running, _ = remote_pid_running("gamma", f"{ROOT}/_logs/gamma/stage13_macro_onchain_python.pid")
     supp_running, _ = remote_pid_running("gamma", f"{ROOT}/_logs/gamma/stage13_supplemental_python.pid")
     remaining_running, _ = remote_pid_running("gamma", f"{ROOT}/_logs/gamma/stage13_remaining_free_python.pid")
+    followup_running, _ = remote_pid_running("gamma", f"{ROOT}/_logs/gamma/stage13_gamma_followup_python.pid")
     crypto_accel_running, _ = remote_pid_running("gamma", f"{ROOT}/_logs/gamma/stage13_crypto_perp_accelerator_python.pid")
-    if macro_running or supp_running or remaining_running or crypto_accel_running:
+    if macro_running or supp_running or remaining_running or followup_running or crypto_accel_running:
         return {"state": "deferred_busy", "action": "gamma_sync"}
     commands = [
         ["scp", "-r", f"gamma:{ROOT}/macro_economic/fred", f"gamma:{ROOT}/macro_economic/bls", str(ROOT / "macro_economic/")],
@@ -184,13 +185,21 @@ def sync_gamma_crypto_to_dragon() -> dict[str, str]:
 
 
 def sync_dragon_outputs() -> dict[str, str]:
-    running, _ = remote_pid_running("dragon", f"{ROOT}/_logs/dragon/stage13_crypto_python.pid")
-    if running:
+    crypto_running, _ = remote_pid_running("dragon", f"{ROOT}/_logs/dragon/stage13_crypto_python.pid")
+    finra_running, _ = remote_pid_running("dragon", f"{ROOT}/_logs/dragon/stage13_finra_short_interest_python.pid")
+    if crypto_running or finra_running:
         return {"state": "deferred_busy", "action": "dragon_sync"}
-    result = run(["scp", "-r", f"dragon:{ROOT}/market_data/crypto", str(ROOT / "market_data/")], timeout=600)
+    crypto_marker = REPORT_DIR / "dragon_crypto_sync_done.json"
+    if crypto_marker.exists():
+        result = subprocess.CompletedProcess(["skip_dragon_crypto_sync"], 0, "", "")
+    else:
+        result = run(["scp", "-r", f"dragon:{ROOT}/market_data/crypto", str(ROOT / "market_data/")], timeout=600)
+        if result.returncode == 0:
+            crypto_marker.write_text(json.dumps({"synced_at": utc_now()}, indent=2) + "\n", encoding="utf-8")
+    finra = run(["scp", "-r", f"dragon:{ROOT}/alternative_data/short_interest", str(ROOT / "alternative_data/")], timeout=600)
     logs = run(["scp", "-r", f"dragon:{ROOT}/_logs/dragon", str(ROOT / "_logs/")], timeout=120)
-    state = "ok" if result.returncode == 0 and logs.returncode == 0 else "partial"
-    return {"state": state, "action": "dragon_sync", "stderr": (result.stderr + logs.stderr)[-800:]}
+    state = "ok" if result.returncode == 0 and finra.returncode == 0 and logs.returncode == 0 else "partial"
+    return {"state": state, "action": "dragon_sync", "stderr": (result.stderr + finra.stderr + logs.stderr)[-800:]}
 
 
 def local_file_count(*parts: str) -> int:
@@ -353,6 +362,21 @@ def main() -> None:
         "deliverable": "economic_calendar/release_actuals with FRED actuals and scheduled-events gap note",
     })
 
+    omega_followup = start_local_worker(
+        "_scripts/workers/stage13_omega_followup_worker.py",
+        ROOT / "_logs/omega/stage13_omega_followup_python.pid",
+        ROOT / "_logs/omega/stage13_omega_followup_python.out",
+        ROOT / "_logs/omega/stage13_omega_followup_worker.log",
+        "DONE omega follow-up worker",
+    )
+    decisions.append({
+        "machine": "omega",
+        "stage": "Stage 1.3 follow-up: yfinance coverage and economic calendar proxy",
+        "state": omega_followup["state"],
+        "action": omega_followup["action"],
+        "deliverable": "additional yfinance indices/ETFs/EM FX/agriculture plus FRED-derived scheduled-event proxy and consensus gap note",
+    })
+
     omega_housekeeping = start_local_worker(
         "_scripts/workers/stage13_omega_housekeeping_worker.py",
         ROOT / "_logs/omega/stage13_housekeeping_python.pid",
@@ -375,7 +399,7 @@ def main() -> None:
         f"{ROOT}/_logs/dragon/stage13_crypto_python.pid",
         f"{ROOT}/_logs/dragon/stage13_crypto_python.out",
         f"{ROOT}/_logs/dragon/stage13_crypto_worker.log",
-        "DONE dragon Binance acquisition",
+        "DONE dragon crypto acquisition",
     )
     decisions.append({
         "machine": "dragon",
@@ -383,6 +407,38 @@ def main() -> None:
         "state": dragon["state"],
         "action": dragon["action"],
         "deliverable": "market_data/crypto spot/perpetual/funding outputs",
+    })
+
+    dragon_quality = start_remote_worker(
+        "dragon",
+        "_scripts/workers/stage13_dragon_quality_worker.py",
+        f"{ROOT}/_logs/dragon/stage13_crypto_quality_python.pid",
+        f"{ROOT}/_logs/dragon/stage13_crypto_quality_python.out",
+        f"{ROOT}/_logs/dragon/stage13_dragon_quality_worker.log",
+        "DONE dragon crypto quality worker",
+    )
+    decisions.append({
+        "machine": "dragon",
+        "stage": "Stage 1.3 validation follow-up: crypto quality audit",
+        "state": dragon_quality["state"],
+        "action": dragon_quality["action"],
+        "deliverable": "_logs/dragon/stage13_crypto_quality_report.md and JSON anomaly inventory",
+    })
+
+    dragon_finra = start_remote_worker(
+        "dragon",
+        "_scripts/workers/stage13_dragon_finra_short_interest_worker.py",
+        f"{ROOT}/_logs/dragon/stage13_finra_short_interest_python.pid",
+        f"{ROOT}/_logs/dragon/stage13_finra_short_interest_python.out",
+        f"{ROOT}/_logs/dragon/stage13_finra_short_interest_worker.log",
+        "DONE dragon FINRA consolidated short-interest worker",
+    )
+    decisions.append({
+        "machine": "dragon",
+        "stage": "Stage 1.3 Task 1.3.M FINRA short interest follow-up",
+        "state": dragon_finra["state"],
+        "action": dragon_finra["action"],
+        "deliverable": "alternative_data/short_interest/finra_consolidated_short_interest/2025.parquet",
     })
 
     gamma_macro = start_remote_worker(
@@ -431,6 +487,22 @@ def main() -> None:
         "state": gamma_remaining["state"],
         "action": gamma_remaining["action"],
         "deliverable": "Etherscan free snapshots, FINRA Reg SHO daily short-volume, OECD CLI, BEA gap note",
+    })
+
+    gamma_followup = start_remote_worker(
+        "gamma",
+        "_scripts/workers/stage13_gamma_followup_worker.py",
+        f"{ROOT}/_logs/gamma/stage13_gamma_followup_python.pid",
+        f"{ROOT}/_logs/gamma/stage13_gamma_followup_python.out",
+        f"{ROOT}/_logs/gamma/stage13_gamma_followup_worker.log",
+        "DONE gamma follow-up worker",
+    )
+    decisions.append({
+        "machine": "gamma",
+        "stage": "Stage 1.3 follow-up: FRED expansion, CoinMetrics repair, SEC metadata",
+        "state": gamma_followup["state"],
+        "action": gamma_followup["action"],
+        "deliverable": "expanded FRED series, per-metric CoinMetrics community files, S&P 500 SEC filing metadata",
     })
 
     gamma_crypto_accel = start_remote_worker(

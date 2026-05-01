@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "VTI daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:21.184850+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/vti/daily.parquet",
+      "sha256": "d6cd20fcebbb5332986efa8e2a166590f905627922b3ae5539d145e64316c2d0"
+    }
+  ]
+}

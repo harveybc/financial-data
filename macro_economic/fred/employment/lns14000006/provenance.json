@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series LNS14000006",
+  "acquired_at": "2026-05-01T21:19:23.239585+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/lns14000006/observations.parquet",
+      "sha256": "786191a5647d4a3dca56f901e1ce3c431bb018e4c4677266a2ab40d3fe522c42"
+    }
+  ]
+}

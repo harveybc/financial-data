@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "BND daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:15.232032+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/bnd/daily.parquet",
+      "sha256": "254a91f3daa3ffa1d888c39aec123e61e767637c0883e27769351290551f8172"
+    }
+  ]
+}

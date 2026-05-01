@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-05-01T21:21:16.751175+00:00",
+  "summary": {
+    "fred_expansion": {
+      "fetched": 69,
+      "skipped": 66,
+      "failed": 6
+    },
+    "coinmetrics_per_metric": {
+      "fetched": 43,
+      "failed": 53,
+      "skipped": 0
+    },
+    "sec_sp500_metadata": {
+      "tickers": 50,
+      "rows": 33990,
+      "missing": 0
+    }
+  }
+}

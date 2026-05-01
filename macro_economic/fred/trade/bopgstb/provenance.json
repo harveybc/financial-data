@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series BOPGSTB",
+  "acquired_at": "2026-05-01T21:19:54.855742+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/trade/bopgstb/observations.parquet",
+      "sha256": "0b9f28d6e4f50ca0319064ff74cc4a77d5d11081216e586ebf684cfd913a2d1f"
+    }
+  ]
+}

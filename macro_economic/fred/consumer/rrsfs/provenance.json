@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series RRSFS",
+  "acquired_at": "2026-05-01T21:19:46.691970+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/rrsfs/observations.parquet",
+      "sha256": "5bc8f40f2ea4bacfa204c1a2e5fb85a4cbdd45a04e9e6960d232261c1573aca1"
+    }
+  ]
+}

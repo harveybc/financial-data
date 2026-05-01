@@ -1,0 +1,11 @@
+{
+  "source": "FINRA Query API consolidatedShortInterest",
+  "description": "FINRA consolidated biweekly short-interest data for 2025. This directly addresses Stage 1.3.M more closely than Reg SHO daily short-sale volume.",
+  "acquired_at": "2026-05-01T21:38:18.600675+00:00",
+  "files": [
+    {
+      "path": "alternative_data/short_interest/finra_consolidated_short_interest/2025.parquet",
+      "sha256": "d04cb1d039e3083f53292be36c2d1d6d8346e16ea7c870fc23202721c68bdf64"
+    }
+  ]
+}

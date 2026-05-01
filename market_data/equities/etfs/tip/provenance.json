@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "TIP daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:16.901619+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/tip/daily.parquet",
+      "sha256": "b44e77d5b75606478190a298654699f14202b47af63e890ee03fcbc3406f102e"
+    }
+  ]
+}

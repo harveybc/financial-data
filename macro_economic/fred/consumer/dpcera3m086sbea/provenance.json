@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series DPCERA3M086SBEA",
+  "acquired_at": "2026-05-01T21:19:48.350381+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/dpcera3m086sbea/observations.parquet",
+      "sha256": "cb7180591d8c32e74a0cb4f76d95b2f70b7ac68d899b612a5d7c38c52ba6c03d"
+    }
+  ]
+}

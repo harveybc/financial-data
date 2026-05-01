@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series WRESBAL",
+  "acquired_at": "2026-05-01T21:19:31.519074+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/wresbal/observations.parquet",
+      "sha256": "b8dd2ae00673ae3cefdbcbcc547ad587f06cf91847ae39edfeeb5bdd81c53583"
+    }
+  ]
+}

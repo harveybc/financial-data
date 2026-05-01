@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series NETEXP",
+  "acquired_at": "2026-05-01T21:19:56.876322+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/trade/netexp/observations.parquet",
+      "sha256": "dcbf1f98dcef860e3832c2147d57242f7b4a3178c3ad749dd6183761d7130ca7"
+    }
+  ]
+}

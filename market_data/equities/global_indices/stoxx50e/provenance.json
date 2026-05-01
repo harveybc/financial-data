@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^STOXX50E daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:08.632362+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/stoxx50e/daily.parquet",
+      "sha256": "dae9731b0ee2a89b9f3b9d5aaa9631bd7bafe5cf793194b6dc413e9fcae9319a"
+    }
+  ]
+}

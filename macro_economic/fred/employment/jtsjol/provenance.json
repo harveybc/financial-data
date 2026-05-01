@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series JTSJOL",
+  "acquired_at": "2026-05-01T21:19:22.035540+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/jtsjol/observations.parquet",
+      "sha256": "df9c7077551127abba6d5c5111d223c4f919ce0b8181e59e70beb7e22f79fdc2"
+    }
+  ]
+}

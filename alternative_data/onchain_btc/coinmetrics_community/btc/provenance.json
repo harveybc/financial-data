@@ -1,0 +1,11 @@
+{
+  "source": "CoinMetrics Community",
+  "description": "btc TxTfrCnt daily community metric",
+  "acquired_at": "2026-05-01T21:20:04.371176+00:00",
+  "files": [
+    {
+      "path": "alternative_data/onchain_btc/coinmetrics_community/btc/TxTfrCnt.parquet",
+      "sha256": "91ad7a41d3a9a67f5808e6e0054d70d9839832e3c06392d4e0d9ab58e0cfc5fc"
+    }
+  ]
+}

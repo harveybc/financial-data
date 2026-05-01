@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series DGORDER",
+  "acquired_at": "2026-05-01T21:19:54.442405+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/dgorder/observations.parquet",
+      "sha256": "0c0b09a1091cbc3df8e48554067eeae400a0625789110fac6f27a61bdbe0d814"
+    }
+  ]
+}

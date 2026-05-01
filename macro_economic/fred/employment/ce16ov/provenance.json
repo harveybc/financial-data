@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series CE16OV",
+  "acquired_at": "2026-05-01T21:19:22.840634+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/ce16ov/observations.parquet",
+      "sha256": "2d9977cc84b21ee9070b36e2db9b4b765b65f1072b6f908b2ca1c764d04daf2b"
+    }
+  ]
+}

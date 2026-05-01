@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series IMPGS",
+  "acquired_at": "2026-05-01T21:19:28.965978+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/impgs/observations.parquet",
+      "sha256": "7c5881ef716663fcde3e836d695a0cef473046a095ce20f921b873abac049c8b"
+    }
+  ]
+}

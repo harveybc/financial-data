@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series PCE",
+  "acquired_at": "2026-05-01T21:19:27.301775+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/pce/observations.parquet",
+      "sha256": "755668fd6757c1e012a82d73685c143ea17ebfbe62aa4193e0663ad197a155df"
+    }
+  ]
+}

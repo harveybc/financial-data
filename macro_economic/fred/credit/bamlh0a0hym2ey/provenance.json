@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series BAMLH0A0HYM2EY",
+  "acquired_at": "2026-05-01T21:19:42.370769+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/credit/bamlh0a0hym2ey/observations.parquet",
+      "sha256": "a2e40bfdd6f19fe6b126e76538f526d48c72a07b6d9f1d052f1fd48277126495"
+    }
+  ]
+}

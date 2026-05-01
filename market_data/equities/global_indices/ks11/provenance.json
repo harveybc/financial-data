@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^KS11 daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:11.249103+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/ks11/daily.parquet",
+      "sha256": "92287c0056b11d61f3108594202b21e62a3c5bd88043b47aca35d57cd0a01448"
+    }
+  ]
+}

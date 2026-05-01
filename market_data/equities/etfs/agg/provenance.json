@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "AGG daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:14.739760+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/agg/daily.parquet",
+      "sha256": "25602df84672b5ed251dbacc6e61732e9312fe98872526d8f8f14144ded524e3"
+    }
+  ]
+}

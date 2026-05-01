@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series GNPC96",
+  "acquired_at": "2026-05-01T21:19:26.490911+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/gnpc96/observations.parquet",
+      "sha256": "a08979bf751c1b3db40d698750547442364bcca509200d50567cbfa257678411"
+    }
+  ]
+}

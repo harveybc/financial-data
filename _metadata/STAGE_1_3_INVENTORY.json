@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-05-01T21:00:06.820747+00:00",
+  "generated_at": "2026-05-01T21:42:44.383699+00:00",
   "stage": "Stage 1.3 Free Data Acquisition validation/inventory",
   "inventory": {
     "roots": {
       "market_data": {
         "exists": true,
-        "files": 572,
-        "bytes": 2193764565,
+        "files": 728,
+        "bytes": 2206068960,
         "suffix_counts": {
-          ".json": 99,
-          ".md": 198,
-          ".parquet": 255,
+          ".json": 140,
+          ".md": 280,
+          ".parquet": 288,
           "<none>": 20
         }
       },
       "macro_economic": {
         "exists": true,
-        "files": 304,
-        "bytes": 4350318,
+        "files": 580,
+        "bytes": 6053774,
         "suffix_counts": {
           ".csv": 1,
-          ".json": 74,
-          ".md": 147,
-          ".parquet": 71,
+          ".json": 143,
+          ".md": 285,
+          ".parquet": 140,
           ".xml": 1,
           "<none>": 10
         }
       },
       "alternative_data": {
         "exists": true,
-        "files": 115,
-        "bytes": 382305101,
+        "files": 140,
+        "bytes": 402446969,
         "suffix_counts": {
           ".csv": 1,
-          ".json": 19,
-          ".md": 36,
-          ".parquet": 14,
+          ".json": 24,
+          ".md": 44,
+          ".parquet": 26,
           ".txt": 16,
           ".zip": 16,
           "<none>": 13
@@ -54,38 +54,39 @@
       },
       "economic_calendar": {
         "exists": true,
-        "files": 44,
-        "bytes": 274785,
+        "files": 49,
+        "bytes": 306881,
         "suffix_counts": {
-          ".json": 10,
-          ".md": 21,
-          ".parquet": 10,
+          ".json": 11,
+          ".md": 24,
+          ".parquet": 11,
           "<none>": 3
         }
       }
     },
     "totals": {
-      "files": 1068,
-      "bytes": 2581418870,
-      "data_directories": 206
+      "files": 1530,
+      "bytes": 2615600685,
+      "data_directories": 319
     },
     "documentation": {
-      "data_directories_checked": 206,
+      "data_directories_checked": 319,
       "directories_missing_docs": 0,
       "missing_doc_examples": []
     }
   },
   "acquisition_log": {
     "exists": true,
-    "rows": 147,
-    "latest_timestamp": "2026-05-01T20:07:17.629598+00:00",
+    "rows": 189,
+    "latest_timestamp": "2026-05-01T21:19:26.306201+00:00",
     "status_counts": {
-      "ok": 102,
+      "ok": 144,
       "schema_shifted_or_malformed": 45
     },
     "top_sources": {
       "FRED": 76,
       "ok": 45,
+      "Yahoo Finance": 41,
       "HistData": 10,
       "Blockchain.com": 6,
       "mempool.space": 3,
@@ -93,7 +94,8 @@
       "DeFiLlama": 1,
       "SEC EDGAR": 1,
       "US Treasury FiscalData": 1,
-      "BLS Public API": 1
+      "BLS Public API": 1,
+      "FRED-derived release-date proxy": 1
     },
     "non_ok_rows": [
       {
@@ -419,164 +421,164 @@
     ],
     "recent_rows": [
       {
-        "timestamp": "2026-05-01T16:42:57.463543+00:00",
-        "source": "FRED",
-        "dataset": "nonfarm_payrolls_mom",
+        "timestamp": "2026-05-01T21:19:16.902228+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "tip",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/nonfarm_payrolls_mom/actuals.parquet",
-        "notes": "rows=432"
+        "path": "market_data/equities/etfs/tip/daily.parquet",
+        "notes": "rows=5552"
       },
       {
-        "timestamp": "2026-05-01T16:42:57.702282+00:00",
-        "source": "FRED",
-        "dataset": "unemployment_rate",
+        "timestamp": "2026-05-01T21:19:17.514007+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "shy",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/unemployment_rate/actuals.parquet",
-        "notes": "rows=432"
+        "path": "market_data/equities/etfs/shy/daily.parquet",
+        "notes": "rows=5894"
       },
       {
-        "timestamp": "2026-05-01T16:42:57.969830+00:00",
-        "source": "FRED",
-        "dataset": "gdp_qoq_annualized",
+        "timestamp": "2026-05-01T21:19:18.174156+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "iyr",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/gdp_qoq_annualized/actuals.parquet",
-        "notes": "rows=144"
+        "path": "market_data/equities/etfs/iyr/daily.parquet",
+        "notes": "rows=6422"
       },
       {
-        "timestamp": "2026-05-01T16:42:58.274564+00:00",
-        "source": "FRED",
-        "dataset": "fed_funds",
+        "timestamp": "2026-05-01T21:19:18.745155+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "vnq",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/fed_funds/actuals.parquet",
-        "notes": "rows=432"
+        "path": "market_data/equities/etfs/vnq/daily.parquet",
+        "notes": "rows=5348"
       },
       {
-        "timestamp": "2026-05-01T16:42:58.682157+00:00",
-        "source": "FRED",
-        "dataset": "treasury_10y",
+        "timestamp": "2026-05-01T21:19:19.523224+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "dia",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/treasury_10y/actuals.parquet",
-        "notes": "rows=9393"
+        "path": "market_data/equities/etfs/dia/daily.parquet",
+        "notes": "rows=7031"
       },
       {
-        "timestamp": "2026-05-01T16:44:02.769523+00:00",
-        "source": "FRED",
-        "dataset": "initial_claims",
+        "timestamp": "2026-05-01T21:19:19.952965+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "voo",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/initial_claims/actuals.parquet",
-        "notes": "rows=1878"
+        "path": "market_data/equities/etfs/voo/daily.parquet",
+        "notes": "rows=3851"
       },
       {
-        "timestamp": "2026-05-01T16:44:03.095424+00:00",
-        "source": "FRED",
-        "dataset": "retail_sales_mom",
+        "timestamp": "2026-05-01T21:19:20.563728+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "ivv",
         "status": "ok",
-        "path": "economic_calendar/release_actuals/retail_sales_mom/actuals.parquet",
-        "notes": "rows=408"
+        "path": "market_data/equities/etfs/ivv/daily.parquet",
+        "notes": "rows=6442"
       },
       {
-        "timestamp": "2026-05-01T17:49:51.282057+00:00",
-        "source": "HistData",
-        "dataset": "audusd",
+        "timestamp": "2026-05-01T21:19:21.185519+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "vti",
         "status": "ok",
-        "path": "market_data/forex/g10/audusd",
-        "notes": "zips=21"
+        "path": "market_data/equities/etfs/vti/daily.parquet",
+        "notes": "rows=6172"
       },
       {
-        "timestamp": "2026-05-01T17:50:36.576841+00:00",
-        "source": "HistData",
-        "dataset": "eurgbp",
+        "timestamp": "2026-05-01T21:19:21.640327+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "usdcop_x",
         "status": "ok",
-        "path": "market_data/forex/g10/eurgbp",
-        "notes": "zips=21"
+        "path": "market_data/forex/emerging_markets/usdcop_x/daily.parquet",
+        "notes": "rows=5734"
       },
       {
-        "timestamp": "2026-05-01T17:51:27.915321+00:00",
-        "source": "HistData",
-        "dataset": "eurjpy",
+        "timestamp": "2026-05-01T21:19:22.085391+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "usdclp_x",
         "status": "ok",
-        "path": "market_data/forex/g10/eurjpy",
-        "notes": "zips=21"
+        "path": "market_data/forex/emerging_markets/usdclp_x/daily.parquet",
+        "notes": "rows=5723"
       },
       {
-        "timestamp": "2026-05-01T17:52:19.909248+00:00",
-        "source": "HistData",
-        "dataset": "eurusd",
+        "timestamp": "2026-05-01T21:19:22.569303+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "usdkrw_x",
         "status": "ok",
-        "path": "market_data/forex/g10/eurusd",
-        "notes": "zips=21"
+        "path": "market_data/forex/emerging_markets/usdkrw_x/daily.parquet",
+        "notes": "rows=5727"
       },
       {
-        "timestamp": "2026-05-01T17:53:12.354627+00:00",
-        "source": "HistData",
-        "dataset": "gbpjpy",
+        "timestamp": "2026-05-01T21:19:22.967003+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "usdtwd_x",
         "status": "ok",
-        "path": "market_data/forex/g10/gbpjpy",
-        "notes": "zips=21"
+        "path": "market_data/forex/emerging_markets/usdtwd_x/daily.parquet",
+        "notes": "rows=5234"
       },
       {
-        "timestamp": "2026-05-01T17:54:03.734655+00:00",
-        "source": "HistData",
-        "dataset": "gbpusd",
+        "timestamp": "2026-05-01T21:19:23.521717+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "usdidr_x",
         "status": "ok",
-        "path": "market_data/forex/g10/gbpusd",
-        "notes": "zips=21"
+        "path": "market_data/forex/emerging_markets/usdidr_x/daily.parquet",
+        "notes": "rows=6183"
       },
       {
-        "timestamp": "2026-05-01T17:54:51.674048+00:00",
-        "source": "HistData",
-        "dataset": "nzdusd",
+        "timestamp": "2026-05-01T21:19:24.015276+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "zc_f",
         "status": "ok",
-        "path": "market_data/forex/g10/nzdusd",
-        "notes": "zips=21"
+        "path": "market_data/commodities/agriculture/zc_f/daily.parquet",
+        "notes": "rows=6369"
       },
       {
-        "timestamp": "2026-05-01T17:55:37.735888+00:00",
-        "source": "HistData",
-        "dataset": "usdcad",
+        "timestamp": "2026-05-01T21:19:24.436359+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "zs_f",
         "status": "ok",
-        "path": "market_data/forex/g10/usdcad",
-        "notes": "zips=20"
+        "path": "market_data/commodities/agriculture/zs_f/daily.parquet",
+        "notes": "rows=6361"
       },
       {
-        "timestamp": "2026-05-01T17:56:28.578811+00:00",
-        "source": "HistData",
-        "dataset": "usdchf",
+        "timestamp": "2026-05-01T21:19:24.808405+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "zw_f",
         "status": "ok",
-        "path": "market_data/forex/g10/usdchf",
-        "notes": "zips=21"
+        "path": "market_data/commodities/agriculture/zw_f/daily.parquet",
+        "notes": "rows=6381"
       },
       {
-        "timestamp": "2026-05-01T17:57:22.404021+00:00",
-        "source": "HistData",
-        "dataset": "usdjpy",
+        "timestamp": "2026-05-01T21:19:25.236863+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "kc_f",
         "status": "ok",
-        "path": "market_data/forex/g10/usdjpy",
-        "notes": "zips=21"
+        "path": "market_data/commodities/agriculture/kc_f/daily.parquet",
+        "notes": "rows=6517"
       },
       {
-        "timestamp": "2026-05-01T20:07:10.814580+00:00",
-        "source": "BEA Data API",
-        "dataset": "gdp_percent_change",
+        "timestamp": "2026-05-01T21:19:25.642516+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "sb_f",
         "status": "ok",
-        "path": "macro_economic/bea/nipa/gdp_percent_change/quarterly.parquet",
-        "notes": "rows=7900"
+        "path": "market_data/commodities/agriculture/sb_f/daily.parquet",
+        "notes": "rows=6480"
       },
       {
-        "timestamp": "2026-05-01T20:07:14.666824+00:00",
-        "source": "BEA Data API",
-        "dataset": "gdp_current_dollars",
+        "timestamp": "2026-05-01T21:19:26.094720+00:00",
+        "source": "Yahoo Finance",
+        "dataset": "ct_f",
         "status": "ok",
-        "path": "macro_economic/bea/nipa/gdp_current_dollars/quarterly.parquet",
-        "notes": "rows=8242"
+        "path": "market_data/commodities/agriculture/ct_f/daily.parquet",
+        "notes": "rows=6519"
       },
       {
-        "timestamp": "2026-05-01T20:07:17.629598+00:00",
-        "source": "BEA Data API",
-        "dataset": "real_gdp_chained_dollars",
+        "timestamp": "2026-05-01T21:19:26.306201+00:00",
+        "source": "FRED-derived release-date proxy",
+        "dataset": "fred_release_date_proxy",
         "status": "ok",
-        "path": "macro_economic/bea/nipa/real_gdp_chained_dollars/quarterly.parquet",
-        "notes": "rows=4739"
+        "path": "economic_calendar/scheduled_events/fred_release_date_proxy/scheduled_events.parquet",
+        "notes": "rows=1200"
       }
     ]
   },
@@ -594,13 +596,17 @@
       "summary": "- Stage: 1.3 Free Data Acquisition"
     },
     {
+      "path": "economic_calendar/release_surprises/stage13_consensus_gap.md",
+      "summary": "FRED release actuals and a historical release-date proxy are present under `economic_calendar/release_actuals/` and `economic_calendar/scheduled_events/fred_release_date_proxy/`."
+    },
+    {
       "path": "economic_calendar/scheduled_events/stage13_scheduled_events_gap.md",
-      "summary": "Stage: 1.3 Free Data Acquisition"
+      "summary": "FRED release actuals and a historical release-date proxy are present under `economic_calendar/release_actuals/` and `economic_calendar/scheduled_events/fred_release_date_proxy/`."
     }
   ],
   "dispatch": {
     "exists": true,
-    "generated_at": "2026-05-01T20:48:54.039921+00:00",
+    "generated_at": "2026-05-01T21:39:17.147226+00:00",
     "decisions": [
       {
         "machine": "omega",
@@ -625,6 +631,13 @@
       },
       {
         "machine": "omega",
+        "stage": "Stage 1.3 follow-up: yfinance coverage and economic calendar proxy",
+        "state": "completed_idle",
+        "action": "no_dispatch_needed",
+        "deliverable": "additional yfinance indices/ETFs/EM FX/agriculture plus FRED-derived scheduled-event proxy and consensus gap note"
+      },
+      {
+        "machine": "omega",
         "stage": "Stage 1.3 documentation, deliverable validation, inventory, and dispatch context refresh",
         "state": "started",
         "action": "_scripts/workers/stage13_omega_housekeeping_worker.py",
@@ -633,9 +646,23 @@
       {
         "machine": "dragon",
         "stage": "Stage 1.3 Task 1.3.F Binance crypto comprehensive",
-        "state": "started",
-        "action": "_scripts/workers/stage13_dragon_crypto_worker.py",
+        "state": "completed_idle",
+        "action": "no_dispatch_needed",
         "deliverable": "market_data/crypto spot/perpetual/funding outputs"
+      },
+      {
+        "machine": "dragon",
+        "stage": "Stage 1.3 validation follow-up: crypto quality audit",
+        "state": "completed_idle",
+        "action": "no_dispatch_needed",
+        "deliverable": "_logs/dragon/stage13_crypto_quality_report.md and JSON anomaly inventory"
+      },
+      {
+        "machine": "dragon",
+        "stage": "Stage 1.3 Task 1.3.M FINRA short interest follow-up",
+        "state": "completed_idle",
+        "action": "no_dispatch_needed",
+        "deliverable": "alternative_data/short_interest/finra_consolidated_short_interest/2025.parquet"
       },
       {
         "machine": "gamma",
@@ -657,6 +684,13 @@
         "state": "completed_idle",
         "action": "no_dispatch_needed",
         "deliverable": "Etherscan free snapshots, FINRA Reg SHO daily short-volume, OECD CLI, BEA gap note"
+      },
+      {
+        "machine": "gamma",
+        "stage": "Stage 1.3 follow-up: FRED expansion, CoinMetrics repair, SEC metadata",
+        "state": "completed_idle",
+        "action": "no_dispatch_needed",
+        "deliverable": "expanded FRED series, per-metric CoinMetrics community files, S&P 500 SEC filing metadata"
       },
       {
         "machine": "gamma",

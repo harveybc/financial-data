@@ -1,0 +1,6 @@
+# lns14000006
+
+Expanded FRED series LNS14000006
+
+Source: FRED
+Acquired: 2026-05-01T21:19:23.239489+00:00

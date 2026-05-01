@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "HYG daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:16.387727+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/hyg/daily.parquet",
+      "sha256": "0356adad20237dd2dfdc0139df9590714fb523a2b5900d9839530533dad97f56"
+    }
+  ]
+}

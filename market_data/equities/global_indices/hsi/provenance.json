@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^HSI daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:07.670201+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/hsi/daily.parquet",
+      "sha256": "e732375b40c9cc320514fcf62386ba4449ab142e90ecb0d44c6b8d72689510a2"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series CURRCIR",
+  "acquired_at": "2026-05-01T21:19:31.974914+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/currcir/observations.parquet",
+      "sha256": "d3c01dcd7092c35121718c4168c39f81962001e9a0eb21b5a58958eeaf11010a"
+    }
+  ]
+}

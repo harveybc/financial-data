@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series TOTRESNS",
+  "acquired_at": "2026-05-01T21:19:30.587265+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/totresns/observations.parquet",
+      "sha256": "d40a1e7cb4aa413bab6e92385f9acbe998fbc75da7dca6aa605403bc6a1cd8bc"
+    }
+  ]
+}

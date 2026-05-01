@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "EFA daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:13.238596+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/efa/daily.parquet",
+      "sha256": "b32efd8137a8d436ff70908dda62c68d70b7eeb31d57ab1884f0f481859e0df9"
+    }
+  ]
+}

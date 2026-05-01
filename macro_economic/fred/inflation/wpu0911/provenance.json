@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series WPU0911",
+  "acquired_at": "2026-05-01T21:19:17.464424+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/wpu0911/observations.parquet",
+      "sha256": "b5058fdc5034a3ce5cff0acd7a51c8adb760324b0b0399c730c4fcf847a54660"
+    }
+  ]
+}

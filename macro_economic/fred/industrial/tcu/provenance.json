@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series TCU",
+  "acquired_at": "2026-05-01T21:19:53.132769+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/tcu/observations.parquet",
+      "sha256": "6d284f51e8a59f77b223b7505ec854d755daa7f7a79a659955eccc301b0c1234"
+    }
+  ]
+}

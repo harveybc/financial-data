@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "VNQ daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:18.744488+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/vnq/daily.parquet",
+      "sha256": "bd5c0bc5e4e5f3daae49a8e54b20bebab6cf7f07684bff45bad6438fc331d143"
+    }
+  ]
+}

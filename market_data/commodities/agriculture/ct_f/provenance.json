@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "CT=F daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:26.094163+00:00",
+  "files": [
+    {
+      "path": "market_data/commodities/agriculture/ct_f/daily.parquet",
+      "sha256": "2ca4f2d367258ea4bde48cae9fbe05a21cabb5b829f2a765150db4205a0dca82"
+    }
+  ]
+}

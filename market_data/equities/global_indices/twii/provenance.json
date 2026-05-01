@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^TWII daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:11.702332+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/twii/daily.parquet",
+      "sha256": "97a11c28d1ad38ca3b1f0df737ac9db96bf0f40383c74dc46a1ff823273a524f"
+    }
+  ]
+}

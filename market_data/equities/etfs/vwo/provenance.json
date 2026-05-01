@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "VWO daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:14.220111+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/vwo/daily.parquet",
+      "sha256": "45b8a036f4cdfc89fdbb635214857aadb6f0dd095ac0f5288055294b54fd1a3f"
+    }
+  ]
+}

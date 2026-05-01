@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series EXPGS",
+  "acquired_at": "2026-05-01T21:19:55.702802+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/trade/expgs/observations.parquet",
+      "sha256": "121ae7869ecb2500eaa709b99cf2b56feff3fc6a294098b2784b8a08746165fd"
+    }
+  ]
+}

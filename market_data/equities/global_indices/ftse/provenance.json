@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^FTSE daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:05.165600+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/ftse/daily.parquet",
+      "sha256": "f3407b790cbdd4e80c92effefe9337dbd2e2b789f2f11dc7ba77eff08d54b946"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED-derived release-date proxy",
+  "description": "Historical scheduled-event proxy from acquired release actuals",
+  "acquired_at": "2026-05-01T21:19:26.305849+00:00",
+  "files": [
+    {
+      "path": "economic_calendar/scheduled_events/fred_release_date_proxy/scheduled_events.parquet",
+      "sha256": "c683be065f7a0fb3d4bdded8505012edb0301468482e8ded584f91dc0399004b"
+    }
+  ]
+}

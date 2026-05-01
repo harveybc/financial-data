@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series M2V",
+  "acquired_at": "2026-05-01T21:19:30.166457+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/m2v/observations.parquet",
+      "sha256": "f6dbdd76f770eed7d8ef0160294b37d322b4aad21bfabc2ac592964e9c0ead12"
+    }
+  ]
+}

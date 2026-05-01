@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series T5YIFR",
+  "acquired_at": "2026-05-01T21:19:40.526553+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/t5yifr/observations.parquet",
+      "sha256": "e262901990ff6f624ac6c8558d82a3d55d634518c99a9f45016b3035163b48a8"
+    }
+  ]
+}

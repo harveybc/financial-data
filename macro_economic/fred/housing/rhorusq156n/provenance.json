@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series RHORUSQ156N",
+  "acquired_at": "2026-05-01T21:19:50.945699+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/rhorusq156n/observations.parquet",
+      "sha256": "6fc63f2a4894db10fbdab80d83ea1efa364d84eb4575de6ba446d0f8af50fe4a"
+    }
+  ]
+}

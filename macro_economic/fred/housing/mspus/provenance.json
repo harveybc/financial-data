@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series MSPUS",
+  "acquired_at": "2026-05-01T21:19:49.633652+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/mspus/observations.parquet",
+      "sha256": "11ca7ba2a34d95b17e731d442d31abf77ed0ff2b2665119062d68adbf269ad57"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series GDPDEF",
+  "acquired_at": "2026-05-01T21:19:15.222949+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/gdpdef/observations.parquet",
+      "sha256": "72102256d3fe987741778c8ce4d964f9a018396a8d53b429b73eaf8126f9eac2"
+    }
+  ]
+}

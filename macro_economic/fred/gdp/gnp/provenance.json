@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series GNP",
+  "acquired_at": "2026-05-01T21:19:26.099111+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/gnp/observations.parquet",
+      "sha256": "630fa342893d7d21769c7c6c7b3ad91408851202a3c9ad7cbda3557251886956"
+    }
+  ]
+}

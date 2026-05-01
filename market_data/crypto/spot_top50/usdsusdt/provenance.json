@@ -1,11 +1,8 @@
 {
   "source": "Binance Spot",
-  "description": "USDSUSDT spot OHLCV 4h",
-  "acquired_at": "2026-05-01T16:40:43.719219+00:00",
-  "files": [
-    {
-      "path": "market_data/crypto/spot_top50/usdsusdt/4h.parquet",
-      "sha256": "dd74be8ebd31ea6728478692e31c3f4f11624c0a6f4f6adc0286a4ea683b54d7"
-    }
-  ]
+  "description": "USDSUSDT spot_top50 4h",
+  "acquired_at": "2026-05-01T21:29:24.455137+00:00",
+  "status": "no_data",
+  "reason": "Binance spot kline endpoint returned HTTP 200 with an empty payload through 2025-12-31",
+  "files": []
 }

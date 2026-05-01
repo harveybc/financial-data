@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series ISRATIO",
+  "acquired_at": "2026-05-01T21:19:52.242423+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/isratio/observations.parquet",
+      "sha256": "cce87eed2f7177b317d43693260daa146a2622bb3e58eb835e3813bf0e96c289"
+    }
+  ]
+}

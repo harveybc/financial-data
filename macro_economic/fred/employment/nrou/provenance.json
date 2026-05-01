@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series NROU",
+  "acquired_at": "2026-05-01T21:19:21.662592+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/employment/nrou/observations.parquet",
+      "sha256": "1b5fd1e0b05777499a3f9091546b02a1d6f10ac096897043ae076e2165d1cb3f"
+    }
+  ]
+}

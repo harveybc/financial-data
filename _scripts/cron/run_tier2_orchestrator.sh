@@ -100,9 +100,9 @@ experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 tier2_model_timeout_seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
-- Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
-- Dragon: Binance top 50 spot, top 10 perpetuals, funding rates.
-- Gamma: FRED, CoinMetrics attempts, Blockchain.com, mempool.space, SEC metadata, DeFiLlama, BLS/Treasury, Etherscan/OECD/FINRA/BEA follow-up, Binance perpetual/funding acceleration.
+- Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, economic calendar actuals/scheduled-event proxy, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
+- Dragon: Binance top 50 spot, top 10 perpetuals, funding rates, crypto quality validation while acquisition is complete.
+- Gamma: FRED expansion, CoinMetrics per-metric repair, Blockchain.com, mempool.space, SEC S&P 500 EDGAR metadata, DeFiLlama, BLS/Treasury, Etherscan/OECD/FINRA/BEA follow-up, Binance perpetual/funding acceleration.
 expected_deliverables: market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs, validation inventory.
 relevant_logs: _logs/supervisor_reports/global_status.md; _logs/supervisor_reports/autonomous_dispatch_report.md; _logs/omega; remote _logs/dragon; remote _logs/gamma.
 constraints: use existing private repo runtime credentials; respect GPU locks; avoid destructive cleanup; sync remote outputs to Omega; escalate only real blockers.
@@ -110,6 +110,7 @@ honesty: report evidence, confidence, assumptions, and stale context corrections
 anomaly_detection: stale PIDs, silent logs, failed APIs, missing provenance, abnormal file counts, empty data files, duplicate timestamps, timezone/frequency drift, stale locks, VRAM not released.
 improvement_suggestion: every tick should preserve one useful reusable-skill or validation-check suggestion when evidence supports it.
 recursive_context_rule: every agent communication must include project_root, active_stage, current_task, expected_deliverable, relevant_docs, relevant_logs, constraints, evidence, anomalies, confidence, and context_to_pass_forward.
+telegram_event_bus_rule: Telegram is for concise task events only: start, finish, blocker, validation anomaly, idle-with-reason, escalation question, human action needed. Never paste long logs; include deliverable paths and evidence. Omega owns the only bidirectional gateway; remote workers use outbound notification only.
 deliverable_validation_rule: before declaring task completion, read the exact work-plan task spec and inspect produced deliverables, provenance/docs, acquisition log, and worker logs. If confidence is below 0.8 or the requirement is ambiguous, write a Tier 4/Codex escalation instead of guessing.
 EOF
 
@@ -149,9 +150,10 @@ dispatch_rc=$?
   echo
   echo "Tier 2 should assign work to idle machines as follows:"
   echo
-  echo "- Dragon: Binance top 50 spot OHLCV, then skip any perpetual/funding outputs already synced from Gamma."
-  echo "- Gamma: FRED, CoinMetrics, Blockchain.com, mempool.space, SEC EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury, plus Binance perpetual/funding acceleration while idle."
-  echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against the work plan, inventory, and dispatch context refresh."
+  echo "- Dragon: Binance top 50 spot OHLCV, then crypto quality validation after acquisition is complete."
+  echo "- Gamma: FRED expansion, CoinMetrics per-metric repair, Blockchain.com, mempool.space, SEC S&P 500 EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury, plus Binance perpetual/funding acceleration while idle."
+  echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, economic calendar proxy, metadata aggregation, documentation backfill, deliverable validation against the work plan, inventory, and dispatch context refresh."
+  echo "- Telegram: post only concise events to HermesAgentOrchestration: task start/finish, blocker, anomaly, idle reason, deliverable path, validation evidence, next action, or human action needed."
   echo "- Sync: Gamma crypto acceleration syncs to Dragon first, then all completed remote outputs sync back to Omega as canonical root."
   echo
   echo "Tier 2 must avoid GPU-heavy dispatch when /tmp/gpu_busy.lock exists or VRAM is already occupied."

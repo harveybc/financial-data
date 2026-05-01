@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series RRPONTSYD",
+  "acquired_at": "2026-05-01T21:19:32.467795+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/money/rrpontsyd/observations.parquet",
+      "sha256": "245eb3af98d98a412076a97f39ad15618788cc35013ec2c81ef72fbce3201970"
+    }
+  ]
+}

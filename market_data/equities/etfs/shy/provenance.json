@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "SHY daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:17.513430+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/shy/daily.parquet",
+      "sha256": "c3944b85631d829ca2ddc7bb32ab47b9e7ebf986e5718becb6428be03bfad49f"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-05-01T21:29:27.712641+00:00",
+  "files_checked": 170,
+  "anomaly_count": 0,
+  "anomalies": [],
+  "documented_exclusion_count": 8,
+  "exclusion_report": "_logs/dragon/stage13_crypto_exclusions.json"
+}

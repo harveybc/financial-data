@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series GDI",
+  "acquired_at": "2026-05-01T21:19:26.874474+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/gdp/gdi/observations.parquet",
+      "sha256": "fc2e8b4d9d1fcd808717e7a4fa3259f635a20c2413b708f7f191fb2914bf37c6"
+    }
+  ]
+}

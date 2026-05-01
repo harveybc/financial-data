@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series HOUST1F",
+  "acquired_at": "2026-05-01T21:19:48.754419+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/houst1f/observations.parquet",
+      "sha256": "f9293cd7ca2a1439472648c7681a0b761b1ee41e249f7752718b9a028424002f"
+    }
+  ]
+}

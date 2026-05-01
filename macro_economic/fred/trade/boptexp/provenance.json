@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series BOPTEXP",
+  "acquired_at": "2026-05-01T21:19:57.383575+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/trade/boptexp/observations.parquet",
+      "sha256": "41e4443cf8a4be975d068aa79de66502ae9bff808322cfd38c53caeb9bac0114"
+    }
+  ]
+}

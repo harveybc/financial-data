@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series HSN1F",
+  "acquired_at": "2026-05-01T21:19:47.822259+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/hsn1f/observations.parquet",
+      "sha256": "6c772e5717acfed64df93fb9ad8c1ae5a0808d3299865a84653225f76ff4d33a"
+    }
+  ]
+}

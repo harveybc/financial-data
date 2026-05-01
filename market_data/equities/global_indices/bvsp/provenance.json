@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^BVSP daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:10.199949+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/bvsp/daily.parquet",
+      "sha256": "f68a678ce8f4695dde95a1647f3924949a00e04d747ecd83142adbbed1dea7e1"
+    }
+  ]
+}

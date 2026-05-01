@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "EEM daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:12.685578+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/eem/daily.parquet",
+      "sha256": "7aa0b6d4bca0146dee47ed5b409d42cd7c4a13a6674cee5d078ad74f50fff114"
+    }
+  ]
+}

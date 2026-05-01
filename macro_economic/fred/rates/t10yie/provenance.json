@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series T10YIE",
+  "acquired_at": "2026-05-01T21:19:40.069008+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/rates/t10yie/observations.parquet",
+      "sha256": "a2e8ba63c6eeb81cd29c2ae9eae449b2e1ef15ce6c63fff4dd844dca83bd160f"
+    }
+  ]
+}

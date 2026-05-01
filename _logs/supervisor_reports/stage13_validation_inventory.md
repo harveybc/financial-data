@@ -1,45 +1,50 @@
 # Stage 1.3 Validation Inventory
 
-Generated: 2026-05-01T21:00:06.820747+00:00
+Generated: 2026-05-01T21:42:44.383699+00:00
 
 ## File Counts
 
 | Root | Exists | Files | Size MB | Top suffixes |
 | --- | --- | ---: | ---: | --- |
-| market_data | True | 572 | 2092.1 | .json:99, .md:198, .parquet:255, <none>:20 |
-| macro_economic | True | 304 | 4.1 | .csv:1, .json:74, .md:147, .parquet:71, .xml:1, <none>:10 |
-| alternative_data | True | 115 | 364.6 | .csv:1, .json:19, .md:36, .parquet:14, .txt:16, .zip:16, <none>:13 |
+| market_data | True | 728 | 2103.9 | .json:140, .md:280, .parquet:288, <none>:20 |
+| macro_economic | True | 580 | 5.8 | .csv:1, .json:143, .md:285, .parquet:140, .xml:1, <none>:10 |
+| alternative_data | True | 140 | 383.8 | .csv:1, .json:24, .md:44, .parquet:26, .txt:16, .zip:16, <none>:13 |
 | reference_data | True | 33 | 0.7 | .json:7, .md:14, .parquet:7, <none>:5 |
-| economic_calendar | True | 44 | 0.3 | .json:10, .md:21, .parquet:10, <none>:3 |
+| economic_calendar | True | 49 | 0.3 | .json:11, .md:24, .parquet:11, <none>:3 |
 
 ## Documentation Coverage
 
-- Data directories checked: 206
+- Data directories checked: 319
 - Directories missing docs: 0
 
 ## Acquisition Log
 
-- Rows: 147
-- Latest timestamp: 2026-05-01T20:07:17.629598+00:00
-- Status counts: {"ok": 102, "schema_shifted_or_malformed": 45}
+- Rows: 189
+- Latest timestamp: 2026-05-01T21:19:26.306201+00:00
+- Status counts: {"ok": 144, "schema_shifted_or_malformed": 45}
 
 ## Known Gaps And Handoffs
 
 - _logs/gamma/stage13_macro_onchain_escalation.md - - Stage: 1.3 Free Data Acquisition
 - _logs/gamma/stage13_remaining_free_gaps.md - - 2026-05-01T16:43:05.462354+00:00 Etherscan historical endpoints: dailytx: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.; dailyavgblocksize: Sorry, it looks like you are trying to acce
 - _logs/gamma/stage13_supplemental_gaps.md - - Stage: 1.3 Free Data Acquisition
-- economic_calendar/scheduled_events/stage13_scheduled_events_gap.md - Stage: 1.3 Free Data Acquisition
+- economic_calendar/release_surprises/stage13_consensus_gap.md - FRED release actuals and a historical release-date proxy are present under `economic_calendar/release_actuals/` and `economic_calendar/scheduled_events/fred_release_date_proxy/`.
+- economic_calendar/scheduled_events/stage13_scheduled_events_gap.md - FRED release actuals and a historical release-date proxy are present under `economic_calendar/release_actuals/` and `economic_calendar/scheduled_events/fred_release_date_proxy/`.
 
 ## Active Dispatch Context
 
 - omega: Stage 1.3 Free Data Acquisition | completed_idle | market_data/equities, commodities, forex, HistData-derived parquet/csv
 - omega: Stage 1.3 Free Data Acquisition | completed_idle | CFTC, holidays, trading calendars, reference provenance
 - omega: Stage 1.3 Task 1.3.P Economic calendar | completed_idle | economic_calendar/release_actuals with FRED actuals and scheduled-events gap note
+- omega: Stage 1.3 follow-up: yfinance coverage and economic calendar proxy | completed_idle | additional yfinance indices/ETFs/EM FX/agriculture plus FRED-derived scheduled-event proxy and consensus gap note
 - omega: Stage 1.3 documentation, deliverable validation, inventory, and dispatch context refresh | started | missing-doc backfills, _metadata/STAGE_1_3_INVENTORY.json, _metadata/STAGE_1_3_DELIVERABLE_VALIDATION.json, and validation reports
-- dragon: Stage 1.3 Task 1.3.F Binance crypto comprehensive | started | market_data/crypto spot/perpetual/funding outputs
+- dragon: Stage 1.3 Task 1.3.F Binance crypto comprehensive | completed_idle | market_data/crypto spot/perpetual/funding outputs
+- dragon: Stage 1.3 validation follow-up: crypto quality audit | completed_idle | _logs/dragon/stage13_crypto_quality_report.md and JSON anomaly inventory
+- dragon: Stage 1.3 Task 1.3.M FINRA short interest follow-up | completed_idle | alternative_data/short_interest/finra_consolidated_short_interest/2025.parquet
 - gamma: Stage 1.3 macro/on-chain public acquisition | completed_idle | FRED, CoinMetrics attempts, Blockchain.com, mempool, SEC, DeFiLlama
 - gamma: Stage 1.3 supplemental public macro | completed_idle | Treasury FiscalData, BLS public series, gap notes
 - gamma: Stage 1.3 Tasks 1.3.I/1.3.M/1.3.Q/1.3.R remaining free-source follow-up | completed_idle | Etherscan free snapshots, FINRA Reg SHO daily short-volume, OECD CLI, BEA gap note
+- gamma: Stage 1.3 follow-up: FRED expansion, CoinMetrics repair, SEC metadata | completed_idle | expanded FRED series, per-metric CoinMetrics community files, S&P 500 SEC filing metadata
 - gamma: Stage 1.3 Task 1.3.F Binance crypto acceleration | completed_idle | market_data/crypto/perpetuals and funding_rates fetched on Gamma, then synced to Dragon/Omega
 - gamma->omega: Stage 1.3 canonical sync | ok | Gamma completed macro/on-chain outputs copied to Omega
 - gamma->dragon: Stage 1.3 crypto acceleration sync | ok | Gamma perpetual/funding outputs copied to Dragon so Dragon skips duplicated work

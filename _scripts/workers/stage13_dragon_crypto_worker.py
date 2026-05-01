@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,6 +12,7 @@ from stage13_common import ROOT, append_acquisition_log, log_line, polite_sleep,
 
 
 LOG = ROOT / "_logs" / "dragon" / "stage13_crypto_worker.log"
+EXCLUSIONS = ROOT / "_logs" / "dragon" / "stage13_crypto_exclusions.json"
 BINANCE = "https://api.binance.com"
 FUTURES = "https://fapi.binance.com"
 TIMEFRAMES = ["5m", "15m", "1h", "4h"]
@@ -108,6 +110,63 @@ def funding_rates(symbol: str) -> pd.DataFrame:
     return df
 
 
+def record_exclusion(dataset_type: str, symbol: str, timeframe: str, source: str, reason: str, folder: Path | None = None) -> None:
+    EXCLUSIONS.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        payload = json.loads(EXCLUSIONS.read_text(encoding="utf-8"))
+    except Exception:
+        payload = {"exclusions": []}
+    exclusions = payload.setdefault("exclusions", [])
+    key = f"{dataset_type}:{symbol}:{timeframe}"
+    if not any(item.get("key") == key for item in exclusions):
+        exclusions.append({
+            "key": key,
+            "dataset_type": dataset_type,
+            "symbol": symbol,
+            "timeframe": timeframe,
+            "source": source,
+            "reason": reason,
+            "recorded_at": datetime.now(timezone.utc).isoformat(),
+        })
+    payload["updated_at"] = datetime.now(timezone.utc).isoformat()
+    EXCLUSIONS.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    if folder is not None:
+        folder.mkdir(parents=True, exist_ok=True)
+        (folder / "README.md").write_text(
+            f"# {folder.name}\n\n"
+            f"No data file is saved for {symbol} {dataset_type} {timeframe} because {reason}.\n\n"
+            f"Source: {source}\nAcquired: {datetime.now(timezone.utc).isoformat()}\n",
+            encoding="utf-8",
+        )
+        (folder / "data_dictionary.md").write_text(
+            "# Data Dictionary\n\nNo tabular data file was written for this symbol because the source returned no rows.\n",
+            encoding="utf-8",
+        )
+        (folder / "provenance.json").write_text(
+            json.dumps(
+                {
+                    "source": source,
+                    "description": f"{symbol} {dataset_type} {timeframe}",
+                    "acquired_at": datetime.now(timezone.utc).isoformat(),
+                    "status": "no_data",
+                    "reason": reason,
+                    "files": [],
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    append_acquisition_log({
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "source": source,
+        "dataset": symbol.lower(),
+        "status": "no_data",
+        "path": "",
+        "notes": f"{dataset_type} {timeframe}: {reason}",
+    })
+
+
 def save_dataset(df: pd.DataFrame, folder: Path, filename: str, source: str, description: str) -> None:
     out = folder / filename
     write_table(df, out)
@@ -136,7 +195,13 @@ def main() -> None:
                 log_line(LOG, f"skip existing spot {symbol} {tf}")
                 continue
             log_line(LOG, f"fetch spot {symbol} {tf}")
-            save_dataset(klines(BINANCE, "/api/v3/klines", symbol, tf), folder, f"{tf}.parquet", "Binance Spot", f"{symbol} spot OHLCV {tf}")
+            df = klines(BINANCE, "/api/v3/klines", symbol, tf)
+            if df.empty:
+                reason = "Binance spot kline endpoint returned HTTP 200 with an empty payload through 2025-12-31"
+                log_line(LOG, f"no_data spot {symbol} {tf}: {reason}")
+                record_exclusion("spot_top50", symbol, tf, "Binance Spot", reason, folder)
+                continue
+            save_dataset(df, folder, f"{tf}.parquet", "Binance Spot", f"{symbol} spot OHLCV {tf}")
     for symbol in PERP_SYMBOLS:
         slug = symbol.lower()
         for tf in TIMEFRAMES:
@@ -146,12 +211,24 @@ def main() -> None:
                 log_line(LOG, f"skip existing perp {symbol} {tf}")
                 continue
             log_line(LOG, f"fetch perp {symbol} {tf}")
-            save_dataset(klines(FUTURES, "/fapi/v1/klines", symbol, tf), folder, f"{tf}.parquet", "Binance Futures", f"{symbol} perpetual OHLCV {tf}")
+            df = klines(FUTURES, "/fapi/v1/klines", symbol, tf)
+            if df.empty:
+                reason = "Binance futures kline endpoint returned HTTP 200 with an empty payload through 2025-12-31"
+                log_line(LOG, f"no_data perp {symbol} {tf}: {reason}")
+                record_exclusion("perpetuals", symbol, tf, "Binance Futures", reason, folder)
+                continue
+            save_dataset(df, folder, f"{tf}.parquet", "Binance Futures", f"{symbol} perpetual OHLCV {tf}")
         folder = ROOT / "market_data" / "crypto" / "funding_rates" / slug
         out = folder / "funding_rates.parquet"
         if not out.exists() and not out.with_suffix(".csv").exists():
             log_line(LOG, f"fetch funding {symbol}")
-            save_dataset(funding_rates(symbol), folder, "funding_rates.parquet", "Binance Futures", f"{symbol} funding rates")
+            df = funding_rates(symbol)
+            if df.empty:
+                reason = "Binance funding-rate endpoint returned HTTP 200 with an empty payload through 2025-12-31"
+                log_line(LOG, f"no_data funding {symbol}: {reason}")
+                record_exclusion("funding_rates", symbol, "8h_native", "Binance Futures", reason, folder)
+                continue
+            save_dataset(df, folder, "funding_rates.parquet", "Binance Futures", f"{symbol} funding rates")
     log_line(LOG, "DONE dragon crypto acquisition")
 
 

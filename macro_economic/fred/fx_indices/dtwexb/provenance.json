@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series DTWEXB",
+  "acquired_at": "2026-05-01T21:19:59.087633+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/fx_indices/dtwexb/observations.parquet",
+      "sha256": "aef05a7134c9a7dbf5cde5655fe62426a7c95c41e76fe88fa9c4b7b14272aeb4"
+    }
+  ]
+}

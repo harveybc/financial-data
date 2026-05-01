@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series A229RX0",
+  "acquired_at": "2026-05-01T21:19:47.226408+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/consumer/a229rx0/observations.parquet",
+      "sha256": "face3bc4ad82f446543ab47c4416a004a44ae7c70eb80abe0b552ff2a2384564"
+    }
+  ]
+}

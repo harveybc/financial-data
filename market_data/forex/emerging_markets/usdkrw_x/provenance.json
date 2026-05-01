@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "USDKRW=X daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:22.568889+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/emerging_markets/usdkrw_x/daily.parquet",
+      "sha256": "d22c7170ec2d60a65a63dc3112b1e89b72389fa63d1668cf2e6f82f2ed470b49"
+    }
+  ]
+}

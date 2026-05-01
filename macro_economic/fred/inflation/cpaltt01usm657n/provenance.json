@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series CPALTT01USM657N",
+  "acquired_at": "2026-05-01T21:19:16.700721+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/inflation/cpaltt01usm657n/observations.parquet",
+      "sha256": "d7db6dd9eb4b4e320d61e1f6fdc787e0245dd6dd3863ee03ded04064aadab99e"
+    }
+  ]
+}

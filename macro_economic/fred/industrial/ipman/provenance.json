@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series IPMAN",
+  "acquired_at": "2026-05-01T21:19:52.685686+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/ipman/observations.parquet",
+      "sha256": "3ab8a843bdbfa7ef154e7e829089fbf76a0385759f60454f36b429f16566d3f4"
+    }
+  ]
+}

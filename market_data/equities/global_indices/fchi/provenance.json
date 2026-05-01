@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "^FCHI daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:06.495669+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/global_indices/fchi/daily.parquet",
+      "sha256": "4d8e09f280beae1cd977eafcbe32c2ddee52cee0635e01a465975ad43704a6b5"
+    }
+  ]
+}

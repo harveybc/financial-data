@@ -24,6 +24,7 @@ for pid_file in \
   "$ROOT/_logs/omega/stage13_light_sources_python.pid" \
   "$ROOT/_logs/omega/stage13_reference_python.pid" \
   "$ROOT/_logs/omega/stage13_economic_calendar_python.pid" \
+  "$ROOT/_logs/omega/stage13_omega_followup_python.pid" \
   "$ROOT/_logs/omega/stage13_housekeeping_python.pid"; do
   pid="$(cat "$pid_file" 2>/dev/null || true)"
   if [ -n "$pid" ] && ps -p "$pid" >/dev/null 2>&1; then
@@ -43,6 +44,7 @@ for log in \
   "$ROOT/_logs/omega/stage13_light_sources_worker.log" \
   "$ROOT/_logs/omega/stage13_reference_worker.log" \
   "$ROOT/_logs/omega/stage13_economic_calendar_worker.log" \
+  "$ROOT/_logs/omega/stage13_omega_followup_worker.log" \
   "$ROOT/_logs/omega/stage13_housekeeping_worker.log" \
   "$ROOT/_logs/omega/stage13_doc_backfill_worker.log" \
   "$ROOT/_logs/omega/stage13_validation_inventory_worker.log" \
@@ -71,17 +73,17 @@ remote_status() {
 remote_status \
   "Dragon" \
   "dragon" \
-  "Stage 1.3 Free Data Acquisition, Task 1.3.F Binance crypto comprehensive" \
-  "Binance top 50 spot OHLCV, top 10 perpetual OHLCV, funding rates" \
-  "/home/harveybc/Documents/GitHub/financial-data/_logs/dragon/stage13_crypto_python.pid" \
-  "/home/harveybc/Documents/GitHub/financial-data/_logs/dragon/stage13_crypto_worker.log" \
-  "market_data/crypto/spot_top50, market_data/crypto/perpetuals, market_data/crypto/funding_rates"
+  "Stage 1.3 Free Data Acquisition, Task 1.3.F Binance crypto comprehensive plus validation follow-up" \
+  "Binance top 50 spot OHLCV, top 10 perpetual OHLCV, funding rates, crypto quality audit" \
+  "/home/harveybc/Documents/GitHub/financial-data/_logs/dragon/stage13_crypto_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/dragon/stage13_crypto_quality_python.pid" \
+  "/home/harveybc/Documents/GitHub/financial-data/_logs/dragon/stage13_crypto_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/dragon/stage13_dragon_quality_worker.log" \
+  "market_data/crypto/spot_top50, market_data/crypto/perpetuals, market_data/crypto/funding_rates, _logs/dragon/stage13_crypto_quality_report.md"
 
 remote_status \
   "Gamma" \
   "gamma" \
-  "Stage 1.3 Free Data Acquisition, Tasks 1.3.B/1.3.G plus Gamma macro/on-chain, remaining free-source follow-up, and Binance crypto acceleration" \
-  "FRED, CoinMetrics Community, Blockchain.com, mempool.space, SEC EDGAR metadata, FINRA, DeFiLlama, Etherscan, OECD/BLS/BEA/Treasury where available, Binance perpetual/funding acceleration" \
-  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_crypto_perp_accelerator_python.pid" \
-  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_crypto_perp_accelerator_worker.log" \
-  "macro_economic/fred, macro_economic/oecd, alternative_data/onchain_* / defi_metrics / short_interest outputs, market_data/crypto/perpetuals, market_data/crypto/funding_rates plus source-specific docs"
+  "Stage 1.3 Free Data Acquisition, Tasks 1.3.B/1.3.G/1.3.K follow-up plus Gamma macro/on-chain, remaining free-source follow-up, and Binance crypto acceleration" \
+  "FRED expansion, CoinMetrics per-metric repair, SEC EDGAR S&P 500 metadata, FRED, Blockchain.com, mempool.space, FINRA, DeFiLlama, Etherscan, OECD/BLS/BEA/Treasury where available, Binance perpetual/funding acceleration" \
+  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_gamma_followup_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_crypto_perp_accelerator_python.pid" \
+  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_gamma_followup_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_crypto_perp_accelerator_worker.log" \
+  "macro_economic/fred expansion, alternative_data/onchain_*/coinmetrics_community, alternative_data/sec_filings/edgar_sp500_metadata, macro_economic/oecd, defi_metrics, short_interest outputs, market_data/crypto/perpetuals, funding_rates plus source-specific docs"

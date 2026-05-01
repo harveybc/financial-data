@@ -1,3 +1,3 @@
 # Data Dictionary
 
-Columns follow source naming unless normalized by the acquisition script.
+No tabular data file was written for this symbol because the source returned no rows.

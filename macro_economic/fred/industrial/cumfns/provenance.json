@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series CUMFNS",
+  "acquired_at": "2026-05-01T21:19:53.559863+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/industrial/cumfns/observations.parquet",
+      "sha256": "3ef8cccd4e4aa51812993c729a35f797ed04d24c1eadc919ac68029bef12103d"
+    }
+  ]
+}

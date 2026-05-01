@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "USDTWD=X daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:22.966656+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/emerging_markets/usdtwd_x/daily.parquet",
+      "sha256": "4f46a9a415d5b9f78d45a6f835090bb54b61891fcf00bff888f15087c5e887d9"
+    }
+  ]
+}

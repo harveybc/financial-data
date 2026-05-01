@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "VEA daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:13.681115+00:00",
+  "files": [
+    {
+      "path": "market_data/equities/etfs/vea/daily.parquet",
+      "sha256": "03fb8e03a5d8805a56f3b80cc3d7a5ef507dbe12a2a1326ed20da51daa24e8be"
+    }
+  ]
+}

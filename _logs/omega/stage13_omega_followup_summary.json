@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-01T21:19:26.306843+00:00",
+  "summary": {
+    "yfinance_backfill": {
+      "fetched": 41,
+      "skipped": 0,
+      "empty": 0,
+      "failed": 0
+    },
+    "scheduled_event_proxy": {
+      "rows": 1200
+    }
+  }
+}

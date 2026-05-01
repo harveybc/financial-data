@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Finance",
+  "description": "USDCLP=X daily OHLCV follow-up backfill",
+  "acquired_at": "2026-05-01T21:19:22.084906+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/emerging_markets/usdclp_x/daily.parquet",
+      "sha256": "b1e1546440e27f7dc6b1481972f7416346677f1a24fbea21baea7df28bce27b4"
+    }
+  ]
+}

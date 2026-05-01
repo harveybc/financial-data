@@ -1,0 +1,11 @@
+{
+  "source": "FRED",
+  "description": "Expanded FRED series COMPU1USA",
+  "acquired_at": "2026-05-01T21:19:49.213414+00:00",
+  "files": [
+    {
+      "path": "macro_economic/fred/housing/compu1usa/observations.parquet",
+      "sha256": "d4c57db27f91090a558708902e2440a7a75741c73345be870f37fc2b5b33e12c"
+    }
+  ]
+}

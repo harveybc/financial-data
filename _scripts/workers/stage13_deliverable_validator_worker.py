@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import pandas as pd
+
 
 ROOT = Path("/home/harveybc/Documents/GitHub/financial-data")
 LOG = ROOT / "_logs" / "omega" / "stage13_deliverable_validator_worker.log"
@@ -117,6 +119,28 @@ def remote_latest_binance_tradable(host: str, log_path: str) -> int:
     )
     match = re.search(r"binance_tradable=(\d+)", result.stdout)
     return int(match.group(1)) if match else 0
+
+
+def local_json(path: str) -> Any:
+    try:
+        return json.loads((ROOT / path).read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def parquet_stats(path: str, unique_col: str | None = None) -> dict[str, int]:
+    file = ROOT / path
+    if not file.exists():
+        return {"rows": 0, "unique": 0}
+    try:
+        columns = [unique_col] if unique_col else None
+        df = pd.read_parquet(file, columns=columns)
+    except Exception:
+        return {"rows": 0, "unique": 0}
+    stats = {"rows": int(len(df)), "unique": 0}
+    if unique_col and unique_col in df.columns:
+        stats["unique"] = int(df[unique_col].nunique())
+    return stats
 
 
 def remote_pid_running(host: str, pid_file: str) -> bool:
@@ -233,17 +257,32 @@ def validate_tasks() -> list[TaskResult]:
     t = result("1.3.F", "Binance crypto comprehensive", "Dragon/Gamma", ["market_data/crypto/spot_top50/**/{5m,15m,1h,4h}.parquet", "market_data/crypto/perpetuals/**/{5m,15m,1h,4h}.parquet", "market_data/crypto/funding_rates/**/*.parquet"])
     dragon_spot = remote_count("dragon", f"{ROOT}/market_data/crypto/spot_top50", "*.parquet")
     dragon_perp = remote_count("dragon", f"{ROOT}/market_data/crypto/perpetuals", "*.parquet")
+    dragon_funding = remote_count("dragon", f"{ROOT}/market_data/crypto/funding_rates", "*.parquet")
     gamma_perp = remote_count("gamma", f"{ROOT}/market_data/crypto/perpetuals", "*.parquet")
     gamma_funding = remote_count("gamma", f"{ROOT}/market_data/crypto/funding_rates", "*.parquet")
+    local_spot = local_count("market_data/crypto/spot_top50", (".parquet",))
+    local_perp = local_count("market_data/crypto/perpetuals", (".parquet",))
+    local_funding = local_count("market_data/crypto/funding_rates", (".parquet",))
     dragon_spot_symbols = remote_dir_count("dragon", f"{ROOT}/market_data/crypto/spot_top50")
     binance_tradable = remote_latest_binance_tradable("dragon", f"{ROOT}/_logs/dragon/stage13_crypto_worker.log")
-    expected_spot_files = max(binance_tradable, dragon_spot_symbols) * 4
+    exclusions_payload = local_json("_logs/dragon/stage13_crypto_exclusions.json")
+    exclusions = exclusions_payload.get("exclusions", []) if isinstance(exclusions_payload, dict) else []
+    spot_no_data_exclusions = len([
+        item for item in exclusions
+        if isinstance(item, dict) and item.get("dataset_type") == "spot_top50"
+    ])
+    expected_spot_files = max((binance_tradable * 4) - spot_no_data_exclusions, 0)
     t.evidence = ["dragon:market_data/crypto", "gamma:market_data/crypto", "_logs/dragon/stage13_crypto_worker.log", "_logs/gamma/stage13_crypto_perp_accelerator_worker.log"]
     t.checks = {
         "dragon_spot_parquet": dragon_spot,
+        "omega_spot_parquet": local_spot,
         "dragon_spot_symbols": dragon_spot_symbols,
         "binance_tradable_top50_symbols": binance_tradable,
+        "documented_spot_no_data_exclusions": spot_no_data_exclusions,
         "dragon_perp_parquet": dragon_perp,
+        "omega_perp_parquet": local_perp,
+        "dragon_funding_parquet": dragon_funding,
+        "omega_funding_parquet": local_funding,
         "gamma_perp_parquet": gamma_perp,
         "gamma_funding_parquet": gamma_funding,
         "dragon_busy": dragon_busy,
@@ -255,9 +294,9 @@ def validate_tasks() -> list[TaskResult]:
     if dragon_busy or gamma_crypto_busy:
         t.status, t.confidence = "in_progress", 0.96
         t.next_action = "Keep workers running; validate after Gamma crypto sync and Dragon completion."
-    elif expected_spot_files and dragon_spot >= expected_spot_files and max(dragon_perp, gamma_perp) >= 40 and gamma_funding >= 10:
+    elif expected_spot_files and max(dragon_spot, local_spot) >= expected_spot_files and max(dragon_perp, gamma_perp, local_perp) >= 40 and max(dragon_funding, gamma_funding, local_funding) >= 10:
         t.status, t.confidence = "validated", 0.88
-        t.next_action = "Sync remote crypto outputs to Omega and run Stage 1.6 quality validation."
+        t.next_action = "Run Stage 1.6 quality validation; documented Binance no-data exclusions remain in _logs/dragon/stage13_crypto_exclusions.json."
     else:
         t.status, t.confidence = "failed", 0.75
         t.next_action = "Restart or repair missing crypto acquisition slices."
@@ -293,8 +332,7 @@ def validate_tasks() -> list[TaskResult]:
     t.checks = {"onchain_eth_files": eth_count, "gap_note_exists": gap_text.exists()}
     if eth_count and gap_text.exists():
         t.status, t.confidence = "partial", 0.76
-        t.next_action = "Treat historical Pro endpoints as Stage 1.4 subscription evidence."
-        t.escalation_question = "Etherscan free snapshots exist but historical daily endpoints report Pro-only access. Should this become a paid-provider gap or be replaced by another free source?"
+        t.next_action = "Treat historical Pro endpoints as Stage 1.4 subscription evidence; no more free-source retry unless a replacement source is approved."
     else:
         t.status, t.confidence = status_from(eth_count >= 1)
         t.next_action = "If absent, inspect key/env and endpoint errors."
@@ -310,9 +348,13 @@ def validate_tasks() -> list[TaskResult]:
 
     t = result("1.3.K", "SEC EDGAR metadata", "Gamma", ["alternative_data/sec_filings/edgar or metadata"])
     sec_count = local_count("alternative_data/sec_filings")
+    sec_stats = parquet_stats("alternative_data/sec_filings/edgar_sp500_metadata/filing_metadata.parquet", "ticker")
     t.evidence = ["alternative_data/sec_filings", "_logs/gamma/stage13_macro_onchain_worker.log"]
-    t.checks = {"sec_files": sec_count, "plan_requested_sp500_form_metadata": True}
-    if sec_count >= 1:
+    t.checks = {"sec_files": sec_count, "plan_requested_sp500_form_metadata": True, "sp500_metadata_rows": sec_stats["rows"], "sp500_metadata_tickers": sec_stats["unique"]}
+    if sec_stats["rows"] >= 100000 and sec_stats["unique"] >= 400:
+        t.status, t.confidence = "validated", 0.9
+        t.next_action = "Stage 1.6 should validate filing-date completeness by form and ticker."
+    elif sec_count >= 1:
         t.status, t.confidence = "partial", 0.72
         t.next_action = "Codex should decide whether current SEC ticker metadata is enough or S&P 500 filing metadata must be fetched."
         t.escalation_question = "Stage 1.3.K asks for S&P 500 10-K/10-Q/8-K/Form 4 metadata. Current SEC output appears limited; should Gamma run a broader EDGAR metadata job?"
@@ -331,9 +373,24 @@ def validate_tasks() -> list[TaskResult]:
 
     t = result("1.3.M", "FINRA short interest", "Gamma", ["alternative_data/short_interest/*"])
     finra_count = local_count("alternative_data/short_interest")
+    finra_running = remote_pid_running("dragon", f"{ROOT}/_logs/dragon/stage13_finra_short_interest_python.pid")
+    finra_stats = parquet_stats("alternative_data/short_interest/finra_consolidated_short_interest/2025.parquet", "settlementDate")
     t.evidence = ["alternative_data/short_interest", "_logs/gamma/stage13_remaining_free_gaps.md"]
-    t.checks = {"finra_files": finra_count, "plan_requested_biweekly_short_interest": True, "current_regsho_daily": (ROOT / "alternative_data" / "short_interest" / "finra_regsho_daily").exists()}
-    if finra_count:
+    t.checks = {
+        "finra_files": finra_count,
+        "plan_requested_biweekly_short_interest": True,
+        "current_regsho_daily": (ROOT / "alternative_data" / "short_interest" / "finra_regsho_daily").exists(),
+        "finra_consolidated_2025_rows": finra_stats["rows"],
+        "finra_consolidated_settlement_dates": finra_stats["unique"],
+        "dragon_finra_worker_running": finra_running,
+    }
+    if finra_running:
+        t.status, t.confidence = "in_progress", 0.95
+        t.next_action = "Keep Dragon FINRA consolidated short-interest worker running, then sync and revalidate."
+    elif finra_stats["rows"] > 0 and finra_stats["unique"] >= 20:
+        t.status, t.confidence = "validated", 0.9
+        t.next_action = "Stage 1.6 should compare consolidated short-interest coverage to selected equity universe."
+    elif finra_count:
         t.status, t.confidence = "needs_codex", 0.68
         t.next_action = "Codex should decide whether Reg SHO daily volume is acceptable or true bi-weekly short interest is still required."
         t.escalation_question = "FINRA deliverable currently appears to be daily Reg SHO short volume, while the work plan requested bi-weekly short interest. Should we fetch another FINRA dataset?"
@@ -366,9 +423,8 @@ def validate_tasks() -> list[TaskResult]:
     t.evidence = ["economic_calendar/release_actuals", "economic_calendar/scheduled_events", "_logs/omega/stage13_economic_calendar_worker.log"]
     t.checks = {"release_actual_files": actuals, "scheduled_event_files": scheduled_files, "scheduled_gap_note": scheduled_gap}
     if actuals >= 8 and scheduled_gap:
-        t.status, t.confidence = "needs_codex", 0.74
-        t.next_action = "Codex should decide whether to pursue TradingEconomics/FXStreet/free scraping or defer scheduled events to Stage 1.4."
-        t.escalation_question = "Release actuals exist, but scheduled-event consensus/surprise deliverable is documented as a gap. What source should Tier 2 use next?"
+        t.status, t.confidence = "partial", 0.78
+        t.next_action = "FRED actuals and release-date proxy are present; Trading Economics guest access is discontinued and FXStreet requires OAuth, so consensus/surprise is a Stage 1.4 credential/subscription decision."
     else:
         t.status, t.confidence = status_from(actuals >= 8 and scheduled_files >= 1)
         t.next_action = "Validate scheduled-event source and surprise calculation."
