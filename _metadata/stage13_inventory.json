@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T22:04:56.465295+00:00",
+  "generated_at": "2026-05-01T22:12:11.384976+00:00",
   "stage": "Stage 1.3 Free Data Acquisition validation/inventory",
   "inventory": {
     "roots": {
@@ -606,7 +606,7 @@
   ],
   "dispatch": {
     "exists": true,
-    "generated_at": "2026-05-01T22:00:39.147284+00:00",
+    "generated_at": "2026-05-01T22:05:29.662707+00:00",
     "decisions": [
       {
         "machine": "omega",

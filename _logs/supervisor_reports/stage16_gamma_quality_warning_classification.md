@@ -1,14 +1,14 @@
 # Stage 1.6 Gamma Quality Warning Classification
 
-Generated: 2026-05-01T22:03:10Z
+Generated: 2026-05-01T22:10:55Z
 
-Gamma quality validation flagged 10 timestamp duplicate/non-monotonic warnings. Codex inspected the affected files and classified them as follows.
+Gamma quality validation initially flagged 10 timestamp duplicate/non-monotonic warnings. Codex inspected the affected files, removed exact duplicate FINRA rows, and improved the quality worker to use panel natural keys. The current Gamma quality pass reports 0 warnings.
 
 ## Classification
 
 | Class | Files | Severity | Decision |
 | --- | ---: | --- | --- |
-| Expected panel data | 7 | advisory | Not a data defect. Multiple entities/series share the same period or filing date. |
+| Expected panel data | 7 | advisory | Not a data defect. Multiple entities/series share the same period or filing date; quality worker now uses natural keys. |
 | Exact duplicate source rows | 3 | low | Fixed by dropping exact duplicate rows from FINRA Reg SHO daily short-volume files. |
 
 ## Expected Panel-Data Warnings
@@ -27,6 +27,7 @@ Gamma quality validation flagged 10 timestamp duplicate/non-monotonic warnings. 
 | `alternative_data/short_interest/finra_regsho_daily/fnsq/2025_daily_short_volume.parquet` | 25 | 0 |
 | `alternative_data/short_interest/finra_regsho_daily/fnyx/2025_daily_short_volume.parquet` | 30 | 0 |
 
-## Follow-Up
+## Current Result
 
-The generic quality worker should be improved later to understand panel natural keys so benign duplicate-date warnings do not look like anomalies. No Tier 4 blocker remains from these warnings.
+- `_metadata/stage16_quality_validation_gamma.json`: `files_checked=200`, `files_with_warnings=0`.
+- No Tier 4 blocker remains from these warnings.

@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-05-01T22:03:10Z",
+  "generated_at": "2026-05-01T22:10:55Z",
   "stage": "Stage 1.6 quality validation follow-up",
   "machine": "gamma",
   "status": "classified",
   "summary": {
-    "warning_files": 10,
+    "warning_files_initial": 10,
+    "warning_files_current": 0,
     "expected_panel_data_files": 7,
     "fixed_exact_duplicate_files": 3,
     "post_fix_full_row_duplicates": 0,
@@ -36,5 +37,5 @@
       "post_fix_full_row_duplicates": 0
     }
   ],
-  "recommended_next_action": "Improve the generic quality worker to use natural keys for panel datasets; no blocker remains."
+  "recommended_next_action": "Panel-key logic has been added to the generic quality worker; no blocker remains."
 }

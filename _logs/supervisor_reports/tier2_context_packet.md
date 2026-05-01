@@ -1,6 +1,6 @@
 # Project 3 Tier 2 Context Packet
 
-generated_at: 2026-05-01T22:04:47Z
+generated_at: 2026-05-01T22:12:01Z
 project_root: /home/harveybc/Documents/GitHub/financial-data
 active_stage: Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight validation active while Stage 1.4/1.5 subscription decisions remain gated.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.

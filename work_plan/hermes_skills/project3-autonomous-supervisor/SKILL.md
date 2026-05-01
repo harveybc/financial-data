@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [project3, financial-data, autonomous-supervision, data-acquisition, multi-machine]
-    related_skills: [hermes-agent, opencode, codex, systematic-debugging, test-driven-development, subagent-driven-development, hermes-agent-skill-authoring, project3-deliverable-validator]
+    related_skills: [hermes-agent, opencode, codex, systematic-debugging, test-driven-development, subagent-driven-development, hermes-agent-skill-authoring, project3-deliverable-validator, project3-panel-data-quality-validation]
 ---
 
 # Project 3 Autonomous Supervisor

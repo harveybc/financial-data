@@ -402,7 +402,7 @@ def write_preflight_report(payload: dict[str, Any]) -> None:
             "",
             "## Next Autonomous Work",
             "",
-            "- Preserve Gamma warning classification and improve the generic quality worker's panel-key logic later.",
+            "- Preserve Gamma warning classification and panel-key logic in future quality checks.",
             "- Keep Tier 2 cron monitoring sync/status and dispatch only evidence-backed follow-up checks.",
             "- Keep Telegram to concise start/finish/blocker/anomaly events with deliverable paths.",
             "- Route subscription decisions to Tier 4/Codex; do not let local agents guess paid-provider value.",
