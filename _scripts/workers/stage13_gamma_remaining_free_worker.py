@@ -201,11 +201,76 @@ No `BEA_API_KEY` was available in `_metadata/.env`. BEA series already covered b
     )
 
 
+def fetch_bea_nipa_selected() -> None:
+    folder = ROOT / "macro_economic" / "bea" / "nipa"
+    done = folder / "stage13_bea_nipa_done.json"
+    if done.exists():
+        log_line(LOG, "skip existing BEA NIPA selected tables")
+        return
+    key = os.environ.get("BEA_API_KEY")
+    if not key:
+        write_bea_gap_note()
+        return
+
+    tables = {
+        "T10101": "gdp_percent_change",
+        "T10105": "gdp_current_dollars",
+        "T10106": "real_gdp_chained_dollars",
+    }
+    summary: dict[str, int] = {}
+    for table_name, slug in tables.items():
+        log_line(LOG, f"fetch BEA NIPA {table_name}")
+        r = requests.get(
+            "https://apps.bea.gov/api/data/",
+            params={
+                "UserID": key,
+                "method": "GETDATA",
+                "DatasetName": "NIPA",
+                "TableName": table_name,
+                "Frequency": "Q",
+                "Year": "ALL",
+                "ResultFormat": "JSON",
+            },
+            timeout=120,
+        )
+        r.raise_for_status()
+        payload = r.json()
+        rows = payload.get("BEAAPI", {}).get("Results", {}).get("Data", [])
+        if not rows:
+            append_gap("BEA NIPA", f"{table_name} returned no data")
+            continue
+        df = pd.DataFrame(rows)
+        if "DataValue" in df.columns:
+            df["DataValueNumeric"] = pd.to_numeric(df["DataValue"].astype(str).str.replace(",", "", regex=False), errors="coerce")
+        save(
+            df,
+            folder / slug,
+            "quarterly.parquet",
+            "BEA Data API",
+            f"BEA NIPA {table_name} quarterly table data fetched directly with the BEA Data API.",
+        )
+        summary[slug] = len(df)
+        polite_sleep(0.25)
+
+    folder.mkdir(parents=True, exist_ok=True)
+    done.write_text(json.dumps({"generated_at": datetime.now(timezone.utc).isoformat(), "rows_by_table": summary}, indent=2) + "\n", encoding="utf-8")
+    gap = ROOT / "macro_economic" / "bea" / "stage13_bea_gap.md"
+    if gap.exists() and summary:
+        gap.unlink()
+    (ROOT / "macro_economic" / "bea" / "stage13_bea_direct_api.md").write_text(
+        "# Stage 1.3 BEA Direct API\n\n"
+        "Stage: 1.3 Free Data Acquisition\n"
+        "Agent: Gamma remaining-free worker\n\n"
+        "A BEA API key is available in the ignored runtime environment. Selected direct BEA NIPA tables were acquired under `macro_economic/bea/nipa/`.\n",
+        encoding="utf-8",
+    )
+
+
 def main() -> None:
     LOG.parent.mkdir(parents=True, exist_ok=True)
     load_env()
     log_line(LOG, "START gamma remaining free-source worker")
-    for fn in [fetch_etherscan_free_snapshots, fetch_oecd_cli, fetch_finra_regsho_daily, write_bea_gap_note]:
+    for fn in [fetch_etherscan_free_snapshots, fetch_oecd_cli, fetch_finra_regsho_daily, fetch_bea_nipa_selected]:
         try:
             fn()
         except Exception as exc:

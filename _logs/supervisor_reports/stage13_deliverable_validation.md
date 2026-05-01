@@ -1,6 +1,6 @@
 # Stage 1.3 Deliverable Validation
 
-Generated: 2026-05-01T19:49:25.413067+00:00
+Generated: 2026-05-01T20:07:36.565860+00:00
 
 Rule: a deliverable is complete only when the exact work-plan task spec and produced artifact evidence agree. Uncertainty is escalated to Tier 4/Codex.
 
@@ -8,8 +8,8 @@ Rule: a deliverable is complete only when the exact work-plan task spec and prod
 
 | Status | Count |
 | --- | ---: |
-| validated | 9 |
-| partial | 3 |
+| validated | 10 |
+| partial | 2 |
 | needs_codex | 7 |
 
 ## Task Results
@@ -32,7 +32,7 @@ Rule: a deliverable is complete only when the exact work-plan task spec and prod
 | 1.3.N DeFiLlama | Gamma | validated | 0.90 | alternative_data/defi_metrics<br>_logs/gamma/stage13_macro_onchain_worker.log | No action unless Stage 1.6 coverage audit finds missing chains/protocols. |
 | 1.3.O Trading calendars and holidays | Omega | validated | 0.90 | reference_data/trading_calendars<br>reference_data/holidays<br>_logs/omega/stage13_reference_worker.log | Install exchange_calendars later if exact exchange calendars need replacement for fallback schedules. |
 | 1.3.P Economic calendar scheduled events and actuals | Omega | needs_codex | 0.74 | economic_calendar/release_actuals<br>economic_calendar/scheduled_events<br>_logs/omega/stage13_economic_calendar_worker.log | Codex should decide whether to pursue TradingEconomics/FXStreet/free scraping or defer scheduled events to Stage 1.4. |
-| 1.3.Q BLS, BEA, Treasury supplementary | Gamma | partial | 0.78 | macro_economic/bls<br>macro_economic/bea<br>macro_economic/yield_curves/treasury_average_interest_rates | Treat BEA key/direct API gap as subscription/key decision evidence; FRED covers many BEA series. |
+| 1.3.Q BLS, BEA, Treasury supplementary | Gamma | validated | 0.90 | macro_economic/bls<br>macro_economic/bea<br>macro_economic/yield_curves/treasury_average_interest_rates | Stage 1.6 should compare direct BEA tables against overlapping FRED macro series. |
 | 1.3.R OECD selected indicators | Gamma | validated | 0.90 | macro_economic/oecd<br>_logs/gamma/stage13_remaining_free_worker.log | No action unless coverage audit identifies additional OECD non-FRED indicators. |
 | Stage 1.3 Deliverables Final Stage 1.3 reports | Omega | needs_codex | 0.80 | work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md § 7<br>STAGE_1.3_DELIVERABLE.md<br>STAGE_1.3_INVENTORY.md | Codex should generate final Stage 1.3 deliverable and inventory reports after resolving validation escalations. |
 
@@ -46,7 +46,6 @@ Rule: a deliverable is complete only when the exact work-plan task spec and prod
 - 1.3.K SEC EDGAR metadata: Stage 1.3.K asks for S&P 500 10-K/10-Q/8-K/Form 4 metadata. Current SEC output appears limited; should Gamma run a broader EDGAR metadata job?
 - 1.3.M FINRA short interest: FINRA deliverable currently appears to be daily Reg SHO short volume, while the work plan requested bi-weekly short interest. Should we fetch another FINRA dataset?
 - 1.3.P Economic calendar scheduled events and actuals: Release actuals exist, but scheduled-event consensus/surprise deliverable is documented as a gap. What source should Tier 2 use next?
-- 1.3.Q BLS, BEA, Treasury supplementary: BLS and Treasury are present, BEA direct API has a documented key gap. Is FRED BEA coverage sufficient or should the user obtain BEA_API_KEY?
 - Stage 1.3 Deliverables Final Stage 1.3 reports: Stage 1.3 acquisition appears inactive but final deliverable documents are missing. Should Codex synthesize them now?
 
 ## Context To Pass Forward

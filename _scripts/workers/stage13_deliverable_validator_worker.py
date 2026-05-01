@@ -377,10 +377,14 @@ def validate_tasks() -> list[TaskResult]:
     t = result("1.3.Q", "BLS, BEA, Treasury supplementary", "Gamma", ["macro_economic/bls/*", "macro_economic/bea/*", "macro_economic/yield_curves/treasury_average_interest_rates/*"])
     bls = local_count("macro_economic/bls")
     treasury = local_count("macro_economic/yield_curves/treasury_average_interest_rates")
+    bea_data = local_count("macro_economic/bea", (".parquet", ".csv"))
     bea_gap = (ROOT / "macro_economic" / "bea" / "stage13_bea_gap.md").exists()
     t.evidence = ["macro_economic/bls", "macro_economic/bea", "macro_economic/yield_curves/treasury_average_interest_rates"]
-    t.checks = {"bls_files": bls, "treasury_files": treasury, "bea_gap_note": bea_gap}
-    if bls and treasury and bea_gap:
+    t.checks = {"bls_files": bls, "treasury_files": treasury, "bea_data_files": bea_data, "bea_gap_note": bea_gap}
+    if bls >= 1 and treasury >= 1 and bea_data >= 1:
+        t.status, t.confidence = "validated", 0.9
+        t.next_action = "Stage 1.6 should compare direct BEA tables against overlapping FRED macro series."
+    elif bls and treasury and bea_gap:
         t.status, t.confidence = "partial", 0.78
         t.next_action = "Treat BEA key/direct API gap as subscription/key decision evidence; FRED covers many BEA series."
         t.escalation_question = "BLS and Treasury are present, BEA direct API has a documented key gap. Is FRED BEA coverage sufficient or should the user obtain BEA_API_KEY?"

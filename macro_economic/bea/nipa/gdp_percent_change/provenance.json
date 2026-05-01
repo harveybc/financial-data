@@ -1,0 +1,11 @@
+{
+  "source": "BEA Data API",
+  "description": "BEA NIPA T10101 quarterly table data fetched directly with the BEA Data API.",
+  "acquired_at": "2026-05-01T20:07:10.814142+00:00",
+  "files": [
+    {
+      "path": "macro_economic/bea/nipa/gdp_percent_change/quarterly.parquet",
+      "sha256": "39db5d8c6071d5b48c5859f85a1b9ad3bf10e85a763698271ef89319c58825d9"
+    }
+  ]
+}

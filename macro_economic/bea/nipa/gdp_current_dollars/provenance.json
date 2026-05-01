@@ -1,0 +1,11 @@
+{
+  "source": "BEA Data API",
+  "description": "BEA NIPA T10105 quarterly table data fetched directly with the BEA Data API.",
+  "acquired_at": "2026-05-01T20:07:14.666339+00:00",
+  "files": [
+    {
+      "path": "macro_economic/bea/nipa/gdp_current_dollars/quarterly.parquet",
+      "sha256": "bfcf0f2d469c627af1444c6312f89d08ebdfea2a821f12164da880a026715981"
+    }
+  ]
+}

@@ -143,3 +143,6 @@ timestamp,source,dataset,status,path,notes
 2026-05-01T17:55:37.735888+00:00,HistData,usdcad,ok,market_data/forex/g10/usdcad,zips=20
 2026-05-01T17:56:28.578811+00:00,HistData,usdchf,ok,market_data/forex/g10/usdchf,zips=21
 2026-05-01T17:57:22.404021+00:00,HistData,usdjpy,ok,market_data/forex/g10/usdjpy,zips=21
+2026-05-01T20:07:10.814580+00:00,BEA Data API,gdp_percent_change,ok,macro_economic/bea/nipa/gdp_percent_change/quarterly.parquet,rows=7900
+2026-05-01T20:07:14.666824+00:00,BEA Data API,gdp_current_dollars,ok,macro_economic/bea/nipa/gdp_current_dollars/quarterly.parquet,rows=8242
+2026-05-01T20:07:17.629598+00:00,BEA Data API,real_gdp_chained_dollars,ok,macro_economic/bea/nipa/real_gdp_chained_dollars/quarterly.parquet,rows=4739
