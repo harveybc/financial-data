@@ -97,6 +97,28 @@ def remote_count(host: str, path: str, name_pattern: str = "*") -> int:
         return 0
 
 
+def remote_dir_count(host: str, path: str) -> int:
+    result = remote(
+        host,
+        f"find {shlex.quote(path)} -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l",
+        timeout=60,
+    )
+    try:
+        return int(result.stdout.strip().splitlines()[-1])
+    except Exception:
+        return 0
+
+
+def remote_latest_binance_tradable(host: str, log_path: str) -> int:
+    result = remote(
+        host,
+        f"grep -E 'top50_candidates=[0-9]+ binance_tradable=[0-9]+' {shlex.quote(log_path)} 2>/dev/null | tail -1",
+        timeout=30,
+    )
+    match = re.search(r"binance_tradable=(\d+)", result.stdout)
+    return int(match.group(1)) if match else 0
+
+
 def remote_pid_running(host: str, pid_file: str) -> bool:
     result = remote(
         host,
@@ -213,14 +235,29 @@ def validate_tasks() -> list[TaskResult]:
     dragon_perp = remote_count("dragon", f"{ROOT}/market_data/crypto/perpetuals", "*.parquet")
     gamma_perp = remote_count("gamma", f"{ROOT}/market_data/crypto/perpetuals", "*.parquet")
     gamma_funding = remote_count("gamma", f"{ROOT}/market_data/crypto/funding_rates", "*.parquet")
+    dragon_spot_symbols = remote_dir_count("dragon", f"{ROOT}/market_data/crypto/spot_top50")
+    binance_tradable = remote_latest_binance_tradable("dragon", f"{ROOT}/_logs/dragon/stage13_crypto_worker.log")
+    expected_spot_files = max(binance_tradable, dragon_spot_symbols) * 4
     t.evidence = ["dragon:market_data/crypto", "gamma:market_data/crypto", "_logs/dragon/stage13_crypto_worker.log", "_logs/gamma/stage13_crypto_perp_accelerator_worker.log"]
-    t.checks = {"dragon_spot_parquet": dragon_spot, "dragon_perp_parquet": dragon_perp, "gamma_perp_parquet": gamma_perp, "gamma_funding_parquet": gamma_funding, "dragon_busy": dragon_busy, "gamma_crypto_busy": gamma_crypto_busy, "expected_spot_files": 200, "expected_perp_files": 40, "expected_funding_files": 10}
+    t.checks = {
+        "dragon_spot_parquet": dragon_spot,
+        "dragon_spot_symbols": dragon_spot_symbols,
+        "binance_tradable_top50_symbols": binance_tradable,
+        "dragon_perp_parquet": dragon_perp,
+        "gamma_perp_parquet": gamma_perp,
+        "gamma_funding_parquet": gamma_funding,
+        "dragon_busy": dragon_busy,
+        "gamma_crypto_busy": gamma_crypto_busy,
+        "expected_spot_files_after_binance_filter": expected_spot_files,
+        "expected_perp_files": 40,
+        "expected_funding_files": 10,
+    }
     if dragon_busy or gamma_crypto_busy:
         t.status, t.confidence = "in_progress", 0.96
         t.next_action = "Keep workers running; validate after Gamma crypto sync and Dragon completion."
-    elif dragon_spot >= 200 and max(dragon_perp, gamma_perp) >= 40 and gamma_funding >= 10:
+    elif expected_spot_files and dragon_spot >= expected_spot_files and max(dragon_perp, gamma_perp) >= 40 and gamma_funding >= 10:
         t.status, t.confidence = "validated", 0.88
-        t.next_action = "Sync remote crypto outputs to Omega and run Stage II-0b validation."
+        t.next_action = "Sync remote crypto outputs to Omega and run Stage 1.6 quality validation."
     else:
         t.status, t.confidence = "failed", 0.75
         t.next_action = "Restart or repair missing crypto acquisition slices."

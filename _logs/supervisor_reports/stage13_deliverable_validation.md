@@ -1,6 +1,6 @@
 # Stage 1.3 Deliverable Validation
 
-Generated: 2026-05-01T18:48:12.850171+00:00
+Generated: 2026-05-01T18:51:45.379440+00:00
 
 Rule: a deliverable is complete only when the exact work-plan task spec and produced artifact evidence agree. Uncertainty is escalated to Tier 4/Codex.
 
@@ -8,10 +8,9 @@ Rule: a deliverable is complete only when the exact work-plan task spec and prod
 
 | Status | Count |
 | --- | ---: |
-| validated | 8 |
+| validated | 9 |
 | partial | 3 |
 | needs_codex | 7 |
-| failed | 1 |
 
 ## Task Results
 
@@ -22,7 +21,7 @@ Rule: a deliverable is complete only when the exact work-plan task spec and prod
 | 1.3.C Yahoo Finance equity indices | Omega | needs_codex | 0.55 | market_data/equities<br>_logs/omega/stage13_light_sources_worker.log | If below catalog count in Stage 1.6, backfill the missing equity/ETF symbols. |
 | 1.3.D Yahoo Finance commodities, ETFs, EM FX, bonds | Omega | needs_codex | 0.55 | market_data/commodities<br>market_data/forex/emerging_markets<br>market_data/equities/etfs | No action unless catalog coverage audit finds missing symbols. |
 | 1.3.E HistData FX processing | Omega | validated | 0.90 | market_data/forex/g10<br>/home/harveybc/Downloads/histdata<br>_logs/omega/stage13_light_sources_worker.log | If missing remains, inspect HistData downloads under /home/harveybc/Downloads/histdata. |
-| 1.3.F Binance crypto comprehensive | Dragon/Gamma | failed | 0.75 | dragon:market_data/crypto<br>gamma:market_data/crypto<br>_logs/dragon/stage13_crypto_worker.log<br>_logs/gamma/stage13_crypto_perp_accelerator_worker.log | Restart or repair missing crypto acquisition slices. |
+| 1.3.F Binance crypto comprehensive | Dragon/Gamma | validated | 0.88 | dragon:market_data/crypto<br>gamma:market_data/crypto<br>_logs/dragon/stage13_crypto_worker.log<br>_logs/gamma/stage13_crypto_perp_accelerator_worker.log | Sync remote crypto outputs to Omega and run Stage 1.6 quality validation. |
 | 1.3.G CoinMetrics Community on-chain | Gamma | needs_codex | 0.70 | alternative_data/onchain_*/coinmetrics_community<br>_logs/gamma/stage13_macro_onchain_escalation.md | Codex should decide whether CoinMetrics Community is blocked/free-tier unavailable or needs endpoint repair. |
 | 1.3.H Blockchain.com BTC supplementary | Gamma | validated | 0.90 | alternative_data/onchain_btc/blockchain_com<br>_logs/gamma/stage13_macro_onchain_worker.log | Stage 1.6 should check individual metrics against catalog. |
 | 1.3.I Etherscan ETH supplementary | Gamma | partial | 0.76 | alternative_data/onchain_eth<br>_logs/gamma/stage13_remaining_free_gaps.md | Treat historical Pro endpoints as Stage 1.4 subscription evidence. |
@@ -42,7 +41,6 @@ Rule: a deliverable is complete only when the exact work-plan task spec and prod
 - 1.3.B FRED comprehensive macro pull: FRED task expects roughly 150 catalog series; local observations count is below that threshold. Should Tier 2 expand FRED acquisition now?
 - 1.3.C Yahoo Finance equity indices: If below catalog count in Stage 1.6, backfill the missing equity/ETF symbols.
 - 1.3.D Yahoo Finance commodities, ETFs, EM FX, bonds: No action unless catalog coverage audit finds missing symbols.
-- 1.3.F Binance crypto comprehensive: Binance workers are not running and expected crypto output counts are incomplete. Should Codex inspect worker completion markers and restart missing slices?
 - 1.3.G CoinMetrics Community on-chain: CoinMetrics Community deliverable appears absent and an escalation note exists. Is this a provider limitation, endpoint bug, or subscription decision input?
 - 1.3.I Etherscan ETH supplementary: Etherscan free snapshots exist but historical daily endpoints report Pro-only access. Should this become a paid-provider gap or be replaced by another free source?
 - 1.3.K SEC EDGAR metadata: Stage 1.3.K asks for S&P 500 10-K/10-Q/8-K/Form 4 metadata. Current SEC output appears limited; should Gamma run a broader EDGAR metadata job?
