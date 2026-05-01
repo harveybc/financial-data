@@ -22,6 +22,8 @@ _logs/supervisor_reports/*_context_packet.md
 !_logs/supervisor_reports/tier2_context_packet.md
 _logs/supervisor_reports/global_status.md
 _logs/supervisor_reports/escalation_queue.json
+_logs/supervisor_reports/telegram_notify_state.json
+_logs/supervisor_reports/telegram_chat_discovery.json
 
 # Large data lake artifacts
 *.parquet

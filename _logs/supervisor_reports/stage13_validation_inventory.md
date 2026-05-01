@@ -1,27 +1,27 @@
 # Stage 1.3 Validation Inventory
 
-Generated: 2026-05-01T20:00:06.742647+00:00
+Generated: 2026-05-01T20:36:06.817982+00:00
 
 ## File Counts
 
 | Root | Exists | Files | Size MB | Top suffixes |
 | --- | --- | ---: | ---: | --- |
 | market_data | True | 572 | 2092.1 | .json:99, .md:198, .parquet:255, <none>:20 |
-| macro_economic | True | 288 | 3.9 | .csv:1, .json:69, .md:139, .parquet:68, .xml:1, <none>:10 |
+| macro_economic | True | 304 | 4.1 | .csv:1, .json:74, .md:147, .parquet:71, .xml:1, <none>:10 |
 | alternative_data | True | 115 | 364.6 | .csv:1, .json:19, .md:36, .parquet:14, .txt:16, .zip:16, <none>:13 |
 | reference_data | True | 33 | 0.7 | .json:7, .md:14, .parquet:7, <none>:5 |
 | economic_calendar | True | 44 | 0.3 | .json:10, .md:21, .parquet:10, <none>:3 |
 
 ## Documentation Coverage
 
-- Data directories checked: 202
+- Data directories checked: 206
 - Directories missing docs: 0
 
 ## Acquisition Log
 
-- Rows: 144
-- Latest timestamp: 2026-05-01T17:57:22.404021+00:00
-- Status counts: {"ok": 99, "schema_shifted_or_malformed": 45}
+- Rows: 147
+- Latest timestamp: 2026-05-01T20:07:17.629598+00:00
+- Status counts: {"ok": 102, "schema_shifted_or_malformed": 45}
 
 ## Known Gaps And Handoffs
 
@@ -29,7 +29,6 @@ Generated: 2026-05-01T20:00:06.742647+00:00
 - _logs/gamma/stage13_remaining_free_gaps.md - - 2026-05-01T16:43:05.462354+00:00 Etherscan historical endpoints: dailytx: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.; dailyavgblocksize: Sorry, it looks like you are trying to acce
 - _logs/gamma/stage13_supplemental_gaps.md - - Stage: 1.3 Free Data Acquisition
 - economic_calendar/scheduled_events/stage13_scheduled_events_gap.md - Stage: 1.3 Free Data Acquisition
-- macro_economic/bea/stage13_bea_gap.md - Stage: 1.3 Free Data Acquisition
 
 ## Active Dispatch Context
 

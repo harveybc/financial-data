@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T20:00:06.742647+00:00",
+  "generated_at": "2026-05-01T20:36:06.817982+00:00",
   "stage": "Stage 1.3 Free Data Acquisition validation/inventory",
   "inventory": {
     "roots": {
@@ -16,13 +16,13 @@
       },
       "macro_economic": {
         "exists": true,
-        "files": 288,
-        "bytes": 4088183,
+        "files": 304,
+        "bytes": 4350318,
         "suffix_counts": {
           ".csv": 1,
-          ".json": 69,
-          ".md": 139,
-          ".parquet": 68,
+          ".json": 74,
+          ".md": 147,
+          ".parquet": 71,
           ".xml": 1,
           "<none>": 10
         }
@@ -65,22 +65,22 @@
       }
     },
     "totals": {
-      "files": 1052,
-      "bytes": 2581156735,
-      "data_directories": 202
+      "files": 1068,
+      "bytes": 2581418870,
+      "data_directories": 206
     },
     "documentation": {
-      "data_directories_checked": 202,
+      "data_directories_checked": 206,
       "directories_missing_docs": 0,
       "missing_doc_examples": []
     }
   },
   "acquisition_log": {
     "exists": true,
-    "rows": 144,
-    "latest_timestamp": "2026-05-01T17:57:22.404021+00:00",
+    "rows": 147,
+    "latest_timestamp": "2026-05-01T20:07:17.629598+00:00",
     "status_counts": {
-      "ok": 99,
+      "ok": 102,
       "schema_shifted_or_malformed": 45
     },
     "top_sources": {
@@ -89,6 +89,7 @@
       "HistData": 10,
       "Blockchain.com": 6,
       "mempool.space": 3,
+      "BEA Data API": 3,
       "DeFiLlama": 1,
       "SEC EDGAR": 1,
       "US Treasury FiscalData": 1,
@@ -418,30 +419,6 @@
     ],
     "recent_rows": [
       {
-        "timestamp": "2026-05-01T16:42:56.526477+00:00",
-        "source": "FRED",
-        "dataset": "cpi_yoy",
-        "status": "ok",
-        "path": "economic_calendar/release_actuals/cpi_yoy/actuals.parquet",
-        "notes": "rows=432"
-      },
-      {
-        "timestamp": "2026-05-01T16:42:56.811875+00:00",
-        "source": "FRED",
-        "dataset": "core_cpi_yoy",
-        "status": "ok",
-        "path": "economic_calendar/release_actuals/core_cpi_yoy/actuals.parquet",
-        "notes": "rows=432"
-      },
-      {
-        "timestamp": "2026-05-01T16:42:57.102693+00:00",
-        "source": "FRED",
-        "dataset": "core_pce_yoy",
-        "status": "ok",
-        "path": "economic_calendar/release_actuals/core_pce_yoy/actuals.parquet",
-        "notes": "rows=432"
-      },
-      {
         "timestamp": "2026-05-01T16:42:57.463543+00:00",
         "source": "FRED",
         "dataset": "nonfarm_payrolls_mom",
@@ -576,6 +553,30 @@
         "status": "ok",
         "path": "market_data/forex/g10/usdjpy",
         "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T20:07:10.814580+00:00",
+        "source": "BEA Data API",
+        "dataset": "gdp_percent_change",
+        "status": "ok",
+        "path": "macro_economic/bea/nipa/gdp_percent_change/quarterly.parquet",
+        "notes": "rows=7900"
+      },
+      {
+        "timestamp": "2026-05-01T20:07:14.666824+00:00",
+        "source": "BEA Data API",
+        "dataset": "gdp_current_dollars",
+        "status": "ok",
+        "path": "macro_economic/bea/nipa/gdp_current_dollars/quarterly.parquet",
+        "notes": "rows=8242"
+      },
+      {
+        "timestamp": "2026-05-01T20:07:17.629598+00:00",
+        "source": "BEA Data API",
+        "dataset": "real_gdp_chained_dollars",
+        "status": "ok",
+        "path": "macro_economic/bea/nipa/real_gdp_chained_dollars/quarterly.parquet",
+        "notes": "rows=4739"
       }
     ]
   },
@@ -595,15 +596,11 @@
     {
       "path": "economic_calendar/scheduled_events/stage13_scheduled_events_gap.md",
       "summary": "Stage: 1.3 Free Data Acquisition"
-    },
-    {
-      "path": "macro_economic/bea/stage13_bea_gap.md",
-      "summary": "Stage: 1.3 Free Data Acquisition"
     }
   ],
   "dispatch": {
     "exists": true,
-    "generated_at": "2026-05-01T19:50:05.232500+00:00",
+    "generated_at": "2026-05-01T20:24:54.416414+00:00",
     "decisions": [
       {
         "machine": "omega",

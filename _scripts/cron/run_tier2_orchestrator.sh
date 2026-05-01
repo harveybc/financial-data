@@ -256,3 +256,9 @@ run_hermes_summary() {
     echo "Hermes note timed out or failed; deterministic status above remains authoritative."
   fi
 } >> "$GLOBAL_STATUS"
+
+PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/telegram_notify.py" \
+  --event "tier2:global_status" \
+  --title "Project 3 Tier 2 global status" \
+  --status-file "$GLOBAL_STATUS" \
+  --min-interval-minutes 20 >/dev/null 2>&1 || true

@@ -104,6 +104,11 @@ with open(path, "w", encoding="utf-8") as f:
 PY
   compact_detail="$(printf "%s" "$detail" | tr '\n' ' ' | cut -c 1-240)"
   printf '%s host=%s status=%s confidence=%s detail=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$HOST" "$status" "$confidence" "$compact_detail"
+  PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/telegram_notify.py" \
+    --event "tier1:${HOST}:${status}" \
+    --title "Project 3 ${HOST} Tier 1 ${status}" \
+    --status-file "$STATUS_FILE" \
+    --min-interval-minutes 20 >/dev/null 2>&1 || true
 }
 
 if ! mkdir "$RUN_LOCK" 2>/dev/null; then
