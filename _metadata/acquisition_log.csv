@@ -133,3 +133,4 @@ timestamp,source,dataset,status,path,notes
 2026-05-01T16:42:58.682157+00:00,FRED,treasury_10y,ok,economic_calendar/release_actuals/treasury_10y/actuals.parquet,rows=9393
 2026-05-01T16:44:02.769523+00:00,FRED,initial_claims,ok,economic_calendar/release_actuals/initial_claims/actuals.parquet,rows=1878
 2026-05-01T16:44:03.095424+00:00,FRED,retail_sales_mom,ok,economic_calendar/release_actuals/retail_sales_mom/actuals.parquet,rows=408
+2026-05-01T17:49:51.282057+00:00,HistData,audusd,ok,market_data/forex/g10/audusd,zips=21

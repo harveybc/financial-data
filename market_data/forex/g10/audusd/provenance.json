@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "AUDUSD FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:49:51.255422+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/audusd/5m.parquet",
+      "sha256": "17aa7af578801b4b19050cbb2f2885f772c99f0b7ac65a5b41ff0db47f2cbf25"
+    },
+    {
+      "path": "market_data/forex/g10/audusd/15m.parquet",
+      "sha256": "ac44920d6b95c2613ff2aaba9efa8726d9a4d6665b20580580f04de5b69f0855"
+    },
+    {
+      "path": "market_data/forex/g10/audusd/4h.parquet",
+      "sha256": "b576b672184bc859f6ea2b58fe1571b90a7774ab82638bdd150dbe1b1870ab95"
+    },
+    {
+      "path": "market_data/forex/g10/audusd/1h.parquet",
+      "sha256": "74ebc93e4858e909f93159ac4872ba3bc28a21c9478d36382eb379c7759d8752"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ CONTEXT_PACKET="$LOG_DIR/tier2_context_packet.md"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 SSH_PREFIX="bash -lc 'source ~/.bashrc >/dev/null 2>&1; source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda activate tensorflow >/dev/null 2>&1;"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
-PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
+PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
 
 mkdir -p "$LOG_DIR/tier4_handoffs"
 
@@ -32,16 +32,17 @@ active_stage: Stage 1.3 Free Data Acquisition
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
-- Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation.
+- Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
 - Dragon: Binance top 50 spot, top 10 perpetuals, funding rates.
-- Gamma: FRED, CoinMetrics attempts, Blockchain.com, mempool.space, SEC metadata, DeFiLlama, BLS/Treasury, validation inventory.
+- Gamma: FRED, CoinMetrics attempts, Blockchain.com, mempool.space, SEC metadata, DeFiLlama, BLS/Treasury, Etherscan/OECD/FINRA/BEA follow-up, Binance perpetual/funding acceleration.
 expected_deliverables: market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs, validation inventory.
 relevant_logs: _logs/supervisor_reports/global_status.md; _logs/supervisor_reports/autonomous_dispatch_report.md; _logs/omega; remote _logs/dragon; remote _logs/gamma.
 constraints: use existing private repo runtime credentials; respect GPU locks; avoid destructive cleanup; sync remote outputs to Omega; escalate only real blockers.
-honesty: report evidence, confidence, assumptions, and stale context corrections.
+honesty: report evidence, confidence, assumptions, and stale context corrections. Never mark a deliverable complete from memory or guesswork.
 anomaly_detection: stale PIDs, silent logs, failed APIs, missing provenance, abnormal file counts, empty data files, duplicate timestamps, timezone/frequency drift, stale locks, VRAM not released.
 improvement_suggestion: every tick should preserve one useful reusable-skill or validation-check suggestion when evidence supports it.
 recursive_context_rule: every agent communication must include project_root, active_stage, current_task, expected_deliverable, relevant_docs, relevant_logs, constraints, evidence, anomalies, confidence, and context_to_pass_forward.
+deliverable_validation_rule: before declaring task completion, read the exact work-plan task spec and inspect produced deliverables, provenance/docs, acquisition log, and worker logs. If confidence is below 0.8 or the requirement is ambiguous, write a Tier 4/Codex escalation instead of guessing.
 EOF
 
 probe_machine() {
@@ -80,15 +81,18 @@ dispatch_rc=$?
   echo
   echo "Tier 2 should assign work to idle machines as follows:"
   echo
-  echo "- Dragon: Binance top 50 spot, top 10 perpetuals, funding rates."
-  echo "- Gamma: FRED, CoinMetrics, Blockchain.com, mempool.space, SEC EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury."
-  echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation."
+  echo "- Dragon: Binance top 50 spot OHLCV, then skip any perpetual/funding outputs already synced from Gamma."
+  echo "- Gamma: FRED, CoinMetrics, Blockchain.com, mempool.space, SEC EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury, plus Binance perpetual/funding acceleration while idle."
+  echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against the work plan, inventory, and dispatch context refresh."
+  echo "- Sync: Gamma crypto acceleration syncs to Dragon first, then all completed remote outputs sync back to Omega as canonical root."
   echo
   echo "Tier 2 must avoid GPU-heavy dispatch when /tmp/gpu_busy.lock exists or VRAM is already occupied."
   echo
   echo "## Recursive Context Communication"
   echo
   echo "Every Project 3 agent communication must include a compact context packet with stage, task, deliverable, relevant docs/logs, constraints, evidence, anomalies, confidence, improvement suggestion, and context_to_pass_forward."
+  echo
+  echo "Deliverable validation rule: read the exact work-plan task spec and inspect the produced artifact before marking complete. If the supervisor is not at least 0.8 confident, escalate to Tier 4/Codex instead of guessing."
   echo
   sed -n '1,120p' "$CONTEXT_PACKET"
   echo
@@ -113,7 +117,7 @@ dispatch_rc=$?
   echo
   echo "## Autonomous Dispatch"
   echo
-  echo "Policy: detect idle machines every Tier 2 cron tick, keep active workers running, start pending safe Stage 1.3 workers without human intervention, and sync completed remote outputs back to Omega."
+  echo "Policy: detect idle machines every Tier 2 cron tick, keep active workers running, start pending safe and non-overlapping Stage 1.3 workers without human intervention, use Omega housekeeping for docs/inventory/deliverable validation, and sync completed remote outputs back to Omega."
   echo
   if [ "$dispatch_rc" -eq 0 ]; then
     if [ -f "$LOG_DIR/autonomous_dispatch_report.md" ]; then

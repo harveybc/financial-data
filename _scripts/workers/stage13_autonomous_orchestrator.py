@@ -87,11 +87,12 @@ def start_local_worker(
     out_file: Path,
     log_file: Path,
     done_phrase: str,
+    always_run: bool = False,
 ) -> dict[str, str]:
     running, pid = local_pid_running(pid_file)
     if running:
         return {"state": "busy", "pid": pid, "action": "kept_running"}
-    if local_log_done(log_file, done_phrase):
+    if not always_run and local_log_done(log_file, done_phrase):
         return {"state": "completed_idle", "pid": pid, "action": "no_dispatch_needed"}
     out_file.parent.mkdir(parents=True, exist_ok=True)
     pid_file.parent.mkdir(parents=True, exist_ok=True)
@@ -350,6 +351,22 @@ def main() -> None:
         "state": omega_calendar["state"],
         "action": omega_calendar["action"],
         "deliverable": "economic_calendar/release_actuals with FRED actuals and scheduled-events gap note",
+    })
+
+    omega_housekeeping = start_local_worker(
+        "_scripts/workers/stage13_omega_housekeeping_worker.py",
+        ROOT / "_logs/omega/stage13_housekeeping_python.pid",
+        ROOT / "_logs/omega/stage13_housekeeping_python.out",
+        ROOT / "_logs/omega/stage13_housekeeping_worker.log",
+        "DONE omega housekeeping worker",
+        always_run=True,
+    )
+    decisions.append({
+        "machine": "omega",
+        "stage": "Stage 1.3 documentation, deliverable validation, inventory, and dispatch context refresh",
+        "state": omega_housekeeping["state"],
+        "action": omega_housekeeping["action"],
+        "deliverable": "missing-doc backfills, _metadata/STAGE_1_3_INVENTORY.json, _metadata/STAGE_1_3_DELIVERABLE_VALIDATION.json, and validation reports",
     })
 
     dragon = start_remote_worker(

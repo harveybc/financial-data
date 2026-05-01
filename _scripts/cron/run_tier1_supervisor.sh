@@ -5,7 +5,7 @@ PROJECT_ROOT="${PROJECT_ROOT:-/home/harveybc/Documents/GitHub/financial-data}"
 LOG_DIR="$PROJECT_ROOT/_logs/supervisor_reports"
 LOCKFILE="/tmp/gpu_busy.lock"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
-PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,systematic-debugging,hermes-agent-skill-authoring}"
+PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,hermes-agent-skill-authoring}"
 HOST="$(hostname)"
 STATUS_FILE="$LOG_DIR/${HOST}_status.json"
 CONTEXT_PACKET="$LOG_DIR/${HOST}_context_packet.md"
@@ -140,8 +140,9 @@ expected_deliverable: ${expected_deliverable}
 relevant_docs: ${relevant_docs}
 relevant_logs: ${relevant_logs}
 constraints: respect /tmp/gpu_busy.lock; do not modify files or dispatch work; do not ask routine questions; report uncertainty.
-honesty: tie claims to PID/log/file/GPU evidence; include confidence and assumptions.
+honesty: tie claims to PID/log/file/GPU evidence; include confidence and assumptions. Never declare a deliverable complete by guessing.
 anomaly_detection: stale PID, silent log, no file-count growth, empty outputs, missing provenance, repeated API failures, stale GPU lock, VRAM not released.
+deliverable_validation_rule: validation requires the exact work-plan task spec plus deliverable files/provenance/log evidence. If confidence is below 0.8, recommend escalation to Tier 4/Codex instead of guessing.
 improvement_suggestion: if a pattern repeats, include a precise skill_candidate for a reusable Hermes skill or validation check.
 context_to_pass_forward: preserve active_stage, current_task, deliverable, evidence, anomaly state, confidence, and next recommended action.
 EOF
@@ -154,6 +155,7 @@ GPU summary: ${gpu_summary}
 Lock note: ${stale_note:-none}
 Auto-improvement: if the same anomaly pattern appears repeatedly, include a skill_candidate field naming the reusable workflow that Tier 2/Tier 3 should turn into a Hermes skill.
 Recursive communication rule: include context_to_pass_forward so the next agent receives the exact stage, task, deliverable, evidence, uncertainty, anomaly state, and improvement suggestion.
+Deliverable validation rule: never assume; if unsure after reading the work plan and artifacts, set recommended_next_action to escalate_to_codex with the exact question.
 Expected output: one concise JSON object with keys status, anomalies, idle_capacity, recommended_next_action, skill_candidate, context_to_pass_forward, confidence."
 
 report="$(timeout 240 "$HERMES_BIN" --skills "$PROJECT3_HERMES_SKILLS" -z "$prompt" 2>&1)"

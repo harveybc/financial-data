@@ -15,6 +15,7 @@ _logs/supervisor_reports/tier4_handoffs/*.md
 # Generated logs and runtime state
 _logs/**/*.log
 _logs/**/*.out
+_logs/**/*.pid
 _logs/supervisor_reports/*_status.json
 _logs/supervisor_reports/global_status.md
 _logs/supervisor_reports/escalation_queue.json
@@ -25,6 +26,16 @@ _logs/supervisor_reports/escalation_queue.json
 *.zip
 *.gz
 *.jsonl
+/market_data/**/*.txt
+/macro_economic/**/*.txt
+/alternative_data/**/*.txt
+/reference_data/**/*.txt
+/economic_calendar/**/*.txt
+/market_data/**/*.xml
+/macro_economic/**/*.xml
+/alternative_data/**/*.xml
+/reference_data/**/*.xml
+/economic_calendar/**/*.xml
 
 # Python and OS noise
 __pycache__/

@@ -11,12 +11,13 @@ echo
 echo "## Omega"
 echo "- Agent: Hermes/OpenCode Go Tier 2 + Omega Stage 1.3 local worker"
 echo "- Work-plan stage: Stage 1.3 Free Data Acquisition"
-echo "- Assigned tasks: Task 1.3.A shared utilities, 1.3.C/1.3.D yfinance, 1.3.E HistData processing from /home/harveybc/Downloads/histdata, CFTC/calendars/metadata aggregation, 1.3.P economic calendar"
+echo "- Assigned tasks: Task 1.3.A shared utilities, 1.3.C/1.3.D yfinance, 1.3.E HistData processing from /home/harveybc/Downloads/histdata, CFTC/calendars/metadata aggregation, 1.3.P economic calendar, documentation backfill, deliverable validation against the work plan, repeating Stage 1.3 inventory/context refresh"
 omega_busy=""
 for pid_file in \
   "$ROOT/_logs/omega/stage13_light_sources_python.pid" \
   "$ROOT/_logs/omega/stage13_reference_python.pid" \
-  "$ROOT/_logs/omega/stage13_economic_calendar_python.pid"; do
+  "$ROOT/_logs/omega/stage13_economic_calendar_python.pid" \
+  "$ROOT/_logs/omega/stage13_housekeeping_python.pid"; do
   pid="$(cat "$pid_file" 2>/dev/null || true)"
   if [ -n "$pid" ] && ps -p "$pid" >/dev/null 2>&1; then
     omega_busy="${omega_busy}${pid} "
@@ -29,12 +30,16 @@ else
   echo "- State: idle or between worker attempts"
   echo "- Reason: no active Omega Python worker PID found"
 fi
-echo "- Expected/generated deliverables: shared _scripts utilities, market_data/equities, market_data/commodities, market_data/forex/g10, economic_calendar/release_actuals, reference outputs, acquisition_log rows"
+echo "- Expected/generated deliverables: shared _scripts utilities, market_data/equities, market_data/commodities, market_data/forex/g10, economic_calendar/release_actuals, reference outputs, acquisition_log rows, missing-doc backfills, _metadata/STAGE_1_3_INVENTORY.json, _metadata/STAGE_1_3_DELIVERABLE_VALIDATION.json, stage13_validation_inventory.md, stage13_deliverable_validation.md"
 echo "- Latest log:"
 for log in \
   "$ROOT/_logs/omega/stage13_light_sources_worker.log" \
   "$ROOT/_logs/omega/stage13_reference_worker.log" \
-  "$ROOT/_logs/omega/stage13_economic_calendar_worker.log"; do
+  "$ROOT/_logs/omega/stage13_economic_calendar_worker.log" \
+  "$ROOT/_logs/omega/stage13_housekeeping_worker.log" \
+  "$ROOT/_logs/omega/stage13_doc_backfill_worker.log" \
+  "$ROOT/_logs/omega/stage13_validation_inventory_worker.log" \
+  "$ROOT/_logs/omega/stage13_deliverable_validator_worker.log"; do
   test -f "$log" && tail -n 3 "$log" | sed 's/^/  /'
 done
 echo
@@ -64,8 +69,8 @@ remote_status \
 remote_status \
   "Gamma" \
   "gamma" \
-  "Stage 1.3 Free Data Acquisition, Tasks 1.3.B/1.3.G plus Gamma macro/on-chain and remaining free-source follow-up" \
-  "FRED, CoinMetrics Community, Blockchain.com, mempool.space, SEC EDGAR metadata, FINRA, DeFiLlama, Etherscan, OECD/BLS/BEA/Treasury where available" \
-  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_python.pid" \
-  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_worker.log" \
-  "macro_economic/fred, macro_economic/oecd, alternative_data/onchain_* / defi_metrics / short_interest outputs plus source-specific docs"
+  "Stage 1.3 Free Data Acquisition, Tasks 1.3.B/1.3.G plus Gamma macro/on-chain, remaining free-source follow-up, and Binance crypto acceleration" \
+  "FRED, CoinMetrics Community, Blockchain.com, mempool.space, SEC EDGAR metadata, FINRA, DeFiLlama, Etherscan, OECD/BLS/BEA/Treasury where available, Binance perpetual/funding acceleration" \
+  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_python.pid /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_crypto_perp_accelerator_python.pid" \
+  "/home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_macro_onchain_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_supplemental_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_remaining_free_worker.log /home/harveybc/Documents/GitHub/financial-data/_logs/gamma/stage13_crypto_perp_accelerator_worker.log" \
+  "macro_economic/fred, macro_economic/oecd, alternative_data/onchain_* / defi_metrics / short_interest outputs, market_data/crypto/perpetuals, market_data/crypto/funding_rates plus source-specific docs"

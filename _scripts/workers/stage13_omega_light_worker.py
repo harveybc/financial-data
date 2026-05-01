@@ -3,6 +3,7 @@ from __future__ import annotations
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 
 import pandas as pd
 
@@ -60,12 +61,18 @@ def fetch_yfinance() -> None:
 def parse_histdata_zip(path: Path) -> pd.DataFrame:
     frames = []
     with zipfile.ZipFile(path) as zf:
-        for name in zf.namelist():
+        names = [name for name in zf.namelist() if not name.endswith("/")]
+        preferred = [name for name in names if name.lower().endswith(".csv")] or names
+        for name in preferred:
             if name.endswith("/"):
                 continue
             with zf.open(name) as f:
-                df = pd.read_csv(f, header=None)
-                if df.shape[1] >= 6:
+                df = pd.read_csv(f, header=None, sep=r"[;,]", engine="python")
+                if df.shape[1] >= 6 and df.iloc[:, 0].astype(str).str.contains(" ").any():
+                    df = df.iloc[:, :5]
+                    df.columns = ["datetime", "open", "high", "low", "close"]
+                    dt = pd.to_datetime(df["datetime"], format="%Y%m%d %H%M%S", errors="coerce", utc=True)
+                elif df.shape[1] >= 6:
                     df = df.iloc[:, :6]
                     df.columns = ["date", "time", "open", "high", "low", "close"]
                     dt = pd.to_datetime(df["date"].astype(str) + df["time"].astype(str).str.zfill(6), format="%Y%m%d%H%M%S", errors="coerce", utc=True)
@@ -80,18 +87,26 @@ def parse_histdata_zip(path: Path) -> pd.DataFrame:
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
 
+def infer_histdata_pair(pair_dir: Path, zip_paths: list[Path]) -> str:
+    for path in zip_paths:
+        match = re.search(r"ASCII_([A-Z]{6})_M1", path.name)
+        if match:
+            return match.group(1).lower()
+    return pair_dir.name.lower()
+
+
 def process_histdata() -> None:
     if not HISTDATA.exists():
         log_line(LOG, f"HistData input missing: {HISTDATA}")
         return
     for pair_dir in sorted(p for p in HISTDATA.iterdir() if p.is_dir()):
-        pair = pair_dir.name.lower()
+        zip_paths = sorted(pair_dir.glob("*.zip"))
+        if not zip_paths:
+            continue
+        pair = infer_histdata_pair(pair_dir, zip_paths)
         folder = ROOT / "market_data" / "forex" / "g10" / pair
         if (folder / "5m.parquet").exists() or (folder / "5m.csv").exists():
             log_line(LOG, f"skip existing HistData {pair}")
-            continue
-        zip_paths = sorted(pair_dir.glob("*.zip"))
-        if not zip_paths:
             continue
         log_line(LOG, f"process HistData {pair} zips={len(zip_paths)}")
         parts = []
