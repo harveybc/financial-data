@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "ADAUSDT funding rates",
+  "acquired_at": "2026-05-01T18:13:59.286995+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/adausdt/funding_rates.parquet",
+      "sha256": "54059d0f84fe0be93554cf4171cca8ecff02f2fb77fd3aef90f8c0668fe94f6e"
+    }
+  ]
+}

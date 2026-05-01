@@ -391,7 +391,11 @@ def write_escalation_queue(tasks: list[TaskResult]) -> None:
     else:
         payload = {"queue": []}
     queue = payload.setdefault("queue", [])
-    by_id = {item.get("id"): item for item in queue if isinstance(item, dict)}
+    by_id = {
+        item.get("id"): item
+        for item in queue
+        if isinstance(item, dict) and not str(item.get("id", "")).startswith("stage13-deliverable-")
+    }
 
     for task in tasks:
         if task.status not in {"needs_codex", "failed"} and not task.escalation_question:

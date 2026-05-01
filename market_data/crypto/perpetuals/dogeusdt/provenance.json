@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "DOGEUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T18:06:44.012182+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/dogeusdt/4h.parquet",
+      "sha256": "3748741bc99eb57f60fa0acc4d97099edae8c354298b6a95a87b7d5c37e00e35"
+    }
+  ]
+}

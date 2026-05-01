@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "NZDUSD FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:54:51.652864+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/nzdusd/5m.parquet",
+      "sha256": "57b8411fd9345f1a6bf95327707877a767722861cf3a236a7eaf4c1764b57a6d"
+    },
+    {
+      "path": "market_data/forex/g10/nzdusd/15m.parquet",
+      "sha256": "8991bc92c75bd8ac78c27e60f55adb2b9dd356a8278b00853c6b1a57a3d94881"
+    },
+    {
+      "path": "market_data/forex/g10/nzdusd/4h.parquet",
+      "sha256": "b59f15ae86491578cc8e52809b0bacefdce2502e6e486a64394796803f52950f"
+    },
+    {
+      "path": "market_data/forex/g10/nzdusd/1h.parquet",
+      "sha256": "e8f73febcee5f9e0ed30ac4f1d2244087d150f36478c119b81a34025904867e4"
+    }
+  ]
+}

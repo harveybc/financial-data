@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "TRXUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T18:34:07.157886+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/trxusdt/4h.parquet",
+      "sha256": "e46dca34e40e814ae33b38daff9f0d96afa9600ab82eb0b79d9524e78e453a8a"
+    }
+  ]
+}

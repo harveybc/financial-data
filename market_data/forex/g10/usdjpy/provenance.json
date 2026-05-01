@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "USDJPY FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:57:22.378014+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/usdjpy/5m.parquet",
+      "sha256": "7105b6b5437d3a0572fed4d9aafcb58b04c0fbea764923d2c310339c631946d9"
+    },
+    {
+      "path": "market_data/forex/g10/usdjpy/15m.parquet",
+      "sha256": "9d4f580d608f8027007a457bb4b252579e570418d1fd42d2e8376b637094ef4c"
+    },
+    {
+      "path": "market_data/forex/g10/usdjpy/4h.parquet",
+      "sha256": "730ee8f032dbbd2cad23b7decc929c1dbed0a78adb6279876e5b0d81f602f818"
+    },
+    {
+      "path": "market_data/forex/g10/usdjpy/1h.parquet",
+      "sha256": "1d93daa0a55290220a612098c427ec07e0b0996738e859288d2af91199018fd7"
+    }
+  ]
+}

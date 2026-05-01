@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "LINKUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:01:32.795823+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/linkusdt/4h.parquet",
+      "sha256": "98dc5168a32be6c3494c019782902a8788306884ecd6487d5d0b10585f584e1a"
+    }
+  ]
+}

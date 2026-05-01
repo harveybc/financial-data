@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "DOGEUSDT funding rates",
+  "acquired_at": "2026-05-01T18:06:47.491663+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/dogeusdt/funding_rates.parquet",
+      "sha256": "fad026a88329e35a37a5ea3a3100a9ea296c0d8411591664cf90bc740ae48516"
+    }
+  ]
+}

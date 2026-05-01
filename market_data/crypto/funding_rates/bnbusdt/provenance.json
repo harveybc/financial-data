@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "BNBUSDT funding rates",
+  "acquired_at": "2026-05-01T17:46:31.259321+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/bnbusdt/funding_rates.parquet",
+      "sha256": "4666d5b34b7850f3be4c7b82b0d4b9c7ab2afe0902da0be1de290fe47dc171cc"
+    }
+  ]
+}

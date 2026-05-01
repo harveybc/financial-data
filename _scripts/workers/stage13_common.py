@@ -88,7 +88,7 @@ def append_acquisition_log(row: dict[str, str]) -> None:
     exists = path.exists()
     fields = ["timestamp", "source", "dataset", "status", "path", "notes"]
     with path.open("a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
         if not exists:
             writer.writeheader()
         writer.writerow({k: row.get(k, "") for k in fields})

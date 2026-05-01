@@ -1,1 +1,4 @@
+# Optional cloud-supervisor mode after Ollama Pro sign-in.
+# Install with: _scripts/cron/install_tier1_cloud_supervisor.sh
+# PROJECT3_TIER1_HERMES_MODEL=gemma4:31b-cloud
 */5 * * * * /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/run_tier1_supervisor.sh >> /home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/tier1_cron.log 2>&1 # project3-tier1

@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "WLFIUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T18:03:37.635294+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/wlfiusdt/4h.parquet",
+      "sha256": "c3d2e7c911982c3faad14dd36363d89061053c4fb134f023c127986fa7f20ca8"
+    }
+  ]
+}

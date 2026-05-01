@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "XRPUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T16:06:37.825433+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/xrpusdt/4h.parquet",
+      "sha256": "fdfb634b30015fd7d5ca74f162c96f7e51395adf50cc2c9207712e0c5705c8f2"
+    }
+  ]
+}

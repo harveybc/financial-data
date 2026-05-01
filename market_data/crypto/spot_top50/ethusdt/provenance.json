@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "ETHUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T15:58:56.166673+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+      "sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5"
+    }
+  ]
+}

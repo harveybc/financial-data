@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "LINKUSDT funding rates",
+  "acquired_at": "2026-05-01T18:27:09.934766+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/linkusdt/funding_rates.parquet",
+      "sha256": "99d5455875890f4d9fec03f2de2b6ef6c71cbf328576e411c6a63cc7272d4920"
+    }
+  ]
+}

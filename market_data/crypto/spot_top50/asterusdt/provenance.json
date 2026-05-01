@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "ASTERUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T18:03:53.178711+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/asterusdt/4h.parquet",
+      "sha256": "4be8d7c953bf1467a5dd0e902ff41f481847f96b81a5a73f5d73ba682e054694"
+    }
+  ]
+}

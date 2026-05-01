@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "DOGEUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T16:40:42.644332+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/dogeusdt/4h.parquet",
+      "sha256": "155a4a0ad5bfc813313dc9bd37380b6c2e0feef473c6cb99973073f8fc3ed79c"
+    }
+  ]
+}

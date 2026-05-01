@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "SOLUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T16:26:38.267923+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/solusdt/4h.parquet",
+      "sha256": "7e7ad88040d6c2be3a3fd223356611e71c16204f34367b2e710faf633a443424"
+    }
+  ]
+}

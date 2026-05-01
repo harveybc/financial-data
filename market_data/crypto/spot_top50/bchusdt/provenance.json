@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "BCHUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T16:54:28.153103+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/bchusdt/4h.parquet",
+      "sha256": "e67044649d361568f9b02a5e323ae10856dfeb9e3a19d2ac21178b16cf734611"
+    }
+  ]
+}

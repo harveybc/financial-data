@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "LTCUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:24:36.419271+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/ltcusdt/4h.parquet",
+      "sha256": "dbd3d7f4ace745cbb6affbe1cce755bb38797e4d5c20b646cd2cf6a704d23480"
+    }
+  ]
+}

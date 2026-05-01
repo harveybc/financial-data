@@ -37,6 +37,10 @@ The "machine assignment" tables below describe which machine runs which workers.
 - treats completed idempotent workers as `completed_idle`;
 - syncs completed Dragon/Gamma outputs back to the canonical Omega repo;
 - writes `_logs/supervisor_reports/autonomous_dispatch_report.md` and updates `global_status.md`.
+
+**Deliverable validation rule:** Each Stage 1.3 task is complete only after the validator reads this work-plan task, inspects the produced deliverable paths, checks README/data dictionary/provenance, reads relevant logs, and records confidence in `_metadata/STAGE_1_3_DELIVERABLE_VALIDATION.json`. If confidence is below 0.8 or the requirement is ambiguous, the supervisor must write a Codex/Tier 4 escalation instead of guessing.
+
+**Ollama Pro cloud supervisor option:** During Stage 1.3, local Gemma can continue because acquisition is mostly network-bound. For Phase 2/3 GPU-heavy work, Dragon and Gamma Tier 1 supervisors should prefer `gemma4:31b-cloud` via Ollama Cloud Pro so the GPUs remain available for training/feature engineering. Local `gemma4:31b` remains the offline fallback.
 ---
 
 ## 1. Pre-Flight Checks

@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "ZECUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:08:17.576515+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/zecusdt/4h.parquet",
+      "sha256": "ffea1392a44e366d6e017d5f562fd8bfe75c35d13f4de3ea8e1451102cfd1f27"
+    }
+  ]
+}

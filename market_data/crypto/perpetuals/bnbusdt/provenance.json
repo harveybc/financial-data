@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "BNBUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T17:46:28.045549+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/bnbusdt/4h.parquet",
+      "sha256": "375c5f20199a02c53dabb716e9b9fe6acef0152931921d9465f84a9559ce816c"
+    }
+  ]
+}

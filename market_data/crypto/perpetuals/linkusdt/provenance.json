@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "LINKUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T18:27:06.551058+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/linkusdt/4h.parquet",
+      "sha256": "cc4432c6630f048337886ec901a632492337eb4e7435714469370c883c56b21f"
+    }
+  ]
+}

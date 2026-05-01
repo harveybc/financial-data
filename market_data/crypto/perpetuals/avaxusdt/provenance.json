@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "AVAXUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T18:20:03.796350+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/avaxusdt/4h.parquet",
+      "sha256": "79c80155b3abe225fafc3e843619880a3e5823ea8246b56b1ea30abac88b1cbc"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "SHIBUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:41:16.810632+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/shibusdt/4h.parquet",
+      "sha256": "08d5c40e1c038c191f29452a4b47e952c8b823fec26f8ef88424e2d28199729c"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "TRXUSDT funding rates",
+  "acquired_at": "2026-05-01T18:34:10.528711+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/trxusdt/funding_rates.parquet",
+      "sha256": "3a21617cf1c2e894d9a07930b353ddbdc932327a90073e1fef8aa338d7ee51b3"
+    }
+  ]
+}

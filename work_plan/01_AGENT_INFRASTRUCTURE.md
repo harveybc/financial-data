@@ -40,6 +40,24 @@ A GPU lockfile prevents contention between local supervisors and heavy training 
 - On Omega (8GB VRAM, 16GB RAM), running Gemma 3 31B locally would require heavy CPU offloading and be impractically slow. Omega does **not** run a local Hermes supervisor for itself — Omega's logs are watched by OpenCode Go (Tier 2) directly.
 - The 31B model on Dragon/Gamma occupies the GPU during inference. This conflicts with heavy training jobs. **Section 4 (GPU lockfile protocol) is the mandatory mechanism that prevents OOM errors and contention.**
 
+**Optional cloud-supervisor mode (evaluated 2026-05-01):**
+
+Ollama Cloud Pro is a candidate replacement for local Tier 1/Tier 3 supervisor inference when GPU contention matters. Official Ollama pricing lists Pro at **$20/month** with **3 concurrent cloud models** and **50x more cloud usage than Free**; Ollama's cloud model docs show cloud models use the same Ollama commands/API; the `gemma4:31b-cloud` model page exists as a cloud-enabled Gemma 4 31B option.
+
+Important distinction: "3 cloud models at a time" is a concurrency limit, not exactly "3 machines." It should still cover this project because the expected cloud users are Dragon Tier 1, Gamma Tier 1, and at most one Tier 3 local-fix attempt at the same time.
+
+Current recommendation:
+
+- During Stage 1.3 acquisition, local Gemma is acceptable because workers are mostly network/CPU-bound, but it keeps Dragon/Gamma VRAM occupied between cron ticks.
+- Before Phase 2/3 GPU-heavy training, strongly prefer cloud-supervisor mode or lower-frequency deterministic-only supervision so the local GPUs stay available for training.
+- Keep local Gemma as fallback for offline work, cloud quota exhaustion, or privacy-sensitive prompts.
+- Record the subscription in `_metadata/ai_subscriptions.json` if enabled.
+
+Reference URLs:
+- `https://ollama.com/pricing`
+- `https://ollama.com/blog/cloud-models`
+- `https://ollama.com/library/gemma4:31b-cloud`
+
 ---
 
 ## 3. Network and IP Configuration
@@ -178,6 +196,21 @@ The cron entries live in `_scripts/cron/`, are version-controlled, and are docum
 **Why Hermes wrapper specifically:** persistent context across cron ticks via Hermes's skill/memory system. The agent learns common log patterns over project lifetime so future occurrences resolve faster. We do not use plain `ollama run` because we lose skill accumulation.
 
 **What Tier 1 does NOT do:** make decisions, modify code, modify the plan, contact remote APIs. Tier 1 is observational + light triage only.
+
+**Cloud inference switch:** Tier 1 wrappers may use an Ollama cloud model such as `gemma4:31b-cloud` when `PROJECT3_TIER1_HERMES_MODEL` is set and the machine is signed into Ollama Cloud. This is the preferred setting during GPU-heavy Phase 2/3 runs because it avoids loading local Gemma into VRAM. If the cloud model fails, Tier 1 should write a status entry and fall back to deterministic log summaries or local Gemma only when the GPU lock allows it.
+
+Install cloud mode on Dragon/Gamma after `ollama signin` succeeds:
+
+```bash
+PROJECT3_TIER1_HERMES_MODEL=gemma4:31b-cloud \
+  /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/install_tier1_cloud_supervisor.sh
+```
+
+Recommended model policy:
+
+- Tier 1 recurring supervisors: `gemma4:31b-cloud`
+- Tier 3 hard coding/diagnosis attempts: `deepseek-v4-pro:cloud` only when needed and within the 3-concurrent-model Pro limit
+- Offline/fallback mode: local `gemma4:31b`
 
 ### Tier 2 — Meta-supervisor / orchestrator (OpenCode Go on Omega, cron-invoked)
 
@@ -420,6 +453,7 @@ The $500/month cap from Master Plan Rule M.10 applies to data subscriptions only
 - ChatGPT Pro Plus: ~$200/month (flat, includes Codex in VS Code with GPT-5.5 Pro)
 - VS Code Copilot Opus 4.7: existing subscription with 15× usage quota
 - OpenCode Go: per its current billing (Tier 2 only, capped at one call per 12 min)
+- Ollama Cloud Pro: optional ~$20/month fixed subscription for cloud-hosted open models such as `gemma4:31b-cloud`; recommended if local Tier 1/Tier 3 inference is starving Dragon/Gamma GPUs.
 - No OpenAI API account, no Anthropic API account → no metered token billing
 
 **Rule A.4 — Honest self-criticism.**
@@ -441,16 +475,17 @@ Stage 1.1 (Storage Architecture) is extended to also bootstrap the agent infrast
 2. **Verify Hermes installation on Dragon and Gamma:** `ssh dragon "hermes --version"` and same on Gamma. If missing, the bootstrap halts and instructs the user how to install Hermes (Hermes installation is out of scope for this plan because it predates Project 3).
 3. **Verify Ollama + Gemma model availability:** `ssh dragon "ollama list | grep gemma"` should show the 31B model. Same on Gamma.
 4. **Install GPU lockfile helper:** copy `_scripts/lib/gpu_lock.py` to all three machines.
-5. **Install cron entries:** the supervisor cron jobs go to `/etc/cron.d/project3_supervisor` on Dragon and Gamma. The OpenCode Go cron job goes to `/etc/cron.d/project3_orchestrator` on Omega. Cron files are version-controlled in `_scripts/cron/`.
-6. **Initialize escalation queue:** `_logs/supervisor_reports/escalation_queue.json` is created with empty queue.
-7. **Verify OpenCode Go on Omega:** `which opencode-go` and a test invocation that writes a "hello" entry to `global_status.md`.
-8. **Initialize Tier 4 handoff folder:** `mkdir -p _logs/supervisor_reports/tier4_handoffs/`. This is where Tier 3 stages structured handoff documents for the user.
-9. **Confirm Tier 4 tools are available to the user:**
+5. **Install Project 3 Hermes skills:** sync `work_plan/hermes_skills/project3-autonomous-supervisor/` and `work_plan/hermes_skills/project3-deliverable-validator/` to `~/.hermes/skills/data-science/` on Omega, Dragon, and Gamma, then pin both with `hermes curator pin`.
+6. **Install cron entries:** the supervisor cron jobs go to `/etc/cron.d/project3_supervisor` on Dragon and Gamma. The OpenCode Go cron job goes to `/etc/cron.d/project3_orchestrator` on Omega. Cron files are version-controlled in `_scripts/cron/`.
+7. **Initialize escalation queue:** `_logs/supervisor_reports/escalation_queue.json` is created with empty queue.
+8. **Verify OpenCode Go on Omega:** `which opencode-go` and a test invocation that writes a "hello" entry to `global_status.md`.
+9. **Initialize Tier 4 handoff folder:** `mkdir -p _logs/supervisor_reports/tier4_handoffs/`. This is where Tier 3 stages structured handoff documents for the user.
+10. **Confirm Tier 4 tools are available to the user:**
    - VS Code with Codex (if user is on ChatGPT Pro Plus): user manually verifies in their IDE.
    - VS Code with Copilot Opus 4.7: user manually verifies.
    - Both are user-side checks; bootstrap just records the user's confirmation.
 
-If any of steps 1–8 fail, Stage 1.1 halts with a clear error and an escalation queue entry tagged `infra:bootstrap_failed`. Step 9 is informational — the bootstrap completes even if Tier 4 tools aren't yet configured, but the user is reminded they'll be needed when Tier 3 hands off its first escalation.
+If any of steps 1–9 fail, Stage 1.1 halts with a clear error and an escalation queue entry tagged `infra:bootstrap_failed`. Step 10 is informational — the bootstrap completes even if Tier 4 tools aren't yet configured, but the user is reminded they'll be needed when Tier 3 hands off its first escalation.
 
 ---
 

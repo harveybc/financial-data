@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "ADAUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T16:48:27.611022+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/adausdt/4h.parquet",
+      "sha256": "b85f387e7de50637332f63b308a63ce509997cdc5a72cd9619febd27ec6e7fd6"
+    }
+  ]
+}

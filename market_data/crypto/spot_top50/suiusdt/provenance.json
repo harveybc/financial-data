@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "SUIUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:43:53.670911+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/suiusdt/4h.parquet",
+      "sha256": "3100d236c41dec71812ad93679359950caa32400d7687ab09911f935767bb1b2"
+    }
+  ]
+}

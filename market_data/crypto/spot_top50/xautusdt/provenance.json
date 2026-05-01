@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "XAUTUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:45:20.828172+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/xautusdt/4h.parquet",
+      "sha256": "dd74be8ebd31ea6728478692e31c3f4f11624c0a6f4f6adc0286a4ea683b54d7"
+    }
+  ]
+}

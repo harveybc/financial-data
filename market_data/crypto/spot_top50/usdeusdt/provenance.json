@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "USDEUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:30:12.714687+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/usdeusdt/4h.parquet",
+      "sha256": "01261eacce8378f2b4f484f2394c7e5e2fe3a258d0dbef1245080a3f609bcb5c"
+    }
+  ]
+}

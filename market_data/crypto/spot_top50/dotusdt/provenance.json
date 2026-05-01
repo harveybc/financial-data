@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "DOTUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T18:02:56.138259+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/dotusdt/4h.parquet",
+      "sha256": "dda68378264878083ee5fe7e5832f9ea13a949ae122ef0073ecad96fae7bf6fe"
+    }
+  ]
+}

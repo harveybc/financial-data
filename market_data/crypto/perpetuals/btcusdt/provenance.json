@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "BTCUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T17:31:53.924163+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/btcusdt/4h.parquet",
+      "sha256": "f9e170ddb4a16bfd7a35cacbe4ded6363f56efd4dd2557cade0ef13a0971e3a6"
+    }
+  ]
+}

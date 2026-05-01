@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "GBPJPY FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:53:12.332328+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/gbpjpy/5m.parquet",
+      "sha256": "fb073ba5250f4cf8d96dc4794ffd1a678b4e0405cc17866546dfd0526babd663"
+    },
+    {
+      "path": "market_data/forex/g10/gbpjpy/15m.parquet",
+      "sha256": "dff30cea046f08ab008c471c115c5ac71b603f5b165fffc315ac2fdc54317c0c"
+    },
+    {
+      "path": "market_data/forex/g10/gbpjpy/4h.parquet",
+      "sha256": "0f3d82b8510f44d16568f9f545aeaa4c59ec32d5100101eda5cd8582274da2b1"
+    },
+    {
+      "path": "market_data/forex/g10/gbpjpy/1h.parquet",
+      "sha256": "b5dad5abfa836a319a618ef7db9cd5b5b06e117767eb8b974a9c37c510914a93"
+    }
+  ]
+}

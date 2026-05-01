@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "GBPUSD FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:54:03.707543+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/gbpusd/5m.parquet",
+      "sha256": "dd28eb246ca7101b82c9fb0d9b7963e237f79df5db97935084d13b5106d8bff2"
+    },
+    {
+      "path": "market_data/forex/g10/gbpusd/15m.parquet",
+      "sha256": "65db9dd8b68a9fa4f3a0717f95bb0025902e69fddc1320ab2a9ba80d7dde93fe"
+    },
+    {
+      "path": "market_data/forex/g10/gbpusd/4h.parquet",
+      "sha256": "9b5e2fde45b172590d1fce4540c26a94434c812f10ff90581d62cbf0bf38a519"
+    },
+    {
+      "path": "market_data/forex/g10/gbpusd/1h.parquet",
+      "sha256": "1f592325c162459ccf68a5cb75df4f72a47b3c8b6430a48a67c73e206771ab88"
+    }
+  ]
+}

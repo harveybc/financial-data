@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "TRXUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T16:34:14.385136+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/trxusdt/4h.parquet",
+      "sha256": "6c8016e10c2456c2642c2a48ee3e962e8ee798badf8b7911d4c89a55d189ee20"
+    }
+  ]
+}

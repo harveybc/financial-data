@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "AVAXUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:29:52.430417+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/avaxusdt/4h.parquet",
+      "sha256": "84793acb843ccb200cd9f9c0b49b665d735efe552b654f154c7b195ac5f499e7"
+    }
+  ]
+}

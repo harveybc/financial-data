@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "XRPUSDT funding rates",
+  "acquired_at": "2026-05-01T18:00:06.456513+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/xrpusdt/funding_rates.parquet",
+      "sha256": "4de2174d4460a2582f1d7108f9a5b12790069668719fc7fff766fe26749a0f99"
+    }
+  ]
+}

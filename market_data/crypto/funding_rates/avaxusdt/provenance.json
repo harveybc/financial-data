@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "AVAXUSDT funding rates",
+  "acquired_at": "2026-05-01T18:20:06.597642+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/avaxusdt/funding_rates.parquet",
+      "sha256": "d7c11ab91fc565c3ef3ccda5f4a05d51976575189b5fcc8f5d35af9962041b59"
+    }
+  ]
+}

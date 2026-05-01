@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "SOLUSDT funding rates",
+  "acquired_at": "2026-05-01T17:52:56.716636+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/funding_rates/solusdt/funding_rates.parquet",
+      "sha256": "028387131dccd47ed808a65b362a3cf7d27e49fda6e379568f8f4ffd218afb62"
+    }
+  ]
+}

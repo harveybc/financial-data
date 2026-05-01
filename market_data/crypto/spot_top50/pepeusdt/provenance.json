@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "PEPEUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T18:06:34.767597+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/pepeusdt/4h.parquet",
+      "sha256": "93825932053cef05d4615b2d73e5aa586c9a76c9361a88406ba4d469568b99d0"
+    }
+  ]
+}

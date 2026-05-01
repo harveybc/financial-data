@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-05-01T17:48:08.434178+00:00",
+  "generated_at": "2026-05-01T18:48:09.074045+00:00",
   "stage": "Stage 1.3 Free Data Acquisition validation/inventory",
   "inventory": {
     "roots": {
       "market_data": {
         "exists": true,
-        "files": 168,
-        "bytes": 11464068,
+        "files": 565,
+        "bytes": 2149724770,
         "suffix_counts": {
-          ".json": 37,
-          ".md": 74,
-          ".parquet": 37,
+          ".json": 98,
+          ".md": 196,
+          ".parquet": 251,
           "<none>": 20
         }
       },
@@ -65,27 +65,28 @@
       }
     },
     "totals": {
-      "files": 648,
-      "bytes": 398856238,
-      "data_directories": 140
+      "files": 1045,
+      "bytes": 2537116940,
+      "data_directories": 201
     },
     "documentation": {
-      "data_directories_checked": 140,
+      "data_directories_checked": 201,
       "directories_missing_docs": 0,
       "missing_doc_examples": []
     }
   },
   "acquisition_log": {
     "exists": true,
-    "rows": 134,
-    "latest_timestamp": "2026-05-01T16:44:03.095424+00:00",
+    "rows": 144,
+    "latest_timestamp": "2026-05-01T17:57:22.404021+00:00",
     "status_counts": {
-      "ok": 89,
+      "ok": 99,
       "schema_shifted_or_malformed": 45
     },
     "top_sources": {
       "FRED": 76,
       "ok": 45,
+      "HistData": 10,
       "Blockchain.com": 6,
       "mempool.space": 3,
       "DeFiLlama": 1,
@@ -417,86 +418,6 @@
     ],
     "recent_rows": [
       {
-        "timestamp": "2026-05-01T15:51:43.078901+00:00",
-        "source": "US Treasury FiscalData",
-        "dataset": "treasury_average_interest_rates",
-        "status": "ok",
-        "path": "macro_economic/yield_curves/treasury_average_interest_rates/average_interest_rates.parquet",
-        "notes": "rows=4929"
-      },
-      {
-        "timestamp": "2026-05-01T15:51:44.209642+00:00",
-        "source": "BLS Public API",
-        "dataset": "bls",
-        "status": "ok",
-        "path": "macro_economic/bls/public_series.csv",
-        "notes": "rows=406"
-      },
-      {
-        "timestamp": "2026-05-01T15:53:25.262039+00:00",
-        "source": "ok",
-        "dataset": "holidays",
-        "status": "reference_data/holidays/holidays.parquet",
-        "path": "",
-        "notes": "rows=1490"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.494839+00:00",
-        "source": "ok",
-        "dataset": "xnys",
-        "status": "reference_data/trading_calendars/xnys/schedule.parquet",
-        "path": "",
-        "notes": "rows=6519"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.540681+00:00",
-        "source": "ok",
-        "dataset": "xnas",
-        "status": "reference_data/trading_calendars/xnas/schedule.parquet",
-        "path": "",
-        "notes": "rows=6519"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.589841+00:00",
-        "source": "ok",
-        "dataset": "cme",
-        "status": "reference_data/trading_calendars/cme/schedule.parquet",
-        "path": "",
-        "notes": "rows=6519"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.631628+00:00",
-        "source": "ok",
-        "dataset": "xetr",
-        "status": "reference_data/trading_calendars/xetr/schedule.parquet",
-        "path": "",
-        "notes": "rows=6583"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.681982+00:00",
-        "source": "ok",
-        "dataset": "xtks",
-        "status": "reference_data/trading_calendars/xtks/schedule.parquet",
-        "path": "",
-        "notes": "rows=6425"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.722550+00:00",
-        "source": "ok",
-        "dataset": "xlon",
-        "status": "reference_data/trading_calendars/xlon/schedule.parquet",
-        "path": "",
-        "notes": "rows=6621"
-      },
-      {
-        "timestamp": "2026-05-01T16:04:42.766452+00:00",
-        "source": "ok",
-        "dataset": "holidays",
-        "status": "reference_data/holidays/holidays.parquet",
-        "path": "",
-        "notes": "rows=1490"
-      },
-      {
         "timestamp": "2026-05-01T16:42:56.526477+00:00",
         "source": "FRED",
         "dataset": "cpi_yoy",
@@ -575,6 +496,86 @@
         "status": "ok",
         "path": "economic_calendar/release_actuals/retail_sales_mom/actuals.parquet",
         "notes": "rows=408"
+      },
+      {
+        "timestamp": "2026-05-01T17:49:51.282057+00:00",
+        "source": "HistData",
+        "dataset": "audusd",
+        "status": "ok",
+        "path": "market_data/forex/g10/audusd",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:50:36.576841+00:00",
+        "source": "HistData",
+        "dataset": "eurgbp",
+        "status": "ok",
+        "path": "market_data/forex/g10/eurgbp",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:51:27.915321+00:00",
+        "source": "HistData",
+        "dataset": "eurjpy",
+        "status": "ok",
+        "path": "market_data/forex/g10/eurjpy",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:52:19.909248+00:00",
+        "source": "HistData",
+        "dataset": "eurusd",
+        "status": "ok",
+        "path": "market_data/forex/g10/eurusd",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:53:12.354627+00:00",
+        "source": "HistData",
+        "dataset": "gbpjpy",
+        "status": "ok",
+        "path": "market_data/forex/g10/gbpjpy",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:54:03.734655+00:00",
+        "source": "HistData",
+        "dataset": "gbpusd",
+        "status": "ok",
+        "path": "market_data/forex/g10/gbpusd",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:54:51.674048+00:00",
+        "source": "HistData",
+        "dataset": "nzdusd",
+        "status": "ok",
+        "path": "market_data/forex/g10/nzdusd",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:55:37.735888+00:00",
+        "source": "HistData",
+        "dataset": "usdcad",
+        "status": "ok",
+        "path": "market_data/forex/g10/usdcad",
+        "notes": "zips=20"
+      },
+      {
+        "timestamp": "2026-05-01T17:56:28.578811+00:00",
+        "source": "HistData",
+        "dataset": "usdchf",
+        "status": "ok",
+        "path": "market_data/forex/g10/usdchf",
+        "notes": "zips=21"
+      },
+      {
+        "timestamp": "2026-05-01T17:57:22.404021+00:00",
+        "source": "HistData",
+        "dataset": "usdjpy",
+        "status": "ok",
+        "path": "market_data/forex/g10/usdjpy",
+        "notes": "zips=21"
       }
     ]
   },
@@ -602,7 +603,7 @@
   ],
   "dispatch": {
     "exists": true,
-    "generated_at": "2026-05-01T17:36:29.693317+00:00",
+    "generated_at": "2026-05-01T18:47:33.927933+00:00",
     "decisions": [
       {
         "machine": "omega",
@@ -627,16 +628,16 @@
       },
       {
         "machine": "omega",
-        "stage": "Stage 1.3 documentation, validation, inventory, and dispatch context refresh",
+        "stage": "Stage 1.3 documentation, deliverable validation, inventory, and dispatch context refresh",
         "state": "started",
         "action": "_scripts/workers/stage13_omega_housekeeping_worker.py",
-        "deliverable": "missing-doc backfills, _metadata/STAGE_1_3_INVENTORY.json, and _logs/supervisor_reports/stage13_validation_inventory.md"
+        "deliverable": "missing-doc backfills, _metadata/STAGE_1_3_INVENTORY.json, _metadata/STAGE_1_3_DELIVERABLE_VALIDATION.json, and validation reports"
       },
       {
         "machine": "dragon",
         "stage": "Stage 1.3 Task 1.3.F Binance crypto comprehensive",
-        "state": "busy",
-        "action": "kept_running",
+        "state": "started",
+        "action": "_scripts/workers/stage13_dragon_crypto_worker.py",
         "deliverable": "market_data/crypto spot/perpetual/funding outputs"
       },
       {
@@ -663,28 +664,28 @@
       {
         "machine": "gamma",
         "stage": "Stage 1.3 Task 1.3.F Binance crypto acceleration",
-        "state": "busy",
-        "action": "kept_running",
+        "state": "completed_idle",
+        "action": "no_dispatch_needed",
         "deliverable": "market_data/crypto/perpetuals and funding_rates fetched on Gamma, then synced to Dragon/Omega"
       },
       {
         "machine": "gamma->omega",
         "stage": "Stage 1.3 canonical sync",
-        "state": "deferred_busy",
+        "state": "ok",
         "action": "gamma_sync",
         "deliverable": "Gamma completed macro/on-chain outputs copied to Omega"
       },
       {
         "machine": "gamma->dragon",
         "stage": "Stage 1.3 crypto acceleration sync",
-        "state": "deferred_busy",
+        "state": "ok",
         "action": "gamma_crypto_to_dragon_sync",
         "deliverable": "Gamma perpetual/funding outputs copied to Dragon so Dragon skips duplicated work"
       },
       {
         "machine": "dragon->omega",
         "stage": "Stage 1.3 canonical sync",
-        "state": "deferred_busy",
+        "state": "ok",
         "action": "dragon_sync",
         "deliverable": "Dragon crypto outputs copied to Omega after worker completion"
       }
@@ -694,7 +695,6 @@
   "improvement_suggestions": [
     "Review non-ok acquisition_log rows and convert true provider limitations into Tier 4 handoffs.",
     "Treat completed_idle as available capacity and dispatch non-overlapping validation, sync, or acquisition slices.",
-    "Keep sync jobs deferred while workers are active, then sync immediately on the next idle tick.",
     "Every agent handoff should pass current stage, task, deliverable, evidence, anomalies, confidence, and context_to_pass_forward."
   ]
 }

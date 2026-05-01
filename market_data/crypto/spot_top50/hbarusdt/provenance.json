@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "HBARUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:36:24.225231+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/hbarusdt/4h.parquet",
+      "sha256": "5a5db3e7e834506e87b9cc55b3411754220a478b012eef62791666627cb31474"
+    }
+  ]
+}

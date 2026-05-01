@@ -96,6 +96,8 @@ Critical rules from this architecture:
 - **GPU lockfile (`/tmp/gpu_busy.lock`)** is mandatory for all heavy GPU jobs to prevent contention with local Hermes supervisors. See infrastructure doc §4.
 - **Auto-validation is the default.** When the user confirms a manual prerequisite (e.g., "HistData downloads complete"), agents proceed automatically. Only blockers ping the user.
 - **The user does not run validation commands.** Stage docs do not instruct file counting, coverage checks, or schema verification by the user. Those are agent responsibilities.
+- **Deliverable validation is work-plan-backed.** Agents must read the exact task spec, inspect produced artifacts/provenance/logs, and route uncertainty to Tier 4/Codex instead of guessing.
+- **Cloud supervisors are allowed if they reduce GPU contention.** The canonical infrastructure doc tracks the optional Ollama Cloud Pro path for Tier 1/Tier 3 supervisor inference. This is not a frontier API path; it is a fixed-price open-model subscription option and must be recorded in `_metadata/ai_subscriptions.json` if enabled.
 
 For machine roles, model details, escalation queue schema, GPU lockfile protocol, cron frequencies, and bootstrap procedure: read `01_AGENT_INFRASTRUCTURE.md`.
 
@@ -263,6 +265,8 @@ The standard helper is `_scripts/lib/gpu_lock.py` (defined in `01_AGENT_INFRASTR
 Per user direction, validation runs in **full auto mode**. When the user confirms a manual prerequisite is complete (HistData downloads, API keys, etc.), agents proceed through validation, deliverable generation, and downstream prep without further user intervention. Only blockers (per `01_AGENT_INFRASTRUCTURE.md` §9) ping the user.
 
 Stage documents do NOT instruct the user to run validation commands like `ls | wc -l`. Those commands are the agents' responsibility. Stage documents that still contain such instructions are documentation bugs and should trigger an escalation tagged `plan_decision_proposal`.
+
+Validation must compare the produced deliverable against the exact work-plan task that required it. A folder existing is not enough. A worker log saying "done" is not enough. Required evidence is: relevant work-plan section, deliverable path, README/data dictionary/provenance where applicable, acquisition/validation logs, and confidence. If confidence is below 0.8 or the task requirement is ambiguous, the supervisor writes a Codex/Tier 4 escalation instead of guessing.
 
 ---
 

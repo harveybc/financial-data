@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "ETHUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T17:39:20.735225+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/ethusdt/4h.parquet",
+      "sha256": "85b8f5e6eccf66c637e3ae6aa2d25ba9e73ffc95e3671111333bb9e8ae4e68bd"
+    }
+  ]
+}

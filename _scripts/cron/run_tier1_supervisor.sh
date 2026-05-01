@@ -6,10 +6,15 @@ LOG_DIR="$PROJECT_ROOT/_logs/supervisor_reports"
 LOCKFILE="/tmp/gpu_busy.lock"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
 PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,hermes-agent-skill-authoring}"
+PROJECT3_TIER1_HERMES_MODEL="${PROJECT3_TIER1_HERMES_MODEL:-}"
 HOST="$(hostname)"
 STATUS_FILE="$LOG_DIR/${HOST}_status.json"
 CONTEXT_PACKET="$LOG_DIR/${HOST}_context_packet.md"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+uses_cloud_model="0"
+case "$PROJECT3_TIER1_HERMES_MODEL" in
+  *-cloud|*:cloud|*cloud*) uses_cloud_model="1" ;;
+esac
 
 mkdir -p "$LOG_DIR"
 
@@ -44,7 +49,10 @@ with open(path, "w", encoding="utf-8") as f:
 PY
 }
 
-lock_state="$(python - "$LOCKFILE" <<'PY'
+if [ "$uses_cloud_model" = "1" ]; then
+  stale_note="cloud_model_no_local_gpu_lock model=${PROJECT3_TIER1_HERMES_MODEL}"
+else
+  lock_state="$(python - "$LOCKFILE" <<'PY'
 import json
 import os
 import sys
@@ -67,8 +75,8 @@ except Exception:
 PY
 )"
 
-if [ "$lock_state" = "fresh" ]; then
-  owner="$(python - "$LOCKFILE" <<'PY'
+  if [ "$lock_state" = "fresh" ]; then
+    owner="$(python - "$LOCKFILE" <<'PY'
 import json
 import sys
 
@@ -77,18 +85,18 @@ with open(sys.argv[1], encoding="utf-8") as f:
 print(f"gpu busy by PID {p.get('owner_pid')} ({p.get('owner_command')}, stage {p.get('stage')})")
 PY
 )"
-  write_status "skipped_gpu_busy" "$owner" "0.95"
-  exit 0
-fi
+    write_status "skipped_gpu_busy" "$owner" "0.95"
+    exit 0
+  fi
 
-if [ "$lock_state" = "stale" ] || [ "$lock_state" = "unreadable" ]; then
-  rm -f "$LOCKFILE"
-  stale_note="removed $lock_state GPU lock before supervisor run"
-else
-  stale_note=""
-fi
+  if [ "$lock_state" = "stale" ] || [ "$lock_state" = "unreadable" ]; then
+    rm -f "$LOCKFILE"
+    stale_note="removed $lock_state GPU lock before supervisor run"
+  else
+    stale_note=""
+  fi
 
-python - "$LOCKFILE" "$$" <<'PY'
+  python - "$LOCKFILE" "$$" <<'PY'
 import json
 import sys
 from datetime import datetime, timezone
@@ -104,7 +112,8 @@ payload = {
 with open(path, "w", encoding="utf-8") as f:
     json.dump(payload, f)
 PY
-trap 'rm -f "$LOCKFILE"' EXIT
+  trap 'rm -f "$LOCKFILE"' EXIT
+fi
 
 gpu_summary="$(nvidia-smi --query-gpu=name,memory.total,memory.used --format=csv,noheader 2>/dev/null || echo "nvidia-smi unavailable")"
 case "$HOST" in
@@ -128,6 +137,21 @@ case "$HOST" in
     ;;
 esac
 
+log_tail="$(
+  IFS=';'
+  for log in $relevant_logs; do
+    log="${log#"${log%%[![:space:]]*}"}"
+    log="${log%"${log##*[![:space:]]}"}"
+    case "$log" in
+      *_status.json|*_context_packet.md) continue ;;
+    esac
+    if [ -f "$PROJECT_ROOT/$log" ]; then
+      echo "### $log"
+      tail -n 25 "$PROJECT_ROOT/$log"
+    fi
+  done
+)"
+
 cat > "$CONTEXT_PACKET" <<EOF
 # Project 3 Tier 1 Context Packet
 
@@ -135,7 +159,8 @@ generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
 host: ${HOST}
 active_stage: ${stage_context}
-agent_role: Hermes/Gemma local Tier 1 supervisor; observe logs/status, detect anomalies, suggest safe next action.
+agent_role: Hermes/Gemma Tier 1 supervisor; observe logs/status, detect anomalies, suggest safe next action.
+inference_mode: ${PROJECT3_TIER1_HERMES_MODEL:-default_local_model}
 expected_deliverable: ${expected_deliverable}
 relevant_docs: ${relevant_docs}
 relevant_logs: ${relevant_logs}
@@ -153,12 +178,20 @@ Context packet path: ${CONTEXT_PACKET}
 Read or use that packet as the compact source of stage/task/deliverable/log/context truth. Preserve it in context_to_pass_forward.
 GPU summary: ${gpu_summary}
 Lock note: ${stale_note:-none}
+Inference mode: ${PROJECT3_TIER1_HERMES_MODEL:-default local Hermes model}
+Worker log excerpts:
+${log_tail:-no worker log excerpts available}
+Evidence rule: only report anomalies supported by the worker log excerpts, current PID/GPU evidence, or files you actually inspect. Do not report prior status JSON as corrupted unless you read the current file and quote direct evidence.
 Auto-improvement: if the same anomaly pattern appears repeatedly, include a skill_candidate field naming the reusable workflow that Tier 2/Tier 3 should turn into a Hermes skill.
 Recursive communication rule: include context_to_pass_forward so the next agent receives the exact stage, task, deliverable, evidence, uncertainty, anomaly state, and improvement suggestion.
 Deliverable validation rule: never assume; if unsure after reading the work plan and artifacts, set recommended_next_action to escalate_to_codex with the exact question.
 Expected output: one concise JSON object with keys status, anomalies, idle_capacity, recommended_next_action, skill_candidate, context_to_pass_forward, confidence."
 
-report="$(timeout 240 "$HERMES_BIN" --skills "$PROJECT3_HERMES_SKILLS" -z "$prompt" 2>&1)"
+hermes_args=(--skills "$PROJECT3_HERMES_SKILLS")
+if [ -n "$PROJECT3_TIER1_HERMES_MODEL" ]; then
+  hermes_args+=(--model "$PROJECT3_TIER1_HERMES_MODEL")
+fi
+report="$(timeout 240 "$HERMES_BIN" "${hermes_args[@]}" -z "$prompt" 2>&1)"
 rc=$?
 
 if [ "$rc" -eq 0 ]; then

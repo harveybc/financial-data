@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "XRPUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T18:00:03.085395+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/xrpusdt/4h.parquet",
+      "sha256": "b88ae7231c82986004d2a33d9b8c94ad3e2ae067c5a5de3da43257e847f69d11"
+    }
+  ]
+}

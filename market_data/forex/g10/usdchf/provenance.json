@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "USDCHF FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:56:28.554431+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/usdchf/5m.parquet",
+      "sha256": "e34cd1de009f10c57eeee22faa14e82b0072c2386b7932fd151d56bd23dc1806"
+    },
+    {
+      "path": "market_data/forex/g10/usdchf/15m.parquet",
+      "sha256": "513e4673cfe54842ebd999e95d3298aea3ce239ce17e16051478e21339a6629a"
+    },
+    {
+      "path": "market_data/forex/g10/usdchf/4h.parquet",
+      "sha256": "00603ffc73df0b4a55bacf8ac1aff882e233bac08427b588bf5ff1066372f3a9"
+    },
+    {
+      "path": "market_data/forex/g10/usdchf/1h.parquet",
+      "sha256": "d066d3dc64414706956d69a1659db8c651cb7fa03a51e195fdd8c66e529b22db"
+    }
+  ]
+}

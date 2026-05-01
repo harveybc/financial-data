@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "EURUSD FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:52:19.888142+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/eurusd/5m.parquet",
+      "sha256": "d527b46a9c35100934f95d1048feb860d265c10f5211174a956f39d8e89b9891"
+    },
+    {
+      "path": "market_data/forex/g10/eurusd/15m.parquet",
+      "sha256": "efbbf97ffe181d992a5807fc1a65e1d5df05b328c2a49753382149bf4ceea4d3"
+    },
+    {
+      "path": "market_data/forex/g10/eurusd/4h.parquet",
+      "sha256": "359bd825708dd6906ccd0b2359e7f8dc7313fdcecf09629ee14e609ba6ecbd25"
+    },
+    {
+      "path": "market_data/forex/g10/eurusd/1h.parquet",
+      "sha256": "c6628375b2872f16dcdbd6b1b90ed8e68bc5bdd852efdef01f2515b8712d4e2e"
+    }
+  ]
+}

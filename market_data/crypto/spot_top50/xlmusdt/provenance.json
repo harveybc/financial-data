@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "XLMUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:15:51.184588+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/xlmusdt/4h.parquet",
+      "sha256": "b3d4f922c3867d588a5af048fcd82f19ea7452291946c8b8cbea875797a08c16"
+    }
+  ]
+}

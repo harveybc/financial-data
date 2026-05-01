@@ -1,0 +1,11 @@
+{
+  "source": "Binance Spot",
+  "description": "TAOUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T17:47:04.889581+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/spot_top50/taousdt/4h.parquet",
+      "sha256": "1b4c304d3940e0714568e91729be24d36ae75f9dcc17f67242dc5412be4da49d"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Binance Futures",
+  "description": "SOLUSDT perpetual OHLCV 4h",
+  "acquired_at": "2026-05-01T17:52:53.792973+00:00",
+  "files": [
+    {
+      "path": "market_data/crypto/perpetuals/solusdt/4h.parquet",
+      "sha256": "41b529e36cf06d09d604e8df39e653b405e999d9050939e13b49fb46d9524d07"
+    }
+  ]
+}
