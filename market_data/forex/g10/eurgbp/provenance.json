@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "EURGBP FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:50:36.557492+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/eurgbp/5m.parquet",
+      "sha256": "98daced4dcbded2b5bf1aa3e142c324f59c429301cd476b81027ee7617a4961f"
+    },
+    {
+      "path": "market_data/forex/g10/eurgbp/15m.parquet",
+      "sha256": "a76b74b081557a0e08cd7ac0d2eb96581084d41de65c83adcfc3beb402e1be75"
+    },
+    {
+      "path": "market_data/forex/g10/eurgbp/4h.parquet",
+      "sha256": "dbd22996b94cd418dc7378a6352ba0d8239807e3f29d9d292a180f906121043b"
+    },
+    {
+      "path": "market_data/forex/g10/eurgbp/1h.parquet",
+      "sha256": "a584c80adff84fdff5be829ef360e0c3ab2ece7abeb32dc0dae95445fff7ffa4"
+    }
+  ]
+}
