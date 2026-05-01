@@ -37,6 +37,22 @@ Scores assume private research use, no redistribution, and monthly cost target b
 | 7 | Coin Metrics Pro | Defer unless academic/institutional access is cheap | 42 cost-adjusted | Excellent data quality and API, but paid tier is institutional/contact-sales; community data already acquired. |
 | 8 | CoinMarketCap paid | Skip | 25 | Mostly redundant with Binance/CoinMetrics/free market data for this project. |
 
+## Current Cost Snapshot
+
+Checked on 2026-05-01. Prices can change; contact-sales entries must be confirmed before purchase.
+
+| Provider | Public cost | Subscription / pricing page | Project 3 action |
+| --- | ---: | --- | --- |
+| Trading Economics Calendar API | API/calendar pricing is quote/contact-sales. Visible member plans are Basic $29/mo, Standard $199/mo, Professional $399/mo, but Calendar API is shown under Enterprise/API access. | https://tradingeconomics.com/api/pricing.aspx?source=basic-pricing-list and https://tradingeconomics.com/analytics/pricing.aspx?source=nav | Request API/calendar quote; do not assume the $199 or $399 plans unlock the required calendar API. |
+| FXStreet Economic Calendar API | Not publicly priced; OAuth/API docs are public. | https://docs.fxstreet.com/api/calendar/ | Contact for API access/quote; use as fallback if Trading Economics quote is too high. |
+| CryptoQuant API | Advanced $29/mo billed annually, Professional $99/mo billed annually with limited API access, Premium $799/mo listed/contact for full API access. Current checkout page should confirm monthly-vs-annual terms. | https://cryptoquant.com/pricing | Prefer Professional first if API endpoints cover the required metrics; Premium only if block-level/full API is truly needed. |
+| Glassnode Studio Professional + API add-on | Studio Professional $999/mo billed yearly, VAT not included; API access is an add-on/contact-sales and is excluded from display-only plans. | https://glassnode.com/pricing/studio | Quote only; high value but too expensive unless API add-on cost is acceptable. |
+| Etherscan API Pro | Standard $199/mo minimum tier with Pro endpoints; Advanced $299/mo, Professional $399/mo, Pro Plus $899/mo. | https://etherscan.io/apis?id=10 | Defer; buy Standard only if Etherscan historical Pro endpoints become uniquely necessary. |
+| Polygon/Massive Stocks | Basic free, Starter $29/mo, Developer $79/mo, Advanced $199/mo. | https://polygon.io/pricing | Defer unless equity intraday becomes a Phase 3 requirement; Developer is the likely historical-data tier. |
+| FMP | Basic free, Starter $22/mo, Premium $59/mo, Ultimate $149/mo when billed annually. | https://intelligence.financialmodelingprep.com/pricing-plans?direct=true | Defer; useful later for fundamentals but not a current Stage 1.4 blocker. |
+| Coin Metrics Pro | Contact-sales/institutional. Community API is free for non-commercial use. | https://docs.coinmetrics.io/access-our-data/api | Defer unless research/academic pricing is cheap. |
+| CoinMarketCap API | Basic free, Hobbyist $29/mo, Startup $79/mo, Standard $299/mo, Professional $699/mo, Enterprise contact. | https://coinmarketcap.com/api/pricing/ | Skip for now; redundant with acquired/free data for Project 3. |
+
 ## Detailed Analysis
 
 ### Trading Economics Calendar API
