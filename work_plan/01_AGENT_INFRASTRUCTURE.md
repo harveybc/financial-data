@@ -240,6 +240,7 @@ OpenCode Go on Omega, capped to one invocation every 10–15 minutes via cron.
 - Keeps active workers running rather than relaunching them, treats completed idempotent workers as `completed_idle`, and syncs completed remote outputs back to Omega
 - Commits status reports to the git repo on Omega
 - For genuine anomalies, adds an entry to the escalation queue and notifies Tier 3
+- Treats Telegram as a low-noise event bus for concise task events only: start, finish, blocker, validation anomaly, idle-with-reason, escalation question, deliverable path, and human-action-needed. Long logs stay in repo files.
 
 **Autonomous dispatch implementation:** `_scripts/cron/run_tier2_orchestrator.sh` invokes `_scripts/workers/stage13_autonomous_orchestrator.py` on every Tier 2 tick. The dispatcher checks local and remote worker PID files, `/tmp/gpu_busy.lock`, stage completion log markers, and remote deliverable sync status. It writes both machine-readable and human-readable reports:
 
@@ -248,6 +249,15 @@ OpenCode Go on Omega, capped to one invocation every 10–15 minutes via cron.
 - `_logs/supervisor_reports/global_status.md`
 
 When the user asks for status, report the exact work-plan stage, current task, busy/idle reason, and expected/generated deliverable from these files.
+
+After Stage 1.3 completed, Tier 2 was extended to run a bounded Stage 1.6 preflight lane while Stage 1.4/1.5 subscription decisions remain gated:
+
+- Dragon profiles `market_data` deliverables and writes `_metadata/stage16_preflight_validation_dragon.json`.
+- Gamma profiles `macro_economic`, `alternative_data`, `reference_data`, and `economic_calendar` deliverables and writes `_metadata/stage16_preflight_validation_gamma.json`.
+- Dragon runs deeper Stage 1.6 quality checks over market data and writes `_metadata/stage16_quality_validation_dragon.json`.
+- Gamma runs deeper Stage 1.6 quality checks over macro/alternative/reference/calendar data and writes `_metadata/stage16_quality_validation_gamma.json`; panel-data warnings are classified in `_logs/supervisor_reports/stage16_gamma_quality_warning_classification.md`.
+- Omega writes `STAGE_1.6_PREFLIGHT.md`, `INVENTORY.md`, `_metadata/audit_documentation_preflight.json`, and `_metadata/stage16_preflight_omega.json`.
+- This is preflight work only; agents must not mark formal Stage 1.6 or Phase 1 complete until Stage 1.4 and Stage 1.5 decisions are resolved.
 
 **Why capped to 10–15 min cron:** OpenCode Go is paid-per-call. High-frequency log watching is Tier 1's job. Tier 2 only runs when there's enough new information to justify a paid model call.
 

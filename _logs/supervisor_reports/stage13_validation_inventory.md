@@ -1,6 +1,6 @@
 # Stage 1.3 Validation Inventory
 
-Generated: 2026-05-01T21:42:44.383699+00:00
+Generated: 2026-05-01T22:04:56.465295+00:00
 
 ## File Counts
 
@@ -8,7 +8,7 @@ Generated: 2026-05-01T21:42:44.383699+00:00
 | --- | --- | ---: | ---: | --- |
 | market_data | True | 728 | 2103.9 | .json:140, .md:280, .parquet:288, <none>:20 |
 | macro_economic | True | 580 | 5.8 | .csv:1, .json:143, .md:285, .parquet:140, .xml:1, <none>:10 |
-| alternative_data | True | 140 | 383.8 | .csv:1, .json:24, .md:44, .parquet:26, .txt:16, .zip:16, <none>:13 |
+| alternative_data | True | 140 | 383.7 | .csv:1, .json:24, .md:44, .parquet:26, .txt:16, .zip:16, <none>:13 |
 | reference_data | True | 33 | 0.7 | .json:7, .md:14, .parquet:7, <none>:5 |
 | economic_calendar | True | 49 | 0.3 | .json:11, .md:24, .parquet:11, <none>:3 |
 

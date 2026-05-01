@@ -25,8 +25,8 @@ Never mark a task or deliverable complete from memory, assumption, or a vague st
 | Machine | Role | Current provider/model |
 | --- | --- | --- |
 | Omega | Canonical repo, Tier 2 orchestration, metadata aggregation, light local workers | OpenCode Go / `deepseek-v4-pro` |
-| Dragon | Binance crypto, later GPU-heavy training | Hermes custom Ollama / `gemma4:31b` |
-| Gamma | Macro, on-chain, public API acquisition, validation inventory | Hermes custom Ollama / `gemma4:31b` |
+| Dragon | Binance crypto, market-data validation, later GPU-heavy training | Hermes custom Ollama / `deepseek-v4-flash:cloud`, fallback `gemma4:31b-cloud`; local `gemma4:31b` only for offline fallback |
+| Gamma | Macro, on-chain, public API acquisition, validation inventory | Hermes custom Ollama / `deepseek-v4-flash:cloud`, fallback `gemma4:31b-cloud`; local `gemma4:31b` only for offline fallback |
 
 Use SSH aliases `dragon` and `gamma`. Non-interactive remote commands should source `.bashrc`, activate the `tensorflow` conda env, and run from the financial-data root.
 
@@ -46,6 +46,9 @@ Prefer these files as source of truth:
 
 - `_logs/supervisor_reports/global_status.md`
 - `_logs/supervisor_reports/autonomous_dispatch_report.md`
+- `_logs/supervisor_reports/stage16_preflight_dispatch.md`
+- `_logs/supervisor_reports/stage16_quality_validation_<machine>.md`
+- `_logs/supervisor_reports/stage16_gamma_quality_warning_classification.md`
 - `_logs/supervisor_reports/escalation_queue.json`
 - `_logs/<machine>/*worker.log`
 
@@ -124,6 +127,7 @@ Safe autonomous actions:
 - delete only stale/unreadable supervisor-owned GPU locks according to the work plan;
 - sync completed Dragon/Gamma outputs back to Omega;
 - write status, inventory, provenance, and acquisition logs.
+- after Stage 1.3 completes, reassign completion-idle capacity to Stage 1.6 preflight validation/documentation work without marking formal Stage 1.6 complete before Stage 1.4/1.5 decisions.
 
 Unsafe autonomous actions:
 
@@ -135,6 +139,20 @@ Unsafe autonomous actions:
 - making final research conclusions.
 
 Those unsafe actions become Tier 4 handoffs.
+
+## Telegram Event Bus Discipline
+
+Telegram is a shared low-noise Project 3 management channel. Use it for concise task events only:
+
+- task started;
+- task finished;
+- blocker or validation anomaly;
+- idle-with-reason;
+- escalation question;
+- human action needed;
+- deliverable path and validation evidence.
+
+Do not paste long logs, stream progress loops, or let workers debate in the group. Omega owns the only bidirectional gateway for the bot token. Dragon and Gamma use outbound `_scripts/telegram_notify.py` only.
 
 ## GPU Lock Discipline
 

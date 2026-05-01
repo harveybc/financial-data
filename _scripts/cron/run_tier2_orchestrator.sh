@@ -93,24 +93,24 @@ cat > "$CONTEXT_PACKET" <<EOF
 
 generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
-active_stage: Stage 1.3 Free Data Acquisition
+active_stage: Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight validation active while Stage 1.4/1.5 subscription decisions remain gated.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
 supervisor_model_policy: ${MODEL_POLICY}
 experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 tier2_model_timeout_seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
-- Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, economic calendar actuals/scheduled-event proxy, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
-- Dragon: Binance top 50 spot, top 10 perpetuals, funding rates, crypto quality validation while acquisition is complete.
-- Gamma: FRED expansion, CoinMetrics per-metric repair, Blockchain.com, mempool.space, SEC S&P 500 EDGAR metadata, DeFiLlama, BLS/Treasury, Etherscan/OECD/FINRA/BEA follow-up, Binance perpetual/funding acceleration.
-expected_deliverables: market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs, validation inventory.
+- Omega: Stage 1.6 preflight documentation audit, master inventory, acquisition-log/gap aggregation, Stage 1.4 subscription decision handoff, and Stage 1.3 status refresh.
+- Dragon: Stage 1.6 preflight and quality validation of market_data outputs, with Stage 1.3 crypto/FINRA workers left completed-idle unless revalidation discovers a real anomaly.
+- Gamma: Stage 1.6 preflight and quality validation of macro_economic, alternative_data, reference_data, and economic_calendar outputs, with Stage 1.3 public-source workers left completed-idle unless revalidation discovers a real anomaly.
+expected_deliverables: STAGE_1.6_PREFLIGHT.md, INVENTORY.md, audit_documentation_preflight.json, per-machine stage16_preflight_validation_*.json, stage16_quality_validation_*.json, stage16_gamma_quality_warning_classification.json, market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs.
 relevant_logs: _logs/supervisor_reports/global_status.md; _logs/supervisor_reports/autonomous_dispatch_report.md; _logs/omega; remote _logs/dragon; remote _logs/gamma.
 constraints: use existing private repo runtime credentials; respect GPU locks; avoid destructive cleanup; sync remote outputs to Omega; escalate only real blockers.
 honesty: report evidence, confidence, assumptions, and stale context corrections. Never mark a deliverable complete from memory or guesswork.
 anomaly_detection: stale PIDs, silent logs, failed APIs, missing provenance, abnormal file counts, empty data files, duplicate timestamps, timezone/frequency drift, stale locks, VRAM not released.
 improvement_suggestion: every tick should preserve one useful reusable-skill or validation-check suggestion when evidence supports it.
 recursive_context_rule: every agent communication must include project_root, active_stage, current_task, expected_deliverable, relevant_docs, relevant_logs, constraints, evidence, anomalies, confidence, and context_to_pass_forward.
-telegram_event_bus_rule: Telegram is for concise task events only: start, finish, blocker, validation anomaly, idle-with-reason, escalation question, human action needed. Never paste long logs; include deliverable paths and evidence. Omega owns the only bidirectional gateway; remote workers use outbound notification only.
+telegram_event_bus_rule: Telegram is for concise task events only: start, finish, blocker, validation anomaly, idle-with-reason, escalation question, human action needed. Never paste long logs; include deliverable paths and evidence. Omega owns the only bidirectional gateway; remote workers use outbound notification only. Agents must not chatter, debate, or stream routine logs in the group.
 deliverable_validation_rule: before declaring task completion, read the exact work-plan task spec and inspect produced deliverables, provenance/docs, acquisition log, and worker logs. If confidence is below 0.8 or the requirement is ambiguous, write a Tier 4/Codex escalation instead of guessing.
 EOF
 
@@ -138,6 +138,8 @@ dragon_curator="$(probe_curator dragon 192.0.2.13)"
 gamma_curator="$(probe_curator gamma 192.0.2.15)"
 dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage13_autonomous_orchestrator.py" 2>&1)"
 dispatch_rc=$?
+stage16_dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage16_preflight_orchestrator.py" 2>&1)"
+stage16_dispatch_rc=$?
 
 {
   echo "# Project 3 Global Status"
@@ -153,6 +155,7 @@ dispatch_rc=$?
   echo "- Dragon: Binance top 50 spot OHLCV, then crypto quality validation after acquisition is complete."
   echo "- Gamma: FRED expansion, CoinMetrics per-metric repair, Blockchain.com, mempool.space, SEC S&P 500 EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury, plus Binance perpetual/funding acceleration while idle."
   echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, economic calendar proxy, metadata aggregation, documentation backfill, deliverable validation against the work plan, inventory, and dispatch context refresh."
+  echo "- Stage 1.6 preflight: because Stage 1.3 deliverables are complete, completion-idle capacity is reassigned to documentation, validation, coverage, inventory, and subscription-decision handoff work without declaring formal Stage 1.6 complete."
   echo "- Telegram: post only concise events to HermesAgentOrchestration: task start/finish, blocker, anomaly, idle reason, deliverable path, validation evidence, next action, or human action needed."
   echo "- Sync: Gamma crypto acceleration syncs to Dragon first, then all completed remote outputs sync back to Omega as canonical root."
   echo
@@ -202,6 +205,23 @@ dispatch_rc=$?
     echo '```'
   fi
   echo
+  echo "## Stage 1.6 Preflight Dispatch"
+  echo
+  echo "Policy: use idle machines for bounded preflight validation while Stage 1.4/1.5 remain gated; do not mark Phase 1 complete until paid-data decisions are resolved."
+  echo
+  if [ "$stage16_dispatch_rc" -eq 0 ]; then
+    if [ -f "$LOG_DIR/stage16_preflight_dispatch.md" ]; then
+      sed -n '1,120p' "$LOG_DIR/stage16_preflight_dispatch.md"
+    else
+      echo "Stage 1.6 preflight dispatcher completed but did not write a markdown report."
+    fi
+  else
+    echo "Stage 1.6 preflight dispatcher failed; stderr/stdout follows:"
+    echo '```'
+    echo "$stage16_dispatch_output"
+    echo '```'
+  fi
+  echo
   echo "## Omega"
   echo '```'
   echo "$omega_status"
@@ -221,7 +241,7 @@ dispatch_rc=$?
 summary_prompt="Project 3 Tier 2 tick.
 Context packet path: ${CONTEXT_PACKET}
 Use that packet as the compact source of stage/task/deliverable/log/context truth and preserve context_to_pass_forward in future agent communications.
-Machines are reachable, credentials are available from the private repo runtime environment, and Stage 1.3 acquisition is active. Do not ask the human to rotate keys.
+Machines are reachable, credentials are available from the private repo runtime environment, Stage 1.3 acquisition is complete, and Stage 1.6 preflight is active while Stage 1.4/1.5 subscription decisions remain gated. Do not ask the human to rotate keys.
 Be honest and autocritical: mention stale context or uncertainty if present.
 Reply with one concise next-action sentence for the human coordinator focused on autonomous dispatch, idle capacity, anomaly detection, sync, or reusable improvement."
 run_hermes_summary() {

@@ -1,0 +1,6863 @@
+{
+  "generated_at": "2026-05-01T21:54:45.566551+00:00",
+  "machine": "dragon",
+  "stage": "Stage 1.6 preflight validation",
+  "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
+  "summary": {
+    "roots": [
+      "market_data"
+    ],
+    "files_profiled": 222,
+    "total_bytes": 1812773783,
+    "warning_counts": {},
+    "files_with_warnings": 0
+  },
+  "profiles": [
+    {
+      "path": "market_data/crypto/funding_rates/adausdt/funding_rates.parquet",
+      "size_bytes": 109906,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6520,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6520,
+          "sample_min": "2020-01-19 16:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/adausdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/avaxusdt/funding_rates.parquet",
+      "size_bytes": 106996,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 5779,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 5779,
+          "sample_min": "2020-09-22 16:00:00.004000+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/avaxusdt/provenance.json",
+      "size_bytes": 324,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/bnbusdt/funding_rates.parquet",
+      "size_bytes": 114061,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6455,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6455,
+          "sample_min": "2020-02-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/bnbusdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/btcusdt/funding_rates.parquet",
+      "size_bytes": 127272,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6914,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6914,
+          "sample_min": "2019-09-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/btcusdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/dogeusdt/funding_rates.parquet",
+      "size_bytes": 104932,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6002,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6002,
+          "sample_min": "2020-07-10 08:00:00.001000+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/dogeusdt/provenance.json",
+      "size_bytes": 324,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/ethusdt/funding_rates.parquet",
+      "size_bytes": 122799,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6680,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6680,
+          "sample_min": "2019-11-27 08:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/ethusdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/linkusdt/funding_rates.parquet",
+      "size_bytes": 110935,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6527,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6527,
+          "sample_min": "2020-01-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/linkusdt/provenance.json",
+      "size_bytes": 324,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/solusdt/funding_rates.parquet",
+      "size_bytes": 110978,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 5881,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 5881,
+          "sample_min": "2020-09-13 16:00:00.004000+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/solusdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/trxusdt/funding_rates.parquet",
+      "size_bytes": 112930,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6533,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6533,
+          "sample_min": "2020-01-15 08:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/trxusdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/xrpusdt/funding_rates.parquet",
+      "size_bytes": 113011,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 6560,
+      "row_groups": 1,
+      "columns": [
+        "symbol",
+        "fundingTime",
+        "fundingRate",
+        "markPrice"
+      ],
+      "timestamp_sample": {
+        "fundingTime": {
+          "sample_non_null": 6560,
+          "sample_min": "2020-01-06 08:00:00+00:00",
+          "sample_max": "2025-12-31 16:00:00.001000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/funding_rates/xrpusdt/provenance.json",
+      "size_bytes": 322,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/adausdt/15m.parquet",
+      "size_bytes": 12846725,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 207520,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 207520,
+          "sample_min": "2020-01-31 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 207520,
+          "sample_min": "2020-01-31 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/adausdt/1h.parquet",
+      "size_bytes": 3851303,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 51880,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 51880,
+          "sample_min": "2020-01-31 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 51880,
+          "sample_min": "2020-01-31 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/adausdt/4h.parquet",
+      "size_bytes": 1087329,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 12970,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 12970,
+          "sample_min": "2020-01-31 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 12970,
+          "sample_min": "2020-01-31 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/adausdt/5m.parquet",
+      "size_bytes": 33090673,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 622560,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 622560,
+          "sample_min": "2020-01-31 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 622560,
+          "sample_min": "2020-01-31 08:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/adausdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/avaxusdt/15m.parquet",
+      "size_bytes": 11045200,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 184868,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 184868,
+          "sample_min": "2020-09-23 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 184868,
+          "sample_min": "2020-09-23 07:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/avaxusdt/1h.parquet",
+      "size_bytes": 3382782,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 46217,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 46217,
+          "sample_min": "2020-09-23 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 46217,
+          "sample_min": "2020-09-23 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/avaxusdt/4h.parquet",
+      "size_bytes": 919673,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11555,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11555,
+          "sample_min": "2020-09-23 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11555,
+          "sample_min": "2020-09-23 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/avaxusdt/5m.parquet",
+      "size_bytes": 26766847,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 554604,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 554604,
+          "sample_min": "2020-09-23 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 554604,
+          "sample_min": "2020-09-23 07:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/avaxusdt/provenance.json",
+      "size_bytes": 315,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/bnbusdt/15m.parquet",
+      "size_bytes": 13303096,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 206560,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 206560,
+          "sample_min": "2020-02-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 206560,
+          "sample_min": "2020-02-10 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/bnbusdt/1h.parquet",
+      "size_bytes": 3952545,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 51640,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 51640,
+          "sample_min": "2020-02-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 51640,
+          "sample_min": "2020-02-10 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/bnbusdt/4h.parquet",
+      "size_bytes": 1033156,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 12910,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 12910,
+          "sample_min": "2020-02-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 12910,
+          "sample_min": "2020-02-10 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/bnbusdt/5m.parquet",
+      "size_bytes": 34035009,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 619680,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 619680,
+          "sample_min": "2020-02-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 619680,
+          "sample_min": "2020-02-10 08:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/bnbusdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/btcusdt/15m.parquet",
+      "size_bytes": 16247068,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 221401,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 221401,
+          "sample_min": "2019-09-08 17:45:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 221401,
+          "sample_min": "2019-09-08 17:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/btcusdt/1h.parquet",
+      "size_bytes": 4697045,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 55351,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 55351,
+          "sample_min": "2019-09-08 17:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 55351,
+          "sample_min": "2019-09-08 17:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/btcusdt/4h.parquet",
+      "size_bytes": 1168090,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13838,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13838,
+          "sample_min": "2019-09-08 16:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13838,
+          "sample_min": "2019-09-08 19:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/btcusdt/5m.parquet",
+      "size_bytes": 41997829,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 664201,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 664201,
+          "sample_min": "2019-09-08 17:55:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 664201,
+          "sample_min": "2019-09-08 17:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/btcusdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/dogeusdt/15m.parquet",
+      "size_bytes": 12624865,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 192060,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 192060,
+          "sample_min": "2020-07-10 09:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 192060,
+          "sample_min": "2020-07-10 09:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/dogeusdt/1h.parquet",
+      "size_bytes": 3811400,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 48015,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 48015,
+          "sample_min": "2020-07-10 09:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 48015,
+          "sample_min": "2020-07-10 09:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/dogeusdt/4h.parquet",
+      "size_bytes": 1067389,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 12004,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 12004,
+          "sample_min": "2020-07-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 12004,
+          "sample_min": "2020-07-10 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/dogeusdt/5m.parquet",
+      "size_bytes": 31787269,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 576180,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 576180,
+          "sample_min": "2020-07-10 09:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 576180,
+          "sample_min": "2020-07-10 09:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/dogeusdt/provenance.json",
+      "size_bytes": 315,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/ethusdt/15m.parquet",
+      "size_bytes": 15304625,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 213761,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 213761,
+          "sample_min": "2019-11-27 07:45:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 213761,
+          "sample_min": "2019-11-27 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/ethusdt/1h.parquet",
+      "size_bytes": 4415087,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 53441,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 53441,
+          "sample_min": "2019-11-27 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 53441,
+          "sample_min": "2019-11-27 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/ethusdt/4h.parquet",
+      "size_bytes": 1115877,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13361,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13361,
+          "sample_min": "2019-11-27 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13361,
+          "sample_min": "2019-11-27 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/ethusdt/5m.parquet",
+      "size_bytes": 39646875,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 641283,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 641283,
+          "sample_min": "2019-11-27 07:45:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 641283,
+          "sample_min": "2019-11-27 07:49:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/ethusdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/linkusdt/15m.parquet",
+      "size_bytes": 12679920,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 208864,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 208864,
+          "sample_min": "2020-01-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 208864,
+          "sample_min": "2020-01-17 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/linkusdt/1h.parquet",
+      "size_bytes": 3799300,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 52216,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 52216,
+          "sample_min": "2020-01-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 52216,
+          "sample_min": "2020-01-17 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/linkusdt/4h.parquet",
+      "size_bytes": 1038799,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13054,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13054,
+          "sample_min": "2020-01-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13054,
+          "sample_min": "2020-01-17 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/linkusdt/5m.parquet",
+      "size_bytes": 33310719,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 626592,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 626592,
+          "sample_min": "2020-01-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 626592,
+          "sample_min": "2020-01-17 08:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/linkusdt/provenance.json",
+      "size_bytes": 315,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/solusdt/15m.parquet",
+      "size_bytes": 12048140,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 185732,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 185732,
+          "sample_min": "2020-09-14 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 185732,
+          "sample_min": "2020-09-14 07:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/solusdt/1h.parquet",
+      "size_bytes": 3561478,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 46433,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 46433,
+          "sample_min": "2020-09-14 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 46433,
+          "sample_min": "2020-09-14 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/solusdt/4h.parquet",
+      "size_bytes": 946224,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11609,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11609,
+          "sample_min": "2020-09-14 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11609,
+          "sample_min": "2020-09-14 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/solusdt/5m.parquet",
+      "size_bytes": 30381759,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 557196,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 557196,
+          "sample_min": "2020-09-14 07:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 557196,
+          "sample_min": "2020-09-14 07:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/solusdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/trxusdt/15m.parquet",
+      "size_bytes": 12513569,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 209056,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 209056,
+          "sample_min": "2020-01-15 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 209056,
+          "sample_min": "2020-01-15 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/trxusdt/1h.parquet",
+      "size_bytes": 3821555,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 52264,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 52264,
+          "sample_min": "2020-01-15 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 52264,
+          "sample_min": "2020-01-15 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/trxusdt/4h.parquet",
+      "size_bytes": 1097139,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13066,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13066,
+          "sample_min": "2020-01-15 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13066,
+          "sample_min": "2020-01-15 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/trxusdt/5m.parquet",
+      "size_bytes": 32140596,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 627167,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 627167,
+          "sample_min": "2020-01-15 08:05:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 627167,
+          "sample_min": "2020-01-15 08:09:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/trxusdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/xrpusdt/15m.parquet",
+      "size_bytes": 12782520,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 209919,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 209919,
+          "sample_min": "2020-01-06 08:15:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 209919,
+          "sample_min": "2020-01-06 08:29:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/xrpusdt/1h.parquet",
+      "size_bytes": 3788043,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 52480,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 52480,
+          "sample_min": "2020-01-06 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 52480,
+          "sample_min": "2020-01-06 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/xrpusdt/4h.parquet",
+      "size_bytes": 1017109,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13120,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13120,
+          "sample_min": "2020-01-06 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13120,
+          "sample_min": "2020-01-06 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/xrpusdt/5m.parquet",
+      "size_bytes": 33168193,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 629756,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 629756,
+          "sample_min": "2020-01-06 08:20:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 629756,
+          "sample_min": "2020-01-06 08:24:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/perpetuals/xrpusdt/provenance.json",
+      "size_bytes": 313,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/adausdt/15m.parquet",
+      "size_bytes": 16216782,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 269931,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 269931,
+          "sample_min": "2018-04-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 269931,
+          "sample_min": "2018-04-17 04:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/adausdt/1h.parquet",
+      "size_bytes": 4911316,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 67492,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 67492,
+          "sample_min": "2018-04-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 67492,
+          "sample_min": "2018-04-17 04:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/adausdt/4h.parquet",
+      "size_bytes": 1411162,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 16886,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 16886,
+          "sample_min": "2018-04-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 16886,
+          "sample_min": "2018-04-17 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/adausdt/5m.parquet",
+      "size_bytes": 42787925,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 809784,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 809784,
+          "sample_min": "2018-04-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 809784,
+          "sample_min": "2018-04-17 04:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/adausdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/asterusdt/15m.parquet",
+      "size_bytes": 533601,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 8304,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 8304,
+          "sample_min": "2025-10-06 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 8304,
+          "sample_min": "2025-10-06 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/asterusdt/1h.parquet",
+      "size_bytes": 147242,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 2076,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 2076,
+          "sample_min": "2025-10-06 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 2076,
+          "sample_min": "2025-10-06 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/asterusdt/4h.parquet",
+      "size_bytes": 45286,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 519,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 519,
+          "sample_min": "2025-10-06 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 519,
+          "sample_min": "2025-10-06 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/asterusdt/5m.parquet",
+      "size_bytes": 1510250,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 24912,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 24912,
+          "sample_min": "2025-10-06 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 24912,
+          "sample_min": "2025-10-06 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/asterusdt/provenance.json",
+      "size_bytes": 309,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/avaxusdt/15m.parquet",
+      "size_bytes": 11419561,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 184872,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 184872,
+          "sample_min": "2020-09-22 06:30:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 184872,
+          "sample_min": "2020-09-22 06:44:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/avaxusdt/1h.parquet",
+      "size_bytes": 3167003,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 46222,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 46222,
+          "sample_min": "2020-09-22 06:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 46222,
+          "sample_min": "2020-09-22 06:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/avaxusdt/4h.parquet",
+      "size_bytes": 853584,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11561,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11561,
+          "sample_min": "2020-09-22 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11561,
+          "sample_min": "2020-09-22 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/avaxusdt/5m.parquet",
+      "size_bytes": 29759371,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 554611,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 554611,
+          "sample_min": "2020-09-22 06:30:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 554611,
+          "sample_min": "2020-09-22 06:34:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/avaxusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bchusdt/15m.parquet",
+      "size_bytes": 12773453,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 213503,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 213503,
+          "sample_min": "2019-11-28 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 213503,
+          "sample_min": "2019-11-28 10:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bchusdt/1h.parquet",
+      "size_bytes": 3635500,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 53382,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 53382,
+          "sample_min": "2019-11-28 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 53382,
+          "sample_min": "2019-11-28 10:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bchusdt/4h.parquet",
+      "size_bytes": 994331,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13353,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13353,
+          "sample_min": "2019-11-28 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13353,
+          "sample_min": "2019-11-28 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bchusdt/5m.parquet",
+      "size_bytes": 33481509,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 640502,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 640502,
+          "sample_min": "2019-11-28 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 640502,
+          "sample_min": "2019-11-28 10:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bchusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bnbusdt/15m.parquet",
+      "size_bytes": 18580293,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 285335,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 285335,
+          "sample_min": "2017-11-06 03:45:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 285335,
+          "sample_min": "2017-11-06 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bnbusdt/1h.parquet",
+      "size_bytes": 5449191,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 71347,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 71347,
+          "sample_min": "2017-11-06 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 71347,
+          "sample_min": "2017-11-06 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bnbusdt/4h.parquet",
+      "size_bytes": 1439713,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 17852,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 17852,
+          "sample_min": "2017-11-06 00:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 17852,
+          "sample_min": "2017-11-06 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bnbusdt/5m.parquet",
+      "size_bytes": 50231004,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 855986,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 855986,
+          "sample_min": "2017-11-06 03:50:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 855986,
+          "sample_min": "2017-11-06 03:54:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/bnbusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/btcusdt/15m.parquet",
+      "size_bytes": 21972667,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 293083,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 293083,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 293083,
+          "sample_min": "2017-08-17 04:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/btcusdt/1h.parquet",
+      "size_bytes": 6485232,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 73284,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 73284,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 73284,
+          "sample_min": "2017-08-17 04:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/btcusdt/4h.parquet",
+      "size_bytes": 1639333,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 18337,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 18337,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 18337,
+          "sample_min": "2017-08-17 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/btcusdt/5m.parquet",
+      "size_bytes": 59325161,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 879229,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 879229,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 879229,
+          "sample_min": "2017-08-17 04:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/btcusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dogeusdt/15m.parquet",
+      "size_bytes": 14725718,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 227462,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 227462,
+          "sample_min": "2019-07-05 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 227462,
+          "sample_min": "2019-07-05 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dogeusdt/1h.parquet",
+      "size_bytes": 4510830,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 56872,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 56872,
+          "sample_min": "2019-07-05 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 56872,
+          "sample_min": "2019-07-05 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dogeusdt/4h.parquet",
+      "size_bytes": 1254876,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 14227,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 14227,
+          "sample_min": "2019-07-05 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 14227,
+          "sample_min": "2019-07-05 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dogeusdt/5m.parquet",
+      "size_bytes": 37318175,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 682378,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 682378,
+          "sample_min": "2019-07-05 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 682378,
+          "sample_min": "2019-07-05 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dogeusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dotusdt/15m.parquet",
+      "size_bytes": 11786024,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 188166,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 188166,
+          "sample_min": "2020-08-18 23:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 188166,
+          "sample_min": "2020-08-18 23:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dotusdt/1h.parquet",
+      "size_bytes": 3287371,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 47045,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 47045,
+          "sample_min": "2020-08-18 23:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 47045,
+          "sample_min": "2020-08-18 23:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dotusdt/4h.parquet",
+      "size_bytes": 892309,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11767,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11767,
+          "sample_min": "2020-08-18 20:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11767,
+          "sample_min": "2020-08-18 23:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dotusdt/5m.parquet",
+      "size_bytes": 31037047,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 564493,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 564493,
+          "sample_min": "2020-08-18 23:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 564493,
+          "sample_min": "2020-08-18 23:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/dotusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ethusdt/15m.parquet",
+      "size_bytes": 20293526,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 293083,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 293083,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 293083,
+          "sample_min": "2017-08-17 04:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ethusdt/1h.parquet",
+      "size_bytes": 6032841,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 73284,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 73284,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 73284,
+          "sample_min": "2017-08-17 04:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+      "size_bytes": 1578451,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 18337,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 18337,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 18337,
+          "sample_min": "2017-08-17 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ethusdt/5m.parquet",
+      "size_bytes": 54050625,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 879229,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 879229,
+          "sample_min": "2017-08-17 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 879229,
+          "sample_min": "2017-08-17 04:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ethusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/hbarusdt/15m.parquet",
+      "size_bytes": 12870255,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 219270,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 219270,
+          "sample_min": "2019-09-29 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 219270,
+          "sample_min": "2019-09-29 04:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/hbarusdt/1h.parquet",
+      "size_bytes": 3828377,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 54824,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 54824,
+          "sample_min": "2019-09-29 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 54824,
+          "sample_min": "2019-09-29 04:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/hbarusdt/4h.parquet",
+      "size_bytes": 1064987,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 13714,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 13714,
+          "sample_min": "2019-09-29 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 13714,
+          "sample_min": "2019-09-29 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/hbarusdt/5m.parquet",
+      "size_bytes": 32650063,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 657802,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 657802,
+          "sample_min": "2019-09-29 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 657802,
+          "sample_min": "2019-09-29 04:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/hbarusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/linkusdt/15m.parquet",
+      "size_bytes": 15140976,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 243722,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 243722,
+          "sample_min": "2019-01-16 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 243722,
+          "sample_min": "2019-01-16 10:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/linkusdt/1h.parquet",
+      "size_bytes": 4387539,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 60938,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 60938,
+          "sample_min": "2019-01-16 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 60938,
+          "sample_min": "2019-01-16 10:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/linkusdt/4h.parquet",
+      "size_bytes": 1181971,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 15245,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 15245,
+          "sample_min": "2019-01-16 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 15245,
+          "sample_min": "2019-01-16 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/linkusdt/5m.parquet",
+      "size_bytes": 40074494,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 731158,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 731158,
+          "sample_min": "2019-01-16 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 731158,
+          "sample_min": "2019-01-16 10:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/linkusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ltcusdt/15m.parquet",
+      "size_bytes": 16492827,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 281786,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 281786,
+          "sample_min": "2017-12-13 03:30:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 281786,
+          "sample_min": "2017-12-13 03:44:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ltcusdt/1h.parquet",
+      "size_bytes": 4823981,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 70459,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 70459,
+          "sample_min": "2017-12-13 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 70459,
+          "sample_min": "2017-12-13 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ltcusdt/4h.parquet",
+      "size_bytes": 1335600,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 17630,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 17630,
+          "sample_min": "2017-12-13 00:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 17630,
+          "sample_min": "2017-12-13 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ltcusdt/5m.parquet",
+      "size_bytes": 44861814,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 845342,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 845342,
+          "sample_min": "2017-12-13 03:30:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 845342,
+          "sample_min": "2017-12-13 03:34:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/ltcusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/nearusdt/15m.parquet",
+      "size_bytes": 11222618,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 182766,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 182766,
+          "sample_min": "2020-10-14 05:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 182766,
+          "sample_min": "2020-10-14 05:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/nearusdt/1h.parquet",
+      "size_bytes": 3142536,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 45695,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 45695,
+          "sample_min": "2020-10-14 05:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 45695,
+          "sample_min": "2020-10-14 05:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/nearusdt/4h.parquet",
+      "size_bytes": 861799,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11429,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11429,
+          "sample_min": "2020-10-14 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11429,
+          "sample_min": "2020-10-14 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/nearusdt/5m.parquet",
+      "size_bytes": 28812342,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 548293,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 548293,
+          "sample_min": "2020-10-14 05:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 548293,
+          "sample_min": "2020-10-14 05:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/nearusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/paxgusdt/15m.parquet",
+      "size_bytes": 10818917,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 187250,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 187250,
+          "sample_min": "2020-08-28 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 187250,
+          "sample_min": "2020-08-28 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/paxgusdt/1h.parquet",
+      "size_bytes": 3092112,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 46816,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 46816,
+          "sample_min": "2020-08-28 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 46816,
+          "sample_min": "2020-08-28 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/paxgusdt/4h.parquet",
+      "size_bytes": 820177,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11709,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11709,
+          "sample_min": "2020-08-28 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11709,
+          "sample_min": "2020-08-28 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/paxgusdt/5m.parquet",
+      "size_bytes": 27375938,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 561745,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 561745,
+          "sample_min": "2020-08-28 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 561745,
+          "sample_min": "2020-08-28 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/paxgusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/pepeusdt/15m.parquet",
+      "size_bytes": 5951616,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 93240,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 93240,
+          "sample_min": "2023-05-05 18:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 93240,
+          "sample_min": "2023-05-05 18:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/pepeusdt/1h.parquet",
+      "size_bytes": 1603957,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 23310,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 23310,
+          "sample_min": "2023-05-05 18:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 23310,
+          "sample_min": "2023-05-05 18:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/pepeusdt/4h.parquet",
+      "size_bytes": 430776,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 5828,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 5828,
+          "sample_min": "2023-05-05 16:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 5828,
+          "sample_min": "2023-05-05 19:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/pepeusdt/5m.parquet",
+      "size_bytes": 15440684,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 279720,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 279720,
+          "sample_min": "2023-05-05 18:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 279720,
+          "sample_min": "2023-05-05 18:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/pepeusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/shibusdt/15m.parquet",
+      "size_bytes": 10217507,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 162837,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 162837,
+          "sample_min": "2021-05-10 11:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 162837,
+          "sample_min": "2021-05-10 11:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/shibusdt/1h.parquet",
+      "size_bytes": 2790185,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 40710,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 40710,
+          "sample_min": "2021-05-10 11:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 40710,
+          "sample_min": "2021-05-10 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/shibusdt/4h.parquet",
+      "size_bytes": 764256,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 10180,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 10180,
+          "sample_min": "2021-05-10 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 10180,
+          "sample_min": "2021-05-10 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/shibusdt/5m.parquet",
+      "size_bytes": 26483357,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 488510,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 488510,
+          "sample_min": "2021-05-10 11:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 488510,
+          "sample_min": "2021-05-10 11:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/shibusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/skyusdt/15m.parquet",
+      "size_bytes": 674022,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 10144,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 10144,
+          "sample_min": "2025-09-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 10144,
+          "sample_min": "2025-09-17 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/skyusdt/1h.parquet",
+      "size_bytes": 204811,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 2536,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 2536,
+          "sample_min": "2025-09-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 2536,
+          "sample_min": "2025-09-17 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/skyusdt/4h.parquet",
+      "size_bytes": 61386,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 634,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 634,
+          "sample_min": "2025-09-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 634,
+          "sample_min": "2025-09-17 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/skyusdt/5m.parquet",
+      "size_bytes": 1825043,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 30432,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 30432,
+          "sample_min": "2025-09-17 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 30432,
+          "sample_min": "2025-09-17 08:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/skyusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/solusdt/15m.parquet",
+      "size_bytes": 12153880,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 188906,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 188906,
+          "sample_min": "2020-08-11 06:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 188906,
+          "sample_min": "2020-08-11 06:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/solusdt/1h.parquet",
+      "size_bytes": 3502268,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 47230,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 47230,
+          "sample_min": "2020-08-11 06:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 47230,
+          "sample_min": "2020-08-11 06:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/solusdt/4h.parquet",
+      "size_bytes": 941851,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11813,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11813,
+          "sample_min": "2020-08-11 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11813,
+          "sample_min": "2020-08-11 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/solusdt/5m.parquet",
+      "size_bytes": 31530395,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 566713,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 566713,
+          "sample_min": "2020-08-11 06:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 566713,
+          "sample_min": "2020-08-11 06:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/solusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/suiusdt/15m.parquet",
+      "size_bytes": 6451298,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 93456,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 93456,
+          "sample_min": "2023-05-03 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 93456,
+          "sample_min": "2023-05-03 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/suiusdt/1h.parquet",
+      "size_bytes": 1837169,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 23364,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 23364,
+          "sample_min": "2023-05-03 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 23364,
+          "sample_min": "2023-05-03 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/suiusdt/4h.parquet",
+      "size_bytes": 490637,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 5841,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 5841,
+          "sample_min": "2023-05-03 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 5841,
+          "sample_min": "2023-05-03 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/suiusdt/5m.parquet",
+      "size_bytes": 16083671,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 280368,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 280368,
+          "sample_min": "2023-05-03 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 280368,
+          "sample_min": "2023-05-03 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/suiusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/taousdt/15m.parquet",
+      "size_bytes": 3803982,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 60432,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 60432,
+          "sample_min": "2024-04-11 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 60432,
+          "sample_min": "2024-04-11 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/taousdt/1h.parquet",
+      "size_bytes": 1030293,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 15108,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 15108,
+          "sample_min": "2024-04-11 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 15108,
+          "sample_min": "2024-04-11 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/taousdt/4h.parquet",
+      "size_bytes": 286250,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 3777,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 3777,
+          "sample_min": "2024-04-11 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 3777,
+          "sample_min": "2024-04-11 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/taousdt/5m.parquet",
+      "size_bytes": 10515855,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 181296,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 181296,
+          "sample_min": "2024-04-11 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 181296,
+          "sample_min": "2024-04-11 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/taousdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/tonusdt/15m.parquet",
+      "size_bytes": 3027818,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 49016,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 49016,
+          "sample_min": "2024-08-08 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 49016,
+          "sample_min": "2024-08-08 10:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/tonusdt/1h.parquet",
+      "size_bytes": 820667,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 12254,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 12254,
+          "sample_min": "2024-08-08 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 12254,
+          "sample_min": "2024-08-08 10:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/tonusdt/4h.parquet",
+      "size_bytes": 229582,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 3064,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 3064,
+          "sample_min": "2024-08-08 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 3064,
+          "sample_min": "2024-08-08 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/tonusdt/5m.parquet",
+      "size_bytes": 8704303,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 147048,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 147048,
+          "sample_min": "2024-08-08 10:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 147048,
+          "sample_min": "2024-08-08 10:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/tonusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/trxusdt/15m.parquet",
+      "size_bytes": 15114066,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 264621,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 264621,
+          "sample_min": "2018-06-11 11:30:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 264621,
+          "sample_min": "2018-06-11 11:44:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/trxusdt/1h.parquet",
+      "size_bytes": 4530652,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 66165,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 66165,
+          "sample_min": "2018-06-11 11:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 66165,
+          "sample_min": "2018-06-11 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/trxusdt/4h.parquet",
+      "size_bytes": 1310852,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 16555,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 16555,
+          "sample_min": "2018-06-11 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 16555,
+          "sample_min": "2018-06-11 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/trxusdt/5m.parquet",
+      "size_bytes": 40445550,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 793854,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 793854,
+          "sample_min": "2018-06-11 11:30:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 793854,
+          "sample_min": "2018-06-11 11:34:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/trxusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/uniusdt/15m.parquet",
+      "size_bytes": 11535569,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 185366,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 185366,
+          "sample_min": "2020-09-17 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 185366,
+          "sample_min": "2020-09-17 03:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/uniusdt/1h.parquet",
+      "size_bytes": 3230046,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 46345,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 46345,
+          "sample_min": "2020-09-17 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 46345,
+          "sample_min": "2020-09-17 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/uniusdt/4h.parquet",
+      "size_bytes": 873358,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11592,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11592,
+          "sample_min": "2020-09-17 00:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11592,
+          "sample_min": "2020-09-17 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/uniusdt/5m.parquet",
+      "size_bytes": 30001072,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 556093,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 556093,
+          "sample_min": "2020-09-17 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 556093,
+          "sample_min": "2020-09-17 03:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/uniusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usd1usdt/15m.parquet",
+      "size_bytes": 1063326,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 21456,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 21456,
+          "sample_min": "2025-05-22 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 21456,
+          "sample_min": "2025-05-22 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usd1usdt/1h.parquet",
+      "size_bytes": 288933,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 5364,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 5364,
+          "sample_min": "2025-05-22 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 5364,
+          "sample_min": "2025-05-22 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usd1usdt/4h.parquet",
+      "size_bytes": 80947,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 1341,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 1341,
+          "sample_min": "2025-05-22 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 1341,
+          "sample_min": "2025-05-22 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usd1usdt/5m.parquet",
+      "size_bytes": 2718826,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 64368,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 64368,
+          "sample_min": "2025-05-22 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 64368,
+          "sample_min": "2025-05-22 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usd1usdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdcusdt/15m.parquet",
+      "size_bytes": 11859785,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 230842,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 230842,
+          "sample_min": "2018-12-15 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 230842,
+          "sample_min": "2018-12-15 03:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdcusdt/1h.parquet",
+      "size_bytes": 3396299,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 57718,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 57718,
+          "sample_min": "2018-12-15 03:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 57718,
+          "sample_min": "2018-12-15 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdcusdt/4h.parquet",
+      "size_bytes": 889880,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 14441,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 14441,
+          "sample_min": "2018-12-15 00:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 14441,
+          "sample_min": "2018-12-15 03:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdcusdt/5m.parquet",
+      "size_bytes": 31149896,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 692516,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 692516,
+          "sample_min": "2018-12-15 03:10:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 692516,
+          "sample_min": "2018-12-15 03:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdcusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdeusdt/15m.parquet",
+      "size_bytes": 537794,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 10896,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 10896,
+          "sample_min": "2025-09-09 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 10896,
+          "sample_min": "2025-09-09 12:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdeusdt/1h.parquet",
+      "size_bytes": 151473,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 2724,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 2724,
+          "sample_min": "2025-09-09 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 2724,
+          "sample_min": "2025-09-09 12:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdeusdt/4h.parquet",
+      "size_bytes": 44946,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 681,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 681,
+          "sample_min": "2025-09-09 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 681,
+          "sample_min": "2025-09-09 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdeusdt/5m.parquet",
+      "size_bytes": 1370167,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 32688,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 32688,
+          "sample_min": "2025-09-09 12:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 32688,
+          "sample_min": "2025-09-09 12:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdeusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/usdsusdt/provenance.json",
+      "size_bytes": 267,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/wlfiusdt/15m.parquet",
+      "size_bytes": 730326,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 11660,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 11660,
+          "sample_min": "2025-09-01 13:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 11660,
+          "sample_min": "2025-09-01 13:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/wlfiusdt/1h.parquet",
+      "size_bytes": 208039,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 2915,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 2915,
+          "sample_min": "2025-09-01 13:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 2915,
+          "sample_min": "2025-09-01 13:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/wlfiusdt/4h.parquet",
+      "size_bytes": 64328,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 729,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 729,
+          "sample_min": "2025-09-01 12:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 729,
+          "sample_min": "2025-09-01 15:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/wlfiusdt/5m.parquet",
+      "size_bytes": 2090474,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 34980,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 34980,
+          "sample_min": "2025-09-01 13:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 34980,
+          "sample_min": "2025-09-01 13:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/wlfiusdt/provenance.json",
+      "size_bytes": 307,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xautusdt/provenance.json",
+      "size_bytes": 267,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xlmusdt/15m.parquet",
+      "size_bytes": 15302978,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 265685,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 265685,
+          "sample_min": "2018-05-31 09:30:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 265685,
+          "sample_min": "2018-05-31 09:44:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xlmusdt/1h.parquet",
+      "size_bytes": 4626042,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 66431,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 66431,
+          "sample_min": "2018-05-31 09:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 66431,
+          "sample_min": "2018-05-31 09:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xlmusdt/4h.parquet",
+      "size_bytes": 1300963,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 16621,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 16621,
+          "sample_min": "2018-05-31 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 16621,
+          "sample_min": "2018-05-31 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xlmusdt/5m.parquet",
+      "size_bytes": 39936390,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 797046,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 797046,
+          "sample_min": "2018-05-31 09:30:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 797046,
+          "sample_min": "2018-05-31 09:34:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xlmusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xrpusdt/15m.parquet",
+      "size_bytes": 16469551,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 268283,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 268283,
+          "sample_min": "2018-05-04 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 268283,
+          "sample_min": "2018-05-04 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xrpusdt/1h.parquet",
+      "size_bytes": 5041886,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 67080,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 67080,
+          "sample_min": "2018-05-04 08:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 67080,
+          "sample_min": "2018-05-04 08:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xrpusdt/4h.parquet",
+      "size_bytes": 1381341,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 16783,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 16783,
+          "sample_min": "2018-05-04 08:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 16783,
+          "sample_min": "2018-05-04 11:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xrpusdt/5m.parquet",
+      "size_bytes": 42888778,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 804838,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 804838,
+          "sample_min": "2018-05-04 08:10:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 804838,
+          "sample_min": "2018-05-04 08:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/xrpusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/zecusdt/15m.parquet",
+      "size_bytes": 13882971,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 237626,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 237626,
+          "sample_min": "2019-03-21 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:45:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 237626,
+          "sample_min": "2019-03-21 04:14:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/zecusdt/1h.parquet",
+      "size_bytes": 3995637,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 59414,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 59414,
+          "sample_min": "2019-03-21 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 59414,
+          "sample_min": "2019-03-21 04:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/zecusdt/4h.parquet",
+      "size_bytes": 1079684,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 14863,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 14863,
+          "sample_min": "2019-03-21 04:00:00+00:00",
+          "sample_max": "2025-12-31 20:00:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 14863,
+          "sample_min": "2019-03-21 07:59:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/zecusdt/5m.parquet",
+      "size_bytes": 36483139,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "parquet",
+      "rows": 712870,
+      "row_groups": 1,
+      "columns": [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume"
+      ],
+      "timestamp_sample": {
+        "open_time": {
+          "sample_non_null": 712870,
+          "sample_min": "2019-03-21 04:00:00+00:00",
+          "sample_max": "2025-12-31 23:55:00+00:00"
+        },
+        "close_time": {
+          "sample_non_null": 712870,
+          "sample_min": "2019-03-21 04:04:59.999000+00:00",
+          "sample_max": "2025-12-31 23:59:59.999000+00:00"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "market_data/crypto/spot_top50/zecusdt/provenance.json",
+      "size_bytes": 305,
+      "folder_docs": {
+        "complete": true,
+        "missing": []
+      },
+      "kind": "json",
+      "rows": null,
+      "columns": [],
+      "sample_rows": 1,
+      "warnings": []
+    }
+  ]
+}

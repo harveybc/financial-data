@@ -1,14 +1,14 @@
-# Project 3 Stage 1.3 Agent Notification And Voice
+# Project 3 Agent Notification And Voice
 
 ## Purpose
 
-This note documents the Stage 1.3 communication layer for Omega, Dragon, and Gamma Hermes agents.
+This note documents the Project 3 communication layer for Omega, Dragon, and Gamma Hermes agents. It was introduced during Stage 1.3 and remains active for Stage 1.6 preflight and later stages.
 
 ## Telegram Reporting
 
 Project cron wrappers call `_scripts/telegram_notify.py` after Tier 1 and Tier 2 status updates. The helper is safe before setup: it exits without sending anything until Telegram credentials are present.
 
-Telegram is the recommended human-visible management channel for Stage 1.3 because it is fast on mobile, supports group chat, supports bot delivery through a simple API, and is already supported by Hermes. The authoritative project state remains the repo, work-plan documents, logs, `global_status.md`, and `escalation_queue.json`; Telegram is the live notification and coordination surface.
+Telegram is the recommended human-visible management channel because it is fast on mobile, supports group chat, supports bot delivery through a simple API, and is already supported by Hermes. The authoritative project state remains the repo, work-plan documents, logs, `global_status.md`, and `escalation_queue.json`; Telegram is the live notification and coordination surface.
 
 Recommended operating model:
 
@@ -17,6 +17,9 @@ Recommended operating model:
 - The Tier 2 supervisor reads worker reports, logs, deliverables, and the work plan before assigning new tasks.
 - Workers do not independently debate in the group unless tagged or explicitly delegated by Omega/Tier 2.
 - Human questions in the group should mention the bot or use commands; routine worker completion notices do not require mention.
+- The group is a low-noise event bus, not a log stream. Agents post starts, finishes, blockers, validation anomalies, idle-with-reason events, escalation questions, deliverable paths, and human-action requests only.
+- Codex participates as the Tier 4/frontier coordinator through the repo and Telegram notifier. Codex can send group updates with `_scripts/telegram_notify.py` and can inspect the Hermes gateway state/message store, but the canonical Codex interaction remains the VS Code/Codex session.
+- If the gateway is down, Omega restarts it; Dragon/Gamma must not start their own gateway with the same bot token because Telegram long polling would conflict.
 
 Worker completion messages should include:
 
@@ -33,6 +36,24 @@ needs_codex:
 ```
 
 This keeps the group useful for the human and for agents while preventing accidental chatter loops.
+
+When an agent reports completion, it must also tell the supervisor exactly which context the next agent should receive:
+
+```text
+context_to_pass_forward:
+- project_root:
+- active_stage:
+- current_task:
+- expected_deliverable:
+- relevant_docs:
+- relevant_logs:
+- validation_evidence:
+- anomalies:
+- confidence:
+- suggested_next_action:
+```
+
+This recursive context rule prevents each worker from rediscovering the same plan details and makes handoffs auditable.
 
 Required private environment variables:
 
@@ -99,6 +120,12 @@ Telegram voice replies are supported by the gateway when a chat enables `/voice 
 
 ## Current Recommendation
 
-Use Telegram text notifications first for Stage 1.3 operations. Enable voice replies only for interactive sessions or explicit Telegram `/voice` mode, because routine cron voice updates would add noise and make anomaly triage harder.
+Use Telegram text notifications first for Project 3 operations. Enable voice replies only for interactive sessions or explicit Telegram `/voice` mode, because routine cron voice updates would add noise and make anomaly triage harder.
 
 Telegram group handling is configured with `telegram.require_mention: true` and `telegram.reactions: true`. After the group chat id is known, set `TELEGRAM_GROUP_ALLOWED_CHATS` to that id before enabling the gateway.
+
+## Current Stage Policy
+
+- Stage 1.3 completion-idle capacity is reassigned to Stage 1.6 preflight validation/documentation work.
+- Formal Stage 1.6 completion still waits for Stage 1.4 and Stage 1.5 subscription decisions.
+- Telegram events for this lane use the same compact report format and must include deliverable paths such as `STAGE_1.6_PREFLIGHT.md`, `INVENTORY.md`, and `_metadata/stage16_preflight_validation_<machine>.json`.

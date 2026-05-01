@@ -32,6 +32,7 @@ Before validating a task, read or inspect:
 - relevant `README.md`, `data_dictionary.md`, and `provenance.json`;
 - relevant worker logs under `_logs/`;
 - `_logs/supervisor_reports/stage13_deliverable_validation.md` when present.
+- Stage 1.6 preflight outputs when present: `STAGE_1.6_PREFLIGHT.md`, `INVENTORY.md`, `_metadata/stage16_preflight_omega.json`, and `_metadata/stage16_preflight_validation_<machine>.json`.
 
 ## Validation Contract
 
@@ -49,6 +50,8 @@ For each task, report:
 - `context_to_pass_forward`.
 
 Use `needs_codex` for questions involving plan interpretation, provider/subscription decisions, ambiguous quality thresholds, or any case where confidence is below 0.8.
+
+Stage 1.6 preflight results are useful evidence, but they are not formal Phase 1 completion by themselves. Formal Stage 1.6 still requires Stage 1.4 and Stage 1.5 decisions to be resolved first.
 
 ## Escalation Rules
 

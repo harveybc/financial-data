@@ -186,22 +186,22 @@ fi
 gpu_summary="$(nvidia-smi --query-gpu=name,memory.total,memory.used --format=csv,noheader 2>/dev/null || echo "nvidia-smi unavailable")"
 case "$HOST" in
   omega)
-    stage_context="Stage 1.3 Free Data Acquisition, Omega local worker lane"
-    expected_deliverable="Omega local worker health checks, validation/inventory reports, documentation backfill status, and safe next-action suggestions"
-    relevant_logs="_logs/omega/stage13_light_sources_worker.log; _logs/omega/stage13_reference_worker.log; _logs/omega/stage13_economic_calendar_worker.log; _logs/omega/stage13_housekeeping_worker.log; _logs/omega/stage13_validation_inventory_worker.log; _logs/omega/stage13_deliverable_validator_worker.log; _logs/supervisor_reports/omega_status.json"
+    stage_context="Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight documentation/inventory active"
+    expected_deliverable="Omega local worker health checks, Stage 1.6 preflight documentation audit, INVENTORY.md, STAGE_1.6_PREFLIGHT.md, and safe next-action suggestions"
+    relevant_logs="_logs/omega/stage13_light_sources_worker.log; _logs/omega/stage13_reference_worker.log; _logs/omega/stage13_economic_calendar_worker.log; _logs/omega/stage13_housekeeping_worker.log; _logs/omega/stage13_validation_inventory_worker.log; _logs/omega/stage13_deliverable_validator_worker.log; _logs/omega/stage16_preflight_omega_worker.log; _logs/supervisor_reports/omega_status.json"
     relevant_docs="work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
     ;;
   dragon)
-    stage_context="Stage 1.3 Free Data Acquisition, Task 1.3.F Binance crypto comprehensive"
-    expected_deliverable="market_data/crypto/spot_top50, market_data/crypto/perpetuals, market_data/crypto/funding_rates"
-    relevant_logs="_logs/dragon/stage13_crypto_worker.log; _logs/dragon/stage13_crypto_python.out; _logs/supervisor_reports/dragon_status.json"
-    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md"
+    stage_context="Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight validation of market_data active"
+    expected_deliverable="market_data validation profile at _metadata/stage16_preflight_validation_dragon.json plus existing crypto/FINRA outputs"
+    relevant_logs="_logs/dragon/stage13_crypto_worker.log; _logs/dragon/stage13_crypto_python.out; _logs/dragon/stage16_preflight_validation_worker.log; _logs/supervisor_reports/dragon_status.json"
+    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
     ;;
   gamma)
-    stage_context="Stage 1.3 Free Data Acquisition, Gamma macro/on-chain/supplemental public sources"
-    expected_deliverable="macro_economic/fred, macro_economic/bls, macro_economic/yield_curves, alternative_data/onchain_btc, alternative_data/defi_metrics, alternative_data/sec_filings"
-    relevant_logs="_logs/gamma/stage13_macro_onchain_worker.log; _logs/gamma/stage13_supplemental_worker.log; _logs/gamma/stage13_gamma_validation.md; _logs/supervisor_reports/gamma_status.json"
-    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md"
+    stage_context="Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight validation of macro/alternative/reference/calendar active"
+    expected_deliverable="macro/alternative/reference/calendar validation profile at _metadata/stage16_preflight_validation_gamma.json plus existing public-source outputs"
+    relevant_logs="_logs/gamma/stage13_macro_onchain_worker.log; _logs/gamma/stage13_supplemental_worker.log; _logs/gamma/stage13_gamma_validation.md; _logs/gamma/stage16_preflight_validation_worker.log; _logs/supervisor_reports/gamma_status.json"
+    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
     ;;
   *)
     stage_context="Stage 1.3 Free Data Acquisition"

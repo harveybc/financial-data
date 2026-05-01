@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-05-01T22:03:10Z",
+  "stage": "Stage 1.6 quality validation follow-up",
+  "machine": "gamma",
+  "status": "classified",
+  "summary": {
+    "warning_files": 10,
+    "expected_panel_data_files": 7,
+    "fixed_exact_duplicate_files": 3,
+    "post_fix_full_row_duplicates": 0,
+    "remaining_blockers": 0
+  },
+  "expected_panel_data": [
+    "macro_economic/bea/nipa/gdp_current_dollars/quarterly.parquet",
+    "macro_economic/bea/nipa/gdp_percent_change/quarterly.parquet",
+    "macro_economic/bea/nipa/real_gdp_chained_dollars/quarterly.parquet",
+    "macro_economic/bls/public_series.csv",
+    "macro_economic/oecd/cli/monthly.parquet",
+    "macro_economic/yield_curves/treasury_average_interest_rates/average_interest_rates.parquet",
+    "alternative_data/sec_filings/edgar_sp500_metadata/filing_metadata.parquet"
+  ],
+  "fixed_exact_duplicates": [
+    {
+      "path": "alternative_data/short_interest/finra_regsho_daily/cnms/2025_daily_short_volume.parquet",
+      "duplicate_rows_removed": 34,
+      "post_fix_full_row_duplicates": 0
+    },
+    {
+      "path": "alternative_data/short_interest/finra_regsho_daily/fnsq/2025_daily_short_volume.parquet",
+      "duplicate_rows_removed": 25,
+      "post_fix_full_row_duplicates": 0
+    },
+    {
+      "path": "alternative_data/short_interest/finra_regsho_daily/fnyx/2025_daily_short_volume.parquet",
+      "duplicate_rows_removed": 30,
+      "post_fix_full_row_duplicates": 0
+    }
+  ],
+  "recommended_next_action": "Improve the generic quality worker to use natural keys for panel datasets; no blocker remains."
+}

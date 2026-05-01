@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-05-01T22:05:47.169270+00:00",
+  "policy": "Use completion-idle capacity after Stage 1.3 for bounded Stage 1.6 preflight audits. Formal Stage 1.6 remains gated on Stage 1.4/1.5 decisions.",
+  "decisions": [
+    {
+      "machine": "dragon",
+      "stage": "Stage 1.6 preflight validation",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "_metadata/stage16_preflight_validation_dragon.json for market_data"
+    },
+    {
+      "machine": "gamma",
+      "stage": "Stage 1.6 preflight validation",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "_metadata/stage16_preflight_validation_gamma.json for macro/alternative/reference/calendar"
+    },
+    {
+      "machine": "dragon->omega",
+      "stage": "Stage 1.6 preflight sync",
+      "state": "ok",
+      "action": "dragon_stage16_sync",
+      "deliverable": "Dragon preflight validation report copied to Omega"
+    },
+    {
+      "machine": "gamma->omega",
+      "stage": "Stage 1.6 preflight sync",
+      "state": "ok",
+      "action": "gamma_stage16_sync",
+      "deliverable": "Gamma preflight validation report copied to Omega"
+    },
+    {
+      "machine": "dragon",
+      "stage": "Stage 1.6 quality validation",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "_metadata/stage16_quality_validation_dragon.json for market_data time/price/volume checks"
+    },
+    {
+      "machine": "gamma",
+      "stage": "Stage 1.6 quality validation",
+      "state": "completed_idle",
+      "action": "no_dispatch_needed",
+      "deliverable": "_metadata/stage16_quality_validation_gamma.json for macro/alternative/reference/calendar checks"
+    },
+    {
+      "machine": "dragon->omega",
+      "stage": "Stage 1.6 quality sync",
+      "state": "ok",
+      "action": "dragon_stage16_quality_sync",
+      "deliverable": "Dragon quality validation report copied to Omega"
+    },
+    {
+      "machine": "gamma->omega",
+      "stage": "Stage 1.6 quality sync",
+      "state": "ok",
+      "action": "gamma_stage16_quality_sync",
+      "deliverable": "Gamma quality validation report copied to Omega"
+    },
+    {
+      "machine": "omega",
+      "stage": "Stage 1.6 preflight documentation/inventory",
+      "state": "completed_idle",
+      "action": "stage16_preflight_omega_worker",
+      "deliverable": "STAGE_1.6_PREFLIGHT.md, INVENTORY.md, audit_documentation_preflight.json"
+    }
+  ]
+}

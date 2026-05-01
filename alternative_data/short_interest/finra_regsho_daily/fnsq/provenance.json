@@ -5,7 +5,13 @@
   "files": [
     {
       "path": "alternative_data/short_interest/finra_regsho_daily/fnsq/2025_daily_short_volume.parquet",
-      "sha256": "daa0a276dc1eed76275df9dc0f849db6d25a16a0ad5e2fd68a0955cad6a9d89b"
+      "sha256": "50db13af66efba8757b944da6b3000111105ec0fe1cda9b21f027a7ccde23aeb"
     }
-  ]
+  ],
+  "stage16_quality_cleanup": {
+    "cleaned_at": "2026-05-01T22:02:03.902682+00:00",
+    "operation": "drop exact duplicate rows",
+    "duplicate_rows_removed": 25,
+    "reason": "Stage 1.6 quality validation detected exact duplicate rows across all columns."
+  }
 }
