@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T18:48:53.061834+00:00",
+  "generated_at": "2026-05-01T19:12:53.706377+00:00",
   "policy": "Detect idle machines each Tier 2 cron tick; keep busy workers running; start safe pending Stage 1.3 workers; sync completed remote outputs to Omega.",
   "decisions": [
     {

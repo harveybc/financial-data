@@ -40,7 +40,7 @@ The "machine assignment" tables below describe which machine runs which workers.
 
 **Deliverable validation rule:** Each Stage 1.3 task is complete only after the validator reads this work-plan task, inspects the produced deliverable paths, checks README/data dictionary/provenance, reads relevant logs, and records confidence in `_metadata/STAGE_1_3_DELIVERABLE_VALIDATION.json`. If confidence is below 0.8 or the requirement is ambiguous, the supervisor must write a Codex/Tier 4 escalation instead of guessing.
 
-**Ollama Pro cloud supervisor option:** During Stage 1.3, local Gemma can continue because acquisition is mostly network-bound. For Phase 2/3 GPU-heavy work, Dragon and Gamma Tier 1 supervisors should prefer `gemma4:31b-cloud` via Ollama Cloud Pro so the GPUs remain available for training/feature engineering. Local `gemma4:31b` remains the offline fallback.
+**Ollama Pro cloud supervisor option:** During Stage 1.3, Dragon and Gamma Tier 1 supervisors should use `deepseek-v4-flash:cloud`, falling back automatically to `gemma4:31b-cloud` on overload/quota failure. Omega Tier 2 remains on the existing OpenCode DeepSeek V4 Pro supervisor path; DeepSeek Pro is reserved for Omega/OpenCode and hard escalations because it is too slow/variable for routine 5-minute Tier 1 heartbeats. Omega may also run a separate Flash worker lane for local log/inventory observation, but that lane does not replace the OpenCode supervisor. Local `gemma4:31b` remains the offline fallback.
 ---
 
 ## 1. Pre-Flight Checks

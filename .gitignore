@@ -17,6 +17,8 @@ _logs/**/*.log
 _logs/**/*.out
 _logs/**/*.pid
 _logs/supervisor_reports/*_status.json
+_logs/supervisor_reports/*_context_packet.md
+!_logs/supervisor_reports/tier2_context_packet.md
 _logs/supervisor_reports/global_status.md
 _logs/supervisor_reports/escalation_queue.json
 

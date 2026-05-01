@@ -36,19 +36,22 @@ A GPU lockfile prevents contention between local supervisors and heavy training 
 
 **Notes on local model:**
 
-- User has confirmed Hermes is running `gemma4:31b` (Gemma 3 31B) successfully on Dragon and Gamma via Ollama under aggressive quantization (Q3_K_M / Q4_K_M) with CPU/RAM offloading for layers that don't fit in VRAM.
+- User has confirmed Hermes is running local `gemma4:31b` successfully on Dragon and Gamma via Ollama under aggressive quantization (Q3_K_M / Q4_K_M) with CPU/RAM offloading for layers that don't fit in VRAM.
 - On Omega (8GB VRAM, 16GB RAM), running Gemma 3 31B locally would require heavy CPU offloading and be impractically slow. Omega does **not** run a local Hermes supervisor for itself — Omega's logs are watched by OpenCode Go (Tier 2) directly.
 - The 31B model on Dragon/Gamma occupies the GPU during inference. This conflicts with heavy training jobs. **Section 4 (GPU lockfile protocol) is the mandatory mechanism that prevents OOM errors and contention.**
 
 **Optional cloud-supervisor mode (evaluated 2026-05-01):**
 
-Ollama Cloud Pro is a candidate replacement for local Tier 1/Tier 3 supervisor inference when GPU contention matters. Official Ollama pricing lists Pro at **$20/month** with **3 concurrent cloud models** and **50x more cloud usage than Free**; Ollama's cloud model docs show cloud models use the same Ollama commands/API; the `gemma4:31b-cloud` model page exists as a cloud-enabled Gemma 4 31B option.
+Ollama Cloud Pro is a candidate replacement for local Tier 1/Tier 3 supervisor inference when GPU contention matters. Official Ollama pricing lists Pro at **$20/month** with **3 concurrent cloud models** and **50x more cloud usage than Free**; Ollama's cloud model docs show cloud models use the same Ollama commands/API; `deepseek-v4-pro:cloud`, `deepseek-v4-flash:cloud`, and `gemma4:31b-cloud` are cloud-enabled options.
 
 Important distinction: "3 cloud models at a time" is a concurrency limit, not exactly "3 machines." It should still cover this project because the expected cloud users are Dragon Tier 1, Gamma Tier 1, and at most one Tier 3 local-fix attempt at the same time.
 
 Current recommendation:
 
-- During Stage 1.3 acquisition, local Gemma is acceptable because workers are mostly network/CPU-bound, but it keeps Dragon/Gamma VRAM occupied between cron ticks.
+- Omega Tier 2 remains on the existing OpenCode DeepSeek V4 Pro path. Do not spend Ollama Pro quota duplicating Omega's decision supervisor unless OpenCode is unavailable.
+- Omega may also run a separate Tier 1-style Flash worker lane for routine local observation, inventory/validation log watching, and cheap next-action suggestions. This lane is not the supervisor of record; the OpenCode DeepSeek V4 Pro Tier 2 remains the decision-maker.
+- Dragon/Gamma Tier 1 supervisors should use `deepseek-v4-flash:cloud` as the recurring cloud model, with `gemma4:31b-cloud` fallback.
+- Reserve DeepSeek Pro for Omega/OpenCode and hard escalations. A live May 1 test showed Pro can be slow or overloaded for cron-style 5-minute heartbeats, while Flash gives most of the reasoning upgrade with better responsiveness.
 - Before Phase 2/3 GPU-heavy training, strongly prefer cloud-supervisor mode or lower-frequency deterministic-only supervision so the local GPUs stay available for training.
 - Keep local Gemma as fallback for offline work, cloud quota exhaustion, or privacy-sensitive prompts.
 - Record the subscription in `_metadata/ai_subscriptions.json` if enabled.
@@ -56,6 +59,8 @@ Current recommendation:
 Reference URLs:
 - `https://ollama.com/pricing`
 - `https://ollama.com/blog/cloud-models`
+- `https://ollama.com/library/deepseek-v4-pro:cloud`
+- `https://ollama.com/library/deepseek-v4-flash:cloud`
 - `https://ollama.com/library/gemma4:31b-cloud`
 
 ---
@@ -197,19 +202,23 @@ The cron entries live in `_scripts/cron/`, are version-controlled, and are docum
 
 **What Tier 1 does NOT do:** make decisions, modify code, modify the plan, contact remote APIs. Tier 1 is observational + light triage only.
 
-**Cloud inference switch:** Tier 1 wrappers may use an Ollama cloud model such as `gemma4:31b-cloud` when `PROJECT3_TIER1_HERMES_MODEL` is set and the machine is signed into Ollama Cloud. This is the preferred setting during GPU-heavy Phase 2/3 runs because it avoids loading local Gemma into VRAM. If the cloud model fails, Tier 1 should write a status entry and fall back to deterministic log summaries or local Gemma only when the GPU lock allows it.
+**Cloud inference switch:** Tier 1 wrappers may use Ollama cloud models when `PROJECT3_TIER1_HERMES_MODEL` is set and the machine is signed into Ollama Cloud. This is the preferred setting during GPU-heavy Phase 2/3 runs because it avoids loading local Gemma into VRAM. The wrapper supports a comma-separated `PROJECT3_TIER1_HERMES_FALLBACK_MODELS` list and should write a status entry if all configured models fail.
 
 Install cloud mode on Dragon/Gamma after `ollama signin` succeeds:
 
 ```bash
-PROJECT3_TIER1_HERMES_MODEL=gemma4:31b-cloud \
+PROJECT3_TIER1_HERMES_MODEL=deepseek-v4-flash:cloud \
+PROJECT3_TIER1_HERMES_FALLBACK_MODELS=gemma4:31b-cloud \
+PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL=2026-05-03T23:59:59Z \
   /home/harveybc/Documents/GitHub/financial-data/_scripts/cron/install_tier1_cloud_supervisor.sh
 ```
 
 Recommended model policy:
 
-- Tier 1 recurring supervisors: `gemma4:31b-cloud`
-- Tier 3 hard coding/diagnosis attempts: `deepseek-v4-pro:cloud` only when needed and within the 3-concurrent-model Pro limit
+- Omega Tier 2 supervisor: existing OpenCode DeepSeek V4 Pro provider
+- Omega Tier 1-style local worker lane: `deepseek-v4-flash:cloud`, with fallback to `gemma4:31b-cloud`
+- Dragon/Gamma Tier 1 recurring supervisors: `deepseek-v4-flash:cloud`, with fallback to `gemma4:31b-cloud`
+- Tier 3 hard coding/diagnosis attempts: `deepseek-v4-pro:cloud` or OpenCode DeepSeek V4 Pro only when needed and within current quota/cost limits
 - Offline/fallback mode: local `gemma4:31b`
 
 ### Tier 2 — Meta-supervisor / orchestrator (OpenCode Go on Omega, cron-invoked)
@@ -453,7 +462,7 @@ The $500/month cap from Master Plan Rule M.10 applies to data subscriptions only
 - ChatGPT Pro Plus: ~$200/month (flat, includes Codex in VS Code with GPT-5.5 Pro)
 - VS Code Copilot Opus 4.7: existing subscription with 15× usage quota
 - OpenCode Go: per its current billing (Tier 2 only, capped at one call per 12 min)
-- Ollama Cloud Pro: optional ~$20/month fixed subscription for cloud-hosted open models such as `gemma4:31b-cloud`; recommended if local Tier 1/Tier 3 inference is starving Dragon/Gamma GPUs.
+- Ollama Cloud Pro: optional ~$20/month fixed subscription for cloud-hosted open models such as `deepseek-v4-pro:cloud`, `deepseek-v4-flash:cloud`, and `gemma4:31b-cloud`; recommended if local Tier 1/Tier 3 inference is starving Dragon/Gamma GPUs.
 - No OpenAI API account, no Anthropic API account → no metered token billing
 
 **Rule A.4 — Honest self-criticism.**

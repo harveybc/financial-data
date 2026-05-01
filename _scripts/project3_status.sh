@@ -10,6 +10,13 @@ echo
 
 echo "## Omega"
 echo "- Agent: Hermes/OpenCode Go Tier 2 + Omega Stage 1.3 local worker"
+omega_primary="$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER2_HERMES_MODEL=/{print $2; exit}')"
+omega_fallbacks="$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER2_HERMES_FALLBACK_MODELS=/{print $2; exit}')"
+omega_experiment_until="$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL=/{print $2; exit}')"
+omega_tier1_primary="$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER1_HERMES_MODEL=/{print $2; exit}')"
+omega_tier1_fallbacks="$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER1_HERMES_FALLBACK_MODELS=/{print $2; exit}')"
+echo "- Tier 2 inference policy: primary ${omega_primary:-default Hermes/OpenCode provider}; fallbacks ${omega_fallbacks:-none}; experiment until ${omega_experiment_until:-none}"
+echo "- Omega Flash worker lane: primary ${omega_tier1_primary:-not installed}; fallbacks ${omega_tier1_fallbacks:-none}"
 echo "- Work-plan stage: Stage 1.3 Free Data Acquisition"
 echo "- Assigned tasks: Task 1.3.A shared utilities, 1.3.C/1.3.D yfinance, 1.3.E HistData processing from /home/harveybc/Downloads/histdata, CFTC/calendars/metadata aggregation, 1.3.P economic calendar, documentation backfill, deliverable validation against the work plan, repeating Stage 1.3 inventory/context refresh"
 omega_busy=""
@@ -42,6 +49,10 @@ for log in \
   "$ROOT/_logs/omega/stage13_deliverable_validator_worker.log"; do
   test -f "$log" && tail -n 3 "$log" | sed 's/^/  /'
 done
+if [ -f "$ROOT/_logs/supervisor_reports/$(hostname)_status.json" ]; then
+  echo "- Omega Flash supervisor latest status:"
+  sed 's/^/  /' "$ROOT/_logs/supervisor_reports/$(hostname)_status.json"
+fi
 echo
 
 remote_status() {
@@ -53,7 +64,7 @@ remote_status() {
   local worker_log="$6"
   local deliverable="$7"
   echo "## $label"
-  ssh "$host" "pid_files='$pid_file'; worker_logs='$worker_log'; busy=''; model=\$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER1_HERMES_MODEL=/{print \$2; exit}'); model=\${model:-local default}; gpu=\$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits 2>/dev/null | head -1 || true); ollama_resident=\$(ollama ps 2>/dev/null | awk 'NR>1{print \$1}' | paste -sd, -); for pf in \$pid_files; do pid=\$(cat \"\$pf\" 2>/dev/null || true); if [ -n \"\$pid\" ] && ps -p \"\$pid\" >/dev/null 2>&1; then busy=\"\$busy \$pid\"; fi; done; echo \"- Agent: Hermes/Gemma supervisor + Stage 1.3 worker\"; echo \"- Inference model: \$model\"; echo \"- GPU memory used: \${gpu:-unknown} MiB\"; echo \"- Ollama resident models: \${ollama_resident:-none}\"; echo \"- Work-plan stage: $stage\"; echo \"- Assigned tasks: $tasks\"; if [ -n \"\$busy\" ]; then echo \"- State: busy\"; echo \"- Reason: worker PID(s)\$busy are running\"; else echo \"- State: idle or completed current slice\"; echo \"- Reason: no active worker PID found\"; fi; echo \"- Expected/generated deliverables: $deliverable\"; echo \"- Latest log:\"; for log in \$worker_logs; do test -f \"\$log\" && tail -n 3 \"\$log\" | sed 's/^/  /'; done" 2>&1
+  ssh "$host" "pid_files='$pid_file'; worker_logs='$worker_log'; busy=''; model=\$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER1_HERMES_MODEL=/{print \$2; exit}'); fallbacks=\$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_TIER1_HERMES_FALLBACK_MODELS=/{print \$2; exit}'); experiment_until=\$(crontab -l 2>/dev/null | awk -F= '/^PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL=/{print \$2; exit}'); model=\${model:-local default}; gpu=\$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits 2>/dev/null | head -1 || true); ollama_resident=\$(ollama ps 2>/dev/null | awk 'NR>1{print \$1}' | paste -sd, -); for pf in \$pid_files; do pid=\$(cat \"\$pf\" 2>/dev/null || true); if [ -n \"\$pid\" ] && ps -p \"\$pid\" >/dev/null 2>&1; then busy=\"\$busy \$pid\"; fi; done; echo \"- Agent: Hermes/DeepSeek supervisor + Stage 1.3 worker\"; echo \"- Inference policy: primary \$model; fallbacks \${fallbacks:-none}; experiment until \${experiment_until:-none}\"; echo \"- GPU memory used: \${gpu:-unknown} MiB\"; echo \"- Ollama resident models: \${ollama_resident:-none}\"; echo \"- Work-plan stage: $stage\"; echo \"- Assigned tasks: $tasks\"; if [ -n \"\$busy\" ]; then echo \"- State: busy\"; echo \"- Reason: worker PID(s)\$busy are running\"; else echo \"- State: idle or completed current slice\"; echo \"- Reason: no active worker PID found\"; fi; echo \"- Expected/generated deliverables: $deliverable\"; echo \"- Latest log:\"; for log in \$worker_logs; do test -f \"\$log\" && tail -n 3 \"\$log\" | sed 's/^/  /'; done" 2>&1
   echo
 }
 

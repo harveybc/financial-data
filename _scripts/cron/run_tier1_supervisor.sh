@@ -7,14 +7,66 @@ LOCKFILE="/tmp/gpu_busy.lock"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
 PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,hermes-agent-skill-authoring}"
 PROJECT3_TIER1_HERMES_MODEL="${PROJECT3_TIER1_HERMES_MODEL:-}"
+PROJECT3_TIER1_HERMES_FALLBACK_MODELS="${PROJECT3_TIER1_HERMES_FALLBACK_MODELS:-}"
+PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL="${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-}"
+PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS:-75}"
 HOST="$(hostname)"
 STATUS_FILE="$LOG_DIR/${HOST}_status.json"
 CONTEXT_PACKET="$LOG_DIR/${HOST}_context_packet.md"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 uses_cloud_model="0"
-case "$PROJECT3_TIER1_HERMES_MODEL" in
-  *-cloud|*:cloud|*cloud*) uses_cloud_model="1" ;;
-esac
+MODEL_CANDIDATES=()
+
+model_allowed_now() {
+  local model="$1"
+  local now_s until_s
+  case "$model" in
+    *deepseek-v4-pro*) ;;
+    *) return 0 ;;
+  esac
+  [ -n "$PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL" ] || return 0
+  now_s="$(date -u +%s)"
+  until_s="$(date -u -d "$PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL" +%s 2>/dev/null || echo "")"
+  [ -z "$until_s" ] && return 0
+  [ "$now_s" -le "$until_s" ]
+}
+
+add_model_candidate() {
+  local model="$1"
+  local existing
+  model="${model#"${model%%[![:space:]]*}"}"
+  model="${model%"${model##*[![:space:]]}"}"
+  [ -n "$model" ] || return 0
+  model_allowed_now "$model" || return 0
+  for existing in "${MODEL_CANDIDATES[@]}"; do
+    [ "$existing" = "$model" ] && return 0
+  done
+  MODEL_CANDIDATES+=("$model")
+}
+
+add_model_list() {
+  local raw="$1"
+  local part
+  IFS=',' read -r -a parts <<< "$raw"
+  for part in "${parts[@]}"; do
+    add_model_candidate "$part"
+  done
+}
+
+add_model_list "$PROJECT3_TIER1_HERMES_MODEL"
+add_model_list "$PROJECT3_TIER1_HERMES_FALLBACK_MODELS"
+
+if [ "${#MODEL_CANDIDATES[@]}" -gt 0 ]; then
+  MODEL_POLICY="$(IFS=','; echo "${MODEL_CANDIDATES[*]}")"
+else
+  MODEL_POLICY="default local Hermes model"
+fi
+
+for model in "${MODEL_CANDIDATES[@]}"; do
+  case "$model" in
+    *-cloud|*:cloud|*cloud*) uses_cloud_model="1" ;;
+  esac
+done
 
 mkdir -p "$LOG_DIR"
 
@@ -50,7 +102,7 @@ PY
 }
 
 if [ "$uses_cloud_model" = "1" ]; then
-  stale_note="cloud_model_no_local_gpu_lock model=${PROJECT3_TIER1_HERMES_MODEL}"
+  stale_note="cloud_model_no_local_gpu_lock model_policy=${MODEL_POLICY}"
 else
   lock_state="$(python - "$LOCKFILE" <<'PY'
 import json
@@ -117,6 +169,12 @@ fi
 
 gpu_summary="$(nvidia-smi --query-gpu=name,memory.total,memory.used --format=csv,noheader 2>/dev/null || echo "nvidia-smi unavailable")"
 case "$HOST" in
+  omega)
+    stage_context="Stage 1.3 Free Data Acquisition, Omega local worker lane"
+    expected_deliverable="Omega local worker health checks, validation/inventory reports, documentation backfill status, and safe next-action suggestions"
+    relevant_logs="_logs/omega/stage13_light_sources_worker.log; _logs/omega/stage13_reference_worker.log; _logs/omega/stage13_economic_calendar_worker.log; _logs/omega/stage13_housekeeping_worker.log; _logs/omega/stage13_validation_inventory_worker.log; _logs/omega/stage13_deliverable_validator_worker.log; _logs/supervisor_reports/omega_status.json"
+    relevant_docs="work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
+    ;;
   dragon)
     stage_context="Stage 1.3 Free Data Acquisition, Task 1.3.F Binance crypto comprehensive"
     expected_deliverable="market_data/crypto/spot_top50, market_data/crypto/perpetuals, market_data/crypto/funding_rates"
@@ -159,8 +217,10 @@ generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
 host: ${HOST}
 active_stage: ${stage_context}
-agent_role: Hermes/Gemma Tier 1 supervisor; observe logs/status, detect anomalies, suggest safe next action.
-inference_mode: ${PROJECT3_TIER1_HERMES_MODEL:-default_local_model}
+agent_role: Hermes/DeepSeek Tier 1 supervisor; observe logs/status, detect anomalies, suggest safe next action.
+inference_mode: ${MODEL_POLICY}
+experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
+per_model_timeout_seconds: ${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS}
 expected_deliverable: ${expected_deliverable}
 relevant_docs: ${relevant_docs}
 relevant_logs: ${relevant_logs}
@@ -178,7 +238,9 @@ Context packet path: ${CONTEXT_PACKET}
 Read or use that packet as the compact source of stage/task/deliverable/log/context truth. Preserve it in context_to_pass_forward.
 GPU summary: ${gpu_summary}
 Lock note: ${stale_note:-none}
-Inference mode: ${PROJECT3_TIER1_HERMES_MODEL:-default local Hermes model}
+Inference mode: ${MODEL_POLICY}
+Experiment until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
+Per-model timeout seconds: ${PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS}
 Worker log excerpts:
 ${log_tail:-no worker log excerpts available}
 Evidence rule: only report anomalies supported by the worker log excerpts, current PID/GPU evidence, or files you actually inspect. Do not report prior status JSON as corrupted unless you read the current file and quote direct evidence.
@@ -187,12 +249,33 @@ Recursive communication rule: include context_to_pass_forward so the next agent 
 Deliverable validation rule: never assume; if unsure after reading the work plan and artifacts, set recommended_next_action to escalate_to_codex with the exact question.
 Expected output: one concise JSON object with keys status, anomalies, idle_capacity, recommended_next_action, skill_candidate, context_to_pass_forward, confidence."
 
-hermes_args=(--skills "$PROJECT3_HERMES_SKILLS")
-if [ -n "$PROJECT3_TIER1_HERMES_MODEL" ]; then
-  hermes_args+=(--model "$PROJECT3_TIER1_HERMES_MODEL")
+hermes_base_args=(--skills "$PROJECT3_HERMES_SKILLS")
+report=""
+failures=""
+rc=1
+
+if [ "${#MODEL_CANDIDATES[@]}" -eq 0 ]; then
+  report="$(timeout "$PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS" "$HERMES_BIN" "${hermes_base_args[@]}" -z "$prompt" 2>&1)"
+  rc=$?
+else
+  for model in "${MODEL_CANDIDATES[@]}"; do
+    attempt="$(timeout "$PROJECT3_TIER1_MODEL_TIMEOUT_SECONDS" "$HERMES_BIN" "${hermes_base_args[@]}" --model "$model" -z "$prompt" 2>&1)"
+    attempt_rc=$?
+    if [ "$attempt_rc" -eq 0 ]; then
+      if [ -n "$failures" ]; then
+        report="selected_model=${model}"$'\n'"fallback_failures:${failures}"$'\n'"${attempt}"
+      else
+        report="selected_model=${model}"$'\n'"${attempt}"
+      fi
+      rc=0
+      break
+    fi
+    failures="${failures}"$'\n'"--- model=${model} rc=${attempt_rc} ---"$'\n'"${attempt}"$'\n'
+  done
+  if [ "$rc" -ne 0 ]; then
+    report="all configured model attempts failed:${failures}"
+  fi
 fi
-report="$(timeout 240 "$HERMES_BIN" "${hermes_args[@]}" -z "$prompt" 2>&1)"
-rc=$?
 
 if [ "$rc" -eq 0 ]; then
   write_status "ok" "$report" "0.85"

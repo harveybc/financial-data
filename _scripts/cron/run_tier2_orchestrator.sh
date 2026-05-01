@@ -10,6 +10,55 @@ NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 SSH_PREFIX="bash -lc 'source ~/.bashrc >/dev/null 2>&1; source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda activate tensorflow >/dev/null 2>&1;"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
 PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
+PROJECT3_TIER2_HERMES_MODEL="${PROJECT3_TIER2_HERMES_MODEL:-}"
+PROJECT3_TIER2_HERMES_FALLBACK_MODELS="${PROJECT3_TIER2_HERMES_FALLBACK_MODELS:-}"
+PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL="${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-}"
+MODEL_CANDIDATES=()
+
+model_allowed_now() {
+  local model="$1"
+  local now_s until_s
+  case "$model" in
+    *deepseek-v4-pro*) ;;
+    *) return 0 ;;
+  esac
+  [ -n "$PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL" ] || return 0
+  now_s="$(date -u +%s)"
+  until_s="$(date -u -d "$PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL" +%s 2>/dev/null || echo "")"
+  [ -z "$until_s" ] && return 0
+  [ "$now_s" -le "$until_s" ]
+}
+
+add_model_candidate() {
+  local model="$1"
+  local existing
+  model="${model#"${model%%[![:space:]]*}"}"
+  model="${model%"${model##*[![:space:]]}"}"
+  [ -n "$model" ] || return 0
+  model_allowed_now "$model" || return 0
+  for existing in "${MODEL_CANDIDATES[@]}"; do
+    [ "$existing" = "$model" ] && return 0
+  done
+  MODEL_CANDIDATES+=("$model")
+}
+
+add_model_list() {
+  local raw="$1"
+  local part
+  IFS=',' read -r -a parts <<< "$raw"
+  for part in "${parts[@]}"; do
+    add_model_candidate "$part"
+  done
+}
+
+add_model_list "$PROJECT3_TIER2_HERMES_MODEL"
+add_model_list "$PROJECT3_TIER2_HERMES_FALLBACK_MODELS"
+
+if [ "${#MODEL_CANDIDATES[@]}" -gt 0 ]; then
+  MODEL_POLICY="$(IFS=','; echo "${MODEL_CANDIDATES[*]}")"
+else
+  MODEL_POLICY="default Hermes/OpenCode provider"
+fi
 
 mkdir -p "$LOG_DIR/tier4_handoffs"
 
@@ -30,6 +79,8 @@ generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
 active_stage: Stage 1.3 Free Data Acquisition
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
+supervisor_model_policy: ${MODEL_POLICY}
+experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
 - Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
@@ -154,10 +205,34 @@ Use that packet as the compact source of stage/task/deliverable/log/context trut
 Machines are reachable, credentials are available from the private repo runtime environment, and Stage 1.3 acquisition is active. Do not ask the human to rotate keys.
 Be honest and autocritical: mention stale context or uncertainty if present.
 Reply with one concise next-action sentence for the human coordinator focused on autonomous dispatch, idle capacity, anomaly detection, sync, or reusable improvement."
+run_hermes_summary() {
+  local model attempt attempt_rc failures
+  local base_args=(--skills "$PROJECT3_HERMES_SKILLS")
+  if [ "${#MODEL_CANDIDATES[@]}" -eq 0 ]; then
+    timeout 60 "$HERMES_BIN" "${base_args[@]}" -z "$summary_prompt"
+    return $?
+  fi
+
+  failures=""
+  for model in "${MODEL_CANDIDATES[@]}"; do
+    attempt="$(timeout 60 "$HERMES_BIN" "${base_args[@]}" --model "$model" -z "$summary_prompt" 2>&1)"
+    attempt_rc=$?
+    if [ "$attempt_rc" -eq 0 ]; then
+      echo "selected_model=${model}"
+      echo "$attempt"
+      return 0
+    fi
+    failures="${failures}"$'\n'"--- model=${model} rc=${attempt_rc} ---"$'\n'"${attempt}"$'\n'
+  done
+  echo "All configured Tier 2 model attempts failed:${failures}"
+  return 1
+}
 {
   echo
   echo "## Hermes Tier 2 Note"
-  if timeout 60 "$HERMES_BIN" --skills "$PROJECT3_HERMES_SKILLS" -z "$summary_prompt"; then
+  echo
+  echo "Model policy: ${MODEL_POLICY}"
+  if run_hermes_summary; then
     true
   else
     echo "Hermes note timed out or failed; deterministic status above remains authoritative."

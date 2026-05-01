@@ -97,7 +97,7 @@ Critical rules from this architecture:
 - **Auto-validation is the default.** When the user confirms a manual prerequisite (e.g., "HistData downloads complete"), agents proceed automatically. Only blockers ping the user.
 - **The user does not run validation commands.** Stage docs do not instruct file counting, coverage checks, or schema verification by the user. Those are agent responsibilities.
 - **Deliverable validation is work-plan-backed.** Agents must read the exact task spec, inspect produced artifacts/provenance/logs, and route uncertainty to Tier 4/Codex instead of guessing.
-- **Cloud supervisors are allowed if they reduce GPU contention.** The canonical infrastructure doc tracks the optional Ollama Cloud Pro path for Tier 1/Tier 3 supervisor inference. This is not a frontier API path; it is a fixed-price open-model subscription option and must be recorded in `_metadata/ai_subscriptions.json` if enabled.
+- **Cloud supervisors are allowed if they reduce GPU contention.** The canonical infrastructure doc tracks the optional Ollama Cloud Pro path for Tier 1/Tier 3 supervisor inference. Dragon/Gamma use `deepseek-v4-flash:cloud` as the recurring Tier 1 model with `gemma4:31b-cloud` fallback, while Omega Tier 2 keeps using the existing OpenCode DeepSeek V4 Pro supervisor path. DeepSeek Pro is reserved for Omega/OpenCode and hard escalations because it is slower and less predictable for 5-minute heartbeats. This is not a frontier API path; it is a fixed-price open-model subscription option and must be recorded in `_metadata/ai_subscriptions.json` if enabled.
 
 For machine roles, model details, escalation queue schema, GPU lockfile protocol, cron frequencies, and bootstrap procedure: read `01_AGENT_INFRASTRUCTURE.md`.
 

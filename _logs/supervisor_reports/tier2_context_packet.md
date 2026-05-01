@@ -1,9 +1,11 @@
 # Project 3 Tier 2 Context Packet
 
-generated_at: 2026-05-01T18:48:01Z
+generated_at: 2026-05-01T19:12:01Z
 project_root: /home/harveybc/Documents/GitHub/financial-data
 active_stage: Stage 1.3 Free Data Acquisition
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
+supervisor_model_policy: default Hermes/OpenCode provider
+experiment_until: none
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
 - Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
