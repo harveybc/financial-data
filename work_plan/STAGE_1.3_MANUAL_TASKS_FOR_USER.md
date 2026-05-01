@@ -41,14 +41,14 @@ For each of these **8 pairs**, download yearly 1-minute ASCII zips for **2005 th
 
 | # ok| Pair | Folder destination |
 |-----|------|---------------------|
-| 1ok | GBP/USD | `~/Downloads/histdata/gbpusd/` |
-| 2ok | USD/CHF | `~/Downloads/histdata/usdchf/` |
-| 3ok | AUD/USD | `~/Downloads/histdata/audusd/` |
-| 4o | USD/CAD | `~/Downloads/histdata/usdcad/` |
-| 5 | NZD/USD | `~/Downloads/histdata/nzdusd/` |
-| 6 | EUR/GBP | `~/Downloads/histdata/eurgbp/` |
-| 7 | EUR/JPY | `~/Downloads/histdata/eurjpy/` |
-| 8 | GBP/JPY | `~/Downloads/histdata/gbpjpy/` |
+| 1 ok | GBP/USD | `~/Downloads/histdata/gbpusd/` |
+| 2 ok | USD/CHF | `~/Downloads/histdata/usdchf/` |
+| 3 ok | AUD/USD | `~/Downloads/histdata/audusd/` |
+| 4 ok | USD/CAD | `~/Downloads/histdata/usdcad/` |
+| 5 ok | NZD/USD | `~/Downloads/histdata/nzdusd/` |
+| 6 ok | EUR/GBP | `~/Downloads/histdata/eurgbp/` |
+| 7 ok | EUR/JPY | `~/Downloads/histdata/eurjpy/` |
+| 8 ok | GBP/JPY | `~/Downloads/histdata/gbpjpy/` |
 
 **Total: 168 zip files**
 
