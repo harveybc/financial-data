@@ -135,3 +135,4 @@ timestamp,source,dataset,status,path,notes
 2026-05-01T16:44:03.095424+00:00,FRED,retail_sales_mom,ok,economic_calendar/release_actuals/retail_sales_mom/actuals.parquet,rows=408
 2026-05-01T17:49:51.282057+00:00,HistData,audusd,ok,market_data/forex/g10/audusd,zips=21
 2026-05-01T17:50:36.576841+00:00,HistData,eurgbp,ok,market_data/forex/g10/eurgbp,zips=21
+2026-05-01T17:51:27.915321+00:00,HistData,eurjpy,ok,market_data/forex/g10/eurjpy,zips=21

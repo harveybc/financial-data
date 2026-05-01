@@ -1,0 +1,23 @@
+{
+  "source": "HistData",
+  "description": "EURJPY FX bars resampled from 1-minute source zips in /home/harveybc/Downloads/histdata",
+  "acquired_at": "2026-05-01T17:51:27.889042+00:00",
+  "files": [
+    {
+      "path": "market_data/forex/g10/eurjpy/5m.parquet",
+      "sha256": "27295e27740520e131b981c30059fc6e07777b2f16e5c22648644b5900bc57bd"
+    },
+    {
+      "path": "market_data/forex/g10/eurjpy/15m.parquet",
+      "sha256": "787e9bbbe56404a2b8c69e54a01b7f00edf8036feb0133e6d9e486b7a988f102"
+    },
+    {
+      "path": "market_data/forex/g10/eurjpy/4h.parquet",
+      "sha256": "c8a011ddc28b93e01ec54b00eefd4aac155bd1c0a71fd21a1188720801e0439a"
+    },
+    {
+      "path": "market_data/forex/g10/eurjpy/1h.parquet",
+      "sha256": "36b2b48ffcb71bc64543e87e98359fd73fe9ec65950cbe322597e4b067e81977"
+    }
+  ]
+}
