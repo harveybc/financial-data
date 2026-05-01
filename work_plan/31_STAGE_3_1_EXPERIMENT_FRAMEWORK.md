@@ -17,6 +17,23 @@
 
 ---
 
+<!-- AGENT_INFRA_NOTE_v2 -->
+## Agent Infrastructure Note
+
+This stage is executed by the multi-tier agent system defined in `01_AGENT_INFRASTRUCTURE.md` (architecture v2). Read that document before executing this stage. Key rules:
+
+- **Tier 2 (OpenCode Go on Omega) dispatches** the per-machine tasks listed below; you (the user) do not run them by hand.
+- **Tier 1 supervisors** (Hermes + Gemma 3 31B on Dragon and Gamma, cron-invoked, GPU-lockfile-aware) watch worker logs and produce status reports.
+- **Heavy GPU jobs MUST acquire `/tmp/gpu_busy.lock`** via `_scripts/lib/gpu_lock.py` before starting. See infrastructure doc §4.
+- **Auto-validation is full auto** (master plan Rule M.15). When you confirm a manual prerequisite is done, the agents proceed through validation, deliverable generation, and downstream prep automatically. Only blockers ping you.
+- **Escalation routing (v2 simplified — no automated frontier API):**
+  - Code/data anomalies, scope ≤2 files, severity ≤ high → Tier 3 (local Hermes + Gemma 31B, bounded: max 3 attempts, max 2 files, 30 min/attempt). If Tier 3 confidence <0.7 or attempts exhausted → hands off to Tier 4.
+  - Plan decisions, synthesis, final-report writing, blocker severity, or scope >2 files → Tier 4 (you, with ChatGPT 5.5 Pro via Codex / Copilot Opus 4.7 / Claude Pro Max as your tools).
+  - **No automated frontier API calls anywhere.** Frontier models are human-driven only.
+
+The "machine assignment" tables below describe which machine runs which workers. The dispatcher (Tier 2) handles SSH, conda activation, and result collection.
+---
+
 ## 1. Pre-Registered Experimental Design
 
 Before any runs, produce `experiments/design/pre_registered_design.md` with:
@@ -135,6 +152,28 @@ def deflated_sharpe_ratio(observed_sharpe, n_trials, returns):
 ### 2.1 Run infrastructure
 
 Reuse + extend `agent-multi/tools/seed_sweep.py` from Project 2 Part III plan.
+
+**GPU lockfile requirement (mandatory, master plan Rule M.14):** every RL training run on Dragon or Gamma MUST acquire `/tmp/gpu_busy.lock` before instantiating models. This is the longest-running GPU stage of the project — Tier 1 supervisors will skip ticks during training, which is expected. Cron interval on Dragon and Gamma should be **30 min** during this stage (per `01_AGENT_INFRASTRUCTURE.md` §4.5).
+
+`agent-multi/tools/seed_sweep.py` is extended in this stage to wrap each training invocation with the gpu_lock helper:
+
+```python
+import sys
+sys.path.insert(0, "/home/harveybc/Documents/financial_data/_scripts/lib")
+from gpu_lock import acquire_gpu_lock, release_gpu_lock
+
+acquire_gpu_lock(
+    command=f"agent_multi train --algo {algo} --asset {asset} --timeframe {tf} --seed {seed}",
+    expected_duration_minutes=30 if total_timesteps == 100_000 else 240,  # screening vs validation
+    stage="3.1",
+)
+try:
+    run_training(...)
+finally:
+    release_gpu_lock()
+```
+
+The dispatcher (Tier 2) is responsible for SSH and conda activation. Example invocation that the dispatcher composes:
 
 ```bash
 # Per (asset, timeframe, feature_preset, algo, seed) run:

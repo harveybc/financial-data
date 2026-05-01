@@ -116,12 +116,9 @@ This key is used for the comprehensive FRED macro pull (~150 series). Need to ve
 2. Login if needed
 3. Confirm the key `[REDACTED_COMPROMISED_KEY]` is still listed in your account
 
-If still valid:
+It is still valid:
 - Reply: `FRED key valid: yes`
 
-i dont want: If revoked or you want to regenerate:
-1. Generate new key on the FRED page
-2. Reply: `FRED key valid: no, new key: <NEW_KEY_HERE>`
 
 ---
 
@@ -137,7 +134,7 @@ Etherscan provides ETH on-chain metrics (transactions, gas, contracts). Free tie
 2. If you don't have account: register (free, email verification only)
 3. Click "Add" button to generate API key
 4. Copy the generated key
-5. Reply: `Etherscan key: <key>`
+5. Reply: `Etherscan key: [REDACTED_COMPROMISED_KEY]`
 
 **Note:** The API key looks like a long alphanumeric string. Keep it private — do not paste in any public location.
 
@@ -158,9 +155,9 @@ This is **optional**. Skip if you want to minimize setup time — CoinGecko free
 1. Visit https://pro.coinmarketcap.com/account
 2. Sign up free
 3. Generate API key
-4. Reply: `CoinMarketCap key: <key>`
+4. Reply: `CoinMarketCap key: [REDACTED_COMPROMISED_KEY]`
 
-OR reply: `skip CMC`
+
 
 ---
 
@@ -178,9 +175,9 @@ Optional. Skip if minimizing setup. yfinance is reliable for our use cases.
 
 1. Visit https://www.alphavantage.co/support/#api-key
 2. Instant key generation (just enter email)
-3. Reply: `AlphaVantage key: <key>`
+3. Reply: `AlphaVantage key: [REDACTED_COMPROMISED_KEY]`
 
-OR reply: `skip AV`
+
 
 ---
 

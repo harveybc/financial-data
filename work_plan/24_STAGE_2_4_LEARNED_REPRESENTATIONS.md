@@ -17,6 +17,23 @@
 
 ---
 
+<!-- AGENT_INFRA_NOTE_v2 -->
+## Agent Infrastructure Note
+
+This stage is executed by the multi-tier agent system defined in `01_AGENT_INFRASTRUCTURE.md` (architecture v2). Read that document before executing this stage. Key rules:
+
+- **Tier 2 (OpenCode Go on Omega) dispatches** the per-machine tasks listed below; you (the user) do not run them by hand.
+- **Tier 1 supervisors** (Hermes + Gemma 3 31B on Dragon and Gamma, cron-invoked, GPU-lockfile-aware) watch worker logs and produce status reports.
+- **Heavy GPU jobs MUST acquire `/tmp/gpu_busy.lock`** via `_scripts/lib/gpu_lock.py` before starting. See infrastructure doc §4.
+- **Auto-validation is full auto** (master plan Rule M.15). When you confirm a manual prerequisite is done, the agents proceed through validation, deliverable generation, and downstream prep automatically. Only blockers ping you.
+- **Escalation routing (v2 simplified — no automated frontier API):**
+  - Code/data anomalies, scope ≤2 files, severity ≤ high → Tier 3 (local Hermes + Gemma 31B, bounded: max 3 attempts, max 2 files, 30 min/attempt). If Tier 3 confidence <0.7 or attempts exhausted → hands off to Tier 4.
+  - Plan decisions, synthesis, final-report writing, blocker severity, or scope >2 files → Tier 4 (you, with ChatGPT 5.5 Pro via Codex / Copilot Opus 4.7 / Claude Pro Max as your tools).
+  - **No automated frontier API calls anywhere.** Frontier models are human-driven only.
+
+The "machine assignment" tables below describe which machine runs which workers. The dispatcher (Tier 2) handles SSH, conda activation, and result collection.
+---
+
 ## 1. Reuse Existing Infrastructure
 
 The existing `feature-extractor` repo contains autoencoder plugins. Per Project 3 master plan Rule M.6 + Phase 2 Rule P2.6, we REUSE these — do NOT reimplement.
@@ -39,6 +56,35 @@ Verify which plugins are actually present:
 ```bash
 ls /home/harveybc/Documents/GitHub/feature-extractor/feature_extractor/plugins/
 ```
+
+---
+
+## 1.5 GPU Lockfile (mandatory for this stage)
+
+This is the heaviest GPU stage of Phase 2. Autoencoder training runs for hours and competes directly with the local Hermes/Gemma supervisors on Dragon and Gamma. Per master plan Rule M.14 and `01_AGENT_INFRASTRUCTURE.md` §4:
+
+Every training script MUST acquire `/tmp/gpu_busy.lock` before instantiating a model on GPU, and release it on exit.
+
+Training script template (use this pattern for all variants):
+
+```python
+import sys
+sys.path.insert(0, "/home/harveybc/Documents/financial_data/_scripts/lib")
+from gpu_lock import acquire_gpu_lock, release_gpu_lock
+
+acquire_gpu_lock(
+    command=" ".join(sys.argv),
+    expected_duration_minutes=180,  # 3h estimate per AE training; tune per variant
+    stage="2.4",
+)
+try:
+    # ... import torch/tf, build model, train ...
+    pass
+finally:
+    release_gpu_lock()
+```
+
+For this stage, set the cron interval on Dragon and Gamma to **15 min** (per infrastructure doc §4.5). Tier 1 supervisor ticks during this stage will frequently log `skipped_gpu_busy` — that is expected and not a problem.
 
 ---
 

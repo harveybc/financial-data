@@ -82,12 +82,32 @@ Phases are sequential. Phase 2 cannot start until Phase 1 produces validated org
 
 ---
 
+## 4.5 Agent Infrastructure (summary — see `01_AGENT_INFRASTRUCTURE.md` for canonical detail)
+
+Project 3 is executed by a multi-tier agent system, not by the user running commands directly. The four tiers are:
+
+1. **Tier 1 — Local Hermes + Gemma 3 31B supervisors** on Dragon and Gamma. Cron-invoked, GPU-lockfile-aware. Watch worker logs, summarize, detect anomalies. Omega does not run a local supervisor (its 8 GB VRAM is insufficient for the 31B model); Omega's logs are watched directly by Tier 2.
+2. **Tier 2 — OpenCode Go meta-supervisor** on Omega. Cron-capped to one tick every 10–15 min. Aggregates Tier 1 reports, maintains the escalation queue, dispatches tasks across machines, owns the git repo.
+3. **Tier 3 — Bounded local automated coding.** Hermes + Gemma 31B running on Dragon or Gamma (whichever has lighter load), with strict ceilings: max 3 attempts per escalation, max 2 files per attempt, 30 min wall-clock per attempt. If confidence falls below 0.7 or attempts exhaust, escalation hands off to Tier 4. **No automated frontier API calls** — that was deliberately removed in v2 of the architecture to avoid runaway-loop costs and confidently-wrong frontier-model commits.
+4. **Tier 4 — Human-in-the-loop with frontier tools.** User reads structured handoff documents from Tier 3 and applies fixes using their preferred frontier tool. Recommended primary: **ChatGPT Pro Plus + Codex in VS Code (GPT-5.5 Pro)**, ~$200/month flat. Alternative: **VS Code Copilot Opus 4.7** (existing 15× quota subscription). Plus Claude Pro/Max chat for planning conversations and second opinions. **All frontier model use is human-driven; no automated API calls anywhere in the loop.**
+
+Critical rules from this architecture:
+
+- **GPU lockfile (`/tmp/gpu_busy.lock`)** is mandatory for all heavy GPU jobs to prevent contention with local Hermes supervisors. See infrastructure doc §4.
+- **Auto-validation is the default.** When the user confirms a manual prerequisite (e.g., "HistData downloads complete"), agents proceed automatically. Only blockers ping the user.
+- **The user does not run validation commands.** Stage docs do not instruct file counting, coverage checks, or schema verification by the user. Those are agent responsibilities.
+
+For machine roles, model details, escalation queue schema, GPU lockfile protocol, cron frequencies, and bootstrap procedure: read `01_AGENT_INFRASTRUCTURE.md`.
+
+---
+
 ## 5. Document Index
 
 This project is organized as multiple short documents (idiot-proof for inferior agent models). Read only the document for the stage being executed.
 
 ### Master
 - `00_PROJECT_3_MASTER_PLAN.md` — This document
+- `01_AGENT_INFRASTRUCTURE.md` — **Canonical reference** for the multi-tier agent infrastructure (machines, models, GPU lockfile, escalation queue). Every stage doc assumes familiarity with this file.
 
 ### Phase 1: Data Acquisition
 - `10_PHASE_1_OVERVIEW.md` — Phase 1 goals and dependencies
@@ -110,7 +130,7 @@ This project is organized as multiple short documents (idiot-proof for inferior 
 - `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` — How to test data subsets systematically
 - `32_STAGE_3.2_RESULTS_SYNTHESIS.md` — How findings get aggregated
 
-Total: 14 documents (master + 13 stage docs).
+Total: 15 documents (master + agent infrastructure + 13 stage docs).
 
 ---
 
@@ -118,7 +138,7 @@ Total: 14 documents (master + 13 stage docs).
 
 ### Rule M.1: Read only the relevant document
 
-Agent reads master plan + the specific stage document being executed. Does not attempt to read all documents at once. Does not skip ahead.
+Agent reads master plan + `01_AGENT_INFRASTRUCTURE.md` + the specific stage document being executed. Does not attempt to read all documents at once. Does not skip ahead. The agent infrastructure doc is required reading for every stage because tier routing, GPU lockfile protocol, and the escalation queue all live there.
 
 ### Rule M.2: Each stage has a user gate
 
@@ -225,6 +245,24 @@ This distinction matters because:
 - Some data with no predictive value may still help agent (e.g., volatility regime indicators stabilize policy)
 
 Phase 3 experiment framework evaluates data by RL agent performance on held-out, NOT by predictive value of data.
+
+### Rule M.13: Agent tier discipline
+
+All work runs through the four-tier agent infrastructure defined in `01_AGENT_INFRASTRUCTURE.md` (architecture v2). Tier 1 (local Hermes/Gemma supervisors on Dragon and Gamma, cron-invoked) handles log watching. Tier 2 (OpenCode Go on Omega, cron-capped to 10–15 min) orchestrates and maintains the escalation queue. Tier 3 (bounded local Hermes + Gemma 31B, max 3 attempts per escalation, max 2 files per attempt) handles in-scope coding tasks. Tier 4 (user with ChatGPT 5.5 Pro via Codex / Copilot Opus 4.7 / Claude Max) handles plan decisions, synthesis, and any task outside Tier 3 ceilings.
+
+Stages do not bypass tiers. A Python worker does not directly call a frontier model; it produces logs, Tier 1 watches, Tier 2 routes, Tier 3 acts within ceilings, Tier 4 (the human) is the only path to frontier models. This discipline keeps cost predictable and keeps the escalation queue accurate.
+
+### Rule M.14: GPU lockfile is mandatory
+
+Every heavy GPU job (RL training, autoencoder training, multitaper, EMD on long series, anything that allocates >2 GB VRAM) MUST acquire `/tmp/gpu_busy.lock` before starting and release it on exit. Tier 1 supervisors check this lockfile before loading the local Gemma model. Heavy jobs that skip the lockfile cause OOM crashes that take down both the job and the supervisor.
+
+The standard helper is `_scripts/lib/gpu_lock.py` (defined in `01_AGENT_INFRASTRUCTURE.md` §4.3). All training and feature-engineering scripts MUST use it.
+
+### Rule M.15: Auto-validation is the default
+
+Per user direction, validation runs in **full auto mode**. When the user confirms a manual prerequisite is complete (HistData downloads, API keys, etc.), agents proceed through validation, deliverable generation, and downstream prep without further user intervention. Only blockers (per `01_AGENT_INFRASTRUCTURE.md` §9) ping the user.
+
+Stage documents do NOT instruct the user to run validation commands like `ls | wc -l`. Those commands are the agents' responsibility. Stage documents that still contain such instructions are documentation bugs and should trigger an escalation tagged `plan_decision_proposal`.
 
 ---
 
