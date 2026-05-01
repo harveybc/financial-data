@@ -53,6 +53,13 @@ Checked on 2026-05-01. Prices can change; contact-sales entries must be confirme
 | Coin Metrics Pro | Contact-sales/institutional. Community API is free for non-commercial use. | https://docs.coinmetrics.io/access-our-data/api | Defer unless research/academic pricing is cheap. |
 | CoinMarketCap API | Basic free, Hobbyist $29/mo, Startup $79/mo, Standard $299/mo, Professional $699/mo, Enterprise contact. | https://coinmarketcap.com/api/pricing/ | Skip for now; redundant with acquired/free data for Project 3. |
 
+## 2026-05-01 Decision Update
+
+- **CryptoQuant Professional:** User subscribed monthly. Treat Stage 1.5 CryptoQuant acquisition as approved once the private access token is available in `_metadata/.env` as `CRYPTOQUANT_API_KEY`.
+- **FXStreet Premium:** Do not purchase for Project 3 automation. FXStreet's public API documentation says Economic Calendar API credentials are provided by the sales department and all Calendar API endpoints require OAuth2 authentication. The Premium retail/news plan should not be assumed to include API credentials.
+- **FXMacroData Individual:** Recommended as the budget macro-calendar/data option if the user wants to spend now. It is self-service, $25/month, has a 14-day trial, includes REST API access, historical data, announcement timestamps, release-calendar endpoints, Python SDK, and MCP access. Caveat: validate whether it includes consensus/forecast fields; if it only provides timestamped actuals, it improves no-lookahead macro features but does not fully replace FXStreet/Trading Economics consensus-surprise data.
+- **Massive/Polygon:** Defer. If later needed for US equity intraday/tick research, choose Stocks Developer at $79/month; Starter is only a cheap aggregate-data test, and Advanced is only justified for real-time/quotes/financials.
+
 ## Detailed Analysis
 
 ### Trading Economics Calendar API
