@@ -12,7 +12,9 @@ HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
 PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
 PROJECT3_TIER2_HERMES_MODEL="${PROJECT3_TIER2_HERMES_MODEL:-}"
 PROJECT3_TIER2_HERMES_FALLBACK_MODELS="${PROJECT3_TIER2_HERMES_FALLBACK_MODELS:-}"
+PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS:-240}"
 PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL="${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-}"
+RUN_LOCK="$LOG_DIR/tier2_orchestrator.lock"
 MODEL_CANDIDATES=()
 
 model_allowed_now() {
@@ -62,6 +64,20 @@ fi
 
 mkdir -p "$LOG_DIR/tier4_handoffs"
 
+if ! mkdir "$RUN_LOCK" 2>/dev/null; then
+  if find "$RUN_LOCK" -mmin +20 -print -quit 2>/dev/null | grep -q .; then
+    rm -rf "$RUN_LOCK"
+    mkdir "$RUN_LOCK" 2>/dev/null || {
+      echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) tier2_orchestrator skipped: previous lock still active"
+      exit 0
+    }
+  else
+    echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) tier2_orchestrator skipped: previous tick still running"
+    exit 0
+  fi
+fi
+trap 'rm -rf "$RUN_LOCK"' EXIT
+
 source "$HOME/.bashrc" >/dev/null 2>&1 || true
 if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
   source "$HOME/anaconda3/etc/profile.d/conda.sh"
@@ -81,6 +97,7 @@ active_stage: Stage 1.3 Free Data Acquisition
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
 supervisor_model_policy: ${MODEL_POLICY}
 experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
+tier2_model_timeout_seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
 - Omega: yfinance, HistData from /home/harveybc/Downloads/histdata, CFTC, calendars, metadata aggregation, documentation backfill, deliverable validation against work-plan specs, validation inventory, dispatch context refresh.
@@ -209,13 +226,13 @@ run_hermes_summary() {
   local model attempt attempt_rc failures
   local base_args=(--skills "$PROJECT3_HERMES_SKILLS")
   if [ "${#MODEL_CANDIDATES[@]}" -eq 0 ]; then
-    timeout 60 "$HERMES_BIN" "${base_args[@]}" -z "$summary_prompt"
+    timeout "$PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS" "$HERMES_BIN" "${base_args[@]}" -z "$summary_prompt"
     return $?
   fi
 
   failures=""
   for model in "${MODEL_CANDIDATES[@]}"; do
-    attempt="$(timeout 60 "$HERMES_BIN" "${base_args[@]}" --model "$model" -z "$summary_prompt" 2>&1)"
+    attempt="$(timeout "$PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS" "$HERMES_BIN" "${base_args[@]}" --model "$model" -z "$summary_prompt" 2>&1)"
     attempt_rc=$?
     if [ "$attempt_rc" -eq 0 ]; then
       echo "selected_model=${model}"
@@ -232,6 +249,7 @@ run_hermes_summary() {
   echo "## Hermes Tier 2 Note"
   echo
   echo "Model policy: ${MODEL_POLICY}"
+  echo "Per-model timeout seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}"
   if run_hermes_summary; then
     true
   else

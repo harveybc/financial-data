@@ -53,6 +53,7 @@ Current recommendation:
 - Dragon/Gamma Tier 1 supervisors should use `deepseek-v4-flash:cloud` as the recurring cloud model, with `gemma4:31b-cloud` fallback.
 - Dragon/Gamma default Hermes config should also show `model.default: deepseek-v4-flash:cloud` with the custom Ollama-compatible endpoint, so ad hoc `hermes status` agrees with the cron worker policy. Local `gemma4:31b` is no longer the default; it remains an offline/fallback option.
 - Reserve DeepSeek Pro for Omega/OpenCode and hard escalations. A live May 1 test showed Pro can be slow or overloaded for cron-style 5-minute heartbeats, while Flash gives most of the reasoning upgrade with better responsiveness.
+- Tier 2 OpenCode DeepSeek V4 Pro summary attempts use a configurable `PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS` defaulting to 240 seconds plus a non-overlap lock, so the paid supervisor has enough time without stacking cron calls.
 - Tier 1 Flash attempts use bounded non-overlapping cron execution. Full supervisor prompts may need up to 240 seconds, so the wrapper compacts log excerpts and skips a tick if the previous supervisor is still running.
 - Before Phase 2/3 GPU-heavy training, strongly prefer cloud-supervisor mode or lower-frequency deterministic-only supervision so the local GPUs stay available for training.
 - Keep local Gemma as fallback for offline work, cloud quota exhaustion, or privacy-sensitive prompts.
