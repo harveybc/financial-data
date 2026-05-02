@@ -225,9 +225,9 @@ Recommended model policy:
 - Tier 3 hard coding/diagnosis attempts: `deepseek-v4-pro:cloud` or OpenCode DeepSeek V4 Pro only when needed and within current quota/cost limits
 - Offline/fallback mode: local `gemma4:31b`
 
-### Tier 2 — Meta-supervisor / orchestrator (OpenCode Go on Omega, cron-invoked)
+### Tier 2 — Meta-supervisor / orchestrator (OpenCode Go on Omega, cron-backed)
 
-OpenCode Go on Omega, capped to one invocation every 10–15 minutes via cron.
+OpenCode Go on Omega remains the supervisor of record, capped to one invocation every 10–15 minutes via cron. During Stage 2.4 and later, low-latency deterministic dispatch is handled by `project3-event-daemon.service`, which checks machine state roughly every 45 seconds without spending model calls.
 
 **What Tier 2 does:**
 
@@ -236,19 +236,22 @@ OpenCode Go on Omega, capped to one invocation every 10–15 minutes via cron.
 - Aggregates into `/home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/global_status.md`
 - Maintains the escalation queue: `_logs/supervisor_reports/escalation_queue.json`
 - Dispatches new acquisition / preprocessing tasks to idle machines per the active stage doc
-- Detects idle machines every cron tick and starts the next safe pending worker without human intervention
+- Detects idle machines through the event daemon and starts the next safe pending worker without human intervention
 - Keeps active workers running rather than relaunching them, treats completed idempotent workers as `completed_idle`, and syncs completed remote outputs back to Omega
 - Commits status reports to the git repo on Omega
 - For genuine anomalies, adds an entry to the escalation queue and notifies Tier 3
 - Treats Telegram as a low-noise event bus for concise task events only: start, finish, blocker, validation anomaly, idle-with-reason, escalation question, deliverable path, and human-action-needed. Long logs stay in repo files.
 
-**Autonomous dispatch implementation:** `_scripts/cron/run_tier2_orchestrator.sh` invokes `_scripts/workers/stage13_autonomous_orchestrator.py` on every Tier 2 tick. The dispatcher checks local and remote worker PID files, `/tmp/gpu_busy.lock`, stage completion log markers, and remote deliverable sync status. It writes both machine-readable and human-readable reports:
+**Autonomous dispatch implementation:** `_scripts/orchestration/project3_event_daemon.py` is the primary dispatch loop for Stage 2.4 and later. It checks local and remote `/tmp/gpu_busy.lock`, completion metadata, learned-input readiness, remote sync status, and safe next jobs. It writes both machine-readable and human-readable reports:
 
-- `_logs/supervisor_reports/autonomous_dispatch_report.json`
-- `_logs/supervisor_reports/autonomous_dispatch_report.md`
+- `_logs/supervisor_reports/project3_event_daemon_state.json`
+- `_logs/supervisor_reports/project3_event_daemon_events.jsonl`
+- `_logs/supervisor_reports/project3_event_daemon_status.md`
 - `_logs/supervisor_reports/global_status.md`
 
 When the user asks for status, report the exact work-plan stage, current task, busy/idle reason, and expected/generated deliverable from these files.
+
+Legacy Stage 1.3/1.6 dispatchers remain available for explicit repair passes but are disabled by default while Stage 2.4/Phase 3.1 are active.
 
 After Stage 1.3 completed, Tier 2 was extended to run a bounded Stage 1.6 preflight lane while Stage 1.4/1.5 subscription decisions remain gated:
 
@@ -259,7 +262,7 @@ After Stage 1.3 completed, Tier 2 was extended to run a bounded Stage 1.6 prefli
 - Omega writes `STAGE_1.6_PREFLIGHT.md`, `INVENTORY.md`, `_metadata/audit_documentation_preflight.json`, and `_metadata/stage16_preflight_omega.json`.
 - This is preflight work only; agents must not mark formal Stage 1.6 or Phase 1 complete until Stage 1.4 and Stage 1.5 decisions are resolved.
 
-**Why capped to 10–15 min cron:** OpenCode Go is paid-per-call. High-frequency log watching is Tier 1's job. Tier 2 only runs when there's enough new information to justify a paid model call.
+**Why capped to 10–15 min cron:** OpenCode Go is paid-per-call. High-frequency deterministic dispatch is the event daemon's job, and high-frequency local observation is Tier 1's job. Tier 2 only runs when there's enough new information to justify a paid model call.
 
 **Why OpenCode Go specifically:** good at multi-file repo reasoning, structured output, coordinating across machines via SSH. The orchestration logic is stateless across cron ticks (state lives in `escalation_queue.json` and the git repo), so it doesn't need a Hermes wrapper for memory.
 
@@ -353,7 +356,13 @@ Tier 1: Dragon + Gamma local Hermes/Gemma supervisors (cron, GPU-lock-aware)
         +--> _logs/supervisor_reports/gamma_status.json
         |
         v
-Tier 2: OpenCode Go meta-supervisor on Omega (every 10-15 min via cron)
+Project 3 event daemon on Omega (every ~45s, deterministic dispatch/sync)
+        |
+        +--> _logs/supervisor_reports/project3_event_daemon_status.md
+        +--> _logs/supervisor_reports/project3_event_daemon_events.jsonl
+        |
+        v
+Tier 2: OpenCode Go meta-supervisor on Omega (every 10-15 min via cron heartbeat)
         |
         +--> _logs/supervisor_reports/global_status.md   (human-readable)
         +--> _logs/supervisor_reports/escalation_queue.json  (machine-readable)
@@ -465,8 +474,8 @@ If you find any stage doc that still contains a `wc -l` or `ls | wc` instruction
 
 ## 12. Cost Discipline Rules
 
-**Rule A.1 — Prefer cheap models for high-frequency work.**
-Tier 1 (local Gemma 31B, cron-invoked) handles all high-frequency log watching. Tier 2 (OpenCode Go) is capped to a 10–15 min cron tick. Tier 3 (local Gemma 31B, bounded) is escalation-only. Tier 4 (human + frontier tools) is human-initiated only. **No metered API billing in the automated path.**
+**Rule A.1 — Prefer deterministic dispatch and cheap models for high-frequency work.**
+The event daemon handles high-frequency deterministic dispatch without model calls. Tier 1 (cloud Flash or local Gemma fallback, cron-invoked) handles local log watching. Tier 2 (OpenCode Go) is capped to a 10–15 min cron heartbeat. Tier 3 (cloud Flash/Pro or local Gemma fallback, bounded) is escalation-only. Tier 4 (human + frontier tools) is human-initiated only unless a future official API budget is explicitly approved.
 
 **Rule A.2 — Skills > re-prompting.**
 Hermes wrappers accumulate skills over the project lifetime. When a Tier 1 supervisor sees the same anomaly pattern three times, it should encode a skill so future occurrences resolve without escalation.

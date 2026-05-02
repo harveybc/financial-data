@@ -1,0 +1,74 @@
+{
+  "completed_notified": [
+    "cnn:btcusdt:15m",
+    "cnn:btcusdt:1h",
+    "cnn:btcusdt:4h",
+    "cnn:btcusdt_perp:15m",
+    "cnn:btcusdt_perp:1h",
+    "cnn:btcusdt_perp:4h",
+    "cnn:ethusdt:15m",
+    "cnn:ethusdt:1h",
+    "cnn:ethusdt:4h",
+    "cnn:eurusd:15m",
+    "cnn:eurusd:1h",
+    "cnn:eurusd:4h",
+    "cnn:eurusd:5m",
+    "cnn:usdjpy:15m",
+    "cnn:usdjpy:1h",
+    "cnn:usdjpy:4h",
+    "lstm:btcusdt:15m",
+    "lstm:btcusdt:1h",
+    "lstm:btcusdt:4h",
+    "lstm:btcusdt:5m",
+    "lstm:btcusdt_perp:15m",
+    "lstm:btcusdt_perp:1h",
+    "lstm:btcusdt_perp:4h",
+    "lstm:ethusdt:15m",
+    "lstm:ethusdt:1h",
+    "lstm:ethusdt:4h",
+    "lstm:eurusd:15m",
+    "lstm:eurusd:1h",
+    "lstm:eurusd:4h",
+    "lstm:eurusd:5m",
+    "lstm:usdjpy:15m",
+    "lstm:usdjpy:1h",
+    "lstm:usdjpy:4h",
+    "lstm:usdjpy:5m"
+  ],
+  "last_assignments": [],
+  "last_synced": [
+    "stage24_lstm_autoencoder_gamma_eurusd_5m.json"
+  ],
+  "machines": [
+    {
+      "machine": "omega",
+      "reason": "no validated ready Stage 2.4 job found",
+      "state": "idle"
+    },
+    {
+      "lock": {
+        "command": "_scripts/workers/stage24_lstm_autoencoder_worker.py --machine dragon --asset ethusdt --timeframe 5m --epochs 20 --max-train-windows 24000 --batch-size 128",
+        "lock_present": true,
+        "pid": 1702852,
+        "pid_alive": true,
+        "removed_stale": false,
+        "stage": "2.4"
+      },
+      "machine": "dragon",
+      "state": "busy"
+    },
+    {
+      "lock": {
+        "command": "_scripts/workers/stage24_lstm_autoencoder_worker.py --machine gamma --asset btcusdt_perp --timeframe 5m --epochs 20 --max-train-windows 24000 --batch-size 128",
+        "lock_present": true,
+        "pid": 2113329,
+        "pid_alive": true,
+        "removed_stale": false,
+        "stage": "2.4"
+      },
+      "machine": "gamma",
+      "state": "busy"
+    }
+  ],
+  "updated_at": "2026-05-02T02:43:30.944867+00:00"
+}

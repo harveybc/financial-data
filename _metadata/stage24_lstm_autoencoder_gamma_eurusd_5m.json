@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-02T02:42:02.034844+00:00",
+  "stage": "Stage 2.4",
+  "machine": "gamma",
+  "asset": "eurusd",
+  "timeframe": "5m",
+  "method": "lstm_autoencoder",
+  "window": 64,
+  "latent_dim": 32,
+  "input_columns": 118,
+  "train_windows": 24000,
+  "validation_windows": 5000,
+  "epochs_requested": 20,
+  "epochs_completed": 20,
+  "final_loss": 0.19892148673534393,
+  "final_val_loss": 0.1425403505563736,
+  "encoder_path": "features/learned_models/eurusd/5m/lstm_autoencoder/encoder.keras",
+  "autoencoder_path": "features/learned_models/eurusd/5m/lstm_autoencoder/autoencoder.keras",
+  "features_path": "features/trading_asset_features/eurusd/5m/learned_lstm.parquet",
+  "output_rows": 1551965,
+  "note": "Bootstrap Stage 2.4 GPU training while feature-extractor runtime wrapper is being integrated."
+}

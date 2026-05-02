@@ -5,7 +5,7 @@ PROJECT_ROOT="${PROJECT_ROOT:-/home/harveybc/Documents/GitHub/financial-data}"
 LOG_DIR="$PROJECT_ROOT/_logs/supervisor_reports"
 LOCKFILE="/tmp/gpu_busy.lock"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
-PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,hermes-agent-skill-authoring}"
+PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-realtime-telegram-orchestration,project3-deliverable-validator,systematic-debugging,hermes-agent-skill-authoring}"
 PROJECT3_TIER1_HERMES_MODEL="${PROJECT3_TIER1_HERMES_MODEL:-}"
 PROJECT3_TIER1_HERMES_FALLBACK_MODELS="${PROJECT3_TIER1_HERMES_FALLBACK_MODELS:-}"
 PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL="${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-}"
@@ -175,7 +175,7 @@ payload = {
     "owner_command": "project3_tier1_hermes_supervisor",
     "acquired_at": datetime.now(timezone.utc).isoformat(),
     "expected_duration_minutes": 5,
-    "stage": "1.3",
+    "stage": "2.4",
 }
 with open(path, "w", encoding="utf-8") as f:
     json.dump(payload, f)
@@ -186,22 +186,22 @@ fi
 gpu_summary="$(nvidia-smi --query-gpu=name,memory.total,memory.used --format=csv,noheader 2>/dev/null || echo "nvidia-smi unavailable")"
 case "$HOST" in
   omega)
-    stage_context="Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight documentation/inventory active"
-    expected_deliverable="Omega local worker health checks, Stage 1.6 preflight documentation audit, INVENTORY.md, STAGE_1.6_PREFLIGHT.md, and safe next-action suggestions"
-    relevant_logs="_logs/omega/stage13_light_sources_worker.log; _logs/omega/stage13_reference_worker.log; _logs/omega/stage13_economic_calendar_worker.log; _logs/omega/stage13_housekeeping_worker.log; _logs/omega/stage13_validation_inventory_worker.log; _logs/omega/stage13_deliverable_validator_worker.log; _logs/omega/stage16_preflight_omega_worker.log; _logs/supervisor_reports/omega_status.json"
-    relevant_docs="work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
+    stage_context="Stage 2.4 Learned Representations active; Phase 3.1 experiment design scaffold active; Stage 2 SOTA low-cost enrichment available for validation"
+    expected_deliverable="Stage 2.4 learned representation metadata and outputs under _metadata/stage24_*_omega_*.json and features/trading_asset_features/<asset>/<tf>/learned_*.parquet, plus event-daemon status and Phase 3 design readiness"
+    relevant_logs="_logs/omega/stage24_lstm_autoencoder_worker.log; _logs/omega/stage24_cnn_autoencoder_worker.log; _logs/supervisor_reports/project3_event_daemon_status.md; _logs/supervisor_reports/project3_event_daemon_events.jsonl; _logs/supervisor_reports/omega_status.json"
+    relevant_docs="work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/20_PHASE_2_OVERVIEW.md; work_plan/24_STAGE_2_4_LEARNED_REPRESENTATIONS.md; work_plan/30_PHASE_3_OVERVIEW.md; work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md; work_plan/SOTA_IMPROVEMENT_SUGGESTIONS.md; work_plan/SOTA_INTEGRATION_DECISIONS.md"
     ;;
   dragon)
-    stage_context="Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight validation of market_data active"
-    expected_deliverable="market_data validation profile at _metadata/stage16_preflight_validation_dragon.json plus existing crypto/FINRA outputs"
-    relevant_logs="_logs/dragon/stage13_crypto_worker.log; _logs/dragon/stage13_crypto_python.out; _logs/dragon/stage16_preflight_validation_worker.log; _logs/supervisor_reports/dragon_status.json"
-    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
+    stage_context="Stage 2.4 Learned Representations active on Dragon GPU; Stage 2.4 deliverables must be synced back to Omega"
+    expected_deliverable="Stage 2.4 learned representation metadata under _metadata/stage24_*_dragon_*.json plus learned feature parquet/model artifacts synced to Omega"
+    relevant_logs="_logs/dragon/stage24_lstm_autoencoder_worker.log; _logs/dragon/stage24_cnn_autoencoder_worker.log; _logs/supervisor_reports/project3_event_daemon_status.md; _logs/supervisor_reports/dragon_status.json"
+    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/20_PHASE_2_OVERVIEW.md; work_plan/24_STAGE_2_4_LEARNED_REPRESENTATIONS.md; work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md; work_plan/SOTA_IMPROVEMENT_SUGGESTIONS.md"
     ;;
   gamma)
-    stage_context="Stage 1.3 Free Data Acquisition complete; Stage 1.6 preflight validation of macro/alternative/reference/calendar active"
-    expected_deliverable="macro/alternative/reference/calendar validation profile at _metadata/stage16_preflight_validation_gamma.json plus existing public-source outputs"
-    relevant_logs="_logs/gamma/stage13_macro_onchain_worker.log; _logs/gamma/stage13_supplemental_worker.log; _logs/gamma/stage13_gamma_validation.md; _logs/gamma/stage16_preflight_validation_worker.log; _logs/supervisor_reports/gamma_status.json"
-    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md"
+    stage_context="Stage 2.4 Learned Representations active on Gamma GPU; 5m learned-input prep and Stage 2 validation can use CPU while GPU is busy"
+    expected_deliverable="Stage 2.4 learned representation metadata under _metadata/stage24_*_gamma_*.json, learned-input prep metadata, and synced learned feature/model artifacts"
+    relevant_logs="_logs/gamma/stage24_lstm_autoencoder_worker.log; _logs/gamma/stage24_cnn_autoencoder_worker.log; _logs/gamma/stage24_input_prep_fx_5m.out; _logs/supervisor_reports/project3_event_daemon_status.md; _logs/supervisor_reports/gamma_status.json"
+    relevant_docs="work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/20_PHASE_2_OVERVIEW.md; work_plan/24_STAGE_2_4_LEARNED_REPRESENTATIONS.md; work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md; work_plan/SOTA_IMPROVEMENT_SUGGESTIONS.md"
     ;;
   *)
     stage_context="Stage 1.3 Free Data Acquisition"

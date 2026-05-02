@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [project3, financial-data, autonomous-supervision, data-acquisition, multi-machine]
-    related_skills: [hermes-agent, opencode, codex, systematic-debugging, test-driven-development, subagent-driven-development, hermes-agent-skill-authoring, project3-deliverable-validator, project3-panel-data-quality-validation]
+    related_skills: [hermes-agent, opencode, codex, systematic-debugging, test-driven-development, subagent-driven-development, hermes-agent-skill-authoring, project3-realtime-telegram-orchestration, project3-deliverable-validator, project3-panel-data-quality-validation]
 ---
 
 # Project 3 Autonomous Supervisor
@@ -45,6 +45,8 @@ When asked for status, report every machine with:
 Prefer these files as source of truth:
 
 - `_logs/supervisor_reports/global_status.md`
+- `_logs/supervisor_reports/project3_event_daemon_status.md`
+- `_logs/supervisor_reports/project3_event_daemon_events.jsonl`
 - `_logs/supervisor_reports/autonomous_dispatch_report.md`
 - `_logs/supervisor_reports/stage16_preflight_dispatch.md`
 - `_logs/supervisor_reports/stage16_quality_validation_<machine>.md`
@@ -119,6 +121,8 @@ When an anomaly is detected, include the evidence, severity, likely category, an
 
 Tier 2 must periodically detect idle resources and assign pending safe work without human intervention.
 
+For Stage 2.4 and later, `_scripts/orchestration/project3_event_daemon.py` is the primary low-latency dispatch loop. Cron is a backup heartbeat and model-reasoning checkpoint. The daemon should sync completed remote outputs, remove only stale supervisor-owned locks, start the next validated Stage 2.4 job when a machine is idle, and write Telegram-visible but low-noise events.
+
 Safe autonomous actions:
 
 - keep an active worker running;
@@ -153,6 +157,8 @@ Telegram is a shared low-noise Project 3 management channel. Use it for concise 
 - deliverable path and validation evidence.
 
 Do not paste long logs, stream progress loops, or let workers debate in the group. Omega owns the only bidirectional gateway for the bot token. Dragon and Gamma use outbound `_scripts/telegram_notify.py` only.
+
+Do not rely on the Telegram group as the only machine-readable queue when all machines share one bot token: Telegram does not provide a useful feedback loop for messages sent by the same bot. Treat Telegram as the human-visible mirror and use repo artifacts (`project3_event_daemon_events.jsonl`, status JSON, metadata markers, lockfiles, and logs) as the authoritative event queue.
 
 ## GPU Lock Discipline
 

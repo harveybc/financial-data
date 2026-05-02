@@ -1,0 +1,16 @@
+[Unit]
+Description=Project 3 real-time event daemon
+After=network-online.target hermes-gateway.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/harveybc/Documents/GitHub/financial-data
+Environment=PROJECT3_ROOT=/home/harveybc/Documents/GitHub/financial-data
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/harveybc/anaconda3/envs/tensorflow/bin/python -u /home/harveybc/Documents/GitHub/financial-data/_scripts/orchestration/project3_event_daemon.py --loop --interval 45
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=default.target

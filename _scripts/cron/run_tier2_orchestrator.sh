@@ -9,7 +9,8 @@ CONTEXT_PACKET="$LOG_DIR/tier2_context_packet.md"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 SSH_PREFIX="bash -lc 'source ~/.bashrc >/dev/null 2>&1; source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda activate tensorflow >/dev/null 2>&1;"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
-PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
+PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-realtime-telegram-orchestration,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
+PROJECT3_ENABLE_LEGACY_STAGE1_CRON="${PROJECT3_ENABLE_LEGACY_STAGE1_CRON:-0}"
 PROJECT3_TIER2_HERMES_MODEL="${PROJECT3_TIER2_HERMES_MODEL:-}"
 PROJECT3_TIER2_HERMES_FALLBACK_MODELS="${PROJECT3_TIER2_HERMES_FALLBACK_MODELS:-}"
 PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS="${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS:-240}"
@@ -93,18 +94,18 @@ cat > "$CONTEXT_PACKET" <<EOF
 
 generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
-active_stage: Stage 1.3 Free Data Acquisition complete; Stage 1.5 paid-source acquisition active with FXMacroData and CryptoQuant complete; Stage 1.6 preflight validation active.
-agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
+active_stage: Stage 2.4 Learned Representations active; Phase 3.1 experiment design scaffold active; Stage 2 SOTA low-cost enrichment available for validation.
+agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, Gamma, and the Project 3 event daemon.
 supervisor_model_policy: ${MODEL_POLICY}
 experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 tier2_model_timeout_seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}
-relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/15_STAGE_1_5_PAID_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
+relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/20_PHASE_2_OVERVIEW.md; work_plan/24_STAGE_2_4_LEARNED_REPRESENTATIONS.md; work_plan/30_PHASE_3_OVERVIEW.md; work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md; work_plan/SOTA_IMPROVEMENT_SUGGESTIONS.md; work_plan/SOTA_INTEGRATION_DECISIONS.md; work_plan/STAGE_1_3_AGENT_NOTIFICATION_AND_VOICE.md
 current_machine_tasks:
-- Omega: Stage 1.5 paid-source status aggregation, Stage 1.6 preflight documentation audit, master inventory, acquisition-log/gap aggregation, and Stage 1.3/1.5 status refresh.
-- Dragon: Stage 1.5 CryptoQuant deliverable validation plus Stage 1.6 preflight and quality validation of market_data/paid crypto outputs, with Stage 1.3 crypto/FINRA workers left completed-idle unless revalidation discovers a real anomaly.
-- Gamma: Stage 1.6 preflight and quality validation of macro_economic, alternative_data, reference_data, and economic_calendar outputs, with Stage 1.3 public-source workers left completed-idle unless revalidation discovers a real anomaly.
-expected_deliverables: _logs/supervisor_reports/stage15_fxmacrodata_acquisition.md, _logs/supervisor_reports/stage15_cryptoquant_acquisition.md, _logs/supervisor_reports/stage15_paid_credential_check.md, economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet, economic_calendar/release_actuals/fxmacrodata/announcements.parquet, alternative_data/cryptoquant, STAGE_1.6_PREFLIGHT.md, INVENTORY.md, audit_documentation_preflight.json, per-machine stage16_preflight_validation_*.json, stage16_quality_validation_*.json, stage16_gamma_quality_warning_classification.json, market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs.
-relevant_logs: _logs/supervisor_reports/global_status.md; _logs/supervisor_reports/autonomous_dispatch_report.md; _logs/omega; remote _logs/dragon; remote _logs/gamma.
+- Omega: primary low-latency event-daemon owner; local Stage 2.4 GPU worker when idle; remote output sync; Stage 2.4 metadata audit; Phase 3.1 design readiness; SOTA decision integration.
+- Dragon: Stage 2.4 learned representation GPU jobs for ready asset/timeframe slices; sync outputs back to Omega; report blockers/anomalies via Telegram and event logs.
+- Gamma: Stage 2.4 learned representation GPU jobs and learned-input prep acceleration; sync outputs back to Omega; report blockers/anomalies via Telegram and event logs.
+expected_deliverables: _metadata/stage24_*_autoencoder_<machine>_<asset>_<tf>.json, features/trading_asset_features/<asset>/<tf>/learned_lstm.parquet, features/trading_asset_features/<asset>/<tf>/learned_cnn.parquet, features/learned_models/<asset>/<tf>/*_autoencoder/, _metadata/stage24_learned_input_prep_*.json, _logs/supervisor_reports/project3_event_daemon_status.md, _logs/supervisor_reports/project3_event_daemon_events.jsonl, experiments/design/*.md, work_plan/SOTA_INTEGRATION_DECISIONS.md.
+relevant_logs: _logs/supervisor_reports/project3_event_daemon_status.md; _logs/supervisor_reports/project3_event_daemon_events.jsonl; _logs/supervisor_reports/global_status.md; _logs/omega/stage24_*; remote _logs/dragon/stage24_*; remote _logs/gamma/stage24_*.
 constraints: use existing private repo runtime credentials; respect GPU locks; avoid destructive cleanup; sync remote outputs to Omega; escalate only real blockers.
 honesty: report evidence, confidence, assumptions, and stale context corrections. Never mark a deliverable complete from memory or guesswork.
 anomaly_detection: stale PIDs, silent logs, failed APIs, missing provenance, abnormal file counts, empty data files, duplicate timestamps, timezone/frequency drift, stale locks, VRAM not released.
@@ -136,10 +137,17 @@ omega_status="$("$HERMES_BIN" status 2>&1 | sed -n '1,35p')"
 omega_curator="$("$HERMES_BIN" curator status 2>&1 | sed -n '1,16p'; test -f /home/harveybc/.hermes/skills/data-science/project3-autonomous-supervisor/SKILL.md && echo PROJECT3_SKILL_INSTALLED)"
 dragon_curator="$(probe_curator dragon 192.0.2.13)"
 gamma_curator="$(probe_curator gamma 192.0.2.15)"
-dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage13_autonomous_orchestrator.py" 2>&1)"
-dispatch_rc=$?
-stage16_dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage16_preflight_orchestrator.py" 2>&1)"
-stage16_dispatch_rc=$?
+if [ "$PROJECT3_ENABLE_LEGACY_STAGE1_CRON" = "1" ]; then
+  dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage13_autonomous_orchestrator.py" 2>&1)"
+  dispatch_rc=$?
+  stage16_dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage16_preflight_orchestrator.py" 2>&1)"
+  stage16_dispatch_rc=$?
+else
+  dispatch_output="Legacy Stage 1.3 autonomous dispatch is disabled by default. Project 3 event daemon owns active Stage 2.4 low-latency dispatch; set PROJECT3_ENABLE_LEGACY_STAGE1_CRON=1 only for an explicit Stage 1 repair pass."
+  dispatch_rc=0
+  stage16_dispatch_output="Legacy Stage 1.6 preflight dispatch is disabled by default while Stage 2.4/Phase 3.1 are active. Existing Stage 1.6 reports remain available for audit."
+  stage16_dispatch_rc=0
+fi
 
 {
   echo "# Project 3 Global Status"
@@ -148,15 +156,14 @@ stage16_dispatch_rc=$?
   echo
   echo "## Dispatch Decision"
   echo
-  echo "Acquisition dispatch is enabled. Runtime credentials are loaded from ${PROJECT_ROOT}/_metadata/.env, generated from the existing private companion file per user direction."
+  echo "Primary low-latency dispatch is handled by \`project3-event-daemon.service\`. This cron tick is now a backup heartbeat and Hermes reasoning/checkpoint lane."
   echo
   echo "Tier 2 should assign work to idle machines as follows:"
   echo
-  echo "- Dragon: Binance top 50 spot OHLCV, then crypto quality validation after acquisition is complete."
-  echo "- Gamma: FRED expansion, CoinMetrics per-metric repair, Blockchain.com, mempool.space, SEC S&P 500 EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury, plus Binance perpetual/funding acceleration while idle."
-  echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, economic calendar proxy, metadata aggregation, documentation backfill, deliverable validation against the work plan, inventory, and dispatch context refresh."
-  echo "- Stage 1.5 paid sources: FXMacroData acquisition is complete on Omega; CryptoQuant Professional acquisition is complete on Dragon/Omega with recent-window daily coverage. Historical-range limitation remains documented for Tier 4 review."
-  echo "- Stage 1.6 preflight: because Stage 1.3 deliverables are complete, completion-idle capacity is reassigned to documentation, validation, coverage, inventory, and subscription-decision handoff work without declaring formal Stage 1.6 complete."
+  echo "- Omega: event daemon, sync, local Stage 2.4 GPU jobs when idle, metadata/reporting, Phase 3.1 design readiness, and SOTA integration validation."
+  echo "- Dragon: Stage 2.4 learned representation GPU jobs for ready slices, then sync to Omega."
+  echo "- Gamma: Stage 2.4 learned representation GPU jobs plus learned-input prep acceleration, then sync to Omega."
+  echo "- Stage 1 acquisition/preflight: complete enough for Phase 2/3 progression; legacy repair dispatch is disabled unless explicitly re-enabled."
   echo "- Telegram: post only concise events to HermesAgentOrchestration: task start/finish, blocker, anomaly, idle reason, deliverable path, validation evidence, next action, or human action needed."
   echo "- Sync: Gamma crypto acceleration syncs to Dragon first, then all completed remote outputs sync back to Omega as canonical root."
   echo
@@ -211,9 +218,21 @@ stage16_dispatch_rc=$?
   echo
   echo "## Autonomous Dispatch"
   echo
-  echo "Policy: detect idle machines every Tier 2 cron tick, keep active workers running, start pending safe and non-overlapping Stage 1.3 workers without human intervention, use Omega housekeeping for docs/inventory/deliverable validation, and sync completed remote outputs back to Omega."
+  echo "Policy: event daemon detects idle machines every 45 seconds, starts pending safe and non-overlapping Stage 2.4 workers, syncs completed remote outputs back to Omega, and emits concise Telegram events. Cron remains a 12-minute model-reasoning heartbeat."
   echo
-  if [ "$dispatch_rc" -eq 0 ]; then
+  if [ -f "$LOG_DIR/project3_event_daemon_status.md" ]; then
+    sed -n '1,120p' "$LOG_DIR/project3_event_daemon_status.md"
+  else
+    echo "Project 3 event daemon status has not been written yet."
+  fi
+  echo
+  echo "## Legacy Stage 1 Dispatch"
+  echo
+  echo "$dispatch_output"
+  echo
+  if [ "$PROJECT3_ENABLE_LEGACY_STAGE1_CRON" != "1" ]; then
+    echo "No Stage 1 report is appended because the legacy dispatcher did not run."
+  elif [ "$dispatch_rc" -eq 0 ]; then
     if [ -f "$LOG_DIR/autonomous_dispatch_report.md" ]; then
       sed -n '1,120p' "$LOG_DIR/autonomous_dispatch_report.md"
     else
@@ -228,9 +247,13 @@ stage16_dispatch_rc=$?
   echo
   echo "## Stage 1.6 Preflight Dispatch"
   echo
-  echo "Policy: use idle machines for bounded preflight validation while Stage 1.4/1.5 remain gated; do not mark Phase 1 complete until paid-data decisions are resolved."
+  echo "Policy: legacy Stage 1.6 dispatcher is disabled by default while Stage 2.4/Phase 3.1 are active; re-enable only for an explicit repair pass."
   echo
-  if [ "$stage16_dispatch_rc" -eq 0 ]; then
+  echo "$stage16_dispatch_output"
+  echo
+  if [ "$PROJECT3_ENABLE_LEGACY_STAGE1_CRON" != "1" ]; then
+    echo "No Stage 1.6 report is appended because the legacy dispatcher did not run."
+  elif [ "$stage16_dispatch_rc" -eq 0 ]; then
     if [ -f "$LOG_DIR/stage16_preflight_dispatch.md" ]; then
       sed -n '1,120p' "$LOG_DIR/stage16_preflight_dispatch.md"
     else
@@ -262,7 +285,7 @@ stage16_dispatch_rc=$?
 summary_prompt="Project 3 Tier 2 tick.
 Context packet path: ${CONTEXT_PACKET}
 Use that packet as the compact source of stage/task/deliverable/log/context truth and preserve context_to_pass_forward in future agent communications.
-Machines are reachable, credentials are available from the private repo runtime environment, Stage 1.3 acquisition is complete, Stage 1.5 FXMacroData and CryptoQuant are acquired, and Stage 1.6 preflight is active. Current Stage 1.4/1.5 paid-source decisions are resolved for the active budget; remaining paid providers are optional/deferred unless Codex/Tier 4 explicitly reopens them. Do not ask the human to rotate keys.
+Machines are reachable, Stage 1 acquisition/preflight is complete enough for Phase 2/3 progression, Stage 2.4 learned representations are active, and the Project 3 event daemon owns low-latency idle-machine dispatch. Do not ask the human routine questions.
 Be honest and autocritical: mention stale context or uncertainty if present.
 Reply with one concise next-action sentence for the human coordinator focused on autonomous dispatch, idle capacity, anomaly detection, sync, or reusable improvement."
 run_hermes_summary() {

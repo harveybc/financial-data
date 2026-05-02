@@ -8,7 +8,14 @@ This note documents the Project 3 communication layer for Omega, Dragon, and Gam
 
 Project cron wrappers call `_scripts/telegram_notify.py` after Tier 1 and Tier 2 status updates. The helper is safe before setup: it exits without sending anything until Telegram credentials are present.
 
-Telegram is the recommended human-visible management channel because it is fast on mobile, supports group chat, supports bot delivery through a simple API, and is already supported by Hermes. The authoritative project state remains the repo, work-plan documents, logs, `global_status.md`, and `escalation_queue.json`; Telegram is the live notification and coordination surface.
+Telegram is the recommended human-visible management channel because it is fast on mobile, supports group chat, supports bot delivery through a simple API, and is already supported by Hermes. The authoritative project state remains the repo, work-plan documents, logs, `global_status.md`, `project3_event_daemon_status.md`, `project3_event_daemon_events.jsonl`, and `escalation_queue.json`; Telegram is the live notification and coordination surface.
+
+For Stage 2.4 and later, Project 3 uses a hybrid model:
+
+- `_scripts/orchestration/project3_event_daemon.py` is the primary low-latency dispatch loop on Omega.
+- `project3-event-daemon.service` runs continuously and checks machine locks/output markers roughly every 45 seconds.
+- Cron remains a backup heartbeat and Hermes reasoning/checkpoint lane, not the main reaction path.
+- Telegram mirrors important events to the human group, but repo artifacts remain the machine-readable event queue.
 
 Recommended operating model:
 
@@ -20,6 +27,8 @@ Recommended operating model:
 - The group is a low-noise event bus, not a log stream. Agents post starts, finishes, blockers, validation anomalies, idle-with-reason events, escalation questions, deliverable paths, and human-action requests only.
 - Codex participates as the Tier 4/frontier coordinator through the repo and Telegram notifier. Codex can send group updates with `_scripts/telegram_notify.py` and can inspect the Hermes gateway state/message store, but the canonical Codex interaction remains the VS Code/Codex session.
 - If the gateway is down, Omega restarts it; Dragon/Gamma must not start their own gateway with the same bot token because Telegram long polling would conflict.
+
+Because all Project 3 machines currently share one Telegram bot token, worker-to-supervisor coordination must not depend on the bot reading its own outbound messages. Worker events are written to repo logs/metadata and mirrored to Telegram for humans. If true multi-agent chat over Telegram becomes necessary, use separate bot identities per agent or a dedicated queue backend; otherwise the repo event queue is safer, auditable, and avoids message loops.
 
 Worker completion messages should include:
 
@@ -129,3 +138,4 @@ Telegram group handling is configured with `telegram.require_mention: true` and 
 - Stage 1.3 completion-idle capacity is reassigned to Stage 1.6 preflight validation/documentation work.
 - Formal Stage 1.6 completion still waits for Stage 1.4 and Stage 1.5 subscription decisions.
 - Telegram events for this lane use the same compact report format and must include deliverable paths such as `STAGE_1.6_PREFLIGHT.md`, `INVENTORY.md`, and `_metadata/stage16_preflight_validation_<machine>.json`.
+- Stage 2.4 is now the active compute lane. The event daemon assigns learned-representation jobs to Omega/Dragon/Gamma whenever a validated input slice exists and the target GPU is idle.

@@ -11,10 +11,17 @@ Updated: 2026-05-02T01:48:23.216275+00:00
 
 These additions are CPU-safe, use already acquired data, and produce auditable parquet deliverables under `features/trading_asset_features/<asset>/<tf>/`.
 
+## Next Low-Cost Queue
+
+These are now approved as next candidates, but should not interrupt active Stage 2.4 GPU jobs:
+
+- VRP from FRED VIX plus realized variance from existing 5m bars.
+- Deribit DVOL for BTC/ETH if the free endpoint is stable and provenance can be recorded.
+- FX carry after validating the policy-rate mapping for EUR/USD and USD/JPY.
+- Deflated Sharpe Ratio in Stage A screening; this is already required in `experiments/design/multiple_testing_correction.md`.
+
 ## Deferred Items
 
-- VRP and DVOL until options/implied-volatility feeds are acquired
-- FX carry until a full currency policy-rate mapping is validated
 - PCMCI+ causal selection until Phase 3 experiment framework can validate feature selection leakage
 - Decision Transformer, DreamerV3, hierarchical RL, and CQL/IQL until Phase 3 baselines are reproducible
 
