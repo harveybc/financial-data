@@ -9,6 +9,7 @@
 - Stage A screening results (broad, low-budget)
 - Stage B validation results (top configs, high-budget)
 - Stage C held-out results (single eval per candidate)
+- SOTA hardening artifacts: availability contract, leakage audit, cost model, baseline/null strategy comparisons, and feature-family ablation plan
 
 **Machine assignment (use all 3 in parallel):**
 - **Dragon (RTX 4090, fastest):** Heavy training jobs, primary candidate refinement
@@ -38,6 +39,31 @@ The "machine assignment" tables below describe which machine runs which workers.
 
 Before any runs, produce `experiments/design/pre_registered_design.md` with:
 
+### 1.0 SOTA Hardening Gate (Adopted 2026-05-02)
+
+The critique in `work_plan/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md` is accepted as an additive hardening package. It does not invalidate completed work or require stopping active Stage A smoke jobs. It does, however, create a promotion gate:
+
+- Current Stage A first-wave runs are valid as infrastructure smoke and preliminary screening evidence.
+- No configuration can advance to Stage B until the P0 hardening checks below pass.
+- Any result produced before these checks is labeled `pre_hardening_screening` unless revalidated.
+
+Required P0 artifacts:
+
+| Artifact | Purpose | Blocking rule |
+| --- | --- | --- |
+| `features/AVAILABILITY_CONTRACT.md` | Defines event time, availability time, vintage/revision policy, release lag, and staleness semantics | Missing availability metadata blocks Stage B promotion for cross-source features |
+| `experiments/design/leakage_audit.md` | Defines held-out exclusion, fitted-transform, macro vintage, and negative-control checks | Any P0 leakage failure blocks promotion |
+| `experiments/design/cost_model.md` | Defines optimistic/base/pessimistic friction scenarios | Zero-cost-only candidates cannot be promoted |
+| `experiments/design/feature_family_ablation_plan.md` | Defines family-level attribution and subscription marginal-value tests | All-feature winners require family-level support |
+
+Additional mandatory controls:
+
+- Compare every promoted RL candidate against no-trade/cash, buy-and-hold, random or turnover-matched random, simple momentum, simple reversal, and at least one supervised diagnostic baseline where feasible.
+- Report raw Sharpe, net Sharpe, Deflated Sharpe Ratio, seed mean/std, and PBO/CSCV-style diagnostics where feasible.
+- Report cost sensitivity under optimistic, base, and pessimistic scenarios.
+- Report regime-sliced performance for Stage B candidates.
+- Keep PPO/SAC/DQN fixed for the core Phase 3 experiment. TradingAgents, Decision Transformer, CQL/IQL, and time-series foundation-model lanes remain deferred until core baselines are reproducible.
+
 ### 1.1 Hypotheses
 
 | Hypothesis | Description | Test |
@@ -49,6 +75,8 @@ Before any runs, produce `experiments/design/pre_registered_design.md` with:
 | H5 | Lower simulation timeframes (5m) provide more learnable signal than higher (4h) | Compare same asset across timeframes |
 | H6 | Cross-asset features (e.g., VIX for equity-correlated assets) help | Add cross-asset features |
 | H7 | Tokenized observations (KMeans codes) work for transformer policies | Token vs continuous embeddings |
+| H8 | Feature-family gains remain positive after base transaction costs | Compare gross vs net performance under cost scenarios |
+| H9 | Paid/subscription families add measurable marginal value over best free stack | Matched ablation: best free stack vs best free + paid family |
 
 ### 1.2 Trading asset universe
 
@@ -85,6 +113,8 @@ Define discrete "feature presets" for systematic comparison:
 | `kitchen_sink` | Everything | All available features (high-dimensional, may overfit) |
 
 This produces ~10 distinct feature presets per (asset, timeframe).
+
+Feature presets must map to the family ids in `experiments/design/feature_family_ablation_plan.md`. The Stage A summary must rank feature families by marginal contribution, not only individual run performance.
 
 ### 1.5 RL algorithms (held fixed)
 
@@ -124,10 +154,17 @@ A configuration is "killed" (not promoted to Stage B) if Stage A screening shows
 - Mean validation Sharpe < 0 across seeds
 - Mean validation Sharpe within ±0.1 of buy-and-hold (no edge)
 - Run errors / NaN losses / training diverges
+- Positive gross returns but non-positive net returns under the base cost scenario
+- Missing required availability/vintage/staleness metadata for any promoted cross-source family
+- Any fitted-transform leakage audit failure
+- Underperformance versus a simple baseline after costs without a documented reason to keep it
 
 A configuration is "killed" at Stage B if:
 - Mean validation Sharpe < 0.3 (per Project 2 KPI bar)
 - Excessive drawdown (>30%) on validation
+- DSR/PBO evidence indicates likely overfit selection
+- Performance survives only optimistic costs but fails base or pessimistic costs
+- Regime-sliced diagnostics show catastrophic concentrated failure without a clear risk note
 
 Kill criteria documented BEFORE runs. Post-hoc relaxation forbidden.
 
@@ -137,6 +174,9 @@ With 480+ Stage A runs, expect false positives. Apply:
 
 - **Deflated Sharpe Ratio (Lopez de Prado):** account for variance + skewness + kurtosis + number of trials
 - **DSR threshold:** require DSR p-value < 0.01 (stricter than 0.05) to claim significance
+- **PBO/CSCV diagnostic:** add Probability of Backtest Overfitting or CSCV-style diagnostic where feasible, especially for Stage B promotions
+- **Seed variance:** every ranking includes mean, standard deviation, and worst-seed metrics
+- **Family-level trial count:** report the number of trials per feature family and per asset class
 
 ```python
 def deflated_sharpe_ratio(observed_sharpe, n_trials, returns):
@@ -210,6 +250,12 @@ Approximate parallelism: 3 jobs per machine simultaneously × 3 machines = 9 con
 - Successful: [N]
 - Failed: [N] with reasons
 - Top 20 configs by mean validation Sharpe (with DSR correction)
+- Top configs by net Sharpe under base cost scenario
+- Baseline comparisons: no-trade, buy-and-hold, random/turnover-matched random, simple momentum, simple reversal, supervised diagnostic baseline where feasible
+- Leakage-audit status for every promoted candidate
+- Availability/vintage/staleness status for cross-source features
+- Cost scenario sensitivity for promoted candidates
+- Feature-family marginal contribution ranking
 - Heatmap: feature preset × asset class showing which presets work where
 - Kill list: configs not promoted to Stage B and reasons
 
@@ -233,6 +279,10 @@ For Stage B to proceed past validation:
 - Mean validation Sharpe ≥ 0.3 across 3 seeds
 - Std validation Sharpe < 0.5 (i.e., not high variance)
 - No degenerate policy (e.g., always-long, always-short, no-trade)
+- Positive net performance under base cost and acceptable degradation under pessimistic cost
+- No P0 leakage or availability contract failure
+- Not dominated by simple non-RL baselines after costs
+- PBO/CSCV diagnostic does not indicate obvious backtest overfitting, where feasible
 
 ### 3.3 Stage B deliverable
 
@@ -241,6 +291,9 @@ For Stage B to proceed past validation:
 - Top 5 candidates per asset class promoted to Stage C
 - Hyperparameter sensitivity analysis
 - Robustness checks (across seeds, across feature subsets)
+- Regime-sliced returns, drawdown, turnover, and action distribution
+- Cost scenario matrix for all promoted candidates
+- Final frozen candidate list before held-out evaluation
 
 User reviews. Approves Stage C held-out test.
 
@@ -254,6 +307,8 @@ For each Stage B winner:
 - Load best policy checkpoint (best of 3 seeds by validation Sharpe)
 - Single deterministic rollout on d6 = 2025-01-01 to 2025-12-31
 - Compute final metrics: Sharpe, Sortino, Calmar, max DD, win rate, trade count, transaction cost ratio
+- Report optimistic, base, and pessimistic cost scenarios
+- Do not change feature selection, transforms, hyperparameters, prompts, or candidate list after seeing held-out results
 
 ### 4.2 Statistical evaluation
 

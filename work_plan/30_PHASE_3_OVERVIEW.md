@@ -4,6 +4,8 @@
 
 **Phase output:** Evidence-based ranking of data sources and feature techniques. `PROJECT_3_FINAL_REPORT.md` answers: which data combinations actually improve RL trading agent performance?
 
+**2026-05-02 hardening update:** Phase 3 now explicitly answers a stricter question: which data source families and feature-engineering families add statistically defensible marginal value under realistic execution assumptions, after accounting for leakage, data revision, transaction costs, multiple testing, and regime instability?
+
 ---
 
 <!-- AGENT_INFRA_NOTE_v2 -->
@@ -76,6 +78,10 @@ Before running any experiments, Stage 3.1 produces a pre-registered experimental
 - Hypotheses being tested
 - Kill criteria (when to abandon a configuration)
 - Multiple-testing correction (Deflated Sharpe Ratio per Lopez de Prado)
+- Feature-family ablation order and source-family attribution
+- Availability/vintage contract requirements for cross-source data
+- Leakage audit requirements for fitted transforms and forward-filled data
+- Transaction-cost scenarios and baseline strategy comparisons
 
 This protects against post-hoc cherry-picking.
 
@@ -93,6 +99,22 @@ After Phase 3 experiments complete, evaluate each paid subscription's contributi
 
 This is the final test of the Rule M.10 mediocrity rejection criterion.
 
+### Rule P3.6: Availability and vintage safety
+
+Every cross-source feature used for Stage B/C promotion must satisfy `features/AVAILABILITY_CONTRACT.md`. Missing event-time, availability-time, revision/vintage, release-lag, or staleness semantics blocks promotion unless Tier 4 explicitly labels the experiment as research-only.
+
+### Rule P3.7: Fitted-transform leakage safety
+
+Scalers, imputers, HMMs, autoencoders, learned embeddings, and feature selectors must pass `experiments/design/leakage_audit.md`. No Stage C candidate may consume a transform fitted on 2025 held-out data.
+
+### Rule P3.8: Costs and simple baselines before promotion
+
+No configuration may advance based only on raw or zero-cost returns. Stage A promotion requires positive evidence under the base cost model and comparison against simple baselines. Stage B/C must report optimistic, base, and pessimistic cost scenarios.
+
+### Rule P3.9: SOTA lanes are deferred overlays
+
+TradingAgents, offline RL, Decision Transformer, and time-series foundation-model lanes are allowed only after the core PPO/SAC/DQN evidence stack is reproducible. They may be evaluated as explanation, veto, scaling, embedding, or diagnostic lanes, not as replacements for the pre-registered core experiment.
+
 ---
 
 ## 5. Phase 3 Output Structure
@@ -103,7 +125,10 @@ This is the final test of the Rule M.10 mediocrity rejection criterion.
 ├── design/
 │   ├── pre_registered_design.md
 │   ├── kill_criteria.md
-│   └── multiple_testing_correction.md
+│   ├── multiple_testing_correction.md
+│   ├── leakage_audit.md
+│   ├── cost_model.md
+│   └── feature_family_ablation_plan.md
 ├── stage_a_screening/
 │   ├── runs/
 │   │   └── <run_id>/...

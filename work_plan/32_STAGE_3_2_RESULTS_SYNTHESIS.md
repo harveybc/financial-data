@@ -9,6 +9,10 @@
 - `data_source_value_ranking.md` — ranked contribution of each data source
 - `feature_technique_value_ranking.md` — ranked contribution of each Phase 2 technique
 - `subscription_cancellation_recommendations.md` — paid sources flagged for cancellation
+- `feature_family_value_ranking.md` — matched ablation ranking by source/feature family
+- `leakage_and_availability_audit_summary.md` — promotion-blocker status and exceptions
+- `cost_sensitivity_summary.md` — optimistic/base/pessimistic cost outcomes
+- `baseline_comparison_summary.md` — RL versus simple/null/supervised baselines
 - Phase 1 + 2 + 3 audit closing
 
 **Machine:** Omega (analysis + reporting, no compute).
@@ -53,6 +57,8 @@ For each data source S in Phase 1 inventory:
 3. Compute mean validation Sharpe difference: ΔSharpe = mean_with_S - mean_without_S
 4. Apply DSR correction
 5. Rank by adjusted ΔSharpe
+6. Report net performance under base cost and pessimistic cost
+7. Mark whether availability/vintage/staleness metadata passed
 
 ```python
 def rank_data_source_value(experiments_df):
@@ -103,6 +109,8 @@ def rank_data_source_value(experiments_df):
 - NEGATIVE (added noise): [list]
 ```
 
+The ranking must distinguish raw gross performance from cost-adjusted evidence. A source is not valuable if its apparent contribution disappears under base transaction costs or depends on research-only final-revised data.
+
 ---
 
 ## 3. Feature Technique Value Ranking
@@ -115,6 +123,8 @@ For each Phase 2 technique T (technical/statistical/wavelet/Hilbert/multitaper/E
 2. Compare to experiments without T (matched on asset, timeframe, algo, other features)
 3. Compute ΔSharpe + DSR-corrected p-value
 4. Rank
+5. Confirm leakage-audit status for fitted techniques and learned embeddings
+6. Report regime-sliced contribution where available
 
 ### 3.2 Output
 
@@ -144,6 +154,32 @@ For each Phase 2 technique T (technical/statistical/wavelet/Hilbert/multitaper/E
 
 ---
 
+## 3.5 Feature Family Value Ranking
+
+Use `experiments/design/feature_family_ablation_plan.md` as the source of family ids. The synthesis must report matched marginal contribution for:
+
+- `base`
+- `technical_statistical`
+- `decomposition`
+- `learned_embeddings`
+- `macro_risk`
+- `crypto_structure`
+- `fx_structure`
+- `cross_asset_context`
+- `paid_or_subscription`
+- `all_free_features`
+- `kitchen_sink_guarded`
+
+Output: `feature_family_value_ranking.md`
+
+Required columns:
+
+```markdown
+| Family | Asset class | Matched runs | Δ net Sharpe base cost | Δ max DD | Δ turnover | DSR/PBO note | Availability/leakage status | Verdict |
+```
+
+---
+
 ## 4. Subscription Cancellation Evaluation (Rule M.10)
 
 ### 4.1 Methodology
@@ -155,6 +191,8 @@ For each paid subscription:
 3. If features ranked NEUTRAL/NEGATIVE → flag for cancellation
 4. If features ranked VALUABLE but free alternative exists → consider cancellation if free covers 80%+ of value
 5. Document decision
+6. Require marginal value over the best free feature stack, not only inclusion in a winning all-feature model
+7. Reject paid data that cannot satisfy point-in-time availability requirements
 
 ### 4.2 Output
 
@@ -237,16 +275,16 @@ The capstone document:
 
 ### Held-out performance per top candidate
 
-| Candidate | Asset | TF | Features | Algo | Held-out Sharpe | Max DD | Trades | DSR p-value |
-|-----------|-------|----|----|------|-----------------|--------|--------|-------------|
-| #1 | BTC | 1h | wavelet+macro | PPO | 0.85 | 18% | 245 | 0.008 |
+| Candidate | Asset | TF | Features | Algo | Net Sharpe base | Net Sharpe pessimistic | Max DD | Trades | DSR/PBO note |
+|-----------|-------|----|----|------|-----------------|-----------------------|--------|--------|--------------|
+| #1 | BTC | 1h | wavelet+macro | PPO | 0.85 | 0.51 | 18% | 245 | DSR p=0.008 |
 | #2 | EUR/USD | 4h | tech+macro+COT | PPO | 0.72 | 15% | 89 | 0.02 |
 | #3 | ... | | | | | | | |
 
 ### Comparison to baselines
 
-| Method | Sharpe | Source |
-|--------|--------|--------|
+| Method | Net Sharpe base cost | Source |
+|--------|----------------------|--------|
 | Buy and hold (BTC) | 0.45 | passive |
 | Random walk | 0.0 | random |
 | Project 2 best | 0.21 | Stage II-7 BTC PPO |

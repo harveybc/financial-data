@@ -6,6 +6,8 @@ Updated: 2026-05-02
 
 Measure which feature families and data sources improve RL trading performance when algorithms are held fixed.
 
+The accepted 2026-05-02 hardening critique sharpens the objective: identify feature-family and data-source families that add marginal value after leakage controls, availability/vintage controls, realistic costs, multiple-testing adjustment, and baseline comparisons.
+
 ## Initial Assets
 
 - Crypto: `btcusdt`, `ethusdt`, `btcusdt_perp`
@@ -30,6 +32,24 @@ Measure which feature families and data sources improve RL trading performance w
 | `crypto_full` | Crypto technical, decomposition, learned, funding, and on-chain features where available |
 | `fx_full` | FX technical, decomposition, learned, macro, and SOTA regime/spread features where available |
 | `kitchen_sink_guarded` | All available non-leaking features, capped by feature-selection rules |
+
+## Feature-Family Attribution
+
+All presets must map to the family ids in `feature_family_ablation_plan.md`. Stage A rankings must report marginal value by family:
+
+- `base`
+- `technical_statistical`
+- `decomposition`
+- `learned_embeddings`
+- `macro_risk`
+- `crypto_structure`
+- `fx_structure`
+- `cross_asset_context`
+- `paid_or_subscription`
+- `all_free_features`
+- `kitchen_sink_guarded`
+
+`kitchen_sink_guarded` is exploratory unless its component families independently pass ablation and leakage checks.
 
 ## Algorithms
 
@@ -57,6 +77,17 @@ Expected first-wave maximum: 600 runs.
 
 A configuration can advance to Stage B only if it beats the baseline on validation Sharpe, drawdown, turnover sanity, and deflated-Sharpe screening.
 
+Promotion now also requires:
+
+- positive net performance under the base cost scenario from `cost_model.md`
+- no P0 failure in `leakage_audit.md`
+- required availability/vintage/staleness metadata for cross-source features
+- no domination by no-trade, buy-and-hold, random/turnover-matched random, simple momentum, simple reversal, or supervised diagnostic baseline where feasible
+- seed variance and worst-seed behavior within acceptable bounds
+- feature-family marginal contribution is positive or explicitly justified
+
 ## Held-Out Rule
 
 2025 data is held out. Stage C evaluates each approved candidate once. No reruns after seeing held-out results.
+
+The candidate list, feature selection, fitted transforms, prompts/overlays, and hyperparameters are frozen before Stage C. Stage C reports optimistic, base, and pessimistic cost scenarios but does not use held-out results to revise candidates.
