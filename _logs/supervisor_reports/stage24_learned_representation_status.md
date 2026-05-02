@@ -1,17 +1,19 @@
 # Stage 2.4 Learned Representation Status
 
-Generated: 2026-05-02T02:09:03.214492+00:00
+Generated: 2026-05-02T02:10:36.904791+00:00
 
 ## LSTM Bootstrap
 
-- Completed metadata files: 12
+- Completed metadata files: 14
 
 | Machine | Asset | TF | Val Loss | Rows | Output |
 | --- | --- | --- | ---: | ---: | --- |
+| gamma | btcusdt | 15m | 0.281495 | 293020 | `features/trading_asset_features/btcusdt/15m/learned_lstm.parquet` |
 | dragon | btcusdt | 1h | 0.458023 | 73221 | `features/trading_asset_features/btcusdt/1h/learned_lstm.parquet` |
 | dragon | btcusdt | 4h | 0.681573 | 18306 | `features/trading_asset_features/btcusdt/4h/learned_lstm.parquet` |
 | dragon | btcusdt_perp | 1h | 0.523398 | 55288 | `features/trading_asset_features/btcusdt_perp/1h/learned_lstm.parquet` |
 | dragon | btcusdt_perp | 4h | 0.644217 | 13807 | `features/trading_asset_features/btcusdt_perp/4h/learned_lstm.parquet` |
+| dragon | ethusdt | 15m | 0.219074 | 293020 | `features/trading_asset_features/ethusdt/15m/learned_lstm.parquet` |
 | dragon | ethusdt | 1h | 0.306742 | 73221 | `features/trading_asset_features/ethusdt/1h/learned_lstm.parquet` |
 | gamma | ethusdt | 4h | 0.382124 | 18306 | `features/trading_asset_features/ethusdt/4h/learned_lstm.parquet` |
 | gamma | eurusd | 15m | 0.143080 | 518623 | `features/trading_asset_features/eurusd/15m/learned_lstm.parquet` |
@@ -51,4 +53,4 @@ Generated: 2026-05-02T02:09:03.214492+00:00
 - gamma stage_a_15m: 2/5 ok
 - omega crypto_stage_a_15m: 3/3 ok
 
-Current 15m running jobs: Dragon `ethusdt/15m` LSTM, Gamma `btcusdt/15m` LSTM, Omega `btcusdt_perp/15m` LSTM.
+Current running jobs: Dragon `ethusdt/15m` CNN, Gamma `btcusdt/15m` CNN, Omega `btcusdt_perp/15m` LSTM.

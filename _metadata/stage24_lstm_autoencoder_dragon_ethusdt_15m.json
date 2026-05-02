@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-02T02:09:36.928220+00:00",
+  "stage": "Stage 2.4",
+  "machine": "dragon",
+  "asset": "ethusdt",
+  "timeframe": "15m",
+  "method": "lstm_autoencoder",
+  "window": 64,
+  "latent_dim": 32,
+  "input_columns": 126,
+  "train_windows": 24000,
+  "validation_windows": 5000,
+  "epochs_requested": 20,
+  "epochs_completed": 20,
+  "final_loss": 0.21977373957633972,
+  "final_val_loss": 0.21907368302345276,
+  "encoder_path": "features/learned_models/ethusdt/15m/lstm_autoencoder/encoder.keras",
+  "autoencoder_path": "features/learned_models/ethusdt/15m/lstm_autoencoder/autoencoder.keras",
+  "features_path": "features/trading_asset_features/ethusdt/15m/learned_lstm.parquet",
+  "output_rows": 293020,
+  "note": "Bootstrap Stage 2.4 GPU training while feature-extractor runtime wrapper is being integrated."
+}
