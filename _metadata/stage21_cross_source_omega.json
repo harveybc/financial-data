@@ -1,0 +1,3507 @@
+{
+  "generated_at": "2026-05-02T00:44:34.954670+00:00",
+  "stage": "Stage 2.1",
+  "machine": "omega",
+  "sources_total": 88,
+  "sources_processed": 88,
+  "sources_skipped": 0,
+  "timeframe_outputs": 352,
+  "skip_reasons": {},
+  "results": [
+    {
+      "source": "market_data/equities/etfs/agg/daily.parquet",
+      "slug": "market_data__equities__etfs__agg__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__agg__daily.parquet",
+          "rows": 2340877,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__agg__daily.parquet",
+          "rows": 780293,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__agg__daily.parquet",
+          "rows": 195074,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__agg__daily.parquet",
+          "rows": 48770,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5600,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2003-09-29T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/bnd/daily.parquet",
+      "slug": "market_data__equities__etfs__bnd__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__bnd__daily.parquet",
+          "rows": 1969645,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__bnd__daily.parquet",
+          "rows": 656549,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__bnd__daily.parquet",
+          "rows": 164138,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__bnd__daily.parquet",
+          "rows": 41036,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 4713,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2007-04-10T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/dia/daily.parquet",
+      "slug": "market_data__equities__etfs__dia__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__dia__daily.parquet",
+          "rows": 2939329,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__dia__daily.parquet",
+          "rows": 979777,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__dia__daily.parquet",
+          "rows": 244945,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__dia__daily.parquet",
+          "rows": 61238,
+          "missing_pct": 1.632972990626735e-05
+        }
+      },
+      "rows_native": 7031,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-01-20T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/eem/daily.parquet",
+      "slug": "market_data__equities__etfs__eem__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__eem__daily.parquet",
+          "rows": 2389261,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__eem__daily.parquet",
+          "rows": 796421,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__eem__daily.parquet",
+          "rows": 199106,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__eem__daily.parquet",
+          "rows": 49778,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5716,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2003-04-14T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/efa/daily.parquet",
+      "slug": "market_data__equities__etfs__efa__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__efa__daily.parquet",
+          "rows": 2560621,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__efa__daily.parquet",
+          "rows": 853541,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__efa__daily.parquet",
+          "rows": 213386,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__efa__daily.parquet",
+          "rows": 53348,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6122,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2001-08-27T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/gld/daily.parquet",
+      "slug": "market_data__equities__etfs__gld__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__gld__daily.parquet",
+          "rows": 2221057,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__gld__daily.parquet",
+          "rows": 740353,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__gld__daily.parquet",
+          "rows": 185089,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__gld__daily.parquet",
+          "rows": 46274,
+          "missing_pct": 2.1610407572286814e-05
+        }
+      },
+      "rows_native": 5312,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2004-11-18T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/hyg/daily.parquet",
+      "slug": "market_data__equities__etfs__hyg__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__hyg__daily.parquet",
+          "rows": 1969357,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__hyg__daily.parquet",
+          "rows": 656453,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__hyg__daily.parquet",
+          "rows": 164114,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__hyg__daily.parquet",
+          "rows": 41030,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 4712,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2007-04-11T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/ief/daily.parquet",
+      "slug": "market_data__equities__etfs__ief__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__ief__daily.parquet",
+          "rows": 2463565,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__ief__daily.parquet",
+          "rows": 821189,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__ief__daily.parquet",
+          "rows": 205298,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__ief__daily.parquet",
+          "rows": 51326,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5894,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2002-07-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/ivv/daily.parquet",
+      "slug": "market_data__equities__etfs__ivv__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__ivv__daily.parquet",
+          "rows": 2694541,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__ivv__daily.parquet",
+          "rows": 898181,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__ivv__daily.parquet",
+          "rows": 224546,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__ivv__daily.parquet",
+          "rows": 56138,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6442,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2000-05-19T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/iwm/daily.parquet",
+      "slug": "market_data__equities__etfs__iwm__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__iwm__daily.parquet",
+          "rows": 2692525,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__iwm__daily.parquet",
+          "rows": 897509,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__iwm__daily.parquet",
+          "rows": 224378,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__iwm__daily.parquet",
+          "rows": 56096,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6437,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2000-05-26T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/iyr/daily.parquet",
+      "slug": "market_data__equities__etfs__iyr__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__iyr__daily.parquet",
+          "rows": 2685613,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__iyr__daily.parquet",
+          "rows": 895205,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__iyr__daily.parquet",
+          "rows": 223802,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__iyr__daily.parquet",
+          "rows": 55952,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6422,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2000-06-19T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/lqd/daily.parquet",
+      "slug": "market_data__equities__etfs__lqd__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__lqd__daily.parquet",
+          "rows": 2463565,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__lqd__daily.parquet",
+          "rows": 821189,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__lqd__daily.parquet",
+          "rows": 205298,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__lqd__daily.parquet",
+          "rows": 51326,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5894,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2002-07-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/qqq/daily.parquet",
+      "slug": "market_data__equities__etfs__qqq__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__qqq__daily.parquet",
+          "rows": 2820097,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__qqq__daily.parquet",
+          "rows": 940033,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__qqq__daily.parquet",
+          "rows": 235009,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__qqq__daily.parquet",
+          "rows": 58754,
+          "missing_pct": 1.7020117779215034e-05
+        }
+      },
+      "rows_native": 6745,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1999-03-10T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/shy/daily.parquet",
+      "slug": "market_data__equities__etfs__shy__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__shy__daily.parquet",
+          "rows": 2463565,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__shy__daily.parquet",
+          "rows": 821189,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__shy__daily.parquet",
+          "rows": 205298,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__shy__daily.parquet",
+          "rows": 51326,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5894,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2002-07-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/slv/daily.parquet",
+      "slug": "market_data__equities__etfs__slv__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__slv__daily.parquet",
+          "rows": 2069581,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__slv__daily.parquet",
+          "rows": 689861,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__slv__daily.parquet",
+          "rows": 172466,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__slv__daily.parquet",
+          "rows": 43118,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 4950,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2006-04-28T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/spy/daily.parquet",
+      "slug": "market_data__equities__etfs__spy__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__spy__daily.parquet",
+          "rows": 3462625,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__spy__daily.parquet",
+          "rows": 1154209,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__spy__daily.parquet",
+          "rows": 288553,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__spy__daily.parquet",
+          "rows": 72140,
+          "missing_pct": 1.386193512614361e-05
+        }
+      },
+      "rows_native": 8287,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1993-01-29T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/tip/daily.parquet",
+      "slug": "market_data__equities__etfs__tip__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__tip__daily.parquet",
+          "rows": 2321569,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__tip__daily.parquet",
+          "rows": 773857,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__tip__daily.parquet",
+          "rows": 193465,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__tip__daily.parquet",
+          "rows": 48368,
+          "missing_pct": 2.0674826331458817e-05
+        }
+      },
+      "rows_native": 5552,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2003-12-05T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/tlt/daily.parquet",
+      "slug": "market_data__equities__etfs__tlt__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__tlt__daily.parquet",
+          "rows": 2463565,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__tlt__daily.parquet",
+          "rows": 821189,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__tlt__daily.parquet",
+          "rows": 205298,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__tlt__daily.parquet",
+          "rows": 51326,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5894,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2002-07-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/uso/daily.parquet",
+      "slug": "market_data__equities__etfs__uso__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__uso__daily.parquet",
+          "rows": 2074765,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__uso__daily.parquet",
+          "rows": 691589,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__uso__daily.parquet",
+          "rows": 172898,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__uso__daily.parquet",
+          "rows": 43226,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 4963,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2006-04-10T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/vea/daily.parquet",
+      "slug": "market_data__equities__etfs__vea__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__vea__daily.parquet",
+          "rows": 1938829,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__vea__daily.parquet",
+          "rows": 646277,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__vea__daily.parquet",
+          "rows": 161570,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__vea__daily.parquet",
+          "rows": 40394,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 4638,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2007-07-26T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/vnq/daily.parquet",
+      "slug": "market_data__equities__etfs__vnq__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__vnq__daily.parquet",
+          "rows": 2235469,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__vnq__daily.parquet",
+          "rows": 745157,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__vnq__daily.parquet",
+          "rows": 186290,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__vnq__daily.parquet",
+          "rows": 46574,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5348,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2004-09-29T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/voo/daily.parquet",
+      "slug": "market_data__equities__etfs__voo__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__voo__daily.parquet",
+          "rows": 1610221,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__voo__daily.parquet",
+          "rows": 536741,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__voo__daily.parquet",
+          "rows": 134186,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__voo__daily.parquet",
+          "rows": 33548,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 3851,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2010-09-09T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/vti/daily.parquet",
+      "slug": "market_data__equities__etfs__vti__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__vti__daily.parquet",
+          "rows": 2581645,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__vti__daily.parquet",
+          "rows": 860549,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__vti__daily.parquet",
+          "rows": 215138,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__vti__daily.parquet",
+          "rows": 53786,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6172,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2001-06-15T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/vwo/daily.parquet",
+      "slug": "market_data__equities__etfs__vwo__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__vwo__daily.parquet",
+          "rows": 2188801,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__vwo__daily.parquet",
+          "rows": 729601,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__vwo__daily.parquet",
+          "rows": 182401,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__vwo__daily.parquet",
+          "rows": 45602,
+          "missing_pct": 2.192886276917679e-05
+        }
+      },
+      "rows_native": 5236,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2005-03-10T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlb/daily.parquet",
+      "slug": "market_data__equities__etfs__xlb__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlb__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlb__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlb__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlb__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlc/daily.parquet",
+      "slug": "market_data__equities__etfs__xlc__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlc__daily.parquet",
+          "rows": 792301,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlc__daily.parquet",
+          "rows": 264101,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlc__daily.parquet",
+          "rows": 66026,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlc__daily.parquet",
+          "rows": 16508,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 1894,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2018-06-19T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xle/daily.parquet",
+      "slug": "market_data__equities__etfs__xle__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xle__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xle__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xle__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xle__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlf/daily.parquet",
+      "slug": "market_data__equities__etfs__xlf__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlf__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlf__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlf__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlf__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xli/daily.parquet",
+      "slug": "market_data__equities__etfs__xli__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xli__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xli__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xli__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xli__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlk/daily.parquet",
+      "slug": "market_data__equities__etfs__xlk__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlk__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlk__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlk__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlk__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlp/daily.parquet",
+      "slug": "market_data__equities__etfs__xlp__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlp__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlp__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlp__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlp__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlre/daily.parquet",
+      "slug": "market_data__equities__etfs__xlre__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlre__daily.parquet",
+          "rows": 1075981,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlre__daily.parquet",
+          "rows": 358661,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlre__daily.parquet",
+          "rows": 89666,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlre__daily.parquet",
+          "rows": 22418,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 2572,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "2015-10-08T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlu/daily.parquet",
+      "slug": "market_data__equities__etfs__xlu__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlu__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlu__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlu__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlu__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xlv/daily.parquet",
+      "slug": "market_data__equities__etfs__xlv__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xlv__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xlv__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xlv__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xlv__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/etfs/xly/daily.parquet",
+      "slug": "market_data__equities__etfs__xly__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__etfs__xly__daily.parquet",
+          "rows": 2842561,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__etfs__xly__daily.parquet",
+          "rows": 947521,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__etfs__xly__daily.parquet",
+          "rows": 236881,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__etfs__xly__daily.parquet",
+          "rows": 59222,
+          "missing_pct": 1.6885616831582856e-05
+        }
+      },
+      "rows_native": 6797,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits",
+        "Capital Gains"
+      ],
+      "start": "1998-12-22T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/000001_ss/daily.parquet",
+      "slug": "market_data__equities__global_indices__000001_ss__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__000001_ss__daily.parquet",
+          "rows": 2997505,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__000001_ss__daily.parquet",
+          "rows": 999169,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__000001_ss__daily.parquet",
+          "rows": 249793,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__000001_ss__daily.parquet",
+          "rows": 62449,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6905,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1997-07-01T16:00:00+00:00",
+      "end": "2025-12-29T16:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/axjo/daily.parquet",
+      "slug": "market_data__equities__global_indices__axjo__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__axjo__daily.parquet",
+          "rows": 3481921,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__axjo__daily.parquet",
+          "rows": 1160641,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__axjo__daily.parquet",
+          "rows": 290161,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__axjo__daily.parquet",
+          "rows": 72542,
+          "missing_pct": 1.3785117587053017e-05
+        }
+      },
+      "rows_native": 8368,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1992-11-22T13:00:00+00:00",
+      "end": "2025-12-29T13:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/bsesn/daily.parquet",
+      "slug": "market_data__equities__global_indices__bsesn__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__bsesn__daily.parquet",
+          "rows": 2997793,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__bsesn__daily.parquet",
+          "rows": 999265,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__bsesn__daily.parquet",
+          "rows": 249818,
+          "missing_pct": 4.002914121480438e-06
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__bsesn__daily.parquet",
+          "rows": 62456,
+          "missing_pct": 1.601127193544255e-05
+        }
+      },
+      "rows_native": 7021,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1997-06-30T18:30:00+00:00",
+      "end": "2025-12-29T18:30:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/bvsp/daily.parquet",
+      "slug": "market_data__equities__global_indices__bvsp__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__bvsp__daily.parquet",
+          "rows": 3437281,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__bvsp__daily.parquet",
+          "rows": 1145761,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__bvsp__daily.parquet",
+          "rows": 286441,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__bvsp__daily.parquet",
+          "rows": 71612,
+          "missing_pct": 1.3964140088253366e-05
+        }
+      },
+      "rows_native": 8094,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1993-04-27T03:00:00+00:00",
+      "end": "2025-12-30T03:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/fchi/daily.parquet",
+      "slug": "market_data__equities__global_indices__fchi__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__fchi__daily.parquet",
+          "rows": 3769345,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__fchi__daily.parquet",
+          "rows": 1256449,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__fchi__daily.parquet",
+          "rows": 314113,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__fchi__daily.parquet",
+          "rows": 78530,
+          "missing_pct": 1.2733987011333248e-05
+        }
+      },
+      "rows_native": 9100,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1990-02-28T23:00:00+00:00",
+      "end": "2025-12-29T23:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/ftse/daily.parquet",
+      "slug": "market_data__equities__global_indices__ftse__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__ftse__daily.parquet",
+          "rows": 4417057,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__ftse__daily.parquet",
+          "rows": 1472353,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__ftse__daily.parquet",
+          "rows": 368089,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__ftse__daily.parquet",
+          "rows": 92023,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 10608,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1984-01-03T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/gdaxi/daily.parquet",
+      "slug": "market_data__equities__global_indices__gdaxi__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__gdaxi__daily.parquet",
+          "rows": 3997441,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__gdaxi__daily.parquet",
+          "rows": 1332481,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__gdaxi__daily.parquet",
+          "rows": 333121,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__gdaxi__daily.parquet",
+          "rows": 83282,
+          "missing_pct": 1.2007396556278668e-05
+        }
+      },
+      "rows_native": 9609,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1987-12-29T23:00:00+00:00",
+      "end": "2025-12-29T23:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/gsptse/daily.parquet",
+      "slug": "market_data__equities__global_indices__gsptse__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__gsptse__daily.parquet",
+          "rows": 4891981,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__gsptse__daily.parquet",
+          "rows": 1630661,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__gsptse__daily.parquet",
+          "rows": 407666,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__gsptse__daily.parquet",
+          "rows": 101918,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 11676,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1979-06-29T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/hsi/daily.parquet",
+      "slug": "market_data__equities__global_indices__hsi__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__hsi__daily.parquet",
+          "rows": 4102273,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__hsi__daily.parquet",
+          "rows": 1367425,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__hsi__daily.parquet",
+          "rows": 341857,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__hsi__daily.parquet",
+          "rows": 85465,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 9625,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1986-12-30T16:00:00+00:00",
+      "end": "2025-12-29T16:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/ks11/daily.parquet",
+      "slug": "market_data__equities__global_indices__ks11__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__ks11__daily.parquet",
+          "rows": 3055969,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__ks11__daily.parquet",
+          "rows": 1018657,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__ks11__daily.parquet",
+          "rows": 254665,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__ks11__daily.parquet",
+          "rows": 63668,
+          "missing_pct": 1.570647735125966e-05
+        }
+      },
+      "rows_native": 7153,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1996-12-10T15:00:00+00:00",
+      "end": "2025-12-29T15:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/mxx/daily.parquet",
+      "slug": "market_data__equities__global_indices__mxx__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__mxx__daily.parquet",
+          "rows": 3591649,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__mxx__daily.parquet",
+          "rows": 1197217,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__mxx__daily.parquet",
+          "rows": 299305,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__mxx__daily.parquet",
+          "rows": 74828,
+          "missing_pct": 1.3363981397337895e-05
+        }
+      },
+      "rows_native": 8550,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1991-11-08T06:00:00+00:00",
+      "end": "2025-12-30T06:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/n225/daily.parquet",
+      "slug": "market_data__equities__global_indices__n225__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__n225__daily.parquet",
+          "rows": 6414913,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__n225__daily.parquet",
+          "rows": 2138305,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__n225__daily.parquet",
+          "rows": 534577,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__n225__daily.parquet",
+          "rows": 133646,
+          "missing_pct": 7.4824536461996615e-06
+        }
+      },
+      "rows_native": 14996,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1965-01-04T15:00:00+00:00",
+      "end": "2025-12-29T15:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/stoxx50e/daily.parquet",
+      "slug": "market_data__equities__global_indices__stoxx50e__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__stoxx50e__daily.parquet",
+          "rows": 1972813,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__stoxx50e__daily.parquet",
+          "rows": 657605,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__stoxx50e__daily.parquet",
+          "rows": 164402,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__stoxx50e__daily.parquet",
+          "rows": 41102,
+          "missing_pct": 2.432971631550776e-05
+        }
+      },
+      "rows_native": 4701,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2007-03-29T22:00:00+00:00",
+      "end": "2025-12-29T23:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/global_indices/twii/daily.parquet",
+      "slug": "market_data__equities__global_indices__twii__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__global_indices__twii__daily.parquet",
+          "rows": 2997505,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__global_indices__twii__daily.parquet",
+          "rows": 999169,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__global_indices__twii__daily.parquet",
+          "rows": 249793,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__global_indices__twii__daily.parquet",
+          "rows": 62449,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6987,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1997-07-01T16:00:00+00:00",
+      "end": "2025-12-29T16:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/us_indices/dji/daily.parquet",
+      "slug": "market_data__equities__us_indices__dji__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__us_indices__dji__daily.parquet",
+          "rows": 3575809,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__us_indices__dji__daily.parquet",
+          "rows": 1191937,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__us_indices__dji__daily.parquet",
+          "rows": 297985,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__us_indices__dji__daily.parquet",
+          "rows": 74498,
+          "missing_pct": 1.342317914574888e-05
+        }
+      },
+      "rows_native": 8560,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1992-01-02T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/us_indices/gspc/daily.parquet",
+      "slug": "market_data__equities__us_indices__gspc__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__us_indices__gspc__daily.parquet",
+          "rows": 10308961,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__us_indices__gspc__daily.parquet",
+          "rows": 3436321,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__us_indices__gspc__daily.parquet",
+          "rows": 859081,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__us_indices__gspc__daily.parquet",
+          "rows": 214772,
+          "missing_pct": 4.656100422773918e-06
+        }
+      },
+      "rows_native": 24616,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1927-12-30T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/us_indices/ixic/daily.parquet",
+      "slug": "market_data__equities__us_indices__ixic__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__us_indices__ixic__daily.parquet",
+          "rows": 5774977,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__us_indices__ixic__daily.parquet",
+          "rows": 1924993,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__us_indices__ixic__daily.parquet",
+          "rows": 481249,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__us_indices__ixic__daily.parquet",
+          "rows": 120314,
+          "missing_pct": 8.311584686736373e-06
+        }
+      },
+      "rows_native": 13842,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1971-02-05T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/us_indices/rut/daily.parquet",
+      "slug": "market_data__equities__us_indices__rut__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__us_indices__rut__daily.parquet",
+          "rows": 4029421,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__us_indices__rut__daily.parquet",
+          "rows": 1343141,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__us_indices__rut__daily.parquet",
+          "rows": 335786,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__us_indices__rut__daily.parquet",
+          "rows": 83948,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 9650,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1987-09-10T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/equities/us_indices/vix/daily.parquet",
+      "slug": "market_data__equities__us_indices__vix__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__equities__us_indices__vix__daily.parquet",
+          "rows": 3786049,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__equities__us_indices__vix__daily.parquet",
+          "rows": 1262017,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__equities__us_indices__vix__daily.parquet",
+          "rows": 315505,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__equities__us_indices__vix__daily.parquet",
+          "rows": 78878,
+          "missing_pct": 1.2677806232409544e-05
+        }
+      },
+      "rows_native": 9066,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1990-01-02T06:00:00+00:00",
+      "end": "2025-12-30T06:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/agriculture/ct_f/daily.parquet",
+      "slug": "market_data__commodities__agriculture__ct_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__agriculture__ct_f__daily.parquet",
+          "rows": 2733985,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__agriculture__ct_f__daily.parquet",
+          "rows": 911329,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__agriculture__ct_f__daily.parquet",
+          "rows": 227833,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__agriculture__ct_f__daily.parquet",
+          "rows": 56960,
+          "missing_pct": 1.75561797752809e-05
+        }
+      },
+      "rows_native": 6519,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-01-03T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/agriculture/kc_f/daily.parquet",
+      "slug": "market_data__commodities__agriculture__kc_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__agriculture__kc_f__daily.parquet",
+          "rows": 2733985,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__agriculture__kc_f__daily.parquet",
+          "rows": 911329,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__agriculture__kc_f__daily.parquet",
+          "rows": 227833,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__agriculture__kc_f__daily.parquet",
+          "rows": 56960,
+          "missing_pct": 1.75561797752809e-05
+        }
+      },
+      "rows_native": 6517,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-01-03T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/agriculture/sb_f/daily.parquet",
+      "slug": "market_data__commodities__agriculture__sb_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__agriculture__sb_f__daily.parquet",
+          "rows": 2717281,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__agriculture__sb_f__daily.parquet",
+          "rows": 905761,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__agriculture__sb_f__daily.parquet",
+          "rows": 226441,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__agriculture__sb_f__daily.parquet",
+          "rows": 56612,
+          "missing_pct": 1.7664099484208295e-05
+        }
+      },
+      "rows_native": 6480,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-03-01T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/agriculture/zc_f/daily.parquet",
+      "slug": "market_data__commodities__agriculture__zc_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__agriculture__zc_f__daily.parquet",
+          "rows": 2677549,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__agriculture__zc_f__daily.parquet",
+          "rows": 892517,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__agriculture__zc_f__daily.parquet",
+          "rows": 223130,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__agriculture__zc_f__daily.parquet",
+          "rows": 55784,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6369,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-07-17T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/agriculture/zs_f/daily.parquet",
+      "slug": "market_data__commodities__agriculture__zs_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__agriculture__zs_f__daily.parquet",
+          "rows": 2660269,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__agriculture__zs_f__daily.parquet",
+          "rows": 886757,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__agriculture__zs_f__daily.parquet",
+          "rows": 221690,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__agriculture__zs_f__daily.parquet",
+          "rows": 55424,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6361,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-09-15T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/agriculture/zw_f/daily.parquet",
+      "slug": "market_data__commodities__agriculture__zw_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__agriculture__zw_f__daily.parquet",
+          "rows": 2677549,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__agriculture__zw_f__daily.parquet",
+          "rows": 892517,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__agriculture__zw_f__daily.parquet",
+          "rows": 223130,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__agriculture__zw_f__daily.parquet",
+          "rows": 55784,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6381,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-07-17T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/energy/bz_f/daily.parquet",
+      "slug": "market_data__commodities__energy__bz_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__energy__bz_f__daily.parquet",
+          "rows": 1937677,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__energy__bz_f__daily.parquet",
+          "rows": 645893,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__energy__bz_f__daily.parquet",
+          "rows": 161474,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__energy__bz_f__daily.parquet",
+          "rows": 40370,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 4584,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2007-07-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/energy/cl_f/daily.parquet",
+      "slug": "market_data__commodities__energy__cl_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__energy__cl_f__daily.parquet",
+          "rows": 2666893,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__energy__cl_f__daily.parquet",
+          "rows": 888965,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__energy__cl_f__daily.parquet",
+          "rows": 222242,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__energy__cl_f__daily.parquet",
+          "rows": 55562,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6366,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-08-23T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/energy/ng_f/daily.parquet",
+      "slug": "market_data__commodities__energy__ng_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__energy__ng_f__daily.parquet",
+          "rows": 2664877,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__energy__ng_f__daily.parquet",
+          "rows": 888293,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__energy__ng_f__daily.parquet",
+          "rows": 222074,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__energy__ng_f__daily.parquet",
+          "rows": 55520,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6363,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-08-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/energy/rb_f/daily.parquet",
+      "slug": "market_data__commodities__energy__rb_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__energy__rb_f__daily.parquet",
+          "rows": 2646721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__energy__rb_f__daily.parquet",
+          "rows": 882241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__energy__rb_f__daily.parquet",
+          "rows": 220561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__energy__rb_f__daily.parquet",
+          "rows": 55142,
+          "missing_pct": 1.8134996917050524e-05
+        }
+      },
+      "rows_native": 6321,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-11-01T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/precious_metals/gc_f/daily.parquet",
+      "slug": "market_data__commodities__precious_metals__gc_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__precious_metals__gc_f__daily.parquet",
+          "rows": 2664877,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__precious_metals__gc_f__daily.parquet",
+          "rows": 888293,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__precious_metals__gc_f__daily.parquet",
+          "rows": 222074,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__precious_metals__gc_f__daily.parquet",
+          "rows": 55520,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6357,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-08-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/precious_metals/pa_f/daily.parquet",
+      "slug": "market_data__commodities__precious_metals__pa_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__precious_metals__pa_f__daily.parquet",
+          "rows": 2867053,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__precious_metals__pa_f__daily.parquet",
+          "rows": 955685,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__precious_metals__pa_f__daily.parquet",
+          "rows": 238922,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__precious_metals__pa_f__daily.parquet",
+          "rows": 59732,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6396,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1998-09-28T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/precious_metals/pl_f/daily.parquet",
+      "slug": "market_data__commodities__precious_metals__pl_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__precious_metals__pl_f__daily.parquet",
+          "rows": 2963233,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__precious_metals__pl_f__daily.parquet",
+          "rows": 987745,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__precious_metals__pl_f__daily.parquet",
+          "rows": 246937,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__precious_metals__pl_f__daily.parquet",
+          "rows": 61736,
+          "missing_pct": 1.61980044058572e-05
+        }
+      },
+      "rows_native": 6385,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "1997-10-29T05:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/commodities/precious_metals/si_f/daily.parquet",
+      "slug": "market_data__commodities__precious_metals__si_f__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__commodities__precious_metals__si_f__daily.parquet",
+          "rows": 2664877,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__commodities__precious_metals__si_f__daily.parquet",
+          "rows": 888293,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__commodities__precious_metals__si_f__daily.parquet",
+          "rows": 222074,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__commodities__precious_metals__si_f__daily.parquet",
+          "rows": 55520,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6359,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2000-08-30T04:00:00+00:00",
+      "end": "2025-12-30T05:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdbrl_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdbrl_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdbrl_x__daily.parquet",
+          "rows": 2322721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdbrl_x__daily.parquet",
+          "rows": 774241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdbrl_x__daily.parquet",
+          "rows": 193561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdbrl_x__daily.parquet",
+          "rows": 48391,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5311,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-12-01T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdclp_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdclp_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdclp_x__daily.parquet",
+          "rows": 2322721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdclp_x__daily.parquet",
+          "rows": 774241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdclp_x__daily.parquet",
+          "rows": 193561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdclp_x__daily.parquet",
+          "rows": 48391,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5723,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-12-01T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdcop_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdcop_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdcop_x__daily.parquet",
+          "rows": 2418625,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdcop_x__daily.parquet",
+          "rows": 806209,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdcop_x__daily.parquet",
+          "rows": 201553,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdcop_x__daily.parquet",
+          "rows": 50389,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5734,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-01-02T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdidr_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdidr_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+          "rows": 2577901,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+          "rows": 859301,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+          "rows": 214826,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+          "rows": 53708,
+          "missing_pct": 1.861920011916288e-05
+        }
+      },
+      "rows_native": 6183,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2001-06-27T23:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdinr_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdinr_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdinr_x__daily.parquet",
+          "rows": 2322721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdinr_x__daily.parquet",
+          "rows": 774241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdinr_x__daily.parquet",
+          "rows": 193561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdinr_x__daily.parquet",
+          "rows": 48391,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5726,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-12-01T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdkrw_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdkrw_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdkrw_x__daily.parquet",
+          "rows": 2322721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdkrw_x__daily.parquet",
+          "rows": 774241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdkrw_x__daily.parquet",
+          "rows": 193561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdkrw_x__daily.parquet",
+          "rows": 48391,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5727,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-12-01T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdmxn_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdmxn_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdmxn_x__daily.parquet",
+          "rows": 2322721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdmxn_x__daily.parquet",
+          "rows": 774241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdmxn_x__daily.parquet",
+          "rows": 193561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdmxn_x__daily.parquet",
+          "rows": 48391,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5750,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-12-01T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdtry_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdtry_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdtry_x__daily.parquet",
+          "rows": 2207809,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdtry_x__daily.parquet",
+          "rows": 735937,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdtry_x__daily.parquet",
+          "rows": 183985,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdtry_x__daily.parquet",
+          "rows": 45997,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5458,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2005-01-03T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdtwd_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdtwd_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdtwd_x__daily.parquet",
+          "rows": 2289889,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdtwd_x__daily.parquet",
+          "rows": 763297,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdtwd_x__daily.parquet",
+          "rows": 190825,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdtwd_x__daily.parquet",
+          "rows": 47707,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5234,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2004-03-24T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/forex/emerging_markets/usdzar_x/daily.parquet",
+      "slug": "market_data__forex__emerging_markets__usdzar_x__daily",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdzar_x__daily.parquet",
+          "rows": 2322721,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdzar_x__daily.parquet",
+          "rows": 774241,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdzar_x__daily.parquet",
+          "rows": 193561,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdzar_x__daily.parquet",
+          "rows": 48391,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 5743,
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "Dividends",
+        "Stock Splits"
+      ],
+      "start": "2003-12-01T00:00:00+00:00",
+      "end": "2025-12-30T00:00:00+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/adausdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__adausdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__adausdt__funding_rates.parquet",
+          "rows": 625826,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__adausdt__funding_rates.parquet",
+          "rows": 208610,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__adausdt__funding_rates.parquet",
+          "rows": 52154,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__adausdt__funding_rates.parquet",
+          "rows": 13040,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6520,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-01-19T16:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/avaxusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__avaxusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+          "rows": 554690,
+          "missing_pct": 1.802808776073122e-06
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+          "rows": 184898,
+          "missing_pct": 5.408387327066815e-06
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+          "rows": 46226,
+          "missing_pct": 2.1632847315363647e-05
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+          "rows": 11558,
+          "missing_pct": 8.652015919709292e-05
+        }
+      },
+      "rows_native": 5779,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-09-22T16:00:00.004000+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/bnbusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__bnbusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__bnbusdt__funding_rates.parquet",
+          "rows": 619586,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__bnbusdt__funding_rates.parquet",
+          "rows": 206530,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__bnbusdt__funding_rates.parquet",
+          "rows": 51634,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__bnbusdt__funding_rates.parquet",
+          "rows": 12910,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6455,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-02-10T08:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/btcusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__btcusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__btcusdt__funding_rates.parquet",
+          "rows": 663650,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__btcusdt__funding_rates.parquet",
+          "rows": 221218,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__btcusdt__funding_rates.parquet",
+          "rows": 55306,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__btcusdt__funding_rates.parquet",
+          "rows": 13828,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6914,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2019-09-10T08:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/dogeusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__dogeusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+          "rows": 576098,
+          "missing_pct": 1.7358157813427577e-06
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+          "rows": 192034,
+          "missing_pct": 5.207411187602195e-06
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+          "rows": 48010,
+          "missing_pct": 2.082899395959175e-05
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+          "rows": 12004,
+          "missing_pct": 8.330556481172943e-05
+        }
+      },
+      "rows_native": 6002,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-07-10T08:00:00.001000+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/ethusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__ethusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__ethusdt__funding_rates.parquet",
+          "rows": 641186,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__ethusdt__funding_rates.parquet",
+          "rows": 213730,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__ethusdt__funding_rates.parquet",
+          "rows": 53434,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__ethusdt__funding_rates.parquet",
+          "rows": 13360,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6680,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2019-11-27T08:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/linkusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__linkusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__linkusdt__funding_rates.parquet",
+          "rows": 626498,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__linkusdt__funding_rates.parquet",
+          "rows": 208834,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__linkusdt__funding_rates.parquet",
+          "rows": 52210,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__linkusdt__funding_rates.parquet",
+          "rows": 13054,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6527,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-01-17T08:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/solusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__solusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+          "rows": 557282,
+          "missing_pct": 1.7944236490681557e-06
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+          "rows": 185762,
+          "missing_pct": 5.38323230800702e-06
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+          "rows": 46442,
+          "missing_pct": 2.1532233753929634e-05
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+          "rows": 11612,
+          "missing_pct": 8.61178091629349e-05
+        }
+      },
+      "rows_native": 5881,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-09-13T16:00:00.004000+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/trxusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__trxusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__trxusdt__funding_rates.parquet",
+          "rows": 627074,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__trxusdt__funding_rates.parquet",
+          "rows": 209026,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__trxusdt__funding_rates.parquet",
+          "rows": 52258,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__trxusdt__funding_rates.parquet",
+          "rows": 13066,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6533,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-01-15T08:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    },
+    {
+      "source": "market_data/crypto/funding_rates/xrpusdt/funding_rates.parquet",
+      "slug": "market_data__crypto__funding_rates__xrpusdt__funding_rates",
+      "status": "ok",
+      "timeframes": {
+        "5m": {
+          "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__xrpusdt__funding_rates.parquet",
+          "rows": 629666,
+          "missing_pct": 0.0
+        },
+        "15m": {
+          "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__xrpusdt__funding_rates.parquet",
+          "rows": 209890,
+          "missing_pct": 0.0
+        },
+        "1h": {
+          "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__xrpusdt__funding_rates.parquet",
+          "rows": 52474,
+          "missing_pct": 0.0
+        },
+        "4h": {
+          "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__xrpusdt__funding_rates.parquet",
+          "rows": 13120,
+          "missing_pct": 0.0
+        }
+      },
+      "rows_native": 6560,
+      "columns": [
+        "fundingRate",
+        "markPrice"
+      ],
+      "start": "2020-01-06T08:00:00+00:00",
+      "end": "2025-12-31T16:00:00.001000+00:00"
+    }
+  ]
+}

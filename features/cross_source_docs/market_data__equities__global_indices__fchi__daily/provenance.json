@@ -1,0 +1,40 @@
+{
+  "source": "market_data/equities/global_indices/fchi/daily.parquet",
+  "slug": "market_data__equities__global_indices__fchi__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__global_indices__fchi__daily.parquet",
+      "rows": 3769345,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__global_indices__fchi__daily.parquet",
+      "rows": 1256449,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__global_indices__fchi__daily.parquet",
+      "rows": 314113,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__global_indices__fchi__daily.parquet",
+      "rows": 78530,
+      "missing_pct": 1.2733987011333248e-05
+    }
+  },
+  "rows_native": 9100,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "1990-02-28T23:00:00+00:00",
+  "end": "2025-12-29T23:00:00+00:00"
+}

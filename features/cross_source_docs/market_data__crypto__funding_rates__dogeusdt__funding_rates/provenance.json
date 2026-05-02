@@ -1,0 +1,34 @@
+{
+  "source": "market_data/crypto/funding_rates/dogeusdt/funding_rates.parquet",
+  "slug": "market_data__crypto__funding_rates__dogeusdt__funding_rates",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+      "rows": 576098,
+      "missing_pct": 1.7358157813427577e-06
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+      "rows": 192034,
+      "missing_pct": 5.207411187602195e-06
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+      "rows": 48010,
+      "missing_pct": 2.082899395959175e-05
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__dogeusdt__funding_rates.parquet",
+      "rows": 12004,
+      "missing_pct": 8.330556481172943e-05
+    }
+  },
+  "rows_native": 6002,
+  "columns": [
+    "fundingRate",
+    "markPrice"
+  ],
+  "start": "2020-07-10T08:00:00.001000+00:00",
+  "end": "2025-12-31T16:00:00.001000+00:00"
+}

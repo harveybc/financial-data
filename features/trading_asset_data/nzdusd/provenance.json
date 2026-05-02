@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-02T00:42:03.308484+00:00",
+  "stage": "Stage 2.1",
+  "asset": "nzdusd",
+  "source_dir": "market_data/forex/g10/nzdusd",
+  "timeframes": {
+    "5m": {
+      "status": "ok",
+      "source": "market_data/forex/g10/nzdusd/5m.parquet",
+      "path": "features/trading_asset_data/nzdusd/5m.parquet",
+      "rows": 1496996,
+      "start": "2005-08-12T17:00:00+00:00",
+      "end": "2025-12-31T16:55:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 300,
+        "unexpected_gaps": 3625,
+        "median_step_seconds": 300.0
+      }
+    },
+    "15m": {
+      "status": "ok",
+      "source": "market_data/forex/g10/nzdusd/15m.parquet",
+      "path": "features/trading_asset_data/nzdusd/15m.parquet",
+      "rows": 502926,
+      "start": "2005-08-12T17:00:00+00:00",
+      "end": "2025-12-31T16:45:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 900,
+        "unexpected_gaps": 1801,
+        "median_step_seconds": 900.0
+      }
+    },
+    "1h": {
+      "status": "ok",
+      "source": "market_data/forex/g10/nzdusd/1h.parquet",
+      "path": "features/trading_asset_data/nzdusd/1h.parquet",
+      "rows": 125859,
+      "start": "2005-08-12T17:00:00+00:00",
+      "end": "2025-12-31T16:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 3600,
+        "unexpected_gaps": 1190,
+        "median_step_seconds": 3600.0
+      }
+    },
+    "4h": {
+      "status": "ok",
+      "source": "market_data/forex/g10/nzdusd/4h.parquet",
+      "path": "features/trading_asset_data/nzdusd/4h.parquet",
+      "rows": 32714,
+      "start": "2005-08-12T16:00:00+00:00",
+      "end": "2025-12-31T16:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 14400,
+        "unexpected_gaps": 1085,
+        "median_step_seconds": 14400.0
+      }
+    }
+  }
+}

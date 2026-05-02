@@ -1,0 +1,40 @@
+{
+  "source": "market_data/equities/global_indices/stoxx50e/daily.parquet",
+  "slug": "market_data__equities__global_indices__stoxx50e__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__global_indices__stoxx50e__daily.parquet",
+      "rows": 1972813,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__global_indices__stoxx50e__daily.parquet",
+      "rows": 657605,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__global_indices__stoxx50e__daily.parquet",
+      "rows": 164402,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__global_indices__stoxx50e__daily.parquet",
+      "rows": 41102,
+      "missing_pct": 2.432971631550776e-05
+    }
+  },
+  "rows_native": 4701,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "2007-03-29T22:00:00+00:00",
+  "end": "2025-12-29T23:00:00+00:00"
+}

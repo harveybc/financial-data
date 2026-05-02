@@ -1,0 +1,40 @@
+{
+  "source": "market_data/equities/us_indices/ixic/daily.parquet",
+  "slug": "market_data__equities__us_indices__ixic__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__us_indices__ixic__daily.parquet",
+      "rows": 5774977,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__us_indices__ixic__daily.parquet",
+      "rows": 1924993,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__us_indices__ixic__daily.parquet",
+      "rows": 481249,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__us_indices__ixic__daily.parquet",
+      "rows": 120314,
+      "missing_pct": 8.311584686736373e-06
+    }
+  },
+  "rows_native": 13842,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "1971-02-05T05:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

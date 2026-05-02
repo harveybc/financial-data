@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/employment/lns14000006/observations.parquet",
+  "slug": "macro_economic__fred__employment__lns14000006__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__employment__lns14000006__observations.parquet",
+      "rows": 5671585,
+      "missing_pct": 0.001574163130765033
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__employment__lns14000006__observations.parquet",
+      "rows": 1890529,
+      "missing_pct": 0.00157416257566004
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__employment__lns14000006__observations.parquet",
+      "rows": 472633,
+      "missing_pct": 0.0015741600776924167
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__employment__lns14000006__observations.parquet",
+      "rows": 118159,
+      "missing_pct": 0.001574150085901201
+    }
+  },
+  "rows_native": 648,
+  "columns": [
+    "value"
+  ],
+  "start": "1972-01-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

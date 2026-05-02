@@ -1,0 +1,41 @@
+{
+  "source": "market_data/equities/etfs/ivv/daily.parquet",
+  "slug": "market_data__equities__etfs__ivv__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__etfs__ivv__daily.parquet",
+      "rows": 2694541,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__etfs__ivv__daily.parquet",
+      "rows": 898181,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__etfs__ivv__daily.parquet",
+      "rows": 224546,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__etfs__ivv__daily.parquet",
+      "rows": 56138,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 6442,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits",
+    "Capital Gains"
+  ],
+  "start": "2000-05-19T04:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

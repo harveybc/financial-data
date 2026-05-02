@@ -1,0 +1,40 @@
+{
+  "source": "market_data/commodities/agriculture/sb_f/daily.parquet",
+  "slug": "market_data__commodities__agriculture__sb_f__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__commodities__agriculture__sb_f__daily.parquet",
+      "rows": 2717281,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__commodities__agriculture__sb_f__daily.parquet",
+      "rows": 905761,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__commodities__agriculture__sb_f__daily.parquet",
+      "rows": 226441,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__commodities__agriculture__sb_f__daily.parquet",
+      "rows": 56612,
+      "missing_pct": 1.7664099484208295e-05
+    }
+  },
+  "rows_native": 6480,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "2000-03-01T05:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

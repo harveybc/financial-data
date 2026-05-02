@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/stress/vixcls/observations.parquet",
+  "slug": "macro_economic__fred__stress__vixcls__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__stress__vixcls__observations.parquet",
+      "rows": 3786337,
+      "missing_pct": 0.03240282098503118
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__stress__vixcls__observations.parquet",
+      "rows": 1262113,
+      "missing_pct": 0.03240280386938412
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__stress__vixcls__observations.parquet",
+      "rows": 315529,
+      "missing_pct": 0.03240272684919611
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__stress__vixcls__observations.parquet",
+      "rows": 78883,
+      "missing_pct": 0.03240241877210552
+    }
+  },
+  "rows_native": 9392,
+  "columns": [
+    "value"
+  ],
+  "start": "1990-01-02T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

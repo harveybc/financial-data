@@ -1,0 +1,40 @@
+{
+  "source": "market_data/commodities/energy/cl_f/daily.parquet",
+  "slug": "market_data__commodities__energy__cl_f__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__commodities__energy__cl_f__daily.parquet",
+      "rows": 2666893,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__commodities__energy__cl_f__daily.parquet",
+      "rows": 888965,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__commodities__energy__cl_f__daily.parquet",
+      "rows": 222242,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__commodities__energy__cl_f__daily.parquet",
+      "rows": 55562,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 6366,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "2000-08-23T04:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

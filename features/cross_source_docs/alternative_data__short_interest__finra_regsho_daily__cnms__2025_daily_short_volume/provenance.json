@@ -1,0 +1,35 @@
+{
+  "source": "alternative_data/short_interest/finra_regsho_daily/cnms/2025_daily_short_volume.parquet",
+  "slug": "alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "rows": 2,
+      "missing_pct": 0.5
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "rows": 2,
+      "missing_pct": 0.5
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "rows": 2,
+      "missing_pct": 0.5
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "rows": 2,
+      "missing_pct": 0.5
+    }
+  },
+  "rows_native": 466,
+  "columns": [
+    "ShortVolume",
+    "ShortExemptVolume",
+    "TotalVolume"
+  ],
+  "start": "1970-01-01T00:00:00.000010192+00:00",
+  "end": "1970-01-01T00:00:00.020251231+00:00"
+}

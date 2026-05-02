@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/credit/bamlh0a0hym2/observations.parquet",
+  "slug": "macro_economic__fred__credit__bamlh0a0hym2__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__credit__bamlh0a0hym2__observations.parquet",
+      "rows": 280513,
+      "missing_pct": 0.010266903851158414
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__credit__bamlh0a0hym2__observations.parquet",
+      "rows": 93505,
+      "missing_pct": 0.010266830650767339
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__credit__bamlh0a0hym2__observations.parquet",
+      "rows": 23377,
+      "missing_pct": 0.010266501261924113
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__credit__bamlh0a0hym2__observations.parquet",
+      "rows": 5845,
+      "missing_pct": 0.010265183917878529
+    }
+  },
+  "rows_native": 706,
+  "columns": [
+    "value"
+  ],
+  "start": "2023-05-02T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

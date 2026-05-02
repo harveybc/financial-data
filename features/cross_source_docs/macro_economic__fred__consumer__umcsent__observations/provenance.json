@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/consumer/umcsent/observations.parquet",
+  "slug": "macro_economic__fred__consumer__umcsent__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__consumer__umcsent__observations.parquet",
+      "rows": 7687585,
+      "missing_pct": 0.2407747036292932
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__consumer__umcsent__observations.parquet",
+      "rows": 2562529,
+      "missing_pct": 0.2407746409894288
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__consumer__umcsent__observations.parquet",
+      "rows": 640633,
+      "missing_pct": 0.24077435911044232
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__consumer__umcsent__observations.parquet",
+      "rows": 160159,
+      "missing_pct": 0.2407732316010964
+    }
+  },
+  "rows_native": 878,
+  "columns": [
+    "value"
+  ],
+  "start": "1952-11-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

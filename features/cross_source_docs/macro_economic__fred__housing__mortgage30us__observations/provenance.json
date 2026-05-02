@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/housing/mortgage30us/observations.parquet",
+  "slug": "macro_economic__fred__housing__mortgage30us__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__housing__mortgage30us__observations.parquet",
+      "rows": 5759137,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__housing__mortgage30us__observations.parquet",
+      "rows": 1919713,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__housing__mortgage30us__observations.parquet",
+      "rows": 479929,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__housing__mortgage30us__observations.parquet",
+      "rows": 119983,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 2858,
+  "columns": [
+    "value"
+  ],
+  "start": "1971-04-02T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

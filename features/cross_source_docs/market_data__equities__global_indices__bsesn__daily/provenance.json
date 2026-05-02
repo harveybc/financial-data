@@ -1,0 +1,40 @@
+{
+  "source": "market_data/equities/global_indices/bsesn/daily.parquet",
+  "slug": "market_data__equities__global_indices__bsesn__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__global_indices__bsesn__daily.parquet",
+      "rows": 2997793,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__global_indices__bsesn__daily.parquet",
+      "rows": 999265,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__global_indices__bsesn__daily.parquet",
+      "rows": 249818,
+      "missing_pct": 4.002914121480438e-06
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__global_indices__bsesn__daily.parquet",
+      "rows": 62456,
+      "missing_pct": 1.601127193544255e-05
+    }
+  },
+  "rows_native": 7021,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "1997-06-30T18:30:00+00:00",
+  "end": "2025-12-29T18:30:00+00:00"
+}

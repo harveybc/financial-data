@@ -1,12 +1,12 @@
 # Project 3 Tier 2 Context Packet
 
-generated_at: 2026-05-02T00:17:40Z
+generated_at: 2026-05-02T00:48:01Z
 project_root: /home/harveybc/Documents/GitHub/financial-data
 active_stage: Stage 1.3 Free Data Acquisition complete; Stage 1.5 paid-source acquisition active with FXMacroData and CryptoQuant complete; Stage 1.6 preflight validation active.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
 supervisor_model_policy: default Hermes/OpenCode provider
 experiment_until: none
-tier2_model_timeout_seconds: 90
+tier2_model_timeout_seconds: 240
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/15_STAGE_1_5_PAID_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
 - Omega: Stage 1.5 paid-source status aggregation, Stage 1.6 preflight documentation audit, master inventory, acquisition-log/gap aggregation, and Stage 1.3/1.5 status refresh.

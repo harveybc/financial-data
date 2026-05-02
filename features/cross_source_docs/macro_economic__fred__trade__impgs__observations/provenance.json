@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/trade/impgs/observations.parquet",
+  "slug": "macro_economic__fred__trade__impgs__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__trade__impgs__observations.parquet",
+      "rows": 8388865,
+      "missing_pct": 0.012530896611162535
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__trade__impgs__observations.parquet",
+      "rows": 2796289,
+      "missing_pct": 0.01253089362365621
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__trade__impgs__observations.parquet",
+      "rows": 699073,
+      "missing_pct": 0.012530880179895376
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__trade__impgs__observations.parquet",
+      "rows": 174769,
+      "missing_pct": 0.0125308264051405
+    }
+  },
+  "rows_native": 320,
+  "columns": [
+    "value"
+  ],
+  "start": "1946-01-01T00:00:00+00:00",
+  "end": "2025-10-01T00:00:00+00:00"
+}

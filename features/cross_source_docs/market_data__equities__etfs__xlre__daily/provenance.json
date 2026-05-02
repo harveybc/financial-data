@@ -1,0 +1,41 @@
+{
+  "source": "market_data/equities/etfs/xlre/daily.parquet",
+  "slug": "market_data__equities__etfs__xlre__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__etfs__xlre__daily.parquet",
+      "rows": 1075981,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__etfs__xlre__daily.parquet",
+      "rows": 358661,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__etfs__xlre__daily.parquet",
+      "rows": 89666,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__etfs__xlre__daily.parquet",
+      "rows": 22418,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 2572,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits",
+    "Capital Gains"
+  ],
+  "start": "2015-10-08T04:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

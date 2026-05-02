@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/employment/unrate/observations.parquet",
+  "slug": "macro_economic__fred__employment__unrate__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__employment__unrate__observations.parquet",
+      "rows": 8196193,
+      "missing_pct": 0.0010892862088533054
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__employment__unrate__observations.parquet",
+      "rows": 2732065,
+      "missing_pct": 0.0010892859430504033
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__employment__unrate__observations.parquet",
+      "rows": 683017,
+      "missing_pct": 0.0010892847469389489
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__employment__unrate__observations.parquet",
+      "rows": 170755,
+      "missing_pct": 0.001089279962519399
+    }
+  },
+  "rows_native": 936,
+  "columns": [
+    "value"
+  ],
+  "start": "1948-01-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

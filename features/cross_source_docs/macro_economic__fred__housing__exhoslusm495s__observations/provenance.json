@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/housing/exhoslusm495s/observations.parquet",
+  "slug": "macro_economic__fred__housing__exhoslusm495s__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__housing__exhoslusm495s__observations.parquet",
+      "rows": 87265,
+      "missing_pct": 0.09240818197444566
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__housing__exhoslusm495s__observations.parquet",
+      "rows": 29089,
+      "missing_pct": 0.09240606414795971
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__housing__exhoslusm495s__observations.parquet",
+      "rows": 7273,
+      "missing_pct": 0.09239653512993262
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__housing__exhoslusm495s__observations.parquet",
+      "rows": 1819,
+      "missing_pct": 0.09235843870258384
+    }
+  },
+  "rows_native": 11,
+  "columns": [
+    "value"
+  ],
+  "start": "2025-02-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

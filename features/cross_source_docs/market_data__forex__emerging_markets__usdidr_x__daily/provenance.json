@@ -1,0 +1,40 @@
+{
+  "source": "market_data/forex/emerging_markets/usdidr_x/daily.parquet",
+  "slug": "market_data__forex__emerging_markets__usdidr_x__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+      "rows": 2577901,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+      "rows": 859301,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+      "rows": 214826,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__forex__emerging_markets__usdidr_x__daily.parquet",
+      "rows": 53708,
+      "missing_pct": 1.861920011916288e-05
+    }
+  },
+  "rows_native": 6183,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "2001-06-27T23:00:00+00:00",
+  "end": "2025-12-30T00:00:00+00:00"
+}

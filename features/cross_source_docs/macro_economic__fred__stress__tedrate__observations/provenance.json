@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/stress/tedrate/observations.parquet",
+  "slug": "macro_economic__fred__stress__tedrate__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__stress__tedrate__observations.parquet",
+      "rows": 3792385,
+      "missing_pct": 0.053918576304884655
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__stress__tedrate__observations.parquet",
+      "rows": 1264129,
+      "missing_pct": 0.053918547869718995
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__stress__tedrate__observations.parquet",
+      "rows": 316033,
+      "missing_pct": 0.05391841991184465
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__stress__tedrate__observations.parquet",
+      "rows": 79009,
+      "missing_pct": 0.05391790808642053
+    }
+  },
+  "rows_native": 9407,
+  "columns": [
+    "value"
+  ],
+  "start": "1986-01-02T00:00:00+00:00",
+  "end": "2022-01-21T00:00:00+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "source": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_all_token_all_exchange.parquet",
+  "slug": "alternative_data__cryptoquant__stablecoin_exchange_flows__stablecoin_outflow_all_token_all_exchange",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/alternative_data__cryptoquant__stablecoin_exchange_flows__stablecoin_outflow_all_token_all_exchange.parquet",
+      "rows": 28513,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/alternative_data__cryptoquant__stablecoin_exchange_flows__stablecoin_outflow_all_token_all_exchange.parquet",
+      "rows": 9505,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/alternative_data__cryptoquant__stablecoin_exchange_flows__stablecoin_outflow_all_token_all_exchange.parquet",
+      "rows": 2377,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/alternative_data__cryptoquant__stablecoin_exchange_flows__stablecoin_outflow_all_token_all_exchange.parquet",
+      "rows": 595,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 100,
+  "columns": [
+    "outflow_total",
+    "outflow_top10",
+    "outflow_mean",
+    "outflow_mean_ma7"
+  ],
+  "start": "2026-01-21T00:00:00+00:00",
+  "end": "2026-04-30T00:00:00+00:00"
+}

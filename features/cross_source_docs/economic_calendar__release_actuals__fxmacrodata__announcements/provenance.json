@@ -1,0 +1,36 @@
+{
+  "source": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
+  "slug": "economic_calendar__release_actuals__fxmacrodata__announcements",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/economic_calendar__release_actuals__fxmacrodata__announcements.parquet",
+      "rows": 130753,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/economic_calendar__release_actuals__fxmacrodata__announcements.parquet",
+      "rows": 43585,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/economic_calendar__release_actuals__fxmacrodata__announcements.parquet",
+      "rows": 10897,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/economic_calendar__release_actuals__fxmacrodata__announcements.parquet",
+      "rows": 2725,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 370,
+  "columns": [
+    "val",
+    "announcement_datetime",
+    "announcement_datetime_utc",
+    "pct_change_mom"
+  ],
+  "start": "2025-01-31T00:00:00+00:00",
+  "end": "2026-04-30T00:00:00+00:00"
+}

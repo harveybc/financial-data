@@ -1,0 +1,40 @@
+{
+  "source": "market_data/equities/us_indices/rut/daily.parquet",
+  "slug": "market_data__equities__us_indices__rut__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__us_indices__rut__daily.parquet",
+      "rows": 4029421,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__us_indices__rut__daily.parquet",
+      "rows": 1343141,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__us_indices__rut__daily.parquet",
+      "rows": 335786,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__us_indices__rut__daily.parquet",
+      "rows": 83948,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 9650,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "1987-09-10T04:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

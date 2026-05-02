@@ -1,0 +1,891 @@
+{
+  "generated_at": "2026-05-02T00:55:54.830628+00:00",
+  "stage": "Stage 2.2",
+  "machine": "omega",
+  "universe": "forex_g10",
+  "jobs_total": 40,
+  "jobs_ok": 40,
+  "jobs_failed": 0,
+  "results": [
+    {
+      "asset": "audusd",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/audusd/5m.parquet",
+      "technical_path": "features/trading_asset_features/audusd/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/audusd/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1548294,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1548294,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "audusd",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/audusd/15m.parquet",
+      "technical_path": "features/trading_asset_features/audusd/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/audusd/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518515,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518515,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "audusd",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/audusd/1h.parquet",
+      "technical_path": "features/trading_asset_features/audusd/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/audusd/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129844,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129844,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "audusd",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/audusd/4h.parquet",
+      "technical_path": "features/trading_asset_features/audusd/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/audusd/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33760,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33760,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurgbp",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurgbp/5m.parquet",
+      "technical_path": "features/trading_asset_features/eurgbp/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurgbp/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1540269,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1540269,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurgbp",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurgbp/15m.parquet",
+      "technical_path": "features/trading_asset_features/eurgbp/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurgbp/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518235,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518235,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurgbp",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurgbp/1h.parquet",
+      "technical_path": "features/trading_asset_features/eurgbp/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurgbp/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129852,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129852,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurgbp",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurgbp/4h.parquet",
+      "technical_path": "features/trading_asset_features/eurgbp/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurgbp/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33758,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33758,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurjpy",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurjpy/5m.parquet",
+      "technical_path": "features/trading_asset_features/eurjpy/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurjpy/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1553487,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1553487,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurjpy",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurjpy/15m.parquet",
+      "technical_path": "features/trading_asset_features/eurjpy/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurjpy/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518551,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518551,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurjpy",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurjpy/1h.parquet",
+      "technical_path": "features/trading_asset_features/eurjpy/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurjpy/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129842,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129842,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurjpy",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurjpy/4h.parquet",
+      "technical_path": "features/trading_asset_features/eurjpy/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurjpy/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33760,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33760,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurusd",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurusd/5m.parquet",
+      "technical_path": "features/trading_asset_features/eurusd/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurusd/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1552028,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1552028,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurusd",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurusd/15m.parquet",
+      "technical_path": "features/trading_asset_features/eurusd/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurusd/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518686,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518686,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurusd",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurusd/1h.parquet",
+      "technical_path": "features/trading_asset_features/eurusd/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurusd/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129873,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129873,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "eurusd",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/eurusd/4h.parquet",
+      "technical_path": "features/trading_asset_features/eurusd/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/eurusd/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33763,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33763,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpjpy",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpjpy/5m.parquet",
+      "technical_path": "features/trading_asset_features/gbpjpy/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpjpy/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1552824,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1552824,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpjpy",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpjpy/15m.parquet",
+      "technical_path": "features/trading_asset_features/gbpjpy/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpjpy/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518303,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518303,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpjpy",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpjpy/1h.parquet",
+      "technical_path": "features/trading_asset_features/gbpjpy/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpjpy/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129782,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129782,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpjpy",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpjpy/4h.parquet",
+      "technical_path": "features/trading_asset_features/gbpjpy/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpjpy/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33745,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33745,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpusd",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpusd/5m.parquet",
+      "technical_path": "features/trading_asset_features/gbpusd/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpusd/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1550119,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1550119,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpusd",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpusd/15m.parquet",
+      "technical_path": "features/trading_asset_features/gbpusd/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpusd/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518571,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518571,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpusd",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpusd/1h.parquet",
+      "technical_path": "features/trading_asset_features/gbpusd/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpusd/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129852,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129852,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "gbpusd",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/gbpusd/4h.parquet",
+      "technical_path": "features/trading_asset_features/gbpusd/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/gbpusd/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33760,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33760,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "nzdusd",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/nzdusd/5m.parquet",
+      "technical_path": "features/trading_asset_features/nzdusd/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/nzdusd/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1496996,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1496996,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "nzdusd",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/nzdusd/15m.parquet",
+      "technical_path": "features/trading_asset_features/nzdusd/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/nzdusd/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 502926,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 502926,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "nzdusd",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/nzdusd/1h.parquet",
+      "technical_path": "features/trading_asset_features/nzdusd/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/nzdusd/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 125859,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 125859,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "nzdusd",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/nzdusd/4h.parquet",
+      "technical_path": "features/trading_asset_features/nzdusd/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/nzdusd/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 32714,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 32714,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdcad",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdcad/5m.parquet",
+      "technical_path": "features/trading_asset_features/usdcad/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdcad/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1456563,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1456563,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdcad",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdcad/15m.parquet",
+      "technical_path": "features/trading_asset_features/usdcad/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdcad/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 492860,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 492860,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdcad",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdcad/1h.parquet",
+      "technical_path": "features/trading_asset_features/usdcad/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdcad/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 123602,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 123602,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdcad",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdcad/4h.parquet",
+      "technical_path": "features/trading_asset_features/usdcad/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdcad/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 32145,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 32145,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdchf",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdchf/5m.parquet",
+      "technical_path": "features/trading_asset_features/usdchf/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdchf/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1548910,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1548910,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdchf",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdchf/15m.parquet",
+      "technical_path": "features/trading_asset_features/usdchf/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdchf/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518416,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518416,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdchf",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdchf/1h.parquet",
+      "technical_path": "features/trading_asset_features/usdchf/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdchf/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129829,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129829,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdchf",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdchf/4h.parquet",
+      "technical_path": "features/trading_asset_features/usdchf/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdchf/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33754,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33754,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdjpy",
+      "timeframe": "5m",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdjpy/5m.parquet",
+      "technical_path": "features/trading_asset_features/usdjpy/5m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdjpy/5m/statistical.parquet",
+      "technical_validation": {
+        "rows": 1551244,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 1551244,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdjpy",
+      "timeframe": "15m",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdjpy/15m.parquet",
+      "technical_path": "features/trading_asset_features/usdjpy/15m/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdjpy/15m/statistical.parquet",
+      "technical_validation": {
+        "rows": 518599,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 518599,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdjpy",
+      "timeframe": "1h",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdjpy/1h.parquet",
+      "technical_path": "features/trading_asset_features/usdjpy/1h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdjpy/1h/statistical.parquet",
+      "technical_validation": {
+        "rows": 129852,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 129852,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    },
+    {
+      "asset": "usdjpy",
+      "timeframe": "4h",
+      "status": "ok",
+      "source": "features/trading_asset_data/usdjpy/4h.parquet",
+      "technical_path": "features/trading_asset_features/usdjpy/4h/technical.parquet",
+      "statistical_path": "features/trading_asset_features/usdjpy/4h/statistical.parquet",
+      "technical_validation": {
+        "rows": 33758,
+        "columns": 54,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      },
+      "statistical_validation": {
+        "rows": 33758,
+        "columns": 22,
+        "inf_count": 0,
+        "all_nan_columns": [],
+        "all_nan_column_count": 0
+      }
+    }
+  ]
+}

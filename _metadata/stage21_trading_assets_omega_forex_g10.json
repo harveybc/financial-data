@@ -1,0 +1,671 @@
+{
+  "generated_at": "2026-05-02T00:42:06.045499+00:00",
+  "stage": "Stage 2.1",
+  "machine": "omega",
+  "universe": "forex_g10",
+  "assets_total": 10,
+  "assets_complete": 10,
+  "timeframe_outputs": 40,
+  "results": [
+    {
+      "asset": "audusd",
+      "source_dir": "market_data/forex/g10/audusd",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/audusd/5m.parquet",
+          "path": "features/trading_asset_data/audusd/5m.parquet",
+          "rows": 1548294,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 3094,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/audusd/15m.parquet",
+          "path": "features/trading_asset_data/audusd/15m.parquet",
+          "rows": 518515,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1920,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/audusd/1h.parquet",
+          "path": "features/trading_asset_data/audusd/1h.parquet",
+          "rows": 129844,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1259,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/audusd/4h.parquet",
+          "path": "features/trading_asset_data/audusd/4h.parquet",
+          "rows": 33760,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1113,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "eurgbp",
+      "source_dir": "market_data/forex/g10/eurgbp",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurgbp/5m.parquet",
+          "path": "features/trading_asset_data/eurgbp/5m.parquet",
+          "rows": 1540269,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 4615,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurgbp/15m.parquet",
+          "path": "features/trading_asset_data/eurgbp/15m.parquet",
+          "rows": 518235,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1963,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurgbp/1h.parquet",
+          "path": "features/trading_asset_data/eurgbp/1h.parquet",
+          "rows": 129852,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1244,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurgbp/4h.parquet",
+          "path": "features/trading_asset_data/eurgbp/4h.parquet",
+          "rows": 33758,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1112,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "eurjpy",
+      "source_dir": "market_data/forex/g10/eurjpy",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurjpy/5m.parquet",
+          "path": "features/trading_asset_data/eurjpy/5m.parquet",
+          "rows": 1553487,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 2339,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurjpy/15m.parquet",
+          "path": "features/trading_asset_data/eurjpy/15m.parquet",
+          "rows": 518551,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1918,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurjpy/1h.parquet",
+          "path": "features/trading_asset_data/eurjpy/1h.parquet",
+          "rows": 129842,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1261,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurjpy/4h.parquet",
+          "path": "features/trading_asset_data/eurjpy/4h.parquet",
+          "rows": 33760,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1113,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "eurusd",
+      "source_dir": "market_data/forex/g10/eurusd",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurusd/5m.parquet",
+          "path": "features/trading_asset_data/eurusd/5m.parquet",
+          "rows": 1552028,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 2613,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurusd/15m.parquet",
+          "path": "features/trading_asset_data/eurusd/15m.parquet",
+          "rows": 518686,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1926,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurusd/1h.parquet",
+          "path": "features/trading_asset_data/eurusd/1h.parquet",
+          "rows": 129873,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1241,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/eurusd/4h.parquet",
+          "path": "features/trading_asset_data/eurusd/4h.parquet",
+          "rows": 33763,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1112,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "gbpjpy",
+      "source_dir": "market_data/forex/g10/gbpjpy",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpjpy/5m.parquet",
+          "path": "features/trading_asset_data/gbpjpy/5m.parquet",
+          "rows": 1552824,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 2399,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpjpy/15m.parquet",
+          "path": "features/trading_asset_data/gbpjpy/15m.parquet",
+          "rows": 518303,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1924,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpjpy/1h.parquet",
+          "path": "features/trading_asset_data/gbpjpy/1h.parquet",
+          "rows": 129782,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1255,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpjpy/4h.parquet",
+          "path": "features/trading_asset_data/gbpjpy/4h.parquet",
+          "rows": 33745,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1112,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "gbpusd",
+      "source_dir": "market_data/forex/g10/gbpusd",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpusd/5m.parquet",
+          "path": "features/trading_asset_data/gbpusd/5m.parquet",
+          "rows": 1550119,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 2889,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpusd/15m.parquet",
+          "path": "features/trading_asset_data/gbpusd/15m.parquet",
+          "rows": 518571,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1929,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpusd/1h.parquet",
+          "path": "features/trading_asset_data/gbpusd/1h.parquet",
+          "rows": 129852,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1253,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/gbpusd/4h.parquet",
+          "path": "features/trading_asset_data/gbpusd/4h.parquet",
+          "rows": 33760,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1113,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "nzdusd",
+      "source_dir": "market_data/forex/g10/nzdusd",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/nzdusd/5m.parquet",
+          "path": "features/trading_asset_data/nzdusd/5m.parquet",
+          "rows": 1496996,
+          "start": "2005-08-12T17:00:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 3625,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/nzdusd/15m.parquet",
+          "path": "features/trading_asset_data/nzdusd/15m.parquet",
+          "rows": 502926,
+          "start": "2005-08-12T17:00:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1801,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/nzdusd/1h.parquet",
+          "path": "features/trading_asset_data/nzdusd/1h.parquet",
+          "rows": 125859,
+          "start": "2005-08-12T17:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1190,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/nzdusd/4h.parquet",
+          "path": "features/trading_asset_data/nzdusd/4h.parquet",
+          "rows": 32714,
+          "start": "2005-08-12T16:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1085,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "usdcad",
+      "source_dir": "market_data/forex/g10/usdcad",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdcad/5m.parquet",
+          "path": "features/trading_asset_data/usdcad/5m.parquet",
+          "rows": 1456563,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 6521,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdcad/15m.parquet",
+          "path": "features/trading_asset_data/usdcad/15m.parquet",
+          "rows": 492860,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1897,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdcad/1h.parquet",
+          "path": "features/trading_asset_data/usdcad/1h.parquet",
+          "rows": 123602,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1209,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdcad/4h.parquet",
+          "path": "features/trading_asset_data/usdcad/4h.parquet",
+          "rows": 32145,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1058,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "usdchf",
+      "source_dir": "market_data/forex/g10/usdchf",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdchf/5m.parquet",
+          "path": "features/trading_asset_data/usdchf/5m.parquet",
+          "rows": 1548910,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 3024,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdchf/15m.parquet",
+          "path": "features/trading_asset_data/usdchf/15m.parquet",
+          "rows": 518416,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1934,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdchf/1h.parquet",
+          "path": "features/trading_asset_data/usdchf/1h.parquet",
+          "rows": 129829,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1248,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdchf/4h.parquet",
+          "path": "features/trading_asset_data/usdchf/4h.parquet",
+          "rows": 33754,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1112,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    },
+    {
+      "asset": "usdjpy",
+      "source_dir": "market_data/forex/g10/usdjpy",
+      "timeframes": {
+        "5m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdjpy/5m.parquet",
+          "path": "features/trading_asset_data/usdjpy/5m.parquet",
+          "rows": 1551244,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:55:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 300,
+            "unexpected_gaps": 2679,
+            "median_step_seconds": 300.0
+          }
+        },
+        "15m": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdjpy/15m.parquet",
+          "path": "features/trading_asset_data/usdjpy/15m.parquet",
+          "rows": 518599,
+          "start": "2005-01-03T01:45:00+00:00",
+          "end": "2025-12-31T16:45:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 900,
+            "unexpected_gaps": 1938,
+            "median_step_seconds": 900.0
+          }
+        },
+        "1h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdjpy/1h.parquet",
+          "path": "features/trading_asset_data/usdjpy/1h.parquet",
+          "rows": 129852,
+          "start": "2005-01-03T01:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 3600,
+            "unexpected_gaps": 1237,
+            "median_step_seconds": 3600.0
+          }
+        },
+        "4h": {
+          "status": "ok",
+          "source": "market_data/forex/g10/usdjpy/4h.parquet",
+          "path": "features/trading_asset_data/usdjpy/4h.parquet",
+          "rows": 33758,
+          "start": "2005-01-03T00:00:00+00:00",
+          "end": "2025-12-31T16:00:00+00:00",
+          "warnings": [],
+          "frequency": {
+            "status": "ok",
+            "expected_step_seconds": 14400,
+            "unexpected_gaps": 1113,
+            "median_step_seconds": 14400.0
+          }
+        }
+      }
+    }
+  ]
+}

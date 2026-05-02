@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/recession/usrecdm/observations.parquet",
+  "slug": "macro_economic__fred__recession__usrecdm__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__recession__usrecdm__observations.parquet",
+      "rows": 13253761,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__recession__usrecdm__observations.parquet",
+      "rows": 4417921,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__recession__usrecdm__observations.parquet",
+      "rows": 1104481,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__recession__usrecdm__observations.parquet",
+      "rows": 276121,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 46021,
+  "columns": [
+    "value"
+  ],
+  "start": "1900-01-01T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

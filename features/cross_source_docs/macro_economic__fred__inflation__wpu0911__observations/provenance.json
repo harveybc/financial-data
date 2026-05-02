@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/inflation/wpu0911/observations.parquet",
+  "slug": "macro_economic__fred__inflation__wpu0911__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__inflation__wpu0911__observations.parquet",
+      "rows": 10510273,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__inflation__wpu0911__observations.parquet",
+      "rows": 3503425,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__inflation__wpu0911__observations.parquet",
+      "rows": 875857,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__inflation__wpu0911__observations.parquet",
+      "rows": 218965,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 1200,
+  "columns": [
+    "value"
+  ],
+  "start": "1926-01-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

@@ -1,0 +1,41 @@
+{
+  "source": "market_data/equities/etfs/gld/daily.parquet",
+  "slug": "market_data__equities__etfs__gld__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__etfs__gld__daily.parquet",
+      "rows": 2221057,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__etfs__gld__daily.parquet",
+      "rows": 740353,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__etfs__gld__daily.parquet",
+      "rows": 185089,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__etfs__gld__daily.parquet",
+      "rows": 46274,
+      "missing_pct": 2.1610407572286814e-05
+    }
+  },
+  "rows_native": 5312,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits",
+    "Capital Gains"
+  ],
+  "start": "2004-11-18T05:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

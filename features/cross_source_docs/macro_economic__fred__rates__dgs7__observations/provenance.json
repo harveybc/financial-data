@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/rates/dgs7/observations.parquet",
+  "slug": "macro_economic__fred__rates__dgs7__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__rates__dgs7__observations.parquet",
+      "rows": 5943457,
+      "missing_pct": 0.04021901731601659
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__rates__dgs7__observations.parquet",
+      "rows": 1981153,
+      "missing_pct": 0.04021900378214101
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__rates__dgs7__observations.parquet",
+      "rows": 495289,
+      "missing_pct": 0.040218942879813604
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__rates__dgs7__observations.parquet",
+      "rows": 123823,
+      "missing_pct": 0.04021869927234843
+    }
+  },
+  "rows_native": 14742,
+  "columns": [
+    "value"
+  ],
+  "start": "1969-07-01T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

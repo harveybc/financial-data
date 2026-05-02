@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/industrial/businv/observations.parquet",
+  "slug": "macro_economic__fred__industrial__businv__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__industrial__businv__observations.parquet",
+      "rows": 4733569,
+      "missing_pct": 0.24628858267408799
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__industrial__businv__observations.parquet",
+      "rows": 1577857,
+      "missing_pct": 0.24628847861371467
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__industrial__businv__observations.parquet",
+      "rows": 394465,
+      "missing_pct": 0.24628801034312298
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__industrial__businv__observations.parquet",
+      "rows": 98617,
+      "missing_pct": 0.24628613727856252
+    }
+  },
+  "rows_native": 541,
+  "columns": [
+    "value"
+  ],
+  "start": "1980-12-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

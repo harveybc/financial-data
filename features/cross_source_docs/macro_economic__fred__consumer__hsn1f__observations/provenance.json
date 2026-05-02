@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/consumer/hsn1f/observations.parquet",
+  "slug": "macro_economic__fred__consumer__hsn1f__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__consumer__hsn1f__observations.parquet",
+      "rows": 6618241,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__consumer__hsn1f__observations.parquet",
+      "rows": 2206081,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__consumer__hsn1f__observations.parquet",
+      "rows": 551521,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__consumer__hsn1f__observations.parquet",
+      "rows": 137881,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 756,
+  "columns": [
+    "value"
+  ],
+  "start": "1963-01-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}

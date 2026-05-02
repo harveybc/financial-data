@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/credit/baa10y/observations.parquet",
+  "slug": "macro_economic__fred__credit__baa10y__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__credit__baa10y__observations.parquet",
+      "rows": 4207105,
+      "missing_pct": 0.0396358065700761
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__credit__baa10y__observations.parquet",
+      "rows": 1402369,
+      "missing_pct": 0.039635787727766374
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__credit__baa10y__observations.parquet",
+      "rows": 350593,
+      "missing_pct": 0.0396357029375943
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__credit__baa10y__observations.parquet",
+      "rows": 87649,
+      "missing_pct": 0.03963536378053372
+    }
+  },
+  "rows_native": 10435,
+  "columns": [
+    "value"
+  ],
+  "start": "1986-01-02T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

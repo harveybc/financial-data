@@ -1,0 +1,33 @@
+{
+  "source": "alternative_data/onchain_other/coinmetrics_community/doge/HashRate.parquet",
+  "slug": "alternative_data__onchain_other__coinmetrics_community__doge__hashrate",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/alternative_data__onchain_other__coinmetrics_community__doge__hashrate.parquet",
+      "rows": 1268929,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/alternative_data__onchain_other__coinmetrics_community__doge__hashrate.parquet",
+      "rows": 422977,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/alternative_data__onchain_other__coinmetrics_community__doge__hashrate.parquet",
+      "rows": 105745,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/alternative_data__onchain_other__coinmetrics_community__doge__hashrate.parquet",
+      "rows": 26437,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 4407,
+  "columns": [
+    "HashRate"
+  ],
+  "start": "2013-12-08T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

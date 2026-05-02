@@ -1,0 +1,40 @@
+{
+  "source": "market_data/commodities/precious_metals/gc_f/daily.parquet",
+  "slug": "market_data__commodities__precious_metals__gc_f__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__commodities__precious_metals__gc_f__daily.parquet",
+      "rows": 2664877,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__commodities__precious_metals__gc_f__daily.parquet",
+      "rows": 888293,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__commodities__precious_metals__gc_f__daily.parquet",
+      "rows": 222074,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__commodities__precious_metals__gc_f__daily.parquet",
+      "rows": 55520,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 6357,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "2000-08-30T04:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

@@ -1,0 +1,34 @@
+{
+  "source": "market_data/crypto/funding_rates/avaxusdt/funding_rates.parquet",
+  "slug": "market_data__crypto__funding_rates__avaxusdt__funding_rates",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+      "rows": 554690,
+      "missing_pct": 1.802808776073122e-06
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+      "rows": 184898,
+      "missing_pct": 5.408387327066815e-06
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+      "rows": 46226,
+      "missing_pct": 2.1632847315363647e-05
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__avaxusdt__funding_rates.parquet",
+      "rows": 11558,
+      "missing_pct": 8.652015919709292e-05
+    }
+  },
+  "rows_native": 5779,
+  "columns": [
+    "fundingRate",
+    "markPrice"
+  ],
+  "start": "2020-09-22T16:00:00.004000+00:00",
+  "end": "2025-12-31T16:00:00.001000+00:00"
+}

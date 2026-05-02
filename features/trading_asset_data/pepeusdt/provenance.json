@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-02T00:41:23.272698+00:00",
+  "stage": "Stage 2.1",
+  "asset": "pepeusdt",
+  "source_dir": "market_data/crypto/spot_top50/pepeusdt",
+  "timeframes": {
+    "5m": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/pepeusdt/5m.parquet",
+      "path": "features/trading_asset_data/pepeusdt/5m.parquet",
+      "rows": 279720,
+      "start": "2023-05-05T18:00:00+00:00",
+      "end": "2025-12-31T23:55:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 300,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 300.0
+      }
+    },
+    "15m": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/pepeusdt/15m.parquet",
+      "path": "features/trading_asset_data/pepeusdt/15m.parquet",
+      "rows": 93240,
+      "start": "2023-05-05T18:00:00+00:00",
+      "end": "2025-12-31T23:45:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 900,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 900.0
+      }
+    },
+    "1h": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/pepeusdt/1h.parquet",
+      "path": "features/trading_asset_data/pepeusdt/1h.parquet",
+      "rows": 23310,
+      "start": "2023-05-05T18:00:00+00:00",
+      "end": "2025-12-31T23:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 3600,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 3600.0
+      }
+    },
+    "4h": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/pepeusdt/4h.parquet",
+      "path": "features/trading_asset_data/pepeusdt/4h.parquet",
+      "rows": 5828,
+      "start": "2023-05-05T16:00:00+00:00",
+      "end": "2025-12-31T20:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 14400,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 14400.0
+      }
+    }
+  }
+}

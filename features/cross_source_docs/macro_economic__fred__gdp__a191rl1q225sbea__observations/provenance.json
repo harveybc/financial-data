@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/gdp/a191rl1q225sbea/observations.parquet",
+  "slug": "macro_economic__fred__gdp__a191rl1q225sbea__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__gdp__a191rl1q225sbea__observations.parquet",
+      "rows": 8257825,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__gdp__a191rl1q225sbea__observations.parquet",
+      "rows": 2752609,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__gdp__a191rl1q225sbea__observations.parquet",
+      "rows": 688153,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__gdp__a191rl1q225sbea__observations.parquet",
+      "rows": 172039,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 315,
+  "columns": [
+    "value"
+  ],
+  "start": "1947-04-01T00:00:00+00:00",
+  "end": "2025-10-01T00:00:00+00:00"
+}

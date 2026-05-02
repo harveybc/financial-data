@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-02T00:41:21.123597+00:00",
+  "stage": "Stage 2.1",
+  "asset": "ethusdt",
+  "source_dir": "market_data/crypto/spot_top50/ethusdt",
+  "timeframes": {
+    "5m": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/ethusdt/5m.parquet",
+      "path": "features/trading_asset_data/ethusdt/5m.parquet",
+      "rows": 879229,
+      "start": "2017-08-17T04:00:00+00:00",
+      "end": "2025-12-31T23:55:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 300,
+        "unexpected_gaps": 33,
+        "median_step_seconds": 300.0
+      }
+    },
+    "15m": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/ethusdt/15m.parquet",
+      "path": "features/trading_asset_data/ethusdt/15m.parquet",
+      "rows": 293083,
+      "start": "2017-08-17T04:00:00+00:00",
+      "end": "2025-12-31T23:45:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 900,
+        "unexpected_gaps": 31,
+        "median_step_seconds": 900.0
+      }
+    },
+    "1h": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/ethusdt/1h.parquet",
+      "path": "features/trading_asset_data/ethusdt/1h.parquet",
+      "rows": 73284,
+      "start": "2017-08-17T04:00:00+00:00",
+      "end": "2025-12-31T23:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 3600,
+        "unexpected_gaps": 19,
+        "median_step_seconds": 3600.0
+      }
+    },
+    "4h": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+      "path": "features/trading_asset_data/ethusdt/4h.parquet",
+      "rows": 18337,
+      "start": "2017-08-17T04:00:00+00:00",
+      "end": "2025-12-31T20:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 14400,
+        "unexpected_gaps": 3,
+        "median_step_seconds": 14400.0
+      }
+    }
+  }
+}

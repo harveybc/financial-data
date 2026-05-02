@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/employment/nrou/observations.parquet",
+  "slug": "macro_economic__fred__employment__nrou__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__employment__nrou__observations.parquet",
+      "rows": 8073217,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__employment__nrou__observations.parquet",
+      "rows": 2691073,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__employment__nrou__observations.parquet",
+      "rows": 672769,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__employment__nrou__observations.parquet",
+      "rows": 168193,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 308,
+  "columns": [
+    "value"
+  ],
+  "start": "1949-01-01T00:00:00+00:00",
+  "end": "2025-10-01T00:00:00+00:00"
+}

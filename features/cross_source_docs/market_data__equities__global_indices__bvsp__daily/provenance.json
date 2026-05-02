@@ -1,0 +1,40 @@
+{
+  "source": "market_data/equities/global_indices/bvsp/daily.parquet",
+  "slug": "market_data__equities__global_indices__bvsp__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__global_indices__bvsp__daily.parquet",
+      "rows": 3437281,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__global_indices__bvsp__daily.parquet",
+      "rows": 1145761,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__global_indices__bvsp__daily.parquet",
+      "rows": 286441,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__global_indices__bvsp__daily.parquet",
+      "rows": 71612,
+      "missing_pct": 1.3964140088253366e-05
+    }
+  },
+  "rows_native": 8094,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "1993-04-27T03:00:00+00:00",
+  "end": "2025-12-30T03:00:00+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/money/wtregen/observations.parquet",
+  "slug": "macro_economic__fred__money__wtregen__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__money__wtregen__observations.parquet",
+      "rows": 4205377,
+      "missing_pct": 0.423777463946752
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__money__wtregen__observations.parquet",
+      "rows": 1401793,
+      "missing_pct": 0.42377726240607566
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__money__wtregen__observations.parquet",
+      "rows": 350449,
+      "missing_pct": 0.42377635547540443
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__money__wtregen__observations.parquet",
+      "rows": 87613,
+      "missing_pct": 0.4237727277915378
+    }
+  },
+  "rows_native": 2087,
+  "columns": [
+    "value"
+  ],
+  "start": "1986-01-08T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

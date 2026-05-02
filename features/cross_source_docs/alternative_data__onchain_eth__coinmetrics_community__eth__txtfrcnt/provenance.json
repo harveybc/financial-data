@@ -1,0 +1,33 @@
+{
+  "source": "alternative_data/onchain_eth/coinmetrics_community/eth/TxTfrCnt.parquet",
+  "slug": "alternative_data__onchain_eth__coinmetrics_community__eth__txtfrcnt",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/alternative_data__onchain_eth__coinmetrics_community__eth__txtfrcnt.parquet",
+      "rows": 1096417,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/alternative_data__onchain_eth__coinmetrics_community__eth__txtfrcnt.parquet",
+      "rows": 365473,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/alternative_data__onchain_eth__coinmetrics_community__eth__txtfrcnt.parquet",
+      "rows": 91369,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/alternative_data__onchain_eth__coinmetrics_community__eth__txtfrcnt.parquet",
+      "rows": 22843,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 3808,
+  "columns": [
+    "TxTfrCnt"
+  ],
+  "start": "2015-07-30T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

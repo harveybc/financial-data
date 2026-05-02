@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-02T00:41:30.264808+00:00",
+  "stage": "Stage 2.1",
+  "asset": "solusdt_perp",
+  "source_dir": "market_data/crypto/perpetuals/solusdt",
+  "timeframes": {
+    "5m": {
+      "status": "ok",
+      "source": "market_data/crypto/perpetuals/solusdt/5m.parquet",
+      "path": "features/trading_asset_data/solusdt_perp/5m.parquet",
+      "rows": 557196,
+      "start": "2020-09-14T07:00:00+00:00",
+      "end": "2025-12-31T23:55:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 300,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 300.0
+      }
+    },
+    "15m": {
+      "status": "ok",
+      "source": "market_data/crypto/perpetuals/solusdt/15m.parquet",
+      "path": "features/trading_asset_data/solusdt_perp/15m.parquet",
+      "rows": 185732,
+      "start": "2020-09-14T07:00:00+00:00",
+      "end": "2025-12-31T23:45:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 900,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 900.0
+      }
+    },
+    "1h": {
+      "status": "ok",
+      "source": "market_data/crypto/perpetuals/solusdt/1h.parquet",
+      "path": "features/trading_asset_data/solusdt_perp/1h.parquet",
+      "rows": 46433,
+      "start": "2020-09-14T07:00:00+00:00",
+      "end": "2025-12-31T23:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 3600,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 3600.0
+      }
+    },
+    "4h": {
+      "status": "ok",
+      "source": "market_data/crypto/perpetuals/solusdt/4h.parquet",
+      "path": "features/trading_asset_data/solusdt_perp/4h.parquet",
+      "rows": 11609,
+      "start": "2020-09-14T04:00:00+00:00",
+      "end": "2025-12-31T20:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 14400,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 14400.0
+      }
+    }
+  }
+}

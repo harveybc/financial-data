@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/stress/anfci/observations.parquet",
+  "slug": "macro_economic__fred__stress__anfci__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__stress__anfci__observations.parquet",
+      "rows": 5781889,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__stress__anfci__observations.parquet",
+      "rows": 1927297,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__stress__anfci__observations.parquet",
+      "rows": 481825,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__stress__anfci__observations.parquet",
+      "rows": 120457,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 2869,
+  "columns": [
+    "value"
+  ],
+  "start": "1971-01-08T00:00:00+00:00",
+  "end": "2025-12-26T00:00:00+00:00"
+}

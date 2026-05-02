@@ -1,0 +1,33 @@
+{
+  "source": "alternative_data/onchain_other/coinmetrics_community/ada/TxCnt.parquet",
+  "slug": "alternative_data__onchain_other__coinmetrics_community__ada__txcnt",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/alternative_data__onchain_other__coinmetrics_community__ada__txcnt.parquet",
+      "rows": 870049,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/alternative_data__onchain_other__coinmetrics_community__ada__txcnt.parquet",
+      "rows": 290017,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/alternative_data__onchain_other__coinmetrics_community__ada__txcnt.parquet",
+      "rows": 72505,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/alternative_data__onchain_other__coinmetrics_community__ada__txcnt.parquet",
+      "rows": 18127,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 3022,
+  "columns": [
+    "TxCnt"
+  ],
+  "start": "2017-09-23T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

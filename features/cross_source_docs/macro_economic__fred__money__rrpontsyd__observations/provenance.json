@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/money/rrpontsyd/observations.parquet",
+  "slug": "macro_economic__fred__money__rrpontsyd__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__money__rrpontsyd__observations.parquet",
+      "rows": 2408545,
+      "missing_pct": 0.47064431015405567
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__money__rrpontsyd__observations.parquet",
+      "rows": 802849,
+      "missing_pct": 0.4706439193422424
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__money__rrpontsyd__observations.parquet",
+      "rows": 200713,
+      "missing_pct": 0.4706421606971148
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__money__rrpontsyd__observations.parquet",
+      "rows": 50179,
+      "missing_pct": 0.47063512624803205
+    }
+  },
+  "rows_native": 5974,
+  "columns": [
+    "value"
+  ],
+  "start": "2003-02-07T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/inflation/cpaltt01usm657n/observations.parquet",
+  "slug": "macro_economic__fred__inflation__cpaltt01usm657n__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__inflation__cpaltt01usm657n__observations.parquet",
+      "rows": 7266529,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__inflation__cpaltt01usm657n__observations.parquet",
+      "rows": 2422177,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__inflation__cpaltt01usm657n__observations.parquet",
+      "rows": 605545,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__inflation__cpaltt01usm657n__observations.parquet",
+      "rows": 151387,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 830,
+  "columns": [
+    "value"
+  ],
+  "start": "1955-02-01T00:00:00+00:00",
+  "end": "2024-03-01T00:00:00+00:00"
+}

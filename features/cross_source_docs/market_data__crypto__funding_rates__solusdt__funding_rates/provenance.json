@@ -1,0 +1,34 @@
+{
+  "source": "market_data/crypto/funding_rates/solusdt/funding_rates.parquet",
+  "slug": "market_data__crypto__funding_rates__solusdt__funding_rates",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+      "rows": 557282,
+      "missing_pct": 1.7944236490681557e-06
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+      "rows": 185762,
+      "missing_pct": 5.38323230800702e-06
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+      "rows": 46442,
+      "missing_pct": 2.1532233753929634e-05
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__crypto__funding_rates__solusdt__funding_rates.parquet",
+      "rows": 11612,
+      "missing_pct": 8.61178091629349e-05
+    }
+  },
+  "rows_native": 5881,
+  "columns": [
+    "fundingRate",
+    "markPrice"
+  ],
+  "start": "2020-09-13T16:00:00.004000+00:00",
+  "end": "2025-12-31T16:00:00.001000+00:00"
+}

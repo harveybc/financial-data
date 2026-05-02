@@ -1,0 +1,33 @@
+{
+  "source": "alternative_data/onchain_other/coinmetrics_community/ltc/AdrActCnt.parquet",
+  "slug": "alternative_data__onchain_other__coinmetrics_community__ltc__adractcnt",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/alternative_data__onchain_other__coinmetrics_community__ltc__adractcnt.parquet",
+      "rows": 1497313,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/alternative_data__onchain_other__coinmetrics_community__ltc__adractcnt.parquet",
+      "rows": 499105,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/alternative_data__onchain_other__coinmetrics_community__ltc__adractcnt.parquet",
+      "rows": 124777,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/alternative_data__onchain_other__coinmetrics_community__ltc__adractcnt.parquet",
+      "rows": 31195,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 5200,
+  "columns": [
+    "AdrActCnt"
+  ],
+  "start": "2011-10-07T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

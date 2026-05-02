@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/money/wresbal/observations.parquet",
+  "slug": "macro_economic__fred__money__wresbal__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__money__wresbal__observations.parquet",
+      "rows": 4417057,
+      "missing_pct": 0.4513919562278685
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__money__wresbal__observations.parquet",
+      "rows": 1472353,
+      "missing_pct": 0.4513917518421194
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__money__wresbal__observations.parquet",
+      "rows": 368089,
+      "missing_pct": 0.451390832108539
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__money__wresbal__observations.parquet",
+      "rows": 92023,
+      "missing_pct": 0.4513871532116971
+    }
+  },
+  "rows_native": 2192,
+  "columns": [
+    "value"
+  ],
+  "start": "1984-01-04T00:00:00+00:00",
+  "end": "2025-12-31T00:00:00+00:00"
+}

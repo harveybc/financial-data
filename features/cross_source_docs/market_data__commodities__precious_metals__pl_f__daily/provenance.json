@@ -1,0 +1,40 @@
+{
+  "source": "market_data/commodities/precious_metals/pl_f/daily.parquet",
+  "slug": "market_data__commodities__precious_metals__pl_f__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__commodities__precious_metals__pl_f__daily.parquet",
+      "rows": 2963233,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__commodities__precious_metals__pl_f__daily.parquet",
+      "rows": 987745,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__commodities__precious_metals__pl_f__daily.parquet",
+      "rows": 246937,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__commodities__precious_metals__pl_f__daily.parquet",
+      "rows": 61736,
+      "missing_pct": 1.61980044058572e-05
+    }
+  },
+  "rows_native": 6385,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits"
+  ],
+  "start": "1997-10-29T05:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

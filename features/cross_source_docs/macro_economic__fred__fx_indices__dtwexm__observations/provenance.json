@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/fx_indices/dtwexm/observations.parquet",
+  "slug": "macro_economic__fred__fx_indices__dtwexm__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__fx_indices__dtwexm__observations.parquet",
+      "rows": 4943233,
+      "missing_pct": 0.03000465484835532
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__fx_indices__dtwexm__observations.parquet",
+      "rows": 1647745,
+      "missing_pct": 0.030004642708671547
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__fx_indices__dtwexm__observations.parquet",
+      "rows": 411937,
+      "missing_pct": 0.03000458808021615
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__fx_indices__dtwexm__observations.parquet",
+      "rows": 102985,
+      "missing_pct": 0.030004369568383746
+    }
+  },
+  "rows_native": 12261,
+  "columns": [
+    "value"
+  ],
+  "start": "1973-01-02T00:00:00+00:00",
+  "end": "2019-12-31T00:00:00+00:00"
+}

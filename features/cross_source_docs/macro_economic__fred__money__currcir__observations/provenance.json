@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/fred/money/currcir/observations.parquet",
+  "slug": "macro_economic__fred__money__currcir__observations",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__fred__money__currcir__observations.parquet",
+      "rows": 11378305,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__fred__money__currcir__observations.parquet",
+      "rows": 3792769,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__fred__money__currcir__observations.parquet",
+      "rows": 948193,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__fred__money__currcir__observations.parquet",
+      "rows": 237049,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 1299,
+  "columns": [
+    "value"
+  ],
+  "start": "1917-08-01T00:00:00+00:00",
+  "end": "2025-10-01T00:00:00+00:00"
+}

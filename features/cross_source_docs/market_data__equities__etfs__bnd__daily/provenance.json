@@ -1,0 +1,41 @@
+{
+  "source": "market_data/equities/etfs/bnd/daily.parquet",
+  "slug": "market_data__equities__etfs__bnd__daily",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/market_data__equities__etfs__bnd__daily.parquet",
+      "rows": 1969645,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/market_data__equities__etfs__bnd__daily.parquet",
+      "rows": 656549,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/market_data__equities__etfs__bnd__daily.parquet",
+      "rows": 164138,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/market_data__equities__etfs__bnd__daily.parquet",
+      "rows": 41036,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 4713,
+  "columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Adj Close",
+    "Volume",
+    "Dividends",
+    "Stock Splits",
+    "Capital Gains"
+  ],
+  "start": "2007-04-10T04:00:00+00:00",
+  "end": "2025-12-30T05:00:00+00:00"
+}

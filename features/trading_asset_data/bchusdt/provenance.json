@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-02T00:41:18.817215+00:00",
+  "stage": "Stage 2.1",
+  "asset": "bchusdt",
+  "source_dir": "market_data/crypto/spot_top50/bchusdt",
+  "timeframes": {
+    "5m": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/bchusdt/5m.parquet",
+      "path": "features/trading_asset_data/bchusdt/5m.parquet",
+      "rows": 640502,
+      "start": "2019-11-28T10:00:00+00:00",
+      "end": "2025-12-31T23:55:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 300,
+        "unexpected_gaps": 15,
+        "median_step_seconds": 300.0
+      }
+    },
+    "15m": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/bchusdt/15m.parquet",
+      "path": "features/trading_asset_data/bchusdt/15m.parquet",
+      "rows": 213503,
+      "start": "2019-11-28T10:00:00+00:00",
+      "end": "2025-12-31T23:45:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 900,
+        "unexpected_gaps": 15,
+        "median_step_seconds": 900.0
+      }
+    },
+    "1h": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/bchusdt/1h.parquet",
+      "path": "features/trading_asset_data/bchusdt/1h.parquet",
+      "rows": 53382,
+      "start": "2019-11-28T10:00:00+00:00",
+      "end": "2025-12-31T23:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 3600,
+        "unexpected_gaps": 8,
+        "median_step_seconds": 3600.0
+      }
+    },
+    "4h": {
+      "status": "ok",
+      "source": "market_data/crypto/spot_top50/bchusdt/4h.parquet",
+      "path": "features/trading_asset_data/bchusdt/4h.parquet",
+      "rows": 13353,
+      "start": "2019-11-28T08:00:00+00:00",
+      "end": "2025-12-31T20:00:00+00:00",
+      "warnings": [],
+      "frequency": {
+        "status": "ok",
+        "expected_step_seconds": 14400,
+        "unexpected_gaps": 0,
+        "median_step_seconds": 14400.0
+      }
+    }
+  }
+}

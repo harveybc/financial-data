@@ -1,0 +1,33 @@
+{
+  "source": "macro_economic/oecd/cli/monthly.parquet",
+  "slug": "macro_economic__oecd__cli__monthly",
+  "status": "ok",
+  "timeframes": {
+    "5m": {
+      "path": "features/cross_source_features/5m/macro_economic__oecd__cli__monthly.parquet",
+      "rows": 2726209,
+      "missing_pct": 0.0
+    },
+    "15m": {
+      "path": "features/cross_source_features/15m/macro_economic__oecd__cli__monthly.parquet",
+      "rows": 908737,
+      "missing_pct": 0.0
+    },
+    "1h": {
+      "path": "features/cross_source_features/1h/macro_economic__oecd__cli__monthly.parquet",
+      "rows": 227185,
+      "missing_pct": 0.0
+    },
+    "4h": {
+      "path": "features/cross_source_features/4h/macro_economic__oecd__cli__monthly.parquet",
+      "rows": 56797,
+      "missing_pct": 0.0
+    }
+  },
+  "rows_native": 312,
+  "columns": [
+    "value"
+  ],
+  "start": "2000-01-01T00:00:00+00:00",
+  "end": "2025-12-01T00:00:00+00:00"
+}
