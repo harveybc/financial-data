@@ -322,9 +322,11 @@ def main() -> int:
         write_report(machine, overall, jobs, detail=f"ran {len(completed)} job(s)")
         return 0 if overall == "complete" else 1
     except Exception as exc:
-        failed = completed + [{"status": "failed", "error": str(exc), "traceback": traceback.format_exc()}]
-        write_report(machine, "failed", failed, detail=str(exc))
-        return 1
+        detail = str(exc)
+        status = "skipped_busy" if "GPU lock already present" in detail else "failed"
+        failed = completed + [{"status": status, "error": detail, "traceback": traceback.format_exc()}]
+        write_report(machine, status, failed, detail=detail)
+        return 0 if status == "skipped_busy" else 1
 
 
 if __name__ == "__main__":

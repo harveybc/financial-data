@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import subprocess
@@ -11,6 +12,7 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
+LOCK_PATH = PROJECT_ROOT / "_metadata" / "stage31_supervisor_tick.lock"
 SSH = {
     "dragon": "ssh -p 22022 harveybc@192.0.2.13",
     "gamma": "ssh -p 22022 harveybc@192.0.2.15",
@@ -155,13 +157,25 @@ def main() -> int:
     parser.add_argument("--sleep-seconds", type=int, default=60)
     parser.add_argument("--iterations", type=int, default=1)
     args = parser.parse_args()
-    count = max(1, args.iterations)
-    for idx in range(count):
-        events = tick()
-        print(json.dumps({"iteration": idx + 1, "events": events}, indent=2, default=str))
-        if not args.loop or idx == count - 1:
-            break
-        time.sleep(args.sleep_seconds)
+
+    LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with LOCK_PATH.open("w", encoding="utf-8") as lock_file:
+        try:
+            fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            print(json.dumps({"skipped": "supervisor_tick_already_running"}, indent=2))
+            return 0
+
+        lock_file.write(f"pid={os.getpid()}\nstarted_at={utc_now()}\n")
+        lock_file.flush()
+
+        count = max(1, args.iterations)
+        for idx in range(count):
+            events = tick()
+            print(json.dumps({"iteration": idx + 1, "events": events}, indent=2, default=str))
+            if not args.loop or idx == count - 1:
+                break
+            time.sleep(args.sleep_seconds)
     return 0
 
 
