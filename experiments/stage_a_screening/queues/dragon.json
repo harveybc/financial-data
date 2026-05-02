@@ -408,5 +408,29 @@
     "status": "pending",
     "timeframe": "4h",
     "timesteps": 25000
+  },
+  {
+    "algo": "sac",
+    "asset": "btcusdt",
+    "device": "cuda",
+    "preset": "sota_low_cost",
+    "run_id": "btcusdt_4h_sota_low_cost_sac_s1_25000",
+    "seed": 1,
+    "stage": "3.1_stage_a_seed_stability_batch6_rerouted_from_gamma",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "sac",
+    "asset": "btcusdt",
+    "device": "cuda",
+    "preset": "sota_low_cost",
+    "run_id": "btcusdt_4h_sota_low_cost_sac_s2_25000",
+    "seed": 2,
+    "stage": "3.1_stage_a_seed_stability_batch6_rerouted_from_gamma",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
   }
 ]
