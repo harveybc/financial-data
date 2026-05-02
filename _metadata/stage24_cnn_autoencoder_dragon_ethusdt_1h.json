@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-02T01:52:18.469225+00:00",
+  "stage": "Stage 2.4",
+  "machine": "dragon",
+  "asset": "ethusdt",
+  "timeframe": "1h",
+  "method": "cnn_autoencoder",
+  "window": 64,
+  "latent_dim": 32,
+  "input_columns": 126,
+  "train_windows": 20000,
+  "validation_windows": 5000,
+  "epochs_requested": 20,
+  "epochs_completed": 20,
+  "final_loss": 0.3848802149295807,
+  "final_val_loss": 0.42931753396987915,
+  "encoder_path": "features/learned_models/ethusdt/1h/cnn_autoencoder/encoder.keras",
+  "autoencoder_path": "features/learned_models/ethusdt/1h/cnn_autoencoder/autoencoder.keras",
+  "features_path": "features/trading_asset_features/ethusdt/1h/learned_cnn.parquet",
+  "output_rows": 73221,
+  "note": "Bootstrap Stage 2.4 CNN autoencoder while feature-extractor runtime wrapper is being integrated."
+}

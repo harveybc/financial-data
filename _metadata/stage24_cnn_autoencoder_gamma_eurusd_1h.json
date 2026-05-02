@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-02T01:50:57.553253+00:00",
+  "stage": "Stage 2.4",
+  "machine": "gamma",
+  "asset": "eurusd",
+  "timeframe": "1h",
+  "method": "cnn_autoencoder",
+  "window": 64,
+  "latent_dim": 32,
+  "input_columns": 118,
+  "train_windows": 20000,
+  "validation_windows": 5000,
+  "epochs_requested": 20,
+  "epochs_completed": 20,
+  "final_loss": 0.38535648584365845,
+  "final_val_loss": 0.24742980301380157,
+  "encoder_path": "features/learned_models/eurusd/1h/cnn_autoencoder/encoder.keras",
+  "autoencoder_path": "features/learned_models/eurusd/1h/cnn_autoencoder/autoencoder.keras",
+  "features_path": "features/trading_asset_features/eurusd/1h/learned_cnn.parquet",
+  "output_rows": 129810,
+  "note": "Bootstrap Stage 2.4 CNN autoencoder while feature-extractor runtime wrapper is being integrated."
+}
