@@ -117,13 +117,19 @@ def sync_remote(machine: str) -> None:
         f"_logs/supervisor_reports/stage31_worker_{machine}.md",
         f"_metadata/stage31_worker_{machine}.json",
         f"experiments/stage_a_screening/queues/{machine}.json",
-        f"artifacts/run_ledger_events/{machine}.jsonl",
-        f"artifacts/run_ledger_events/{machine}.parquet",
     ]:
         src = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:{PROJECT_ROOT / rel}"
         dst = PROJECT_ROOT / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         run(f"rsync -az -e 'ssh -p 22022' {src} {dst} || true", timeout=30)
+
+    src = (
+        f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:"
+        f"{PROJECT_ROOT / 'artifacts' / 'run_ledger_events' / f'{machine}.jsonl'}"
+    )
+    dst = PROJECT_ROOT / "artifacts" / "run_ledger_events" / f"{machine}.remote.jsonl"
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    run(f"rsync -az -e 'ssh -p 22022' {src} {dst} || true", timeout=30)
 
 
 def push_remote_queue(machine: str) -> None:

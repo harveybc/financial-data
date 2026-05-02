@@ -1,6 +1,6 @@
 {
-  "event_count": 89,
-  "generated_at": "2026-05-02T07:20:31.985736+00:00",
+  "event_count": 144,
+  "generated_at": "2026-05-02T07:26:14.136489+00:00",
   "jsonl": "/home/harveybc/Documents/GitHub/financial-data/artifacts/run_ledger.jsonl",
   "machines": [
     "dragon",
@@ -8,5 +8,5 @@
     "omega"
   ],
   "parquet": "/home/harveybc/Documents/GitHub/financial-data/artifacts/run_ledger.parquet",
-  "trial_count": 74
+  "trial_count": 103
 }

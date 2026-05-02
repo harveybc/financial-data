@@ -256,9 +256,22 @@ def record_stage31_event(
 
 def combine_ledgers() -> dict[str, Any]:
     EVENT_ROOT.mkdir(parents=True, exist_ok=True)
-    rows: list[dict[str, Any]] = []
+    by_event_id: dict[str, dict[str, Any]] = {}
     for path in sorted(EVENT_ROOT.glob("*.jsonl")):
-        rows.extend(_read_jsonl(path))
+        for row in _read_jsonl(path):
+            if str(row.get("detail", "")).startswith("Backfilled from Stage 3.1 queue"):
+                dedupe_key = stable_json(
+                    {
+                        "backfill": True,
+                        "machine": row.get("machine"),
+                        "run_id": row.get("run_id"),
+                        "status": row.get("status"),
+                    }
+                )
+            else:
+                dedupe_key = str(row.get("event_id") or stable_hash(row, length=24))
+            by_event_id[dedupe_key] = row
+    rows = list(by_event_id.values())
     rows.sort(key=lambda row: (str(row.get("event_ts", "")), str(row.get("machine", "")), str(row.get("event_id", ""))))
     ARTIFACT_ROOT.mkdir(parents=True, exist_ok=True)
     COMBINED_JSONL.write_text("".join(stable_json(row) + "\n" for row in rows), encoding="utf-8")
