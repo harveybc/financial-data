@@ -24,6 +24,7 @@ These are now approved as next candidates, but should not interrupt active Stage
 
 - PCMCI+ causal selection until Phase 3 experiment framework can validate feature selection leakage
 - Decision Transformer, DreamerV3, hierarchical RL, and CQL/IQL until Phase 3 baselines are reproducible
+- TradingAgents multi-agent LLM strategy committee until Stage 3.1 baseline RL evidence exists. Use `work_plan/TRADINGAGENTS_INTEGRATION_ASSESSMENT.md` as the integration plan; evaluate it as an RL-signal overlay/veto layer, not as a replacement for pre-registered RL screening.
 
 ## Validation Rule
 
