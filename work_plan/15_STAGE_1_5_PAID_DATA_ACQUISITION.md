@@ -9,7 +9,7 @@
 ## 2026-05-01 Execution Status
 
 - **FXMacroData:** approved and acquired. Deliverables are `economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet` and `economic_calendar/release_actuals/fxmacrodata/announcements.parquet`; summary is `_logs/supervisor_reports/stage15_fxmacrodata_acquisition.md`.
-- **CryptoQuant Professional:** approved, but blocked by API credential validation returning 403 with both documented Bearer-token and `api_key` query-parameter auth forms. Do not run bulk CryptoQuant acquisition until `_logs/supervisor_reports/stage15_paid_credential_check.md` reports `validated`.
+- **CryptoQuant Professional:** approved and acquired. Deliverable is `alternative_data/cryptoquant/`; summary is `_logs/supervisor_reports/stage15_cryptoquant_acquisition.md`. Treat coverage as recent-window daily data because older explicit historical ranges returned `Out of allowed request range` during validation.
 - **FXStreet/Trading Economics:** not purchased; defer unless user later approves a sales/API credential for consensus-surprise fields.
 - **Massive/Polygon:** deferred unless Phase 3 explicitly needs US equity intraday/tick data.
 

@@ -1,6 +1,6 @@
 # Stage 1.3 Validation Inventory
 
-Generated: 2026-05-01T23:43:15.817663+00:00
+Generated: 2026-05-02T00:04:41.401583+00:00
 
 ## File Counts
 
@@ -8,20 +8,20 @@ Generated: 2026-05-01T23:43:15.817663+00:00
 | --- | --- | ---: | ---: | --- |
 | market_data | True | 728 | 2103.9 | .json:140, .md:280, .parquet:288, <none>:20 |
 | macro_economic | True | 580 | 5.8 | .csv:1, .json:143, .md:285, .parquet:140, .xml:1, <none>:10 |
-| alternative_data | True | 140 | 383.7 | .csv:1, .json:24, .md:44, .parquet:26, .txt:16, .zip:16, <none>:13 |
+| alternative_data | True | 264 | 384.6 | .csv:1, .json:33, .md:62, .parquet:123, .txt:16, .zip:16, <none>:13 |
 | reference_data | True | 33 | 0.7 | .json:7, .md:14, .parquet:7, <none>:5 |
 | economic_calendar | True | 57 | 0.5 | .json:13, .md:28, .parquet:13, <none>:3 |
 
 ## Documentation Coverage
 
-- Data directories checked: 321
+- Data directories checked: 329
 - Directories missing docs: 0
 
 ## Acquisition Log
 
-- Rows: 193
-- Latest timestamp: 2026-05-01T23:38:43.551478+00:00
-- Status counts: {"ok": 148, "schema_shifted_or_malformed": 45}
+- Rows: 196
+- Latest timestamp: 2026-05-02T00:00:28.255611+00:00
+- Status counts: {"ok": 151, "schema_shifted_or_malformed": 45}
 
 ## Known Gaps And Handoffs
 

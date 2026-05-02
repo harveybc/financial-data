@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T23:44:07.181209+00:00",
+  "generated_at": "2026-05-02T00:05:32.309511+00:00",
   "stage": "Stage 1.6 preflight",
   "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
   "inventory": {
@@ -30,13 +30,13 @@
       },
       "alternative_data": {
         "exists": true,
-        "files": 140,
-        "bytes": 402383466,
+        "files": 264,
+        "bytes": 403281520,
         "suffix_counts": {
           ".csv": 1,
-          ".json": 24,
-          ".md": 44,
-          ".parquet": 26,
+          ".json": 33,
+          ".md": 62,
+          ".parquet": 123,
           ".txt": 16,
           ".zip": 16,
           "<none>": 13
@@ -66,14 +66,14 @@
       }
     },
     "totals": {
-      "files": 1538,
-      "bytes": 2615741698,
-      "data_directories": 321,
+      "files": 1662,
+      "bytes": 2616639752,
+      "data_directories": 329,
       "suffix_counts": {
         ".csv": 2,
-        ".json": 327,
-        ".md": 651,
-        ".parquet": 474,
+        ".json": 336,
+        ".md": 669,
+        ".parquet": 571,
         ".txt": 16,
         ".xml": 1,
         ".zip": 16,
@@ -82,6 +82,14 @@
     },
     "data_directories": [
       "alternative_data/cot_reports/cftc_disaggregated/raw",
+      "alternative_data/cryptoquant/btc_exchange_flows",
+      "alternative_data/cryptoquant/btc_indicators",
+      "alternative_data/cryptoquant/btc_miner_flows",
+      "alternative_data/cryptoquant/eth_exchange_flows",
+      "alternative_data/cryptoquant/eth_indicators",
+      "alternative_data/cryptoquant/stablecoin_exchange_flows",
+      "alternative_data/cryptoquant/stablecoin_market",
+      "alternative_data/cryptoquant/stablecoin_network",
       "alternative_data/defi_metrics/defillama",
       "alternative_data/onchain_btc/blockchain_com/difficulty",
       "alternative_data/onchain_btc/blockchain_com/hash-rate",
@@ -405,16 +413,16 @@
     ]
   },
   "documentation": {
-    "total_data_directories": 321,
-    "complete_data_directories": 321,
+    "total_data_directories": 329,
+    "complete_data_directories": 329,
     "missing_doc_directories": 0,
     "missing_examples": []
   },
   "acquisition_log": {
     "exists": true,
-    "rows": 193,
+    "rows": 196,
     "status_counts": {
-      "ok": 148,
+      "ok": 151,
       "schema_shifted_or_malformed": 45
     },
     "top_sources": {
@@ -426,6 +434,7 @@
       "FXMacroData": 4,
       "mempool.space": 3,
       "BEA Data API": 3,
+      "CryptoQuant": 3,
       "DeFiLlama": 1,
       "SEC EDGAR": 1,
       "US Treasury FiscalData": 1,
@@ -433,30 +442,6 @@
       "FRED-derived release-date proxy": 1
     },
     "recent_rows": [
-      {
-        "timestamp": "2026-05-01T21:19:19.523224+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "dia",
-        "status": "ok",
-        "path": "market_data/equities/etfs/dia/daily.parquet",
-        "notes": "rows=7031"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:19.952965+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "voo",
-        "status": "ok",
-        "path": "market_data/equities/etfs/voo/daily.parquet",
-        "notes": "rows=3851"
-      },
-      {
-        "timestamp": "2026-05-01T21:19:20.563728+00:00",
-        "source": "Yahoo Finance",
-        "dataset": "ivv",
-        "status": "ok",
-        "path": "market_data/equities/etfs/ivv/daily.parquet",
-        "notes": "rows=6442"
-      },
       {
         "timestamp": "2026-05-01T21:19:21.185519+00:00",
         "source": "Yahoo Finance",
@@ -592,6 +577,30 @@
         "status": "ok",
         "path": "economic_calendar/release_actuals/fxmacrodata/announcements.parquet",
         "notes": "rows=18147 currencies=14"
+      },
+      {
+        "timestamp": "2026-05-01T23:54:14.054316+00:00",
+        "source": "CryptoQuant",
+        "dataset": "stage15_cryptoquant_professional",
+        "status": "ok",
+        "path": "alternative_data/cryptoquant",
+        "notes": "files=8 rows=800 ok=8 empty=0 failed=0 skipped=0"
+      },
+      {
+        "timestamp": "2026-05-01T23:55:37.811728+00:00",
+        "source": "CryptoQuant",
+        "dataset": "stage15_cryptoquant_professional",
+        "status": "ok",
+        "path": "alternative_data/cryptoquant",
+        "notes": "files=40 rows=4000 ok=40 empty=0 failed=57 skipped=0"
+      },
+      {
+        "timestamp": "2026-05-02T00:00:28.255611+00:00",
+        "source": "CryptoQuant",
+        "dataset": "stage15_cryptoquant_professional",
+        "status": "ok",
+        "path": "alternative_data/cryptoquant",
+        "notes": "files=97 rows=9700 ok=97 empty=0 failed=0 skipped=0"
       }
     ]
   },

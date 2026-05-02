@@ -13,6 +13,7 @@ from stage13_common import ROOT, load_env
 
 OUT = ROOT / "_logs" / "supervisor_reports" / "stage15_paid_credential_check.json"
 MD = ROOT / "_logs" / "supervisor_reports" / "stage15_paid_credential_check.md"
+USER_AGENT = "project3-financial-data-research/1.0"
 
 
 def utc_now() -> str:
@@ -20,7 +21,8 @@ def utc_now() -> str:
 
 
 def get_json(url: str, headers: dict[str, str] | None = None, timeout: int = 25) -> tuple[int, dict[str, Any]]:
-    req = urllib.request.Request(url, headers=headers or {})
+    request_headers = {"User-Agent": USER_AGENT, **(headers or {})}
+    req = urllib.request.Request(url, headers=request_headers)
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.status, json.loads(resp.read().decode("utf-8"))
 
@@ -92,8 +94,19 @@ def check_cryptoquant() -> dict[str, Any]:
         "provider": "CryptoQuant",
         "status": "validated" if ok else "blocked_403_or_inactive",
         "checks": checks,
-        "next_action": "Run Stage 1.5 CryptoQuant acquisition worker." if ok else "Open CryptoQuant profile API tab and confirm this exact token is active for Professional API access; if a newly generated access token exists, replace CRYPTOQUANT_API_KEY in _metadata/.env.",
+        "next_action": cryptoquant_next_action() if ok else "Open CryptoQuant profile API tab and confirm this exact token is active for Professional API access; if a newly generated access token exists, replace CRYPTOQUANT_API_KEY in _metadata/.env.",
     }
+
+
+def cryptoquant_next_action() -> str:
+    summary_path = ROOT / "_metadata" / "stage15_cryptoquant_acquisition.json"
+    try:
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    except Exception:
+        summary = {}
+    if summary.get("status") == "ok" and summary.get("rows_total", 0):
+        return "Stage 1.5 CryptoQuant acquisition complete; supervisor should use _logs/supervisor_reports/stage15_cryptoquant_acquisition.md as deliverable evidence and preserve the historical-range limitation note."
+    return "Run Stage 1.5 CryptoQuant acquisition worker."
 
 
 def main() -> None:

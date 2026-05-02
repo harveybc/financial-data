@@ -1,0 +1,402 @@
+{
+  "source": "CryptoQuant",
+  "acquired_at": "2026-05-02T00:00:28.235446+00:00",
+  "description": "Stage 1.5 paid CryptoQuant Professional acquisition; recent-window on-chain/exchange-flow metrics.",
+  "files": [
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_all_exchange.parquet",
+      "sha256": "551283ecb62dc2e1eb425f568b7cc5099d1b546393fa8a5ad6e7a78d52a4d4b2"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_binance.parquet",
+      "sha256": "fbaf32525287e53a8e493b9797368f8e7e9b6270c8627c409a903de6474d1ae4"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_bybit.parquet",
+      "sha256": "66fac2fc7542c3783eaf32a00f19e4a0e17854bab58eb7dc3a91189bd66a84b7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_coinbase_advanced.parquet",
+      "sha256": "f29b33a9b46b5298656bb956ad658100a5c02a8704db6ed2bc4b76eee85adca1"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_kraken.parquet",
+      "sha256": "a3db5ad0dbc14a56526b66fa6ea2b5296d7fad644fd71599ac5520abd1ee09a7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_okx.parquet",
+      "sha256": "30124518afba38f0905da911e7afc52e670ad20f94813d842087ca5915d7274a"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_all_exchange.parquet",
+      "sha256": "e76c6e0c91de64ae76fbed19c68be82a72c264262de9e8b51c1a0efa394d0ae4"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_binance.parquet",
+      "sha256": "136959368aae5fbfcd8920cd003ce9606888740933daf78619ccbc0c32b4e677"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_bybit.parquet",
+      "sha256": "38093e97cd5bdf8698d4c4a20e87b00c8346c2cf83ad2b23a4ada8182403d616"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_coinbase_advanced.parquet",
+      "sha256": "0f2a1e13ccdda21c6a5039bfaf7ea920520792743c61a0f36ef38f74043348f9"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_kraken.parquet",
+      "sha256": "182a44e2f7f778480812d990945362d0a3bd9607348e0361da9e81dc0f2a5690"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_okx.parquet",
+      "sha256": "67c477eb38a0136ef0fcf78bc54c794cda7bfbd271071120f4df6a816a08e908"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_all_exchange.parquet",
+      "sha256": "c7f98d1ee54b56c44066f50afe61c9ead9b06767614284588ecd6933b2cc7ae8"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_binance.parquet",
+      "sha256": "b71ebf5b637a20c1b2979d3df98cc61657ba0afe00600d833d9a17b5d81101b5"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_bybit.parquet",
+      "sha256": "1938165ac5c21a693c4085d6008d7bc0c57bff73da668e772ad4f7bde1c522e7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_coinbase_advanced.parquet",
+      "sha256": "7ac79b9c7eab8c997b0bbab9c6e120444bf7facfa3a1b795882f984e4ee4ebf4"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_kraken.parquet",
+      "sha256": "df677d373485bbe03fd4d84f1ac65bef1b6156914358f6573e24f2ca328f3ac7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_okx.parquet",
+      "sha256": "cbdb488403d89adc489ccd193955485a9eef2a04bddd0460aaa8e31a2ddc1fd1"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_all_exchange.parquet",
+      "sha256": "0a197c837f1a89947db1558c76e1146c09d0a7b447872265bae4cd77b7c465eb"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_binance.parquet",
+      "sha256": "a89663ecc86954ef02f29dbf4c435e007e19cfe991a7df40dea097068753ffa7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_bybit.parquet",
+      "sha256": "467f67e9a23e50c5bb61ff8fdebe6046e8c2be7e6cdfc36bee85a2390a8f28af"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_coinbase_advanced.parquet",
+      "sha256": "85e09be823b93eb915093a142fbfc7b72f5da20c68c46b91c5801be19af2546e"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_kraken.parquet",
+      "sha256": "b2906d2b74ee649cf987bd0f7e6ee5c75b22330bd7dbc2186c22006dfb44dd8e"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_okx.parquet",
+      "sha256": "c93acfe017cfc9fe579c734a5e383f8673688d2e6cb559184f6b77541f481507"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_estimated_leverage_ratio_all_exchange.parquet",
+      "sha256": "03dd58eb01b63785af5a552dd9d001658a75a27bf37f078493eb708b81cb7663"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_estimated_leverage_ratio_binance.parquet",
+      "sha256": "a9671b26ecbb7e39777b7c5fe14be8f091daca20ac59ab8f52d9b98ffab745f1"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_exchange_supply_ratio_all_exchange.parquet",
+      "sha256": "259a76ab3f17b8cc2cab0dd40b36eb6d6f9aebf1553ea1317b1ffc2ce3c8c57c"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_exchange_whale_ratio_all_exchange.parquet",
+      "sha256": "52d3f54da1b5db4005ed1674661eee5e4a7e50d7f55a14f71254f92f3179f616"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_exchange_whale_ratio_binance.parquet",
+      "sha256": "19dcf47578df8fcb4e5e5a4bac1e028553dc195b029c974c8e78c7091a0866c9"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_fund_flow_ratio_all_exchange.parquet",
+      "sha256": "18b8b9c0384a597e44462813c884b6441f01bc494e90c020d1e73943a52d5afd"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_mpi.parquet",
+      "sha256": "37b8187ac07197493975d07558f1bfcd1c6f57f80c69b8f9b885f125084209e6"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_mvrv.parquet",
+      "sha256": "679d60d0fce3365de642211281f6503bfe3d17e8f6ffb35ae43778bacb5bb89e"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_realized_price.parquet",
+      "sha256": "49d07b8516c728682f8c69ccfc9cd137480395ad2d53374fd62c785479b51f26"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_sopr.parquet",
+      "sha256": "baad57950b590d2b2a819eb207451210c81d6296019e1d02c0c910f3f411eee2"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_sopr_ratio.parquet",
+      "sha256": "324b7918ecd8d8a979f6f1267f1698052f4805f090d597b278e93ac73096afe1"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_stablecoin_supply_ratio.parquet",
+      "sha256": "499463ee51129cfb18dd8c04059c476efc061edb5528116352a57ed0005f7bea"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_stablecoins_ratio_all_exchange.parquet",
+      "sha256": "cec4c49f38f550028578e3bfa48e5462951bef795d02396ec30d93ef597df6ee"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_inflow_all_miner.parquet",
+      "sha256": "ad87fdfcc2efe31c78ed102d213180346c2cf68e6651408a272df1932dff5f81"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_netflow_all_miner.parquet",
+      "sha256": "2b84fc4edeab68f01f4dc9e9acb35eff5abac8296aa9b933ba8be8ed7ba75bcd"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_outflow_all_miner.parquet",
+      "sha256": "6c9bd9e478f6249d74fd9ca7d97ec81a715aa87d582fc8a92413e1d9140ac8a0"
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_reserve_all_miner.parquet",
+      "sha256": "ebf8326a73948158b26e02c4993df812578f820c6eff82ca83c975bf987e439a"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_all_exchange.parquet",
+      "sha256": "9548255983bf00742f3356bef1f3a70ed8592728d8c289c4af60d2dd090deab3"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_binance.parquet",
+      "sha256": "7553e0118efa37c0dcbf80e118e0aede79c280910ed66bb83a7a573073a14e4a"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_bybit.parquet",
+      "sha256": "e3e1b4fa6d333651628f8997e96d0ec0b25c9d7aa62f125a60d0d352c4b970b2"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_coinbase_advanced.parquet",
+      "sha256": "e1da095585dd6cdfc36e71e4ca8a8148759c17091b628dfb5e9ffc6a6b64e0d6"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_kraken.parquet",
+      "sha256": "0897bd37fda215f9c6d6b3ac91e603bd37418212095a77c4a880e25ab33f0d4a"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_okx.parquet",
+      "sha256": "7c34f3881cb900179881394d5ab0b03a8c08b0aa4d02c4494f9ea1d45f982694"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_all_exchange.parquet",
+      "sha256": "720f4fb73ec9a5a3cf55170d52ce70a27c44bcefe5b12f3ece1dd1f549c605ed"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_binance.parquet",
+      "sha256": "47019d42ce3a54b54a7c97fdfe881f6d1cda593454f43aca904cf119bc95d32b"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_bybit.parquet",
+      "sha256": "1109b5ccf9b8b7aadb557e143661e5759fa4ff5dd3094b4d3a8bb6bbfb424b5f"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_coinbase_advanced.parquet",
+      "sha256": "58d2bcac4b2e1b085593d370a2f4f34233953062638f053491c5c4d7e744fe63"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_kraken.parquet",
+      "sha256": "6b2132208bb377eb0170f60322f2c5703ea7c69c516c6b23df069c95db93ca14"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_okx.parquet",
+      "sha256": "67e8284bb48b9717bcf4b5beb35b56d14d4c6db3b89def8abcd5e03f29fcb282"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_all_exchange.parquet",
+      "sha256": "c9c2b6b2d0b08bf1bbb921d1611b25563ddcf1b15892791e6a6d7b80fbfacfc3"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_binance.parquet",
+      "sha256": "bf8a99484de39c832c44a35c94d6e2028c47b96d80cd65024b71f9fd3fc25333"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_bybit.parquet",
+      "sha256": "8057bd9e6208b14e8f47577121bae91874c41cc2a91fe65c45dcfb5829da9332"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_coinbase_advanced.parquet",
+      "sha256": "c33c512dd3df6ca8e05e5f028233c782784c95ce925534c55c212b3aa9b7984a"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_kraken.parquet",
+      "sha256": "b677ed6902f26af47c45a64f4a993adafe27a358214d6dba06894d2d0c5a77e7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_okx.parquet",
+      "sha256": "f58939cc3d6af8237f419b243651124d645e25874e37d5b24bcf2787731eaa45"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_all_exchange.parquet",
+      "sha256": "ee207033cc24467f2caa26d7f8954cdb56289ebf92f3cd2f8ad03cc876aa2bad"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_binance.parquet",
+      "sha256": "80dac5b2f638bcb78a73d86e641baec90ee0afd16b101096dd2b104540b9e4ad"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_bybit.parquet",
+      "sha256": "b59e723a98289e0b72864ffed1206357dba657d03b2faac9f6ff431d87a2869e"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_coinbase_advanced.parquet",
+      "sha256": "f8ae4db8a29f6849ae305a57b8042ac6d47ef9de7ca861ed68ce27788b6812c2"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_kraken.parquet",
+      "sha256": "d48b72e157e243f293ea387167cf339e1a026d03975f28ac2a2989132c78d32c"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_okx.parquet",
+      "sha256": "80dffab505f21904c29370cf7276b88537e3870c38ed206828534508ed2d73b0"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_indicators/eth_estimated_leverage_ratio_all_exchange.parquet",
+      "sha256": "efc46ea1164694e0ae147319a810cb760fa971ecae65fc50409aec7bd5cd0c47"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_indicators/eth_estimated_leverage_ratio_binance.parquet",
+      "sha256": "78947c1d00feb6d548137efb3c14cff94b25d104340a52c854fd1c979b867572"
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_indicators/eth_exchange_supply_ratio_all_exchange.parquet",
+      "sha256": "dfb648a50c97bc3a8b710b1196c35558c8cb1978bca79c5356397078fa095b2e"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_all_token_all_exchange.parquet",
+      "sha256": "1759d22e382f97f4fb15ba14515e4cae98abd341e04c0eb6db66f98b22cfd0b7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_all_token_binance.parquet",
+      "sha256": "2019fa55dcd71227a30fb7554c09fe014bbc4aa8fdbad274ecf19eba89c04093"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdc_all_exchange.parquet",
+      "sha256": "a63cebf7c935ece571f16311612fc838857a93e114c79bcb20c13816bb15e776"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdc_binance.parquet",
+      "sha256": "1ae2bee662451f5cf59352b1b0dd28c86c04e5851ad2fdfe59f1ee7f28941935"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdt_eth_all_exchange.parquet",
+      "sha256": "c98487f04ccfd48361c276f9c3626dbb4033e820533d164308bd3a2f06439e2a"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdt_eth_binance.parquet",
+      "sha256": "ebcb75c6319dc452023b241a2dea0d9f699adfda7d8ace58976a4f1a8cc365e3"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_all_token_all_exchange.parquet",
+      "sha256": "70c78d6741df9271e0720173778244023053a65ca6dc31be6816cd68c38863dc"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_all_token_binance.parquet",
+      "sha256": "6cf547e5836b74e82bbf865240c0cb0677943fee7d993347084847cbe9806b0d"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdc_all_exchange.parquet",
+      "sha256": "0cf69e7f257c36925653cf6e8b9d1b4431acbc46dbde28a6e2b49d6134f9f606"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdc_binance.parquet",
+      "sha256": "45a10fb06859afd86a8f718d8eed132c032c8d7806f98279c694b0a355e0969c"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdt_eth_all_exchange.parquet",
+      "sha256": "773f615a11538fd50ff039aa1df6083770e47e96113dcb309c649d1010bc4418"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdt_eth_binance.parquet",
+      "sha256": "85f033ff4359ed991c23142f60b65c509cdd5fd1d2ad62714bec4f51c1fb5933"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_all_token_all_exchange.parquet",
+      "sha256": "4de68922b9e06783a376a191eefa99bf9e36e64a91ac5cbaffbc80294b57d394"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_all_token_binance.parquet",
+      "sha256": "86fb944f1e6b5a8d10cacdb67b3e604f2b52647ed7414d742650b518302a3bdc"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdc_all_exchange.parquet",
+      "sha256": "da418b85efa39c285dad5f8df017a29bcf2e759d1aa1169e27ab0a8d402ab404"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdc_binance.parquet",
+      "sha256": "91c71198f17ca1ab36e5d7d2cd2015e7e5604ec6a247253bb80b4bf557a3d406"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdt_eth_all_exchange.parquet",
+      "sha256": "b9ed286a460c85c1addde12a937a5c0c4f8b90f8569abc15e59f0eb7af3604e9"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdt_eth_binance.parquet",
+      "sha256": "b930a4b71f15083597463371be241afad264e6470b03be1ef78273cd6e19d820"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_all_token_all_exchange.parquet",
+      "sha256": "f7f0b361b67c9c319da764865d6d873e9bf518cbbe88b1941a927b6982f396c7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_all_token_binance.parquet",
+      "sha256": "a44f5f0fa1dfa9714c611c1711372ba1548b1f35d4539e12aacc463245ce5939"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdc_all_exchange.parquet",
+      "sha256": "03f8018980622538aa87e32f474cc1fdf0545ec47e1a238a267294341d465bcd"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdc_binance.parquet",
+      "sha256": "20001eaa2747d286421d63a73656321a693fe5ed412ddc995935ec01c1e1e13c"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdt_eth_all_exchange.parquet",
+      "sha256": "e2d0f98a68623cc089bd7a5517f80c1dd3ec64c9943d5ea12d89dbfdcc6d9bb7"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdt_eth_binance.parquet",
+      "sha256": "d419f9bf9ae2dba460fbf988b7666868eca7aeaf268d21777365dec056f06aab"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_market/stablecoin_capitalization_usdc.parquet",
+      "sha256": "d3a2bb301e8c71de7649d0d2c6aee77cc52bdac52774c153734ee3a4accacad6"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_market/stablecoin_capitalization_usdt_eth.parquet",
+      "sha256": "6994e22a2b5f1595ce2c1ca0f0da75b02746896e22506f9770ea48017d5f5b51"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_network/stablecoin_supply_all_token.parquet",
+      "sha256": "f2cc2c40a374c8f13b68cfad80d7654bdaea1959c8bc5076c230e03a48345ed8"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_network/stablecoin_supply_usdc.parquet",
+      "sha256": "d396f897e6d436f1c0dd63769345dc5a922b7963a188457e842f809eda60eaf1"
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_network/stablecoin_supply_usdt_eth.parquet",
+      "sha256": "82c2e5182ab488de4846b8aae4ecb9c60d80ce1a49bf03541185a1fd060c7070"
+    }
+  ],
+  "endpoint_summary": {
+    "requested": 97,
+    "ok": 97,
+    "empty": 0,
+    "failed": 0,
+    "skipped_not_discovered": 0
+  }
+}

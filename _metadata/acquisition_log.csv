@@ -192,3 +192,6 @@ timestamp,source,dataset,status,path,notes
 2026-05-01T23:33:04.513367+00:00,FXMacroData,release_actuals_fxmacrodata,ok,economic_calendar/release_actuals/fxmacrodata/announcements.parquet,rows=18163 currencies=14
 2026-05-01T23:38:43.532927+00:00,FXMacroData,scheduled_events_fxmacrodata,ok,economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet,rows=896 currencies=14
 2026-05-01T23:38:43.551478+00:00,FXMacroData,release_actuals_fxmacrodata,ok,economic_calendar/release_actuals/fxmacrodata/announcements.parquet,rows=18147 currencies=14
+2026-05-01T23:54:14.054316+00:00,CryptoQuant,stage15_cryptoquant_professional,ok,alternative_data/cryptoquant,files=8 rows=800 ok=8 empty=0 failed=0 skipped=0
+2026-05-01T23:55:37.811728+00:00,CryptoQuant,stage15_cryptoquant_professional,ok,alternative_data/cryptoquant,files=40 rows=4000 ok=40 empty=0 failed=57 skipped=0
+2026-05-02T00:00:28.255611+00:00,CryptoQuant,stage15_cryptoquant_professional,ok,alternative_data/cryptoquant,files=97 rows=9700 ok=97 empty=0 failed=0 skipped=0

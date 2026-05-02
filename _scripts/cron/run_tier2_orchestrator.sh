@@ -93,17 +93,17 @@ cat > "$CONTEXT_PACKET" <<EOF
 
 generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
-active_stage: Stage 1.3 Free Data Acquisition complete; Stage 1.5 paid-source acquisition active; FXMacroData complete; CryptoQuant blocked on credential/API activation; Stage 1.6 preflight validation active.
+active_stage: Stage 1.3 Free Data Acquisition complete; Stage 1.5 paid-source acquisition active with FXMacroData and CryptoQuant complete; Stage 1.6 preflight validation active.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, and Gamma.
 supervisor_model_policy: ${MODEL_POLICY}
 experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 tier2_model_timeout_seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/13_STAGE_1_3_FREE_DATA_ACQUISITION.md; work_plan/15_STAGE_1_5_PAID_DATA_ACQUISITION.md; work_plan/16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md
 current_machine_tasks:
-- Omega: Stage 1.5 FXMacroData deliverable validation, CryptoQuant credential-blocker reporting, Stage 1.6 preflight documentation audit, master inventory, acquisition-log/gap aggregation, and Stage 1.3/1.5 status refresh.
-- Dragon: Stage 1.6 preflight and quality validation of market_data outputs, with Stage 1.3 crypto/FINRA workers left completed-idle unless revalidation discovers a real anomaly.
+- Omega: Stage 1.5 paid-source status aggregation, Stage 1.6 preflight documentation audit, master inventory, acquisition-log/gap aggregation, and Stage 1.3/1.5 status refresh.
+- Dragon: Stage 1.5 CryptoQuant deliverable validation plus Stage 1.6 preflight and quality validation of market_data/paid crypto outputs, with Stage 1.3 crypto/FINRA workers left completed-idle unless revalidation discovers a real anomaly.
 - Gamma: Stage 1.6 preflight and quality validation of macro_economic, alternative_data, reference_data, and economic_calendar outputs, with Stage 1.3 public-source workers left completed-idle unless revalidation discovers a real anomaly.
-expected_deliverables: _logs/supervisor_reports/stage15_fxmacrodata_acquisition.md, _logs/supervisor_reports/stage15_paid_credential_check.md, economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet, economic_calendar/release_actuals/fxmacrodata/announcements.parquet, STAGE_1.6_PREFLIGHT.md, INVENTORY.md, audit_documentation_preflight.json, per-machine stage16_preflight_validation_*.json, stage16_quality_validation_*.json, stage16_gamma_quality_warning_classification.json, market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs.
+expected_deliverables: _logs/supervisor_reports/stage15_fxmacrodata_acquisition.md, _logs/supervisor_reports/stage15_cryptoquant_acquisition.md, _logs/supervisor_reports/stage15_paid_credential_check.md, economic_calendar/scheduled_events/fxmacrodata/release_calendar.parquet, economic_calendar/release_actuals/fxmacrodata/announcements.parquet, alternative_data/cryptoquant, STAGE_1.6_PREFLIGHT.md, INVENTORY.md, audit_documentation_preflight.json, per-machine stage16_preflight_validation_*.json, stage16_quality_validation_*.json, stage16_gamma_quality_warning_classification.json, market_data, macro_economic, alternative_data, reference_data, _metadata/acquisition_log.csv, provenance docs.
 relevant_logs: _logs/supervisor_reports/global_status.md; _logs/supervisor_reports/autonomous_dispatch_report.md; _logs/omega; remote _logs/dragon; remote _logs/gamma.
 constraints: use existing private repo runtime credentials; respect GPU locks; avoid destructive cleanup; sync remote outputs to Omega; escalate only real blockers.
 honesty: report evidence, confidence, assumptions, and stale context corrections. Never mark a deliverable complete from memory or guesswork.
@@ -155,7 +155,7 @@ stage16_dispatch_rc=$?
   echo "- Dragon: Binance top 50 spot OHLCV, then crypto quality validation after acquisition is complete."
   echo "- Gamma: FRED expansion, CoinMetrics per-metric repair, Blockchain.com, mempool.space, SEC S&P 500 EDGAR metadata, FINRA, DeFiLlama, OECD/BLS/BEA/Treasury, plus Binance perpetual/funding acceleration while idle."
   echo "- Omega: yfinance, HistData processing from /home/harveybc/Downloads/histdata, CFTC, calendars, economic calendar proxy, metadata aggregation, documentation backfill, deliverable validation against the work plan, inventory, and dispatch context refresh."
-  echo "- Stage 1.5 paid sources: FXMacroData acquisition is complete on Omega; CryptoQuant Professional must remain blocked until credential validation succeeds; do not retry bulk CryptoQuant acquisition on Dragon while the API returns 403."
+  echo "- Stage 1.5 paid sources: FXMacroData acquisition is complete on Omega; CryptoQuant Professional acquisition is complete on Dragon/Omega with recent-window daily coverage. Historical-range limitation remains documented for Tier 4 review."
   echo "- Stage 1.6 preflight: because Stage 1.3 deliverables are complete, completion-idle capacity is reassigned to documentation, validation, coverage, inventory, and subscription-decision handoff work without declaring formal Stage 1.6 complete."
   echo "- Telegram: post only concise events to HermesAgentOrchestration: task start/finish, blocker, anomaly, idle reason, deliverable path, validation evidence, next action, or human action needed."
   echo "- Sync: Gamma crypto acceleration syncs to Dragon first, then all completed remote outputs sync back to Omega as canonical root."
@@ -180,6 +180,12 @@ stage16_dispatch_rc=$?
     sed -n '1,120p' "$LOG_DIR/stage15_fxmacrodata_acquisition.md"
   else
     echo "Stage 1.5 FXMacroData acquisition summary has not been written yet."
+  fi
+  echo
+  if [ -f "$LOG_DIR/stage15_cryptoquant_acquisition.md" ]; then
+    sed -n '1,120p' "$LOG_DIR/stage15_cryptoquant_acquisition.md"
+  else
+    echo "Stage 1.5 CryptoQuant acquisition summary has not been written yet."
   fi
   echo
   sed -n '1,120p' "$CONTEXT_PACKET"

@@ -1,0 +1,2981 @@
+{
+  "generated_at": "2026-05-02T00:00:53.753759+00:00",
+  "machine": "dragon_stage15_cryptoquant",
+  "stage": "Stage 1.6 quality validation",
+  "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
+  "summary": {
+    "roots": [
+      "alternative_data/cryptoquant"
+    ],
+    "files_checked": 97,
+    "files_with_warnings": 0,
+    "warning_counts": {}
+  },
+  "checks": [
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_inflow_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_netflow_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_outflow_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_exchange_flows/btc_exchange_reserve_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_estimated_leverage_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "estimated_leverage_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_estimated_leverage_ratio_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "estimated_leverage_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_exchange_supply_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "exchange_supply_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_exchange_whale_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "exchange_whale_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_exchange_whale_ratio_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "exchange_whale_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_fund_flow_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "fund_flow_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_mpi.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "mpi",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_mvrv.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "mvrv",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_realized_price.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "realized_price",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_sopr.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "sopr",
+        "a_sopr",
+        "sth_sopr",
+        "lth_sopr",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_sopr_ratio.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "sopr_ratio",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_stablecoin_supply_ratio.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "stablecoin_supply_ratio",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_indicators/btc_stablecoins_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "stablecoins_ratio",
+        "stablecoins_ratio_usd",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_inflow_all_miner.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_miner",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_netflow_all_miner.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_miner",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_outflow_all_miner.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_miner",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/btc_miner_flows/btc_miner_reserve_all_miner.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_miner",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_inflow_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_netflow_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_outflow_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_bybit.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_coinbase_advanced.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_kraken.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_exchange_flows/eth_exchange_reserve_okx.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "reserve_usd",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_indicators/eth_estimated_leverage_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "estimated_leverage_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_indicators/eth_estimated_leverage_ratio_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "estimated_leverage_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/eth_indicators/eth_exchange_supply_ratio_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "exchange_supply_ratio",
+        "param_window",
+        "param_exchange"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_all_token_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_all_token_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdc_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdc_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdt_eth_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_inflow_usdt_eth_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "inflow_total",
+        "inflow_top10",
+        "inflow_mean",
+        "inflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_all_token_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_all_token_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdc_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdc_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdt_eth_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_netflow_usdt_eth_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "netflow_total",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_all_token_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_all_token_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdc_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdc_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdt_eth_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_outflow_usdt_eth_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "outflow_total",
+        "outflow_top10",
+        "outflow_mean",
+        "outflow_mean_ma7",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_all_token_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_all_token_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdc_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdc_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdt_eth_all_exchange.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_exchange_flows/stablecoin_reserve_usdt_eth_binance.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "reserve",
+        "param_token",
+        "param_exchange",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_market/stablecoin_capitalization_usdc.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "market_cap",
+        "param_token",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_market/stablecoin_capitalization_usdt_eth.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "market_cap",
+        "param_token",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_network/stablecoin_supply_all_token.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "supply_total",
+        "supply_minted",
+        "supply_burned",
+        "supply_circulating",
+        "supply_issued",
+        "supply_redeemed",
+        "param_token",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_network/stablecoin_supply_usdc.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "supply_total",
+        "supply_minted",
+        "supply_burned",
+        "supply_circulating",
+        "supply_issued",
+        "supply_redeemed",
+        "param_token",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-22 00:00:00+00:00",
+        "max": "2026-05-01 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    },
+    {
+      "path": "alternative_data/cryptoquant/stablecoin_network/stablecoin_supply_usdt_eth.parquet",
+      "rows": 100,
+      "columns": [
+        "provider",
+        "endpoint",
+        "metric_slug",
+        "date",
+        "supply_total",
+        "supply_minted",
+        "supply_burned",
+        "supply_circulating",
+        "supply_issued",
+        "supply_redeemed",
+        "param_token",
+        "param_window"
+      ],
+      "time_column": "date",
+      "time_stats": {
+        "nulls": 0,
+        "duplicates": 0,
+        "duplicate_key_columns": [
+          "date"
+        ],
+        "natural_key_columns": [],
+        "monotonic_increasing": true,
+        "min": "2026-01-21 00:00:00+00:00",
+        "max": "2026-04-30 00:00:00+00:00"
+      },
+      "exact_duplicate_rows": 0,
+      "ohlc_stats": {},
+      "negative_volume_rows": {},
+      "warnings": []
+    }
+  ]
+}
