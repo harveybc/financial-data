@@ -1,6 +1,6 @@
 # Stage 2.4 Learned Representation Status
 
-Generated: 2026-05-02T02:00:22.510139+00:00
+Generated: 2026-05-02T02:04:22.759664+00:00
 
 ## LSTM Bootstrap
 
@@ -21,7 +21,7 @@ Generated: 2026-05-02T02:00:22.510139+00:00
 
 ## CNN Bootstrap
 
-- Completed metadata files: 10
+- Completed metadata files: 12
 
 | Machine | Asset | TF | Val Loss | Rows | Output |
 | --- | --- | --- | ---: | ---: | --- |
@@ -31,8 +31,10 @@ Generated: 2026-05-02T02:00:22.510139+00:00
 | dragon | btcusdt_perp | 4h | 0.532272 | 13807 | `features/trading_asset_features/btcusdt_perp/4h/learned_cnn.parquet` |
 | dragon | ethusdt | 1h | 0.429318 | 73221 | `features/trading_asset_features/ethusdt/1h/learned_cnn.parquet` |
 | omega | ethusdt | 4h | 0.413717 | 18306 | `features/trading_asset_features/ethusdt/4h/learned_cnn.parquet` |
+| gamma | eurusd | 15m | 0.243716 | 518623 | `features/trading_asset_features/eurusd/15m/learned_cnn.parquet` |
 | gamma | eurusd | 1h | 0.247430 | 129810 | `features/trading_asset_features/eurusd/1h/learned_cnn.parquet` |
 | gamma | eurusd | 4h | 0.200630 | 33732 | `features/trading_asset_features/eurusd/4h/learned_cnn.parquet` |
+| dragon | usdjpy | 15m | 0.497860 | 518536 | `features/trading_asset_features/usdjpy/15m/learned_cnn.parquet` |
 | gamma | usdjpy | 1h | 0.583787 | 129789 | `features/trading_asset_features/usdjpy/1h/learned_cnn.parquet` |
 | gamma | usdjpy | 4h | 0.495066 | 33727 | `features/trading_asset_features/usdjpy/4h/learned_cnn.parquet` |
 
@@ -46,3 +48,4 @@ Generated: 2026-05-02T02:00:22.510139+00:00
 
 - Gamma jobs ok: 2/5
 - Crypto 15m failed on Gamma because ignored `features/trading_asset_data/<crypto>/15m.parquet` was not present there; route those prep jobs through Omega or sync crypto feature data before retrying.
+- FX 15m inputs are available and currently feeding Dragon/Gamma LSTM jobs.
