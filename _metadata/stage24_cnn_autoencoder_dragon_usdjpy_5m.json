@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-02T03:02:46.201625+00:00",
+  "stage": "Stage 2.4",
+  "machine": "dragon",
+  "asset": "usdjpy",
+  "timeframe": "5m",
+  "method": "cnn_autoencoder",
+  "window": 64,
+  "latent_dim": 32,
+  "input_columns": 118,
+  "train_windows": 24000,
+  "validation_windows": 5000,
+  "epochs_requested": 20,
+  "epochs_completed": 20,
+  "final_loss": 0.3534933626651764,
+  "final_val_loss": 0.4573676884174347,
+  "encoder_path": "features/learned_models/usdjpy/5m/cnn_autoencoder/encoder.keras",
+  "autoencoder_path": "features/learned_models/usdjpy/5m/cnn_autoencoder/autoencoder.keras",
+  "features_path": "features/trading_asset_features/usdjpy/5m/learned_cnn.parquet",
+  "output_rows": 1551181,
+  "note": "Bootstrap Stage 2.4 CNN autoencoder while feature-extractor runtime wrapper is being integrated."
+}

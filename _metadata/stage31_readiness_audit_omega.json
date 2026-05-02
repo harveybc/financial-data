@@ -1,0 +1,252 @@
+{
+  "agent_multi_checks": [
+    {
+      "exists": true,
+      "label": "agent_multi_repo",
+      "path": "/home/harveybc/Documents/GitHub/agent-multi"
+    },
+    {
+      "exists": true,
+      "label": "seed_sweep",
+      "path": "/home/harveybc/Documents/GitHub/agent-multi/tools/seed_sweep.py"
+    },
+    {
+      "exists": true,
+      "label": "ppo_agent",
+      "path": "/home/harveybc/Documents/GitHub/agent-multi/agent_plugins/ppo_agent.py"
+    },
+    {
+      "exists": true,
+      "label": "sac_agent",
+      "path": "/home/harveybc/Documents/GitHub/agent-multi/agent_plugins/sac_agent.py"
+    },
+    {
+      "exists": true,
+      "label": "dqn_agent",
+      "path": "/home/harveybc/Documents/GitHub/agent-multi/agent_plugins/dqn_agent.py"
+    }
+  ],
+  "agent_multi_git_head": "b0ceca7",
+  "blockers": [],
+  "deliverable": "Phase 3 experiment framework readiness audit",
+  "design_docs": [
+    {
+      "exists": true,
+      "label": "pre_registered_design",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/design/pre_registered_design.md"
+    },
+    {
+      "exists": true,
+      "label": "kill_criteria",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/design/kill_criteria.md"
+    },
+    {
+      "exists": true,
+      "label": "multiple_testing_correction",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/design/multiple_testing_correction.md"
+    },
+    {
+      "exists": true,
+      "label": "stage_a_runs_dir",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs"
+    }
+  ],
+  "financial_data_git_head": "d6f073b",
+  "first_wave_feature_coverage": [
+    {
+      "asset": "btcusdt",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "1h"
+    },
+    {
+      "asset": "btcusdt",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "4h"
+    },
+    {
+      "asset": "ethusdt",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "1h"
+    },
+    {
+      "asset": "ethusdt",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "4h"
+    },
+    {
+      "asset": "btcusdt_perp",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "1h"
+    },
+    {
+      "asset": "btcusdt_perp",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "4h"
+    },
+    {
+      "asset": "eurusd",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "1h"
+    },
+    {
+      "asset": "eurusd",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "4h"
+    },
+    {
+      "asset": "usdjpy",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "1h"
+    },
+    {
+      "asset": "usdjpy",
+      "available": [
+        "emd",
+        "fracdiff",
+        "learned_cnn",
+        "learned_lstm",
+        "sota_hmm_regime",
+        "sota_intrabar_realized",
+        "statistical",
+        "technical",
+        "wavelet"
+      ],
+      "missing": [],
+      "status": "ready",
+      "timeframe": "4h"
+    }
+  ],
+  "first_wave_ready_cells": 10,
+  "first_wave_total_cells": 10,
+  "generated_at": "2026-05-02T03:08:31.655749+00:00",
+  "machine": "omega",
+  "python": "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+  "python_modules": [
+    {
+      "available": true,
+      "module": "numpy"
+    },
+    {
+      "available": true,
+      "module": "pandas"
+    },
+    {
+      "available": true,
+      "module": "stable_baselines3"
+    },
+    {
+      "available": true,
+      "module": "gymnasium"
+    }
+  ],
+  "stage": "Stage 3.1",
+  "status": "ready"
+}

@@ -57,6 +57,26 @@ CPU_PREP_JOBS = (
         "log": "_logs/omega/stage24_input_prep_crypto_5m.out",
     },
 )
+CPU_MAINTENANCE_JOBS = (
+    {
+        "machine": "omega",
+        "job_id": "audit:stage24_progress",
+        "command": "python _scripts/workers/stage24_progress_audit_worker.py --machine omega",
+        "running_pattern": "stage24_progress_audit_worker.py --machine omega",
+        "log": "_logs/omega/stage24_progress_audit.out",
+        "metadata": "_metadata/stage24_progress_audit_omega.json",
+        "min_interval_seconds": 600,
+    },
+    {
+        "machine": "omega",
+        "job_id": "manifest:stage2_deliverables",
+        "command": "python _scripts/workers/stage2_deliverable_manifest_worker.py",
+        "running_pattern": "stage2_deliverable_manifest_worker.py",
+        "log": "_logs/omega/stage2_deliverable_manifest.out",
+        "metadata": "_logs/supervisor_reports/stage2_manifest.md",
+        "min_interval_seconds": 900,
+    },
+)
 
 
 def utc_now() -> str:
@@ -391,7 +411,38 @@ def start_cpu_prep_jobs() -> list[dict[str, str]]:
     return assignments
 
 
-def running_cpu_prep_jobs() -> dict[str, list[str]]:
+def start_cpu_maintenance_jobs() -> list[dict[str, str]]:
+    assignments: list[dict[str, str]] = []
+    now = time.time()
+    for job in CPU_MAINTENANCE_JOBS:
+        machine = str(job["machine"])
+        job_name = str(job["job_id"])
+        command = str(job["command"])
+        running_pattern = str(job.get("running_pattern") or command)
+        log = str(job["log"])
+        metadata = ROOT / str(job["metadata"])
+        min_interval = int(job["min_interval_seconds"])
+        if process_running(running_pattern):
+            continue
+        if metadata.exists() and now - metadata.stat().st_mtime < min_interval:
+            continue
+        shell_command = (
+            f"mkdir -p {shlex.quote(str(Path(log).parent))}; "
+            f"nohup env PYTHONUNBUFFERED=1 {command} "
+            f"> {shlex.quote(log)} 2>&1 < /dev/null & echo $!"
+        )
+        cp = machine_shell(Machine(machine), shell_command, timeout=30)
+        pid = cp.stdout.strip().splitlines()[-1] if cp.returncode == 0 and cp.stdout.strip() else ""
+        if pid.isdigit():
+            item = {"machine": machine, "job_id": job_name, "pid": pid}
+            assignments.append(item)
+            append_event({"type": "cpu_maintenance_started", **item})
+        else:
+            append_event({"type": "cpu_maintenance_failed", "machine": machine, "job_id": job_name, "error": cp.stdout[-1000:]})
+    return assignments
+
+
+def running_cpu_jobs() -> dict[str, list[str]]:
     running: dict[str, list[str]] = {}
     for job in CPU_PREP_JOBS:
         machine = str(job["machine"])
@@ -399,6 +450,11 @@ def running_cpu_prep_jobs() -> dict[str, list[str]]:
         pattern = f"stage24_learned_input_prep_worker.py --machine {machine} --universe {universe}"
         if process_running(pattern):
             running.setdefault(machine, []).append(f"input_prep:{universe}")
+    for job in CPU_MAINTENANCE_JOBS:
+        machine = str(job["machine"])
+        pattern = str(job.get("running_pattern") or job["command"])
+        if process_running(pattern):
+            running.setdefault(machine, []).append(str(job["job_id"]))
     return running
 
 
@@ -407,7 +463,7 @@ def choose_job(machine: Machine, completed: set[str], running: set[str]) -> tupl
         jid = job_id(method, asset, timeframe)
         if jid in completed or jid in running:
             continue
-        if machine.name == "omega" and timeframe == "5m":
+        if machine.name == "omega" and (timeframe == "5m" or method == "lstm"):
             continue
         if not input_ready(asset, timeframe):
             continue
@@ -421,7 +477,8 @@ def tick() -> dict[str, Any]:
     state = read_json(STATE_PATH, {"running": {}, "completed_notified": []})
     synced = sync_all_completed()
     cpu_assignments = start_cpu_prep_jobs()
-    cpu_running = running_cpu_prep_jobs()
+    maintenance_assignments = start_cpu_maintenance_jobs()
+    cpu_running = running_cpu_jobs()
     completed = completed_job_ids()
     completed_notified = set(state.get("completed_notified", []))
     if first_run and not completed_notified:
@@ -438,10 +495,12 @@ def tick() -> dict[str, Any]:
     completed_notified |= completed
 
     running_jobs = set()
-    machine_reports = []
+    machine_reports: list[dict[str, Any]] = []
+    machine_locks: dict[str, dict[str, Any]] = {}
     assignments = []
     for machine in MACHINES:
         lock = parse_lock(machine)
+        machine_locks[machine.name] = lock
         busy = bool(lock.get("lock_present") and lock.get("pid_alive", True))
         if busy:
             command = str(lock.get("command") or "")
@@ -454,12 +513,25 @@ def tick() -> dict[str, Any]:
                         running_jobs.add(job_id(method, asset, timeframe))
                     except Exception:
                         pass
+    for machine in MACHINES:
+        lock = machine_locks[machine.name]
+        busy = bool(lock.get("lock_present") and lock.get("pid_alive", True))
+        if busy:
             machine_reports.append({"machine": machine.name, "state": "busy", "lock": lock})
             continue
         job = choose_job(machine, completed, running_jobs)
         if job is None:
             if machine.name in cpu_running:
                 machine_reports.append({"machine": machine.name, "state": "cpu_busy", "reason": ",".join(cpu_running[machine.name])})
+                continue
+            if machine.name == "omega":
+                machine_reports.append(
+                    {
+                        "machine": machine.name,
+                        "state": "supervising",
+                        "reason": "daemon active; CPU audit/manifest scheduled; no safe light GPU job currently ready",
+                    }
+                )
                 continue
             machine_reports.append({"machine": machine.name, "state": "idle", "reason": "no validated ready Stage 2.4 job found"})
             notify(
@@ -490,7 +562,7 @@ def tick() -> dict[str, Any]:
         "updated_at": utc_now(),
         "completed_notified": sorted(completed_notified),
         "last_synced": synced,
-        "last_assignments": [*cpu_assignments, *assignments],
+        "last_assignments": [*cpu_assignments, *maintenance_assignments, *assignments],
         "machines": machine_reports,
     }
     write_json(STATE_PATH, new_state)

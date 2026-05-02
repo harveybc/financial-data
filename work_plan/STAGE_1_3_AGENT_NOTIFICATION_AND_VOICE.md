@@ -131,7 +131,7 @@ Telegram voice replies are supported by the gateway when a chat enables `/voice 
 
 Use Telegram text notifications first for Project 3 operations. Enable voice replies only for interactive sessions or explicit Telegram `/voice` mode, because routine cron voice updates would add noise and make anomaly triage harder.
 
-Telegram group handling is configured with `telegram.require_mention: true` and `telegram.reactions: true`. After the group chat id is known, set `TELEGRAM_GROUP_ALLOWED_CHATS` to that id before enabling the gateway.
+Telegram group handling is configured with `telegram.require_mention: true`, `telegram.reactions: true`, and `telegram.free_response_chats` set to the HermesAgentOrchestration chat id. This keeps other group chats mention-gated while allowing normal human Project 3 questions in the orchestration group to reach the Hermes gateway. After the group chat id is known, set `TELEGRAM_GROUP_ALLOWED_CHATS` to that id before enabling the gateway.
 
 ## Current Stage Policy
 
