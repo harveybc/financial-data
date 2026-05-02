@@ -1,0 +1,17 @@
+[Unit]
+Description=Project 3 Stage 3.1 supervisor loop
+After=network-online.target project3-event-daemon.service hermes-gateway.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/harveybc/Documents/GitHub/financial-data
+Environment=PROJECT3_ROOT=/home/harveybc/Documents/GitHub/financial-data
+Environment=PROJECT_ROOT=/home/harveybc/Documents/GitHub/financial-data
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/harveybc/anaconda3/envs/tensorflow/bin/python -u /home/harveybc/Documents/GitHub/financial-data/_scripts/workers/stage31_supervisor_tick_worker.py --loop --iterations 1000000 --sleep-seconds 60
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=default.target

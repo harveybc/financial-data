@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_ROOT="${PROJECT_ROOT:-/home/harveybc/Documents/GitHub/financial-data}"
+
+source "$HOME/.bashrc" >/dev/null 2>&1 || true
+if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+  source "$HOME/anaconda3/etc/profile.d/conda.sh" >/dev/null 2>&1 || true
+  conda activate tensorflow >/dev/null 2>&1 || true
+fi
+
+cd "$PROJECT_ROOT"
+PYTHONDONTWRITEBYTECODE=1 python _scripts/orchestration/project3_stage31_watchdog.py --json

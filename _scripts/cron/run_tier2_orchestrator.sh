@@ -9,7 +9,7 @@ CONTEXT_PACKET="$LOG_DIR/tier2_context_packet.md"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 SSH_PREFIX="bash -lc 'source ~/.bashrc >/dev/null 2>&1; source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda activate tensorflow >/dev/null 2>&1;"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
-PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-realtime-telegram-orchestration,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
+PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-stage31-autonomous-worker,project3-realtime-telegram-orchestration,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
 PROJECT3_ENABLE_LEGACY_STAGE1_CRON="${PROJECT3_ENABLE_LEGACY_STAGE1_CRON:-0}"
 PROJECT3_TIER2_HERMES_MODEL="${PROJECT3_TIER2_HERMES_MODEL:-}"
 PROJECT3_TIER2_HERMES_FALLBACK_MODELS="${PROJECT3_TIER2_HERMES_FALLBACK_MODELS:-}"
@@ -94,18 +94,18 @@ cat > "$CONTEXT_PACKET" <<EOF
 
 generated_at: ${NOW}
 project_root: ${PROJECT_ROOT}
-active_stage: Stage 2.4 Learned Representations active; Phase 3.1 experiment design scaffold active; Stage 2 SOTA low-cost enrichment available for validation.
+active_stage: Stage 3.1 Stage A screening active; Stage 3.2 Stage A synthesis allowed on Omega CPU when Stage 3.1 local queue is complete; Stage 2 SOTA low-cost enrichment and governance additions are active validation context.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, Gamma, and the Project 3 event daemon.
 supervisor_model_policy: ${MODEL_POLICY}
 experiment_until: ${PROJECT3_DEEPSEEK_PRO_EXPERIMENT_UNTIL:-none}
 tier2_model_timeout_seconds: ${PROJECT3_TIER2_MODEL_TIMEOUT_SECONDS}
 relevant_docs: work_plan/00_PROJECT_3_MASTER_PLAN.md; work_plan/01_AGENT_INFRASTRUCTURE.md; work_plan/20_PHASE_2_OVERVIEW.md; work_plan/24_STAGE_2_4_LEARNED_REPRESENTATIONS.md; work_plan/30_PHASE_3_OVERVIEW.md; work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md; work_plan/SOTA_IMPROVEMENT_SUGGESTIONS.md; work_plan/SOTA_INTEGRATION_DECISIONS.md; work_plan/STAGE_1_3_AGENT_NOTIFICATION_AND_VOICE.md
 current_machine_tasks:
-- Omega: primary low-latency event-daemon owner; local Stage 2.4 GPU worker when idle; remote output sync; Stage 2.4 metadata audit; Phase 3.1 design readiness; SOTA decision integration.
-- Dragon: Stage 2.4 learned representation GPU jobs for ready asset/timeframe slices; sync outputs back to Omega; report blockers/anomalies via Telegram and event logs.
-- Gamma: Stage 2.4 learned representation GPU jobs and learned-input prep acceleration; sync outputs back to Omega; report blockers/anomalies via Telegram and event logs.
-expected_deliverables: _metadata/stage24_*_autoencoder_<machine>_<asset>_<tf>.json, features/trading_asset_features/<asset>/<tf>/learned_lstm.parquet, features/trading_asset_features/<asset>/<tf>/learned_cnn.parquet, features/learned_models/<asset>/<tf>/*_autoencoder/, _metadata/stage24_learned_input_prep_*.json, _logs/supervisor_reports/project3_event_daemon_status.md, _logs/supervisor_reports/project3_event_daemon_events.jsonl, experiments/design/*.md, work_plan/SOTA_INTEGRATION_DECISIONS.md.
-relevant_logs: _logs/supervisor_reports/project3_event_daemon_status.md; _logs/supervisor_reports/project3_event_daemon_events.jsonl; _logs/supervisor_reports/global_status.md; _logs/omega/stage24_*; remote _logs/dragon/stage24_*; remote _logs/gamma/stage24_*.
+- Omega: Stage 3.1 watchdog/service owner, run ledger aggregation, Stage 3.2 Stage A synthesis on CPU when local Stage 3.1 queue is complete, remote output sync, and SOTA governance integration.
+- Dragon: Stage 3.1 GPU Stage A screening jobs from `experiments/stage_a_screening/queues/dragon.json`; sync summaries and ledger events back to Omega; report blockers/anomalies via Telegram and event logs.
+- Gamma: Stage 3.1 GPU Stage A screening jobs from `experiments/stage_a_screening/queues/gamma.json`; sync summaries and ledger events back to Omega; report blockers/anomalies via Telegram and event logs.
+expected_deliverables: experiments/stage_a_screening/runs/<machine>/*/summary.json, experiments/stage_a_screening/index.csv, experiments/stage_a_screening/stage_a_summary.md, artifacts/run_ledger.parquet, artifacts/run_ledger_summary.json, _logs/supervisor_reports/stage31_watchdog.md, _logs/supervisor_reports/stage31_worker_context_packet.md.
+relevant_logs: _logs/supervisor_reports/stage31_watchdog.md; _logs/supervisor_reports/stage31_worker_context_packet.md; _logs/supervisor_reports/stage31_supervisor_tick.md; _logs/supervisor_reports/stage31_worker_<machine>.md; _logs/supervisor_reports/global_status.md; _logs/supervisor_reports/project3_event_daemon_events.jsonl.
 constraints: use existing private repo runtime credentials; respect GPU locks; avoid destructive cleanup; sync remote outputs to Omega; escalate only real blockers.
 honesty: report evidence, confidence, assumptions, and stale context corrections. Never mark a deliverable complete from memory or guesswork.
 anomaly_detection: stale PIDs, silent logs, failed APIs, missing provenance, abnormal file counts, empty data files, duplicate timestamps, timezone/frequency drift, stale locks, VRAM not released.

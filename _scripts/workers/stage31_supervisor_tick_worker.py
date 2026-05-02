@@ -5,7 +5,9 @@ import argparse
 import fcntl
 import json
 import os
+import shlex
 import subprocess
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -14,6 +16,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
 LOCK_PATH = PROJECT_ROOT / "_metadata" / "stage31_supervisor_tick.lock"
 TARGET_PENDING = int(os.environ.get("PROJECT3_STAGE31_TARGET_PENDING", "48"))
+PYTHON = os.environ.get("PROJECT3_PYTHON", sys.executable)
+PYTHON_Q = shlex.quote(PYTHON)
 SSH = {
     "dragon": "ssh -p 22022 harveybc@192.0.2.13",
     "gamma": "ssh -p 22022 harveybc@192.0.2.15",
@@ -65,7 +69,7 @@ def refill_queues() -> str:
     if not script.exists():
         return "refill_script_missing"
     proc = run(
-        f"cd {PROJECT_ROOT} && python {script} --target-pending {TARGET_PENDING}",
+        f"cd {shlex.quote(str(PROJECT_ROOT))} && {PYTHON_Q} {shlex.quote(str(script))} --target-pending {TARGET_PENDING}",
         timeout=60,
     )
     return proc.stdout.strip()
@@ -75,14 +79,17 @@ def reconcile_local(machine: str) -> str:
     script = PROJECT_ROOT / "_scripts" / "workers" / "stage31_reconcile_queue_worker.py"
     if not script.exists():
         return "reconcile_script_missing"
-    proc = run(f"cd {PROJECT_ROOT} && python {script} --machine {machine}", timeout=30)
+    proc = run(
+        f"cd {shlex.quote(str(PROJECT_ROOT))} && {PYTHON_Q} {shlex.quote(str(script))} --machine {shlex.quote(machine)}",
+        timeout=30,
+    )
     return proc.stdout.strip()
 
 
 def reconcile_remote(machine: str) -> str:
     cmd = (
         f"{SSH[machine]} \"bash -lc '{PREFIX}cd {PROJECT_ROOT}; "
-        f"python _scripts/workers/stage31_reconcile_queue_worker.py --machine {machine}'\""
+        f"{PYTHON_Q} _scripts/workers/stage31_reconcile_queue_worker.py --machine {machine}'\""
     )
     proc = run(cmd, timeout=30)
     return proc.stdout.strip()
@@ -113,7 +120,7 @@ def remote_busy(machine: str) -> tuple[bool, str]:
 def launch_local() -> str:
     cmd = (
         f"bash -lc '{PREFIX}cd {PROJECT_ROOT}; "
-        "setsid -f python _scripts/workers/stage31_agent_multi_run_worker.py "
+        f"setsid -f {PYTHON_Q} _scripts/workers/stage31_agent_multi_run_worker.py "
         "--machine omega --max-jobs 1 --timeout-minutes 120 "
         "> _logs/supervisor_reports/stage31_worker_omega.nohup.log 2>&1 < /dev/null'"
     )
@@ -123,7 +130,7 @@ def launch_local() -> str:
 def launch_remote(machine: str) -> str:
     cmd = (
         f"{SSH[machine]} \"bash -lc '{PREFIX}cd {PROJECT_ROOT}; "
-        f"setsid -f python _scripts/workers/stage31_agent_multi_run_worker.py --machine {machine} --max-jobs 1 --timeout-minutes 180 "
+        f"setsid -f {PYTHON_Q} _scripts/workers/stage31_agent_multi_run_worker.py --machine {machine} --max-jobs 1 --timeout-minutes 180 "
         f"> _logs/supervisor_reports/stage31_worker_{machine}.nohup.log 2>&1 < /dev/null'\""
     )
     return run(cmd, timeout=30).stdout.strip()
@@ -157,7 +164,7 @@ def push_remote_queue(machine: str) -> None:
 
 def combine_ledger() -> str:
     proc = run(
-        f"cd {PROJECT_ROOT} && python _scripts/workers/stage31_combine_ledger_worker.py",
+        f"cd {shlex.quote(str(PROJECT_ROOT))} && {PYTHON_Q} _scripts/workers/stage31_combine_ledger_worker.py",
         timeout=30,
     )
     return proc.stdout.strip()
