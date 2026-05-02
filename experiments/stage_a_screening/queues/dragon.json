@@ -432,5 +432,17 @@
     "status": "pending",
     "timeframe": "4h",
     "timesteps": 25000
+  },
+  {
+    "algo": "sac",
+    "asset": "ethusdt",
+    "device": "cuda",
+    "preset": "tech_stat",
+    "run_id": "ethusdt_1h_tech_stat_sac_s1_25000",
+    "seed": 1,
+    "stage": "3.1_stage_a_seed_stability_batch6_rerouted_from_gamma",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 25000
   }
 ]
