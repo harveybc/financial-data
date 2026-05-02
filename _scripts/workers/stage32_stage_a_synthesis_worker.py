@@ -183,7 +183,7 @@ def write_index(rows: list[dict]) -> Path:
         "run_dir",
     ]
     with out.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     return out

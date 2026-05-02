@@ -1,6 +1,6 @@
 # Stage A Screening Summary
 
-Generated: 2026-05-02T06:23:31.053815+00:00
+Generated: 2026-05-02T06:24:36.047016+00:00
 
 This is a preliminary Stage A synthesis. Per the adopted SOTA hardening gates, no configuration is promoted to Stage B until leakage, availability, DSR/PBO, baseline, and cost-sensitivity checks pass.
 
