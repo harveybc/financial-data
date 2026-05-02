@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-05-02T01:18:47.570480+00:00",
+  "stage": "Stage 2.2",
+  "trading_jobs_total": 200,
+  "trading_jobs_ok": 200,
+  "trading_jobs_failed": 0,
+  "cross_jobs_total": 1480,
+  "cross_jobs_ok": 1464,
+  "cross_jobs_skipped_no_numeric": 16,
+  "cross_jobs_failed_actionable": 0,
+  "technical_files": 200,
+  "statistical_files": 200,
+  "cross_statistical_files": 1464,
+  "skipped_examples": [
+    {
+      "status": "failed",
+      "timeframe": "5m",
+      "source": "features/cross_source_features/5m/alternative_data__onchain_eth__etherscan_free_snapshots__snapshots.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "5m",
+      "source": "features/cross_source_features/5m/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "5m",
+      "source": "features/cross_source_features/5m/alternative_data__short_interest__finra_regsho_daily__fnsq__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "5m",
+      "source": "features/cross_source_features/5m/alternative_data__short_interest__finra_regsho_daily__fnyx__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "15m",
+      "source": "features/cross_source_features/15m/alternative_data__onchain_eth__etherscan_free_snapshots__snapshots.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "15m",
+      "source": "features/cross_source_features/15m/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "15m",
+      "source": "features/cross_source_features/15m/alternative_data__short_interest__finra_regsho_daily__fnsq__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "15m",
+      "source": "features/cross_source_features/15m/alternative_data__short_interest__finra_regsho_daily__fnyx__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "1h",
+      "source": "features/cross_source_features/1h/alternative_data__onchain_eth__etherscan_free_snapshots__snapshots.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "1h",
+      "source": "features/cross_source_features/1h/alternative_data__short_interest__finra_regsho_daily__cnms__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "1h",
+      "source": "features/cross_source_features/1h/alternative_data__short_interest__finra_regsho_daily__fnsq__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    },
+    {
+      "status": "failed",
+      "timeframe": "1h",
+      "source": "features/cross_source_features/1h/alternative_data__short_interest__finra_regsho_daily__fnyx__2025_daily_short_volume.parquet",
+      "error": "ValueError: no numeric columns"
+    }
+  ],
+  "actionable_failures": [],
+  "source_reports": [
+    "_metadata/stage22_trading_features_omega_forex_g10.json",
+    "_metadata/stage22_trading_features_dragon_crypto.json",
+    "_metadata/stage22_cross_source_stats_gamma.json"
+  ]
+}
