@@ -53,6 +53,17 @@ def acquire_worker_lock(machine: str):
     return lock_file
 
 
+def is_runnable_status(status: object) -> bool:
+    value = str(status or "pending").lower()
+    if value in {"", "pending", "queued", "retry", "needs_retry"}:
+        return True
+    if value in {"complete", "training", "running", "preparing_input", "skipped_busy"}:
+        return False
+    if value.startswith("blocked") or value.startswith("failed") or value.startswith("skipped"):
+        return False
+    return True
+
+
 def merge_queue_and_write(path: Path, jobs: list[dict]) -> list[dict]:
     """Persist statuses without dropping jobs appended by the supervisor while this worker ran."""
     current = read_json(path, [])
@@ -326,7 +337,7 @@ def main() -> int:
         pending_indices = [
             idx
             for idx, job in enumerate(jobs)
-            if str(job.get("status", "pending")).lower() not in {"complete", "training", "running"}
+            if is_runnable_status(job.get("status", "pending"))
         ]
         if not pending_indices:
             write_report(machine, "idle", jobs, detail=f"no pending jobs in queue {queue_path}")

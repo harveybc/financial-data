@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-05-02T05:35:39.928643+00:00",
+  "outputs": [
+    "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/index.csv",
+    "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_a_summary.md"
+  ],
+  "runs": 72,
+  "source_stage": "3.1_stage_a",
+  "stage": "3.2",
+  "status": "preliminary_blocked_until_hardening"
+}
