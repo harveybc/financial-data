@@ -71,6 +71,23 @@ def refill_queues() -> str:
     return proc.stdout.strip()
 
 
+def reconcile_local(machine: str) -> str:
+    script = PROJECT_ROOT / "_scripts" / "workers" / "stage31_reconcile_queue_worker.py"
+    if not script.exists():
+        return "reconcile_script_missing"
+    proc = run(f"cd {PROJECT_ROOT} && python {script} --machine {machine}", timeout=30)
+    return proc.stdout.strip()
+
+
+def reconcile_remote(machine: str) -> str:
+    cmd = (
+        f"{SSH[machine]} \"bash -lc '{PREFIX}cd {PROJECT_ROOT}; "
+        f"python _scripts/workers/stage31_reconcile_queue_worker.py --machine {machine}'\""
+    )
+    proc = run(cmd, timeout=30)
+    return proc.stdout.strip()
+
+
 def local_busy() -> tuple[bool, str]:
     proc = run(
         "ps -eo pid=,args= | "
@@ -170,7 +187,9 @@ def write_report(events: list[dict]) -> None:
 def tick() -> list[dict]:
     events = []
     for machine in ("dragon", "gamma"):
+        reconcile_remote(machine)
         sync_remote(machine)
+    reconcile_local("omega")
     ledger_detail = combine_ledger()
     refill_detail = refill_queues()
     for machine in ("dragon", "gamma"):

@@ -39,6 +39,54 @@ def read_json(path: Path, default):
         return default
 
 
+def notify_telegram(event: str, title: str, message: str) -> None:
+    script = PROJECT_ROOT / "_scripts" / "telegram_notify.py"
+    if not script.exists():
+        return
+    try:
+        subprocess.run(
+            [
+                sys.executable,
+                str(script),
+                "--event",
+                event,
+                "--title",
+                title,
+                "--message",
+                message,
+                "--min-interval-minutes",
+                "0",
+                "--force",
+            ],
+            cwd=PROJECT_ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            timeout=25,
+        )
+    except Exception:
+        pass
+
+
+def stage31_message(machine: str, job: dict, status: str, detail: str = "") -> str:
+    return "\n".join(
+        [
+            "work_plan_stage: Stage 3.1 Stage A screening",
+            f"machine: {machine}",
+            f"task: {job.get('run_id', 'unknown')}",
+            f"asset: {job.get('asset', 'unknown')}",
+            f"timeframe: {job.get('timeframe', 'unknown')}",
+            f"algorithm: {job.get('algo') or job.get('algorithm') or 'unknown'}",
+            f"feature_preset: {job.get('preset') or job.get('feature_preset') or 'unknown'}",
+            f"seed: {job.get('seed', 'unknown')}",
+            f"status: {status}",
+            f"deliverable_path: {PROJECT_ROOT / 'experiments' / 'stage_a_screening' / 'runs' / machine}",
+            f"next_action: supervisor will assign the next pending Stage 3.1 job when this worker exits",
+            f"detail: {detail}" if detail else "detail: none",
+        ]
+    )
+
+
 def acquire_worker_lock(machine: str):
     lock_path = PROJECT_ROOT / "_metadata" / f"stage31_worker_{machine}.lock"
     lock_path.parent.mkdir(parents=True, exist_ok=True)
@@ -293,6 +341,11 @@ def run_one(
             detail="Stage 3.1 input export failed before training.",
             failure_reason=job["failure_reason"],
         )
+        notify_telegram(
+            f"stage31:{machine}:{job.get('run_id', 'unknown')}:failed_input",
+            "Project 3 Stage 3.1 input failed",
+            stage31_message(machine, job, "failed", job["failure_reason"]),
+        )
         raise
     job["input_csv"] = input_csv
 
@@ -329,6 +382,11 @@ def run_one(
     )
     persist_active_state()
     write_report(machine, "running", [job], active_job=job, detail="agent-multi seed_sweep running")
+    notify_telegram(
+        f"stage31:{machine}:{job.get('run_id', 'unknown')}:start",
+        "Project 3 Stage 3.1 run started",
+        stage31_message(machine, job, "training"),
+    )
 
     command_label = f"agent-multi {job['algo']} {job['asset']} {job['timeframe']} {job['preset']} seed={job['seed']}"
     locked = False
@@ -368,6 +426,11 @@ def run_one(
             detail="Stage 3.1 training subprocess failed.",
             failure_reason=job["failure_reason"],
         )
+        notify_telegram(
+            f"stage31:{machine}:{job.get('run_id', 'unknown')}:failed_exception",
+            "Project 3 Stage 3.1 run failed",
+            stage31_message(machine, job, "failed", job["failure_reason"]),
+        )
         raise
     finally:
         if locked:
@@ -384,6 +447,16 @@ def run_one(
         config=config,
         detail="Stage 3.1 training subprocess finished.",
         failure_reason=None if proc.returncode == 0 else "nonzero_exit_code",
+    )
+    notify_telegram(
+        f"stage31:{machine}:{job.get('run_id', 'unknown')}:{job['status']}",
+        f"Project 3 Stage 3.1 run {job['status']}",
+        stage31_message(
+            machine,
+            job,
+            job["status"],
+            "summary/model artifacts written" if proc.returncode == 0 else f"nonzero_exit_code={proc.returncode}",
+        ),
     )
     return job
 
