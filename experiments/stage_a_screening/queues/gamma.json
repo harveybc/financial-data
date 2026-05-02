@@ -77,13 +77,66 @@
   {
     "algo": "sac",
     "asset": "usdjpy",
+    "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/gamma/usdjpy_4h_tech_stat_sac_s0_25000.json",
     "device": "cuda",
+    "exit_code": 0,
+    "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/usdjpy/4h/tech_stat/train.csv",
+    "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma",
     "preset": "tech_stat",
     "run_id": "usdjpy_4h_tech_stat_sac_s0_25000",
     "seed": 0,
     "stage": "3.1_stage_a_extended_gpu",
+    "status": "complete",
+    "stdout_tail": "[seed_sweep] running seed=0 run_dir=/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/usdjpy_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T044028Z_project3_stage31_firstwave\n{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"seed\": 0,\n      \"exit_code\": 0,\n      \"summary\": {\n        \"initial_cash\": 10000.0,\n        \"final_equity\": 10035.484732231938,\n        \"total_return\": 0.0035484732231938487,\n        \"max_drawdown_pct\": 1.0363243858768028,\n        \"max_drawdown_money\": 104.53790787483013,\n        \"sharpe_ratio\": -0.36415476598316265,\n        \"sqn\": 0.3107331170204001,\n        \"trades_total\": 248,\n        \"trades_won\": 101,\n        \"trades_lost\": 146,\n        \"avg_trade_pnl\": 0.10349001390661017,\n        \"episode_reward\": 0.0035484732231938383,\n        \"episode_length\": 30292,\n        \"eval_seed\": 0,\n        \"mode\": \"train\"\n      },\n      \"run_dir\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/usdjpy_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T044028Z_project3_stage31_firstwave\"\n    }\n  ]\n}",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "ppo",
+    "asset": "eurusd",
+    "device": "cuda",
+    "preset": "tech_full",
+    "run_id": "eurusd_4h_tech_full_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
     "status": "pending",
     "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "dqn",
+    "asset": "usdjpy",
+    "device": "cuda",
+    "preset": "baseline_12",
+    "run_id": "usdjpy_1h_baseline_12_dqn_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "ppo",
+    "asset": "eurusd",
+    "device": "cuda",
+    "preset": "learned_lstm",
+    "run_id": "eurusd_4h_learned_lstm_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "dqn",
+    "asset": "usdjpy",
+    "device": "cuda",
+    "preset": "tech_stat_decomp",
+    "run_id": "usdjpy_1h_tech_stat_decomp_dqn_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
+    "status": "pending",
+    "timeframe": "1h",
     "timesteps": 25000
   }
 ]

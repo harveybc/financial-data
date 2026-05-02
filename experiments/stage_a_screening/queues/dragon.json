@@ -87,13 +87,66 @@
   {
     "algo": "sac",
     "asset": "ethusdt",
+    "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/dragon/ethusdt_4h_baseline_12_sac_s0_25000.json",
     "device": "cuda",
+    "exit_code": 0,
+    "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt/4h/baseline_12/train.csv",
+    "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon",
     "preset": "baseline_12",
     "run_id": "ethusdt_4h_baseline_12_sac_s0_25000",
     "seed": 0,
     "stage": "3.1_stage_a_extended_gpu",
+    "status": "complete",
+    "stdout_tail": "[seed_sweep] running seed=0 run_dir=/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/ethusdt_4h_sac_baseline_12_direct_atr_sltp_s0_20260502T044025Z_project3_stage31_firstwave\n{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"seed\": 0,\n      \"exit_code\": 0,\n      \"summary\": {\n        \"initial_cash\": 10000.0,\n        \"final_equity\": 8646.694815343184,\n        \"total_return\": -0.13533051846568156,\n        \"max_drawdown_pct\": 19.9611453259789,\n        \"max_drawdown_money\": 2123.4318679970856,\n        \"sharpe_ratio\": -0.03982345907947009,\n        \"sqn\": -1.2411941073099018,\n        \"trades_total\": 752,\n        \"trades_won\": 284,\n        \"trades_lost\": 467,\n        \"avg_trade_pnl\": -1.8105816986830765,\n        \"episode_reward\": -0.13508886227125258,\n        \"episode_length\": 13903,\n        \"eval_seed\": 0,\n        \"mode\": \"train\"\n      },\n      \"run_dir\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/ethusdt_4h_sac_baseline_12_direct_atr_sltp_s0_20260502T044025Z_project3_stage31_firstwave\"\n    }\n  ]\n}",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "ppo",
+    "asset": "btcusdt",
+    "device": "cuda",
+    "preset": "tech_full",
+    "run_id": "btcusdt_4h_tech_full_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
     "status": "pending",
     "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "dqn",
+    "asset": "ethusdt",
+    "device": "cuda",
+    "preset": "baseline_12",
+    "run_id": "ethusdt_1h_baseline_12_dqn_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "ppo",
+    "asset": "btcusdt",
+    "device": "cuda",
+    "preset": "learned_cnn",
+    "run_id": "btcusdt_4h_learned_cnn_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "sac",
+    "asset": "ethusdt",
+    "device": "cuda",
+    "preset": "tech_stat",
+    "run_id": "ethusdt_1h_tech_stat_sac_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu_batch2",
+    "status": "pending",
+    "timeframe": "1h",
     "timesteps": 25000
   }
 ]
