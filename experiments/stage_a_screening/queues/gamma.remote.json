@@ -1,0 +1,79 @@
+[
+  {
+    "algo": "ppo",
+    "asset": "eurusd",
+    "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/gamma/eurusd_1h_baseline_12_ppo_s0_25000.json",
+    "device": "cuda",
+    "exit_code": 0,
+    "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/eurusd/1h/baseline_12/train.csv",
+    "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma",
+    "preset": "baseline_12",
+    "run_id": "eurusd_1h_baseline_12_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_first_wave",
+    "status": "complete",
+    "stdout_tail": "[seed_sweep] running seed=0 run_dir=/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/eurusd_1h_ppo_baseline_12_direct_atr_sltp_s0_20260502T042743Z_project3_stage31_firstwave\n{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"seed\": 0,\n      \"exit_code\": 0,\n      \"summary\": {\n        \"initial_cash\": 10000.0,\n        \"final_equity\": 9998.801459725897,\n        \"total_return\": -0.00011985402741032658,\n        \"max_drawdown_pct\": 0.014951344411151323,\n        \"max_drawdown_money\": 1.4951543753086298,\n        \"sharpe_ratio\": -62.59319224100945,\n        \"sqn\": -2.4492278590530847,\n        \"trades_total\": 7163,\n        \"trades_won\": 2870,\n        \"trades_lost\": 4292,\n        \"avg_trade_pnl\": -0.00016718584735004216,\n        \"episode_reward\": -0.00011990202741035306,\n        \"episode_length\": 117357,\n        \"eval_seed\": 0,\n        \"mode\": \"train\"\n      },\n      \"run_dir\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/eurusd_1h_ppo_baseline_12_direct_atr_sltp_s0_20260502T042743Z_project3_stage31_firstwave\"\n    }\n  ]\n}",
+    "timeframe": "1h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "ppo",
+    "asset": "usdjpy",
+    "device": "cuda",
+    "preset": "tech_full",
+    "run_id": "usdjpy_1h_tech_full_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_first_wave",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "dqn",
+    "asset": "eurusd",
+    "device": "cuda",
+    "preset": "tech_stat_decomp",
+    "run_id": "eurusd_4h_tech_stat_decomp_dqn_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_first_wave",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "dqn",
+    "asset": "usdjpy",
+    "device": "cuda",
+    "preset": "baseline_12",
+    "run_id": "usdjpy_4h_baseline_12_dqn_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "ppo",
+    "asset": "eurusd",
+    "device": "cuda",
+    "preset": "learned_lstm",
+    "run_id": "eurusd_1h_learned_lstm_ppo_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 25000
+  },
+  {
+    "algo": "sac",
+    "asset": "usdjpy",
+    "device": "cuda",
+    "preset": "tech_stat",
+    "run_id": "usdjpy_4h_tech_stat_sac_s0_25000",
+    "seed": 0,
+    "stage": "3.1_stage_a_extended_gpu",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 25000
+  }
+]

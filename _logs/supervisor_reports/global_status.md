@@ -1,28 +1,24 @@
 # Project 3 Global Status
 
-Generated: 2026-05-02T04:42:44.121703+00:00
+Updated: 2026-05-02T07:20:22.672521+00:00
 
-## Current Focus
+## Current Stage
 
-Phase 3.1 Stage A screening is active across Omega, Dragon, and Gamma. Omega is also running the 60-second supervisor loop that relaunches pending queue work when a machine goes idle.
+Phase 2 is active. Stage 2.1, 2.2, and 2.3 generation are complete. Stage 2.4 input preparation has completed for the first Stage A assets.
 
 ## Machine Status
 
-| Machine | State | Current work-plan task | Expected/generated deliverable |
-| --- | --- | --- | --- |
-| dragon | running | Stage 3.1 Stage A: `ethusdt_4h_baseline_12_sac_s0_25000` | `_logs/supervisor_reports/stage31_worker_dragon.md`, `experiments/stage_a_screening/runs/dragon/` |
-| gamma | running | Stage 3.1 Stage A: `usdjpy_4h_tech_stat_sac_s0_25000` | `_logs/supervisor_reports/stage31_worker_gamma.md`, `experiments/stage_a_screening/runs/gamma/` |
-| omega | running | Stage 3.1 Stage A: `ethusdt_1h_baseline_12_dqn_s0_8750` | `_logs/supervisor_reports/stage31_worker_omega.md`, `experiments/stage_a_screening/runs/omega/` |
+- Omega: OpenCode Go / `deepseek-v4-pro`; completed Stage 2.3 FX decomposition and is coordinating manifests/docs.
+- Dragon: Hermes worker / `deepseek-v4-flash:cloud`; completed Stage 2.3 crypto decomposition and Stage 2.4 crypto learned-input prep.
+- Gamma: Hermes worker / `deepseek-v4-flash:cloud`; completed Stage 2.2 cross-source statistics and Stage 2.4 FX learned-input prep.
 
-## Idle Resources
+## Deliverables
 
-None at this check. Omega, Dragon, and Gamma all have active Stage 3.1 jobs.
+- Stage 2.2: trading jobs 200/200 ok; cross-source 1464/1480 ok; skipped nonnumeric 16; actionable failures 0.
+- Stage 2.3: signal decomposition jobs 200/200 ok.
+- Stage 2.4 input prep: 10/10 jobs ok; training wrapper setup next.
 
-## Automation
+## Blockers
 
-- Supervisor loop: `_scripts/workers/stage31_supervisor_tick_worker.py --loop --iterations 240 --sleep-seconds 60`.
-- Queue merge protection prevents completed jobs from being rerun when work is appended.
-
-## User Blockers
-
-- None right now.
+- No user-side blocker right now.
+- Technical setup item: `feature-extractor` must be invoked with explicit `PYTHONPATH=/home/harveybc/Documents/GitHub/feature-extractor:/home/harveybc/Documents/GitHub/feature-extractor/app` because the generic `feature_extractor` console command is currently colliding with another installed CLI.

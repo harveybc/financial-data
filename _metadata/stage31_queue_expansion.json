@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T06:34:25.087465+00:00",
+  "generated_at": "2026-05-02T07:20:32.123118+00:00",
   "results": [
     {
       "appended": 0,
@@ -10,18 +10,18 @@
       "target_pending": 48
     },
     {
-      "appended": 0,
-      "appended_run_ids": [],
+      "appended": 1,
+      "appended_run_ids": [
+        "eurusd_15m_fx_full_sac_s2_50000"
+      ],
       "machine": "gamma",
       "pending_after": 48,
       "queue": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json",
       "target_pending": 48
     },
     {
-      "appended": 1,
-      "appended_run_ids": [
-        "gbpusd_1h_baseline_12_dqn_s0_12500"
-      ],
+      "appended": 0,
+      "appended_run_ids": [],
       "machine": "omega",
       "pending_after": 48,
       "queue": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/omega.json",

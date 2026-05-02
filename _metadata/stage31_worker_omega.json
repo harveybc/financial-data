@@ -1,0 +1,44 @@
+{
+  "active_job": {
+    "algo": "ppo",
+    "asset": "usdjpy",
+    "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/omega/usdjpy_1h_tech_stat_ppo_s0_12500.json",
+    "device": "cpu",
+    "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/usdjpy/1h/tech_stat/train.csv",
+    "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega",
+    "preset": "tech_stat",
+    "run_id": "usdjpy_1h_tech_stat_ppo_s0_12500",
+    "seed": 0,
+    "stage": "3.1_stage_a_broad_matrix_omega",
+    "status": "training",
+    "timeframe": "1h",
+    "timesteps": 12500,
+    "trial_id": "f8036f680bd77e673258a3bc"
+  },
+  "agent_multi_git_sha": "b0ceca724b2dd786d3e146ccf8534b974a352dd0",
+  "detail": "agent-multi seed_sweep running",
+  "financial_data_git_sha": "6522a42220af9aa68bad35c37c2fa4005147272a",
+  "generated_at": "2026-05-02T07:19:28.638179+00:00",
+  "hostname": "omega",
+  "jobs": [
+    {
+      "algo": "ppo",
+      "asset": "usdjpy",
+      "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/omega/usdjpy_1h_tech_stat_ppo_s0_12500.json",
+      "device": "cpu",
+      "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/usdjpy/1h/tech_stat/train.csv",
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega",
+      "preset": "tech_stat",
+      "run_id": "usdjpy_1h_tech_stat_ppo_s0_12500",
+      "seed": 0,
+      "stage": "3.1_stage_a_broad_matrix_omega",
+      "status": "training",
+      "timeframe": "1h",
+      "timesteps": 12500,
+      "trial_id": "f8036f680bd77e673258a3bc"
+    }
+  ],
+  "machine": "omega",
+  "stage": "3.1",
+  "status": "running"
+}

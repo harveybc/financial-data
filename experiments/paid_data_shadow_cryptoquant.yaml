@@ -1,0 +1,57 @@
+version: 1
+updated: "2026-05-02"
+status: "planned_shadow_trial"
+provider: "CryptoQuant Professional"
+purpose: "Measure paid crypto-source marginal value against the best free crypto stack."
+
+assets:
+  - btcusdt
+  - ethusdt
+  - btcusdt_perp
+timeframes:
+  primary:
+    - 1h
+    - 4h
+  conditional:
+    - 15m
+algorithms:
+  - ppo
+  - sac
+  - dqn
+seeds:
+  - 0
+  - 1
+  - 2
+
+paid_families:
+  - cq_exchange_flow
+  - cq_stablecoin_liquidity
+  - cq_leverage_market
+  - cq_miner_network
+
+free_baseline_families:
+  - binance_ohlcv
+  - binance_derivatives_funding_oi_taker_liquidations
+  - coinmetrics_community
+  - mempool_space
+  - defillama
+
+comparisons:
+  - name: best_free_vs_best_free_plus_cryptoquant
+    paired_on: [asset, timeframe, algorithm, seed, split_version, cost_scenario]
+  - name: paid_placebo_delay
+    placebo: "delay paid features by a conservative fixed lag"
+  - name: paid_placebo_block_shuffle
+    placebo: "block-shuffle paid feature windows without changing marginal distribution"
+
+keep_subscription_if:
+  - "Positive paired uplift on at least two crypto assets or asset/perp variants."
+  - "Base and pessimistic cost results remain acceptable."
+  - "Paid placebo does not perform similarly to real paid features."
+  - "Timestamp and availability metadata pass the Stage B contract."
+
+cancel_or_downgrade_if:
+  - "Uplift disappears after adding free Binance derivatives/microstructure features."
+  - "Results depend on one seed, one timeframe, or one asset only."
+  - "Paid features mainly increase turnover without improving net performance."
+  - "Provider timestamps cannot support point-in-time use."

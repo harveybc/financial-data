@@ -1,6 +1,6 @@
 # Project 3 Tier 2 Context Packet
 
-generated_at: 2026-05-02T02:36:01Z
+generated_at: 2026-05-02T07:12:01Z
 project_root: /home/harveybc/Documents/GitHub/financial-data
 active_stage: Stage 2.4 Learned Representations active; Phase 3.1 experiment design scaffold active; Stage 2 SOTA low-cost enrichment available for validation.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, Gamma, and the Project 3 event daemon.

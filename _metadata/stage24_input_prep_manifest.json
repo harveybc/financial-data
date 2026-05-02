@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-02T01:18:47.635802+00:00",
+  "generated_at": "2026-05-02T07:20:22.669408+00:00",
   "stage": "Stage 2.4 input preparation",
   "jobs_total": 10,
   "jobs_ok": 10,
   "jobs_failed": 0,
-  "learned_input_train_csv_files": 10,
-  "learned_input_validation_csv_files": 10,
-  "learned_input_test_csv_files": 10,
-  "learned_input_full_parquet_files": 10,
+  "learned_input_train_csv_files": 20,
+  "learned_input_validation_csv_files": 20,
+  "learned_input_test_csv_files": 20,
+  "learned_input_full_parquet_files": 20,
   "source_reports": [
     "_metadata/stage24_learned_input_prep_dragon_crypto_stage_a.json",
     "_metadata/stage24_learned_input_prep_gamma_fx_stage_a.json"

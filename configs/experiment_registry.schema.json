@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project 3 Experiment Registry Event",
+  "type": "object",
+  "required": [
+    "trial_id",
+    "event_id",
+    "event_type",
+    "status",
+    "stage",
+    "machine",
+    "algorithm",
+    "asset",
+    "venue",
+    "timeframe",
+    "feature_preset",
+    "feature_family",
+    "source_family",
+    "seed",
+    "split_version",
+    "data_version",
+    "reward_config_hash",
+    "action_space_hash",
+    "cost_scenario",
+    "event_ts"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "trial_id": {
+      "type": "string",
+      "description": "Deterministic hash of the experimental design, excluding mutable status."
+    },
+    "event_id": {
+      "type": "string",
+      "description": "Deterministic hash of trial_id, event_type, event timestamp, machine, and status."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": ["preparing_input", "registered", "training", "complete", "failed", "skipped_busy", "needs_review"]
+    },
+    "status": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "machine": {
+      "type": "string",
+      "enum": ["omega", "dragon", "gamma", "delta", "unknown"]
+    },
+    "algorithm": {
+      "type": "string",
+      "enum": ["ppo", "sac", "dqn", "unknown"]
+    },
+    "asset": {
+      "type": "string"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    },
+    "feature_preset": {
+      "type": "string"
+    },
+    "feature_family": {
+      "type": "string"
+    },
+    "source_family": {
+      "type": "string"
+    },
+    "seed": {
+      "type": ["integer", "string"]
+    },
+    "split_version": {
+      "type": "string"
+    },
+    "data_version": {
+      "type": "string"
+    },
+    "reward_config_hash": {
+      "type": "string"
+    },
+    "action_space_hash": {
+      "type": "string"
+    },
+    "cost_scenario": {
+      "type": "string"
+    },
+    "worker": {
+      "type": "string"
+    },
+    "start_ts": {
+      "type": ["string", "null"]
+    },
+    "end_ts": {
+      "type": ["string", "null"]
+    },
+    "failure_reason": {
+      "type": ["string", "null"]
+    },
+    "run_dir": {
+      "type": ["string", "null"]
+    },
+    "config_path": {
+      "type": ["string", "null"]
+    }
+  }
+}

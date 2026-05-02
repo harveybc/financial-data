@@ -1,6 +1,6 @@
 # Stage 2.4 Input Prep Status
 
-Generated: 2026-05-02T01:18:47.635802+00:00
+Generated: 2026-05-02T07:20:22.669408+00:00
 
 ## Status
 
@@ -10,10 +10,10 @@ Generated: 2026-05-02T01:18:47.635802+00:00
 ## Counts
 
 - Jobs: 10/10 ok.
-- Train CSV files: 10.
-- Validation CSV files: 10.
-- Test CSV files: 10.
-- Full normalized parquet files: 10.
+- Train CSV files: 20.
+- Validation CSV files: 20.
+- Test CSV files: 20.
+- Full normalized parquet files: 20.
 
 ## Output Root
 

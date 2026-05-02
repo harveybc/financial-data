@@ -1,0 +1,44 @@
+{
+  "active_job": {
+    "algo": "dqn",
+    "asset": "eurusd",
+    "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/gamma/eurusd_15m_baseline_12_dqn_s2_50000.json",
+    "device": "cuda",
+    "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/eurusd/15m/baseline_12/train.csv",
+    "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma",
+    "preset": "baseline_12",
+    "run_id": "eurusd_15m_baseline_12_dqn_s2_50000",
+    "seed": 2,
+    "stage": "3.1_stage_a_broad_matrix_gamma",
+    "status": "training",
+    "timeframe": "15m",
+    "timesteps": 50000,
+    "trial_id": "32fdf6b244dbc8f430083696"
+  },
+  "agent_multi_git_sha": "9a3faa68d3b40238579b8a0e62eb6bd0c008c8c7",
+  "detail": "agent-multi seed_sweep running",
+  "financial_data_git_sha": "unknown",
+  "generated_at": "2026-05-02T07:20:28.357757+00:00",
+  "hostname": "gamma",
+  "jobs": [
+    {
+      "algo": "dqn",
+      "asset": "eurusd",
+      "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/gamma/eurusd_15m_baseline_12_dqn_s2_50000.json",
+      "device": "cuda",
+      "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/eurusd/15m/baseline_12/train.csv",
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma",
+      "preset": "baseline_12",
+      "run_id": "eurusd_15m_baseline_12_dqn_s2_50000",
+      "seed": 2,
+      "stage": "3.1_stage_a_broad_matrix_gamma",
+      "status": "training",
+      "timeframe": "15m",
+      "timesteps": 50000,
+      "trial_id": "32fdf6b244dbc8f430083696"
+    }
+  ],
+  "machine": "gamma",
+  "stage": "3.1",
+  "status": "running"
+}

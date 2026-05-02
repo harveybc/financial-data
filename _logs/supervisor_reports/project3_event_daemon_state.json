@@ -50,15 +50,29 @@
       "state": "supervising"
     },
     {
+      "lock": {
+        "command": "agent-multi dqn btcusdt 15m tech_full seed=0",
+        "lock_present": true,
+        "pid": 2941781,
+        "pid_alive": true,
+        "removed_stale": false,
+        "stage": "3.1"
+      },
       "machine": "dragon",
-      "reason": "no validated ready Stage 2.4 job found",
-      "state": "idle"
+      "state": "busy"
     },
     {
+      "lock": {
+        "command": "agent-multi dqn eurusd 15m baseline_12 seed=2",
+        "lock_present": true,
+        "pid": 3065758,
+        "pid_alive": true,
+        "removed_stale": false,
+        "stage": "3.1"
+      },
       "machine": "gamma",
-      "reason": "no validated ready Stage 2.4 job found",
-      "state": "idle"
+      "state": "busy"
     }
   ],
-  "updated_at": "2026-05-02T03:08:50.484464+00:00"
+  "updated_at": "2026-05-02T07:21:12.882576+00:00"
 }

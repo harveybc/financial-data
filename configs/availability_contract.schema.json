@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project 3 Feature Availability Contract",
+  "type": "object",
+  "required": [
+    "feature_family",
+    "provider",
+    "observation_ts_col",
+    "available_from_ts_col",
+    "revision_policy",
+    "timezone",
+    "min_latency_minutes",
+    "license_scope"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "feature_family": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "observation_ts_col": {
+      "type": "string"
+    },
+    "release_ts_col": {
+      "type": ["string", "null"]
+    },
+    "provider_available_ts_col": {
+      "type": ["string", "null"]
+    },
+    "ingest_ts_col": {
+      "type": ["string", "null"]
+    },
+    "available_from_ts_col": {
+      "type": "string"
+    },
+    "revision_policy": {
+      "type": "string",
+      "enum": [
+        "real_time_vintage",
+        "release_lagged_actual",
+        "final_revised_research_only",
+        "provider_snapshot",
+        "synthetic_proxy",
+        "not_revised",
+        "unknown"
+      ]
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "min_latency_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "license_scope": {
+      "type": "string",
+      "enum": ["research", "commercial", "redistribution", "unknown"]
+    },
+    "max_forward_fill_bars": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "staleness_feature_required": {
+      "type": "boolean"
+    },
+    "stage_b_eligible": {
+      "type": "boolean"
+    }
+  }
+}

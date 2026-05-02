@@ -1,0 +1,93 @@
+version: 1
+updated: "2026-05-02"
+purpose: "Promotion gates for Project 3 Stage A/B/C. Zero-cost-only promotion is forbidden."
+
+scenarios:
+  optimistic:
+    description: "Best reasonable fee/spread assumption. Useful for sensitivity, insufficient for promotion."
+    crypto_spot:
+      fee_bps: 2
+      spread_bps: 1
+      slippage_bps: 1
+      volatility_stress_multiplier: 1.0
+    crypto_perpetual:
+      fee_bps: 2
+      spread_bps: 1
+      slippage_bps: 1
+      funding_mode: "observed_if_available"
+      volatility_stress_multiplier: 1.0
+    fx:
+      fee_bps: 0.2
+      spread_bps: 0.5
+      slippage_bps: 0.2
+      macro_event_spread_multiplier: 1.0
+
+  base:
+    description: "Default realistic promotion assumption. Stage A promotion requires positive paired evidence here."
+    crypto_spot:
+      fee_bps: 5
+      spread_bps: 3
+      slippage_bps: 3
+      volatility_stress_multiplier: 1.25
+    crypto_perpetual:
+      fee_bps: 5
+      spread_bps: 4
+      slippage_bps: 4
+      funding_mode: "observed_plus_stale_fallback"
+      volatility_stress_multiplier: 1.25
+    fx:
+      fee_bps: 0.5
+      spread_bps: 1.0
+      slippage_bps: 0.5
+      macro_event_spread_multiplier: 1.5
+
+  pessimistic:
+    description: "Stress case for turnover, spread, funding, and slippage fragility."
+    crypto_spot:
+      fee_bps: 10
+      spread_bps: 8
+      slippage_bps: 8
+      volatility_stress_multiplier: 2.0
+    crypto_perpetual:
+      fee_bps: 10
+      spread_bps: 10
+      slippage_bps: 10
+      funding_mode: "adverse_funding_stress"
+      volatility_stress_multiplier: 2.0
+    fx:
+      fee_bps: 1.0
+      spread_bps: 3.0
+      slippage_bps: 1.5
+      macro_event_spread_multiplier: 3.0
+
+  stress:
+    description: "Event and liquidity stress overlay used for Stage B/C reporting."
+    crypto_spot:
+      fee_bps: 10
+      spread_bps: 12
+      slippage_bps: 15
+      volatility_stress_multiplier: 3.0
+    crypto_perpetual:
+      fee_bps: 10
+      spread_bps: 15
+      slippage_bps: 20
+      funding_mode: "adverse_funding_stress"
+      volatility_stress_multiplier: 3.0
+    fx:
+      fee_bps: 1.0
+      spread_bps: 5.0
+      slippage_bps: 3.0
+      macro_event_spread_multiplier: 5.0
+
+promotion_rules:
+  stage_a:
+    require_base_cost_positive: true
+    forbid_zero_cost_only: true
+    require_matched_baseline: true
+  stage_b:
+    require_base_cost_positive: true
+    require_pessimistic_not_catastrophic: true
+    require_cost_to_gross_pnl_ratio_lte: 0.5
+  stage_c:
+    run_once_after_lock: true
+    report_all_scenarios: true

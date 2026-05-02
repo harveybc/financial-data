@@ -117,6 +117,8 @@ def sync_remote(machine: str) -> None:
         f"_logs/supervisor_reports/stage31_worker_{machine}.md",
         f"_metadata/stage31_worker_{machine}.json",
         f"experiments/stage_a_screening/queues/{machine}.json",
+        f"artifacts/run_ledger_events/{machine}.jsonl",
+        f"artifacts/run_ledger_events/{machine}.parquet",
     ]:
         src = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:{PROJECT_ROOT / rel}"
         dst = PROJECT_ROOT / rel
@@ -128,6 +130,14 @@ def push_remote_queue(machine: str) -> None:
     rel = f"experiments/stage_a_screening/queues/{machine}.json"
     dst = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:{PROJECT_ROOT / rel}"
     run(f"rsync -az -e 'ssh -p 22022' {PROJECT_ROOT / rel} {dst} || true", timeout=30)
+
+
+def combine_ledger() -> str:
+    proc = run(
+        f"cd {PROJECT_ROOT} && python _scripts/workers/stage31_combine_ledger_worker.py",
+        timeout=30,
+    )
+    return proc.stdout.strip()
 
 
 def write_report(events: list[dict]) -> None:
@@ -155,6 +165,7 @@ def tick() -> list[dict]:
     events = []
     for machine in ("dragon", "gamma"):
         sync_remote(machine)
+    ledger_detail = combine_ledger()
     refill_detail = refill_queues()
     for machine in ("dragon", "gamma"):
         push_remote_queue(machine)
@@ -176,6 +187,7 @@ def tick() -> list[dict]:
             "action": action,
             "detail": detail,
             "refill": refill_detail,
+            "ledger": ledger_detail,
         }
     )
 

@@ -18,6 +18,7 @@ AGENT_MULTI_ROOT = Path(os.environ.get("AGENT_MULTI_ROOT", "/home/harveybc/Docum
 
 sys.path.insert(0, str(PROJECT_ROOT / "_scripts" / "lib"))
 from gpu_lock import acquire_gpu_lock, release_gpu_lock  # noqa: E402
+from experiment_ledger import record_stage31_event  # noqa: E402
 
 
 def utc_now() -> str:
@@ -270,9 +271,29 @@ def run_one(
         merge_queue_and_write(queue_path, jobs)
 
     job["status"] = "preparing_input"
+    job["trial_id"] = record_stage31_event(
+        machine,
+        job,
+        event_type="preparing_input",
+        status="preparing_input",
+        detail="Stage 3.1 worker selected run and is exporting input features.",
+    )
     persist_active_state()
     write_report(machine, "running", [job], active_job=job, detail="exporting Project 3 feature CSV")
-    input_csv = prepare_input(job)
+    try:
+        input_csv = prepare_input(job)
+    except Exception as exc:
+        job["status"] = "failed"
+        job["failure_reason"] = f"input_preparation_failed: {exc}"
+        record_stage31_event(
+            machine,
+            job,
+            event_type="failed",
+            status="failed",
+            detail="Stage 3.1 input export failed before training.",
+            failure_reason=job["failure_reason"],
+        )
+        raise
     job["input_csv"] = input_csv
 
     run_root = PROJECT_ROOT / "experiments" / "stage_a_screening" / "runs" / machine
@@ -288,8 +309,24 @@ def run_one(
     config_path = config_root / f"{job['run_id']}.json"
     write_json(config_path, config)
     job["config"] = str(config_path)
+    job["trial_id"] = record_stage31_event(
+        machine,
+        job,
+        event_type="registered",
+        status="registered",
+        config=config,
+        detail="Stage 3.1 trial registered before training start.",
+    )
 
     job["status"] = "training"
+    record_stage31_event(
+        machine,
+        job,
+        event_type="training",
+        status="training",
+        config=config,
+        detail="Stage 3.1 training process is starting.",
+    )
     persist_active_state()
     write_report(machine, "running", [job], active_job=job, detail="agent-multi seed_sweep running")
 
@@ -319,6 +356,19 @@ def run_one(
             stderr=subprocess.STDOUT,
             timeout=timeout_minutes * 60,
         )
+    except Exception as exc:
+        job["status"] = "failed"
+        job["failure_reason"] = f"training_failed: {exc}"
+        record_stage31_event(
+            machine,
+            job,
+            event_type="failed",
+            status="failed",
+            config=config,
+            detail="Stage 3.1 training subprocess failed.",
+            failure_reason=job["failure_reason"],
+        )
+        raise
     finally:
         if locked:
             release_gpu_lock()
@@ -326,6 +376,15 @@ def run_one(
     job["exit_code"] = proc.returncode
     job["stdout_tail"] = "\n".join(proc.stdout.splitlines()[-80:])
     job["status"] = "complete" if proc.returncode == 0 else "failed"
+    record_stage31_event(
+        machine,
+        job,
+        event_type=job["status"],
+        status=job["status"],
+        config=config,
+        detail="Stage 3.1 training subprocess finished.",
+        failure_reason=None if proc.returncode == 0 else "nonzero_exit_code",
+    )
     return job
 
 

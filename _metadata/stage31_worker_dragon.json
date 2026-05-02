@@ -1,0 +1,42 @@
+{
+  "active_job": {
+    "algo": "dqn",
+    "asset": "btcusdt",
+    "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/dragon/btcusdt_15m_tech_full_dqn_s0_50000.json",
+    "device": "cuda",
+    "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/btcusdt/15m/tech_full/train.csv",
+    "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon",
+    "preset": "tech_full",
+    "run_id": "btcusdt_15m_tech_full_dqn_s0_50000",
+    "seed": 0,
+    "stage": "3.1_stage_a_broad_matrix_dragon",
+    "status": "training",
+    "timeframe": "15m",
+    "timesteps": 50000
+  },
+  "agent_multi_git_sha": "9881c100b39b82c707c78ae875ba62588d239866",
+  "detail": "agent-multi seed_sweep running",
+  "financial_data_git_sha": "unknown",
+  "generated_at": "2026-05-02T07:19:26.762227+00:00",
+  "hostname": "dragon",
+  "jobs": [
+    {
+      "algo": "dqn",
+      "asset": "btcusdt",
+      "config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/dragon/btcusdt_15m_tech_full_dqn_s0_50000.json",
+      "device": "cuda",
+      "input_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/btcusdt/15m/tech_full/train.csv",
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon",
+      "preset": "tech_full",
+      "run_id": "btcusdt_15m_tech_full_dqn_s0_50000",
+      "seed": 0,
+      "stage": "3.1_stage_a_broad_matrix_dragon",
+      "status": "training",
+      "timeframe": "15m",
+      "timesteps": 50000
+    }
+  ],
+  "machine": "dragon",
+  "stage": "3.1",
+  "status": "running"
+}

@@ -1,0 +1,50 @@
+version: 1
+updated: "2026-05-02"
+status: "blocking_for_stage_b"
+
+candidate_requirements:
+  immutable_ledger:
+    required: true
+    evidence: "artifacts/run_ledger.parquet or artifacts/run_ledger.jsonl"
+  availability_contract:
+    required: true
+    evidence: "features/AVAILABILITY_CONTRACT.md plus machine-readable contracts"
+  matched_baseline:
+    required: true
+    match_on:
+      - asset
+      - timeframe
+      - algorithm
+      - seed
+      - split_version
+      - cost_scenario
+  costs:
+    required_scenarios:
+      - base
+      - pessimistic
+    reject_if_zero_cost_only: true
+    reject_if_base_net_return_lte: 0
+  uncertainty:
+    min_seed_count: 2
+    require_seed_dispersion_report: true
+    require_paired_uplift_ci: true
+  multiple_testing:
+    require_dsr: true
+    require_pbo_or_cscv_when_feasible: true
+    require_family_level_reality_check_or_spa_when_feasible: true
+  stage_c_firewall:
+    require_no_heldout_touch: true
+    heldout_start: "2025-01-01T00:00:00Z"
+  attribution:
+    require_family_ablation: true
+    forbid_leaderboard_only_promotion: true
+
+verdicts:
+  promote:
+    description: "Eligible for Stage B validation."
+  watch:
+    description: "Interesting but missing one or more non-blocking diagnostics."
+  blocked:
+    description: "Missing required governance, availability, paired baseline, or cost evidence."
+  kill:
+    description: "Non-positive net performance, failed leakage/cost gate, or unstable seed evidence."

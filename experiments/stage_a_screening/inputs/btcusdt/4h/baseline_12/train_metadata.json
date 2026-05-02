@@ -1,0 +1,31 @@
+{
+  "asset": "btcusdt",
+  "columns": 18,
+  "feature_columns": [
+    "returns",
+    "log_returns",
+    "rsi_14",
+    "macd_hist",
+    "bb_pos",
+    "volume_ratio",
+    "ema_cross",
+    "atr_norm",
+    "obv_delta",
+    "momentum_5",
+    "momentum_20",
+    "vol_20"
+  ],
+  "generated_at": "2026-05-02T04:29:26.478458+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/btcusdt/4h/baseline_12/train.csv",
+  "preset": "baseline_12",
+  "rows": 13902,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/btcusdt/4h.parquet",
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/btcusdt/4h/technical.parquet"
+  ],
+  "split": "train",
+  "timeframe": "4h"
+}

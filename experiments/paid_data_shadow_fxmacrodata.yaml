@@ -1,0 +1,52 @@
+version: 1
+updated: "2026-05-02"
+status: "planned_shadow_trial"
+provider: "FxMacroData"
+purpose: "Measure paid point-in-time macro/COT/release marginal value against free FX macro approximations."
+
+assets:
+  - eurusd
+  - usdjpy
+timeframes:
+  primary:
+    - 1h
+    - 4h
+  conditional:
+    - 15m
+algorithms:
+  - ppo
+  - sac
+  - dqn
+seeds:
+  - 0
+  - 1
+  - 2
+
+paid_families:
+  - fxmd_release_staleness
+  - fxmd_macro_state
+  - fxmd_macro_differential
+  - fxmd_cot_positioning
+
+free_baseline_families:
+  - histdata_fx
+  - fred_alfred
+  - official_release_calendars
+  - cftc_cot
+  - yahoo_cross_asset_context
+
+comparisons:
+  - name: free_macro_vs_fxmacrodata_overlay
+    paired_on: [asset, timeframe, algorithm, seed, split_version, cost_scenario]
+  - name: paid_placebo_stale_event_data
+    placebo: "replace paid event timestamps with stale/delayed versions"
+
+keep_subscription_if:
+  - "Point-in-time release timestamps materially reduce leakage risk."
+  - "Release staleness, macro differential, or COT families improve paired base-cost performance."
+  - "Uplift survives Stage B validation or provides clear engineering value over free approximations."
+
+cancel_or_limit_if:
+  - "Data duplicates free ALFRED/FRED/CFTC sources without measurable uplift or timestamp-quality gain."
+  - "Historical coverage is insufficient for matched Stage A/B comparisons."
+  - "Consensus/surprise fields are absent and the only value proposition is true surprise data."

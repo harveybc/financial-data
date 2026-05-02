@@ -1,6 +1,6 @@
 # Project 3 Event Daemon Status
 
-Generated: 2026-05-02T03:08:50.484464+00:00
+Generated: 2026-05-02T07:21:12.882576+00:00
 
 ## Purpose
 
@@ -15,5 +15,5 @@ Low-latency supervisor loop for Stage 2.4. It syncs remote outputs, detects idle
 | Machine | State | Detail |
 | --- | --- | --- |
 | omega | supervising | `daemon active; CPU audit/manifest scheduled; no safe light GPU job currently ready` |
-| dragon | idle | `no validated ready Stage 2.4 job found` |
-| gamma | idle | `no validated ready Stage 2.4 job found` |
+| dragon | busy | `agent-multi dqn btcusdt 15m tech_full seed=0` |
+| gamma | busy | `agent-multi dqn eurusd 15m baseline_12 seed=2` |
