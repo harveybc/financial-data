@@ -1,16 +1,17 @@
 # Stage 2.4 Learned Representation Status
 
-Generated: 2026-05-02T02:10:36.904791+00:00
+Generated: 2026-05-02T02:12:16.963461+00:00
 
 ## LSTM Bootstrap
 
-- Completed metadata files: 14
+- Completed metadata files: 15
 
 | Machine | Asset | TF | Val Loss | Rows | Output |
 | --- | --- | --- | ---: | ---: | --- |
 | gamma | btcusdt | 15m | 0.281495 | 293020 | `features/trading_asset_features/btcusdt/15m/learned_lstm.parquet` |
 | dragon | btcusdt | 1h | 0.458023 | 73221 | `features/trading_asset_features/btcusdt/1h/learned_lstm.parquet` |
 | dragon | btcusdt | 4h | 0.681573 | 18306 | `features/trading_asset_features/btcusdt/4h/learned_lstm.parquet` |
+| omega | btcusdt_perp | 15m | 0.312934 | 221338 | `features/trading_asset_features/btcusdt_perp/15m/learned_lstm.parquet` |
 | dragon | btcusdt_perp | 1h | 0.523398 | 55288 | `features/trading_asset_features/btcusdt_perp/1h/learned_lstm.parquet` |
 | dragon | btcusdt_perp | 4h | 0.644217 | 13807 | `features/trading_asset_features/btcusdt_perp/4h/learned_lstm.parquet` |
 | dragon | ethusdt | 15m | 0.219074 | 293020 | `features/trading_asset_features/ethusdt/15m/learned_lstm.parquet` |
@@ -25,10 +26,11 @@ Generated: 2026-05-02T02:10:36.904791+00:00
 
 ## CNN Bootstrap
 
-- Completed metadata files: 12
+- Completed metadata files: 13
 
 | Machine | Asset | TF | Val Loss | Rows | Output |
 | --- | --- | --- | ---: | ---: | --- |
+| gamma | btcusdt | 15m | 0.475757 | 293020 | `features/trading_asset_features/btcusdt/15m/learned_cnn.parquet` |
 | dragon | btcusdt | 1h | 0.495557 | 73221 | `features/trading_asset_features/btcusdt/1h/learned_cnn.parquet` |
 | omega | btcusdt | 4h | 0.553109 | 18306 | `features/trading_asset_features/btcusdt/4h/learned_cnn.parquet` |
 | dragon | btcusdt_perp | 1h | 0.484438 | 55288 | `features/trading_asset_features/btcusdt_perp/1h/learned_cnn.parquet` |
@@ -53,4 +55,4 @@ Generated: 2026-05-02T02:10:36.904791+00:00
 - gamma stage_a_15m: 2/5 ok
 - omega crypto_stage_a_15m: 3/3 ok
 
-Current running jobs: Dragon `ethusdt/15m` CNN, Gamma `btcusdt/15m` CNN, Omega `btcusdt_perp/15m` LSTM.
+Current running jobs: Dragon `ethusdt/15m` CNN, Omega `btcusdt_perp/15m` CNN, Gamma `fx_stage_a_5m` learned-input prep.
