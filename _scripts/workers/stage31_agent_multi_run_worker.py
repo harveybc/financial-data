@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import socket
@@ -35,6 +36,21 @@ def read_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return default
+
+
+def acquire_worker_lock(machine: str):
+    lock_path = PROJECT_ROOT / "_metadata" / f"stage31_worker_{machine}.lock"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    lock_file = lock_path.open("w", encoding="utf-8")
+    try:
+        fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print(json.dumps({"skipped": "worker_already_running", "machine": machine}, indent=2))
+        lock_file.close()
+        return None
+    lock_file.write(f"pid={os.getpid()}\nstarted_at={utc_now()}\n")
+    lock_file.flush()
+    return lock_file
 
 
 def merge_queue_and_write(path: Path, jobs: list[dict]) -> list[dict]:
@@ -295,14 +311,18 @@ def main() -> int:
     args = parser.parse_args()
 
     machine = args.machine
-    queue_path = Path(args.queue) if args.queue else PROJECT_ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine}.json"
-    jobs = read_json(queue_path, [])
-    if not jobs:
-        write_report(machine, "idle", [], detail=f"no jobs in queue {queue_path}")
+    worker_lock = acquire_worker_lock(machine)
+    if worker_lock is None:
         return 0
 
+    queue_path = Path(args.queue) if args.queue else PROJECT_ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine}.json"
+    jobs = read_json(queue_path, [])
     completed = []
     try:
+        if not jobs:
+            write_report(machine, "idle", [], detail=f"no jobs in queue {queue_path}")
+            return 0
+
         pending_indices = [
             idx
             for idx, job in enumerate(jobs)
@@ -327,6 +347,8 @@ def main() -> int:
         failed = completed + [{"status": status, "error": detail, "traceback": traceback.format_exc()}]
         write_report(machine, status, failed, detail=detail)
         return 0 if status == "skipped_busy" else 1
+    finally:
+        worker_lock.close()
 
 
 if __name__ == "__main__":
