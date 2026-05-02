@@ -1,8 +1,8 @@
 # Financial Data Lake - Master Inventory
 
-Generated: 2026-05-02T00:05:32.311034+00:00
+Generated: 2026-05-02T00:18:40.723257+00:00
 
-**Status:** Stage 1.6 preflight inventory. Formal Phase 1 completion waits for Stage 1.4/1.5 subscription decisions.
+**Status:** Stage 1.6 preflight inventory. Current Stage 1.4/1.5 paid-source decisions are resolved for the active budget; remaining paid providers are deferred unless later evidence requires them.
 
 ## Summary
 

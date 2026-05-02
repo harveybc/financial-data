@@ -217,10 +217,32 @@ def known_stage13_gaps() -> list[dict[str, str]]:
     return gaps
 
 
+def current_paid_decision_state() -> dict[str, Any]:
+    cryptoquant = read_json(ROOT / "_metadata" / "stage15_cryptoquant_acquisition.json", {})
+    fxmacrodata = read_json(ROOT / "_metadata" / "stage15_fxmacrodata_acquisition.json", {})
+    cryptoquant_ok = cryptoquant.get("status") == "ok" and int(cryptoquant.get("rows_total") or 0) > 0
+    fxmacrodata_ok = fxmacrodata.get("status") == "ok"
+    resolved = cryptoquant_ok and fxmacrodata_ok
+    return {
+        "resolved": resolved,
+        "cryptoquant_ok": cryptoquant_ok,
+        "fxmacrodata_ok": fxmacrodata_ok,
+        "summary": (
+            "Current paid-source decisions are resolved for the active budget: "
+            "FXMacroData and CryptoQuant are acquired; Trading Economics/FXStreet, "
+            "Etherscan Pro, Polygon/Massive, FMP, and CoinMetrics Pro are deferred "
+            "unless Phase 2/3 evidence makes them necessary."
+            if resolved
+            else "Paid-source decisions are still open until approved providers are acquired or explicitly deferred."
+        ),
+    }
+
+
 def update_escalation_queue(gaps: list[dict[str, str]]) -> None:
     queue_path = ROOT / "_logs" / "supervisor_reports" / "escalation_queue.json"
     queue_path.parent.mkdir(parents=True, exist_ok=True)
     queue = read_json(queue_path, {"queue": []})
+    decision_state = current_paid_decision_state()
     existing_ids = {item.get("id") for item in queue.get("queue", [])}
     if "stage14-subscription-decision-001" not in existing_ids:
         queue.setdefault("queue", []).append(
@@ -244,6 +266,14 @@ def update_escalation_queue(gaps: list[dict[str, str]]) -> None:
                 "resolution_commit": None,
             }
         )
+    for item in queue.get("queue", []):
+        if item.get("id") != "stage14-subscription-decision-001":
+            continue
+        if decision_state["resolved"]:
+            item["status"] = "resolved"
+            item["resolution"] = decision_state["summary"]
+            item["resolved_at"] = utc_now()
+            item["resolution_commit"] = "pending_commit"
     queue_path.write_text(json.dumps(queue, indent=2) + "\n", encoding="utf-8")
 
     handoff = ROOT / "_logs" / "supervisor_reports" / "tier4_handoffs" / "stage14_subscription_decision.md"
@@ -253,7 +283,7 @@ def update_escalation_queue(gaps: list[dict[str, str]]) -> None:
         "",
         f"Generated: {utc_now()}",
         "",
-        "Stage 1.3 free acquisition is complete. Stage 1.6 preflight can continue, but formal Phase 1 completion waits on whether Stage 1.4/1.5 paid sources are worth adding.",
+        decision_state["summary"],
         "",
         "## Current Non-Free Or Partial Gaps",
         "",
@@ -271,7 +301,7 @@ def update_escalation_queue(gaps: list[dict[str, str]]) -> None:
             "- High priority if the user wants richer on-chain features: advanced on-chain provider such as Glassnode/CryptoQuant-style metrics, depending on final coverage needs.",
             "- Lower priority: Etherscan Pro only if Ethereum historical API fields remain uniquely useful after CoinMetrics and advanced on-chain coverage are evaluated.",
             "",
-            "This is a Tier 4 human decision. Tier 3 must not guess subscription value or sign up for services.",
+            "This is no longer a hard blocker for the current Stage 1.6 pass. Tier 3 must still route any future subscription purchase decision to Tier 4/Codex.",
         ]
     )
     handoff.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -289,7 +319,7 @@ def write_inventory_md(
         "",
         f"Generated: {utc_now()}",
         "",
-        "**Status:** Stage 1.6 preflight inventory. Formal Phase 1 completion waits for Stage 1.4/1.5 subscription decisions.",
+        "**Status:** Stage 1.6 preflight inventory. Current Stage 1.4/1.5 paid-source decisions are resolved for the active budget; remaining paid providers are deferred unless later evidence requires them.",
         "",
         "## Summary",
         "",
@@ -346,7 +376,7 @@ def write_preflight_report(payload: dict[str, Any]) -> None:
         "",
         "**Status:** IN PROGRESS / PREFLIGHT ONLY.",
         "",
-        "Formal Stage 1.6 requires Stage 1.4 and Stage 1.5 completion. This preflight keeps idle machines productive by auditing the Stage 1.3 lake now.",
+        "Current Stage 1.4/1.5 paid-source decisions are resolved for the active budget; this preflight keeps idle machines productive while final Stage 1.6 validation proceeds.",
         "",
         "## Documentation Audit",
         "",
@@ -405,7 +435,7 @@ def write_preflight_report(payload: dict[str, Any]) -> None:
             "- Preserve Gamma warning classification and panel-key logic in future quality checks.",
             "- Keep Tier 2 cron monitoring sync/status and dispatch only evidence-backed follow-up checks.",
             "- Keep Telegram to concise start/finish/blocker/anomaly events with deliverable paths.",
-            "- Route subscription decisions to Tier 4/Codex; do not let local agents guess paid-provider value.",
+            "- Treat additional paid providers as optional/deferred unless Codex/Tier 4 explicitly reopens that decision.",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -430,7 +460,8 @@ def main() -> None:
     payload = {
         "generated_at": utc_now(),
         "stage": "Stage 1.6 preflight",
-        "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
+        "formal_stage_status": "preflight_current_paid_decisions_resolved",
+        "paid_decision_state": current_paid_decision_state(),
         "inventory": inventory,
         "documentation": docs,
         "acquisition_log": acq,
@@ -457,7 +488,7 @@ def main() -> None:
                 "status: finished",
                 "deliverable_path: STAGE_1.6_PREFLIGHT.md; INVENTORY.md; _metadata/stage16_preflight_omega.json",
                 f"validation_evidence: data_dirs={docs['total_data_directories']} missing_doc_dirs={docs['missing_doc_directories']} gaps={len(gaps)}",
-                "recommended_next_action: keep Dragon/Gamma validation scans running and resolve Stage 1.4 subscription decision",
+                "recommended_next_action: keep Dragon/Gamma validation scans running; no current human subscription blocker",
             ]
         ),
     )

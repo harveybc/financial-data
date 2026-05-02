@@ -262,7 +262,7 @@ stage16_dispatch_rc=$?
 summary_prompt="Project 3 Tier 2 tick.
 Context packet path: ${CONTEXT_PACKET}
 Use that packet as the compact source of stage/task/deliverable/log/context truth and preserve context_to_pass_forward in future agent communications.
-Machines are reachable, credentials are available from the private repo runtime environment, Stage 1.3 acquisition is complete, and Stage 1.6 preflight is active while Stage 1.4/1.5 subscription decisions remain gated. Do not ask the human to rotate keys.
+Machines are reachable, credentials are available from the private repo runtime environment, Stage 1.3 acquisition is complete, Stage 1.5 FXMacroData and CryptoQuant are acquired, and Stage 1.6 preflight is active. Current Stage 1.4/1.5 paid-source decisions are resolved for the active budget; remaining paid providers are optional/deferred unless Codex/Tier 4 explicitly reopens them. Do not ask the human to rotate keys.
 Be honest and autocritical: mention stale context or uncertainty if present.
 Reply with one concise next-action sentence for the human coordinator focused on autonomous dispatch, idle capacity, anomaly detection, sync, or reusable improvement."
 run_hermes_summary() {

@@ -1,10 +1,10 @@
 # Stage 1.6 Preflight - Validation and Documentation Audit
 
-Generated: 2026-05-02T00:05:32.309511+00:00
+Generated: 2026-05-02T00:18:40.721304+00:00
 
 **Status:** IN PROGRESS / PREFLIGHT ONLY.
 
-Formal Stage 1.6 requires Stage 1.4 and Stage 1.5 completion. This preflight keeps idle machines productive by auditing the Stage 1.3 lake now.
+Current Stage 1.4/1.5 paid-source decisions are resolved for the active budget; this preflight keeps idle machines productive while final Stage 1.6 validation proceeds.
 
 ## Documentation Audit
 
@@ -45,4 +45,4 @@ Formal Stage 1.6 requires Stage 1.4 and Stage 1.5 completion. This preflight kee
 - Preserve Gamma warning classification and panel-key logic in future quality checks.
 - Keep Tier 2 cron monitoring sync/status and dispatch only evidence-backed follow-up checks.
 - Keep Telegram to concise start/finish/blocker/anomaly events with deliverable paths.
-- Route subscription decisions to Tier 4/Codex; do not let local agents guess paid-provider value.
+- Treat additional paid providers as optional/deferred unless Codex/Tier 4 explicitly reopens that decision.

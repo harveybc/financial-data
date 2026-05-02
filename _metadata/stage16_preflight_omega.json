@@ -1,7 +1,13 @@
 {
-  "generated_at": "2026-05-02T00:05:32.309511+00:00",
+  "generated_at": "2026-05-02T00:18:40.721304+00:00",
   "stage": "Stage 1.6 preflight",
-  "formal_stage_status": "preflight_only_waiting_for_stage_1_4_and_1_5",
+  "formal_stage_status": "preflight_current_paid_decisions_resolved",
+  "paid_decision_state": {
+    "resolved": true,
+    "cryptoquant_ok": true,
+    "fxmacrodata_ok": true,
+    "summary": "Current paid-source decisions are resolved for the active budget: FXMacroData and CryptoQuant are acquired; Trading Economics/FXStreet, Etherscan Pro, Polygon/Massive, FMP, and CoinMetrics Pro are deferred unless Phase 2/3 evidence makes them necessary."
+  },
   "inventory": {
     "roots": {
       "market_data": {
