@@ -1,0 +1,27 @@
+{
+  "events": [
+    {
+      "action": "busy",
+      "busy": true,
+      "detail": "1052059 python _scripts/workers/stage31_agent_multi_run_worker.py --machine omega --max-jobs 1 --timeout-minutes 120\n1052172 /home/harveybc/anaconda3/envs/tensorflow/bin/python /home/harveybc/Documents/GitHub/agent-multi/tools/seed_sweep.py --config /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/omega/eurusd_1h_baseline_12_dqn_s0_8750.json --seeds 0 --log_root /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega --run_tag project3_stage31_firstwave",
+      "machine": "omega",
+      "pending": 1
+    },
+    {
+      "action": "launched",
+      "busy": true,
+      "detail": "launched dragon",
+      "machine": "dragon",
+      "pending": 1
+    },
+    {
+      "action": "launched",
+      "busy": true,
+      "detail": "launched gamma",
+      "machine": "gamma",
+      "pending": 1
+    }
+  ],
+  "generated_at": "2026-05-02T04:40:26.765253+00:00",
+  "stage": "3.1"
+}
