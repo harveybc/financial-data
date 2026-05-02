@@ -253,9 +253,24 @@ def prepare_input(job: dict) -> str:
     )
 
 
-def run_one(machine: str, job: dict, timeout_minutes: int) -> dict:
+def run_one(
+    machine: str,
+    job: dict,
+    timeout_minutes: int,
+    queue_path: Path | None = None,
+    jobs: list[dict] | None = None,
+    job_idx: int | None = None,
+) -> dict:
     job = dict(job)
+
+    def persist_active_state() -> None:
+        if queue_path is None or jobs is None or job_idx is None:
+            return
+        jobs[job_idx] = dict(job)
+        merge_queue_and_write(queue_path, jobs)
+
     job["status"] = "preparing_input"
+    persist_active_state()
     write_report(machine, "running", [job], active_job=job, detail="exporting Project 3 feature CSV")
     input_csv = prepare_input(job)
     job["input_csv"] = input_csv
@@ -275,6 +290,7 @@ def run_one(machine: str, job: dict, timeout_minutes: int) -> dict:
     job["config"] = str(config_path)
 
     job["status"] = "training"
+    persist_active_state()
     write_report(machine, "running", [job], active_job=job, detail="agent-multi seed_sweep running")
 
     command_label = f"agent-multi {job['algo']} {job['asset']} {job['timeframe']} {job['preset']} seed={job['seed']}"
@@ -344,7 +360,14 @@ def main() -> int:
             return 0
 
         for idx in pending_indices[: args.max_jobs]:
-            result = run_one(machine, jobs[idx], timeout_minutes=args.timeout_minutes)
+            result = run_one(
+                machine,
+                jobs[idx],
+                timeout_minutes=args.timeout_minutes,
+                queue_path=queue_path,
+                jobs=jobs,
+                job_idx=idx,
+            )
             jobs[idx] = result
             completed.append(result)
             jobs = merge_queue_and_write(queue_path, jobs)
