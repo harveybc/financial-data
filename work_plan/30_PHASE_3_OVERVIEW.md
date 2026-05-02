@@ -115,6 +115,12 @@ No configuration may advance based only on raw or zero-cost returns. Stage A pro
 
 TradingAgents, offline RL, Decision Transformer, and time-series foundation-model lanes are allowed only after the core PPO/SAC/DQN evidence stack is reproducible. They may be evaluated as explanation, veto, scaling, embedding, or diagnostic lanes, not as replacements for the pre-registered core experiment.
 
+### Rule P3.10: No idle compute while approved matrix work remains
+
+During Stage 3.1, the supervisor must keep Omega, Dragon, and Gamma assigned to approved Stage A/B/C work whenever safe runnable jobs exist. Empty one-shot queues are not a valid idle reason. The supervisor must refill Stage A queues from the pre-registered matrix with `_scripts/workers/stage31_expand_matrix_queue_worker.py`, respect GPU locks, and report any idle machine with a concrete reason and next dispatch condition.
+
+Omega may run light CPU experiments, synthesis, validation, or input-prep work while also coordinating. Dragon and Gamma should run GPU-heavy jobs when free and fall back to non-GPU validation/synthesis only when GPU work is blocked or unavailable.
+
 ---
 
 ## 5. Phase 3 Output Structure

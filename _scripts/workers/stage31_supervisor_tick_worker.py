@@ -13,6 +13,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
 LOCK_PATH = PROJECT_ROOT / "_metadata" / "stage31_supervisor_tick.lock"
+TARGET_PENDING = int(os.environ.get("PROJECT3_STAGE31_TARGET_PENDING", "48"))
 SSH = {
     "dragon": "ssh -p 22022 harveybc@192.0.2.13",
     "gamma": "ssh -p 22022 harveybc@192.0.2.15",
@@ -43,9 +44,31 @@ def write_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True, default=str) + "\n", encoding="utf-8")
 
 
+def is_runnable_status(status: object) -> bool:
+    value = str(status or "pending").lower()
+    if value in {"", "pending", "queued", "retry", "needs_retry"}:
+        return True
+    if value in {"complete", "training", "running", "preparing_input", "skipped_busy"}:
+        return False
+    if value.startswith("blocked") or value.startswith("failed") or value.startswith("skipped"):
+        return False
+    return True
+
+
 def pending_count(machine: str) -> int:
     queue = read_json(PROJECT_ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine}.json", [])
-    return sum(1 for job in queue if str(job.get("status", "pending")).lower() not in {"complete", "running", "training"})
+    return sum(1 for job in queue if is_runnable_status(job.get("status", "pending")))
+
+
+def refill_queues() -> str:
+    script = PROJECT_ROOT / "_scripts" / "workers" / "stage31_expand_matrix_queue_worker.py"
+    if not script.exists():
+        return "refill_script_missing"
+    proc = run(
+        f"cd {PROJECT_ROOT} && python {script} --target-pending {TARGET_PENDING}",
+        timeout=60,
+    )
+    return proc.stdout.strip()
 
 
 def local_busy() -> tuple[bool, str]:
@@ -101,6 +124,12 @@ def sync_remote(machine: str) -> None:
         run(f"rsync -az -e 'ssh -p 22022' {src} {dst} || true", timeout=30)
 
 
+def push_remote_queue(machine: str) -> None:
+    rel = f"experiments/stage_a_screening/queues/{machine}.json"
+    dst = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:{PROJECT_ROOT / rel}"
+    run(f"rsync -az -e 'ssh -p 22022' {PROJECT_ROOT / rel} {dst} || true", timeout=30)
+
+
 def write_report(events: list[dict]) -> None:
     payload = {"generated_at": utc_now(), "stage": "3.1", "events": events}
     write_json(PROJECT_ROOT / "_metadata" / "stage31_supervisor_tick.json", payload)
@@ -124,6 +153,12 @@ def write_report(events: list[dict]) -> None:
 
 def tick() -> list[dict]:
     events = []
+    for machine in ("dragon", "gamma"):
+        sync_remote(machine)
+    refill_detail = refill_queues()
+    for machine in ("dragon", "gamma"):
+        push_remote_queue(machine)
+
     busy, detail = local_busy()
     pending = pending_count("omega")
     action = "busy"
@@ -133,10 +168,18 @@ def tick() -> list[dict]:
         busy = True
     elif not busy:
         action = "idle_no_pending"
-    events.append({"machine": "omega", "busy": busy, "pending": pending, "action": action, "detail": detail})
+    events.append(
+        {
+            "machine": "omega",
+            "busy": busy,
+            "pending": pending,
+            "action": action,
+            "detail": detail,
+            "refill": refill_detail,
+        }
+    )
 
     for machine in ("dragon", "gamma"):
-        sync_remote(machine)
         busy, detail = remote_busy(machine)
         pending = pending_count(machine)
         action = "busy"

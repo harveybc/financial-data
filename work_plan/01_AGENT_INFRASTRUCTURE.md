@@ -237,6 +237,7 @@ OpenCode Go on Omega remains the supervisor of record, capped to one invocation 
 - Maintains the escalation queue: `_logs/supervisor_reports/escalation_queue.json`
 - Dispatches new acquisition / preprocessing tasks to idle machines per the active stage doc
 - Detects idle machines through the event daemon and starts the next safe pending worker without human intervention
+- During Stage 3.1, maintains rolling queues with `_scripts/workers/stage31_expand_matrix_queue_worker.py`; empty one-shot queues are not a valid reason to leave machines idle while approved matrix combinations remain
 - Keeps active workers running rather than relaunching them, treats completed idempotent workers as `completed_idle`, and syncs completed remote outputs back to Omega
 - Commits status reports to the git repo on Omega
 - For genuine anomalies, adds an entry to the escalation queue and notifies Tier 3

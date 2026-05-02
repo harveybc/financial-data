@@ -229,6 +229,33 @@ ssh dragon "source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda acti
     --output_dir /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/<run_id>/"
 ```
 
+### 2.1.1 Autonomous backlog refill policy
+
+Stage A must not stop just because a hand-written queue is empty. The Omega supervisor owns a deterministic queue refill worker:
+
+```bash
+python _scripts/workers/stage31_expand_matrix_queue_worker.py --target-pending 48
+```
+
+This worker reads the Stage 3.1 matrix and appends safe pending jobs to:
+
+- `experiments/stage_a_screening/queues/dragon.json`
+- `experiments/stage_a_screening/queues/gamma.json`
+- `experiments/stage_a_screening/queues/omega.json`
+
+Standing execution policy:
+
+- Dragon keeps a rolling backlog of crypto GPU jobs covering BTC/USDT, ETH/USDT, major spot/perp assets, 15m/1h/4h, PPO/SAC/DQN, baseline/technical/statistical/decomposition/learned/SOTA feature presets, and multiple seeds.
+- Gamma keeps a rolling backlog of FX GPU jobs covering EUR/USD and USD/JPY first, then additional FX pairs as local feature inputs become available.
+- Omega keeps a rolling backlog of light CPU jobs covering FX assets, 1h/4h, DQN/PPO, and lower timestep budgets so it can contribute while still acting as coordinator.
+- The supervisor checks runnable statuses only: `pending`, `queued`, `retry`, and `needs_retry`. Completed, running/training, skipped, failed, and blocked jobs are not counted as usable backlog.
+- When any machine is idle and has runnable backlog, the supervisor starts the next worker without waiting for a human status request.
+- When a matrix slice is exhausted, the supervisor expands to the next safe asset/timeframe/preset/algorithm/seed slice rather than declaring no work.
+- A machine may be idle only for a documented reason: GPU lock held by another valid job, SSH unreachable, missing local inputs, active blocker, exhausted full approved matrix, or user-approved pause.
+- Every worker report must name the work-plan stage, active run id, expected/generated deliverable path, and current status.
+
+The queue refill report is written to `_logs/supervisor_reports/stage31_queue_expansion.md` and `_metadata/stage31_queue_expansion.json`. This report is part of status review and should be committed when the experiment design or queue policy changes.
+
 ### 2.2 Run registry
 
 Each run produces `summary.json` with metrics, config, git_sha. All summaries aggregate to `experiments/stage_a_screening/index.csv`.
