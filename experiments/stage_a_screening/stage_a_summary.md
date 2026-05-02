@@ -1,23 +1,23 @@
 # Stage A Screening Summary
 
-Generated: 2026-05-02T06:24:36.047016+00:00
+Generated: 2026-05-02T19:05:45.697277+00:00
 
 This is a preliminary Stage A synthesis. Per the adopted SOTA hardening gates, no configuration is promoted to Stage B until leakage, availability, DSR/PBO, baseline, and cost-sensitivity checks pass.
 
 ## Run Counts
 
-- Total summary files: 81
+- Total summary files: 356
 - Machines: dragon, gamma, omega
-- Assets: btcusdt, ethusdt, eurusd, usdjpy
-- Feature presets: baseline_12, learned_cnn, learned_lstm, sota_low_cost, tech_full, tech_stat, tech_stat_decomp
+- Assets: audusd, btcusdt, ethusdt, eurgbp, eurusd, gbpusd, nzdusd, usdcad, usdchf, usdjpy
+- Feature presets: baseline_12, crypto_full, fx_full, kitchen_sink_guarded, learned_cnn, learned_lstm, sota_low_cost, tech_full, tech_stat, tech_stat_decomp
 
 ## Verdict Counts
 
 | Verdict | Runs |
 | --- | ---: |
-| KILL_negative_sharpe | 22 |
-| KILL_no_trades | 15 |
-| KILL_non_positive_return | 43 |
+| KILL_negative_sharpe | 66 |
+| KILL_no_trades | 50 |
+| KILL_non_positive_return | 239 |
 | WATCH_preliminary_blocked_until_hardening | 1 |
 
 ## Top 20 By Total Return
@@ -30,20 +30,20 @@ This is a preliminary Stage A synthesis. Per the adopted SOTA hardening gates, n
 | 4 | `btcusdt_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T045932Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_stat | 0.0814 | -0.0017 | 9.87 | 685 | KILL_negative_sharpe |
 | 5 | `btcusdt_4h_sac_tech_stat_direct_atr_sltp_s1_20260502T054034Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_stat | 0.0814 | -0.0017 | 9.87 | 685 | KILL_negative_sharpe |
 | 6 | `btcusdt_4h_ppo_learned_cnn_direct_atr_sltp_s0_20260502T044544Z_project3_stage31_firstwave` | btcusdt | 4h | ppo | learned_cnn | 0.0484 | -0.0176 | 5.00 | 160 | KILL_negative_sharpe |
-| 7 | `btcusdt_4h_dqn_tech_stat_direct_atr_sltp_s0_20260502T050641Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | tech_stat | 0.0310 | -0.0275 | 4.99 | 50 | KILL_negative_sharpe |
-| 8 | `ethusdt_1h_sac_tech_stat_direct_atr_sltp_s0_20260502T044650Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_stat | 0.0258 | -0.0554 | 2.44 | 87 | KILL_negative_sharpe |
-| 9 | `ethusdt_1h_sac_tech_stat_direct_atr_sltp_s1_20260502T054659Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_stat | 0.0258 | -0.0554 | 2.44 | 87 | KILL_negative_sharpe |
-| 10 | `btcusdt_4h_sac_tech_full_direct_atr_sltp_s0_20260502T050749Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_full | 0.0157 | -0.0260 | 9.87 | 193 | KILL_negative_sharpe |
-| 11 | `ethusdt_1h_sac_tech_full_direct_atr_sltp_s0_20260502T050958Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_full | 0.0107 | -0.0733 | 1.83 | 33 | KILL_negative_sharpe |
-| 12 | `btcusdt_4h_dqn_learned_lstm_direct_atr_sltp_s0_20260502T045252Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | learned_lstm | 0.0059 | -0.1741 | 0.92 | 18 | KILL_negative_sharpe |
-| 13 | `usdjpy_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T044028Z_project3_stage31_firstwave` | usdjpy | 4h | sac | tech_stat | 0.0035 | -0.3642 | 1.04 | 248 | KILL_negative_sharpe |
-| 14 | `ethusdt_1h_dqn_baseline_12_direct_atr_sltp_s0_20260502T044439Z_project3_stage31_firstwave` | ethusdt | 1h | dqn | baseline_12 | 0.0030 | -0.3987 | 0.39 | 4671 | KILL_negative_sharpe |
-| 15 | `usdjpy_4h_dqn_tech_full_direct_atr_sltp_s0_20260502T045003Z_project3_stage31_firstwave` | usdjpy | 4h | dqn | tech_full | 0.0018 | -0.5306 | 0.76 | 3277 | KILL_negative_sharpe |
-| 16 | `btcusdt_4h_ppo_tech_full_direct_atr_sltp_s0_20260502T044335Z_project3_stage31_firstwave` | btcusdt | 4h | ppo | tech_full | 0.0017 | -0.0409 | 5.54 | 686 | KILL_negative_sharpe |
-| 17 | `ethusdt_4h_dqn_tech_stat_direct_atr_sltp_s0_20260502T050231Z_project3_stage31_firstwave` | ethusdt | 4h | dqn | tech_stat | 0.0013 | -0.6389 | 0.39 | 61 | KILL_negative_sharpe |
-| 18 | `ethusdt_4h_ppo_tech_stat_direct_atr_sltp_s0_20260502T045828Z_project3_stage31_firstwave` | ethusdt | 4h | ppo | tech_stat | 0.0006 | -0.4974 | 0.35 | 733 | KILL_negative_sharpe |
-| 19 | `ethusdt_4h_dqn_baseline_12_direct_atr_sltp_s0_20260502T043424Z_project3_stage31_firstwave` | ethusdt | 4h | dqn | baseline_12 | 0.0004 | -0.5821 | 0.55 | 474 | KILL_negative_sharpe |
-| 20 | `ethusdt_1h_dqn_tech_stat_direct_atr_sltp_s0_20260502T045714Z_project3_stage31_firstwave` | ethusdt | 1h | dqn | tech_stat | 0.0001 | -0.5012 | 0.43 | 1235 | KILL_negative_sharpe |
+| 7 | `btcusdt_1h_sac_baseline_12_direct_atr_sltp_s0_20260502T103918Z_project3_stage31_firstwave` | btcusdt | 1h | sac | baseline_12 | 0.0443 | -0.0368 | 1.80 | 220 | KILL_negative_sharpe |
+| 8 | `btcusdt_1h_sac_baseline_12_direct_atr_sltp_s1_20260502T104342Z_project3_stage31_firstwave` | btcusdt | 1h | sac | baseline_12 | 0.0443 | -0.0368 | 1.80 | 220 | KILL_negative_sharpe |
+| 9 | `btcusdt_1h_dqn_tech_full_direct_atr_sltp_s1_20260502T110912Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | tech_full | 0.0379 | -0.0251 | 4.98 | 5 | KILL_negative_sharpe |
+| 10 | `btcusdt_15m_dqn_sota_low_cost_direct_atr_sltp_s1_20260502T093842Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | sota_low_cost | 0.0379 | -0.0252 | 4.99 | 128 | KILL_negative_sharpe |
+| 11 | `btcusdt_15m_dqn_tech_stat_direct_atr_sltp_s1_20260502T074824Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | tech_stat | 0.0379 | -0.0252 | 4.99 | 128 | KILL_negative_sharpe |
+| 12 | `btcusdt_1h_dqn_tech_stat_direct_atr_sltp_s0_20260502T112334Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | tech_stat | 0.0369 | -0.0254 | 4.98 | 40 | KILL_negative_sharpe |
+| 13 | `btcusdt_15m_dqn_tech_full_direct_atr_sltp_s0_20260502T071926Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | tech_full | 0.0313 | -0.0270 | 5.02 | 594 | KILL_negative_sharpe |
+| 14 | `btcusdt_4h_dqn_tech_stat_direct_atr_sltp_s0_20260502T050641Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | tech_stat | 0.0310 | -0.0275 | 4.99 | 50 | KILL_negative_sharpe |
+| 15 | `btcusdt_15m_dqn_baseline_12_direct_atr_sltp_s0_20260502T065236Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | baseline_12 | 0.0300 | -0.0285 | 5.02 | 621 | KILL_negative_sharpe |
+| 16 | `btcusdt_1h_dqn_baseline_12_direct_atr_sltp_s1_20260502T105341Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | baseline_12 | 0.0280 | -0.0292 | 5.03 | 945 | KILL_negative_sharpe |
+| 17 | `ethusdt_1h_sac_tech_stat_direct_atr_sltp_s0_20260502T044650Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_stat | 0.0258 | -0.0554 | 2.44 | 87 | KILL_negative_sharpe |
+| 18 | `ethusdt_1h_sac_tech_stat_direct_atr_sltp_s1_20260502T054659Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_stat | 0.0258 | -0.0554 | 2.44 | 87 | KILL_negative_sharpe |
+| 19 | `btcusdt_1h_dqn_baseline_12_direct_atr_sltp_s0_20260502T105233Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | baseline_12 | 0.0231 | -0.0375 | 3.06 | 755 | KILL_negative_sharpe |
+| 20 | `btcusdt_4h_sac_tech_full_direct_atr_sltp_s0_20260502T050749Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_full | 0.0157 | -0.0260 | 9.87 | 193 | KILL_negative_sharpe |
 
 ## Top 20 By Sharpe
 
@@ -55,57 +55,66 @@ This is a preliminary Stage A synthesis. Per the adopted SOTA hardening gates, n
 | 4 | `btcusdt_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T045932Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_stat | 0.0814 | -0.0017 | 9.87 | 685 | KILL_negative_sharpe |
 | 5 | `btcusdt_4h_sac_tech_stat_direct_atr_sltp_s1_20260502T054034Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_stat | 0.0814 | -0.0017 | 9.87 | 685 | KILL_negative_sharpe |
 | 6 | `btcusdt_4h_ppo_learned_cnn_direct_atr_sltp_s0_20260502T044544Z_project3_stage31_firstwave` | btcusdt | 4h | ppo | learned_cnn | 0.0484 | -0.0176 | 5.00 | 160 | KILL_negative_sharpe |
-| 7 | `btcusdt_4h_sac_tech_full_direct_atr_sltp_s0_20260502T050749Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_full | 0.0157 | -0.0260 | 9.87 | 193 | KILL_negative_sharpe |
-| 8 | `btcusdt_4h_dqn_tech_stat_direct_atr_sltp_s0_20260502T050641Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | tech_stat | 0.0310 | -0.0275 | 4.99 | 50 | KILL_negative_sharpe |
-| 9 | `ethusdt_4h_sac_baseline_12_direct_atr_sltp_s0_20260502T044025Z_project3_stage31_firstwave` | ethusdt | 4h | sac | baseline_12 | -0.1353 | -0.0398 | 19.96 | 752 | KILL_non_positive_return |
-| 10 | `ethusdt_4h_sac_tech_stat_direct_atr_sltp_s1_20260502T053631Z_project3_stage31_firstwave` | ethusdt | 4h | sac | tech_stat | -0.1312 | -0.0400 | 19.96 | 733 | KILL_non_positive_return |
-| 11 | `ethusdt_4h_sac_tech_stat_direct_atr_sltp_s2_20260502T053827Z_project3_stage31_firstwave` | ethusdt | 4h | sac | tech_stat | -0.1312 | -0.0400 | 19.96 | 733 | KILL_non_positive_return |
-| 12 | `btcusdt_4h_ppo_tech_full_direct_atr_sltp_s0_20260502T044335Z_project3_stage31_firstwave` | btcusdt | 4h | ppo | tech_full | 0.0017 | -0.0409 | 5.54 | 686 | KILL_negative_sharpe |
-| 13 | `btcusdt_4h_dqn_baseline_12_direct_atr_sltp_s0_20260502T042820Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | baseline_12 | -0.0258 | -0.0410 | 6.02 | 1117 | KILL_non_positive_return |
-| 14 | `btcusdt_4h_dqn_baseline_12_direct_atr_sltp_s0_20260502T042926Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | baseline_12 | -0.0258 | -0.0410 | 6.02 | 1117 | KILL_non_positive_return |
-| 15 | `ethusdt_4h_sac_tech_full_direct_atr_sltp_s0_20260502T050519Z_project3_stage31_firstwave` | ethusdt | 4h | sac | tech_full | -0.1379 | -0.0413 | 19.96 | 740 | KILL_non_positive_return |
-| 16 | `btcusdt_1h_ppo_tech_stat_direct_atr_sltp_s0_20260502T050336Z_project3_stage31_firstwave` | btcusdt | 1h | ppo | tech_stat | -0.0106 | -0.0466 | 3.50 | 2577 | KILL_non_positive_return |
-| 17 | `btcusdt_1h_dqn_tech_stat_decomp_direct_atr_sltp_s0_20260502T043848Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | tech_stat_decomp | -0.0177 | -0.0494 | 3.76 | 1644 | KILL_non_positive_return |
-| 18 | `ethusdt_1h_sac_tech_stat_direct_atr_sltp_s0_20260502T044650Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_stat | 0.0258 | -0.0554 | 2.44 | 87 | KILL_negative_sharpe |
-| 19 | `ethusdt_1h_sac_tech_stat_direct_atr_sltp_s1_20260502T054659Z_project3_stage31_firstwave` | ethusdt | 1h | sac | tech_stat | 0.0258 | -0.0554 | 2.44 | 87 | KILL_negative_sharpe |
-| 20 | `btcusdt_1h_dqn_tech_stat_direct_atr_sltp_s0_20260502T045936Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | tech_stat | -0.0280 | -0.0560 | 5.11 | 1578 | KILL_non_positive_return |
+| 7 | `btcusdt_1h_dqn_tech_full_direct_atr_sltp_s1_20260502T110912Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | tech_full | 0.0379 | -0.0251 | 4.98 | 5 | KILL_negative_sharpe |
+| 8 | `btcusdt_15m_dqn_sota_low_cost_direct_atr_sltp_s1_20260502T093842Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | sota_low_cost | 0.0379 | -0.0252 | 4.99 | 128 | KILL_negative_sharpe |
+| 9 | `btcusdt_15m_dqn_tech_stat_direct_atr_sltp_s1_20260502T074824Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | tech_stat | 0.0379 | -0.0252 | 4.99 | 128 | KILL_negative_sharpe |
+| 10 | `btcusdt_1h_dqn_tech_stat_direct_atr_sltp_s0_20260502T112334Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | tech_stat | 0.0369 | -0.0254 | 4.98 | 40 | KILL_negative_sharpe |
+| 11 | `btcusdt_4h_sac_tech_full_direct_atr_sltp_s0_20260502T050749Z_project3_stage31_firstwave` | btcusdt | 4h | sac | tech_full | 0.0157 | -0.0260 | 9.87 | 193 | KILL_negative_sharpe |
+| 12 | `btcusdt_15m_dqn_crypto_full_direct_atr_sltp_s1_20260502T100726Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | crypto_full | -0.0212 | -0.0263 | 12.09 | 2148 | KILL_non_positive_return |
+| 13 | `btcusdt_15m_dqn_tech_stat_decomp_direct_atr_sltp_s1_20260502T081712Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | tech_stat_decomp | -0.0212 | -0.0263 | 12.09 | 2148 | KILL_non_positive_return |
+| 14 | `btcusdt_15m_dqn_tech_full_direct_atr_sltp_s0_20260502T071926Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | tech_full | 0.0313 | -0.0270 | 5.02 | 594 | KILL_negative_sharpe |
+| 15 | `btcusdt_4h_dqn_tech_stat_direct_atr_sltp_s0_20260502T050641Z_project3_stage31_firstwave` | btcusdt | 4h | dqn | tech_stat | 0.0310 | -0.0275 | 4.99 | 50 | KILL_negative_sharpe |
+| 16 | `btcusdt_15m_dqn_baseline_12_direct_atr_sltp_s0_20260502T065236Z_project3_stage31_firstwave` | btcusdt | 15m | dqn | baseline_12 | 0.0300 | -0.0285 | 5.02 | 621 | KILL_negative_sharpe |
+| 17 | `btcusdt_1h_dqn_baseline_12_direct_atr_sltp_s1_20260502T105341Z_project3_stage31_firstwave` | btcusdt | 1h | dqn | baseline_12 | 0.0280 | -0.0292 | 5.03 | 945 | KILL_negative_sharpe |
+| 18 | `btcusdt_1h_sac_sota_low_cost_direct_atr_sltp_s0_20260502T184706Z_project3_stage31_firstwave` | btcusdt | 1h | sac | sota_low_cost | 0.0030 | -0.0329 | 9.16 | 587 | KILL_negative_sharpe |
+| 19 | `btcusdt_1h_sac_tech_stat_direct_atr_sltp_s0_20260502T111019Z_project3_stage31_firstwave` | btcusdt | 1h | sac | tech_stat | 0.0030 | -0.0329 | 9.16 | 587 | KILL_negative_sharpe |
+| 20 | `btcusdt_1h_sac_tech_stat_direct_atr_sltp_s1_20260502T111444Z_project3_stage31_firstwave` | btcusdt | 1h | sac | tech_stat | 0.0030 | -0.0329 | 9.16 | 587 | KILL_negative_sharpe |
 
 ## Feature Preset Ranking
 
 | Preset | Runs | Mean Return | Mean Sharpe | Mean Drawdown % | Positive Runs |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| learned_cnn | 1 | 0.0484 | -0.0176 | 5.00 | 1 |
-| sota_low_cost | 3 | 0.0470 | -0.0763 | 7.37 | 2 |
-| tech_stat | 24 | 0.0033 | -8.0216 | 3.97 | 11 |
-| learned_lstm | 9 | 0.0005 | -21.4274 | 0.16 | 1 |
-| tech_stat_decomp | 4 | -0.0078 | -15.7559 | 1.40 | 0 |
-| tech_full | 21 | -0.0079 | -8.1412 | 2.17 | 4 |
-| baseline_12 | 19 | -0.0165 | -23.4236 | 3.15 | 4 |
+| sota_low_cost | 10 | 0.0163 | -0.0709 | 4.78 | 6 |
+| tech_stat | 77 | 0.0010 | -36.0915 | 1.96 | 24 |
+| tech_full | 74 | -0.0061 | -40.2631 | 1.50 | 9 |
+| baseline_12 | 72 | -0.0077 | -37.2475 | 1.80 | 14 |
+| fx_full | 2 | -0.0126 | -1.0350 | 1.95 | 0 |
+| learned_lstm | 30 | -0.0128 | -18.9942 | 2.03 | 3 |
+| tech_stat_decomp | 57 | -0.0139 | -39.3454 | 2.10 | 5 |
+| learned_cnn | 22 | -0.0155 | -16.7332 | 2.93 | 3 |
+| kitchen_sink_guarded | 6 | -0.0167 | -0.8277 | 2.32 | 3 |
+| crypto_full | 6 | -0.0524 | -0.1041 | 7.88 | 0 |
 
 ## Algorithm Ranking
 
 | Algo | Runs | Mean Return | Mean Sharpe | Mean Drawdown % | Positive Runs |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| sac | 22 | -0.0007 | -0.2234 | 6.97 | 10 |
-| ppo | 35 | -0.0034 | -24.2158 | 1.29 | 4 |
-| dqn | 24 | -0.0042 | -11.9401 | 1.52 | 9 |
+| sac | 73 | -0.0050 | -0.3715 | 3.74 | 24 |
+| dqn | 136 | -0.0079 | -37.6170 | 2.03 | 35 |
+| ppo | 147 | -0.0087 | -43.9773 | 1.37 | 8 |
 
 ## Asset Ranking
 
 | Asset | Runs | Mean Return | Mean Sharpe | Mean Drawdown % | Positive Runs |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| btcusdt | 22 | 0.0090 | -0.0717 | 5.23 | 9 |
-| eurusd | 18 | -0.0004 | -63.9010 | 0.07 | 3 |
-| usdjpy | 21 | -0.0046 | -0.6399 | 0.78 | 2 |
+| nzdusd | 16 | -0.0000 | -69.7861 | 0.00 | 4 |
+| eurgbp | 16 | -0.0000 | -94.8153 | 0.00 | 5 |
+| audusd | 16 | -0.0000 | -68.1501 | 0.01 | 5 |
+| usdcad | 16 | -0.0000 | -57.9656 | 0.01 | 1 |
+| usdchf | 16 | -0.0000 | -67.3014 | 0.01 | 2 |
+| gbpusd | 16 | -0.0001 | -47.6123 | 0.01 | 0 |
+| eurusd | 90 | -0.0021 | -55.9113 | 0.30 | 5 |
+| usdjpy | 37 | -0.0047 | -0.7201 | 0.81 | 2 |
 | ethusdt | 20 | -0.0164 | -0.2833 | 5.11 | 9 |
+| btcusdt | 113 | -0.0179 | -0.1788 | 5.22 | 34 |
 
 ## Machine Contribution
 
 | Machine | Runs | Mean Return | Mean Sharpe | Mean Drawdown % | Positive Runs |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| dragon | 29 | -0.0017 | -0.1132 | 6.33 | 13 |
-| gamma | 27 | -0.0033 | -17.8777 | 0.49 | 1 |
-| omega | 25 | -0.0039 | -21.8023 | 1.52 | 9 |
+| omega | 153 | -0.0012 | -52.0140 | 0.34 | 28 |
+| gamma | 83 | -0.0033 | -41.7487 | 0.47 | 1 |
+| dragon | 120 | -0.0189 | -0.1833 | 5.49 | 38 |
 
 ## Promotion Blockers
 

@@ -41,19 +41,25 @@
     "lstm:usdjpy:4h",
     "lstm:usdjpy:5m"
   ],
-  "last_assignments": [],
+  "last_assignments": [
+    {
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1531097"
+    }
+  ],
   "last_synced": [],
   "machines": [
     {
       "machine": "omega",
-      "reason": "daemon active; CPU audit/manifest scheduled; no safe light GPU job currently ready",
-      "state": "supervising"
+      "reason": "audit:stage24_progress",
+      "state": "cpu_busy"
     },
     {
       "lock": {
-        "command": "agent-multi dqn btcusdt 15m tech_full seed=0",
+        "command": "agent-multi ppo btcusdt 1h crypto_full seed=1",
         "lock_present": true,
-        "pid": 2941781,
+        "pid": 3223098,
         "pid_alive": true,
         "removed_stale": false,
         "stage": "3.1"
@@ -63,9 +69,9 @@
     },
     {
       "lock": {
-        "command": "agent-multi dqn eurusd 15m baseline_12 seed=2",
+        "command": "agent-multi dqn eurusd 15m fx_full seed=0",
         "lock_present": true,
-        "pid": 3065758,
+        "pid": 3334493,
         "pid_alive": true,
         "removed_stale": false,
         "stage": "3.1"
@@ -74,5 +80,5 @@
       "state": "busy"
     }
   ],
-  "updated_at": "2026-05-02T07:21:12.882576+00:00"
+  "updated_at": "2026-05-02T19:15:00.095965+00:00"
 }

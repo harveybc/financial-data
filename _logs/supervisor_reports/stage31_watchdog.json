@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-05-02T19:14:08.785515+00:00",
+  "machines": [
+    {
+      "action": "idle_no_pending",
+      "active_run_ids": [],
+      "busy": false,
+      "counts": {
+        "complete": 152
+      },
+      "detail": "{\n  \"active\": [],\n  \"counts\": {\n    \"complete\": 152\n  },\n  \"machine\": \"omega\",\n  \"reconciled\": []\n}\nomega_maintenance: stage32_synthesis_recent",
+      "machine": "omega",
+      "pending": 0
+    },
+    {
+      "action": "busy",
+      "active_run_ids": [
+        "btcusdt_1h_crypto_full_ppo_s1_50000"
+      ],
+      "busy": true,
+      "counts": {
+        "complete": 127,
+        "pending": 47,
+        "training": 1
+      },
+      "detail": "{\n  \"active\": [\n    \"btcusdt_1h_crypto_full_ppo_s1_50000\"\n  ],\n  \"counts\": {\n    \"complete\": 127,\n    \"pending\": 47,\n    \"training\": 1\n  },\n  \"machine\": \"dragon\",\n  \"reconciled\": []\n}",
+      "machine": "dragon",
+      "pending": 47
+    },
+    {
+      "action": "busy",
+      "active_run_ids": [
+        "eurusd_15m_fx_full_dqn_s0_50000"
+      ],
+      "busy": true,
+      "counts": {
+        "blocked_resolved_rerouted_to_dragon": 3,
+        "complete": 83,
+        "pending": 48,
+        "training": 1
+      },
+      "detail": "{\n  \"active\": [\n    \"eurusd_15m_fx_full_dqn_s0_50000\"\n  ],\n  \"counts\": {\n    \"blocked_resolved_rerouted_to_dragon\": 3,\n    \"complete\": 83,\n    \"pending\": 48,\n    \"training\": 1\n  },\n  \"machine\": \"gamma\",\n  \"reconciled\": []\n}",
+      "machine": "gamma",
+      "pending": 48
+    }
+  ],
+  "supervisor": {
+    "action": "already_active",
+    "service": "project3-stage31-supervisor.service"
+  }
+}

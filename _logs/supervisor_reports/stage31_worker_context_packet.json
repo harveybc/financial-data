@@ -1,0 +1,270 @@
+{
+  "active_stage": "Stage 3.1 Experiment Framework, Stage A screening",
+  "generated_at": "2026-05-02T19:14:08.841665+00:00",
+  "project_root": "/home/harveybc/Documents/GitHub/financial-data",
+  "queues": [
+    {
+      "active": [],
+      "counts": {
+        "complete": 152
+      },
+      "machine": "omega",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/omega.json",
+      "pending_sample": []
+    },
+    {
+      "active": [
+        {
+          "algorithm": null,
+          "asset": "btcusdt",
+          "feature_preset": null,
+          "run_id": "btcusdt_1h_crypto_full_ppo_s1_50000",
+          "seed": 1,
+          "started_at": null,
+          "status": "training",
+          "timeframe": "1h"
+        }
+      ],
+      "counts": {
+        "complete": 127,
+        "pending": 47,
+        "training": 1
+      },
+      "machine": "dragon",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json",
+      "pending_sample": [
+        "btcusdt_1h_crypto_full_dqn_s0_50000",
+        "btcusdt_1h_crypto_full_dqn_s1_50000",
+        "btcusdt_1h_kitchen_sink_guarded_sac_s0_50000",
+        "btcusdt_1h_kitchen_sink_guarded_sac_s1_50000",
+        "btcusdt_1h_kitchen_sink_guarded_ppo_s0_50000",
+        "btcusdt_1h_kitchen_sink_guarded_ppo_s1_50000",
+        "btcusdt_1h_kitchen_sink_guarded_dqn_s0_50000",
+        "btcusdt_1h_kitchen_sink_guarded_dqn_s1_50000"
+      ]
+    },
+    {
+      "active": [
+        {
+          "algorithm": null,
+          "asset": "eurusd",
+          "feature_preset": null,
+          "run_id": "eurusd_15m_fx_full_dqn_s0_50000",
+          "seed": 0,
+          "started_at": null,
+          "status": "training",
+          "timeframe": "15m"
+        }
+      ],
+      "counts": {
+        "blocked_resolved_rerouted_to_dragon": 3,
+        "complete": 83,
+        "pending": 48,
+        "training": 1
+      },
+      "machine": "gamma",
+      "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json",
+      "pending_sample": [
+        "eurusd_15m_fx_full_dqn_s1_50000",
+        "eurusd_15m_fx_full_dqn_s2_50000",
+        "eurusd_15m_kitchen_sink_guarded_sac_s0_50000",
+        "eurusd_15m_kitchen_sink_guarded_sac_s1_50000",
+        "eurusd_15m_kitchen_sink_guarded_sac_s2_50000",
+        "eurusd_15m_kitchen_sink_guarded_ppo_s0_50000",
+        "eurusd_15m_kitchen_sink_guarded_ppo_s1_50000",
+        "eurusd_15m_kitchen_sink_guarded_ppo_s2_50000"
+      ]
+    }
+  ],
+  "recent_event_daemon_events": [
+    {
+      "generated_at": "2026-05-02T18:11:33.798006+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1483784",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:14:03.324875+00:00",
+      "job_id": "manifest:stage2_deliverables",
+      "machine": "omega",
+      "pid": "1485135",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:22:17.165796+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1489489",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:29:34.999287+00:00",
+      "job_id": "manifest:stage2_deliverables",
+      "machine": "omega",
+      "pid": "1494854",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:32:51.713309+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1497070",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:43:29.792695+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1504690",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:45:08.152281+00:00",
+      "job_id": "manifest:stage2_deliverables",
+      "machine": "omega",
+      "pid": "1506081",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:53:58.765297+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1514929",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T19:00:27.731235+00:00",
+      "job_id": "manifest:stage2_deliverables",
+      "machine": "omega",
+      "pid": "1519979",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T19:04:30.135035+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "1522984",
+      "type": "cpu_maintenance_started"
+    }
+  ],
+  "recent_stage31_watchdog_events": [
+    {
+      "detail": "1506173 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage32_stage_a_synthesis_worker.py",
+      "generated_at": "2026-05-02T18:45:11.063037+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T18:47:05.216741+00:00",
+      "machine": "dragon",
+      "pending": 47,
+      "type": "launched"
+    },
+    {
+      "generated_at": "2026-05-02T18:58:10.139316+00:00",
+      "machine": "dragon",
+      "pending": 48,
+      "type": "launched"
+    },
+    {
+      "generated_at": "2026-05-02T19:00:09.000457+00:00",
+      "machine": "dragon",
+      "pending": 48,
+      "type": "launched"
+    },
+    {
+      "generated_at": "2026-05-02T19:00:17.299738+00:00",
+      "machine": "gamma",
+      "pending": 48,
+      "type": "launched"
+    },
+    {
+      "detail": "1522443 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage32_stage_a_synthesis_worker.py",
+      "generated_at": "2026-05-02T19:04:04.820021+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-05-02T19:06:12.288920+00:00",
+      "machine": "gamma",
+      "pending": 48,
+      "type": "launched"
+    },
+    {
+      "generated_at": "2026-05-02T19:12:12.494552+00:00",
+      "machine": "gamma",
+      "pending": 48,
+      "type": "launched"
+    }
+  ],
+  "recent_telegram_gateway_sessions": [],
+  "recent_telegram_sent_events": [
+    {
+      "digest": "d7d32b2da7c9",
+      "event": "tier2:global_status",
+      "last_sent_at": 1777749245.387037
+    },
+    {
+      "digest": "73c9aa23f1e0",
+      "event": "stage31-watchdog:launched:gamma",
+      "last_sent_at": 1777749132.5808294
+    },
+    {
+      "digest": "afe844baed34",
+      "event": "tier1:omega:ok",
+      "last_sent_at": 1777749009.7805247
+    },
+    {
+      "digest": "c4356cae57c7",
+      "event": "event-daemon:idle:gamma",
+      "last_sent_at": 1777748379.9927363
+    },
+    {
+      "digest": "d4d2ae1e6df5",
+      "event": "stage31-watchdog:launched:dragon",
+      "last_sent_at": 1777748290.231911
+    },
+    {
+      "digest": "2a8645f29c3d",
+      "event": "event-daemon:idle:dragon",
+      "last_sent_at": 1777748282.0741165
+    },
+    {
+      "digest": "53049561b894",
+      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_ppo_s0_12500:complete",
+      "last_sent_at": 1777719623.0800252
+    },
+    {
+      "digest": "fafd616587f9",
+      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_ppo_s0_12500:start",
+      "last_sent_at": 1777719561.6505582
+    },
+    {
+      "digest": "5f15b65631ad",
+      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_dqn_s0_12500:complete",
+      "last_sent_at": 1777719537.2985518
+    },
+    {
+      "digest": "c9850106a237",
+      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_dqn_s0_12500:start",
+      "last_sent_at": 1777719493.8448508
+    }
+  ],
+  "relevant_docs": [
+    "work_plan/30_PHASE_3_OVERVIEW.md",
+    "work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md",
+    "work_plan/32_STAGE_3_2_RESULTS_SYNTHESIS.md",
+    "work_plan/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md",
+    "work_plan/SOTA_INTEGRATION_DECISIONS.md"
+  ],
+  "source_of_truth": [
+    "experiments/stage_a_screening/queues/<machine>.json",
+    "artifacts/run_ledger.parquet",
+    "artifacts/run_ledger.jsonl",
+    "_metadata/stage31_worker_<machine>.json",
+    "/tmp/gpu_busy.lock on each worker host",
+    "_logs/supervisor_reports/stage31_watchdog.json"
+  ],
+  "telegram_rule": "Use Telegram as a human-visible event mirror. Do not use Telegram text alone to claim or start work; use queue/ledger/locks first, then consult recent Telegram-mirrored events for duplicate-awareness."
+}
