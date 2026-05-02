@@ -22,6 +22,9 @@ EVENT_LOG = LOG_DIR / "stage31_watchdog_events.jsonl"
 PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/tensorflow/bin/python")
 SSH_PORT = "22022"
 
+os.environ.setdefault("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}")
+os.environ.setdefault("DBUS_SESSION_BUS_ADDRESS", f"unix:path={os.environ['XDG_RUNTIME_DIR']}/bus")
+
 
 @dataclass(frozen=True)
 class Machine:

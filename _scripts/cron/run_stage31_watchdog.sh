@@ -2,6 +2,8 @@
 set -euo pipefail
 
 PROJECT_ROOT="${PROJECT_ROOT:-/home/harveybc/Documents/GitHub/financial-data}"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:-unix:path=${XDG_RUNTIME_DIR}/bus}"
 
 source "$HOME/.bashrc" >/dev/null 2>&1 || true
 if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
