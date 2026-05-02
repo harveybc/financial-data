@@ -33,6 +33,7 @@ _logs/supervisor_reports/telegram_chat_discovery.json
 *.jsonl
 /features/cross_source_statistical/
 /features/learned_inputs/
+/features/learned_models/
 /features/trading_asset_features/**/signal_decomposition_README.md
 /market_data/**/*.txt
 /macro_economic/**/*.txt
