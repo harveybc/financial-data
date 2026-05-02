@@ -8,12 +8,16 @@ The critique in `work_plan/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md` i
 
 P0 additions now required before Stage B promotion:
 
+- immutable experiment ledger and promotion registry (`artifacts/run_ledger.jsonl`, `artifacts/run_ledger.parquet`, `configs/experiment_registry.schema.json`)
 - availability/vintage/staleness contract for cross-source features (`features/AVAILABILITY_CONTRACT.md`)
 - fitted-transform and held-out leakage audit (`experiments/design/leakage_audit.md`)
 - transaction-cost scenario matrix (`experiments/design/cost_model.md`)
+- machine-readable cost scenarios (`configs/cost_scenarios.yaml`)
 - null/simple/supervised baseline comparisons in Stage A/B/C summaries
 - feature-family ablation and marginal contribution scoring (`experiments/design/feature_family_ablation_plan.md`)
-- DSR plus seed variance and PBO/CSCV-style diagnostics where feasible
+- paired source-family / feature-family marginal value tests matched on asset, timeframe, algorithm, seed, split, and cost scenario
+- DSR plus seed variance, RL uncertainty summaries, PBO/CSCV-style diagnostics, and Reality Check / SPA-style family tests where feasible
+- Stage B promotion gate (`experiments/design/stage_b_promotion_gate.yaml`)
 
 Active Stage A jobs may continue as infrastructure smoke and preliminary evidence. They are not eligible for Stage B promotion until the new hardening gates pass.
 
@@ -36,6 +40,7 @@ These are now approved as next candidates, but should not interrupt active Stage
 - Deflated Sharpe Ratio in Stage A screening; this is already required in `experiments/design/multiple_testing_correction.md`.
 - macro release staleness features: `bars_since_release`, `source_is_stale`, and conservative release lag policy
 - supervised diagnostic baseline for feature-family predictive value
+- paid-data shadow trials: CryptoQuant versus free crypto stack, FxMacroData versus ALFRED/FRED/CFTC/official-calendar baseline
 
 ## Deferred Items
 

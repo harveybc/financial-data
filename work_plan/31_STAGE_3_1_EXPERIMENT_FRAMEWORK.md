@@ -51,15 +51,23 @@ Required P0 artifacts:
 
 | Artifact | Purpose | Blocking rule |
 | --- | --- | --- |
+| `artifacts/run_ledger.jsonl` / `artifacts/run_ledger.parquet` | Immutable record of every run event, including failures and discarded seeds | Any Stage B packet referencing runs absent from the ledger is invalid |
+| `configs/experiment_registry.schema.json` | Machine-readable schema for trial ids and ledger events | Missing required trial metadata blocks promotion |
 | `features/AVAILABILITY_CONTRACT.md` | Defines event time, availability time, vintage/revision policy, release lag, and staleness semantics | Missing availability metadata blocks Stage B promotion for cross-source features |
+| `configs/availability_contract.schema.json` | Machine-readable contract for provider availability metadata | Non-price feature families without a valid contract are exploratory only |
 | `experiments/design/leakage_audit.md` | Defines held-out exclusion, fitted-transform, macro vintage, and negative-control checks | Any P0 leakage failure blocks promotion |
 | `experiments/design/cost_model.md` | Defines optimistic/base/pessimistic friction scenarios | Zero-cost-only candidates cannot be promoted |
+| `configs/cost_scenarios.yaml` | Machine-readable cost scenarios used by promotion evaluators | Missing base/pessimistic cost evidence blocks promotion |
 | `experiments/design/feature_family_ablation_plan.md` | Defines family-level attribution and subscription marginal-value tests | All-feature winners require family-level support |
+| `experiments/design/stage_b_promotion_gate.yaml` | Defines the final Stage A to Stage B go/no-go rules | Candidates not satisfying the gate remain `watch` or `blocked` |
 
 Additional mandatory controls:
 
 - Compare every promoted RL candidate against no-trade/cash, buy-and-hold, random or turnover-matched random, simple momentum, simple reversal, and at least one supervised diagnostic baseline where feasible.
 - Report raw Sharpe, net Sharpe, Deflated Sharpe Ratio, seed mean/std, and PBO/CSCV-style diagnostics where feasible.
+- Report paired uplift versus matched baselines; unpaired leaderboard rank alone is not promotion evidence.
+- Add Reality Check / SPA-style family-level testing where feasible for large candidate families.
+- Report seed dispersion, median/IQM-style aggregate, and bootstrap confidence intervals where feasible.
 - Report cost sensitivity under optimistic, base, and pessimistic scenarios.
 - Report regime-sliced performance for Stage B candidates.
 - Keep PPO/SAC/DQN fixed for the core Phase 3 experiment. TradingAgents, Decision Transformer, CQL/IQL, and time-series foundation-model lanes remain deferred until core baselines are reproducible.
