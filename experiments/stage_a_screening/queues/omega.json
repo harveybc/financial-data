@@ -100,5 +100,77 @@
     "stdout_tail": "[seed_sweep] running seed=0 run_dir=/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/eurusd_1h_dqn_baseline_12_direct_atr_sltp_s0_20260502T043924Z_project3_stage31_firstwave\n{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"seed\": 0,\n      \"exit_code\": 0,\n      \"summary\": {\n        \"initial_cash\": 10000.0,\n        \"final_equity\": 10000.301978140937,\n        \"total_return\": 3.0197814093746445e-05,\n        \"max_drawdown_pct\": 0.005694027788409275,\n        \"max_drawdown_money\": 0.5694431002011697,\n        \"sharpe_ratio\": -54.79574687734145,\n        \"sqn\": 0.6988650110173097,\n        \"trades_total\": 4679,\n        \"trades_won\": 2002,\n        \"trades_lost\": 2676,\n        \"avg_trade_pnl\": 6.479978116378862e-05,\n        \"episode_reward\": 3.0149814093600955e-05,\n        \"episode_length\": 117357,\n        \"eval_seed\": 0,\n        \"mode\": \"train\"\n      },\n      \"run_dir\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/eurusd_1h_dqn_baseline_12_direct_atr_sltp_s0_20260502T043924Z_project3_stage31_firstwave\"\n    }\n  ]\n}",
     "timeframe": "1h",
     "timesteps": 8750
+  },
+  {
+    "algo": "dqn",
+    "asset": "ethusdt",
+    "device": "cpu",
+    "preset": "baseline_12",
+    "run_id": "ethusdt_1h_baseline_12_dqn_s0_8750",
+    "seed": 0,
+    "stage": "3.1_stage_a_omega_cpu_backfill",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 8750
+  },
+  {
+    "algo": "dqn",
+    "asset": "usdjpy",
+    "device": "cpu",
+    "preset": "baseline_12",
+    "run_id": "usdjpy_1h_baseline_12_dqn_s0_8750",
+    "seed": 0,
+    "stage": "3.1_stage_a_omega_cpu_backfill",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 8750
+  },
+  {
+    "algo": "ppo",
+    "asset": "btcusdt",
+    "device": "cpu",
+    "preset": "baseline_12",
+    "run_id": "btcusdt_1h_baseline_12_ppo_s0_8750",
+    "seed": 0,
+    "stage": "3.1_stage_a_omega_cpu_backfill",
+    "status": "pending",
+    "timeframe": "1h",
+    "timesteps": 8750
+  },
+  {
+    "algo": "dqn",
+    "asset": "eurusd",
+    "device": "cpu",
+    "preset": "tech_full",
+    "run_id": "eurusd_4h_tech_full_dqn_s0_8750",
+    "seed": 0,
+    "stage": "3.1_stage_a_omega_cpu_backfill",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 8750
+  },
+  {
+    "algo": "ppo",
+    "asset": "ethusdt",
+    "device": "cpu",
+    "preset": "tech_full",
+    "run_id": "ethusdt_4h_tech_full_ppo_s0_8750",
+    "seed": 0,
+    "stage": "3.1_stage_a_omega_cpu_backfill",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 8750
+  },
+  {
+    "algo": "dqn",
+    "asset": "usdjpy",
+    "device": "cpu",
+    "preset": "tech_full",
+    "run_id": "usdjpy_4h_tech_full_dqn_s0_8750",
+    "seed": 0,
+    "stage": "3.1_stage_a_omega_cpu_backfill",
+    "status": "pending",
+    "timeframe": "4h",
+    "timesteps": 8750
   }
 ]
