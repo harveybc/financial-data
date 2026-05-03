@@ -4,26 +4,32 @@
       "action": "idle_no_pending",
       "busy": false,
       "detail": "",
-      "ledger": "{\n  \"event_count\": 1117,\n  \"generated_at\": \"2026-05-02T19:14:45.447765+00:00\",\n  \"jsonl\": \"/home/harveybc/Documents/GitHub/financial-data/artifacts/run_ledger.jsonl\",\n  \"machines\": [\n    \"dragon\",\n    \"gamma\",\n    \"omega\"\n  ],\n  \"parquet\": \"/home/harveybc/Documents/GitHub/financial-data/artifacts/run_ledger.parquet\",\n  \"trial_count\": 352\n}",
+      "ledger": "{\n  \"event_count\": 2894,\n  \"generated_at\": \"2026-05-03T07:25:33.806541+00:00\",\n  \"jsonl\": \"/home/harveybc/Documents/GitHub/financial-data/artifacts/run_ledger.jsonl\",\n  \"machines\": [\n    \"dragon\",\n    \"gamma\",\n    \"omega\"\n  ],\n  \"parquet\": \"/home/harveybc/Documents/GitHub/financial-data/artifacts/run_ledger.parquet\",\n  \"trial_count\": 763\n}",
       "machine": "omega",
+      "next_assignment_hint": "-",
+      "next_assignment_run_id": null,
       "pending": 0,
-      "refill": "{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"machine\": \"dragon\",\n      \"target_pending\": 48,\n      \"pending_after\": 48,\n      \"appended\": 1,\n      \"appended_run_ids\": [\n        \"btcusdt_4h_sota_low_cost_ppo_s1_50000\"\n      ],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json\"\n    },\n    {\n      \"machine\": \"gamma\",\n      \"target_pending\": 48,\n      \"pending_after\": 48,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json\"\n    },\n    {\n      \"machine\": \"omega\",\n      \"target_pending\": 48,\n      \"pending_after\": 0,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/omega.json\"\n    }\n  ]\n}"
+      "refill": "{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"machine\": \"dragon\",\n      \"target_pending\": 48,\n      \"pending_after\": 48,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json\"\n    },\n    {\n      \"machine\": \"gamma\",\n      \"target_pending\": 48,\n      \"pending_after\": 48,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json\"\n    },\n    {\n      \"machine\": \"omega\",\n      \"target_pending\": 48,\n      \"pending_after\": 0,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/omega.json\"\n    }\n  ]\n}"
     },
     {
-      "action": "busy",
+      "action": "launched",
       "busy": true,
-      "detail": "3223098 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage31_agent_multi_run_worker.py --machine dragon --max-jobs 1 --timeout-minutes 180\n3223212 /home/harveybc/anaconda3/envs/tensorflow/bin/python /home/harveybc/Documents/GitHub/agent-multi/tools/seed_sweep.py --config /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/dragon/btcusdt_1h_crypto_full_ppo_s1_50000.json --seeds 1 --log_root /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon --run_tag project3_stage31_firstwave\n{\n  \"pid\": 3223098,\n  \"host\": \"dragon\",\n  \"stage\": \"3.1\",\n  \"command\": \"agent-multi ppo btcusdt 1h crypto_full seed=1\",\n  \"started_at\": \"2026-05-02T19:13:46.484771+00:00\",\n  \"expected_duration_minutes\": 180\n}",
+      "detail": "launched dragon",
       "machine": "dragon",
+      "next_assignment_hint": "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000 (btcusdt_perp 15m sac tech_stat_decomp seed=1)",
+      "next_assignment_run_id": "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000",
       "pending": 48
     },
     {
       "action": "busy",
       "busy": true,
-      "detail": "3334493 python _scripts/workers/stage31_agent_multi_run_worker.py --machine gamma --max-jobs 1 --timeout-minutes 180\n3335331 /home/harveybc/anaconda3/envs/tensorflow/bin/python /home/harveybc/Documents/GitHub/agent-multi/tools/seed_sweep.py --config /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/gamma/eurusd_15m_fx_full_dqn_s0_50000.json --seeds 0 --log_root /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma --run_tag project3_stage31_firstwave\n{\n  \"pid\": 3334493,\n  \"host\": \"gamma\",\n  \"stage\": \"3.1\",\n  \"command\": \"agent-multi dqn eurusd 15m fx_full seed=0\",\n  \"started_at\": \"2026-05-02T19:12:47.253136+00:00\",\n  \"expected_duration_minutes\": 180\n}",
+      "detail": "3879452 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage31_agent_multi_run_worker.py --machine gamma --max-jobs 1 --timeout-minutes 180\n3879575 /home/harveybc/anaconda3/envs/tensorflow/bin/python /home/harveybc/Documents/GitHub/agent-multi/tools/seed_sweep.py --config /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/configs/gamma/usdjpy_15m_learned_cnn_sac_s0_50000.json --seeds 0 --log_root /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma --run_tag project3_stage31_firstwave\n{\n  \"pid\": 3879452,\n  \"host\": \"gamma\",\n  \"stage\": \"3.1\",\n  \"command\": \"agent-multi sac usdjpy 15m learned_cnn seed=0\",\n  \"started_at\": \"2026-05-03T07:20:09.676279+00:00\",\n  \"expected_duration_minutes\": 180\n}",
       "machine": "gamma",
+      "next_assignment_hint": "usdjpy_15m_learned_cnn_sac_s1_50000 (usdjpy 15m sac learned_cnn seed=1)",
+      "next_assignment_run_id": "usdjpy_15m_learned_cnn_sac_s1_50000",
       "pending": 48
     }
   ],
-  "generated_at": "2026-05-02T19:14:47.057096+00:00",
+  "generated_at": "2026-05-03T07:25:35.635391+00:00",
   "stage": "3.1"
 }

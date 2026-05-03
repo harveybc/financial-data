@@ -70,7 +70,7 @@ When data sources only provide daily or weekly granularity (e.g., FRED macro, Gl
 
 ---
 
-## 4. Three-Phase Structure
+## 4. Core Phase Structure
 
 | Phase | Focus | Output |
 |-------|-------|--------|
@@ -79,6 +79,14 @@ When data sources only provide daily or weekly granularity (e.g., FRED macro, Gl
 | **Phase 3: Systematic Experiments** | Use Project 2's best RL agents to evaluate which (asset, sim timeframe, feature set, feature periodicity) combinations produce best policies | Evidence-based ranking |
 
 Phases are sequential. Phase 2 cannot start until Phase 1 produces validated organized data. Phase 3 cannot start until Phase 2 produces feature library.
+
+### 4.1 Deferred Optional Phase 4
+
+| Phase | Focus | Output |
+|-------|-------|--------|
+| **Phase 4: Synthetic Data Augmentation And Robustness Testing** | Use the best real-data candidates from Phase 3 to test whether train-only synthetic OHLCV augmentation, pretraining, or stress scenarios improve real validation performance | Matched real-only vs synthetic-augmented utility reports |
+
+Phase 4 is optional and deferred. It must not dilute Phase 3's evidence standard. Synthetic data can be used only after candidate configurations are chosen from real-data evidence, and it may not replace real validation or the locked 2025 heldout firewall. See `40_PHASE_4_SYNTHETIC_DATA_AUGMENTATION.md`.
 
 ---
 
@@ -132,7 +140,11 @@ This project is organized as multiple short documents (idiot-proof for inferior 
 - `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` — How to test data subsets systematically
 - `32_STAGE_3.2_RESULTS_SYNTHESIS.md` — How findings get aggregated
 
-Total: 15 documents (master + agent infrastructure + 13 stage docs).
+### Phase 4: Deferred Synthetic Data Augmentation
+- `40_PHASE_4_SYNTHETIC_DATA_AUGMENTATION.md` — Optional post-Phase-3 synthetic OHLCV augmentation and robustness protocol
+- `SYNTHETIC_DATAGEN_SPECKIT_COPILOT_PROMPT.md` — Spec Kit/Copilot prompt for a plugin-first synthetic OHLCV generator suite
+
+Total: 17 canonical/project-adjacent documents (master + agent infrastructure + 13 Phase 1-3 docs + Phase 4 plan + synthetic generator prompt).
 
 ---
 

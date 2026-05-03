@@ -130,15 +130,28 @@ def is_runnable_status(value: object) -> bool:
     return status in {"", "pending", "queued", "retry", "needs_retry"}
 
 
-def queue_counts(machine: Machine) -> tuple[dict[str, int], int, list[dict]]:
+def job_label(job: dict | None) -> str:
+    if not job:
+        return "-"
+    return (
+        f"{job.get('run_id', 'unknown')} "
+        f"({job.get('asset', 'unknown')} {job.get('timeframe', 'unknown')} "
+        f"{job.get('algo') or job.get('algorithm') or 'unknown'} "
+        f"{job.get('preset') or job.get('feature_preset') or 'unknown'} "
+        f"seed={job.get('seed', 'unknown')})"
+    )
+
+
+def queue_counts(machine: Machine) -> tuple[dict[str, int], int, list[dict], dict | None]:
     path = ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine.name}.json"
     jobs = read_json(path, [])
     if not isinstance(jobs, list):
-        return {"queue_error": 1}, 0, []
+        return {"queue_error": 1}, 0, [], None
     counts = dict(Counter((job.get("status") or "pending") for job in jobs))
     pending = sum(1 for job in jobs if is_runnable_status(job.get("status")))
     active = [job for job in jobs if str(job.get("status") or "").lower() in {"training", "running", "registered", "preparing_input"}]
-    return counts, pending, active
+    next_job = next((job for job in jobs if is_runnable_status(job.get("status"))), None)
+    return counts, pending, active, next_job
 
 
 def rsync_from(machine: Machine, rel: str, dst_rel: str | None = None) -> None:
@@ -263,13 +276,16 @@ def write_report(state: dict[str, Any]) -> None:
         "",
         f"Supervisor service: `{state['supervisor']['action']}`",
         "",
-        "| Machine | Busy | Pending | Action | Active Task | Detail |",
-        "| --- | --- | ---: | --- | --- | --- |",
+        "| Machine | Busy | Pending | Action | Active Task | Next Assignment Hint | Detail |",
+        "| --- | --- | ---: | --- | --- | --- | --- |",
     ]
     for item in state["machines"]:
         active = ", ".join(item.get("active_run_ids") or []) or "-"
         detail = str(item.get("detail", "")).replace("\n", " ")[:160]
-        lines.append(f"| {item['machine']} | {item['busy']} | {item['pending']} | {item['action']} | `{active}` | `{detail}` |")
+        lines.append(
+            f"| {item['machine']} | {item['busy']} | {item['pending']} | {item['action']} | "
+            f"`{active}` | `{item.get('next_assignment_hint', '-')}` | `{detail}` |"
+        )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -285,7 +301,7 @@ def tick() -> dict[str, Any]:
             reconcile_detail = f"reconcile_failed:{exc}"
         if not machine.is_local:
             sync_remote(machine)
-        counts, pending, active_jobs = queue_counts(machine)
+        counts, pending, active_jobs, next_job = queue_counts(machine)
         busy = bool(busy_detail(machine))
         action = "busy" if busy else "idle_no_pending"
         detail = reconcile_detail
@@ -303,7 +319,7 @@ def tick() -> dict[str, Any]:
             )
             if not machine.is_local:
                 sync_remote(machine)
-            counts, pending, active_jobs = queue_counts(machine)
+            counts, pending, active_jobs, next_job = queue_counts(machine)
         elif machine.name == "omega" and not busy and not pending:
             maintenance = maybe_start_omega_synthesis()
             detail = f"{detail}\nomega_maintenance: {maintenance}".strip()
@@ -316,6 +332,8 @@ def tick() -> dict[str, Any]:
                 "counts": counts,
                 "action": action,
                 "active_run_ids": [str(job.get("run_id")) for job in active_jobs if job.get("run_id")],
+                "next_assignment_hint": job_label(next_job),
+                "next_assignment_run_id": next_job.get("run_id") if next_job else None,
                 "detail": detail,
             }
         )

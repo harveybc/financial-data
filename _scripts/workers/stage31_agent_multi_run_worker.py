@@ -68,7 +68,19 @@ def notify_telegram(event: str, title: str, message: str) -> None:
         pass
 
 
-def stage31_message(machine: str, job: dict, status: str, detail: str = "") -> str:
+def job_label(job: dict | None) -> str:
+    if not job:
+        return "none"
+    return (
+        f"{job.get('run_id', 'unknown')} "
+        f"({job.get('asset', 'unknown')} {job.get('timeframe', 'unknown')} "
+        f"{job.get('algo') or job.get('algorithm') or 'unknown'} "
+        f"{job.get('preset') or job.get('feature_preset') or 'unknown'} "
+        f"seed={job.get('seed', 'unknown')})"
+    )
+
+
+def stage31_message(machine: str, job: dict, status: str, detail: str = "", next_job: dict | None = None) -> str:
     return "\n".join(
         [
             "work_plan_stage: Stage 3.1 Stage A screening",
@@ -81,7 +93,8 @@ def stage31_message(machine: str, job: dict, status: str, detail: str = "") -> s
             f"seed: {job.get('seed', 'unknown')}",
             f"status: {status}",
             f"deliverable_path: {PROJECT_ROOT / 'experiments' / 'stage_a_screening' / 'runs' / machine}",
-            f"next_action: supervisor will assign the next pending Stage 3.1 job when this worker exits",
+            f"next_assignment_hint: {job_label(next_job)}",
+            "next_action: finish current run, write deliverables, then pull the hinted job unless supervisor overrides it",
             f"detail: {detail}" if detail else "detail: none",
         ]
     )
@@ -111,6 +124,15 @@ def is_runnable_status(status: object) -> bool:
     if value.startswith("blocked") or value.startswith("failed") or value.startswith("skipped"):
         return False
     return True
+
+
+def next_runnable_job(jobs: list[dict], current_run_id: str | None = None) -> dict | None:
+    for job in jobs:
+        if current_run_id and job.get("run_id") == current_run_id:
+            continue
+        if is_runnable_status(job.get("status", "pending")):
+            return job
+    return None
 
 
 def merge_queue_and_write(path: Path, jobs: list[dict]) -> list[dict]:
@@ -241,7 +263,16 @@ def algo_defaults(job: dict) -> dict:
     return common
 
 
-def write_report(machine: str, status: str, jobs: list[dict], active_job: dict | None = None, detail: str = "") -> None:
+def write_report(
+    machine: str,
+    status: str,
+    jobs: list[dict],
+    active_job: dict | None = None,
+    detail: str = "",
+    next_job: dict | None = None,
+) -> None:
+    if next_job is None:
+        next_job = next_runnable_job(jobs, active_job.get("run_id") if active_job else None)
     payload = {
         "stage": "3.1",
         "status": status,
@@ -251,6 +282,7 @@ def write_report(machine: str, status: str, jobs: list[dict], active_job: dict |
         "financial_data_git_sha": git_sha(PROJECT_ROOT),
         "agent_multi_git_sha": git_sha(AGENT_MULTI_ROOT),
         "active_job": active_job,
+        "next_job_hint": next_job,
         "jobs": jobs,
         "detail": detail,
     }
@@ -262,6 +294,7 @@ def write_report(machine: str, status: str, jobs: list[dict], active_job: dict |
         f"Host: `{payload['hostname']}`",
         f"Status: `{status}`",
         f"Detail: {detail or '-'}",
+        f"Next assignment hint: `{job_label(next_job)}`",
         "",
         "| Run | Stage | Status | Deliverable |",
         "| --- | --- | --- | --- |",
@@ -311,6 +344,7 @@ def run_one(
     job_idx: int | None = None,
 ) -> dict:
     job = dict(job)
+    next_job = next_runnable_job(jobs or [], job.get("run_id"))
 
     def persist_active_state() -> None:
         if queue_path is None or jobs is None or job_idx is None:
@@ -327,7 +361,14 @@ def run_one(
         detail="Stage 3.1 worker selected run and is exporting input features.",
     )
     persist_active_state()
-    write_report(machine, "running", [job], active_job=job, detail="exporting Project 3 feature CSV")
+    write_report(
+        machine,
+        "running",
+        jobs or [job],
+        active_job=job,
+        detail="exporting Project 3 feature CSV",
+        next_job=next_job,
+    )
     try:
         input_csv = prepare_input(job)
     except Exception as exc:
@@ -344,7 +385,7 @@ def run_one(
         notify_telegram(
             f"stage31:{machine}:{job.get('run_id', 'unknown')}:failed_input",
             "Project 3 Stage 3.1 input failed",
-            stage31_message(machine, job, "failed", job["failure_reason"]),
+            stage31_message(machine, job, "failed", job["failure_reason"], next_job=next_job),
         )
         raise
     job["input_csv"] = input_csv
@@ -381,11 +422,18 @@ def run_one(
         detail="Stage 3.1 training process is starting.",
     )
     persist_active_state()
-    write_report(machine, "running", [job], active_job=job, detail="agent-multi seed_sweep running")
+    write_report(
+        machine,
+        "running",
+        jobs or [job],
+        active_job=job,
+        detail="agent-multi seed_sweep running",
+        next_job=next_job,
+    )
     notify_telegram(
         f"stage31:{machine}:{job.get('run_id', 'unknown')}:start",
         "Project 3 Stage 3.1 run started",
-        stage31_message(machine, job, "training"),
+        stage31_message(machine, job, "training", next_job=next_job),
     )
 
     command_label = f"agent-multi {job['algo']} {job['asset']} {job['timeframe']} {job['preset']} seed={job['seed']}"
@@ -429,7 +477,7 @@ def run_one(
         notify_telegram(
             f"stage31:{machine}:{job.get('run_id', 'unknown')}:failed_exception",
             "Project 3 Stage 3.1 run failed",
-            stage31_message(machine, job, "failed", job["failure_reason"]),
+            stage31_message(machine, job, "failed", job["failure_reason"], next_job=next_job),
         )
         raise
     finally:
@@ -456,6 +504,7 @@ def run_one(
             job,
             job["status"],
             "summary/model artifacts written" if proc.returncode == 0 else f"nonzero_exit_code={proc.returncode}",
+            next_job=next_job,
         ),
     )
     return job

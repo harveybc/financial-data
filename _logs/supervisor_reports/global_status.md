@@ -1,6 +1,6 @@
 # Project 3 Global Status
 
-Generated: 2026-05-02T19:12:01Z
+Generated: 2026-05-03T07:24:01Z
 
 ## Dispatch Decision
 
@@ -86,7 +86,7 @@ Generated: 2026-05-02T00:00:28.256107+00:00
 
 # Project 3 Tier 2 Context Packet
 
-generated_at: 2026-05-02T19:12:01Z
+generated_at: 2026-05-03T07:24:01Z
 project_root: /home/harveybc/Documents/GitHub/financial-data
 active_stage: Stage 3.1 Stage A screening active; Stage 3.2 Stage A synthesis allowed on Omega CPU when Stage 3.1 local queue is complete; Stage 2 SOTA low-cost enrichment and governance additions are active validation context.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, Gamma, and the Project 3 event daemon.
@@ -181,7 +181,7 @@ Policy: event daemon detects idle machines every 45 seconds, starts pending safe
 
 # Project 3 Event Daemon Status
 
-Generated: 2026-05-02T19:11:46.361253+00:00
+Generated: 2026-05-03T07:23:31.898631+00:00
 
 ## Purpose
 
@@ -196,8 +196,8 @@ Low-latency supervisor loop for Stage 2.4. It syncs remote outputs, detects idle
 | Machine | State | Detail |
 | --- | --- | --- |
 | omega | supervising | `daemon active; CPU audit/manifest scheduled; no safe light GPU job currently ready` |
-| dragon | busy | `agent-multi ppo btcusdt 1h crypto_full seed=0` |
-| gamma | busy | `agent-multi ppo eurusd 15m fx_full seed=2` |
+| dragon | busy | `agent-multi sac btcusdt_perp 15m tech_stat_decomp seed=0` |
+| gamma | busy | `agent-multi sac usdjpy 15m learned_cnn seed=0` |
 
 ## Legacy Stage 1 Dispatch
 
@@ -293,14 +293,14 @@ No Stage 1.6 report is appended because the legacy dispatcher did not run.
 [dragon]   OpenAI Codex  ✗ not logged in (run: hermes model)
 [dragon] GPU_LOCK_PRESENT
 [dragon] {
-[dragon]   "pid": 3221394,
+[dragon]   "pid": 3784360,
 [dragon]   "host": "dragon",
 [dragon]   "stage": "3.1",
-[dragon]   "command": "agent-multi ppo btcusdt 1h crypto_full seed=0",
-[dragon]   "started_at": "2026-05-02T19:11:33.509960+00:00",
+[dragon]   "command": "agent-multi sac btcusdt_perp 15m tech_stat_decomp seed=0",
+[dragon]   "started_at": "2026-05-03T07:20:14.929455+00:00",
 [dragon]   "expected_duration_minutes": 180
 [dragon] }
-[dragon] NVIDIA GeForce RTX 4090 Laptop GPU, 16376 MiB, 385 MiB
+[dragon] NVIDIA GeForce RTX 4090 Laptop GPU, 16376 MiB, 393 MiB
 ```
 
 ## Gamma
@@ -342,34 +342,28 @@ No Stage 1.6 report is appended because the legacy dispatcher did not run.
 [gamma] ◆ Auth Providers
 [gamma]   Nous Portal   ✗ not logged in (run: hermes auth add nous --type oauth)
 [gamma]   OpenAI Codex  ✗ not logged in (run: hermes model)
-[gamma] NO_GPU_LOCK
-[gamma] NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227 MiB, 14 MiB
+[gamma] GPU_LOCK_PRESENT
+[gamma] {
+[gamma]   "pid": 3879452,
+[gamma]   "host": "gamma",
+[gamma]   "stage": "3.1",
+[gamma]   "command": "agent-multi sac usdjpy 15m learned_cnn seed=0",
+[gamma]   "started_at": "2026-05-03T07:20:09.676279+00:00",
+[gamma]   "expected_duration_minutes": 180
+[gamma] }
+[gamma] NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227 MiB, 250 MiB
 ```
 
 ## Hermes Tier 2 Note
 
 Model policy: default Hermes/OpenCode provider
 Per-model timeout seconds: 240
-Here's the tick analysis and next-action sentence.
+Here's the honest tick assessment, Coordinator:
 
----
+**State snapshot (07:24 UTC, 2026-05-03):** Dragon and Gamma are both busy with Stage 3.1 SAC screening (GPU locks fresh, ~170 min remaining each, 48 pending jobs each). Omega is idle with 152 Stage 3.1 jobs completed and 0 pending — its local queue is drained, which per the context packet is the explicit trigger for Stage 3.2 Stage A synthesis on CPU.
 
-**Tier 2 Tick — 2026-05-02 19:12Z**
+**Anomaly detected:** The event daemon shows 40 completed Stage 2.4 learned-representation jobs detected but 0 synced artifacts — those remote outputs from Dragon/Gamma may not be canonical on Omega. Also, the daemon event log is pure maintenance-loop noise (manifest/audit cycles every ~11 minutes, no real task events) for the past ~28 hours, which is benign but noisy.
 
-**Evidence gathered from:** stage31_watchdog.md, stage31_supervisor_tick.md, global_status.md, project3_event_daemon_events.jsonl, autonomous_dispatch_report.md, context packet.
+**Confidence: high** (0.9) — evidence is in `stage31_watchdog.md` (Omega idle, queue 0), `global_status.md` (Stage 3.2 authorized on queue completion), and `project3_event_daemon_status.md` (40 completed, 0 synced).
 
-**Machine status:**
-- **Omega:** idle, 0 pending, 152 complete. Stuck in a manifest/audit maintenance loop (alternating `manifest:stage2_deliverables` and `audit:stage24_progress` every ~5–15 minutes since 16:08 UTC). No active Stage 3.1 or 3.2 work.
-- **Dragon:** busy, 48 pending. Running PPO `btcusdt_1h_crypto_full` (PID 3221394, GPU lock fresh, 180-min window, RTX 4090 at 385 MiB VRAM).
-- **Gamma:** busy, 48 pending. Running DQN `eurusd_15m_fx_full` (PID 3334493, no GPU lock, RTX 5070 Ti at 14 MiB VRAM — essentially CPU-bound).
-
-**Anomalies detected (medium confidence):**
-1. **Omega idle with completed queue, but no Stage 3.2 synthesis dispatch path exists.** Context packet explicitly says *"Stage 3.2 Stage A synthesis allowed on Omega CPU when Stage 3.1 local queue is complete"* — condition met (152 complete, 0 pending) — but `_scripts/workers/stage32_synthesis*` returns zero files. Omega falls back to infinite maintenance churn instead of productive work.
-2. **Remote output sync stalled:** event daemon reports `last_synced_artifacts: 0` and `last_assignments: 0` despite Dragon/Gamma completing 126+/many jobs. The daemon is monitoring but not syncing or assigning.
-3. **Autonomous dispatch report is 17 hours stale** (02:12 UTC, Stage 1.3-era). No Stage 3.1 dispatch report generated since the phase transition.
-
-**Confidence:** high on anomaly #1 (evidence: empty file search, watchdog idle_no_pending with 152 complete, maintenance-loop event log), medium on #2 (the daemon may sync on its own 45-second loop and just hadn't run a sync pass at snapshot time).
-
----
-
-**Next action for the human coordinator:** Omega should run ledger aggregation on Dragon/Gamma's completed Stage 3.1 screening summaries (152+ jobs), validate cross-machine run provenance, then either locate the Stage 3.2 synthesis entrypoint in the work plan or bootstrap a prototype cross-experiment comparison from `experiments/stage_a_screening/runs/*/summary.json` — idle capacity with 0 pending and a completed queue is the clearest dispatch signal in the fleet right now, and the missing synthesis script is the only blocker.
+**Next action:** Dispatch Omega's idle CPU to begin Stage 3.2 Stage A synthesis now — the Stage 3.1 completion gate is met, the context packet explicitly authorizes it, and the 40 unsynced Stage 2.4 artifacts can be queued for the next daemon sync pass without blocking Phase 3 progression.

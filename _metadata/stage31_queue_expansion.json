@@ -1,11 +1,9 @@
 {
-  "generated_at": "2026-05-02T19:14:45.614223+00:00",
+  "generated_at": "2026-05-03T07:25:33.916901+00:00",
   "results": [
     {
-      "appended": 1,
-      "appended_run_ids": [
-        "btcusdt_4h_sota_low_cost_ppo_s1_50000"
-      ],
+      "appended": 0,
+      "appended_run_ids": [],
       "machine": "dragon",
       "pending_after": 48,
       "queue": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T19:14:08.785515+00:00",
+  "generated_at": "2026-05-03T07:24:09.821372+00:00",
   "machines": [
     {
       "action": "idle_no_pending",
@@ -10,37 +10,43 @@
       },
       "detail": "{\n  \"active\": [],\n  \"counts\": {\n    \"complete\": 152\n  },\n  \"machine\": \"omega\",\n  \"reconciled\": []\n}\nomega_maintenance: stage32_synthesis_recent",
       "machine": "omega",
+      "next_assignment_hint": "-",
+      "next_assignment_run_id": null,
       "pending": 0
     },
     {
       "action": "busy",
       "active_run_ids": [
-        "btcusdt_1h_crypto_full_ppo_s1_50000"
+        "btcusdt_perp_15m_tech_stat_decomp_sac_s0_50000"
       ],
       "busy": true,
       "counts": {
-        "complete": 127,
-        "pending": 47,
+        "complete": 370,
+        "pending": 48,
         "training": 1
       },
-      "detail": "{\n  \"active\": [\n    \"btcusdt_1h_crypto_full_ppo_s1_50000\"\n  ],\n  \"counts\": {\n    \"complete\": 127,\n    \"pending\": 47,\n    \"training\": 1\n  },\n  \"machine\": \"dragon\",\n  \"reconciled\": []\n}",
+      "detail": "{\n  \"active\": [\n    \"btcusdt_perp_15m_tech_stat_decomp_sac_s0_50000\"\n  ],\n  \"counts\": {\n    \"complete\": 370,\n    \"pending\": 48,\n    \"training\": 1\n  },\n  \"machine\": \"dragon\",\n  \"reconciled\": []\n}",
       "machine": "dragon",
-      "pending": 47
+      "next_assignment_hint": "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000 (btcusdt_perp 15m sac tech_stat_decomp seed=1)",
+      "next_assignment_run_id": "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000",
+      "pending": 48
     },
     {
       "action": "busy",
       "active_run_ids": [
-        "eurusd_15m_fx_full_dqn_s0_50000"
+        "usdjpy_15m_learned_cnn_sac_s0_50000"
       ],
       "busy": true,
       "counts": {
         "blocked_resolved_rerouted_to_dragon": 3,
-        "complete": 83,
+        "complete": 284,
         "pending": 48,
         "training": 1
       },
-      "detail": "{\n  \"active\": [\n    \"eurusd_15m_fx_full_dqn_s0_50000\"\n  ],\n  \"counts\": {\n    \"blocked_resolved_rerouted_to_dragon\": 3,\n    \"complete\": 83,\n    \"pending\": 48,\n    \"training\": 1\n  },\n  \"machine\": \"gamma\",\n  \"reconciled\": []\n}",
+      "detail": "{\n  \"active\": [\n    \"usdjpy_15m_learned_cnn_sac_s0_50000\"\n  ],\n  \"counts\": {\n    \"blocked_resolved_rerouted_to_dragon\": 3,\n    \"complete\": 284,\n    \"pending\": 48,\n    \"training\": 1\n  },\n  \"machine\": \"gamma\",\n  \"reconciled\": []\n}",
       "machine": "gamma",
+      "next_assignment_hint": "usdjpy_15m_learned_cnn_sac_s1_50000 (usdjpy 15m sac learned_cnn seed=1)",
+      "next_assignment_run_id": "usdjpy_15m_learned_cnn_sac_s1_50000",
       "pending": 48
     }
   ],

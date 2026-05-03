@@ -1,6 +1,6 @@
 # Project 3 Tier 2 Context Packet
 
-generated_at: 2026-05-02T19:12:01Z
+generated_at: 2026-05-03T07:24:01Z
 project_root: /home/harveybc/Documents/GitHub/financial-data
 active_stage: Stage 3.1 Stage A screening active; Stage 3.2 Stage A synthesis allowed on Omega CPU when Stage 3.1 local queue is complete; Stage 2 SOTA low-cost enrichment and governance additions are active validation context.
 agent_role: Omega Tier 2 OpenCode/Hermes supervisor coordinating Omega, Dragon, Gamma, and the Project 3 event daemon.

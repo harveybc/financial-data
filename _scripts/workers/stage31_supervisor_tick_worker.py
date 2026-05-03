@@ -59,6 +59,28 @@ def is_runnable_status(status: object) -> bool:
     return True
 
 
+def job_label(job: dict | None) -> str:
+    if not job:
+        return "-"
+    return (
+        f"{job.get('run_id', 'unknown')} "
+        f"({job.get('asset', 'unknown')} {job.get('timeframe', 'unknown')} "
+        f"{job.get('algo') or job.get('algorithm') or 'unknown'} "
+        f"{job.get('preset') or job.get('feature_preset') or 'unknown'} "
+        f"seed={job.get('seed', 'unknown')})"
+    )
+
+
+def next_pending_job(machine: str) -> dict | None:
+    queue = read_json(PROJECT_ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine}.json", [])
+    if not isinstance(queue, list):
+        return None
+    for job in queue:
+        if is_runnable_status(job.get("status", "pending")):
+            return job
+    return None
+
+
 def pending_count(machine: str) -> int:
     queue = read_json(PROJECT_ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine}.json", [])
     return sum(1 for job in queue if is_runnable_status(job.get("status", "pending")))
@@ -178,13 +200,14 @@ def write_report(events: list[dict]) -> None:
         "",
         f"Generated: {payload['generated_at']}",
         "",
-        "| Machine | Busy | Pending | Action | Detail |",
-        "| --- | --- | ---: | --- | --- |",
+        "| Machine | Busy | Pending | Action | Next Assignment Hint | Detail |",
+        "| --- | --- | ---: | --- | --- | --- |",
     ]
     for event in events:
         detail = str(event.get("detail", "")).replace("\n", " ")[:180]
         lines.append(
-            f"| {event['machine']} | {event['busy']} | {event['pending']} | {event['action']} | `{detail}` |"
+            f"| {event['machine']} | {event['busy']} | {event['pending']} | {event['action']} | "
+            f"`{event.get('next_assignment_hint', '-')}` | `{detail}` |"
         )
     out = PROJECT_ROOT / "_logs" / "supervisor_reports" / "stage31_supervisor_tick.md"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -204,6 +227,7 @@ def tick() -> list[dict]:
 
     busy, detail = local_busy()
     pending = pending_count("omega")
+    next_job = next_pending_job("omega")
     action = "busy"
     if not busy and pending:
         detail = launch_local() or "launched omega"
@@ -217,6 +241,8 @@ def tick() -> list[dict]:
             "busy": busy,
             "pending": pending,
             "action": action,
+            "next_assignment_hint": job_label(next_job),
+            "next_assignment_run_id": next_job.get("run_id") if next_job else None,
             "detail": detail,
             "refill": refill_detail,
             "ledger": ledger_detail,
@@ -226,6 +252,7 @@ def tick() -> list[dict]:
     for machine in ("dragon", "gamma"):
         busy, detail = remote_busy(machine)
         pending = pending_count(machine)
+        next_job = next_pending_job(machine)
         action = "busy"
         if not busy and pending:
             detail = launch_remote(machine) or f"launched {machine}"
@@ -233,7 +260,17 @@ def tick() -> list[dict]:
             busy = True
         elif not busy:
             action = "idle_no_pending"
-        events.append({"machine": machine, "busy": busy, "pending": pending, "action": action, "detail": detail})
+        events.append(
+            {
+                "machine": machine,
+                "busy": busy,
+                "pending": pending,
+                "action": action,
+                "next_assignment_hint": job_label(next_job),
+                "next_assignment_run_id": next_job.get("run_id") if next_job else None,
+                "detail": detail,
+            }
+        )
     write_report(events)
     return events
 
