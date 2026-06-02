@@ -1,0 +1,21 @@
+{
+  "accepted": true,
+  "config_count": 12,
+  "config_issue_count": 0,
+  "generated_at": "2026-05-19T09:42:16.316730+00:00",
+  "issue_count": 0,
+  "issues": [],
+  "manifest_file": "/home/harveybc/Documents/GitHub/agent-multi/experiments/stage3x_sac_smoke_plan/stage3x_sac_smoke_plan_manifest.json",
+  "manifest_sha256": "40c2a6256a1c7dd2075ee0bec519b977d7b2f96f0ef2f6e6768ebe2a2723cd1d",
+  "request_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_sac_smoke_request/stage3x_sac_smoke_request.json",
+  "schema_version": "project3_stage3x_sac_smoke_plan_acceptance_v1",
+  "selected_contract_ids": [
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p03__selected",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p04__selected",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p05__selected",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p06__selected"
+  ],
+  "stage_c_access": "DENIED",
+  "status": "ACCEPTED_LOCKED_SMOKE_PLAN",
+  "training_launched": false
+}

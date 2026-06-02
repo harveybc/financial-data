@@ -1,0 +1,144 @@
+{
+  "gene_space": {
+    "asset": [
+      "adausdt",
+      "audusd",
+      "bnbusdt",
+      "btcusdt",
+      "btcusdt_perp",
+      "dogeusdt",
+      "ethusdt",
+      "ethusdt_perp",
+      "eurgbp",
+      "eurjpy",
+      "eurusd",
+      "gbpjpy",
+      "gbpusd",
+      "linkusdt",
+      "nzdusd",
+      "solusdt",
+      "usdcad",
+      "usdchf",
+      "usdjpy",
+      "xrpusdt"
+    ],
+    "feature_budget": [
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ],
+    "feature_preset": [
+      "baseline_12",
+      "crypto_full",
+      "fx_full",
+      "kitchen_sink_guarded",
+      "learned_cnn",
+      "learned_lstm",
+      "sota_low_cost",
+      "tech_full",
+      "tech_stat",
+      "tech_stat_decomp"
+    ],
+    "feature_selection_method": [
+      "family_allowlist",
+      "corr_stability_topk",
+      "rank_ic_topk",
+      "mutual_info_topk",
+      "regime_conditioned_topk",
+      "nsga_sparse_mask"
+    ],
+    "preprocessing_profile": [
+      "p00_current_contract",
+      "p01_no_scaling_control",
+      "p02_rolling_short_64",
+      "p03_rolling_long_512",
+      "p04_expanding_zscore",
+      "p05_clip_tight_5",
+      "p06_wide_observation_64",
+      "p07_rolling_mid_128",
+      "p08_rolling_long_1024",
+      "p09_clip_loose_20",
+      "p10_wide_observation_96",
+      "p11_tight_force_close_2h"
+    ],
+    "representation_method": [
+      "raw_selected",
+      "pca",
+      "autoencoder",
+      "contrastive_timeseries"
+    ],
+    "sac_batch_size": [
+      128,
+      256,
+      512
+    ],
+    "sac_ent_coef": [
+      "auto",
+      0.005,
+      0.01,
+      0.03
+    ],
+    "sac_gamma": [
+      0.97,
+      0.99,
+      0.995
+    ],
+    "sac_learning_rate": [
+      3e-05,
+      0.0001,
+      0.0003
+    ],
+    "sac_tau": [
+      0.002,
+      0.005,
+      0.01
+    ],
+    "seasonal_context": [
+      "off",
+      "calendar_features",
+      "force_close_obs"
+    ],
+    "source_family": [
+      "crypto_source_family",
+      "curated_low_cost",
+      "fx_source_family",
+      "learned_representation",
+      "mixed_guarded",
+      "technical_statistical"
+    ],
+    "timeframe": [
+      "15m",
+      "1h",
+      "4h"
+    ]
+  },
+  "generated_at": "2026-05-18T17:00:56.595780+00:00",
+  "hard_constraints": [
+    "no_stage_c_rows",
+    "feature_list_hash_required",
+    "observation_state_hash_required",
+    "no_no_trade_collapse",
+    "no_excessive_trade_hard_flag",
+    "no_always_in_market_losing_flag",
+    "every_gpu_trial_counted_in_ledger",
+    "cpu_target_relation_screen_before_gpu"
+  ],
+  "heldout_start": "2025-01-01",
+  "optimizer": {
+    "algorithm": "NSGA-II",
+    "comparators": [
+      "PPO",
+      "DQN"
+    ],
+    "library": "deap",
+    "primary_model": "SAC",
+    "status": "planned_after_cpu_screening"
+  },
+  "schema_version": "project3_data_preprocessing_search_space_v1",
+  "stage_c_access": "DENIED",
+  "training_launched": false
+}

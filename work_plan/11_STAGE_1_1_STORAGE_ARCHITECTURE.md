@@ -373,7 +373,7 @@ Each data folder's README documents its update procedure (one-time historical pu
 ## See also
 
 - Project 3 master plan: `[path to project root]/docs/00_PROJECT_3_MASTER_PLAN.md`
-- Data catalog: `[path to project root]/docs/12_STAGE_1.2_DATA_CATALOG.md`
+- Data catalog: `work_plan/12_STAGE_1_2_DATA_CATALOG.md`
 ```
 
 ---

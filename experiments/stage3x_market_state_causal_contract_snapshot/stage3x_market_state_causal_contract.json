@@ -1,0 +1,772 @@
+{
+  "assumption_notes": [
+    "Observed market features are not randomized treatments.",
+    "Causal estimators are diagnostic screens and hypothesis generators.",
+    "Trading promotion still requires paired RL evidence, costs, seeds, and gates.",
+    "Weekend border data must be excluded by the pretrade gap before weekly open."
+  ],
+  "causal_role_mapping": {
+    "medicine": "observed_input_or_supervisor_exposure_defined_before_cutoff",
+    "outcome": "next_week_market_status_vector",
+    "patient": "target_asset_at_weekly_anchor",
+    "patient_state": "market_state_observed_before_decision_cutoff"
+  },
+  "generated_at": "2026-05-24T01:21:28.677488+00:00",
+  "heldout_start": "2025-01-01",
+  "lookback_hours": 168,
+  "ok": true,
+  "pretrade_gap_hours": 12,
+  "row_count": 12,
+  "rows": [
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "crypto_exchange_perp",
+      "causal_unit_id": "btcusdt_perp__weekly__anchor_2024-06-03__causal_state",
+      "decision_cutoff": "2024-06-02T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-02T12:00:00Z",
+      "observation_window_start": "2024-06-02T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-09T23:59:59Z",
+      "outcome_window_start": "2024-06-03T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "btcusdt_perp",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "eurusd__weekly__anchor_2024-06-03__causal_state",
+      "decision_cutoff": "2024-06-02T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-02T12:00:00Z",
+      "observation_window_start": "2024-06-02T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-09T23:59:59Z",
+      "outcome_window_start": "2024-06-03T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "eurusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "audusd__weekly__anchor_2024-06-03__causal_state",
+      "decision_cutoff": "2024-06-02T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-02T12:00:00Z",
+      "observation_window_start": "2024-06-02T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-09T23:59:59Z",
+      "outcome_window_start": "2024-06-03T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "audusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "crypto_exchange_perp",
+      "causal_unit_id": "btcusdt_perp__weekly__anchor_2024-06-10__causal_state",
+      "decision_cutoff": "2024-06-09T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-09T12:00:00Z",
+      "observation_window_start": "2024-06-09T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-16T23:59:59Z",
+      "outcome_window_start": "2024-06-10T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "btcusdt_perp",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "eurusd__weekly__anchor_2024-06-10__causal_state",
+      "decision_cutoff": "2024-06-09T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-09T12:00:00Z",
+      "observation_window_start": "2024-06-09T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-16T23:59:59Z",
+      "outcome_window_start": "2024-06-10T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "eurusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "audusd__weekly__anchor_2024-06-10__causal_state",
+      "decision_cutoff": "2024-06-09T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-09T12:00:00Z",
+      "observation_window_start": "2024-06-09T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-16T23:59:59Z",
+      "outcome_window_start": "2024-06-10T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "audusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "crypto_exchange_perp",
+      "causal_unit_id": "btcusdt_perp__weekly__anchor_2024-06-17__causal_state",
+      "decision_cutoff": "2024-06-16T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-16T12:00:00Z",
+      "observation_window_start": "2024-06-16T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-23T23:59:59Z",
+      "outcome_window_start": "2024-06-17T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "btcusdt_perp",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "eurusd__weekly__anchor_2024-06-17__causal_state",
+      "decision_cutoff": "2024-06-16T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-16T12:00:00Z",
+      "observation_window_start": "2024-06-16T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-23T23:59:59Z",
+      "outcome_window_start": "2024-06-17T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "eurusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "audusd__weekly__anchor_2024-06-17__causal_state",
+      "decision_cutoff": "2024-06-16T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-16T12:00:00Z",
+      "observation_window_start": "2024-06-16T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-23T23:59:59Z",
+      "outcome_window_start": "2024-06-17T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "audusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "crypto_exchange_perp",
+      "causal_unit_id": "btcusdt_perp__weekly__anchor_2024-06-24__causal_state",
+      "decision_cutoff": "2024-06-23T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-23T12:00:00Z",
+      "observation_window_start": "2024-06-23T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-30T23:59:59Z",
+      "outcome_window_start": "2024-06-24T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "btcusdt_perp",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-24"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "eurusd__weekly__anchor_2024-06-24__causal_state",
+      "decision_cutoff": "2024-06-23T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-23T12:00:00Z",
+      "observation_window_start": "2024-06-23T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-30T23:59:59Z",
+      "outcome_window_start": "2024-06-24T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "eurusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-24"
+    },
+    {
+      "allowed_estimators": [
+        "blocked_time_series_cross_fit_double_ml",
+        "doubly_robust_learners",
+        "causal_forest_as_diagnostic",
+        "invariant_risk_screening",
+        "lag_only_conditional_dependence_screen"
+      ],
+      "broker_profile": "oanda_us_fx",
+      "causal_unit_id": "audusd__weekly__anchor_2024-06-24__causal_state",
+      "decision_cutoff": "2024-06-23T12:00:00Z",
+      "exposure_treatment_families": [
+        "own_asset_feature_family_enabled",
+        "cross_asset_feature_family_enabled",
+        "macro_event_feature_family_enabled",
+        "regime_context_enabled",
+        "ood_overlay_enabled",
+        "portfolio_no_trade_flag",
+        "portfolio_weight_bucket"
+      ],
+      "forbidden_uses": [
+        "causal_alpha_proof",
+        "automatic_feature_deletion",
+        "validation_tuned_threshold_without_trial_count",
+        "stage_c_tuning"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "observation_window_end": "2024-06-23T12:00:00Z",
+      "observation_window_start": "2024-06-23T12:00:00Z",
+      "outcome_components": [
+        "next_week_net_return",
+        "next_week_realized_volatility",
+        "next_week_max_drawdown",
+        "next_week_cvar_95",
+        "next_week_trade_count",
+        "next_week_force_close_violations",
+        "next_week_trend_score",
+        "next_week_regime_transition_summary"
+      ],
+      "outcome_window_end": "2024-06-30T23:59:59Z",
+      "outcome_window_start": "2024-06-24T00:00:00Z",
+      "patient_state_feature_families": [
+        "own_asset_return_vol_trend_liquidity",
+        "cross_asset_return_vol_correlation",
+        "seasonal_calendar_sin_cos",
+        "force_close_calendar_context",
+        "event_calendar_known_before_cutoff",
+        "train_only_regime_probabilities",
+        "train_only_ood_scores"
+      ],
+      "pretrade_gap_hours": 12,
+      "state_encoding_mode": "snapshot",
+      "target_asset": "audusd",
+      "temporal_issues": [],
+      "weekly_anchor_id": "anchor_2024-06-24"
+    }
+  ],
+  "schema_version": "project3_stage3x_market_state_causal_contract_v1",
+  "stage_c_access": "DENIED",
+  "stage_c_allowed": false,
+  "state_encoding_mode": "snapshot",
+  "temporal_issue_count": 0,
+  "training_launched": false
+}

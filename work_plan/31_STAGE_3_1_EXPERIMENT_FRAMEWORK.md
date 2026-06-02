@@ -1,5 +1,57 @@
 # Stage 3.1 — Experiment Framework
 
+## 2026-05-23 Active Replacement: Stage 3X Weekly Walk-Forward Framework
+
+This document originally described a broad static Stage A/B/C matrix. That old
+matrix is historical context only. Active work is governed by the weekly
+retrained portfolio protocol and SAC-first micro-NSGA input optimization:
+
+- `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+- `PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md`
+- `PROJECT3_STAGE3X_AGENT_SPEC_KIT_2026_05_14.md`
+
+Active experiment unit:
+
+| Field | Meaning |
+| --- | --- |
+| `target_asset` | Asset traded by the environment and scored for P&L |
+| `timeframe` | 5m, 15m, 1h, or 4h simulation step |
+| `input_asset_mask` | Other tradable assets whose prices/features may enter the observation |
+| `input_source_mask` | Free/paid source families included as inputs |
+| `feature_family_mask` | Technical, statistical, decomposition, learned, macro, event, cross-asset, regime families |
+| `feature_subset_mask` | Selected columns within each family |
+| `preprocessing_profile` | Scaling, clipping, imputation, windowing, lagging, regime conditioning |
+| `weekly_anchor_id` | Historical weekend retrain anchor |
+| `training_window` | Initial default: 1 year for fast search, later 2-4 years as optimizer genes |
+| `validation_week` | Week immediately after training or recent-week validation bundle |
+| `test_week` | Next week only, matching intended live model lifetime |
+| `model_family` | SAC first; PPO/DQN later as optimized comparators |
+| `sac_hyperparameters` | Optimizer genes, not manually guessed constants |
+| `broker_profile` | OANDA FX / confirmed crypto venue / other explicit broker profile |
+
+Active split policy:
+
+1. Micro tests may use tiny windows to verify mechanics quickly.
+2. Optimization uses repeated weekly anchors: train on past data, validate on
+   the next week, test on the following week.
+3. Serious evidence aggregates many weekly tests across regimes, seeds, costs,
+   and assets.
+4. 2025-01-01+ Stage C rows remain locked until a final one-shot evaluation is
+   explicitly approved.
+
+Active pass/fail distinction:
+
+- Mechanical blockers: Stage C leakage, missing evidence, bad hashes, missing
+  feature/observation hashes, impossible accounting, all-no-trade, hard
+  overtrading, broker-policy violations, Friday force-close violations.
+- Optimizer objectives: one-week return, Sharpe, drawdown, CVaR, trade count
+  inside policy bands, cost-to-gross-edge, feature count, redundancy,
+  portfolio diversification.
+
+Tiny smoke runs are allowed to be economically negative. They are not promoted;
+they only prove that the experimental machine is wired correctly. The optimizer
+then searches for profit/risk improvement over many weekly anchors.
+
 **Stage goal:** Design and execute systematic RL experiments varying trading asset, simulation timeframe, feature input set, and feature engineering technique. Produce evidence about which combinations yield best policies.
 
 **Inputs:** Phase 1 + Phase 2 complete. All raw data + feature library available.
@@ -37,11 +89,18 @@ The "machine assignment" tables below describe which machine runs which workers.
 
 ## 1. Pre-Registered Experimental Design
 
+The active pre-registration must describe the weekly walk-forward design above.
+Older static-matrix hypotheses below are retained only as examples of feature
+families and controls that may be converted into weekly-anchor experiments.
+
 Before any runs, produce `experiments/design/pre_registered_design.md` with:
 
-### 1.0 SOTA Hardening Gate (Adopted 2026-05-02)
+### 1.0 Historical SOTA Hardening Gate (Adopted 2026-05-02)
 
-The critique in `work_plan/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md` is accepted as an additive hardening package. It does not invalidate completed work or require stopping active Stage A smoke jobs. It does, however, create a promotion gate:
+The old critique document is archived under
+`work_plan/archive_superseded_2026_05_23_weekly_data_first/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md`.
+Its controls remain useful as historical governance references, but the active
+operating plan is the weekly-retrained Stage 3X protocol above.
 
 - Current Stage A first-wave runs are valid as infrastructure smoke and preliminary screening evidence.
 - No configuration can advance to Stage B until the P0 hardening checks below pass.
@@ -331,6 +390,78 @@ For Stage B to proceed past validation:
 - Final frozen candidate list before held-out evaluation
 
 User reviews. Approves Stage C held-out test.
+
+### 3.4 Stage B orchestration addendum (2026-05-12)
+
+Current Stage B validation is no longer a planned/manual launch step. It is an
+active locked execution lane with fail-closed telemetry:
+
+- Locked run plan:
+  `experiments/stage_b_validation/run_plan/stage_b_locked_run_plan.json`
+- Per-machine live status:
+  `_scripts/workers/stage_b_machine_live_status_worker.py`
+- Cluster live status:
+  `_scripts/workers/stage_b_cluster_live_status_worker.py`
+- Locked executor:
+  `_scripts/workers/stage_b_locked_run_executor.py`
+- Idle redispatcher:
+  `_scripts/workers/stage_b_idle_redispatcher.py`
+- Run-plan status/audit:
+  `_scripts/workers/stage_b_run_plan_status_worker.py`
+- Statistical trace audit:
+  `_scripts/workers/stageb_dsr_pbo_evaluator.py`
+
+Operational rules added during execution:
+
+- Status reports must include per-machine current task, percent complete,
+  trade count, profit, done count, pending count, failed count, and no-trade
+  anomaly state.
+- A running job with zero trades at or after 20% progress is a hard anomaly and
+  must be aborted or quarantined; zero-trade runs cannot promote.
+- Excessive final turnover and always-in-market behavior are warning/hard-gate
+  diagnostics in Stage B summaries. They do not automatically promote or kill a
+  run without the economic and statistical gates below, but they must be
+  reported before any Stage C consideration.
+- Idle Dragon/Gamma/Omega capacity must be redispatched from remaining locked
+  backlog whenever safe. The final leftover task must also be movable; a
+  one-task imbalance is not a valid idle reason.
+- SSH launch timeouts are not sufficient evidence of failure if the remote
+  executor or `agent-multi --load_config` process is verified as active.
+
+Current Stage B statistical state:
+
+- `agent-multi` emits return trace CSVs and `evidence.json` sidecars for Stage B
+  runs.
+- `stageb_dsr_pbo_evaluator.py` can scan Stage B run traces and writes:
+  `experiments/stage_b_validation/hardening/stageb_dsr_pbo_report.{json,md}`.
+- The current evaluator is a preliminary trace audit plus approximate
+  contiguous-fold PBO diagnostic. It is not yet a full purged CSCV implementation
+  and not a White Reality Check / Hansen SPA family test.
+- As of the first Stage B trace audit, Stage B traces exist, but no candidate
+  should be promoted until all active locked runs finish and the final evaluator
+  report clears B3/B4.
+
+Immediate next orchestration sequence after active runs finish:
+
+1. Refresh live status and confirm no active Stage B process remains:
+   `python _scripts/workers/stage_b_cluster_live_status_worker.py`.
+2. Sync remote Stage B run artifacts from Dragon and Gamma back to Omega before
+   statistical or run-plan audits. The local audit files are authoritative only
+   after this sync because remote GPU runs write progress, summaries, traces,
+   and evidence sidecars on the executing machine first.
+3. Refresh the run-plan audit:
+   `python _scripts/workers/stage_b_run_plan_status_worker.py`.
+4. Run the Stage B statistical evaluator:
+   `python _scripts/workers/stageb_dsr_pbo_evaluator.py`.
+5. Re-run the Stage B approval gate:
+   `python _scripts/workers/stage_b_approval_gate_worker.py`.
+6. Generate `experiments/stage_b_validation/stage_b_summary.md` only after the
+   evaluator and approval gate are refreshed.
+7. If no candidate clears B3/B4, Stage 3.1 closes as "no Stage C candidate" and
+   Stage 3.2 becomes a negative/diagnostic synthesis, not a held-out launch.
+8. If at least one candidate clears B3/B4 and the economic gates, freeze the
+   candidate manifest and request explicit user approval before any Stage C
+   held-out execution.
 
 ---
 

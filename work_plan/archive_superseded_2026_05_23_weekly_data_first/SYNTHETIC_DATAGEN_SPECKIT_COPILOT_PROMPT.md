@@ -44,6 +44,27 @@ Absolute prohibition:
 - Do not select generators by looking at Stage C/2025 held-out results.
 - Do not promote a synthetic-augmented model unless it beats the same real-data-only configuration under matched seeds, costs, assets, timeframes, and feature families.
 
+## Post-Implementation Correction Addendum - 2026-05-03
+
+The first `synthetic-datagen` implementation proved the plugin path works, but also exposed two failure modes that future Copilot/Spec Kit agents must handle as hard requirements:
+
+1. **Generated Project 3 training panels must exclude Stage C rows.**
+   - Raw source files may contain `2025-01-01+` data for storage.
+   - Generator fitting, validation, augmentation panels, downstream training configs, and generator-selection logic must not consume or emit `2025-01-01+` rows in Project 3 mode.
+   - Use `project3_heldout_boundary = 2025-01-01 00:00:00` separately from any downstream train/validation boundary such as `2021-09-28`.
+
+2. **Quality gates must fail closed.**
+   - Algebraic validity, distribution gates, and memorization gates are all fatal by default.
+   - If any gate fails, write `project3_valid_for_training = false`, append a ledger `evaluate` row with `valid=false`, and do not create a training-ready augmented CSV.
+   - If an old augmented CSV exists at the expected output path, quarantine it with an `.invalid_quality_gates` suffix.
+   - A failed generator may remain as a diagnostic/stress artifact only.
+
+Observed first-run result:
+
+- `stationary_bootstrap_v1` passed OHLC algebra and simple return-distribution gates.
+- It failed memorization gates (`duplicate_window_rate`, `nn_overlap_rate`, and `copied_subseq_ratio`).
+- Therefore its first ETHUSDT 4h output is diagnostic-only and must not be used for SAC/PPO/DQN training until the generator or thresholds are explicitly redesigned and re-approved.
+
 ## How to use this prompt
 
 Use this as a staged prompt sequence for GitHub Spec Kit or a Copilot agent working inside `github.com/harveybc/synthetic-datagen`.

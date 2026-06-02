@@ -1,0 +1,75 @@
+{
+  "agent_multi_output_dir": "/home/harveybc/Documents/GitHub/agent-multi/experiments/stage3x_sac_smoke_plan",
+  "agent_multi_root": "/home/harveybc/Documents/GitHub/agent-multi",
+  "agent_multi_tool": "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stage3x_sac_smoke_plan.py",
+  "blockers": [],
+  "commands": {
+    "validate_only": [
+      "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+      "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stage3x_sac_smoke_plan.py",
+      "--selected-contracts",
+      "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_sac_smoke_request/selected_feature_contracts_smoke_shortlist.json",
+      "--output-dir",
+      "/home/harveybc/Documents/GitHub/agent-multi/experiments/stage3x_sac_smoke_plan",
+      "--top-n",
+      "4",
+      "--seeds",
+      "0,1,2",
+      "--cost-scenario",
+      "base",
+      "--validate-only"
+    ],
+    "write_locked_plan": [
+      "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+      "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stage3x_sac_smoke_plan.py",
+      "--selected-contracts",
+      "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_sac_smoke_request/selected_feature_contracts_smoke_shortlist.json",
+      "--output-dir",
+      "/home/harveybc/Documents/GitHub/agent-multi/experiments/stage3x_sac_smoke_plan",
+      "--top-n",
+      "4",
+      "--seeds",
+      "0,1,2",
+      "--cost-scenario",
+      "base"
+    ]
+  },
+  "excluded_contract_ids": [],
+  "expected_config_count": 12,
+  "expected_manifest": "/home/harveybc/Documents/GitHub/agent-multi/experiments/stage3x_sac_smoke_plan/stage3x_sac_smoke_plan_manifest.json",
+  "generated_at": "2026-05-19T10:36:43.709175+00:00",
+  "guard_summary": {
+    "broad_gpu_launch_allowed": false,
+    "issue_count": 1,
+    "small_sac_smoke_allowed": true
+  },
+  "heldout_start": "2025-01-01",
+  "request_allowed": true,
+  "request_mode": "small_sac_smoke",
+  "requested_cost_scenario": "base",
+  "requested_cost_scenarios": [
+    "base"
+  ],
+  "requested_seed_count": 3,
+  "requested_seeds": [
+    0,
+    1,
+    2
+  ],
+  "requested_top_n": 4,
+  "schema_version": "project3_stage3x_sac_smoke_request_v1",
+  "selected_contract_count": 564,
+  "selected_contract_ids": [
+    "btcusdt_perp__4h__crypto_full__regime_conditioned_topk__p00__selected",
+    "btcusdt__1h__learned_cnn__rank_ic_topk__p00__selected",
+    "btcusdt__4h__learned_cnn__rank_ic_topk__p00__selected",
+    "btcusdt__1h__learned_lstm__regime_conditioned_topk__p00__selected"
+  ],
+  "selected_contracts_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_sac_smoke_request/selected_feature_contracts_smoke_shortlist.json",
+  "selected_contracts_sha256": "9318e1c7b41e5715249769551f6a38dfcd427fc817e1d280ae85eeec10c1348c",
+  "smoke_shortlist_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_sac_smoke_request/selected_feature_contracts_smoke_shortlist.json",
+  "source_selected_contracts_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_target_relation_screen/selected_feature_contracts.json",
+  "source_selected_contracts_sha256": "b1944b787a50ffaab84b69aafb1cb33db570b85e53ce7b82ccf48f1d0270e4fe",
+  "stage_c_access": "DENIED",
+  "training_launched": false
+}

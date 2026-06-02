@@ -1,0 +1,67 @@
+{
+  "asset_count": 2,
+  "asset_rows": [
+    {
+      "asset": "eurusd",
+      "blockers": [],
+      "broker_profile": "oanda_us_fx",
+      "net_return": 0.015,
+      "timeframe": "4h",
+      "trade_frequency_policy": {
+        "broker_profile": "oanda_us_fx",
+        "hard_max": 12,
+        "policy_known": true,
+        "target_max": 3,
+        "target_min": 3,
+        "timeframe": "4h",
+        "warning_above": 6
+      },
+      "trades": 1,
+      "trades_per_week": 1.024390243902439,
+      "warnings": [],
+      "weeks": 0.9761904761904762,
+      "weight": 0.6
+    },
+    {
+      "asset": "btcusdt_perp",
+      "blockers": [],
+      "broker_profile": "crypto_exchange_perp",
+      "net_return": 0.00875,
+      "timeframe": "4h",
+      "trade_frequency_policy": {
+        "broker_profile": "crypto_exchange_perp",
+        "hard_max": 24,
+        "policy_known": true,
+        "target_max": 6,
+        "target_min": 3,
+        "timeframe": "4h",
+        "warning_above": 12
+      },
+      "trades": 3,
+      "trades_per_week": 3.073170731707317,
+      "warnings": [],
+      "weeks": 0.9761904761904762,
+      "weight": 0.4
+    }
+  ],
+  "blocker_count": 0,
+  "blockers": [],
+  "computed_portfolio_cost": 0.0014,
+  "computed_portfolio_return": 0.0125,
+  "computed_portfolio_trades": 4,
+  "generated_at": "2026-05-24T01:09:20.445293+00:00",
+  "ok": true,
+  "portfolio_id": "tiny_two_asset_fixture",
+  "portfolio_trades_per_week": 4.097560975609756,
+  "portfolio_weeks": 0.9761904761904762,
+  "reported_portfolio_cost": 0.0014,
+  "reported_portfolio_return": 0.0125,
+  "reported_portfolio_trades": 4,
+  "schema_version": "project3_stage3x_portfolio_sanity_report_v1",
+  "stage_c_access": "DENIED",
+  "stage_c_allowed": false,
+  "training_launched": false,
+  "warning_count": 0,
+  "warnings": [],
+  "weekly_anchor_id": "anchor_2024-06-17"
+}

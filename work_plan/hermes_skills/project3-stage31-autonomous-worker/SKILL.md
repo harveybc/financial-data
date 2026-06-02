@@ -1,6 +1,6 @@
 ---
 name: project3-stage31-autonomous-worker
-description: Use when a Project 3 Hermes worker or supervisor selects, starts, validates, or reports Stage 3.1 Stage A screening jobs without duplicating work.
+description: Use only for historical Project 3 Stage 3.1 Stage A screening queues. Current Stage 3X work uses the weekly-retrained portfolio protocol instead.
 version: 1.0.0
 author: Project 3 Codex/Hermes team
 license: MIT
@@ -14,7 +14,13 @@ metadata:
 
 ## Trigger
 
-Use this skill for Project 3 Stage 3.1 Stage A screening when selecting a next run, launching a worker, validating a completed run, reporting progress, or deciding whether a machine is genuinely idle.
+Use this skill only for historical Project 3 Stage 3.1 Stage A screening when
+selecting a next run, launching a worker, validating a completed run, reporting
+progress, or deciding whether a machine is genuinely idle.
+
+For current Stage 3X weekly-retrained work, do not use this skill as the
+operating plan. Read `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+and `PROJECT3_STAGE3X_AGENT_SPEC_KIT_2026_05_14.md`.
 
 ## Context First
 
@@ -23,7 +29,8 @@ Start by reading:
 1. `/home/harveybc/Documents/GitHub/financial-data/_logs/supervisor_reports/stage31_worker_context_packet.md`
 2. `/home/harveybc/Documents/GitHub/financial-data/work_plan/31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md`
 3. `/home/harveybc/Documents/GitHub/financial-data/work_plan/32_STAGE_3_2_RESULTS_SYNTHESIS.md`
-4. `/home/harveybc/Documents/GitHub/financial-data/work_plan/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md`
+4. `/home/harveybc/Documents/GitHub/financial-data/work_plan/PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+5. `/home/harveybc/Documents/GitHub/financial-data/work_plan/archive_superseded_2026_05_23_weekly_data_first/PROJECT3_SOTA_CRITIQUE_AND_IMPROVEMENT_PROPOSAL.md` only if historical SOTA context is needed.
 
 Correct stale context explicitly. Never assume a stage, deliverable, or queue state from memory.
 

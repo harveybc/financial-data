@@ -44,7 +44,7 @@ These are now approved as next candidates, but should not interrupt active Stage
 
 ## Deferred Items
 
-- PCMCI+ causal selection until Phase 3 experiment framework can validate feature selection leakage
+- Broad PCMCI+ causal selection until Phase 3 experiment framework can validate feature selection leakage. A narrow Phase 3X audit/tooling lane is approved for top candidates only; see `work_plan/PHASE_3X_UNSUPERVISED_CAUSAL_AUDIT.md` and `experiments/design/unsupervised_causal_audit.md`.
 - Decision Transformer, DreamerV3, hierarchical RL, and CQL/IQL until Phase 3 baselines are reproducible
 - TradingAgents multi-agent LLM strategy committee until Stage 3.1 baseline RL evidence exists. Use `work_plan/TRADINGAGENTS_INTEGRATION_ASSESSMENT.md` as the integration plan; evaluate it as an RL-signal overlay/veto layer, not as a replacement for pre-registered RL screening.
 - live-only Binance order-book snapshots until a separate live/recent lane is created; never synthesize historical LOB from OHLCV

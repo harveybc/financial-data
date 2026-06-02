@@ -1,0 +1,38 @@
+{
+  "broad_gpu_launch_allowed": false,
+  "fatal_issue_present": false,
+  "generated_at": "2026-05-19T10:37:22.512686+00:00",
+  "issue_count": 1,
+  "issues": [
+    {
+      "code": "NO_STAGE_B_PROMOTION",
+      "evidence": {
+        "candidate_gate_fail": 118,
+        "dsr_fail_n_raw": 693
+      },
+      "message": "No candidate cleared Stage B; broad reruns of the same contract are not justified.",
+      "required_action": "Run data/preprocessing target-relation screening before any new broad GPU batch.",
+      "severity": "block_broad_gpu"
+    }
+  ],
+  "schema_version": "project3_stage3x_absurdity_guard_v2_finra_oanda",
+  "selected_feature_contract_count": 564,
+  "small_cpu_or_dry_run_allowed": true,
+  "small_sac_smoke_allowed": true,
+  "smoke_contract_count": 4,
+  "smoke_contracts_missing_broker_profile": [],
+  "smoke_contracts_over_trade_frequency_hard_max": [],
+  "smoke_contracts_with_oanda_fx_calendar_violation": [],
+  "smoke_contracts_with_unknown_policy_band": [],
+  "source_files": {
+    "action_audit": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stage_b_feature_action_audit.json",
+    "decision_readiness": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stage_b_decision_readiness.json",
+    "input_plan": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_input_preprocessing_optimization/stage3x_input_preprocessing_optimization_plan.json",
+    "parametric_schema": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_parametric_data_space/project3_data_preprocessing_search_space.schema.json",
+    "selected_contracts": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_target_relation_screen/selected_feature_contracts.json",
+    "smoke_synthesis": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_sac_smoke_results/stage3x_sac_smoke_result_synthesis.json",
+    "stat_report": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stageb_dsr_pbo_report.json"
+  },
+  "stage_c_access": "DENIED",
+  "training_launched": false
+}

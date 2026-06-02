@@ -14,6 +14,61 @@ This project is **data-centric, perfectionist, and exhaustive**. Three operation
 2. **Comprehensive over selective.** When in doubt, include the data source. Filtering happens during experiments (Phase 3), not during acquisition (Phase 1).
 3. **Documented and organized.** Every folder has a README. Every dataset has a data dictionary. Future-Harvey or future-agent must be able to understand any folder without context.
 
+### 1.1 Current 2026-05-14 Pivot: Parametric Data-First Search
+
+Stage B completed without a promotable candidate. The active path is therefore
+not another broad rerun of the same feature bundles. Project 3 now treats the
+full data contract as the searched object:
+
+- trading asset;
+- timeframe;
+- data/source family;
+- feature-selection method;
+- preprocessing profile;
+- seasonal/force-close context;
+- representation method;
+- later SAC hyperparameters.
+
+The canonical active artifacts are:
+
+- `work_plan/PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md`
+- `experiments/stage3x_parametric_data_space/project3_data_preprocessing_search_space_summary.md`
+- `experiments/stage3x_input_preprocessing_optimization/stage3x_input_preprocessing_optimization_plan.md`
+- `experiments/stage3x_absurdity_guard/stage3x_absurdity_guard_report.md`
+
+Broad GPU execution is blocked unless the absurdity guard allows it. CPU-first
+target-relation screening and feature/preprocessing selection must happen
+before any new full Stage B GPU matrix. Stage C remains locked until Stage B
+promotion.
+
+### 1.2 Current 2026-05-23 Pivot: Weekly-Retrained Portfolio System
+
+The intended production system retrains over the weekend and trades only the
+following week. Phase 3 evidence must therefore optimize and validate repeated
+weekly walk-forward behavior, not a fantasy where one unoptimized model is
+expected to trade unchanged for a year.
+
+The active higher-level object is now:
+
+- target asset selection;
+- cross-asset and paid/free input selection;
+- preprocessing and feature selection;
+- SAC hyperparameters;
+- weekly event-calendar risk overlay;
+- weekly portfolio allocation/no-trade supervisor;
+- per-asset execution under broker and Friday force-close rules.
+
+Canonical protocol:
+
+- `work_plan/PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+
+This protocol supersedes old Phase 3 interpretations that treated a single
+long static OOS period as the business target. Negative returns from tiny smoke
+runs are optimizer feedback, not a reason to stop data/input/preprocessing
+optimization. Mechanical failures still block work: Stage C leakage, missing
+evidence, bad hashes, impossible accounting, all-no-trade, hard overtrading,
+broker-policy violations, or Friday force-close violations.
+
 ---
 
 ## 2. Critical Conceptual Distinction (READ CAREFULLY)
@@ -76,7 +131,7 @@ When data sources only provide daily or weekly granularity (e.g., FRED macro, Gl
 |-------|-------|--------|
 | **Phase 1: Data Acquisition** | Acquire ALL plausibly relevant data sources | Organized data lake with READMEs |
 | **Phase 2: Feature Engineering** | Convert raw data into varied feature representations at all periodicities | Standardized feature library |
-| **Phase 3: Systematic Experiments** | Use Project 2's best RL agents to evaluate which (asset, sim timeframe, feature set, feature periodicity) combinations produce best policies | Evidence-based ranking |
+| **Phase 3: Weekly Walk-Forward Experiments** | Optimize data, feature inputs, preprocessing, SAC hyperparameters, and later portfolio controls for repeated next-week trading after weekend retrain | Evidence-based weekly and portfolio ranking |
 
 Phases are sequential. Phase 2 cannot start until Phase 1 produces validated organized data. Phase 3 cannot start until Phase 2 produces feature library.
 
@@ -121,30 +176,38 @@ This project is organized as multiple short documents (idiot-proof for inferior 
 
 ### Phase 1: Data Acquisition
 - `10_PHASE_1_OVERVIEW.md` — Phase 1 goals and dependencies
-- `11_STAGE_1.1_STORAGE_ARCHITECTURE.md` — Folder structure, naming conventions, README templates
-- `12_STAGE_1.2_DATA_CATALOG.md` — Exhaustive list of every data source to acquire
-- `13_STAGE_1.3_FREE_DATA_ACQUISITION.md` — Procedures for free data sources
-- `14_STAGE_1.4_REGISTRATIONS_AND_KEYS.md` — Manual user actions
-- `15_STAGE_1.5_PAID_DATA_ACQUISITION.md` — Procedures for subscription-based sources
-- `16_STAGE_1.6_VALIDATION_AND_DOCUMENTATION.md` — Per-folder validation and READMEs
+- `11_STAGE_1_1_STORAGE_ARCHITECTURE.md` — Folder structure, naming conventions, README templates
+- `12_STAGE_1_2_DATA_CATALOG.md` — Exhaustive list of every data source to acquire
+- `13_STAGE_1_3_FREE_DATA_ACQUISITION.md` — Procedures for free data sources
+- `14_STAGE_1_4_REGISTRATIONS_AND_KEYS.md` — Manual user actions
+- `15_STAGE_1_5_PAID_DATA_ACQUISITION.md` — Procedures for subscription-based sources
+- `16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md` — Per-folder validation and READMEs
 
 ### Phase 2: Feature Engineering
 - `20_PHASE_2_OVERVIEW.md` — Phase 2 goals
-- `21_STAGE_2.1_DOWNSAMPLING_AND_RESAMPLING.md` — Multi-timeframe generation
-- `22_STAGE_2.2_TECHNICAL_AND_STATISTICAL_FEATURES.md` — Standard + advanced features
-- `23_STAGE_2.3_SIGNAL_DECOMPOSITION_FEATURES.md` — Wavelet, Hilbert, multitaper, EMD
-- `24_STAGE_2.4_LEARNED_REPRESENTATIONS.md` — Autoencoders + embeddings
+- `21_STAGE_2_1_DOWNSAMPLING_AND_RESAMPLING.md` — Multi-timeframe generation
+- `22_STAGE_2_2_TECHNICAL_AND_STATISTICAL_FEATURES.md` — Standard + advanced features
+- `23_STAGE_2_3_SIGNAL_DECOMPOSITION_FEATURES.md` — Wavelet, Hilbert, multitaper, EMD
+- `24_STAGE_2_4_LEARNED_REPRESENTATIONS.md` — Autoencoders + embeddings
 
 ### Phase 3: Systematic Experiments
-- `30_PHASE_3_OVERVIEW.md` — Phase 3 goals
-- `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` — How to test data subsets systematically
-- `32_STAGE_3.2_RESULTS_SYNTHESIS.md` — How findings get aggregated
+- `30_PHASE_3_OVERVIEW.md` — Active Phase 3 goals: data-first weekly walk-forward experiments
+- `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` — Active weekly retrain experiment framework
+- `32_STAGE_3.2_RESULTS_SYNTHESIS.md` — Active weekly/portfolio synthesis contract
+- `PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md` — Active
+  post-no-promotion protocol: SAC-first, DEAP/NSGA-ready, data/preprocessing
+  search after CPU feature screening.
+- `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md` — Active
+  production-shaped extension: weekend retrain, next-week walk-forward
+  objective, cross-asset inputs, and weekly portfolio supervisor.
 
 ### Phase 4: Deferred Synthetic Data Augmentation
 - `40_PHASE_4_SYNTHETIC_DATA_AUGMENTATION.md` — Optional post-Phase-3 synthetic OHLCV augmentation and robustness protocol
-- `SYNTHETIC_DATAGEN_SPECKIT_COPILOT_PROMPT.md` — Spec Kit/Copilot prompt for a plugin-first synthetic OHLCV generator suite
 
-Total: 17 canonical/project-adjacent documents (master + agent infrastructure + 13 Phase 1-3 docs + Phase 4 plan + synthetic generator prompt).
+Superseded one-off prompts, already-executed agent specs, old SOTA side memos,
+and deferred synthetic research notes are archived under
+`archive_superseded_2026_05_23_weekly_data_first/`. They are historical
+reference, not active instructions.
 
 ---
 

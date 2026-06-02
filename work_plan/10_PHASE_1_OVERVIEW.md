@@ -1,5 +1,13 @@
 # Phase 1 Overview — Data Acquisition
 
+## 2026-05-23 Note
+
+Phase 1 remains active reference material for the weekly-retrained portfolio
+protocol. Do not archive or delete data inventories, source catalogs, paid/free
+source decisions, provenance, or validation reports. They are the foundation for
+target-asset selection, cross-asset input selection, and paid-source utility
+tests in Stage 3X.
+
 **Phase goal:** Acquire ALL plausibly relevant data sources for RL trading research, organized into a documented data lake. Acquire defensively but avoid redundancy.
 
 **Phase output:** Complete data lake at `/home/harveybc/Documents/GitHub/financial-data/` with:
@@ -33,12 +41,12 @@ The "machine assignment" tables below describe which machine runs which workers.
 
 | Stage | Document | Purpose |
 |-------|----------|---------|
-| 1.1 | `11_STAGE_1.1_STORAGE_ARCHITECTURE.md` | Build folder structure + templates |
-| 1.2 | `12_STAGE_1.2_DATA_CATALOG.md` | Document EVERY data source with redundancy analysis |
-| 1.3 | `13_STAGE_1.3_FREE_DATA_ACQUISITION.md` | Acquire free sources first |
-| 1.4 | `14_STAGE_1.4_REGISTRATIONS_AND_KEYS.md` | User performs manual subscriptions/registrations AFTER 1.3 inventory |
-| 1.5 | `15_STAGE_1.5_PAID_DATA_ACQUISITION.md` | Acquire ONLY non-redundant paid sources |
-| 1.6 | `16_STAGE_1.6_VALIDATION_AND_DOCUMENTATION.md` | Validate, document, audit |
+| 1.1 | `11_STAGE_1_1_STORAGE_ARCHITECTURE.md` | Build folder structure + templates |
+| 1.2 | `12_STAGE_1_2_DATA_CATALOG.md` | Document EVERY data source with redundancy analysis |
+| 1.3 | `13_STAGE_1_3_FREE_DATA_ACQUISITION.md` | Acquire free sources first |
+| 1.4 | `14_STAGE_1_4_REGISTRATIONS_AND_KEYS.md` | User performs manual subscriptions/registrations AFTER 1.3 inventory |
+| 1.5 | `15_STAGE_1_5_PAID_DATA_ACQUISITION.md` | Acquire ONLY non-redundant paid sources |
+| 1.6 | `16_STAGE_1_6_VALIDATION_AND_DOCUMENTATION.md` | Validate, document, audit |
 
 ---
 
@@ -160,4 +168,4 @@ Stage 1.2 documents exclusions with reasons. Examples:
 
 ## Approval to Begin Phase 1
 
-User approves Phase 1 overview. Agent reads `11_STAGE_1.1_STORAGE_ARCHITECTURE.md` and begins Stage 1.1.
+User approves Phase 1 overview. Agent reads `11_STAGE_1_1_STORAGE_ARCHITECTURE.md` and begins Stage 1.1.

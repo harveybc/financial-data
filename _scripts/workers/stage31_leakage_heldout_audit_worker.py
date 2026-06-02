@@ -112,9 +112,17 @@ _DT_FORMATS = ["%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]
 
 
 def _parse_dt(s: str) -> "datetime.datetime | None":
+    raw = s.strip()
+    if not raw:
+        return None
+    try:
+        dt = datetime.datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return dt.replace(tzinfo=None) if dt.tzinfo is not None else dt
+    except ValueError:
+        pass
     for fmt in _DT_FORMATS:
         try:
-            return datetime.datetime.strptime(s.strip(), fmt)
+            return datetime.datetime.strptime(raw, fmt)
         except ValueError:
             pass
     return None
@@ -168,14 +176,13 @@ def audit_input_csv(csv_path: pathlib.Path) -> dict:
     dup_count = 0
 
     try:
-        with open(csv_path, newline="", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            try:
-                headers = next(reader)
-            except StopIteration:
+        with open(csv_path, encoding="utf-8") as f:
+            header_line = f.readline()
+            if not header_line:
                 result["status"] = "BLOCKED_TIMESTAMP_INVALID"
                 result["error"] = "Empty file"
                 return result
+            headers = header_line.rstrip("\r\n").split(",")
 
             upper_headers = [h.strip().upper() for h in headers]
 
@@ -194,8 +201,10 @@ def audit_input_csv(csv_path: pathlib.Path) -> dict:
                 if col in upper_headers:
                     ohlcv_indices.append(upper_headers.index(col))
 
-            for row in reader:
+            max_idx = max([dt_idx] + ohlcv_indices) if ohlcv_indices else dt_idx
+            for line in f:
                 row_count += 1
+                row = line.rstrip("\r\n").split(",")
 
                 # --- Timestamp check ---
                 if len(row) <= dt_idx or not row[dt_idx].strip():

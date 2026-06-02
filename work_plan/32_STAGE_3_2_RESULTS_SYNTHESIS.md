@@ -1,5 +1,42 @@
 # Stage 3.2 — Results Synthesis
 
+## 2026-05-23 Active Synthesis Contract: Weekly Walk-Forward Evidence
+
+This document originally described synthesis for a static Stage A/B/C matrix.
+The active synthesis target is now the weekly-retrained portfolio protocol:
+
+- aggregate many historical weekend-retrain / next-week-test anchors;
+- rank data sources, input assets, feature families, and preprocessing choices
+  by repeated next-week utility;
+- keep model comparisons fair by optimizing data/preprocessing/hyperparameters
+  before comparing model families;
+- later evaluate portfolio-level allocation/no-trade policies above per-asset
+  trading agents.
+
+Active outputs:
+
+- `weekly_walk_forward_summary.md` — distribution of next-week returns,
+  drawdowns, trade counts, force-close exposure, and broker-policy compliance.
+- `target_asset_input_value_ranking.md` — for each traded asset, which own-asset
+  and cross-asset inputs helped.
+- `data_source_value_ranking.md` — paid/free source marginal utility after
+  coverage, leakage, and cost checks.
+- `preprocessing_value_ranking.md` — scaling, clipping, lagging, windowing,
+  regime-conditioning, and learned representation utility.
+- `sac_hyperparameter_pareto_front.md` — DEAP/NSGA candidates ranked by
+  profit/risk/cost/trade-frequency objectives.
+- `portfolio_supervisor_value_ranking.md` — later stage only, once per-asset
+  streams exist.
+- `subscription_cancellation_recommendations.md` — keep/cancel based on
+  marginal value versus free alternatives.
+
+Do not summarize a single lucky week as tradability. Report median, IQM,
+tail-risk, probability of improvement versus baselines, seed dispersion, and
+cost sensitivity across weekly anchors.
+
+Stage C remains locked until a later promotion packet explicitly passes the
+hard governance gates.
+
 **Stage goal:** Aggregate Phase 3 experiment results into a comprehensive final report. Identify which data sources, feature techniques, asset/timeframe combinations actually improved RL trading performance. Recommend cancellations of mediocre subscriptions.
 
 **Inputs:** Stage 3.1 complete with Stage A/B/C results documented.
@@ -37,6 +74,11 @@ The "machine assignment" tables below describe which machine runs which workers.
 ---
 
 ## 1. Synthesis Procedure
+
+For active Stage 3X work, the first synthesis axis is weekly walk-forward
+performance. The older source/feature ranking method below is still useful, but
+each comparison must be matched by target asset, timeframe, broker profile,
+weekly anchor, seed, cost scenario, and model/preprocessing family.
 
 Three analyses run in parallel:
 

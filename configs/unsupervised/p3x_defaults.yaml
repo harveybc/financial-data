@@ -1,0 +1,29 @@
+# Phase 3X unsupervised artifact defaults
+# These values are inherited by all P0 workers unless overridden.
+
+schema_version: 1
+
+split:
+  heldout_start: "2025-01-01T00:00:00Z"
+  # train_end and validation_start are artifact-specific; declare per-worker
+  require_monotonic_timestamps: true
+  allow_duplicate_timestamps: false
+
+artifacts:
+  registry_path: "experiments/unsup_causal_audit/registry.json"
+  output_root: "experiments/unsup_causal_audit/artifacts"
+  feature_output_root: "experiments/unsup_causal_audit/features/trading_asset_features"
+
+metadata:
+  uses_heldout: false
+  fit_excludes_heldout_2025: true
+  fit_excludes_validation_if_required: true
+
+initial_target:
+  asset: "ethusdt"
+  timeframe: "4h"
+  feature_family: "tech_stat"
+  train_csv: "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv"
+
+# Timestamp column name used in all input CSVs
+timestamp_col: "DATE_TIME"

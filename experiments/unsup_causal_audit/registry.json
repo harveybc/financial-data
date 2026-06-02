@@ -1,0 +1,54 @@
+{
+  "artifacts": [
+    {
+      "artifact_type": "feature_redundancy_stability",
+      "asset": "ethusdt",
+      "config_hash": "d5f83e1d29b57037ec1aad7daf5a6d2758d121915c9d38f3e8af6fded8b3f1a6",
+      "feature_family": "tech_stat",
+      "fit_end": "2023-12-31T20:00:00+00:00",
+      "fit_start": "2017-09-28T04:00:00+00:00",
+      "generated_at": "2026-05-18T01:30:01.703787+00:00",
+      "leakage_checks": {
+        "fit_window_precedes_validation": "CHECKED",
+        "heldout_timestamp_exclusion": "CHECKED"
+      },
+      "metadata_path": "/home/harveybc/Documents/GitHub/financial-data/experiments/unsup_causal_audit/artifacts/feature_redundancy_stability/ethusdt_4h_tech_stat/metadata.json",
+      "n_clusters": 41,
+      "n_features": 83,
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/unsup_causal_audit/artifacts/feature_redundancy_stability/ethusdt_4h_tech_stat",
+      "timeframe": "4h",
+      "uses_heldout": false
+    },
+    {
+      "artifact_type": "regime_smoke",
+      "asset": "ethusdt",
+      "config_hash": "9cefbe3b37c988ec48d01bbf30bb90c7163dd0822fd766aaa9576b08514fee6e",
+      "feature_family": "tech_stat",
+      "feature_path": "/home/harveybc/Documents/GitHub/financial-data/experiments/unsup_causal_audit/features/trading_asset_features/ethusdt/4h/regime_smoke_tech_stat.parquet",
+      "fit_end": "2023-12-31T20:00:00+00:00",
+      "fit_start": "2017-09-28T04:00:00+00:00",
+      "generated_at": "2026-05-18T01:30:02.578328+00:00",
+      "leakage_checks": {
+        "fit_window_precedes_validation": "CHECKED",
+        "heldout_timestamp_exclusion": "CHECKED"
+      },
+      "metadata_path": "/home/harveybc/Documents/GitHub/financial-data/experiments/unsup_causal_audit/artifacts/regime_smoke/ethusdt_4h_tech_stat/metadata.json",
+      "method": "KMeans",
+      "n_regimes": 4,
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/unsup_causal_audit/artifacts/regime_smoke/ethusdt_4h_tech_stat",
+      "timeframe": "4h",
+      "uses_heldout": false
+    }
+  ],
+  "created_at": "2026-05-03T00:00:00Z",
+  "description": "Phase 3X unsupervised/causal artifact registry. Every fitted artifact must be registered here before being consumed by any RL variant.",
+  "heldout_start": "2025-01-01T00:00:00Z",
+  "notes": [
+    "artifacts[] entries are written by individual workers (e.g. stage3x_regime_worker.py).",
+    "paired_variants[] entries are written by stage3x_variant_registration_worker.py.",
+    "An artifact with uses_heldout=true is invalid until Stage C final eval.",
+    "An artifact with any leakage_check value != CHECKED or PASS is quarantined."
+  ],
+  "paired_variants": [],
+  "schema_version": 1
+}

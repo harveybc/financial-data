@@ -47,6 +47,9 @@ ARTIFACT_ROOT = ROOT / "artifacts"
 
 INDEX_CSV = STAGE_A_ROOT / "index.csv"
 LEDGER_JSONL = ARTIFACT_ROOT / "run_ledger.jsonl"
+SIMPLE_BASELINE_CSV = HARDENING_OUT / "simple_baseline_results.csv"
+FAMILY_ABLATION_JSON = HARDENING_OUT / "family_ablation_report.json"
+LEAKAGE_HELDOUT_CSV = HARDENING_OUT / "leakage_heldout_audit.csv"
 
 BEST_RUN_SLUG = (
     "ethusdt_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T051413Z_project3_stage31_firstwave"
@@ -673,6 +676,123 @@ def _count_seeds_for_config(row: dict, all_rows: list[dict]) -> int:
     return len(seeds)
 
 
+def load_b8_evidence() -> dict[str, str]:
+    """
+    Load B8 evidence from simple_baseline_results.csv if it exists.
+    Returns a dict mapping run_slug → b8_evidence string.
+    If the CSV does not exist, returns an empty dict (B8 remains NOT_COMPUTED).
+    """
+    if not SIMPLE_BASELINE_CSV.exists():
+        return {}
+    evidence: dict[str, str] = {}
+    try:
+        with open(SIMPLE_BASELINE_CSV, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            # The CSV has one row per (run, strategy); we need the per-run verdict.
+            # Re-derive it: if any strategy row for the run has status OK and
+            # the run's rl return is positive, we trust the JSON report.
+            # Simpler: read the JSON report if available.
+            pass
+    except Exception:
+        pass
+
+    # Prefer the JSON report which has the per-run b8_evidence field.
+    json_path = HARDENING_OUT / "simple_baseline_report.json"
+    if not json_path.exists():
+        return {}
+    try:
+        with open(json_path, encoding="utf-8") as f:
+            report = json.load(f)
+        for cmp in report.get("all_run_comparisons", []):
+            slug = cmp.get("run_slug", "")
+            b8ev = cmp.get("b8_evidence", "INDETERMINATE")
+            if slug:
+                evidence[slug] = b8ev
+    except Exception:
+        pass
+    return evidence
+
+
+def load_b9_evidence() -> dict[str, str]:
+    """
+    Load B9 feature-family ablation evidence from family_ablation_report.json.
+
+    If the report does not exist, returns an empty dict and B9 remains blocked.
+    """
+    evidence: dict[str, str] = {}
+    if not FAMILY_ABLATION_JSON.exists():
+        return evidence
+    try:
+        with FAMILY_ABLATION_JSON.open(encoding="utf-8") as fh:
+            report = json.load(fh)
+        for item in report.get("all_run_comparisons", []):
+            slug = str(item.get("run_slug", ""))
+            b9ev = str(item.get("b9_evidence", "INDETERMINATE"))
+            if slug:
+                evidence[slug] = b9ev
+    except Exception:
+        pass
+    return evidence
+
+
+def load_leakage_heldout_evidence() -> dict[str, dict[str, str]]:
+    """
+    Load B1/B10 evidence from leakage_heldout_audit.csv.
+
+    Returns a map:
+      run_slug -> {"b1": status, "b10": status, "detail": short detail}
+    """
+    evidence: dict[str, dict[str, str]] = {}
+    if not LEAKAGE_HELDOUT_CSV.exists():
+        return evidence
+    try:
+        with LEAKAGE_HELDOUT_CSV.open(newline="", encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                slug = str(row.get("run_slug", ""))
+                if not slug:
+                    continue
+                status = str(row.get("status", ""))
+                heldout = str(row.get("b1_heldout_ts_check", ""))
+                checks = [
+                    str(row.get("b1_transform_check", "")),
+                    str(row.get("b1_scaler_check", "")),
+                    str(row.get("b1_autoencoder_check", "")),
+                    str(row.get("b1_macro_check", "")),
+                ]
+                ok_values = {"PASS", "NOT_APPLICABLE"}
+                if status == "FAIL_HELDOUT_LEAKAGE":
+                    b10 = "FAIL"
+                elif str(row.get("b10_firewall_cleared", "")).lower() == "true":
+                    b10 = "PASS"
+                elif status == "BLOCKED_INPUT_MISSING":
+                    b10 = "BLOCKED_INPUT_MISSING"
+                else:
+                    b10 = "INDETERMINATE"
+
+                if heldout == "PASS" and all(c in ok_values for c in checks):
+                    b1 = "PASS"
+                elif heldout == "PASS":
+                    b1 = "PARTIAL_PASS"
+                elif status == "FAIL_HELDOUT_LEAKAGE":
+                    b1 = "FAIL"
+                elif status == "BLOCKED_INPUT_MISSING":
+                    b1 = "BLOCKED_INPUT_MISSING"
+                else:
+                    b1 = "INDETERMINATE"
+
+                evidence[slug] = {
+                    "b1": b1,
+                    "b10": b10,
+                    "detail": (
+                        f"status={status}; min_ts={row.get('min_ts', '')}; "
+                        f"max_ts={row.get('max_ts', '')}; b1_overall={row.get('b1_overall', '')}"
+                    ),
+                }
+    except Exception:
+        pass
+    return evidence
+
+
 def classify_candidate(
     row: dict,
     ledger_ok: bool,
@@ -682,6 +802,11 @@ def classify_candidate(
     cost_proxy: dict,
     paired_uplift: dict,
     n_seeds: int,
+    b8_evidence: str = "NOT_COMPUTED",
+    b9_evidence: str = "NOT_COMPUTED",
+    b1_evidence: str = "NOT_COMPUTED",
+    b10_evidence: str = "NOT_COMPUTED",
+    leakage_detail: str = "",
 ) -> tuple[str, list[str], list[str]]:
     """
     Assign a deterministic classification status and enumerate blockers.
@@ -749,13 +874,26 @@ def classify_candidate(
 
     # ---- All KILL criteria passed; enumerate governance blockers ----
 
-    # B1: Leakage audit — always a blocker until the audit file passes
-    blockers.append(
-        "B1_LEAKAGE_AUDIT: experiments/design/leakage_audit.md checks not executed. "
-        "Required: heldout_timestamp_exclusion, transform_fit_window_check, "
-        "scaler_fit_window_check, autoencoder_fit_window_check, hmm_regime_fit_window_check, "
-        "forward_fill_availability_check, macro_vintage_check."
-    )
+    # B1: Leakage audit
+    if b1_evidence == "PASS":
+        pass
+    elif b1_evidence == "PARTIAL_PASS":
+        blockers.append(
+            "B1_LEAKAGE_AUDIT: Heldout timestamp check passed, but some fitted-transform "
+            f"or source-availability subchecks are deferred/incomplete. {leakage_detail}"
+        )
+    elif b1_evidence == "FAIL":
+        return "KILL_LEAKAGE", [f"B1 leakage audit failed. {leakage_detail}"], []
+    elif b1_evidence == "BLOCKED_INPUT_MISSING":
+        blockers.append(
+            "B1_LEAKAGE_AUDIT: Input CSV missing, so heldout and fitted-transform checks "
+            f"cannot be verified. {leakage_detail}"
+        )
+    else:
+        blockers.append(
+            "B1_LEAKAGE_AUDIT: leakage_heldout_audit.csv evidence not found for this run. "
+            "Run stage31_leakage_heldout_audit_worker.py."
+        )
 
     # B2: Availability/vintage contract — required for cross-source presets
     preset = str(row.get("preset", ""))
@@ -819,26 +957,81 @@ def classify_candidate(
             )
             watch_flags.append("WATCH_COST_FRAGILE")
 
-    # B8: Baseline comparison — simple strategies not yet documented
-    blockers.append(
-        "B8_SIMPLE_BASELINES: No comparison against no-trade, buy-and-hold, "
-        "random/turnover-matched random, simple momentum, or simple reversal "
-        "has been computed. Required before Stage B per §1.3 Stage A deliverable spec."
-    )
+    # B8: Baseline comparison — check if simple_baseline_worker has run
+    if b8_evidence == "PASS":
+        pass  # B8 cleared for this run
+    elif b8_evidence == "PARTIAL_PASS":
+        blockers.append(
+            "B8_SIMPLE_BASELINES: Beats best simple baseline at base_cost but "
+            "pessimistic_cost verdict incomplete. See simple_baseline_report.md."
+        )
+    elif b8_evidence == "INDETERMINATE":
+        blockers.append(
+            "B8_SIMPLE_BASELINES: Beats best baseline at base_cost but fails "
+            "pessimistic_cost check. Review simple_baseline_report.md before promotion."
+        )
+    elif b8_evidence == "FAIL":
+        blockers.append(
+            "B8_SIMPLE_BASELINES: Does NOT beat the best simple baseline at base_cost. "
+            "See simple_baseline_report.md for details."
+        )
+    elif b8_evidence == "BLOCKED_NO_BASELINES":
+        blockers.append(
+            "B8_SIMPLE_BASELINES: No input CSV available for baseline computation. "
+            "Run stage31_simple_baseline_worker.py after generating train.csv inputs."
+        )
+    else:
+        # NOT_COMPUTED or unknown
+        blockers.append(
+            "B8_SIMPLE_BASELINES: No comparison against no-trade, buy-and-hold, "
+            "random/turnover-matched random, simple momentum, or simple reversal "
+            "has been computed. Run stage31_simple_baseline_worker.py first."
+        )
 
     # B9: Feature-family ablation
-    blockers.append(
-        "B9_FAMILY_ABLATION: Feature-family marginal contribution not reported. "
-        "feature_family_ablation_plan.md requires family-level paired attribution "
-        "before leaderboard-only promotion is accepted."
-    )
+    if b9_evidence == "PASS":
+        pass
+    elif b9_evidence == "PARTIAL_PASS":
+        blockers.append(
+            "B9_FAMILY_ABLATION: Partial matched family-ablation evidence exists, "
+            "but it is not complete enough to clear the gate. See family_ablation_report.md."
+        )
+    elif b9_evidence == "FAIL":
+        blockers.append(
+            "B9_FAMILY_ABLATION: Matched feature-family ablation is negative. "
+            "Candidate does not show positive marginal family value."
+        )
+    elif b9_evidence == "BLOCKED_NO_MATCH":
+        blockers.append(
+            "B9_FAMILY_ABLATION: Required matched ablation run is missing for this "
+            "asset/timeframe/algo/seed. See family_ablation_report.md."
+        )
+    elif b9_evidence == "NOT_APPLICABLE":
+        blockers.append(
+            "B9_FAMILY_ABLATION: Baseline-only preset has no narrower feature-family "
+            "ablation. It cannot be promoted as a feature-family winner."
+        )
+    else:
+        blockers.append(
+            "B9_FAMILY_ABLATION: Feature-family marginal contribution not reported. "
+            "Run stage31_family_ablation_worker.py before promotion."
+        )
 
-    # B10: Heldout firewall — no 2025 data touch (cannot verify without run logs)
-    blockers.append(
-        "B10_HELDOUT_FIREWALL: Cannot verify 2025 heldout exclusion without inspecting "
-        "train.csv row timestamps. stage_b_promotion_gate.yaml §stage_c_firewall requires "
-        "heldout_start=2025-01-01 exclusion audit."
-    )
+    # B10: Heldout firewall
+    if b10_evidence == "PASS":
+        pass
+    elif b10_evidence == "FAIL":
+        return "KILL_LEAKAGE", [f"B10 heldout firewall failed. {leakage_detail}"], []
+    elif b10_evidence == "BLOCKED_INPUT_MISSING":
+        blockers.append(
+            "B10_HELDOUT_FIREWALL: Input CSV missing; cannot prove 2025 heldout exclusion. "
+            f"{leakage_detail}"
+        )
+    else:
+        blockers.append(
+            "B10_HELDOUT_FIREWALL: Heldout exclusion evidence not found for this run. "
+            "Run stage31_leakage_heldout_audit_worker.py."
+        )
 
     return "PROMOTE_BLOCKED_HARDENING", blockers, watch_flags
 
@@ -1060,6 +1253,9 @@ def write_reports(
     seed_dispersion: list[dict],
     boot_ci: list[dict],
     n_trials: int,
+    b8_map: dict | None = None,
+    b9_map: dict | None = None,
+    leakage_map: dict | None = None,
 ) -> None:
     """Write promotion_candidates.csv, promotion_hardening_report.md, and .json."""
 
@@ -1076,6 +1272,72 @@ def write_reports(
     for r in results:
         if r["classification"].startswith("KILL_"):
             kill_breakdown[r["classification"]] += 1
+
+    # ---- Derive B8 governance gate status from b8_map ----
+    b8_map = b8_map or {}
+    if not b8_map:
+        b8_gate_md  = "✗ NOT COMPUTED"
+        b8_gate_json = "NOT_COMPUTED"
+    else:
+        n_b8_pass    = sum(1 for v in b8_map.values() if v == "PASS")
+        n_b8_fail    = sum(1 for v in b8_map.values() if v == "FAIL")
+        n_b8_blocked = sum(1 for v in b8_map.values() if v == "BLOCKED_NO_BASELINES")
+        b8_gate_md   = (
+            f"~ PARTIALLY_CLEARED — {n_b8_pass} run(s) PASS, "
+            f"{n_b8_fail} FAIL (mostly killed), {n_b8_blocked} BLOCKED_NO_INPUT"
+        )
+        b8_gate_json = (
+            f"PARTIALLY_CLEARED ({n_b8_pass} PASS / {n_b8_fail} FAIL / "
+            f"{n_b8_blocked} BLOCKED_NO_INPUT out of {len(b8_map)} audited)"
+        )
+
+    # ---- Derive B9 governance gate status from b9_map ----
+    b9_map = b9_map or {}
+    if not b9_map:
+        b9_gate_md = "✗ NOT COMPUTED"
+        b9_gate_json = "NOT_COMPUTED"
+    else:
+        n_b9_pass = sum(1 for v in b9_map.values() if v == "PASS")
+        n_b9_partial = sum(1 for v in b9_map.values() if v == "PARTIAL_PASS")
+        n_b9_fail = sum(1 for v in b9_map.values() if v == "FAIL")
+        n_b9_blocked = sum(1 for v in b9_map.values() if v == "BLOCKED_NO_MATCH")
+        n_b9_na = sum(1 for v in b9_map.values() if v == "NOT_APPLICABLE")
+        b9_gate_md = (
+            f"~ PARTIALLY_CLEARED — {n_b9_pass} run(s) PASS, "
+            f"{n_b9_partial} PARTIAL, {n_b9_fail} FAIL, "
+            f"{n_b9_blocked} BLOCKED_NO_MATCH, {n_b9_na} N/A"
+        )
+        b9_gate_json = (
+            f"PARTIALLY_CLEARED ({n_b9_pass} PASS / {n_b9_partial} PARTIAL / "
+            f"{n_b9_fail} FAIL / {n_b9_blocked} BLOCKED_NO_MATCH / "
+            f"{n_b9_na} N/A out of {len(b9_map)} audited)"
+        )
+
+    # ---- Derive B1/B10 governance gate status from leakage_map ----
+    leakage_map = leakage_map or {}
+    if not leakage_map:
+        b1_gate_md = "✗ NOT COMPUTED"
+        b10_gate_md = "✗ NOT COMPUTED"
+        b1_gate_json = "NOT_COMPUTED"
+        b10_gate_json = "NOT_COMPUTED"
+    else:
+        b1_counts = defaultdict(int)
+        b10_counts = defaultdict(int)
+        for item in leakage_map.values():
+            b1_counts[item.get("b1", "INDETERMINATE")] += 1
+            b10_counts[item.get("b10", "INDETERMINATE")] += 1
+        b1_gate_md = (
+            f"~ PARTIALLY_CLEARED — {b1_counts.get('PASS', 0)} PASS, "
+            f"{b1_counts.get('PARTIAL_PASS', 0)} PARTIAL, "
+            f"{b1_counts.get('BLOCKED_INPUT_MISSING', 0)} BLOCKED_INPUT_MISSING"
+        )
+        b10_gate_md = (
+            f"~ PARTIALLY_CLEARED — {b10_counts.get('PASS', 0)} PASS, "
+            f"{b10_counts.get('FAIL', 0)} FAIL, "
+            f"{b10_counts.get('BLOCKED_INPUT_MISSING', 0)} BLOCKED_INPUT_MISSING"
+        )
+        b1_gate_json = dict(b1_counts)
+        b10_gate_json = dict(b10_counts)
 
     # ---- promotion_candidates.csv ----
     csv_path = HARDENING_OUT / "promotion_candidates.csv"
@@ -1334,19 +1596,18 @@ def write_reports(
         "| Gate | Status |",
         "| --- | --- |",
         "| Immutable ledger | ✓ Checked |",
-        "| Leakage audit (B1) | ✗ NOT COMPLETED — all runs blocked |",
+        f"| Leakage audit (B1) | {b1_gate_md} |",
         "| Availability contract (B2) | ✗ NOT VERIFIED for cross-source presets |",
         "| DSR rigorous (B3) | ✗ APPROXIMATION ONLY |",
         "| PBO/CSCV (B4) | ✗ DEFERRED to Stage B |",
         "| Paired uplift (B5) | ✓ Computed where baseline exists |",
         "| Seed dispersion (B6) | ✓ Reported |",
         "| Cost sensitivity (B7) | ✓ Proxy computed; exact rerun needed |",
-        "| Simple baselines (B8) | ✗ NOT COMPUTED |",
-        "| Family ablation (B9) | ✗ NOT COMPUTED |",
-        "| Heldout firewall (B10) | ✗ NOT AUDITED |",
+        f"| Simple baselines (B8) | {b8_gate_md} |",
+        f"| Family ablation (B9) | {b9_gate_md} |",
+        f"| Heldout firewall (B10) | {b10_gate_md} |",
         "",
-        "**All candidates remain BLOCKED from Stage B promotion until B1, B8, B9, B10 are cleared**",
-        "**and B3/B4 are resolved through Stage B infrastructure.**",
+        "**All surviving candidates remain BLOCKED from Stage B promotion until B3/B4 are resolved through Stage B infrastructure.**",
         "",
         "---",
         "",
@@ -1389,16 +1650,16 @@ def write_reports(
         "seed_dispersion":       seed_dispersion,
         "bootstrap_ci_by_preset":boot_ci,
         "governance_gate": {
-            "B1_leakage_audit":      "NOT_COMPLETED",
+            "B1_leakage_audit":      b1_gate_json,
             "B2_availability":       "NOT_VERIFIED",
             "B3_dsr_rigorous":       "APPROXIMATION_ONLY",
             "B4_pbo_cscv":           "DEFERRED_TO_STAGE_B",
             "B5_paired_uplift":      "COMPUTED",
             "B6_seed_dispersion":    "REPORTED",
             "B7_cost_sensitivity":   "PROXY_COMPUTED",
-            "B8_simple_baselines":   "NOT_COMPUTED",
-            "B9_family_ablation":    "NOT_COMPUTED",
-            "B10_heldout_firewall":  "NOT_AUDITED",
+            "B8_simple_baselines":   b8_gate_json,
+            "B9_family_ablation":    b9_gate_json,
+            "B10_heldout_firewall":  b10_gate_json,
         },
     }
     json_path = HARDENING_OUT / "promotion_hardening_report.json"
@@ -1413,6 +1674,10 @@ def _write_tasks(results: list[dict]) -> None:
     )
     n_killed  = sum(1 for r in results if r["classification"].startswith("KILL_"))
     n_blocked = sum(1 for r in results if r["classification"] == "PROMOTE_BLOCKED_HARDENING")
+    exact_blockers = blocked_run.get("blockers", []) if blocked_run else []
+    exact_blocker_lines = "\n".join(
+        f"{idx}. {blocker}" for idx, blocker in enumerate(exact_blockers, start=1)
+    ) or "No surviving run found."
 
     content = f"""\
 # Promotion Hardening — Task Ledger
@@ -1433,6 +1698,9 @@ Generated: {utc_now()}
 - [x] compute_bootstrap_ci() — 95% bootstrap CI for total_return by preset (n_boot=2000)
 - [x] compute_dsr_placeholder_or_approximation() — directional approximation, caveat-flagged
 - [x] compute_pbo_placeholder() — not_enough_structure documented
+- [x] consume B1/B10 leakage-heldout evidence — loaded leakage_heldout_audit.csv when present
+- [x] consume B8 simple-baseline evidence — loaded simple_baseline_report.json when present
+- [x] consume B9 family-ablation evidence — loaded family_ablation_report.json when present
 - [x] classify_candidate() — deterministic KILL_* / PROMOTE_BLOCKED_HARDENING
 - [x] write_reports() — SPEC.md, PLAN.md, TASKS.md, .csv, .md, .json
 
@@ -1441,55 +1709,26 @@ Generated: {utc_now()}
 - {n_killed} runs killed at KILL gate (no_trades, non_positive_return, negative_sharpe, ledger_missing, invalid_metrics)
 - {n_blocked} run(s) survive KILLs but blocked by governance
 
-## SKIPPED checks (require external evidence — not implementable from summary.json)
+## Evidence now wired into this gate
 
-- [ ] B1: Leakage audit — requires timestamp inspection of train.csv and fitted-transform metadata
+- [x] B1: Leakage/heldout evidence consumed from `leakage_heldout_audit.csv`
+- [x] B8: Simple baseline evidence consumed from `simple_baseline_report.json`
+- [x] B9: Feature-family ablation evidence consumed from `family_ablation_report.json`
+- [x] B10: Heldout firewall evidence consumed from `leakage_heldout_audit.csv`
 - [ ] B2: Availability/vintage contract — requires features/AVAILABILITY_CONTRACT.md per preset
 - [ ] B3: Rigorous DSR — requires per-bar annualized return series with skewness/kurtosis
 - [ ] B4: PBO/CSCV — requires multi-fold split structure (deferred to Stage B)
-- [ ] B8: Simple baselines — requires running no-trade, B&H, random, momentum, reversal strategies
-- [ ] B9: Feature-family ablation — requires matched runs with one family removed per config
-- [ ] B10: Heldout firewall — requires timestamp audit of inputs/{{asset}}/{{tf}}/{{preset}}/train.csv
 
-## BLOCKERS for Stage B (summary)
+## BLOCKERS for current best surviving run
 
-All {n_blocked} surviving run(s) carry these unresolved blockers:
-
-1. **B1 LEAKAGE**: Complete leakage_audit.md checks (transform windows, scaler windows, heldout exclusion)
-2. **B2 AVAILABILITY**: Verify availability/vintage contracts for cross-source presets
-3. **B3 DSR**: Compute rigorous Deflated Sharpe Ratio with annualized return series
-4. **B4 PBO**: Implement PBO/CSCV at Stage B with purged k-fold validation
-5. **B8 BASELINES**: Run simple baseline comparisons (no-trade, B&H, random, momentum, reversal)
-6. **B9 ABLATION**: Run feature-family ablation (one family removed per matched pair)
-7. **B10 HELDOUT**: Audit train.csv timestamps to confirm no 2025 rows
+{exact_blocker_lines}
 
 ## NEXT implementation tasks (priority order)
 
-1. **Implement B1 leakage audit worker** (`stage31_leakage_audit_worker.py`):
-   - Read train.csv timestamp columns for each run's input file
-   - Verify max(timestamp) < 2025-01-01T00:00:00Z
-   - Inspect fitted-transform metadata files for window violations
-   - Output: experiments/design/leakage_audit_results.json
-
-2. **Implement B8 simple baseline worker** (`stage31_simple_baseline_worker.py`):
-   - Run no-trade (cash) return = 0 for each run period
-   - Run buy-and-hold return from input CSV first/last close
-   - Run random policy (turnover-matched) 100x Monte Carlo → CI
-   - Run simple momentum (past-N-bar return sign) strategy
-   - Output: experiments/stage_a_screening/baseline_comparisons.csv
-
-3. **Implement B9 family ablation worker** (`stage31_family_ablation_worker.py`):
-   - For each surviving config, identify matched runs with one family removed
-   - Compute paired marginal contribution per family
-   - Output: experiments/design/family_ablation_results.csv
-
-4. **Verify B10 heldout firewall** (can be added to leakage audit worker):
-   - Read each input CSV, check max(date) < 2025-01-01
-   - Flag any train.csv with post-cutoff rows as KILL_LEAKAGE
-
-5. **At Stage B**: implement B3 (rigorous DSR) and B4 (PBO/CSCV) with longer run artifacts.
-
-6. **At Stage B**: implement B2 (availability contract) for any cross-source promoted config.
+1. **At Stage B**: implement B3 rigorous DSR with per-bar annualized return series, skewness, kurtosis, and multiple-testing correction.
+2. **At Stage B**: implement B4 PBO/CSCV with purged k-fold or CSCV-compatible split artifacts.
+3. **Before any cross-source candidate promotes**: implement B2 availability/vintage contract validation.
+4. Keep B1/B8/B9/B10 evidence refreshed as new Stage A/Stage B runs complete.
 """
     (HARDENING_OUT / "TASKS.md").write_text(content, encoding="utf-8")
     print(f"[INFO] Wrote TASKS.md")
@@ -1516,6 +1755,18 @@ def main() -> None:
     n_trials     = len(ledger_index["trial_ids"])
     print(f"[INFO] Ledger index: {len(ledger_index['by_config'])} config keys, {n_trials} distinct trial IDs")
 
+    # Load B8 evidence (from simple_baseline_worker output, if available)
+    b8_map = load_b8_evidence()
+    print(f"[INFO] Loaded B8 evidence for {len(b8_map)} runs from simple_baseline_report.json")
+
+    # Load B9 evidence (from family_ablation_worker output, if available)
+    b9_map = load_b9_evidence()
+    print(f"[INFO] Loaded B9 evidence for {len(b9_map)} runs from family_ablation_report.json")
+
+    # Load B1/B10 evidence
+    leakage_map = load_leakage_heldout_evidence()
+    print(f"[INFO] Loaded B1/B10 evidence for {len(leakage_map)} runs from leakage_heldout_audit.csv")
+
     # Per-run evaluation
     results: list[dict] = []
     for row in index_rows:
@@ -1526,6 +1777,7 @@ def main() -> None:
         paired_uplift = compute_paired_uplift(row, baselines)
         n_seeds       = _count_seeds_for_config(row, index_rows)
 
+        leak = leakage_map.get(str(row.get("run_slug", "")), {})
         classification, blockers, watch_flags = classify_candidate(
             row          = row,
             ledger_ok    = ledger_ok,
@@ -1535,6 +1787,11 @@ def main() -> None:
             cost_proxy   = cost_proxy,
             paired_uplift= paired_uplift,
             n_seeds      = n_seeds,
+            b8_evidence  = b8_map.get(str(row.get("run_slug", "")), "NOT_COMPUTED"),
+            b9_evidence  = b9_map.get(str(row.get("run_slug", "")), "NOT_COMPUTED"),
+            b1_evidence  = leak.get("b1", "NOT_COMPUTED"),
+            b10_evidence = leak.get("b10", "NOT_COMPUTED"),
+            leakage_detail = leak.get("detail", ""),
         )
 
         # DSR only for non-killed runs
@@ -1590,6 +1847,9 @@ def main() -> None:
         seed_dispersion   = seed_dispersion,
         boot_ci           = boot_ci,
         n_trials          = n_trials,
+        b8_map            = b8_map,
+        b9_map            = b9_map,
+        leakage_map       = leakage_map,
     )
 
     # Write tasks

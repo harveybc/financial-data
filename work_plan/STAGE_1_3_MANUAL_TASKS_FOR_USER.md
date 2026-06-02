@@ -233,6 +233,6 @@ Reply to chat with any blockers. Agent will adjust plan accordingly.
 ## Reference
 
 - Agent infrastructure (read this first): `01_AGENT_INFRASTRUCTURE.md`
-- Stage 1.3 full procedure: `13_STAGE_1.3_FREE_DATA_ACQUISITION.md`
+- Stage 1.3 full procedure: `13_STAGE_1_3_FREE_DATA_ACQUISITION.md`
 - Project 3 master plan: `00_PROJECT_3_MASTER_PLAN.md`
-- Data catalog: `12_STAGE_1.2_DATA_CATALOG.md`
+- Data catalog: `12_STAGE_1_2_DATA_CATALOG.md`

@@ -21,6 +21,7 @@ STATE_PATH = LOG_DIR / "stage31_watchdog.json"
 EVENT_LOG = LOG_DIR / "stage31_watchdog_events.jsonl"
 PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/tensorflow/bin/python")
 SSH_PORT = "22022"
+WORKER_MAX_JOBS = int(os.environ.get("PROJECT3_STAGE31_WORKER_MAX_JOBS", "10"))
 
 os.environ.setdefault("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}")
 os.environ.setdefault("DBUS_SESSION_BUS_ADDRESS", f"unix:path={os.environ['XDG_RUNTIME_DIR']}/bus")
@@ -142,6 +143,32 @@ def job_label(job: dict | None) -> str:
     )
 
 
+def active_ids_from_reconcile_detail(detail: str) -> list[str]:
+    """Extract active run ids from the reconciler JSON when queue sync lags.
+
+    Remote workers can update their human report before the queue file synced
+    back to Omega reflects ``training``. In that short window the watchdog can
+    correctly detect a busy process while still showing an empty active task.
+    The reconciler already emits a compact JSON object with ``active``; use it
+    as a display-only fallback without mutating queue state.
+    """
+    active: list[str] = []
+    decoder = json.JSONDecoder()
+    idx = 0
+    while idx < len(detail):
+        try:
+            obj, end = decoder.raw_decode(detail[idx:])
+        except json.JSONDecodeError:
+            idx += 1
+            continue
+        idx += end
+        if isinstance(obj, dict):
+            values = obj.get("active")
+            if isinstance(values, list):
+                active.extend(str(v) for v in values if v)
+    return active
+
+
 def queue_counts(machine: Machine) -> tuple[dict[str, int], int, list[dict], dict | None]:
     path = ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine.name}.json"
     jobs = read_json(path, [])
@@ -164,11 +191,42 @@ def rsync_from(machine: Machine, rel: str, dst_rel: str | None = None) -> None:
     shell(f"rsync -az -e 'ssh -p {SSH_PORT}' {shlex.quote(src)} {shlex.quote(str(dst))} || true", timeout=30)
 
 
+def rsync_to(machine: Machine, rel: str) -> None:
+    if machine.is_local:
+        return
+    src = ROOT / rel
+    dst = f"harveybc@{machine.host}:{ROOT / rel}"
+    shell(f"rsync -az -e 'ssh -p {SSH_PORT}' {shlex.quote(str(src))} {shlex.quote(dst)} || true", timeout=30)
+
+
+def rsync_return_traces(machine: Machine) -> None:
+    if machine.is_local:
+        return
+    rel = f"experiments/stage_a_screening/runs/{machine.name}"
+    dst = ROOT / "experiments" / "stage_a_screening" / "runs"
+    dst.mkdir(parents=True, exist_ok=True)
+    src = f"harveybc@{machine.host}:{ROOT / rel}"
+    cmd = (
+        "rsync -az "
+        f"-e 'ssh -p {SSH_PORT}' "
+        "--include='*/' "
+        "--include='config.json' "
+        "--include='summary.json' "
+        "--include='config_out.json' "
+        "--include='return_trace.csv' "
+        "--include='*return_trace*.csv' "
+        "--exclude='*' "
+        f"{shlex.quote(src)} {shlex.quote(str(dst))} || true"
+    )
+    shell(cmd, timeout=60)
+
+
 def sync_remote(machine: Machine) -> None:
     rsync_from(machine, f"experiments/stage_a_screening/queues/{machine.name}.json")
     rsync_from(machine, f"_logs/supervisor_reports/stage31_worker_{machine.name}.md")
     rsync_from(machine, f"_metadata/stage31_worker_{machine.name}.json")
     rsync_from(machine, f"artifacts/run_ledger_events/{machine.name}.jsonl", f"artifacts/run_ledger_events/{machine.name}.remote.jsonl")
+    rsync_return_traces(machine)
 
 
 def reconcile(machine: Machine) -> str:
@@ -176,12 +234,81 @@ def reconcile(machine: Machine) -> str:
     return cp.stdout.strip()
 
 
+def expand_queue(machine: Machine, target_pending: int = 24) -> str:
+    if machine.name not in {"dragon", "gamma"}:
+        return "queue_expansion_skipped:not_gpu_worker"
+    worker = ROOT / "_scripts" / "workers" / "stage31_expand_matrix_queue_worker.py"
+    if not worker.exists():
+        return "queue_expansion_skipped:worker_missing"
+    cp = shell(
+        f"cd {shlex.quote(str(ROOT))} && {shlex.quote(PYTHON)} "
+        f"_scripts/workers/stage31_expand_matrix_queue_worker.py "
+        f"--machine {shlex.quote(machine.name)} --target-pending {int(target_pending)}",
+        timeout=60,
+    )
+    if not machine.is_local:
+        rsync_to(machine, f"experiments/stage_a_screening/queues/{machine.name}.json")
+        rsync_to(machine, "_metadata/stage31_queue_expansion.json")
+        rsync_to(machine, "_logs/supervisor_reports/stage31_queue_expansion.md")
+    return cp.stdout.strip()
+
+
+def auto_rebalance_idle_dragon(machine_states: list[dict[str, Any]]) -> str:
+    """Move GPU work from Gamma to Dragon when Dragon drains its queue.
+
+    Dragon's matrix expansion is intentionally crypto-biased, while Gamma owns
+    much of the FX backlog. Without this explicit cross-machine rebalance,
+    Dragon can sit idle even though Gamma still has dozens of runnable jobs.
+    The rebalancer also syncs pending asset data/features and refuses to write
+    queues if it would create duplicate runnable run IDs.
+    """
+    by_name = {item["machine"]: item for item in machine_states}
+    dragon = by_name.get("dragon", {})
+    gamma = by_name.get("gamma", {})
+    if dragon.get("busy") or int(dragon.get("pending") or 0) > 0:
+        return ""
+    if int(gamma.get("pending") or 0) <= 0:
+        return ""
+    worker = ROOT / "_scripts" / "orchestration" / "project3_stage31_gpu_rebalancer.py"
+    if not worker.exists():
+        return "auto_rebalance_skipped:worker_missing"
+    cp = shell(
+        f"cd {shlex.quote(str(ROOT))} && {shlex.quote(PYTHON)} "
+        "_scripts/orchestration/project3_stage31_gpu_rebalancer.py "
+        "--source gamma --target dragon --target-pending 24 --pull-remote --execute --launch",
+        timeout=360,
+    )
+    detail = cp.stdout.strip()
+    append_event({"type": "auto_rebalance_idle_dragon", "detail": detail[:2000]})
+    notify(
+        "auto_rebalance_idle_dragon",
+        "Project 3 Stage 3.1 auto-rebalanced Dragon",
+        f"reason: dragon_idle_gamma_pending\nstatus: executed\ndetail: {detail[:1200]}",
+        min_interval=5,
+    )
+    return detail
+
+
 def busy_detail(machine: Machine) -> str:
-    if machine.name == "omega":
-        pattern = "stage31_agent_multi_run_worker.py --machine omega|agent-multi/tools/seed_sweep.py"
-    else:
-        pattern = "stage31_agent_multi_run_worker.py|agent-multi/tools/seed_sweep.py"
-    cmd = f"ps -eo pid=,args= | grep -E {shlex.quote(pattern)} | grep -v grep || true"
+    machine_filter = f" --machine {machine.name}" if machine.name == "omega" else ""
+    cmd = (
+        "python3 - <<'PY'\n"
+        "import os\n"
+        "my_pid, my_ppid = os.getpid(), os.getppid()\n"
+        f"machine_filter = {machine_filter!r}\n"
+        "needles = ('stage31_agent_multi_run_worker.py', 'agent-multi/tools/seed_sweep.py')\n"
+        "for pid in os.listdir('/proc'):\n"
+        "    if not pid.isdigit() or pid in (str(my_pid), str(my_ppid)):\n"
+        "        continue\n"
+        "    try:\n"
+        "        raw = open(f'/proc/{pid}/cmdline', 'rb').read()\n"
+        "    except OSError:\n"
+        "        continue\n"
+        "    cmd = raw.replace(b'\\x00', b' ').decode('utf-8', 'ignore').strip()\n"
+        "    if any(needle in cmd for needle in needles) and (not machine_filter or machine_filter in cmd or 'seed_sweep.py' in cmd):\n"
+        "        print(f'{pid} {cmd}')\n"
+        "PY"
+    )
     cp = machine_shell(machine, cmd, timeout=30)
     return cp.stdout.strip()
 
@@ -209,7 +336,7 @@ def launch_worker(machine: Machine) -> str:
     cmd = (
         stale_lock_cleanup
         + f"setsid -f python _scripts/workers/stage31_agent_multi_run_worker.py --machine {machine.name} "
-        + f"--max-jobs 1 --timeout-minutes {timeout} "
+        + f"--max-jobs {WORKER_MAX_JOBS} --timeout-minutes {timeout} "
         + f"> _logs/supervisor_reports/stage31_worker_{machine.name}.nohup.log 2>&1 < /dev/null; "
         + "sleep 2; "
         + "ps -eo pid=,args= | grep -E 'stage31_agent_multi_run_worker.py|agent-multi/tools/seed_sweep.py' | grep -v grep || true"
@@ -301,10 +428,11 @@ def tick() -> dict[str, Any]:
             reconcile_detail = f"reconcile_failed:{exc}"
         if not machine.is_local:
             sync_remote(machine)
+        expansion_detail = expand_queue(machine)
         counts, pending, active_jobs, next_job = queue_counts(machine)
         busy = bool(busy_detail(machine))
         action = "busy" if busy else "idle_no_pending"
-        detail = reconcile_detail
+        detail = "\n".join(part for part in [reconcile_detail, expansion_detail] if part)
         if not busy and pending:
             detail = launch_worker(machine)
             busy = bool(busy_detail(machine))
@@ -324,6 +452,10 @@ def tick() -> dict[str, Any]:
             maintenance = maybe_start_omega_synthesis()
             detail = f"{detail}\nomega_maintenance: {maintenance}".strip()
 
+        active_run_ids = [str(job.get("run_id")) for job in active_jobs if job.get("run_id")]
+        if not active_run_ids:
+            active_run_ids = active_ids_from_reconcile_detail(detail)
+
         machine_states.append(
             {
                 "machine": machine.name,
@@ -331,12 +463,44 @@ def tick() -> dict[str, Any]:
                 "pending": pending,
                 "counts": counts,
                 "action": action,
-                "active_run_ids": [str(job.get("run_id")) for job in active_jobs if job.get("run_id")],
+                "active_run_ids": active_run_ids,
                 "next_assignment_hint": job_label(next_job),
                 "next_assignment_run_id": next_job.get("run_id") if next_job else None,
                 "detail": detail,
             }
         )
+
+    rebalance_detail = auto_rebalance_idle_dragon(machine_states)
+    if rebalance_detail:
+        # Refresh remote queue and process state after the rebalancer modifies
+        # queues and potentially launches Dragon.
+        refreshed: list[dict[str, Any]] = []
+        for item in machine_states:
+            machine = next(m for m in MACHINES if m.name == item["machine"])
+            if machine.name in {"dragon", "gamma"}:
+                sync_remote(machine)
+                counts, pending, active_jobs, next_job = queue_counts(machine)
+                busy = bool(busy_detail(machine))
+                active_run_ids = [str(job.get("run_id")) for job in active_jobs if job.get("run_id")]
+                detail = item.get("detail", "")
+                if machine.name == "dragon":
+                    detail = f"{detail}\nauto_rebalance: {rebalance_detail[:2000]}".strip()
+                refreshed.append(
+                    {
+                        "machine": machine.name,
+                        "busy": busy,
+                        "pending": pending,
+                        "counts": counts,
+                        "action": "busy" if busy else ("idle_pending" if pending else "idle_no_pending"),
+                        "active_run_ids": active_run_ids,
+                        "next_assignment_hint": job_label(next_job),
+                        "next_assignment_run_id": next_job.get("run_id") if next_job else None,
+                        "detail": detail,
+                    }
+                )
+            else:
+                refreshed.append(item)
+        machine_states = refreshed
 
     combine_ledger()
     state = {"generated_at": utc_now(), "supervisor": supervisor, "machines": machine_states}

@@ -1,0 +1,54 @@
+{
+  "allocation": {
+    "btcusdt_perp": 0.4,
+    "eurusd": 0.6
+  },
+  "assets": [
+    {
+      "asset": "eurusd",
+      "broker_profile": "oanda_us_fx",
+      "cost": 0.0004,
+      "daily_break_trade_attempts": 0,
+      "first_timestamp": "2024-06-17 00:00:00",
+      "force_close_exposed_bars": 0,
+      "friday_force_flat_violations": 0,
+      "last_timestamp": "2024-06-23 20:00:00",
+      "net_return": 0.015,
+      "timeframe": "4h",
+      "trades": 1,
+      "weight": 0.6
+    },
+    {
+      "asset": "btcusdt_perp",
+      "broker_profile": "crypto_exchange_perp",
+      "cost": 0.001,
+      "daily_break_trade_attempts": 0,
+      "first_timestamp": "2024-06-17 00:00:00",
+      "force_close_exposed_bars": 0,
+      "friday_force_flat_violations": 0,
+      "last_timestamp": "2024-06-23 20:00:00",
+      "net_return": 0.00875,
+      "timeframe": "4h",
+      "trades": 3,
+      "weight": 0.4
+    }
+  ],
+  "cvar_95": -0.011,
+  "first_timestamp": "2024-06-17 00:00:00",
+  "generated_at": "2026-05-24T01:09:20.441666+00:00",
+  "last_timestamp": "2024-06-23 20:00:00",
+  "max_drawdown": -0.018,
+  "no_trade_flags": {
+    "btcusdt_perp": false,
+    "eurusd": false
+  },
+  "portfolio_cost": 0.0014,
+  "portfolio_id": "tiny_two_asset_fixture",
+  "portfolio_return": 0.0125,
+  "portfolio_trades": 4,
+  "schema_version": "project3_stage3x_portfolio_evidence_v1",
+  "stage_c_access": "DENIED",
+  "stage_c_allowed": false,
+  "training_launched": false,
+  "weekly_anchor_id": "anchor_2024-06-17"
+}

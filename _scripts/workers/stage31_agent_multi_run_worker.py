@@ -5,6 +5,7 @@ import argparse
 import fcntl
 import json
 import os
+import signal
 import socket
 import subprocess
 import sys
@@ -15,6 +16,8 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
 AGENT_MULTI_ROOT = Path(os.environ.get("AGENT_MULTI_ROOT", "/home/harveybc/Documents/GitHub/agent-multi"))
+NO_TRADE_ABORT_PROGRESS_PERCENT = float(os.environ.get("PROJECT3_NO_TRADE_ABORT_PROGRESS_PERCENT", "20"))
+NO_TRADE_POLL_SECONDS = float(os.environ.get("PROJECT3_NO_TRADE_POLL_SECONDS", "15"))
 
 sys.path.insert(0, str(PROJECT_ROOT / "_scripts" / "lib"))
 from gpu_lock import acquire_gpu_lock, release_gpu_lock  # noqa: E402
@@ -37,6 +40,122 @@ def read_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return default
+
+
+def safe_float(value, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def write_training_progress(path: str | Path, job: dict, status: str, percent: float, detail: str = "") -> None:
+    progress_path = Path(path)
+    total_timesteps = int(job.get("timesteps") or 0)
+    previous = read_json(progress_path, {})
+    carried_keys = {
+        "eval_step",
+        "trades_total",
+        "total_return",
+        "profit_percent",
+        "final_equity",
+        "action_steps",
+        "action_hold_count",
+        "action_long_count",
+        "action_short_count",
+        "action_non_hold_count",
+        "action_non_hold_rate",
+        "action_abs_mean",
+        "action_raw_min",
+        "action_raw_max",
+        "action_deadband_count",
+        "action_deadband_rate",
+        "execution_entry_actions_seen",
+        "execution_entry_orders_submitted",
+        "execution_blocked_atr_warmup",
+        "execution_blocked_session_filter",
+        "execution_blocked_non_positive_atr",
+        "execution_blocked_non_positive_size",
+        "execution_blocked_non_positive_price",
+        "no_trade_diagnosis",
+        "no_trade_preflight_file",
+        "no_trade_preflight_passed",
+        "no_trade_preflight_diagnosis",
+    }
+    payload = {
+        "schema_version": "project3_training_progress_v1",
+        "source": "stage31_worker",
+        "status": status,
+        "run_id": job.get("run_id"),
+        "agent_plugin": f"{job.get('algo')}_agent" if job.get("algo") else None,
+        "asset": job.get("asset"),
+        "timeframe": job.get("timeframe"),
+        "features_preset": job.get("preset") or job.get("feature_preset"),
+        "seed": job.get("seed"),
+        "pid": os.getpid(),
+        "updated_at_utc": utc_now(),
+        "num_timesteps": int(round(max(0.0, min(100.0, percent)) / 100.0 * total_timesteps)) if total_timesteps else 0,
+        "total_timesteps": total_timesteps,
+        "progress_percent": round(max(0.0, min(100.0, percent)), 4),
+        "progress_detail": detail or status,
+    }
+    if isinstance(previous, dict):
+        for key in carried_keys:
+            if key in previous:
+                payload[key] = previous[key]
+    progress_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = progress_path.with_suffix(progress_path.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=2, sort_keys=True, default=str) + "\n", encoding="utf-8")
+    tmp.replace(progress_path)
+
+
+def no_trade_abort_reason(progress_path: str | Path) -> str:
+    progress = read_json(Path(progress_path), {})
+    if not isinstance(progress, dict):
+        return ""
+    try:
+        pct = float(progress.get("progress_percent") or 0.0)
+    except (TypeError, ValueError):
+        pct = 0.0
+    if pct < NO_TRADE_ABORT_PROGRESS_PERCENT:
+        return ""
+    if "trades_total" not in progress or progress.get("trades_total") in (None, ""):
+        return (
+            f"progress {pct:.2f}% reached but trades_total is missing; "
+            "telemetry contract violated"
+        )
+    try:
+        trades = float(progress.get("trades_total") or 0.0)
+    except (TypeError, ValueError):
+        trades = 0.0
+    if trades > 0:
+        return ""
+    diagnosis = progress.get("no_trade_diagnosis") or "no_trade_detected"
+    return (
+        f"progress {pct:.2f}% reached with trades_total=0 "
+        f"(diagnosis={diagnosis}); aborting to avoid wasting compute"
+    )
+
+
+def terminate_process_group(proc: subprocess.Popen, *, kill: bool = False) -> None:
+    sig = signal.SIGKILL if kill else signal.SIGTERM
+    try:
+        os.killpg(proc.pid, sig)
+    except ProcessLookupError:
+        return
+    except Exception:
+        if kill:
+            proc.kill()
+        else:
+            proc.terminate()
+
+
+def read_tail(path: Path, lines: int = 80) -> str:
+    try:
+        data = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        return "\n".join(data[-lines:])
+    except Exception:
+        return ""
 
 
 def notify_telegram(event: str, title: str, message: str) -> None:
@@ -193,6 +312,8 @@ def algo_defaults(job: dict) -> dict:
         "features_preset": job["preset"],
         "asset": f"{job['asset']}_{job['timeframe']}",
         "total_timesteps": int(job["timesteps"]),
+        "no_trade_min_trades": 1,
+        "no_trade_policy": "hard_kill_with_action_execution_diagnostics",
         "eval_seed": int(job["seed"]),
         "train_seed": int(job["seed"]),
         "device": job.get("device", "cuda"),
@@ -260,6 +381,22 @@ def algo_defaults(job: dict) -> dict:
         )
     else:
         raise ValueError(f"unknown algo: {algo}")
+    overrides = job.get("config_overrides") or {}
+    if overrides:
+        allowed = {
+            "continuous_action_threshold",
+            "diagnostic_only",
+            "ent_coef",
+            "exploration_final_eps",
+            "exploration_fraction",
+            "no_trade_fix_id",
+            "no_trade_preflight_required",
+            "repeat_training_params",
+        }
+        unknown = sorted(set(overrides) - allowed)
+        if unknown:
+            raise ValueError(f"unsupported config_overrides for {job.get('run_id')}: {unknown}")
+        common.update(overrides)
     return common
 
 
@@ -335,6 +472,37 @@ def prepare_input(job: dict) -> str:
     )
 
 
+def run_no_trade_preflight(config_path: Path, output_path: Path, config: dict) -> dict:
+    cmd = [
+        sys.executable,
+        str(AGENT_MULTI_ROOT / "tools" / "project3_no_trade_preflight.py"),
+        "--config",
+        str(config_path),
+        "--output",
+        str(output_path),
+        "--max-steps",
+        str(int(config.get("no_trade_preflight_max_steps") or 5000)),
+        "--hold-bars",
+        str(int(config.get("no_trade_preflight_hold_bars") or 16)),
+        "--min-trades",
+        str(int(config.get("no_trade_preflight_min_trades") or 1)),
+    ]
+    proc = subprocess.run(
+        cmd,
+        cwd=AGENT_MULTI_ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=int(config.get("no_trade_preflight_timeout_seconds") or 300),
+    )
+    payload = read_json(output_path, {})
+    if not isinstance(payload, dict):
+        payload = {}
+    payload["_exit_code"] = proc.returncode
+    payload["_stdout_tail"] = "\n".join(proc.stdout.splitlines()[-40:])
+    return payload
+
+
 def run_one(
     machine: str,
     job: dict,
@@ -392,17 +560,79 @@ def run_one(
 
     run_root = PROJECT_ROOT / "experiments" / "stage_a_screening" / "runs" / machine
     config_root = PROJECT_ROOT / "experiments" / "stage_a_screening" / "configs" / machine
+    no_trade_state_root = PROJECT_ROOT / "experiments" / "stage_a_screening" / "no_trade_state" / machine
     config_root.mkdir(parents=True, exist_ok=True)
     run_root.mkdir(parents=True, exist_ok=True)
+    no_trade_state_root.mkdir(parents=True, exist_ok=True)
     job["output_dir"] = str(run_root)
 
     config = algo_defaults(job)
+    config["run_id"] = job["run_id"]
+    config["timeframe"] = job["timeframe"]
     config["save_model"] = str(run_root / f"{job['run_id']}_policy.zip")
     config["results_file"] = str(run_root / f"{job['run_id']}_summary.json")
     config["save_config"] = str(run_root / f"{job['run_id']}_config_out.json")
+    config["return_trace_file"] = str(run_root / f"{job['run_id']}_return_trace.csv")
+    config["training_progress_file"] = str(run_root / f"{job['run_id']}_training_progress.json")
+    config["progress_update_interval_steps"] = max(250, min(2000, int(job["timesteps"]) // 100))
+    config["no_trade_preflight_file"] = str(no_trade_state_root / f"{job['run_id']}.json")
+    config["no_trade_preflight_max_steps"] = int(job.get("no_trade_preflight_max_steps") or 5000)
+    config["no_trade_preflight_hold_bars"] = int(job.get("no_trade_preflight_hold_bars") or 16)
+    config["no_trade_preflight_min_trades"] = int(job.get("no_trade_preflight_min_trades") or 1)
+    job["training_progress_file"] = config["training_progress_file"]
+    job["no_trade_preflight_file"] = config["no_trade_preflight_file"]
+    write_training_progress(config["training_progress_file"], job, "registered", 0.0, "config written; training not started")
     config_path = config_root / f"{job['run_id']}.json"
     write_json(config_path, config)
     job["config"] = str(config_path)
+
+    preflight = run_no_trade_preflight(config_path, Path(config["no_trade_preflight_file"]), config)
+    job["no_trade_preflight"] = preflight
+    job["no_trade_preflight_passed"] = bool(preflight.get("preflight_passed"))
+    job["no_trade_preflight_diagnosis"] = preflight.get("diagnosis")
+    write_training_progress(
+        config["training_progress_file"],
+        job,
+        "no_trade_preflight_passed" if job["no_trade_preflight_passed"] else "blocked_no_trade_preflight",
+        0.0,
+        (
+            f"no-trade preflight diagnosis={preflight.get('diagnosis')} "
+            f"closed_trades={preflight.get('closed_trades')} "
+            f"orders={preflight.get('entry_orders_submitted')}"
+        ),
+    )
+    if not job["no_trade_preflight_passed"]:
+        job["status"] = "blocked_no_trade_preflight"
+        job["failure_reason"] = (
+            f"no_trade_preflight_failed: {preflight.get('diagnosis')} "
+            f"closed_trades={preflight.get('closed_trades')} "
+            f"orders={preflight.get('entry_orders_submitted')}"
+        )
+        record_stage31_event(
+            machine,
+            job,
+            event_type="blocked_no_trade_preflight",
+            status=job["status"],
+            config=config,
+            detail="Forced-action no-trade preflight failed before training.",
+            failure_reason=job["failure_reason"],
+        )
+        notify_telegram(
+            f"stage31:{machine}:{job.get('run_id', 'unknown')}:blocked_no_trade_preflight",
+            "Project 3 Stage 3.1 no-trade preflight blocked run",
+            stage31_message(machine, job, job["status"], job["failure_reason"], next_job=next_job),
+        )
+        persist_active_state()
+        write_report(
+            machine,
+            "blocked_no_trade_preflight",
+            jobs or [job],
+            active_job=job,
+            detail=job["failure_reason"],
+            next_job=next_job,
+        )
+        return job
+
     job["trial_id"] = record_stage31_event(
         machine,
         job,
@@ -413,6 +643,7 @@ def run_one(
     )
 
     job["status"] = "training"
+    write_training_progress(config["training_progress_file"], job, "subprocess_starting", 0.0, "agent-multi seed_sweep subprocess starting")
     record_stage31_event(
         machine,
         job,
@@ -454,14 +685,42 @@ def run_one(
             "--run_tag",
             "project3_stage31_firstwave",
         ]
-        proc = subprocess.run(
-            cmd,
-            cwd=AGENT_MULTI_ROOT,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            timeout=timeout_minutes * 60,
-        )
+        stdout_log = run_root / f"{job['run_id']}_subprocess_stdout.log"
+        aborted_reason = ""
+        with stdout_log.open("w", encoding="utf-8") as stdout_handle:
+            proc = subprocess.Popen(
+                cmd,
+                cwd=AGENT_MULTI_ROOT,
+                text=True,
+                stdout=stdout_handle,
+                stderr=subprocess.STDOUT,
+                start_new_session=True,
+            )
+            deadline = datetime.now(timezone.utc).timestamp() + timeout_minutes * 60
+            while proc.poll() is None:
+                if datetime.now(timezone.utc).timestamp() >= deadline:
+                    aborted_reason = f"training_timeout_after_{timeout_minutes}_minutes"
+                    terminate_process_group(proc)
+                    break
+                reason = no_trade_abort_reason(config["training_progress_file"])
+                if reason:
+                    aborted_reason = reason
+                    terminate_process_group(proc)
+                    break
+                try:
+                    proc.wait(timeout=NO_TRADE_POLL_SECONDS)
+                except subprocess.TimeoutExpired:
+                    continue
+            if proc.poll() is None:
+                try:
+                    proc.wait(timeout=30)
+                except subprocess.TimeoutExpired:
+                    terminate_process_group(proc, kill=True)
+                    proc.wait(timeout=30)
+        stdout_text = read_tail(stdout_log)
+        if aborted_reason and proc.returncode == 0:
+            proc.returncode = 124
+        job["no_trade_abort_reason"] = aborted_reason
     except Exception as exc:
         job["status"] = "failed"
         job["failure_reason"] = f"training_failed: {exc}"
@@ -485,8 +744,22 @@ def run_one(
             release_gpu_lock()
 
     job["exit_code"] = proc.returncode
-    job["stdout_tail"] = "\n".join(proc.stdout.splitlines()[-80:])
-    job["status"] = "complete" if proc.returncode == 0 else "failed"
+    job["stdout_tail"] = "\n".join(str(locals().get("stdout_text", "") or "").splitlines()[-80:])
+    if job.get("no_trade_abort_reason"):
+        job["status"] = "blocked_no_trade_early_abort"
+        job["failure_reason"] = job["no_trade_abort_reason"]
+    else:
+        job["status"] = "complete" if proc.returncode == 0 else "failed"
+    write_training_progress(
+        config["training_progress_file"],
+        job,
+        "subprocess_complete" if proc.returncode == 0 else job["status"],
+        100.0 if proc.returncode == 0 else max(
+            0.0,
+            safe_float(read_json(Path(config["training_progress_file"]), {}).get("progress_percent")),
+        ),
+        job.get("failure_reason") or "agent-multi seed_sweep subprocess finished",
+    )
     record_stage31_event(
         machine,
         job,
@@ -494,7 +767,7 @@ def run_one(
         status=job["status"],
         config=config,
         detail="Stage 3.1 training subprocess finished.",
-        failure_reason=None if proc.returncode == 0 else "nonzero_exit_code",
+        failure_reason=None if proc.returncode == 0 else job.get("failure_reason") or "nonzero_exit_code",
     )
     notify_telegram(
         f"stage31:{machine}:{job.get('run_id', 'unknown')}:{job['status']}",

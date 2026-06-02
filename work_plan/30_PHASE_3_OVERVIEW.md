@@ -1,5 +1,42 @@
 # Phase 3 Overview — Systematic Experiments
 
+## 2026-05-23 Active Framing: Weekly-Retrained Data-First Portfolio System
+
+This document is updated to match the current business mechanics. Older text in
+this file about a broad static PPO/SAC/DQN matrix is preserved only as
+historical context. Active Phase 3 work follows:
+
+- `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+- `PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md`
+- `PROJECT3_STAGE3X_AGENT_SPEC_KIT_2026_05_14.md`
+
+The system we are trying to build retrains or updates over the weekend and
+trades only the following week. Therefore the primary evaluation unit is a
+rolling weekly anchor:
+
+1. train on past data available before the validation week;
+2. validate on the immediately following week or a small recent-week bundle;
+3. simulate/test the next week only;
+4. repeat across many historical weekly anchors;
+5. aggregate next-week performance after costs, broker rules, and Friday
+   force-close constraints.
+
+Phase 3 now optimizes the data contract first:
+
+- target asset;
+- cross-asset input assets;
+- free and paid data-source masks;
+- feature families and feature subsets;
+- preprocessing profile;
+- weekly calendar/event context;
+- SAC hyperparameters;
+- later portfolio allocation and no-trade/risk supervisor parameters.
+
+Negative returns in a tiny smoke run are not a scientific or business blocker.
+They are optimizer feedback. Mechanical failures still block work: Stage C
+rows, missing evidence, bad hashes, impossible accounting, all-no-trade, hard
+overtrading, broker-policy violations, or Friday force-close violations.
+
 **Phase goal:** Use Project 2's best RL agents (PPO, SAC, DQN configurations) to systematically evaluate which combinations of (trading asset, simulation timeframe, feature input set, feature engineering technique) produce the best RL trading policies on held-out data.
 
 **Phase output:** Evidence-based ranking of data sources and feature techniques. `PROJECT_3_FINAL_REPORT.md` answers: which data combinations actually improve RL trading agent performance?
@@ -29,9 +66,13 @@ The "machine assignment" tables below describe which machine runs which workers.
 
 Project 2 evaluated: "Can RL find tradeable signal in BTC/ETH 1h with 12 technical features?"
 
-Project 3 evaluates: "With comprehensive data and state-of-the-art features, which combinations of (asset, timeframe, feature set) yield best RL policies?"
+Project 3 now evaluates: "Can a weekly retrain loop, using the right data and
+preprocessing per asset, produce repeated next-week portfolio edge after costs?"
 
-The RL algorithm itself (PPO, SAC, DQN) is held FIXED at Project 2's best-performing configuration. Project 3 varies inputs, not algorithms.
+The first active model lane is SAC actor-critic because it is the current
+best-fit continuous-control baseline. PPO/DQN remain comparators after the
+data/input/preprocessing search is behaving mechanically. Hyperparameters are
+not guessed; they become optimizer genes after the input contract is auditable.
 
 ---
 
@@ -54,18 +95,23 @@ These are 4 independent variables. Phase 3 systematically explores combinations.
 
 | Stage | Document | Purpose |
 |-------|----------|---------|
-| 3.1 | `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` | Define experimental design, execute experiments |
-| 3.2 | `32_STAGE_3.2_RESULTS_SYNTHESIS.md` | Aggregate findings, produce final report |
+| 3.1 / 3X | `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` | Define weekly walk-forward data/input/preprocessing experiments |
+| 3X | `PHASE_3X_UNSUPERVISED_CAUSAL_AUDIT.md` | Optional narrow unsupervised/causal audit lane for top candidates only |
+| 3.2 | `32_STAGE_3.2_RESULTS_SYNTHESIS.md` | Aggregate weekly and portfolio findings |
 
 ---
 
 ## 4. Phase 3 Standing Rules
 
-### Rule P3.1: Use Project 2 best configurations
+### Rule P3.1: Optimize the production-relevant object
 
-For RL algorithms (PPO, SAC, DQN), use the best-performing hyperparameter configurations identified in Project 2 (Part II-7 pilots + post-pilot tuning). Document exact configs in Stage 3.1.
+The production-relevant object is the weekend retrain plus next-week trading
+loop. A model/configuration is judged by repeated weekly anchors, not by
+pretending it must trade unchanged for a year.
 
-DO NOT redo Project 2's hyperparameter optimization. Phase 3 isolates the effect of data/features, not algorithm tuning.
+SAC hyperparameters, preprocessing parameters, input masks, asset choices, and
+later portfolio weights are optimizer genes. Do not hand-pick them after seeing
+returns.
 
 ### Rule P3.2: Held-out discipline strict
 
@@ -87,11 +133,19 @@ This protects against post-hoc cherry-picking.
 
 ### Rule P3.4: Sample efficiency in experimentation
 
-With ~10+ trading assets × 4 timeframes × multiple feature combinations × 3 seeds, the combinatorial space is enormous. Use staged screening:
+With many assets, input sources, preprocessing options, weekly anchors, seeds,
+and SAC hyperparameters, the combinatorial space is enormous. Use staged
+screening:
 
-- **Stage A (screening):** Quick low-budget runs (small total_timesteps) on broad coverage to identify promising configurations
-- **Stage B (validation):** Full-budget runs (high total_timesteps) on top configurations from Stage A
-- **Stage C (held-out):** Single deterministic rollout on 2025 data per validated candidate
+- **CPU data screen:** coverage, leakage, target relation, redundancy, causal
+  plausibility, and cost-aware proxy sanity.
+- **Tiny smoke:** small train/validation/test windows to prove data reaches the
+  model, trades exist, evidence is valid, and broker policy is respected.
+- **Micro-NSGA:** DEAP/NSGA search over data, preprocessing, SAC hparams, and
+  weekly anchors.
+- **Serious validation:** repeated weekly walk-forward anchors across regimes,
+  seeds, and costs.
+- **Stage C:** still a one-shot final heldout only after promotion gates pass.
 
 ### Rule P3.5: Cancel mediocre subscriptions per Rule M.10
 
@@ -120,6 +174,10 @@ TradingAgents, offline RL, Decision Transformer, and time-series foundation-mode
 During Stage 3.1, the supervisor must keep Omega, Dragon, and Gamma assigned to approved Stage A/B/C work whenever safe runnable jobs exist. Empty one-shot queues are not a valid idle reason. The supervisor must refill Stage A queues from the pre-registered matrix with `_scripts/workers/stage31_expand_matrix_queue_worker.py`, respect GPU locks, and report any idle machine with a concrete reason and next dispatch condition.
 
 Omega may run light CPU experiments, synthesis, validation, or input-prep work while also coordinating. Dragon and Gamma should run GPU-heavy jobs when free and fall back to non-GPU validation/synthesis only when GPU work is blocked or unavailable.
+
+### Rule P3.11: Unsupervised/causal lanes are paired overlays
+
+The Phase 3X unsupervised/causal lane is allowed only as a controlled overlay for top candidates, beginning with `ETHUSDT 4h + SAC + tech_stat`. It may create train-only regime features, OOD scores, feature-stability reports, and causal/leakage audits. It may not replace the core PPO/SAC/DQN matrix, fit on validation/Stage C data, or promote feature masks without registered paired RL variants and multiple-testing accounting.
 
 ---
 

@@ -11,6 +11,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
 ACTIVE_STATUSES = {"training", "running", "registered", "preparing_input"}
+NO_TRADE_ABORT_PROGRESS_PERCENT = float(os.environ.get("PROJECT3_NO_TRADE_ABORT_PROGRESS_PERCENT", "20"))
 
 
 def read_json(path: Path, default):
@@ -25,6 +26,38 @@ def write_json(path: Path, payload) -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     tmp.replace(path)
+
+
+def safe_float(value, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def no_trade_abort_reason(job: dict) -> str:
+    progress_path = job.get("training_progress_file")
+    if not progress_path:
+        return ""
+    progress = read_json(Path(progress_path), {})
+    if not isinstance(progress, dict):
+        return ""
+    pct = safe_float(progress.get("progress_percent"))
+    if pct < NO_TRADE_ABORT_PROGRESS_PERCENT:
+        return ""
+    if "trades_total" not in progress or progress.get("trades_total") in (None, ""):
+        return (
+            f"progress {pct:.2f}% reached but trades_total is missing; "
+            "telemetry contract violated"
+        )
+    trades = safe_float(progress.get("trades_total"))
+    if trades > 0:
+        return ""
+    diagnosis = progress.get("no_trade_diagnosis") or "no_trade_detected"
+    return (
+        f"progress {pct:.2f}% reached with trades_total=0 "
+        f"(diagnosis={diagnosis}); aborting to avoid wasting compute"
+    )
 
 
 def active_config_stems() -> set[str]:
@@ -48,6 +81,19 @@ def active_config_stems() -> set[str]:
     return stems
 
 
+def active_worker_running(machine: str) -> bool:
+    proc = subprocess.run(
+        "ps -eo args= | grep 'stage31_agent_multi_run_worker.py' | grep -v grep || true",
+        shell=True,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=10,
+    )
+    needle = f"--machine {machine}"
+    return any(needle in line for line in proc.stdout.splitlines())
+
+
 def summary_matches(machine: str, job: dict) -> list[Path]:
     asset = job.get("asset")
     timeframe = job.get("timeframe")
@@ -68,28 +114,46 @@ def reconcile(machine: str) -> dict:
         return {"machine": machine, "error": "queue_not_list"}
 
     active = active_config_stems()
+    worker_running = active_worker_running(machine)
     changed: list[str] = []
+    stale_reset: list[str] = []
+    no_trade_blocked: list[str] = []
     for job in jobs:
         status = str(job.get("status") or "pending")
         run_id = str(job.get("run_id") or "")
         if status not in ACTIVE_STATUSES or run_id in active:
             continue
-        matches = summary_matches(machine, job)
-        if not matches:
+        no_trade_reason = no_trade_abort_reason(job)
+        if no_trade_reason:
+            job["status"] = "blocked_no_trade_early_abort"
+            job["exit_code"] = job.get("exit_code") or 124
+            job["failure_reason"] = no_trade_reason
+            job["no_trade_abort_reason"] = no_trade_reason
+            job["reconciled_from_no_trade_progress"] = True
+            no_trade_blocked.append(run_id)
             continue
-        job["status"] = "complete"
-        job["exit_code"] = 0
-        job["reconciled_from_summary"] = True
-        job["summary_path"] = str(matches[-1])
-        changed.append(run_id)
+        matches = summary_matches(machine, job)
+        if matches:
+            job["status"] = "complete"
+            job["exit_code"] = 0
+            job["reconciled_from_summary"] = True
+            job["summary_path"] = str(matches[-1])
+            changed.append(run_id)
+            continue
+        if not worker_running:
+            job["status"] = "pending"
+            job["reconciled_from_stale_active"] = True
+            stale_reset.append(run_id)
 
-    if changed:
+    if changed or stale_reset or no_trade_blocked:
         write_json(queue_path, jobs)
 
     return {
         "machine": machine,
         "active": sorted(active),
         "reconciled": changed,
+        "stale_active_reset": stale_reset,
+        "no_trade_blocked": no_trade_blocked,
         "counts": dict(Counter((job.get("status") or "pending") for job in jobs)),
     }
 

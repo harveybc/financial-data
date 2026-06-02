@@ -1,0 +1,29 @@
+{
+  "accepted": true,
+  "config_count": 36,
+  "config_issue_count": 0,
+  "generated_at": "2026-05-19T10:34:59.528094+00:00",
+  "issue_count": 0,
+  "issues": [],
+  "manifest_file": "/home/harveybc/Documents/GitHub/agent-multi/experiments/stage3x_micro_nsga_plan/stage3x_sac_smoke_plan_manifest.json",
+  "manifest_sha256": "415e97d583b0ab117f61f19b13f76604b644bc71e53d63b323f839dac3859f5b",
+  "request_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage3x_micro_nsga_plan/stage3x_micro_nsga_plan.json",
+  "schema_version": "project3_stage3x_sac_smoke_plan_acceptance_v1",
+  "selected_contract_ids": [
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p03__selected__micro_nsga_g00_i00_00",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p04__selected__micro_nsga_g00_i01_00",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p05__selected__micro_nsga_g00_i02_00",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p03__selected__micro_nsga_g00_i00_01",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p04__selected__micro_nsga_g00_i01_01",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p05__selected__micro_nsga_g00_i02_01",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p03__selected__micro_nsga_g00_i00_02",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p04__selected__micro_nsga_g00_i01_02",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p05__selected__micro_nsga_g00_i02_02",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p03__selected__micro_nsga_g00_i00_03",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p04__selected__micro_nsga_g00_i01_03",
+    "btcusdt_perp__4h__sota_low_cost__mutual_info_topk__p05__selected__micro_nsga_g00_i02_03"
+  ],
+  "stage_c_access": "DENIED",
+  "status": "ACCEPTED_LOCKED_SMOKE_PLAN",
+  "training_launched": false
+}

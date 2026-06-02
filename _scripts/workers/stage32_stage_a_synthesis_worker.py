@@ -8,6 +8,7 @@ import os
 import statistics
 from collections import defaultdict
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 
 
@@ -68,22 +69,38 @@ def algo_from_config(config: dict) -> str:
     return plugin or "unknown"
 
 
+@lru_cache(maxsize=None)
 def buy_hold_return(input_csv: str) -> float | None:
     path = Path(input_csv)
     if not path.exists():
         return None
-    first = None
-    last = None
     try:
-        with path.open("r", encoding="utf-8", newline="") as handle:
-            reader = csv.DictReader(handle)
-            for row in reader:
-                close = safe_float(row.get("CLOSE"))
-                if close is None or close == 0:
-                    continue
-                if first is None:
-                    first = close
-                last = close
+        with path.open("rb") as handle:
+            header = handle.readline().decode("utf-8", "ignore").strip()
+            first_line = handle.readline().decode("utf-8", "ignore").strip()
+            if not header or not first_line:
+                return None
+            columns = next(csv.reader([header]))
+            try:
+                close_idx = columns.index("CLOSE")
+            except ValueError:
+                return None
+            handle.seek(0, os.SEEK_END)
+            pos = handle.tell()
+            tail = b""
+            while pos > 0:
+                step = min(8192, pos)
+                pos -= step
+                handle.seek(pos)
+                tail = handle.read(step) + tail
+                lines = [line for line in tail.splitlines() if line.strip()]
+                if len(lines) >= 2:
+                    break
+            last_line = lines[-1].decode("utf-8", "ignore").strip() if lines else ""
+        first_row = next(csv.reader([first_line]))
+        last_row = next(csv.reader([last_line]))
+        first = safe_float(first_row[close_idx] if close_idx < len(first_row) else None)
+        last = safe_float(last_row[close_idx] if close_idx < len(last_row) else None)
     except Exception:
         return None
     if first is None or last is None or first == 0:

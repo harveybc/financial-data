@@ -57,7 +57,28 @@ MACHINE_PLANS = {
         max_new_per_tick=48,
     ),
     "gamma": MachinePlan(
-        assets=("eurusd", "usdjpy"),
+        assets=(
+            "eurusd",
+            "usdjpy",
+            "audusd",
+            "gbpusd",
+            "usdcad",
+            "usdchf",
+            "nzdusd",
+            "eurgbp",
+            "eurjpy",
+            "gbpjpy",
+            "btcusdt",
+            "ethusdt",
+            "btcusdt_perp",
+            "ethusdt_perp",
+            "solusdt",
+            "bnbusdt",
+            "xrpusdt",
+            "adausdt",
+            "dogeusdt",
+            "linkusdt",
+        ),
         timeframes=("15m", "1h", "4h"),
         presets=(
             "baseline_12",
@@ -67,6 +88,8 @@ MACHINE_PLANS = {
             "learned_lstm",
             "learned_cnn",
             "fx_full",
+            "crypto_full",
+            "sota_low_cost",
             "kitchen_sink_guarded",
         ),
         algos=("sac", "ppo", "dqn"),
@@ -128,8 +151,48 @@ def asset_available(asset: str, timeframe: str) -> bool:
     return (ROOT / "features" / "trading_asset_data" / asset / f"{timeframe}.parquet").exists()
 
 
+def is_fx_asset(asset: str) -> bool:
+    return asset in {
+        "eurusd",
+        "usdjpy",
+        "audusd",
+        "gbpusd",
+        "usdcad",
+        "usdchf",
+        "nzdusd",
+        "eurgbp",
+        "eurjpy",
+        "gbpjpy",
+    }
+
+
+def is_crypto_asset(asset: str) -> bool:
+    return asset.endswith("usdt") or asset.endswith("_perp")
+
+
+def preset_compatible(asset: str, preset: str) -> bool:
+    if preset == "fx_full":
+        return is_fx_asset(asset)
+    if preset in {"crypto_full", "sota_low_cost"}:
+        return is_crypto_asset(asset)
+    return True
+
+
 def run_id(asset: str, timeframe: str, preset: str, algo: str, seed: int, timesteps: int) -> str:
     return f"{asset}_{timeframe}_{preset}_{algo}_s{seed}_{timesteps}"
+
+
+def all_known_run_ids() -> set[str]:
+    queues_dir = ROOT / "experiments" / "stage_a_screening" / "queues"
+    known: set[str] = set()
+    for path in queues_dir.glob("*.json"):
+        if path.name.endswith(".remote.json"):
+            continue
+        queue = read_json(path, [])
+        if not isinstance(queue, list):
+            continue
+        known.update(str(job.get("run_id")) for job in queue if job.get("run_id"))
+    return known
 
 
 def candidate_jobs(machine: str, plan: MachinePlan) -> list[dict]:
@@ -139,6 +202,8 @@ def candidate_jobs(machine: str, plan: MachinePlan) -> list[dict]:
             if not asset_available(asset, timeframe):
                 continue
             for preset in plan.presets:
+                if not preset_compatible(asset, preset):
+                    continue
                 for algo in plan.algos:
                     for seed in plan.seeds:
                         jobs.append(
@@ -162,7 +227,7 @@ def expand_machine(machine: str, target_pending: int) -> dict:
     plan = MACHINE_PLANS[machine]
     queue_path = ROOT / "experiments" / "stage_a_screening" / "queues" / f"{machine}.json"
     queue = read_json(queue_path, [])
-    existing = {job.get("run_id") for job in queue}
+    existing = all_known_run_ids()
     pending = sum(1 for job in queue if is_runnable_status(job.get("status", "pending")))
     appended = []
     if pending < target_pending:

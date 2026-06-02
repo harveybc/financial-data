@@ -1,5 +1,13 @@
 # Phase 2 Overview — Feature Engineering
 
+## 2026-05-23 Note
+
+Phase 2 remains active reference material. The weekly-retrained Stage 3X system
+uses these features as a searchable input universe, not as a fixed hand-picked
+bundle. Feature generation must preserve point-in-time safety, source
+provenance, and enough metadata for Stage 3X to vary `target_asset`,
+`input_asset_mask`, feature families, preprocessing, and weekly anchors.
+
 **Phase goal:** Convert raw data acquired in Phase 1 into a comprehensive feature library across multiple periodicities and engineering techniques. Produce features ready for use as RL agent observation inputs.
 
 **Phase output:** Feature library at `/home/harveybc/Documents/GitHub/financial-data/features/` with:
@@ -49,10 +57,10 @@ Both go into Phase 3 RL agent observation space.
 
 | Stage | Document | Purpose |
 |-------|----------|---------|
-| 2.1 | `21_STAGE_2.1_DOWNSAMPLING_AND_RESAMPLING.md` | Multi-timeframe alignment of all data |
-| 2.2 | `22_STAGE_2.2_TECHNICAL_AND_STATISTICAL_FEATURES.md` | Standard + advanced statistical features |
-| 2.3 | `23_STAGE_2.3_SIGNAL_DECOMPOSITION_FEATURES.md` | Wavelet, Hilbert, multitaper, EMD, fractional differentiation |
-| 2.4 | `24_STAGE_2.4_LEARNED_REPRESENTATIONS.md` | Autoencoders + embeddings (CVAE, transformer, LSTM via feature-extractor repo) |
+| 2.1 | `21_STAGE_2_1_DOWNSAMPLING_AND_RESAMPLING.md` | Multi-timeframe alignment of all data |
+| 2.2 | `22_STAGE_2_2_TECHNICAL_AND_STATISTICAL_FEATURES.md` | Standard + advanced statistical features |
+| 2.3 | `23_STAGE_2_3_SIGNAL_DECOMPOSITION_FEATURES.md` | Wavelet, Hilbert, multitaper, EMD, fractional differentiation |
+| 2.4 | `24_STAGE_2_4_LEARNED_REPRESENTATIONS.md` | Autoencoders + embeddings (CVAE, transformer, LSTM via feature-extractor repo) |
 
 ---
 
@@ -159,4 +167,4 @@ This structure enables Phase 3 to combine trading asset features + cross-source 
 
 ## 7. Approval to Begin Phase 2
 
-User approves Phase 2 overview after Phase 1 completion approved. Agent reads `21_STAGE_2.1_DOWNSAMPLING_AND_RESAMPLING.md` and begins.
+User approves Phase 2 overview after Phase 1 completion approved. Agent reads `21_STAGE_2_1_DOWNSAMPLING_AND_RESAMPLING.md` and begins.

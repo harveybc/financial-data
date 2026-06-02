@@ -1,0 +1,518 @@
+{
+  "anchor_count": 4,
+  "anchors": [
+    {
+      "test_end": "2024-06-09",
+      "test_start": "2024-06-03",
+      "train_end": "2024-05-26",
+      "train_start": "2024-05-13",
+      "validation_end": "2024-06-02",
+      "validation_start": "2024-05-27",
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "test_end": "2024-06-16",
+      "test_start": "2024-06-10",
+      "train_end": "2024-06-02",
+      "train_start": "2024-05-20",
+      "validation_end": "2024-06-09",
+      "validation_start": "2024-06-03",
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "test_end": "2024-06-23",
+      "test_start": "2024-06-17",
+      "train_end": "2024-06-09",
+      "train_start": "2024-05-27",
+      "validation_end": "2024-06-16",
+      "validation_start": "2024-06-10",
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "test_end": "2024-06-30",
+      "test_start": "2024-06-24",
+      "train_end": "2024-06-16",
+      "train_start": "2024-06-03",
+      "validation_end": "2024-06-23",
+      "validation_start": "2024-06-17",
+      "weekly_anchor_id": "anchor_2024-06-24"
+    }
+  ],
+  "contract_count": 12,
+  "contracts": [
+    {
+      "broker_profile": "crypto_exchange_perp",
+      "contract_id": "btcusdt_perp__weekly__anchor_2024-06-03",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "btcusdt_perp",
+      "test_end": "2024-06-09",
+      "test_start": "2024-06-03",
+      "train_end": "2024-05-26",
+      "train_start": "2024-05-13",
+      "validation_end": "2024-06-02",
+      "validation_start": "2024-05-27",
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "eurusd__weekly__anchor_2024-06-03",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "eurusd",
+      "test_end": "2024-06-09",
+      "test_start": "2024-06-03",
+      "train_end": "2024-05-26",
+      "train_start": "2024-05-13",
+      "validation_end": "2024-06-02",
+      "validation_start": "2024-05-27",
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "audusd__weekly__anchor_2024-06-03",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "audusd",
+      "test_end": "2024-06-09",
+      "test_start": "2024-06-03",
+      "train_end": "2024-05-26",
+      "train_start": "2024-05-13",
+      "validation_end": "2024-06-02",
+      "validation_start": "2024-05-27",
+      "weekly_anchor_id": "anchor_2024-06-03"
+    },
+    {
+      "broker_profile": "crypto_exchange_perp",
+      "contract_id": "btcusdt_perp__weekly__anchor_2024-06-10",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "btcusdt_perp",
+      "test_end": "2024-06-16",
+      "test_start": "2024-06-10",
+      "train_end": "2024-06-02",
+      "train_start": "2024-05-20",
+      "validation_end": "2024-06-09",
+      "validation_start": "2024-06-03",
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "eurusd__weekly__anchor_2024-06-10",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "eurusd",
+      "test_end": "2024-06-16",
+      "test_start": "2024-06-10",
+      "train_end": "2024-06-02",
+      "train_start": "2024-05-20",
+      "validation_end": "2024-06-09",
+      "validation_start": "2024-06-03",
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "audusd__weekly__anchor_2024-06-10",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "audusd",
+      "test_end": "2024-06-16",
+      "test_start": "2024-06-10",
+      "train_end": "2024-06-02",
+      "train_start": "2024-05-20",
+      "validation_end": "2024-06-09",
+      "validation_start": "2024-06-03",
+      "weekly_anchor_id": "anchor_2024-06-10"
+    },
+    {
+      "broker_profile": "crypto_exchange_perp",
+      "contract_id": "btcusdt_perp__weekly__anchor_2024-06-17",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "btcusdt_perp",
+      "test_end": "2024-06-23",
+      "test_start": "2024-06-17",
+      "train_end": "2024-06-09",
+      "train_start": "2024-05-27",
+      "validation_end": "2024-06-16",
+      "validation_start": "2024-06-10",
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "eurusd__weekly__anchor_2024-06-17",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "eurusd",
+      "test_end": "2024-06-23",
+      "test_start": "2024-06-17",
+      "train_end": "2024-06-09",
+      "train_start": "2024-05-27",
+      "validation_end": "2024-06-16",
+      "validation_start": "2024-06-10",
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "audusd__weekly__anchor_2024-06-17",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "audusd",
+      "test_end": "2024-06-23",
+      "test_start": "2024-06-17",
+      "train_end": "2024-06-09",
+      "train_start": "2024-05-27",
+      "validation_end": "2024-06-16",
+      "validation_start": "2024-06-10",
+      "weekly_anchor_id": "anchor_2024-06-17"
+    },
+    {
+      "broker_profile": "crypto_exchange_perp",
+      "contract_id": "btcusdt_perp__weekly__anchor_2024-06-24",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "ethusdt_perp",
+        "eurusd",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "btcusdt_perp",
+      "test_end": "2024-06-30",
+      "test_start": "2024-06-24",
+      "train_end": "2024-06-16",
+      "train_start": "2024-06-03",
+      "validation_end": "2024-06-23",
+      "validation_start": "2024-06-17",
+      "weekly_anchor_id": "anchor_2024-06-24"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "eurusd__weekly__anchor_2024-06-24",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "audusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "eurusd",
+      "test_end": "2024-06-30",
+      "test_start": "2024-06-24",
+      "train_end": "2024-06-16",
+      "train_start": "2024-06-03",
+      "validation_end": "2024-06-23",
+      "validation_start": "2024-06-17",
+      "weekly_anchor_id": "anchor_2024-06-24"
+    },
+    {
+      "broker_profile": "oanda_us_fx",
+      "contract_id": "audusd__weekly__anchor_2024-06-24",
+      "feature_family_mask": [
+        "returns",
+        "volatility",
+        "trend",
+        "momentum",
+        "liquidity",
+        "seasonal_sin_cos",
+        "force_close_state"
+      ],
+      "input_asset_mask": [
+        "btcusdt_perp",
+        "ethusdt_perp",
+        "eurusd",
+        "gbpusd",
+        "usdjpy"
+      ],
+      "input_source_mask": [
+        "own_asset_ohlcv",
+        "cross_asset_ohlcv",
+        "technical_statistical",
+        "seasonal_calendar",
+        "broker_force_close_context"
+      ],
+      "own_asset_inputs": true,
+      "preprocessing_profile": "stage3x_weekly_default_v1",
+      "target_asset": "audusd",
+      "test_end": "2024-06-30",
+      "test_start": "2024-06-24",
+      "train_end": "2024-06-16",
+      "train_start": "2024-06-03",
+      "validation_end": "2024-06-23",
+      "validation_start": "2024-06-17",
+      "weekly_anchor_id": "anchor_2024-06-24"
+    }
+  ],
+  "generated_at": "2026-05-24T01:09:20.437342+00:00",
+  "heldout_start": "2025-01-01",
+  "input_assets": [
+    "btcusdt_perp",
+    "ethusdt_perp",
+    "eurusd",
+    "audusd",
+    "gbpusd",
+    "usdjpy"
+  ],
+  "mode": "tiny",
+  "rules": {
+    "mechanical_blockers_remain_fail_closed": true,
+    "negative_returns_are_optimizer_objectives": true,
+    "stage_c_rows_forbidden": true,
+    "target_asset_is_distinct_from_input_asset_mask": true,
+    "test_window_is_next_week_only": true
+  },
+  "schema_version": "project3_stage3x_weekly_walk_forward_contract_v1",
+  "stage_c_access": "DENIED",
+  "stage_c_allowed": false,
+  "target_assets": [
+    "btcusdt_perp",
+    "eurusd",
+    "audusd"
+  ],
+  "test_days": 7,
+  "train_days": 14,
+  "training_launched": false,
+  "validation_days": 7
+}
