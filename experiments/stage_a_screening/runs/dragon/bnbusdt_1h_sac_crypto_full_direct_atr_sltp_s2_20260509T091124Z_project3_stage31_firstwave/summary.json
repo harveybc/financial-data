@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 8742.014332412762,
+  "total_return": -0.1257985667587238,
+  "max_drawdown_pct": 12.71701045159215,
+  "max_drawdown_money": 1271.916535900511,
+  "sharpe_ratio": -0.052969749368759214,
+  "sqn": -1.3051180111292855,
+  "trades_total": 554,
+  "trades_won": 213,
+  "trades_lost": 341,
+  "avg_trade_pnl": -2.270732251962531,
+  "episode_reward": -0.12579856675872453,
+  "episode_length": 53549,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/bnbusdt_1h_sac_crypto_full_direct_atr_sltp_s2_20260509T091124Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

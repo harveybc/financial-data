@@ -1,53 +1,57 @@
 {
-  "generated_at": "2026-05-03T07:24:09.821372+00:00",
+  "generated_at": "2026-06-17T10:22:13.156621+00:00",
   "machines": [
     {
       "action": "idle_no_pending",
       "active_run_ids": [],
       "busy": false,
       "counts": {
-        "complete": 152
+        "blocked_duplicate_kept_on_dragon": 774,
+        "blocked_duplicate_kept_on_gamma": 208,
+        "blocked_no_trade_early_abort": 2259,
+        "blocked_no_trade_preflight": 419,
+        "complete": 430,
+        "failed": 232
       },
-      "detail": "{\n  \"active\": [],\n  \"counts\": {\n    \"complete\": 152\n  },\n  \"machine\": \"omega\",\n  \"reconciled\": []\n}\nomega_maintenance: stage32_synthesis_recent",
+      "detail": "{\n  \"active\": [],\n  \"counts\": {\n    \"blocked_duplicate_kept_on_dragon\": 774,\n    \"blocked_duplicate_kept_on_gamma\": 208,\n    \"blocked_no_trade_early_abort\": 2259,\n    \"blocked_no_trade_preflight\": 419,\n    \"complete\": 430,\n    \"failed\": 232\n  },\n  \"machine\": \"omega\",\n  \"no_trade_blocked\": [],\n  \"reconciled\": [],\n  \"stale_active_reset\": []\n}\nqueue_expansion_skipped:not_gpu_worker\nomega_maintenance: stage32_synthesis_recent",
       "machine": "omega",
       "next_assignment_hint": "-",
       "next_assignment_run_id": null,
       "pending": 0
     },
     {
-      "action": "busy",
-      "active_run_ids": [
-        "btcusdt_perp_15m_tech_stat_decomp_sac_s0_50000"
-      ],
-      "busy": true,
+      "action": "idle_no_pending",
+      "active_run_ids": [],
+      "busy": false,
       "counts": {
-        "complete": 370,
-        "pending": 48,
-        "training": 1
+        "blocked_duplicate_cancelled_kept_on_gamma": 4,
+        "blocked_duplicate_kept_on_gamma": 21,
+        "blocked_duplicate_kept_on_omega": 16,
+        "blocked_resolved_rerouted_to_omega": 153,
+        "complete": 205
       },
-      "detail": "{\n  \"active\": [\n    \"btcusdt_perp_15m_tech_stat_decomp_sac_s0_50000\"\n  ],\n  \"counts\": {\n    \"complete\": 370,\n    \"pending\": 48,\n    \"training\": 1\n  },\n  \"machine\": \"dragon\",\n  \"reconciled\": []\n}",
+      "detail": "{\n  \"active\": [],\n  \"counts\": {\n    \"blocked_duplicate_cancelled_kept_on_gamma\": 4,\n    \"blocked_duplicate_kept_on_gamma\": 21,\n    \"blocked_duplicate_kept_on_omega\": 16,\n    \"blocked_resolved_rerouted_to_omega\": 153,\n    \"complete\": 205\n  },\n  \"machine\": \"dragon\",\n  \"no_trade_blocked\": [],\n  \"reconciled\": [],\n  \"stale_active_reset\": []\n}\n{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"machine\": \"dragon\",\n      \"target_pending\": 24,\n      \"pending_after\": 0,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json\"\n    }\n  ]\n}",
       "machine": "dragon",
-      "next_assignment_hint": "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000 (btcusdt_perp 15m sac tech_stat_decomp seed=1)",
-      "next_assignment_run_id": "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000",
-      "pending": 48
+      "next_assignment_hint": "-",
+      "next_assignment_run_id": null,
+      "pending": 0
     },
     {
-      "action": "busy",
-      "active_run_ids": [
-        "usdjpy_15m_learned_cnn_sac_s0_50000"
-      ],
-      "busy": true,
+      "action": "idle_no_pending",
+      "active_run_ids": [],
+      "busy": false,
       "counts": {
-        "blocked_resolved_rerouted_to_dragon": 3,
-        "complete": 284,
-        "pending": 48,
-        "training": 1
+        "blocked_duplicate_kept_on_dragon": 141,
+        "blocked_no_trade_early_abort": 580,
+        "blocked_resolved_rerouted_to_dragon": 80,
+        "blocked_resolved_rerouted_to_omega": 10,
+        "complete": 40
       },
-      "detail": "{\n  \"active\": [\n    \"usdjpy_15m_learned_cnn_sac_s0_50000\"\n  ],\n  \"counts\": {\n    \"blocked_resolved_rerouted_to_dragon\": 3,\n    \"complete\": 284,\n    \"pending\": 48,\n    \"training\": 1\n  },\n  \"machine\": \"gamma\",\n  \"reconciled\": []\n}",
+      "detail": "{\n  \"active\": [],\n  \"counts\": {\n    \"blocked_duplicate_kept_on_dragon\": 141,\n    \"blocked_no_trade_early_abort\": 580,\n    \"blocked_resolved_rerouted_to_dragon\": 80,\n    \"blocked_resolved_rerouted_to_omega\": 10,\n    \"complete\": 40\n  },\n  \"machine\": \"gamma\",\n  \"no_trade_blocked\": [],\n  \"reconciled\": [],\n  \"stale_active_reset\": []\n}\n{\n  \"ok\": true,\n  \"results\": [\n    {\n      \"machine\": \"gamma\",\n      \"target_pending\": 24,\n      \"pending_after\": 0,\n      \"appended\": 0,\n      \"appended_run_ids\": [],\n      \"queue\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json\"\n    }\n  ]\n}",
       "machine": "gamma",
-      "next_assignment_hint": "usdjpy_15m_learned_cnn_sac_s1_50000 (usdjpy 15m sac learned_cnn seed=1)",
-      "next_assignment_run_id": "usdjpy_15m_learned_cnn_sac_s1_50000",
-      "pending": 48
+      "next_assignment_hint": "-",
+      "next_assignment_run_id": null,
+      "pending": 0
     }
   ],
   "supervisor": {

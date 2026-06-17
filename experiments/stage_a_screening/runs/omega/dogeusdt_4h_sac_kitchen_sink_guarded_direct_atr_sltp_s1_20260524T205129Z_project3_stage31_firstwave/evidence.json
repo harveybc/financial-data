@@ -1,0 +1,49 @@
+{
+  "asset": "dogeusdt_4h",
+  "broker_profile": null,
+  "calendar_policy_id": null,
+  "config_hash": "e6bc1428a72a4d2cdb194173f42a017bf7c1acea7ce920ee60ca4a886799e5ed",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/dogeusdt/4h/kitchen_sink_guarded/train.csv",
+  "data_file_hash": "3d525894a5c1f6aac1b6dfc00cdff4d32106f9ac5bf9722318dc80b9cef530ce",
+  "feature_column_count": 0,
+  "feature_columns": null,
+  "feature_list_hash": null,
+  "generated_at": "2026-05-24T20:58:21Z",
+  "heldout_boundary": "2025-01-01",
+  "market_type": null,
+  "observation_state_fields": [
+    "equity_norm",
+    "position",
+    "prices",
+    "returns",
+    "steps_remaining_norm",
+    "unrealized_pnl_norm"
+  ],
+  "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+  "pipeline_plugin": "rl_pipeline",
+  "run_id": "dogeusdt_4h_sac_kitchen_sink_guarded_direct_atr_sltp_s1_20260524T205129Z_project3_stage31_firstwave",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 1,
+  "stage_c_authorized": false,
+  "timeframe": "4h",
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "dogeusdt_4h_sac_kitchen_sink_guarded_direct_atr_sltp_s1_20260524T205129Z_project3_stage31_firstwave::eval0",
+      "feature_column_count": 0,
+      "feature_list_hash": null,
+      "first_timestamp": "2019-09-02 16:00:00",
+      "last_timestamp": "2023-12-31 20:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/dogeusdt_4h_sac_kitchen_sink_guarded_direct_atr_sltp_s1_20260524T205129Z_project3_stage31_firstwave/return_trace.csv.meta.json",
+      "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+      "row_count": 9487,
+      "split": "evaluation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/dogeusdt_4h_sac_kitchen_sink_guarded_direct_atr_sltp_s1_20260524T205129Z_project3_stage31_firstwave/return_trace.csv",
+      "trace_file_sha256": "aa1a2bfea7421916a6cb7adf0ed46233da0141b0b881d6133701207132a083da"
+    }
+  ],
+  "trade_rate_band_id": null
+}

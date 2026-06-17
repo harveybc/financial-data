@@ -1,0 +1,146 @@
+schema_version: "project3_stage_b_pragmatic_diagnostic_manifest_v1"
+generated_at: "2026-05-13T02:44:47.862450+00:00"
+experiment_id: "stageb_ethusdt_4h_sac_pragmatic_diagnostic_v1"
+purpose: "targeted_stage_b_repair_and_feature_diagnostic"
+project_rules:
+  stage_c_allowed: false
+  stage_c_access: "DENIED"
+  heldout_start: "2025-01-01"
+  training_launch_allowed_by_this_manifest: false
+  requires_operator_approval_before_training: true
+  fixed_algorithms_only:
+    - "SAC"
+  do_not_modify_algorithms:
+    - "PPO"
+    - "SAC"
+    - "DQN"
+target:
+  asset: "ETHUSDT"
+  timeframe: "4h"
+  algorithm: "SAC"
+  base_feature_family: "tech_stat"
+seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+cost_scenarios:
+  -
+    name: "base"
+    fee_multiplier: 1.0
+    slippage_multiplier: 1.0
+    role: "minimum_realistic_cost"
+  -
+    name: "plus_50pct"
+    fee_multiplier: 1.5
+    slippage_multiplier: 1.5
+    role: "moderate_cost_stress"
+  -
+    name: "plus_100pct"
+    fee_multiplier: 2.0
+    slippage_multiplier: 2.0
+    role: "hard_cost_stress"
+feature_variants:
+  -
+    name: "baseline_12"
+    feature_family: "baseline"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Does the candidate beat a compact OHLCV baseline?"
+  -
+    name: "tech_stat_full"
+    feature_family: "technical_statistical"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Does the broad technical/statistical family still carry signal?"
+  -
+    name: "tech_stat_reduced_corr_v1"
+    feature_family: "technical_statistical_reduced"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Is the full tech_stat family too redundant/noisy?"
+  -
+    name: "tech_stat_volatility_only"
+    feature_family: "technical_statistical_volatility"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Are volatility features driving useful behavior?"
+  -
+    name: "tech_stat_trend_only"
+    feature_family: "technical_statistical_trend"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Are trend features driving useful behavior?"
+  -
+    name: "tech_stat_momentum_only"
+    feature_family: "technical_statistical_momentum"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Are momentum features driving useful behavior?"
+  -
+    name: "tech_stat_volume_liquidity_only"
+    feature_family: "technical_statistical_volume_liquidity"
+    source_family: "ohlcv"
+    status: "materialized_preheldout"
+    question: "Are volume/liquidity features driving useful behavior?"
+  -
+    name: "tech_stat_full_plus_train_only_regime_probs"
+    feature_family: "technical_statistical_plus_regime"
+    source_family: "ohlcv_train_only_regime"
+    status: "materialized_preheldout"
+    question: "Do train-only regime probabilities reduce bad exposure?"
+  -
+    name: "tech_stat_reduced_corr_v1_plus_train_only_regime_probs"
+    feature_family: "technical_statistical_reduced_plus_regime"
+    source_family: "ohlcv_train_only_regime"
+    status: "materialized_preheldout"
+    question: "Do regime probabilities help after redundancy reduction?"
+  -
+    name: "tech_stat_full_plus_train_only_ood_score"
+    feature_family: "technical_statistical_plus_ood"
+    source_family: "ohlcv_train_only_ood"
+    status: "materialized_preheldout"
+    question: "Can train-only OOD state reduce overtrading/drawdown?"
+matrix:
+  feature_variant_count: 10
+  seed_count: 5
+  cost_scenario_count: 3
+  planned_run_cells: 150
+  paired_design_required: true
+required_evidence_per_cell:
+  trace_schema_version: "stage_b_return_trace_v1"
+  evidence_schema_version: "project3_return_trace_evidence_v1"
+  required_splits:
+    - "evaluation"
+  required_files:
+    - "return_trace.csv"
+    - "return_trace.csv.meta.json"
+    - "evidence.json"
+  required_cost_scenarios:
+    - "base"
+    - "plus_50pct"
+    - "plus_100pct"
+  required_seed_set:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+external_infrastructure_status:
+  feature_variants_materialized: true
+  feature_variant_materialization_summary: "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/feature_variant_materialization_summary.json"
+  agent_multi_cost_scenarios_supported: true
+  agent_multi_known_baseline_plugins_supported: true
+  agent_multi_stageb_run_plan_dry_validated: true
+hard_blocks_before_training:
+  - "stage_b_operator_approval_missing"
+safety_invariants:
+  - "stage_c_access_must_remain_denied"
+  - "training_must_not_launch_from_manifest_alone"
+  - "all_runs_count_as_new_trials_for_dsr_pbo"
+promotion_policy:
+  diagnostic_results_do_not_unlock_stage_c: true
+  stage_c_requires_stage_b_approval_gate_pass: true
+  counts_as_new_trials_for_dsr_pbo: true
+  synthetic_data_allowed: false

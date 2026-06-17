@@ -1,0 +1,19 @@
+{
+  "asset": "adausdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-09T19:38:10.062658+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/adausdt/15m/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 199755,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/adausdt/15m.parquet"
+  ],
+  "split": "train",
+  "timeframe": "15m"
+}

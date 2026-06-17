@@ -1,0 +1,38 @@
+{
+  "counts_by_algo": {
+    "dqn": 12,
+    "ppo": 533,
+    "sac": 609
+  },
+  "counts_by_algo_timeframe": {
+    "dqn:15m": 9,
+    "dqn:1h": 2,
+    "dqn:4h": 1,
+    "ppo:15m": 208,
+    "ppo:1h": 172,
+    "ppo:4h": 153,
+    "sac:15m": 189,
+    "sac:1h": 213,
+    "sac:4h": 207
+  },
+  "counts_by_diagnosis": {
+    "missing_summary": 445,
+    "needs_continuous_action_trace": 89,
+    "needs_discrete_action_trace": 74,
+    "policy_deadband_collapse": 340,
+    "policy_hold_collapse": 206
+  },
+  "generated_at_utc": "2026-05-12T21:41:41.674722+00:00",
+  "index": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/index.csv",
+  "max_rows_per_trace": 0,
+  "no_trade_runs": 1154,
+  "outputs": {
+    "csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/hardening/no_trade_diagnostic_report.csv",
+    "markdown": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/hardening/no_trade_diagnostic_report.md"
+  },
+  "schema_version": "project3_stage31_no_trade_diagnostic_v1",
+  "total_runs": 4933,
+  "trace_files_missing": 608,
+  "trace_files_scanned": 546,
+  "trace_scan_enabled": true
+}

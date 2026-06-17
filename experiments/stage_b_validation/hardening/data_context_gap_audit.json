@@ -1,0 +1,206 @@
+{
+  "gaps": [
+    "MODEL_READY_DATA_LACKS_EXPLICIT_TIME_TO_FRIDAY_CONTEXT",
+    "OBSERVATION_STATE_LACKS_BARS_TO_FORCE_CLOSE_CONTEXT",
+    "PAID_CRYPTOQUANT_SHADOW_PLAN_NOT_IN_STAGEB_DIAGNOSTIC_VARIANTS"
+  ],
+  "generated_at": "2026-05-13T20:10:49.836632+00:00",
+  "gym_fx_observation_context": {
+    "fields_detected": {
+      "bars_to_force_close": false,
+      "equity_norm": true,
+      "hours_to_force_close": false,
+      "position": true,
+      "steps_remaining_norm": true,
+      "unrealized_pnl_norm": true
+    },
+    "file_found": true,
+    "source_file": "/home/harveybc/Documents/GitHub/gym-fx/preprocessor_plugins/feature_window_preprocessor.py"
+  },
+  "heldout_boundary": "2025-01-01",
+  "paid_cryptoquant_shadow_plan": {
+    "exists": true,
+    "mentions_cryptoquant": true,
+    "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/paid_data_shadow_cryptoquant.yaml"
+  },
+  "recommended_next_tasks": [
+    "Keep the Friday force-close rule, but add deterministic session/calendar context to candidate feature lists.",
+    "Add bars/hours-to-force-close observation-state support in agent-multi/gym-fx if the CSV calendar columns are not enough.",
+    "Build a paid-source diagnostic lane that compares best free feature stack against free-plus-CryptoQuant using matched asset/timeframe/seed/cost cells.",
+    "Treat specialized open/close policy decomposition as a new strategy-family research lane, not as a silent change to the fixed PPO/SAC/DQN comparison."
+  ],
+  "sample_calendar_columns": [],
+  "sample_model_ready_column_count": 90,
+  "sample_model_ready_file": "/home/harveybc/Documents/GitHub/preprocessor/examples/data/ethusdt_4h_tech_stat_full_model_ready.csv",
+  "sample_paid_source_columns": [],
+  "schema_version": "project3_stage_b_data_context_gap_audit_v1",
+  "stage_b_config_summary": {
+    "calendar_feature_count": 0,
+    "calendar_features_sample": [],
+    "config_files_seen": 990,
+    "force_close_friday_20_configs": 900,
+    "paid_source_feature_count": 0,
+    "paid_source_features_sample": [],
+    "session_filter_true_configs": 900,
+    "unique_feature_count": 0
+  },
+  "stage_b_diagnostic_variant_summary": {
+    "paid_source_variant_count": 0,
+    "session_calendar_variant_count": 3,
+    "variant_count": 13,
+    "variants": [
+      {
+        "calendar_columns": [],
+        "columns": 18,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/baseline_12/train.csv",
+        "variant": "baseline_12"
+      },
+      {
+        "calendar_columns": [
+          "calendar_weekday",
+          "calendar_hour",
+          "calendar_hour_of_week",
+          "calendar_weekday_sin",
+          "calendar_weekday_cos",
+          "calendar_hour_of_day_sin",
+          "calendar_hour_of_day_cos",
+          "calendar_hour_of_week_sin",
+          "calendar_hour_of_week_cos",
+          "calendar_is_trading_session",
+          "calendar_is_force_close_zone",
+          "calendar_is_friday_close_day",
+          "calendar_is_friday_force_close_bar",
+          "calendar_is_monday_entry_window",
+          "calendar_hours_to_friday_close",
+          "calendar_bars_to_friday_close",
+          "calendar_hours_to_next_friday_close",
+          "calendar_bars_to_next_friday_close",
+          "calendar_hours_to_next_entry_window"
+        ],
+        "columns": 37,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/baseline_12_plus_session_calendar/train.csv",
+        "variant": "baseline_12_plus_session_calendar"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 89,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_full/train.csv",
+        "variant": "tech_stat_full"
+      },
+      {
+        "calendar_columns": [
+          "calendar_weekday",
+          "calendar_hour",
+          "calendar_hour_of_week",
+          "calendar_weekday_sin",
+          "calendar_weekday_cos",
+          "calendar_hour_of_day_sin",
+          "calendar_hour_of_day_cos",
+          "calendar_hour_of_week_sin",
+          "calendar_hour_of_week_cos",
+          "calendar_is_trading_session",
+          "calendar_is_force_close_zone",
+          "calendar_is_friday_close_day",
+          "calendar_is_friday_force_close_bar",
+          "calendar_is_monday_entry_window",
+          "calendar_hours_to_friday_close",
+          "calendar_bars_to_friday_close",
+          "calendar_hours_to_next_friday_close",
+          "calendar_bars_to_next_friday_close",
+          "calendar_hours_to_next_entry_window"
+        ],
+        "columns": 108,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_full_plus_session_calendar/train.csv",
+        "variant": "tech_stat_full_plus_session_calendar"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 90,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_full_plus_train_only_ood_score/train.csv",
+        "variant": "tech_stat_full_plus_train_only_ood_score"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 93,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_full_plus_train_only_regime_probs/train.csv",
+        "variant": "tech_stat_full_plus_train_only_regime_probs"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 18,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_momentum_only/train.csv",
+        "variant": "tech_stat_momentum_only"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 56,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1/train.csv",
+        "variant": "tech_stat_reduced_corr_v1"
+      },
+      {
+        "calendar_columns": [
+          "calendar_weekday",
+          "calendar_hour",
+          "calendar_hour_of_week",
+          "calendar_weekday_sin",
+          "calendar_weekday_cos",
+          "calendar_hour_of_day_sin",
+          "calendar_hour_of_day_cos",
+          "calendar_hour_of_week_sin",
+          "calendar_hour_of_week_cos",
+          "calendar_is_trading_session",
+          "calendar_is_force_close_zone",
+          "calendar_is_friday_close_day",
+          "calendar_is_friday_force_close_bar",
+          "calendar_is_monday_entry_window",
+          "calendar_hours_to_friday_close",
+          "calendar_bars_to_friday_close",
+          "calendar_hours_to_next_friday_close",
+          "calendar_bars_to_next_friday_close",
+          "calendar_hours_to_next_entry_window"
+        ],
+        "columns": 75,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_session_calendar/train.csv",
+        "variant": "tech_stat_reduced_corr_v1_plus_session_calendar"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 60,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/train.csv",
+        "variant": "tech_stat_reduced_corr_v1_plus_train_only_regime_probs"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 30,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_trend_only/train.csv",
+        "variant": "tech_stat_trend_only"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 21,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_volatility_only/train.csv",
+        "variant": "tech_stat_volatility_only"
+      },
+      {
+        "calendar_columns": [],
+        "columns": 13,
+        "paid_source_columns": [],
+        "train_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_volume_liquidity_only/train.csv",
+        "variant": "tech_stat_volume_liquidity_only"
+      }
+    ]
+  },
+  "stage_c_touched": false
+}

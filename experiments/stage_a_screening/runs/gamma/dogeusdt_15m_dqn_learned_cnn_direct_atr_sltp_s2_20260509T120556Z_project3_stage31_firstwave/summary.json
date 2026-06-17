@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9999.986938009615,
+  "total_return": -1.3061990384866107e-06,
+  "max_drawdown_pct": 7.122764318613804e-07,
+  "max_drawdown_money": 7.122764327505138e-05,
+  "sharpe_ratio": -223641.2073945601,
+  "sqn": -1.5303710178729606,
+  "trades_total": 8142,
+  "trades_won": 3846,
+  "trades_lost": 4295,
+  "avg_trade_pnl": -7.090641746714264e-09,
+  "episode_reward": -1.3064990384009426e-06,
+  "episode_length": 157287,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/dogeusdt_15m_dqn_learned_cnn_direct_atr_sltp_s2_20260509T120556Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

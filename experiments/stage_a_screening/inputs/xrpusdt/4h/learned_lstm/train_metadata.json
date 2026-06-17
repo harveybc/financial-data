@@ -1,0 +1,19 @@
+{
+  "asset": "xrpusdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-09T19:27:01.171046+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_lstm"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/xrpusdt/4h/learned_lstm/train.csv",
+  "preset": "learned_lstm",
+  "rows": 12397,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/xrpusdt/4h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "4h"
+}

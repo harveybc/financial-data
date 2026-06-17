@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "612faaf6952439bfc8923d9697e103453d731e3f0b198a314ad65da26b6b0e64",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_session_calendar/train.csv",
+  "data_file_hash": "4d9b61a583fac6cc436a7ce4a5e684c27ea31beb1b19962795a239bb19d2f2c7",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-14T00:00:07Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 2,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "cde9cc954df764c97e0736e6956f0b23468eb39b3dc6e29f116ac69dd80453a3"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "15f890518593c61bd5a355d3f45c63b6b670d025ec71025e90b15bd8de57fa7f"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_buy_and_hold_s2_plus_100pct/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "a2f1305e01c70380771757beb5fb1d474820ccc594d53f0ebaf11f5b0a33994c"
+    }
+  ]
+}

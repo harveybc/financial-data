@@ -1,0 +1,16 @@
+Attempting to load plugin: gym_fx_env from group: env.plugins
+Successfully loaded plugin: gym_fx_env (class-level defaults, see config_out.json for actual): {'env_mode': 'inference', 'input_data_file': None, 'price_column': 'CLOSE', 'date_column': 'DATE_TIME', 'headers': True, 'max_rows': None, 'window_size': 32, 'initial_cash': 10000.0, 'position_size': 1.0, 'commission': 0.0, 'slippage': 0.0, 'data_feed_plugin': 'default_data_feed', 'broker_plugin': 'default_broker', 'strategy_plugin': 'default_strategy', 'preprocessor_plugin': 'default_preprocessor', 'reward_plugin': 'pnl_reward', 'metrics_plugin': 'default_metrics'}
+Attempting to load plugin: random_agent from group: agent.plugins
+Successfully loaded plugin: random_agent (class-level defaults, see config_out.json for actual): {'total_timesteps': 0, 'train_seed': 0}
+Attempting to load plugin: rl_pipeline_with_validation from group: pipeline.plugins
+Successfully loaded plugin: rl_pipeline_with_validation (class-level defaults, see config_out.json for actual): {'train_years': 4, 'val_years': 1, 'test_years': 1, 'split_anchor': 'start', 'epoch_timesteps': 2000, 'max_epochs': 30, 'l1_patience': 5, 'l1_min_delta': 0.0001, 'eval_seed': 0, 'train_seed': 0, 'save_model': './agent_model.zip', 'load_model': None, 'return_trace_dir': None}
+
+=== Final results (best-composite checkpoint) ===
++------------+--------+-------+---------+--------+----------+
+| Split      | Trades | Win % | Sharpe  | Profit | Balance  |
++------------+--------+-------+---------+--------+----------+
+| Train      | 3059   | 50.38 | -0.0074 | 1.94%  | 10194.26 |
+| Validation | 765    | 49.93 | -0.0134 | 0.12%  | 10012.39 |
+| Test       | 741    | 49.12 | -0.0986 | -4.54% | 9545.73  |
++------------+--------+-------+---------+--------+----------+
+[results] wrote /home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/baseline_12/runs/ethusdt_4h_sac_baseline_12_baseline_random_s0_plus_100pct/results.json

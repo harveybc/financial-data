@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 10000.055728771356,
+  "total_return": 5.572877135540111e-06,
+  "max_drawdown_pct": 0.002642461623200981,
+  "max_drawdown_money": 0.26425436926547263,
+  "sharpe_ratio": -47.540069061326,
+  "sqn": 0.16942561908820664,
+  "trades_total": 141,
+  "trades_won": 58,
+  "trades_lost": 83,
+  "avg_trade_pnl": 0.00039523951337386217,
+  "episode_reward": 5.171755306946637e-06,
+  "episode_length": 10661,
+  "eval_seed": 1,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_tech_full_direct_atr_sltp_s1_20260505T200520Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

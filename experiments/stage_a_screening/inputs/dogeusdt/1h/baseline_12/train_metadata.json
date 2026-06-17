@@ -1,0 +1,31 @@
+{
+  "asset": "dogeusdt",
+  "columns": 18,
+  "feature_columns": [
+    "returns",
+    "log_returns",
+    "rsi_14",
+    "macd_hist",
+    "bb_pos",
+    "volume_ratio",
+    "ema_cross",
+    "atr_norm",
+    "obv_delta",
+    "momentum_5",
+    "momentum_20",
+    "vol_20"
+  ],
+  "generated_at": "2026-06-09T20:10:39.350181+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/dogeusdt/1h/baseline_12/train.csv",
+  "preset": "baseline_12",
+  "rows": 39279,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/dogeusdt/1h.parquet",
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/dogeusdt/1h/technical.parquet"
+  ],
+  "split": "train",
+  "timeframe": "1h"
+}

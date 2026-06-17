@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9998.528819293497,
+  "total_return": -0.00014711807065037608,
+  "max_drawdown_pct": 0.015038002959561519,
+  "max_drawdown_money": 1.503804398509601,
+  "sharpe_ratio": -102.27611461180065,
+  "sqn": -5.052218942865181,
+  "trades_total": 19232,
+  "trades_won": 7797,
+  "trades_lost": 11434,
+  "avg_trade_pnl": -7.649354560769444e-05,
+  "episode_reward": -0.00014713107065036083,
+  "episode_length": 468032,
+  "eval_seed": 0,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/eurgbp_15m_dqn_kitchen_sink_guarded_direct_atr_sltp_s0_20260507T221234Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

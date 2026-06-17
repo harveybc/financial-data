@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "ppo_agent",
+  "asset": "solusdt",
+  "features_preset": "crypto_full",
+  "num_timesteps": 0,
+  "pid": 3857096,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "solusdt_15m_crypto_full_ppo_s2_10000_notrade_ppo_entropy_003",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "failed",
+  "timeframe": "15m",
+  "total_timesteps": 10000,
+  "updated_at_utc": "2026-05-09T23:33:09.140480+00:00"
+}

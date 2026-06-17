@@ -1,0 +1,19 @@
+{
+  "asset": "gbpusd",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-05-17T18:43:11.516724+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/gbpusd/15m/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 468707,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/gbpusd/15m.parquet"
+  ],
+  "split": "train",
+  "timeframe": "15m"
+}

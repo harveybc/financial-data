@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "dqn_agent",
+  "asset": "btcusdt_perp",
+  "features_preset": "sota_low_cost",
+  "num_timesteps": 50000,
+  "pid": 2601277,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 100.0,
+  "run_id": "btcusdt_perp_15m_sota_low_cost_dqn_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_complete",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T04:47:25.051500+00:00"
+}

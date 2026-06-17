@@ -1,0 +1,19 @@
+{
+  "asset": "eurgbp",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-05-16T04:16:26.743901+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/eurgbp/15m/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 468385,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/eurgbp/15m.parquet"
+  ],
+  "split": "train",
+  "timeframe": "15m"
+}

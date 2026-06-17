@@ -1,0 +1,12 @@
+Attempting to load plugin: gym_fx_env from group: env.plugins
+Successfully loaded plugin: gym_fx_env (class-level defaults, see config_out.json for actual): {'env_mode': 'inference', 'input_data_file': None, 'price_column': 'CLOSE', 'date_column': 'DATE_TIME', 'headers': True, 'max_rows': None, 'window_size': 32, 'initial_cash': 10000.0, 'position_size': 1.0, 'commission': 0.0, 'slippage': 0.0, 'data_feed_plugin': 'default_data_feed', 'broker_plugin': 'default_broker', 'strategy_plugin': 'default_strategy', 'preprocessor_plugin': 'default_preprocessor', 'reward_plugin': 'pnl_reward', 'metrics_plugin': 'default_metrics'}
+Attempting to load plugin: project3_sac_actor_critic_agent from group: agent.plugins
+Successfully loaded plugin: project3_sac_actor_critic_agent (class-level defaults, see config_out.json for actual): {'total_timesteps': 25000, 'learning_rate': 0.0001, 'buffer_size': 200000, 'learning_starts': 5000, 'batch_size': 256, 'tau': 0.005, 'gamma': 0.99, 'train_freq': 1, 'gradient_steps': 1, 'ent_coef': 'auto', 'target_update_interval': 1, 'target_entropy': 'auto', 'use_sde': True, 'net_arch': (256, 256), 'device': 'cuda', 'agent_verbose': 0, 'train_seed': 0, 'ga_fitness_dd_lambda': 1.0, 'action_space_mode': 'continuous', 'continuous_action_threshold': 0.1, 'window_size': 32, 'price_column': 'CLOSE', 'strategy_plugin': 'direct_atr_sltp', 'reward_plugin': 'pnl_reward', 'atr_period': 14, 'k_sl': 2.0, 'k_tp': 3.0, 'rel_volume': 0.05, 'size_mode': 'notional', 'leverage': 1.0, 'min_order_volume': 0.0, 'max_order_volume': 100.0, 'commission': 0.0002, 'slippage': 0.0, 'initial_cash': 10000.0, 'project3_strict': True}
+Attempting to load plugin: rl_pipeline_with_validation from group: pipeline.plugins
+Successfully loaded plugin: rl_pipeline_with_validation (class-level defaults, see config_out.json for actual): {'train_years': 4, 'val_years': 1, 'test_years': 1, 'split_anchor': 'start', 'epoch_timesteps': 2000, 'max_epochs': 30, 'l1_patience': 5, 'l1_min_delta': 0.0001, 'eval_seed': 0, 'train_seed': 0, 'save_model': './agent_model.zip', 'load_model': None, 'return_trace_dir': None}
+Using cuda device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+[epoch   1/60] L1 0/10  L2 -/4  composite=-0.0007 best=-0.0007 (IMPROVED, model saved) actor|w|=3160.80 Δa=-4.3526 critic|w|=6436.08 Δc=+86.7567 ent=nan steps=0->8000 buf=0->8000
+            TRAIN trades= 799 win%=47.43 sharpe=-0.0146 profit=+0.63% bal=10062.93
+            VAL   trades= 390 win%=51.28 sharpe=-0.0243 profit=-0.78% bal=9922.13

@@ -79,7 +79,7 @@
     "hurst_proxy_200",
     "zscore_close_100"
   ],
-  "generated_at": "2026-05-02T08:59:00.534357+00:00",
+  "generated_at": "2026-06-05T04:42:24.608568+00:00",
   "machine": "omega",
   "missing_baseline_features_filled_zero": [],
   "missing_feature_families": [],

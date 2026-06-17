@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "fe094ff9c3df2d09fb57b83fc73bae3f362d418c764007328be42a0ab30b85fe",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_session_calendar/train.csv",
+  "data_file_hash": "4d9b61a583fac6cc436a7ce4a5e684c27ea31beb1b19962795a239bb19d2f2c7",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T23:32:18Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 3,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "d83aadd3f7c8f762d22672ec38760aa0f49ef9fe44c3efa662b8deb9a5be33f8"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "f8d82867f1cb3115b42d2869c93f267f0724254352819a3d275a55102797d17b"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_candidate_s3_base/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "8d640cc6ff921b8ac78388589a6ecbef070c1df407e50b19ee60d572737ab293"
+    }
+  ]
+}

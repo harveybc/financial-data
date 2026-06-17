@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9999.610874689108,
+  "total_return": -3.891253108923021e-05,
+  "max_drawdown_pct": 0.005166696360499394,
+  "max_drawdown_money": 0.5166707461157785,
+  "sharpe_ratio": -102.96641293178719,
+  "sqn": -1.3572564725559098,
+  "trades_total": 1834,
+  "trades_won": 726,
+  "trades_lost": 1107,
+  "avg_trade_pnl": -0.00021490910823396525,
+  "episode_reward": -3.9044531089347997e-05,
+  "episode_length": 30342,
+  "eval_seed": 0,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/eurgbp_4h_dqn_tech_full_direct_atr_sltp_s0_20260508T010411Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

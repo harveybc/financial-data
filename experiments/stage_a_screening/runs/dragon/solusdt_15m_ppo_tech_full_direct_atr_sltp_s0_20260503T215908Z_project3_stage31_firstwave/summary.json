@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9999.524998105177,
+  "total_return": -4.750018948229684e-05,
+  "max_drawdown_pct": 0.018146662633205066,
+  "max_drawdown_money": 1.8146767298821942,
+  "sharpe_ratio": -9.115746513496276,
+  "sqn": -0.27626219389570916,
+  "trades_total": 6345,
+  "trades_won": 2581,
+  "trades_lost": 3763,
+  "avg_trade_pnl": -7.296671420689953e-05,
+  "episode_reward": -4.800018948244432e-05,
+  "episode_length": 118532,
+  "eval_seed": 0,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/solusdt_15m_ppo_tech_full_direct_atr_sltp_s0_20260503T215908Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

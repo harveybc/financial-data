@@ -1,8 +1,8 @@
 {
   "exports": [
     {
-      "asset": "eurgbp",
-      "columns": 105,
+      "asset": "linkusdt",
+      "columns": 113,
       "feature_columns": [
         "return_1",
         "log_return_1",
@@ -58,6 +58,13 @@
         "ema_cross_20_100",
         "trend_slope_50",
         "trend_strength_50",
+        "obv",
+        "obv_delta_20",
+        "volume_sma_10",
+        "volume_sma_20",
+        "volume_ratio_20",
+        "vwap_60",
+        "mfi_14",
         "statistical__log_return_1",
         "roll_mean_ret_20",
         "roll_std_ret_20",
@@ -100,30 +107,38 @@
         "emd_imf_1",
         "emd_imf_2",
         "emd_imf_3",
+        "emd_residue",
         "fracdiff_d_0.4",
         "fracdiff_d_0.6",
         "fracdiff_d_0.8"
       ],
-      "generated_at": "2026-05-02T10:59:21.487612+00:00",
+      "generated_at": "2026-06-09T21:39:48.736223+00:00",
       "machine": "omega",
       "missing_baseline_features_filled_zero": [],
-      "missing_feature_families": [],
-      "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/eurgbp/4h/tech_stat_decomp/train.csv",
-      "preset": "tech_stat_decomp",
-      "rows": 30285,
+      "missing_feature_families": [
+        "learned_lstm",
+        "learned_cnn",
+        "sota_intrabar_realized",
+        "sota_hmm_regime",
+        "sota_pair_spreads",
+        "sota_funding_term_structure"
+      ],
+      "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/linkusdt/1h/crypto_full/train.csv",
+      "preset": "crypto_full",
+      "rows": 43139,
       "sources": [
-        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/eurgbp/4h.parquet",
-        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/eurgbp/4h/technical.parquet",
-        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/eurgbp/4h/statistical.parquet",
-        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/eurgbp/4h/wavelet.parquet",
-        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/eurgbp/4h/emd.parquet",
-        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/eurgbp/4h/fracdiff.parquet"
+        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/linkusdt/1h.parquet",
+        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/linkusdt/1h/technical.parquet",
+        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/linkusdt/1h/statistical.parquet",
+        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/linkusdt/1h/wavelet.parquet",
+        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/linkusdt/1h/emd.parquet",
+        "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/linkusdt/1h/fracdiff.parquet"
       ],
       "split": "train",
-      "timeframe": "4h"
+      "timeframe": "1h"
     }
   ],
-  "generated_at": "2026-05-02T10:59:21.490060+00:00",
+  "generated_at": "2026-06-09T21:39:48.738517+00:00",
   "machine": "omega",
   "status": "complete"
 }

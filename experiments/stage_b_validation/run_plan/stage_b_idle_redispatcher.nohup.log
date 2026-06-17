@@ -1,0 +1,161 @@
+{
+  "execute": true,
+  "launch_results": [
+    {
+      "active_process": "3616679      20  0.0 bash -c cd /home/harveybc/Documents/GitHub/financial-data && nohup /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage_b_locked_run_executor.py --execute --approval-token RUN_STAGE_B_VALIDATION --variant-id candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic > /home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/redispatch_dragon_candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic.nohup.log 2>&1 < /dev/null & echo $!\n3616680      20  0.1 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage_b_locked_run_executor.py --execute --approval-token RUN_STAGE_B_VALIDATION --variant-id candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic\n3616685      19  115 /home/harveybc/anaconda3/envs/tensorflow/bin/python3.12 /home/harveybc/anaconda3/envs/tensorflow/bin/agent-multi --load_config /home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/configs/candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic.json --quiet_mode",
+      "launch_warning": "ssh launch timed out after 20s, but remote process is active",
+      "log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/redispatch_dragon_candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic.nohup.log",
+      "pid": "unknown_after_ssh_timeout",
+      "target": "dragon",
+      "variant_id": "candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic"
+    },
+    {
+      "active_process": "3991236      19  0.0 bash -c cd /home/harveybc/Documents/GitHub/financial-data && nohup /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage_b_locked_run_executor.py --execute --approval-token RUN_STAGE_B_VALIDATION --variant-id rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base > /home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/redispatch_gamma_rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base.nohup.log 2>&1 < /dev/null & echo $!\n3991237      19  0.1 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage_b_locked_run_executor.py --execute --approval-token RUN_STAGE_B_VALIDATION --variant-id rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base\n3991242      19  115 /home/harveybc/anaconda3/envs/tensorflow/bin/python3.12 /home/harveybc/anaconda3/envs/tensorflow/bin/agent-multi --load_config /home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/configs/rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base.json --quiet_mode",
+      "launch_warning": "ssh launch timed out after 20s, but remote process is active",
+      "log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/redispatch_gamma_rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base.nohup.log",
+      "pid": "unknown_after_ssh_timeout",
+      "target": "gamma",
+      "variant_id": "rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base"
+    }
+  ],
+  "moves": [
+    {
+      "source": "omega",
+      "target": "dragon",
+      "variant_id": "candidate_ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave_pessimistic"
+    },
+    {
+      "source": "dragon",
+      "target": "gamma",
+      "variant_id": "rl_baseline_12_bnbusdt_15m_sac_baseline_12_direct_atr_sltp_s0_20260504T045810Z_project3_stage31_firstwave_base"
+    }
+  ],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}
+{
+  "execute": true,
+  "launch_results": [],
+  "moves": [],
+  "ok": true,
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_idle_redispatcher_state.json"
+}

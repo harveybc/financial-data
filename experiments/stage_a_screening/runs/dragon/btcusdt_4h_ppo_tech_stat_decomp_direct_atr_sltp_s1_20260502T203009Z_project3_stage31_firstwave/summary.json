@@ -1,0 +1,17 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 10018.045604660587,
+  "total_return": 0.0018045604660585912,
+  "max_drawdown_pct": 5.491974261737877,
+  "max_drawdown_money": 568.0885463076993,
+  "sharpe_ratio": -0.040716583909814474,
+  "sqn": 0.036284958019722466,
+  "trades_total": 699,
+  "trades_won": 308,
+  "trades_lost": 390,
+  "avg_trade_pnl": 0.022870112522307764,
+  "episode_reward": 0.0014691004660588218,
+  "episode_length": 13697,
+  "eval_seed": 1,
+  "mode": "train"
+}

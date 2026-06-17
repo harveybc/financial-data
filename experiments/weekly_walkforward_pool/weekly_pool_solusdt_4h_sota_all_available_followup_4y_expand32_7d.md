@@ -1,0 +1,93 @@
+# Project 3 Weekly Pool Seed Plan
+
+- Schema: `project3_weekly_pool_seed_plan_v2`
+- Stage C access: `DENIED`
+- Training launched: `false`
+- Input: `/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/solusdt/4h/sota_low_cost/train.csv`
+- Rows: `7175` from `2020-09-22 04:00:00` to `2023-12-31 20:00:00`
+- Early-stop train-tail days: `7`
+- Validation days: `7`
+- Test days: `7`
+- Execution profile: ``
+- Jobs: `0`
+- Subjobs: `0`
+- Skipped windows: `64`
+
+## Enqueued Jobs
+
+| job | policy | train years | recent months | subjobs | features |
+|---|---|---:|---:|---:|---:|
+
+## Subjobs
+
+| subjob | depends on | train | validation | test | rows |
+|---|---|---|---|---|---|
+
+## Skipped
+
+| train years | anchor | reason |
+|---:|---|---|
+| 4 | `2023-12-18` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-12-11` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-12-04` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-27` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-20` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-13` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-06` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-30` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-23` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-16` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-09` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-02` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-25` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-18` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-11` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-04` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-28` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-21` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-14` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-07` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-31` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-24` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-17` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-10` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-03` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-26` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-19` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-12` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-05` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-05-29` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-05-22` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-05-15` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-05-15` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-05-22` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-05-29` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-05` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-12` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-19` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-06-26` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-03` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-10` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-17` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-24` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-07-31` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-07` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-14` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-21` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-08-28` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-04` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-11` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-18` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-09-25` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-02` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-09` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-16` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-23` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-10-30` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-06` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-13` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-20` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-11-27` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-12-04` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-12-11` | `INSUFFICIENT_HISTORY` |
+| 4 | `2023-12-18` | `INSUFFICIENT_HISTORY` |

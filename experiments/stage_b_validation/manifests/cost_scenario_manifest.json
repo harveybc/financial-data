@@ -1,0 +1,36 @@
+{
+  "cost_scenarios": [
+    {
+      "fee_multiplier": 1.0,
+      "name": "base",
+      "role": "minimum_realistic_cost",
+      "slippage_multiplier": 1.0
+    },
+    {
+      "fee_multiplier": 1.5,
+      "name": "plus_50pct",
+      "role": "moderate_cost_stress",
+      "slippage_multiplier": 1.5
+    },
+    {
+      "fee_multiplier": 2.0,
+      "name": "plus_100pct",
+      "role": "hard_cost_stress",
+      "slippage_multiplier": 2.0
+    }
+  ],
+  "generated_at": "2026-05-13T02:44:47.862507+00:00",
+  "heldout_start": "2025-01-01",
+  "notes": [
+    "base is the minimum realistic cost scenario",
+    "plus_50pct and plus_100pct are stress scenarios, not tuning knobs",
+    "all three scenarios must be paired by seed and feature variant"
+  ],
+  "required_for_stage_b_promotion": [
+    "base",
+    "plus_50pct",
+    "plus_100pct"
+  ],
+  "schema_version": "project3_stage_b_cost_scenario_manifest_v1",
+  "stage_c_allowed": false
+}

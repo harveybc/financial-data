@@ -1,0 +1,294 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_momentum_s0_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_momentum_s0_base/agent_multi_stdout.log",
+      "variant_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_penalty_0p0001_s0_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_random_s0_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_random_s0_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_random_tech_stat_full_plus_force_close_obs_penalty_0p0001_s0_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_buy_and_hold_s0_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_buy_and_hold_s0_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_buy_and_hold_tech_stat_full_plus_force_close_obs_penalty_0p0001_s0_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_no_trade_s1_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_no_trade_s1_base/agent_multi_stdout.log",
+      "variant_id": "baseline_no_trade_tech_stat_full_plus_force_close_obs_penalty_0p0001_s1_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_candidate_s1_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_candidate_s1_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "candidate_tech_stat_full_plus_force_close_obs_penalty_0p0001_s1_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_reversal_s1_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_reversal_s1_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_reversal_tech_stat_full_plus_force_close_obs_penalty_0p0001_s1_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_momentum_s1_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_momentum_s1_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_penalty_0p0001_s1_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_random_s2_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_random_s2_base/agent_multi_stdout.log",
+      "variant_id": "baseline_random_tech_stat_full_plus_force_close_obs_penalty_0p0001_s2_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_buy_and_hold_s2_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_buy_and_hold_s2_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_buy_and_hold_tech_stat_full_plus_force_close_obs_penalty_0p0001_s2_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_no_trade_s2_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_no_trade_s2_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_no_trade_tech_stat_full_plus_force_close_obs_penalty_0p0001_s2_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_candidate_s3_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_candidate_s3_base/agent_multi_stdout.log",
+      "variant_id": "candidate_tech_stat_full_plus_force_close_obs_penalty_0p0001_s3_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_reversal_s3_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_reversal_s3_base/agent_multi_stdout.log",
+      "variant_id": "baseline_reversal_tech_stat_full_plus_force_close_obs_penalty_0p0001_s3_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_momentum_s3_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_momentum_s3_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_penalty_0p0001_s3_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_random_s3_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_random_s3_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_random_tech_stat_full_plus_force_close_obs_penalty_0p0001_s3_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_buy_and_hold_s4_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_buy_and_hold_s4_base/agent_multi_stdout.log",
+      "variant_id": "baseline_buy_and_hold_tech_stat_full_plus_force_close_obs_penalty_0p0001_s4_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_no_trade_s4_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_no_trade_s4_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_no_trade_tech_stat_full_plus_force_close_obs_penalty_0p0001_s4_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_candidate_s4_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_candidate_s4_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "candidate_tech_stat_full_plus_force_close_obs_penalty_0p0001_s4_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_reversal_s4_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0001/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0001_baseline_reversal_s4_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_reversal_tech_stat_full_plus_force_close_obs_penalty_0p0001_s4_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_momentum_s0_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_momentum_s0_base/agent_multi_stdout.log",
+      "variant_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_penalty_0p0003_s0_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_random_s0_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_random_s0_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_random_tech_stat_full_plus_force_close_obs_penalty_0p0003_s0_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_buy_and_hold_s0_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_buy_and_hold_s0_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_buy_and_hold_tech_stat_full_plus_force_close_obs_penalty_0p0003_s0_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_no_trade_s1_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_no_trade_s1_base/agent_multi_stdout.log",
+      "variant_id": "baseline_no_trade_tech_stat_full_plus_force_close_obs_penalty_0p0003_s1_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_candidate_s1_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_candidate_s1_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "candidate_tech_stat_full_plus_force_close_obs_penalty_0p0003_s1_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_reversal_s1_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_reversal_s1_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_reversal_tech_stat_full_plus_force_close_obs_penalty_0p0003_s1_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_momentum_s1_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_momentum_s1_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_penalty_0p0003_s1_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_random_s2_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_random_s2_base/agent_multi_stdout.log",
+      "variant_id": "baseline_random_tech_stat_full_plus_force_close_obs_penalty_0p0003_s2_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_buy_and_hold_s2_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_buy_and_hold_s2_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_buy_and_hold_tech_stat_full_plus_force_close_obs_penalty_0p0003_s2_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_no_trade_s2_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_no_trade_s2_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_no_trade_tech_stat_full_plus_force_close_obs_penalty_0p0003_s2_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_candidate_s3_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_candidate_s3_base/agent_multi_stdout.log",
+      "variant_id": "candidate_tech_stat_full_plus_force_close_obs_penalty_0p0003_s3_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_reversal_s3_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_reversal_s3_base/agent_multi_stdout.log",
+      "variant_id": "baseline_reversal_tech_stat_full_plus_force_close_obs_penalty_0p0003_s3_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_momentum_s3_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_momentum_s3_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_penalty_0p0003_s3_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_random_s3_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_random_s3_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_random_tech_stat_full_plus_force_close_obs_penalty_0p0003_s3_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_buy_and_hold_s4_base/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_buy_and_hold_s4_base/agent_multi_stdout.log",
+      "variant_id": "baseline_buy_and_hold_tech_stat_full_plus_force_close_obs_penalty_0p0003_s4_base"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_no_trade_s4_plus_50pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_no_trade_s4_plus_50pct/agent_multi_stdout.log",
+      "variant_id": "baseline_no_trade_tech_stat_full_plus_force_close_obs_penalty_0p0003_s4_plus_50pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_candidate_s4_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_candidate_s4_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "candidate_tech_stat_full_plus_force_close_obs_penalty_0p0003_s4_plus_100pct"
+    },
+    {
+      "exit_code": 0,
+      "failure_reason": "",
+      "progress_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_reversal_s4_plus_100pct/training_progress.json",
+      "status": "complete",
+      "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_penalty_run_plan/plans/tech_stat_full_plus_force_close_obs_penalty_0p0003/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_penalty_0p0003_baseline_reversal_s4_plus_100pct/agent_multi_stdout.log",
+      "variant_id": "baseline_reversal_tech_stat_full_plus_force_close_obs_penalty_0p0003_s4_plus_100pct"
+    }
+  ],
+  "state_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_executor_state.json"
+}

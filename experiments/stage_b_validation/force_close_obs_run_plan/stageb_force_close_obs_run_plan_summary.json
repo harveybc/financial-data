@@ -1,0 +1,59 @@
+{
+  "baselines": [
+    "no_trade",
+    "buy_and_hold",
+    "random",
+    "momentum",
+    "reversal"
+  ],
+  "cost_scenarios": [
+    "base",
+    "plus_50pct",
+    "plus_100pct"
+  ],
+  "generated_at": "2026-05-14T03:43:02.695043+00:00",
+  "heldout_start": "2025-01-01",
+  "plan_id": "stageb_force_close_obs_ethusdt_4h_sac_diagnostic_v1",
+  "results": [
+    {
+      "agent_multi_stderr": "",
+      "agent_multi_stdout": {
+        "candidate_id": "ethusdt_4h_sac_tech_stat_full_plus_force_close_obs",
+        "config_count": 90,
+        "manifest_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_obs_run_plan/plans/tech_stat_full_plus_force_close_obs/stageb_run_plan_manifest.json",
+        "promotion_blockers": [],
+        "promotion_eligible": true,
+        "schema_version": "project3_stageb_run_plan_v1",
+        "stage_c_access": "DENIED",
+        "training_launched": false
+      },
+      "command": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stageb_run_plan.py",
+        "--reference-config",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_obs_run_plan/reference_configs/tech_stat_full_plus_force_close_obs.json",
+        "--candidate-id",
+        "ethusdt_4h_sac_tech_stat_full_plus_force_close_obs",
+        "--output-dir",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_obs_run_plan/plans/tech_stat_full_plus_force_close_obs",
+        "--cost-scenarios",
+        "base,plus_50pct,plus_100pct",
+        "--baselines",
+        "no_trade,buy_and_hold,random,momentum,reversal"
+      ],
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_obs_run_plan/plans/tech_stat_full_plus_force_close_obs",
+      "reference_config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_obs_run_plan/reference_configs/tech_stat_full_plus_force_close_obs.json",
+      "source_variant": "tech_stat_full",
+      "variant": "tech_stat_full_plus_force_close_obs"
+    }
+  ],
+  "schema_version": "project3_stage_b_force_close_obs_run_plan_summary_v1",
+  "selection_rule": "minimal force-close observation diagnostic: top ranked ETHUSDT 4h SAC tech_stat_full branch x 5 seeds x 3 costs x candidate+5 baselines; CSV features unchanged, env observation adds force-close context",
+  "source_variants": [
+    "tech_stat_full"
+  ],
+  "stage_c_access": "DENIED",
+  "total_locked_configs": 90,
+  "training_launched": false,
+  "variant_count": 1
+}

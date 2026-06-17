@@ -1,230 +1,96 @@
-# Phase 3 Overview — Systematic Experiments
+# Phase 3 Overview - Weekly Walk-Forward Experiments
 
-## 2026-05-23 Active Framing: Weekly-Retrained Data-First Portfolio System
+Date: 2026-06-04
+Status: ACTIVE
 
-This document is updated to match the current business mechanics. Older text in
-this file about a broad static PPO/SAC/DQN matrix is preserved only as
-historical context. Active Phase 3 work follows:
+## Active Framing
+
+Phase 3 evaluates the business process we intend to run:
+
+```text
+weekend retrain/update -> trade next week only -> aggregate many weekly anchors
+```
+
+It does not evaluate whether one unoptimized model can trade unchanged for a
+year. It also does not use short-window smoke runs as profit evidence.
+
+## Current Canonical Documents
 
 - `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
-- `PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md`
-- `PROJECT3_STAGE3X_AGENT_SPEC_KIT_2026_05_14.md`
+- `PROJECT3_WEEKLY_WALKFORWARD_POOL_AGENT_SPECS_2026_06_04.md`
+- `31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md`
+- `32_STAGE_3_2_RESULTS_SYNTHESIS.md`
+- `PROJECT3_FINRA_OANDA_TRADE_FREQUENCY_POLICY_MEMO.md`
 
-The system we are trying to build retrains or updates over the weekend and
-trades only the following week. Therefore the primary evaluation unit is a
-rolling weekly anchor:
+## Phase 3 Goal
 
-1. train on past data available before the validation week;
-2. validate on the immediately following week or a small recent-week bundle;
-3. simulate/test the next week only;
-4. repeat across many historical weekly anchors;
-5. aggregate next-week performance after costs, broker rules, and Friday
-   force-close constraints.
+Find data, feature, preprocessing, model-hyperparameter, and later portfolio
+allocation choices that improve repeated next-week profit/risk after costs.
 
-Phase 3 now optimizes the data contract first:
+The main searched object is the complete candidate configuration:
 
 - target asset;
-- cross-asset input assets;
-- free and paid data-source masks;
-- feature families and feature subsets;
+- timeframe;
+- input asset mask;
+- source/data mask;
+- feature family and feature subset;
 - preprocessing profile;
-- weekly calendar/event context;
-- SAC hyperparameters;
-- later portfolio allocation and no-trade/risk supervisor parameters.
+- market-state representation;
+- event-calendar risk overlay;
+- model family and hyperparameters;
+- training policy;
+- training-window length;
+- broker/cost profile.
 
-Negative returns in a tiny smoke run are not a scientific or business blocker.
-They are optimizer feedback. Mechanical failures still block work: Stage C
-rows, missing evidence, bad hashes, impossible accounting, all-no-trade, hard
-overtrading, broker-policy violations, or Friday force-close violations.
+## Required Evaluation Unit
 
-**Phase goal:** Use Project 2's best RL agents (PPO, SAC, DQN configurations) to systematically evaluate which combinations of (trading asset, simulation timeframe, feature input set, feature engineering technique) produce the best RL trading policies on held-out data.
+Each candidate job is evaluated over many weekly subjobs.
 
-**Phase output:** Evidence-based ranking of data sources and feature techniques. `PROJECT_3_FINAL_REPORT.md` answers: which data combinations actually improve RL trading agent performance?
-
-**2026-05-02 hardening update:** Phase 3 now explicitly answers a stricter question: which data source families and feature-engineering families add statistically defensible marginal value under realistic execution assumptions, after accounting for leakage, data revision, transaction costs, multiple testing, and regime instability?
-
----
-
-<!-- AGENT_INFRA_NOTE_v2 -->
-## Agent Infrastructure Note
-
-This stage is executed by the multi-tier agent system defined in `01_AGENT_INFRASTRUCTURE.md` (architecture v2). Read that document before executing this stage. Key rules:
-
-- **Tier 2 (OpenCode Go on Omega) dispatches** the per-machine tasks listed below; you (the user) do not run them by hand.
-- **Tier 1 supervisors** (Hermes + Gemma 3 31B on Dragon and Gamma, cron-invoked, GPU-lockfile-aware) watch worker logs and produce status reports.
-- **Heavy GPU jobs MUST acquire `/tmp/gpu_busy.lock`** via `_scripts/lib/gpu_lock.py` before starting. See infrastructure doc §4.
-- **Auto-validation is full auto** (master plan Rule M.15). When you confirm a manual prerequisite is done, the agents proceed through validation, deliverable generation, and downstream prep automatically. Only blockers ping you.
-- **Escalation routing (v2 simplified — no automated frontier API):**
-  - Code/data anomalies, scope ≤2 files, severity ≤ high → Tier 3 (local Hermes + Gemma 31B, bounded: max 3 attempts, max 2 files, 30 min/attempt). If Tier 3 confidence <0.7 or attempts exhausted → hands off to Tier 4.
-  - Plan decisions, synthesis, final-report writing, blocker severity, or scope >2 files → Tier 4 (you, with ChatGPT 5.5 Pro via Codex / Copilot Opus 4.7 / Claude Pro Max as your tools).
-  - **No automated frontier API calls anywhere.** Frontier models are human-driven only.
-
-The "machine assignment" tables below describe which machine runs which workers. The dispatcher (Tier 2) handles SSH, conda activation, and result collection.
----
-
-## 1. Project 3 vs Project 2 — What Changes
-
-Project 2 evaluated: "Can RL find tradeable signal in BTC/ETH 1h with 12 technical features?"
-
-Project 3 now evaluates: "Can a weekly retrain loop, using the right data and
-preprocessing per asset, produce repeated next-week portfolio edge after costs?"
-
-The first active model lane is SAC actor-critic because it is the current
-best-fit continuous-control baseline. PPO/DQN remain comparators after the
-data/input/preprocessing search is behaving mechanically. Hyperparameters are
-not guessed; they become optimizer genes after the input contract is auditable.
-
----
-
-## 2. Conceptual Distinction Reminder
-
-Per master plan §2: each experiment specifies:
-
-1. **Trading asset** — single asset whose price is traded (drives env step mechanics, P&L, episode boundaries)
-2. **Simulation timeframe** — bar interval at which env steps (5m, 15m, 1h, or 4h)
-3. **Feature input set** — which sources contribute to observation space
-   - May include trading asset's own technical/statistical/decomposition/learned features
-   - May include cross-source forward-filled features
-4. **Feature engineering technique selection** — which Stage 2.2/2.3/2.4 outputs are used
-
-These are 4 independent variables. Phase 3 systematically explores combinations.
-
----
-
-## 3. Phase 3 Stages
-
-| Stage | Document | Purpose |
-|-------|----------|---------|
-| 3.1 / 3X | `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` | Define weekly walk-forward data/input/preprocessing experiments |
-| 3X | `PHASE_3X_UNSUPERVISED_CAUSAL_AUDIT.md` | Optional narrow unsupervised/causal audit lane for top candidates only |
-| 3.2 | `32_STAGE_3.2_RESULTS_SYNTHESIS.md` | Aggregate weekly and portfolio findings |
-
----
-
-## 4. Phase 3 Standing Rules
-
-### Rule P3.1: Optimize the production-relevant object
-
-The production-relevant object is the weekend retrain plus next-week trading
-loop. A model/configuration is judged by repeated weekly anchors, not by
-pretending it must trade unchanged for a year.
-
-SAC hyperparameters, preprocessing parameters, input masks, asset choices, and
-later portfolio weights are optimizer genes. Do not hand-pick them after seeing
-returns.
-
-### Rule P3.2: Held-out discipline strict
-
-Per Rule M.3: 2025-01-01 onward is held-out. Each final candidate evaluated ONCE on held-out. NO re-running on held-out after seeing results.
-
-### Rule P3.3: Pre-register experimental design
-
-Before running any experiments, Stage 3.1 produces a pre-registered experimental design specifying:
-- Total number of experiments
-- Hypotheses being tested
-- Kill criteria (when to abandon a configuration)
-- Multiple-testing correction (Deflated Sharpe Ratio per Lopez de Prado)
-- Feature-family ablation order and source-family attribution
-- Availability/vintage contract requirements for cross-source data
-- Leakage audit requirements for fitted transforms and forward-filled data
-- Transaction-cost scenarios and baseline strategy comparisons
-
-This protects against post-hoc cherry-picking.
-
-### Rule P3.4: Sample efficiency in experimentation
-
-With many assets, input sources, preprocessing options, weekly anchors, seeds,
-and SAC hyperparameters, the combinatorial space is enormous. Use staged
-screening:
-
-- **CPU data screen:** coverage, leakage, target relation, redundancy, causal
-  plausibility, and cost-aware proxy sanity.
-- **Tiny smoke:** small train/validation/test windows to prove data reaches the
-  model, trades exist, evidence is valid, and broker policy is respected.
-- **Micro-NSGA:** DEAP/NSGA search over data, preprocessing, SAC hparams, and
-  weekly anchors.
-- **Serious validation:** repeated weekly walk-forward anchors across regimes,
-  seeds, and costs.
-- **Stage C:** still a one-shot final heldout only after promotion gates pass.
-
-### Rule P3.5: Cancel mediocre subscriptions per Rule M.10
-
-After Phase 3 experiments complete, evaluate each paid subscription's contribution. If a subscription's data showed no marginal improvement vs free data alone, flag for cancellation.
-
-This is the final test of the Rule M.10 mediocrity rejection criterion.
-
-### Rule P3.6: Availability and vintage safety
-
-Every cross-source feature used for Stage B/C promotion must satisfy `features/AVAILABILITY_CONTRACT.md`. Missing event-time, availability-time, revision/vintage, release-lag, or staleness semantics blocks promotion unless Tier 4 explicitly labels the experiment as research-only.
-
-### Rule P3.7: Fitted-transform leakage safety
-
-Scalers, imputers, HMMs, autoencoders, learned embeddings, and feature selectors must pass `experiments/design/leakage_audit.md`. No Stage C candidate may consume a transform fitted on 2025 held-out data.
-
-### Rule P3.8: Costs and simple baselines before promotion
-
-No configuration may advance based only on raw or zero-cost returns. Stage A promotion requires positive evidence under the base cost model and comparison against simple baselines. Stage B/C must report optimistic, base, and pessimistic cost scenarios.
-
-### Rule P3.9: SOTA lanes are deferred overlays
-
-TradingAgents, offline RL, Decision Transformer, and time-series foundation-model lanes are allowed only after the core PPO/SAC/DQN evidence stack is reproducible. They may be evaluated as explanation, veto, scaling, embedding, or diagnostic lanes, not as replacements for the pre-registered core experiment.
-
-### Rule P3.10: No idle compute while approved matrix work remains
-
-During Stage 3.1, the supervisor must keep Omega, Dragon, and Gamma assigned to approved Stage A/B/C work whenever safe runnable jobs exist. Empty one-shot queues are not a valid idle reason. The supervisor must refill Stage A queues from the pre-registered matrix with `_scripts/workers/stage31_expand_matrix_queue_worker.py`, respect GPU locks, and report any idle machine with a concrete reason and next dispatch condition.
-
-Omega may run light CPU experiments, synthesis, validation, or input-prep work while also coordinating. Dragon and Gamma should run GPU-heavy jobs when free and fall back to non-GPU validation/synthesis only when GPU work is blocked or unavailable.
-
-### Rule P3.11: Unsupervised/causal lanes are paired overlays
-
-The Phase 3X unsupervised/causal lane is allowed only as a controlled overlay for top candidates, beginning with `ETHUSDT 4h + SAC + tech_stat`. It may create train-only regime features, OOD scores, feature-stability reports, and causal/leakage audits. It may not replace the core PPO/SAC/DQN matrix, fit on validation/Stage C data, or promote feature masks without registered paired RL variants and multiple-testing accounting.
-
----
-
-## 5. Phase 3 Output Structure
-
-```
-/home/harveybc/Documents/GitHub/financial-data/experiments/
-├── README.md
-├── design/
-│   ├── pre_registered_design.md
-│   ├── kill_criteria.md
-│   ├── multiple_testing_correction.md
-│   ├── leakage_audit.md
-│   ├── cost_model.md
-│   └── feature_family_ablation_plan.md
-├── stage_a_screening/
-│   ├── runs/
-│   │   └── <run_id>/...
-│   └── stage_a_summary.md
-├── stage_b_validation/
-│   ├── runs/
-│   │   └── <run_id>/...
-│   └── stage_b_summary.md
-├── stage_c_held_out/
-│   ├── runs/
-│   │   └── <run_id>/...
-│   └── stage_c_results.md
-└── synthesis/
-    ├── PROJECT_3_FINAL_REPORT.md
-    ├── data_source_value_ranking.md
-    ├── feature_technique_value_ranking.md
-    └── subscription_cancellation_recommendations.md
+```text
+subjob train      = N years before validation week
+subjob validation = 7 days
+subjob test       = next 7 days
 ```
 
----
+Initial sweep:
 
-## 6. Phase 3 User Gates
+```text
+train_years = 1..10
+validation_days = 7
+test_days = 7
+training_policy = scratch_n_years
+```
 
-- After 3.1 design: User approves experimental design before any runs
-- After Stage A screening: User reviews top configurations, approves Stage B
-- After Stage B validation: User reviews validated configs, approves held-out test
-- After Stage C: User reviews held-out results, approves final report
+The previous short-window line is deleted and not active.
 
-This 4-gate structure ensures user retains control of experimental scope and prevents runaway compute spend.
+## Infrastructure Target
 
----
+Phase 3 now requires:
 
-## 7. Approval to Begin Phase 3
+- SQLite job/subjob/result pool;
+- autonomous workers on local, Dragon, and Gamma;
+- atomic job claiming;
+- machine heartbeats;
+- result/evidence storage for reproducibility;
+- AdminLTE status dashboard on `http://127.0.0.1:8787`;
+- OLAP-style result aggregation by asset, timeframe, training window, feature
+  set, preprocessing profile, and hyperparameters.
 
-User approves Phase 3 overview after Phase 2 completion. Agent reads `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` and begins design.
+## Stage C Rule
+
+Stage C remains locked:
+
+```text
+heldout boundary = 2025-01-01
+stage_c_access = DENIED
+```
+
+No active Phase 3 pool job may use rows on or after the heldout boundary.
+
+## Phase 3 Stages
+
+| Stage | Purpose |
+| --- | --- |
+| 3.1 | Build and run weekly walk-forward pool experiments |
+| 3.2 | Aggregate weekly and portfolio evidence |
+| 3.C | One-shot final heldout only after explicit approval |

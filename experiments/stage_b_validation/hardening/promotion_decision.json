@@ -1,0 +1,62 @@
+{
+  "decision_reason": "No candidate passed all Stage B statistical and approval gates.",
+  "generated_at_utc": "2026-05-14T06:16:09.483482+00:00",
+  "heldout_start": "2025-01-01",
+  "next_action_class": "diagnose_and_iterate",
+  "research_continuation_allowed": true,
+  "root_cause_summary": {
+    "blocker_counts": {
+      "ABLATION_FAIL": 8,
+      "ABLATION_NO_MATCH": 2,
+      "BASELINE_FAIL": 4,
+      "DSR_RIGOROUS_FAIL": 127,
+      "FAMILY_REALITY_CHECK_FAIL": 127,
+      "FINAL_ALWAYS_IN_MARKET_LOSING": 3,
+      "FINAL_EXCESSIVE_TRADES_HARD": 16,
+      "FINAL_NO_TRADES": 45,
+      "MISSING_COST_SCENARIO": 4,
+      "NEGATIVE_SHARPE": 974,
+      "NON_POSITIVE_RETURN": 2761,
+      "NO_TRADES": 1154,
+      "PBO_DEFERRED_OR_FAIL": 34,
+      "SEED_UNCERTAINTY_BLOCKED": 113,
+      "STAGEB_STAT_EVIDENCE_MISSING": 23
+    },
+    "class_counts": {
+      "economic_failure": 3739,
+      "feature_family_failure": 10,
+      "infrastructure_missing": 27,
+      "insufficient_repetitions": 113,
+      "statistical_non_significance": 288,
+      "trade_behavior_failure": 1218
+    },
+    "cost_fragility_groups": 18,
+    "next_action_class": "diagnose_and_iterate",
+    "question_signals": {
+      "always_exposed_losing": 3,
+      "baseline_or_family_incomplete": 25,
+      "cost_scenarios_missing": 4,
+      "dsr_raw_blocks": 127,
+      "lose_money_net_of_costs": 3739,
+      "overtrade": 16,
+      "pbo_rank_degradation_or_deferred": 34,
+      "seed_count_insufficient": 113,
+      "tech_stat_too_broad_or_noisy": 135
+    },
+    "research_continuation_allowed": true,
+    "stage_c_promotion_allowed": false,
+    "trade_flag_counts": {
+      "always_in_market_losing": 4,
+      "excessive_trade": 190,
+      "no_trade": 635
+    }
+  },
+  "schema_version": "project3_stage_b_promotion_decision_v1",
+  "source_files": {
+    "approval_packet": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/stage_b_approval_packet.json",
+    "decision_readiness": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stage_b_decision_readiness.json",
+    "run_plan_status": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_run_plan_status.json",
+    "stat_report": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stageb_dsr_pbo_report.json"
+  },
+  "stage_c_promotion_allowed": false
+}

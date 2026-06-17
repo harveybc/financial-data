@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "6078d646a19b300921ab4e01feb6e7b6679df0dfc5abd124c61b9efa9f51e58d",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_volatility_only/train.csv",
+  "data_file_hash": "820e3d8f6770d7325ae81f289c476ad5b7830a136617b2d655fc941d6d4a0c1c",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T08:19:44Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 2,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_volatility_only/runs/ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_volatility_only/runs/ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "e90477221603a342807f02bf26fab6d987437d71f09b2fd69cebfedb4b5cdf62"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_volatility_only/runs/ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_volatility_only/runs/ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "076ecf57424f34529bbe5e82661dee44f005343d269a2150e43c727949cf3d42"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_volatility_only/runs/ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_volatility_only/runs/ethusdt_4h_sac_tech_stat_volatility_only_baseline_buy_and_hold_s2_plus_50pct/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "2c999dc9da67f7a801166807796ce3d00881b572b2eb1f80b20e2565311f0d7c"
+    }
+  ]
+}

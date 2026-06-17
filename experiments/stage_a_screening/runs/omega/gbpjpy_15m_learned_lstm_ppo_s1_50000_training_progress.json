@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "ppo_agent",
+  "asset": "gbpjpy",
+  "features_preset": "learned_lstm",
+  "num_timesteps": 0,
+  "pid": 1588940,
+  "progress_detail": "no-trade preflight diagnosis=forced_actions_not_seen_by_strategy closed_trades=0 orders=0",
+  "progress_percent": 0.0,
+  "run_id": "gbpjpy_15m_learned_lstm_ppo_s1_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 1,
+  "source": "stage31_worker",
+  "status": "blocked_no_trade_preflight",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-30T09:24:23.985053+00:00"
+}

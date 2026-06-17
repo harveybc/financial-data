@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9962.155655743263,
+  "total_return": -0.003784434425673666,
+  "max_drawdown_pct": 2.332917439053693,
+  "max_drawdown_money": 236.90442912003527,
+  "sharpe_ratio": -0.07108603325336792,
+  "sqn": -0.09018551906698039,
+  "trades_total": 101,
+  "trades_won": 40,
+  "trades_lost": 60,
+  "avg_trade_pnl": -0.19113170698429605,
+  "episode_reward": -0.0037844344256736887,
+  "episode_length": 118731,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/solusdt_15m_sac_learned_cnn_direct_atr_sltp_s2_20260509T065740Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

@@ -1,0 +1,148 @@
+{
+  "analysis_allowed": true,
+  "approval_summary": {
+    "any_stage_b_ready": false,
+    "n_stage_b_ready": 0,
+    "n_with_stageb_stat_gate": 21,
+    "status_counts": {
+      "BLOCKED_BASELINE_COMPARISON": 4,
+      "BLOCKED_DSR_DEFERRED": 19,
+      "BLOCKED_FAMILY_ABLATION": 8,
+      "BLOCKED_MISSING_EVIDENCE": 13,
+      "KILL_NEGATIVE_SHARPE": 974,
+      "KILL_NON_POSITIVE_RETURN": 2761,
+      "KILL_NO_TRADES": 1154
+    },
+    "total_candidates": 4933
+  },
+  "artifacts": {
+    "approval_packet": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/stage_b_approval_packet.json",
+    "cluster_status": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_cluster_live_status.json",
+    "decision_readiness": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stage_b_decision_readiness.json",
+    "root_cause_report": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stageb_no_pass_root_cause.md",
+    "run_plan_status": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_run_plan_status.json",
+    "stageb_stat_report": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stageb_dsr_pbo_report.json"
+  },
+  "blocked_reason": "",
+  "commands": [
+    {
+      "cmd": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/financial-data/_scripts/workers/stage_b_run_plan_status_worker.py"
+      ],
+      "dry_run": false,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"anomaly_counts\": {\n    \"NO_TRADES_AFTER_20_PERCENT\": 600\n  },\n  \"csv\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_run_plan_status.csv\",\n  \"markdown\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_run_plan_status.md\",\n  \"ok\": true,\n  \"status_counts\": {\n    \"DONE\": 900\n  },\n  \"total_configs\": 900,\n  \"warning_counts\": {}\n}\n",
+      "worker": "stage_b_run_plan_status_worker.py"
+    },
+    {
+      "cmd": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/financial-data/_scripts/workers/stageb_dsr_pbo_evaluator.py"
+      ],
+      "dry_run": false,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"candidate_gate_fail\": 322,\n  \"candidate_gate_pass\": 0,\n  \"dsr_fail\": 499,\n  \"dsr_fail_n_raw\": 499,\n  \"dsr_pass\": 0,\n  \"dsr_pass_n_raw\": 0,\n  \"evidence_fail\": 0,\n  \"evidence_files\": 950,\n  \"evidence_pass\": 950,\n  \"family_test_group_count\": 13,\n  \"generated_at_utc\": \"2026-05-13T19:31:14.803600+00:00\",\n  \"pbo_group_count\": 6,\n  \"promotion_allowed\": false,\n  \"run_count\": 950,\n  \"schema_version\": \"project3_stageb_statistical_evaluator_v2\",\n  \"seed_group_count\": 939,\n  \"stage\": \"stage_b\",\n  \"stage_c_allowed\": false,\n  \"stage_c_blocked_reason\": \"NO_STAGE_B_CANDIDATE_PASSED_ALL_STATISTICAL_GATES\",\n  \"statistical_governance_status\": \"BLOCKED\",\n  \"trace_found\": 950,\n  \"trace_missing\": 0,\n  \"trial_count_for_deflation\": 5025,\n  \"trial_count_n_eff\": 14,\n  \"trial_count_n_raw\": 5025\n}\n",
+      "worker": "stageb_dsr_pbo_evaluator.py"
+    },
+    {
+      "cmd": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/financial-data/_scripts/workers/stage_b_approval_gate_worker.py"
+      ],
+      "dry_run": false,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "[INFO] Stage B Approval Gate Validator\n[INFO] Heldout start: 2025-01-01\n[INFO] Loaded 4933 promotion candidates\n[INFO] Ledger loaded: 26788 rows, 10514 unique IDs, 4547 composite keys\n[INFO] Leakage audit: 4928 entries\n[INFO] Baseline report: 4928 entries\n[INFO] Ablation report: 4928 entries\n[INFO] Stage B statistical gates: 322 entries\n[OK] Wrote /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/stage_b_approval_packet.json\n[OK] Wrote /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/stage_b_approval_candidates.csv\n[OK] Wrote /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/stage_b_approval_packet.md\n[OK] Wrote /home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/TASKS.md\n\n=== Stage B Approval Gate Summary ===\n  BLOCKED_BASELINE_COMPARISON: 4\n  BLOCKED_DSR_DEFERRED: 19\n  BLOCKED_FAMILY_ABLATION: 8\n  BLOCKED_MISSING_EVIDENCE: 13\n  KILL_NEGATIVE_SHARPE: 974\n  KILL_NON_POSITIVE_RETURN: 2761\n  KILL_NO_TRADES: 1154\n\n  ANY STAGE B READY: NO (0 candidates)\n\n  Best blocked: ethusdt_perp_15m_sac_tech_full_direct_atr_sltp_s1_20260503T141731Z_project3_stage31_firstwave\n    status: BLOCKED_DSR_DEFERRED\n    total_return: 0.529359354815133\n    blocker codes: ['DSR_RIGOROUS_FAIL', 'FAMILY_REALITY_CHECK_FAIL', 'FINAL_ALWAYS_IN_MARKET_LOSING', 'PBO_DEFERRED_OR_FAIL', 'SEED_UNCERTAINTY_BLOCKED']\n",
+      "worker": "stage_b_approval_gate_worker.py"
+    },
+    {
+      "cmd": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/financial-data/_scripts/workers/stage_b_decision_readiness_worker.py"
+      ],
+      "dry_run": false,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"hard_stop_reasons\": [\n    \"NO_PASS_STAGE_B_READY_CANDIDATE\",\n    \"NO_STAGE_B_CANDIDATE_PASSED_ALL_STATISTICAL_GATES\"\n  ],\n  \"json\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stage_b_decision_readiness.json\",\n  \"markdown\": \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stage_b_decision_readiness.md\",\n  \"next_expected_poll_utc\": \"2026-05-13T18:15:09.741031+00:00\",\n  \"stage_c_decision\": \"BLOCK_STAGE_C\",\n  \"top_blockers\": [\n    {\n      \"blocker_code\": \"NON_POSITIVE_RETURN\",\n      \"count\": 2761\n    },\n    {\n      \"blocker_code\": \"NO_TRADES\",\n      \"count\": 1154\n    },\n    {\n      \"blocker_code\": \"NEGATIVE_SHARPE\",\n      \"count\": 974\n    },\n    {\n      \"blocker_code\": \"DSR_RIGOROUS_FAIL\",\n      \"count\": 343\n    },\n    {\n      \"blocker_code\": \"FAMILY_REALITY_CHECK_FAIL\",\n      \"count\": 343\n    },\n    {\n      \"blocker_code\": \"SEED_UNCERTAINTY_BLOCKED\",\n      \"count\": 343\n    },\n    {\n      \"blocker_code\": \"PBO_DEFERRED_OR_FAIL\",\n      \"count\": 335\n    },\n    {\n      \"blocker_code\": \"FINAL_NO_TRADES\",\n      \"count\": 151\n    }\n  ]\n}\n",
+      "worker": "stage_b_decision_readiness_worker.py"
+    },
+    {
+      "cmd": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/financial-data/_scripts/workers/stage_b_pragmatic_root_cause_worker.py"
+      ],
+      "dry_run": false,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"cost_groups\": 321,\n  \"next_action_class\": \"diagnose_and_iterate\",\n  \"outputs\": [\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/stage_b_summary.md\",\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/trade_behavior_report.csv\",\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/trade_behavior_report.md\",\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/cost_fragility_report.csv\",\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/cost_fragility_report.md\",\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stageb_no_pass_root_cause.md\",\n    \"/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/promotion_decision.json\"\n  ],\n  \"research_continuation_allowed\": true,\n  \"root_cause_classes\": {\n    \"economic_failure\": 3739,\n    \"feature_family_failure\": 10,\n    \"infrastructure_missing\": 27,\n    \"insufficient_repetitions\": 343,\n    \"statistical_non_significance\": 1021,\n    \"trade_behavior_failure\": 1360\n  },\n  \"stage_c_promotion_allowed\": false,\n  \"trade_rows\": 950\n}\n",
+      "worker": "stage_b_pragmatic_root_cause_worker.py"
+    }
+  ],
+  "decision_readiness": {
+    "hard_stop_reasons": [
+      "NO_PASS_STAGE_B_READY_CANDIDATE",
+      "NO_STAGE_B_CANDIDATE_PASSED_ALL_STATISTICAL_GATES"
+    ],
+    "stage_c_decision": "BLOCK_STAGE_C",
+    "stage_c_locked": true
+  },
+  "dry_run": false,
+  "force_analysis": false,
+  "generated_at_utc": "2026-05-13T19:31:18.341115+00:00",
+  "post_counts": {
+    "aborted_no_trade": 0,
+    "all_machine_queries_ok": true,
+    "assigned": 900,
+    "cluster_generated_at_utc": "2026-05-13T18:14:09.741031+00:00",
+    "done": 900,
+    "failed": 0,
+    "next_expected_poll_utc": "2026-05-13T18:15:09.741031+00:00",
+    "not_started": 0,
+    "running": 0
+  },
+  "pre_counts": {
+    "aborted_no_trade": 0,
+    "all_machine_queries_ok": true,
+    "assigned": 900,
+    "cluster_generated_at_utc": "2026-05-13T18:14:09.741031+00:00",
+    "done": 900,
+    "failed": 0,
+    "next_expected_poll_utc": "2026-05-13T18:15:09.741031+00:00",
+    "not_started": 0,
+    "running": 0
+  },
+  "queue_complete": true,
+  "schema_version": "project3_stage_b_post_pragmatic_finalization_v1",
+  "stage_c_touched": false,
+  "stageb_stat_summary": {
+    "candidate_gate_fail": 322,
+    "candidate_gate_pass": 0,
+    "dsr_fail": 499,
+    "dsr_fail_n_raw": 499,
+    "dsr_pass": 0,
+    "dsr_pass_n_raw": 0,
+    "evidence_fail": 0,
+    "evidence_files": 950,
+    "evidence_pass": 950,
+    "family_test_group_count": 13,
+    "generated_at_utc": "2026-05-13T19:31:14.803600+00:00",
+    "pbo_group_count": 6,
+    "promotion_allowed": false,
+    "run_count": 950,
+    "schema_version": "project3_stageb_statistical_evaluator_v2",
+    "seed_group_count": 939,
+    "stage": "stage_b",
+    "stage_c_allowed": false,
+    "stage_c_blocked_reason": "NO_STAGE_B_CANDIDATE_PASSED_ALL_STATISTICAL_GATES",
+    "statistical_governance_status": "BLOCKED",
+    "trace_found": 950,
+    "trace_missing": 0,
+    "trial_count_for_deflation": 5025,
+    "trial_count_n_eff": 14,
+    "trial_count_n_raw": 5025
+  },
+  "training_launched": false
+}

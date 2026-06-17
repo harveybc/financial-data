@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "36a279f98b87cf5c44a9126343ba0c86c2f192130c85286d2aad1e4288bd35cc",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_full_plus_train_only_regime_probs/train.csv",
+  "data_file_hash": "8415bc70000a7913ca145b884409eb18401405871756d5c9e0eb1c51bd6df488",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T12:11:37Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 0,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "22d8400dc9922a4b5015bdb1eebe9b3b26e00d3c5f828590a007c6c0b8af6030"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "f39979fe5eac452cd5697298812e20a3ae6a974080c8c1630a4eb462cc663d4f"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_reversal_s0_base/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "52b5fc1d4257146fcf50df2e2c5e4effb2b6eea5d70760c4587ef9879b6db9b3"
+    }
+  ]
+}

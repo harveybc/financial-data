@@ -1,0 +1,49 @@
+{
+  "asset": "btcusdt_perp_4h",
+  "broker_profile": null,
+  "calendar_policy_id": null,
+  "config_hash": "a86b7a398979c81b328a684ffa9b162e951b622a43d3c7d6ea7846173bf61085",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/btcusdt_perp/4h/sota_low_cost/train.csv",
+  "data_file_hash": "9aa1e2707713d4dfe10d5a2f12f73fb95f1a2832959c804d9cbf445cfa2096a3",
+  "feature_column_count": 0,
+  "feature_columns": null,
+  "feature_list_hash": null,
+  "generated_at": "2026-05-24T05:40:04Z",
+  "heldout_boundary": "2025-01-01",
+  "market_type": null,
+  "observation_state_fields": [
+    "equity_norm",
+    "position",
+    "prices",
+    "returns",
+    "steps_remaining_norm",
+    "unrealized_pnl_norm"
+  ],
+  "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+  "pipeline_plugin": "rl_pipeline",
+  "run_id": "btcusdt_perp_4h_dqn_sota_low_cost_direct_atr_sltp_s1_20260524T053815Z_project3_stage31_firstwave",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 1,
+  "stage_c_authorized": false,
+  "timeframe": "4h",
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "btcusdt_perp_4h_dqn_sota_low_cost_direct_atr_sltp_s1_20260524T053815Z_project3_stage31_firstwave::eval0",
+      "feature_column_count": 0,
+      "feature_list_hash": null,
+      "first_timestamp": "2019-10-20 16:00:00",
+      "last_timestamp": "2023-12-31 20:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/btcusdt_perp_4h_dqn_sota_low_cost_direct_atr_sltp_s1_20260524T053815Z_project3_stage31_firstwave/return_trace.csv.meta.json",
+      "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+      "row_count": 9200,
+      "split": "evaluation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/btcusdt_perp_4h_dqn_sota_low_cost_direct_atr_sltp_s1_20260524T053815Z_project3_stage31_firstwave/return_trace.csv",
+      "trace_file_sha256": "4247666c54279e649507240f978a7c301799bde2f974c3cbe8f458458049397e"
+    }
+  ],
+  "trade_rate_band_id": null
+}

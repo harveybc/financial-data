@@ -1,0 +1,115 @@
+{
+  "baselines": [
+    "no_trade",
+    "buy_and_hold",
+    "random",
+    "momentum",
+    "reversal"
+  ],
+  "cost_scenarios": [
+    "base",
+    "plus_50pct",
+    "plus_100pct"
+  ],
+  "generated_at": "2026-05-13T20:25:51.385085+00:00",
+  "heldout_start": "2025-01-01",
+  "plan_id": "stageb_session_calendar_ethusdt_4h_sac_diagnostic_v1",
+  "results": [
+    {
+      "agent_multi_stderr": "",
+      "agent_multi_stdout": {
+        "candidate_id": "ethusdt_4h_sac_baseline_12_plus_session_calendar",
+        "config_count": 90,
+        "manifest_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/baseline_12_plus_session_calendar/stageb_run_plan_manifest.json",
+        "promotion_blockers": [],
+        "promotion_eligible": true,
+        "schema_version": "project3_stageb_run_plan_v1",
+        "stage_c_access": "DENIED",
+        "training_launched": false
+      },
+      "command": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stageb_run_plan.py",
+        "--reference-config",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/reference_configs/baseline_12_plus_session_calendar.json",
+        "--candidate-id",
+        "ethusdt_4h_sac_baseline_12_plus_session_calendar",
+        "--output-dir",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/baseline_12_plus_session_calendar",
+        "--cost-scenarios",
+        "base,plus_50pct,plus_100pct",
+        "--baselines",
+        "no_trade,buy_and_hold,random,momentum,reversal"
+      ],
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/baseline_12_plus_session_calendar",
+      "reference_config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/reference_configs/baseline_12_plus_session_calendar.json",
+      "variant": "baseline_12_plus_session_calendar"
+    },
+    {
+      "agent_multi_stderr": "",
+      "agent_multi_stdout": {
+        "candidate_id": "ethusdt_4h_sac_tech_stat_full_plus_session_calendar",
+        "config_count": 90,
+        "manifest_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_full_plus_session_calendar/stageb_run_plan_manifest.json",
+        "promotion_blockers": [],
+        "promotion_eligible": true,
+        "schema_version": "project3_stageb_run_plan_v1",
+        "stage_c_access": "DENIED",
+        "training_launched": false
+      },
+      "command": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stageb_run_plan.py",
+        "--reference-config",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/reference_configs/tech_stat_full_plus_session_calendar.json",
+        "--candidate-id",
+        "ethusdt_4h_sac_tech_stat_full_plus_session_calendar",
+        "--output-dir",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_full_plus_session_calendar",
+        "--cost-scenarios",
+        "base,plus_50pct,plus_100pct",
+        "--baselines",
+        "no_trade,buy_and_hold,random,momentum,reversal"
+      ],
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_full_plus_session_calendar",
+      "reference_config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/reference_configs/tech_stat_full_plus_session_calendar.json",
+      "variant": "tech_stat_full_plus_session_calendar"
+    },
+    {
+      "agent_multi_stderr": "",
+      "agent_multi_stdout": {
+        "candidate_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar",
+        "config_count": 90,
+        "manifest_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/stageb_run_plan_manifest.json",
+        "promotion_blockers": [],
+        "promotion_eligible": true,
+        "schema_version": "project3_stageb_run_plan_v1",
+        "stage_c_access": "DENIED",
+        "training_launched": false
+      },
+      "command": [
+        "/home/harveybc/anaconda3/envs/tensorflow/bin/python",
+        "/home/harveybc/Documents/GitHub/agent-multi/tools/project3_stageb_run_plan.py",
+        "--reference-config",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/reference_configs/tech_stat_reduced_corr_v1_plus_session_calendar.json",
+        "--candidate-id",
+        "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar",
+        "--output-dir",
+        "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar",
+        "--cost-scenarios",
+        "base,plus_50pct,plus_100pct",
+        "--baselines",
+        "no_trade,buy_and_hold,random,momentum,reversal"
+      ],
+      "output_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar",
+      "reference_config": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/reference_configs/tech_stat_reduced_corr_v1_plus_session_calendar.json",
+      "variant": "tech_stat_reduced_corr_v1_plus_session_calendar"
+    }
+  ],
+  "schema_version": "project3_stage_b_session_calendar_run_plan_summary_v1",
+  "selection_rule": "targeted session-calendar Stage B diagnostic: 3 ETHUSDT 4h SAC feature variants x 5 seeds x 3 costs x candidate+5 baselines",
+  "stage_c_access": "DENIED",
+  "total_locked_configs": 270,
+  "training_launched": false,
+  "variant_count": 3
+}

@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "a1d8ea875a18481a102ef981e0a63cb1ce96d3b00270ca7b9b3ea01bfa38b08d",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_full_plus_train_only_regime_probs/train.csv",
+  "data_file_hash": "8415bc70000a7913ca145b884409eb18401405871756d5c9e0eb1c51bd6df488",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T13:08:51Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 3,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "d7eb5b140e78e9b3868edc36702df514d51a5b9eada0833eba9b3c148c4757d0"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "218c8c60c3845354df28552b3c1ef9035632e92482ed3da060803abe09c71dd1"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_full_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_full_plus_train_only_regime_probs_baseline_buy_and_hold_s3_plus_50pct/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "57ca22d09a36ce8112869e689b549a293d038ad9755c0309f45286b71443ccea"
+    }
+  ]
+}

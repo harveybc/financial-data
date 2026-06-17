@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "dqn_agent",
+  "asset": "btcusdt",
+  "features_preset": "tech_full",
+  "num_timesteps": 0,
+  "pid": 3926092,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "btcusdt_15m_tech_full_dqn_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_failed",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T01:29:38.197841+00:00"
+}

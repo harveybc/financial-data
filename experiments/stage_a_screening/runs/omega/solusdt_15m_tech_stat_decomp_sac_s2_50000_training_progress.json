@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "sac_agent",
+  "asset": "solusdt",
+  "features_preset": "tech_stat_decomp",
+  "num_timesteps": 0,
+  "pid": 12811,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "solusdt_15m_tech_stat_decomp_sac_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_failed",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T07:52:01.944919+00:00"
+}

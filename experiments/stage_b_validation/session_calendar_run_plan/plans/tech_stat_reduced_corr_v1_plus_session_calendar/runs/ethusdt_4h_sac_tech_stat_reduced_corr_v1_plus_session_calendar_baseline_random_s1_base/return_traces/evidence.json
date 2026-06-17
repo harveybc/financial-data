@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "ba1df9f23834e468ed3d28626085517b8a0bb7b45c321a8f1342637e77b36fc1",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_session_calendar/train.csv",
+  "data_file_hash": "4d9b61a583fac6cc436a7ce4a5e684c27ea31beb1b19962795a239bb19d2f2c7",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T23:27:11Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 1,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "ef284300afd329184568b8bf092426ab19081a7dd8c77ce7a6970a915525f56c"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "39b5e6eb796295f816e383c672fc8d7bd0a5634a9556bb44862cb1c94407b6c4"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_random_s1_base/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "e74682454542e745a47688bf015f1cabc67c61072a110ddf04b9b175912ba3fe"
+    }
+  ]
+}

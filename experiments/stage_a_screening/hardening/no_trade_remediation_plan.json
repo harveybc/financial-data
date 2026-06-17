@@ -1,0 +1,24 @@
+{
+  "counts_by_recommended_action": {
+    "diagnostic_dqn_exploration_015": 1,
+    "diagnostic_ppo_entropy_003": 205,
+    "diagnostic_sac_threshold_005": 340,
+    "manual_review": 445,
+    "skip_or_telemetry_rerun_only": 163
+  },
+  "diagnostic_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/hardening/no_trade_diagnostic_report.csv",
+  "duplicate_existing_exact_signature_count": 0,
+  "generated_at_utc": "2026-05-12T21:42:09.000478+00:00",
+  "outputs": {
+    "csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/hardening/no_trade_remediation_plan.csv",
+    "markdown": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/hardening/no_trade_remediation_plan.md"
+  },
+  "policy": {
+    "diagnostic_variants_are_new_trials": true,
+    "do_not_repeat_exact_failed_parameters": true,
+    "no_trade_runs_are_promotion_eligible": false,
+    "preflight_required_before_training": true
+  },
+  "rows": 1154,
+  "schema_version": "project3_no_trade_remediation_plan_v1"
+}

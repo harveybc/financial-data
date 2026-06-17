@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "sac_agent",
+  "asset": "linkusdt",
+  "features_preset": "learned_lstm",
+  "num_timesteps": 0,
+  "pid": 306343,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "linkusdt_15m_learned_lstm_sac_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_failed",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T14:27:47.954277+00:00"
+}

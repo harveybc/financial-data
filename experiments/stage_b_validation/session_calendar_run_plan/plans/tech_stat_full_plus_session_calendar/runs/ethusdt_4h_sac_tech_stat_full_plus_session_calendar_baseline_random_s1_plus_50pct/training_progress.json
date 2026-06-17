@@ -1,0 +1,21 @@
+{
+  "current_step": 0,
+  "executor_finished_at_utc": "2026-05-13T22:07:27.506320+00:00",
+  "executor_started_at_utc": "2026-05-13T22:07:06.873405+00:00",
+  "exit_code": 0,
+  "failure_reason": "",
+  "no_trade_anomaly": false,
+  "num_timesteps": 0,
+  "profit_percent": 0.0,
+  "progress_pct": 0.0,
+  "progress_percent": 0.0,
+  "run_id": "baseline_random_tech_stat_full_plus_session_calendar_s1_plus_50pct",
+  "schema_version": "project3_training_progress_v1",
+  "source": "stage_b_executor",
+  "status": "complete",
+  "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_full_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_full_plus_session_calendar_baseline_random_s1_plus_50pct/agent_multi_stdout.log",
+  "total_return": 0.0,
+  "total_timesteps": 0,
+  "trades_total": 0,
+  "updated_at_utc": "2026-05-13T22:07:27.506312+00:00"
+}

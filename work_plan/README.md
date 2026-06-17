@@ -36,28 +36,30 @@ Each data folder's README documents its update procedure (one-time historical pu
 
 ## Current Active Project 3 Path
 
-As of 2026-05-23, Stage B still has no promotion-ready candidate and Stage C
-remains locked. The active path is no longer a static long-horizon model
-benchmark. Project 3 is now a **weekly-retrained, data-first portfolio system**:
-the system retrains over the weekend, trades only the next week, and learns from
-many historical weekly walk-forward anchors.
+As of 2026-06-04, the active path is a **weekly-retrained walk-forward pool**.
+The previous short-window short-window smoke/optimization artifacts were
+deleted because they used insufficient training windows and are not valid
+profit/risk evidence.
 
 Active operating documents:
 
-- `00_PROJECT_3_MASTER_PLAN.md` — canonical master plan and current pivot.
+- `00_PROJECT_3_MASTER_PLAN.md` — canonical master plan.
 - `30_PHASE_3_OVERVIEW.md` — active Phase 3 framing.
-- `31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md` — active weekly walk-forward
-  experiment contract.
-- `32_STAGE_3_2_RESULTS_SYNTHESIS.md` — active weekly/portfolio synthesis
-  contract.
-- `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md` — production
-  mechanics: weekend retrain, next-week validation target, cross-asset inputs,
-  portfolio supervisor, no-trade/risk overlay.
-- `PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md` — SAC-first
-  DEAP/NSGA data, preprocessing, and hyperparameter optimization protocol.
-- `PROJECT3_STAGE3X_AGENT_SPEC_KIT_2026_05_14.md` — current agent handoff kit.
-- `PROJECT3_STAGE3X_PORTFOLIO_ENV_AGENT_SPECS_2026_05_19.md` — portfolio-mode
-  mechanical plumbing and evidence contract.
+- `31_STAGE_3_1_EXPERIMENT_FRAMEWORK.md` — weekly walk-forward experiment
+  framework.
+- `32_STAGE_3_2_RESULTS_SYNTHESIS.md` — weekly/portfolio synthesis contract.
+- `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md` — canonical
+  protocol for weekend retrain, `train_years=1..10`, 7-day validation,
+  7-day test, SQLite job pool, AdminLTE dashboard, and OLAP-style aggregation.
+- `PROJECT3_WEEKLY_WALKFORWARD_POOL_AGENT_SPECS_2026_06_04.md` — copy-ready
+  implementation specs for the coding agents.
+- `project3_orchestrator_event_context_representation_addendum_2026_06_09.md`
+  — active event/calendar/news context lane. Event context is tested as a
+  candidate input family in the weekly pool, starting with point-in-time
+  engineered features and matched baselines.
+- `PROJECT3_RESEARCH_AGENT_PRAGMATIC_CONTEXT_2026_06_09.md` — context packet
+  for external research agents so recommendations fit the weekly retrained
+  business loop instead of static academic benchmarks.
 - `PROJECT3_FINRA_OANDA_TRADE_FREQUENCY_POLICY_MEMO.md` — broker/regulatory
   trade-frequency policy reference.
 - `PROJECT3_DATA_CONTEXT_AND_PAID_SOURCE_GAP_SPEC_2026_05_13.md` and
@@ -65,13 +67,5 @@ Active operating documents:
   source context and subscription decisions.
 
 Data inventories, acquisition plans, and Phase 1/2 feature-engineering
-documents remain active reference material and were intentionally not archived.
-
-Superseded one-off prompts, already-executed external-agent specs, old SOTA
-side memos, and deferred synthetic-data research notes are archived under:
-
-- `archive_superseded_2026_05_14/`
-- `archive_superseded_2026_05_23_weekly_data_first/`
-
-Archived files are not active instructions. They are retained only for history
-and references.
+documents remain active reference material. One-off prompts, executed reviews,
+and obsolete short-window Stage 3X plans are not active instructions.

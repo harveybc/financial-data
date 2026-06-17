@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "ppo_agent",
+  "asset": "ethusdt_perp",
+  "features_preset": "kitchen_sink_guarded",
+  "num_timesteps": 50000,
+  "pid": 2750244,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 100.0,
+  "run_id": "ethusdt_perp_4h_kitchen_sink_guarded_ppo_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_complete",
+  "timeframe": "4h",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T06:49:10.695265+00:00"
+}

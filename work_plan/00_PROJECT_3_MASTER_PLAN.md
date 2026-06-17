@@ -14,39 +14,12 @@ This project is **data-centric, perfectionist, and exhaustive**. Three operation
 2. **Comprehensive over selective.** When in doubt, include the data source. Filtering happens during experiments (Phase 3), not during acquisition (Phase 1).
 3. **Documented and organized.** Every folder has a README. Every dataset has a data dictionary. Future-Harvey or future-agent must be able to understand any folder without context.
 
-### 1.1 Current 2026-05-14 Pivot: Parametric Data-First Search
+### 1.1 Current 2026-06-04 Pivot: Weekly Walk-Forward Pool
 
-Stage B completed without a promotable candidate. The active path is therefore
-not another broad rerun of the same feature bundles. Project 3 now treats the
-full data contract as the searched object:
-
-- trading asset;
-- timeframe;
-- data/source family;
-- feature-selection method;
-- preprocessing profile;
-- seasonal/force-close context;
-- representation method;
-- later SAC hyperparameters.
-
-The canonical active artifacts are:
-
-- `work_plan/PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md`
-- `experiments/stage3x_parametric_data_space/project3_data_preprocessing_search_space_summary.md`
-- `experiments/stage3x_input_preprocessing_optimization/stage3x_input_preprocessing_optimization_plan.md`
-- `experiments/stage3x_absurdity_guard/stage3x_absurdity_guard_report.md`
-
-Broad GPU execution is blocked unless the absurdity guard allows it. CPU-first
-target-relation screening and feature/preprocessing selection must happen
-before any new full Stage B GPU matrix. Stage C remains locked until Stage B
-promotion.
-
-### 1.2 Current 2026-05-23 Pivot: Weekly-Retrained Portfolio System
-
-The intended production system retrains over the weekend and trades only the
-following week. Phase 3 evidence must therefore optimize and validate repeated
-weekly walk-forward behavior, not a fantasy where one unoptimized model is
-expected to trade unchanged for a year.
+The intended production system retrains or updates over the weekend and trades
+only the following week. Phase 3 evidence must therefore optimize and validate
+repeated weekly walk-forward behavior, not a fantasy where one unoptimized model
+is expected to trade unchanged for a year.
 
 The active higher-level object is now:
 
@@ -54,20 +27,26 @@ The active higher-level object is now:
 - cross-asset and paid/free input selection;
 - preprocessing and feature selection;
 - SAC hyperparameters;
-- weekly event-calendar risk overlay;
+- point-in-time event/calendar/news context as a candidate input family;
+- weekly event-calendar risk overlay and no-trade/sizing context;
 - weekly portfolio allocation/no-trade supervisor;
-- per-asset execution under broker and Friday force-close rules.
+- per-asset execution under broker and Friday force-close rules;
+- SQLite-backed job/subjob pooling across local, Dragon, and Gamma;
+- AdminLTE monitoring and OLAP-style aggregation.
 
 Canonical protocol:
 
 - `work_plan/PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+- `work_plan/PROJECT3_WEEKLY_WALKFORWARD_POOL_AGENT_SPECS_2026_06_04.md`
+- `work_plan/project3_orchestrator_event_context_representation_addendum_2026_06_09.md`
+- `work_plan/PROJECT3_RESEARCH_AGENT_PRAGMATIC_CONTEXT_2026_06_09.md`
 
 This protocol supersedes old Phase 3 interpretations that treated a single
-long static OOS period as the business target. Negative returns from tiny smoke
-runs are optimizer feedback, not a reason to stop data/input/preprocessing
-optimization. Mechanical failures still block work: Stage C leakage, missing
-evidence, bad hashes, impossible accounting, all-no-trade, hard overtrading,
-broker-policy violations, or Friday force-close violations.
+long static OOS period as the business target. It also supersedes the deleted
+short-window run family. Tiny windows may be used only for
+mechanical tests. Serious optimization uses `train_years=1..10`, configurable
+7/14/28-day early-stop train-tail, validation, and test windows, repeated historical weekly anchors, and aggregated
+profit/risk evidence.
 
 ---
 
@@ -194,20 +173,27 @@ This project is organized as multiple short documents (idiot-proof for inferior 
 - `30_PHASE_3_OVERVIEW.md` — Active Phase 3 goals: data-first weekly walk-forward experiments
 - `31_STAGE_3.1_EXPERIMENT_FRAMEWORK.md` — Active weekly retrain experiment framework
 - `32_STAGE_3.2_RESULTS_SYNTHESIS.md` — Active weekly/portfolio synthesis contract
-- `PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md` — Active
-  post-no-promotion protocol: SAC-first, DEAP/NSGA-ready, data/preprocessing
-  search after CPU feature screening.
 - `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md` — Active
-  production-shaped extension: weekend retrain, next-week walk-forward
-  objective, cross-asset inputs, and weekly portfolio supervisor.
+  production-shaped protocol: weekend retrain, `train_years=1..10`, configurable
+  early-stop train-tail / validation / test windows, SQLite job pool, AdminLTE dashboard, and weekly
+  portfolio supervisor.
+- `PROJECT3_WEEKLY_WALKFORWARD_POOL_AGENT_SPECS_2026_06_04.md` — Active
+  copy-ready implementation specs for the job pool, worker loop, materializer,
+  dashboard, and seed plan.
+- `project3_orchestrator_event_context_representation_addendum_2026_06_09.md`
+  — Active event/context input lane: source coverage audit, point-in-time
+  engineered event features, matched baseline comparison in the weekly pool,
+  and later learned event-token encoders only if the engineered baseline helps.
+- `PROJECT3_RESEARCH_AGENT_PRAGMATIC_CONTEXT_2026_06_09.md` — Active briefing
+  for external research agents. Recommendations must map to weekly retrain
+  profit/risk experiments, not static academic gates.
 
 ### Phase 4: Deferred Synthetic Data Augmentation
 - `40_PHASE_4_SYNTHETIC_DATA_AUGMENTATION.md` — Optional post-Phase-3 synthetic OHLCV augmentation and robustness protocol
 
 Superseded one-off prompts, already-executed agent specs, old SOTA side memos,
-and deferred synthetic research notes are archived under
-`archive_superseded_2026_05_23_weekly_data_first/`. They are historical
-reference, not active instructions.
+and the deleted short-window short-window artifacts are not active
+instructions.
 
 ---
 

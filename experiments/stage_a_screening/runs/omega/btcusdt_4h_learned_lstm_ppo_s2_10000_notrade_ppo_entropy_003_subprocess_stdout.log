@@ -1,0 +1,12 @@
+[seed_sweep] running seed=2 run_dir=/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/btcusdt_4h_ppo_learned_lstm_direct_atr_sltp_s2_20260509T213044Z_project3_stage31_firstwave
+{
+  "ok": false,
+  "results": [
+    {
+      "seed": 2,
+      "exit_code": 1,
+      "summary": {},
+      "run_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/btcusdt_4h_ppo_learned_lstm_direct_atr_sltp_s2_20260509T213044Z_project3_stage31_firstwave"
+    }
+  ]
+}

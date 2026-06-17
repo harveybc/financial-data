@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "ppo_agent",
+  "asset": "usdcad",
+  "features_preset": "tech_stat",
+  "num_timesteps": 0,
+  "pid": 888256,
+  "progress_detail": "no-trade preflight diagnosis=forced_actions_not_seen_by_strategy closed_trades=0 orders=0",
+  "progress_percent": 0.0,
+  "run_id": "usdcad_15m_tech_stat_ppo_s2_10000_notrade_ppo_entropy_003",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "blocked_no_trade_preflight",
+  "timeframe": "15m",
+  "total_timesteps": 10000,
+  "updated_at_utc": "2026-05-10T01:26:17.434637+00:00"
+}

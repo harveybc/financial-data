@@ -1,0 +1,178 @@
+{
+  "cost_scenarios": [
+    {
+      "fee_multiplier": 1.0,
+      "name": "base",
+      "role": "minimum_realistic_cost",
+      "slippage_multiplier": 1.0
+    },
+    {
+      "fee_multiplier": 1.5,
+      "name": "plus_50pct",
+      "role": "moderate_cost_stress",
+      "slippage_multiplier": 1.5
+    },
+    {
+      "fee_multiplier": 2.0,
+      "name": "plus_100pct",
+      "role": "hard_cost_stress",
+      "slippage_multiplier": 2.0
+    }
+  ],
+  "experiment_id": "stageb_ethusdt_4h_sac_pragmatic_diagnostic_v1",
+  "external_infrastructure_status": {
+    "agent_multi_cost_scenarios_supported": true,
+    "agent_multi_known_baseline_plugins_supported": true,
+    "agent_multi_stageb_run_plan_dry_validated": true,
+    "feature_variant_materialization_summary": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/feature_variant_materialization_summary.json",
+    "feature_variants_materialized": true
+  },
+  "feature_variants": [
+    {
+      "feature_family": "baseline",
+      "name": "baseline_12",
+      "question": "Does the candidate beat a compact OHLCV baseline?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical",
+      "name": "tech_stat_full",
+      "question": "Does the broad technical/statistical family still carry signal?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_reduced",
+      "name": "tech_stat_reduced_corr_v1",
+      "question": "Is the full tech_stat family too redundant/noisy?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_volatility",
+      "name": "tech_stat_volatility_only",
+      "question": "Are volatility features driving useful behavior?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_trend",
+      "name": "tech_stat_trend_only",
+      "question": "Are trend features driving useful behavior?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_momentum",
+      "name": "tech_stat_momentum_only",
+      "question": "Are momentum features driving useful behavior?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_volume_liquidity",
+      "name": "tech_stat_volume_liquidity_only",
+      "question": "Are volume/liquidity features driving useful behavior?",
+      "source_family": "ohlcv",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_plus_regime",
+      "name": "tech_stat_full_plus_train_only_regime_probs",
+      "question": "Do train-only regime probabilities reduce bad exposure?",
+      "source_family": "ohlcv_train_only_regime",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_reduced_plus_regime",
+      "name": "tech_stat_reduced_corr_v1_plus_train_only_regime_probs",
+      "question": "Do regime probabilities help after redundancy reduction?",
+      "source_family": "ohlcv_train_only_regime",
+      "status": "materialized_preheldout"
+    },
+    {
+      "feature_family": "technical_statistical_plus_ood",
+      "name": "tech_stat_full_plus_train_only_ood_score",
+      "question": "Can train-only OOD state reduce overtrading/drawdown?",
+      "source_family": "ohlcv_train_only_ood",
+      "status": "materialized_preheldout"
+    }
+  ],
+  "generated_at": "2026-05-13T02:44:47.862450+00:00",
+  "hard_blocks_before_training": [
+    "stage_b_operator_approval_missing"
+  ],
+  "matrix": {
+    "cost_scenario_count": 3,
+    "feature_variant_count": 10,
+    "paired_design_required": true,
+    "planned_run_cells": 150,
+    "seed_count": 5
+  },
+  "project_rules": {
+    "do_not_modify_algorithms": [
+      "PPO",
+      "SAC",
+      "DQN"
+    ],
+    "fixed_algorithms_only": [
+      "SAC"
+    ],
+    "heldout_start": "2025-01-01",
+    "requires_operator_approval_before_training": true,
+    "stage_c_access": "DENIED",
+    "stage_c_allowed": false,
+    "training_launch_allowed_by_this_manifest": false
+  },
+  "promotion_policy": {
+    "counts_as_new_trials_for_dsr_pbo": true,
+    "diagnostic_results_do_not_unlock_stage_c": true,
+    "stage_c_requires_stage_b_approval_gate_pass": true,
+    "synthetic_data_allowed": false
+  },
+  "purpose": "targeted_stage_b_repair_and_feature_diagnostic",
+  "required_evidence_per_cell": {
+    "evidence_schema_version": "project3_return_trace_evidence_v1",
+    "required_cost_scenarios": [
+      "base",
+      "plus_50pct",
+      "plus_100pct"
+    ],
+    "required_files": [
+      "return_trace.csv",
+      "return_trace.csv.meta.json",
+      "evidence.json"
+    ],
+    "required_seed_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "required_splits": [
+      "evaluation"
+    ],
+    "trace_schema_version": "stage_b_return_trace_v1"
+  },
+  "safety_invariants": [
+    "stage_c_access_must_remain_denied",
+    "training_must_not_launch_from_manifest_alone",
+    "all_runs_count_as_new_trials_for_dsr_pbo"
+  ],
+  "schema_version": "project3_stage_b_pragmatic_diagnostic_manifest_v1",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "target": {
+    "algorithm": "SAC",
+    "asset": "ETHUSDT",
+    "base_feature_family": "tech_stat",
+    "timeframe": "4h"
+  }
+}

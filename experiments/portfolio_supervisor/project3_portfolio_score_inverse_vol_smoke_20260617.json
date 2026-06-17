@@ -1,0 +1,1954 @@
+{
+  "allocations": [
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.003382142173284808,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.0012878184634421697,
+      "test_end": "2023-05-29 00:00:00",
+      "test_start": "2023-05-22 00:00:00",
+      "train_tail_return": 0.003098647206965399,
+      "validation_return": 0.0036656371396042164,
+      "weight": 0.5605492031150614
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0013010570330870275,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0018715288615407388,
+      "test_end": "2023-05-29 00:00:00",
+      "test_start": "2023-05-22 00:00:00",
+      "train_tail_return": 0.002083940287021413,
+      "validation_return": 0.000518173779152642,
+      "weight": 0.2742642688420512
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.00031135900188072885,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0008625522138679953,
+      "test_end": "2023-05-29 00:00:00",
+      "test_start": "2023-05-22 00:00:00",
+      "train_tail_return": 3.998159904905485e-05,
+      "validation_return": 0.0005827364047124028,
+      "weight": 0.08052568397863795
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0002182114357145437,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00029452002857155435,
+      "test_end": "2023-05-29 00:00:00",
+      "test_start": "2023-05-22 00:00:00",
+      "train_tail_return": 0.0002720568714287275,
+      "validation_return": 0.00016436600000035995,
+      "weight": 0.06229155893899119
+    },
+    {
+      "asset_key": "adausdt_4h",
+      "composite_signal": 1.4271700000123566e-05,
+      "job_id": "adausdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 7.324919999995849e-05,
+      "test_end": "2023-05-29 00:00:00",
+      "test_start": "2023-05-22 00:00:00",
+      "train_tail_return": 4.0266000000066526e-05,
+      "validation_return": -1.1722599999819394e-05,
+      "weight": 0.022369285125258258
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.004609738742989977,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": -0.0020299937030895387,
+      "test_end": "2023-06-05 00:00:00",
+      "test_start": "2023-05-29 00:00:00",
+      "train_tail_return": 0.0040043189169818305,
+      "validation_return": 0.005215158568998124,
+      "weight": 0.5689172028440351
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0009649704890359878,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y",
+      "realized_test_return": 0.0005439477668232051,
+      "test_end": "2023-06-05 00:00:00",
+      "test_start": "2023-05-29 00:00:00",
+      "train_tail_return": -8.827404231781522e-05,
+      "validation_return": 0.002018215020389791,
+      "weight": 0.15981132866142278
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0007782900061560349,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0010154711727453636,
+      "test_end": "2023-06-05 00:00:00",
+      "test_start": "2023-05-29 00:00:00",
+      "train_tail_return": -0.00019133636106949403,
+      "validation_return": 0.001747916373381564,
+      "weight": 0.13179772987033636
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0005147394351141532,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.00031954708374071217,
+      "test_end": "2023-06-05 00:00:00",
+      "test_start": "2023-05-29 00:00:00",
+      "train_tail_return": 0.0005127419568147218,
+      "validation_return": 0.0005167369134135846,
+      "weight": 0.09224887160497222
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0002147029071429829,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00035532108571434406,
+      "test_end": "2023-06-05 00:00:00",
+      "test_start": "2023-05-29 00:00:00",
+      "train_tail_return": 9.610440000007436e-05,
+      "validation_return": 0.00033330141428589144,
+      "weight": 0.04722486701923337
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.006459235450010259,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": -0.0036426436807194262,
+      "test_end": "2023-06-12 00:00:00",
+      "test_start": "2023-06-05 00:00:00",
+      "train_tail_return": 0.005541731409747674,
+      "validation_return": 0.007376739490272843,
+      "weight": 0.3178054566057963
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0015957570121757358,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd14_vd7_td7",
+      "realized_test_return": -0.002311607065459964,
+      "test_end": "2023-06-12 00:00:00",
+      "test_start": "2023-06-05 00:00:00",
+      "train_tail_return": 0.0026475662575282666,
+      "validation_return": 0.0005439477668232051,
+      "weight": 0.13550456437313518
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0005845800952405389,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.00249810981096521,
+      "test_end": "2023-06-12 00:00:00",
+      "test_start": "2023-06-05 00:00:00",
+      "train_tail_return": 0.0011463517915308863,
+      "validation_return": 2.280839895019149e-05,
+      "weight": 0.1485206552717368
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.00036622260031810017,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0011762354892517202,
+      "test_end": "2023-06-12 00:00:00",
+      "test_start": "2023-06-05 00:00:00",
+      "train_tail_return": 0.001747916373381564,
+      "validation_return": -0.0010154711727453636,
+      "weight": 0.06415888558706379
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0003009668928571907,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 3.024505714277481e-05,
+      "test_end": "2023-06-12 00:00:00",
+      "test_start": "2023-06-05 00:00:00",
+      "train_tail_return": 0.0002189693714287344,
+      "validation_return": 0.000382964414285647,
+      "weight": 0.334010438162268
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.015585689747986908,
+      "job_id": "solusdt_1h_crypto_full_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.013148411869246979,
+      "test_end": "2023-06-19 00:00:00",
+      "test_start": "2023-06-12 00:00:00",
+      "train_tail_return": -0.0011032252035125811,
+      "validation_return": 0.0322746046994864,
+      "weight": 0.8726423727134742
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.012316791789672044,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0001265778084642566,
+      "test_end": "2023-06-19 00:00:00",
+      "test_start": "2023-06-12 00:00:00",
+      "train_tail_return": 0.0018854411571600505,
+      "validation_return": 0.022748142422184037,
+      "weight": 0.013693900848693777
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.004424923947351389,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.0005572568881686557,
+      "test_end": "2023-06-19 00:00:00",
+      "test_start": "2023-06-12 00:00:00",
+      "train_tail_return": 0.00029954708374058114,
+      "validation_return": 0.008550300810962197,
+      "weight": 0.041157126161101676
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0011183948889853523,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0008666123701656092,
+      "test_end": "2023-06-19 00:00:00",
+      "test_start": "2023-06-12 00:00:00",
+      "train_tail_return": 8.698945814722414e-05,
+      "validation_return": 0.0021498003198234805,
+      "weight": 0.027620943386081617
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0006520742500001342,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0005329649999992192,
+      "test_end": "2023-06-19 00:00:00",
+      "test_start": "2023-06-12 00:00:00",
+      "train_tail_return": 0.0007802066142859054,
+      "validation_return": 0.000523941885714363,
+      "weight": 0.044885656890648794
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.014682523937554315,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.0005296328768318315,
+      "test_end": "2023-06-26 00:00:00",
+      "test_start": "2023-06-19 00:00:00",
+      "train_tail_return": 0.02350875940843533,
+      "validation_return": 0.005856288466673298,
+      "weight": 0.03609685639145419
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.013794657898346108,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0027423795033533205,
+      "test_end": "2023-06-26 00:00:00",
+      "test_start": "2023-06-19 00:00:00",
+      "train_tail_return": 0.01982458028662326,
+      "validation_return": 0.007764735510068954,
+      "weight": 0.8329485990723409
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.009357968414697715,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.0020989570413760816,
+      "test_end": "2023-06-26 00:00:00",
+      "test_start": "2023-06-19 00:00:00",
+      "train_tail_return": 0.015310628211218091,
+      "validation_return": 0.0034053086181773384,
+      "weight": 0.07935441655689648
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0006415939748289357,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.001923648002284839,
+      "test_end": "2023-06-26 00:00:00",
+      "test_start": "2023-06-19 00:00:00",
+      "train_tail_return": 0.0021498003198234805,
+      "validation_return": -0.0008666123701656092,
+      "weight": 0.018000814733350804
+    },
+    {
+      "asset_key": "adausdt_4h",
+      "composite_signal": 0.00048749957857041615,
+      "job_id": "adausdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -5.644462857123944e-05,
+      "test_end": "2023-06-26 00:00:00",
+      "test_start": "2023-06-19 00:00:00",
+      "train_tail_return": 0.000988606757140742,
+      "validation_return": -1.360759999990968e-05,
+      "weight": 0.033599313245957683
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.008826470160972377,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e5_v1",
+      "realized_test_return": 0.0332222463005758,
+      "test_end": "2023-07-03 00:00:00",
+      "test_start": "2023-06-26 00:00:00",
+      "train_tail_return": 0.00627888588142933,
+      "validation_return": 0.011374054440515424,
+      "weight": 0.2670983553187669
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.007698170444235042,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.011617080587592366,
+      "test_end": "2023-07-03 00:00:00",
+      "test_start": "2023-06-26 00:00:00",
+      "train_tail_return": 0.009578751248827677,
+      "validation_return": 0.0058175896396424065,
+      "weight": 0.24804393895034324
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.003247167971534237,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0034361279284812474,
+      "test_end": "2023-07-03 00:00:00",
+      "test_start": "2023-06-26 00:00:00",
+      "train_tail_return": 0.00517214055817572,
+      "validation_return": 0.0013221953848927548,
+      "weight": 0.24958796327813032
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0016345165444596743,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y",
+      "realized_test_return": 0.0026007297927830297,
+      "test_end": "2023-07-03 00:00:00",
+      "test_start": "2023-06-26 00:00:00",
+      "train_tail_return": 0.0009461281747360495,
+      "validation_return": 0.002322904914183299,
+      "weight": 0.11973949381000877
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.00023689500714274558,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.00020709542857111352,
+      "test_end": "2023-07-03 00:00:00",
+      "test_start": "2023-06-26 00:00:00",
+      "train_tail_return": 3.8455371428325336e-05,
+      "validation_return": 0.00043533464285716583,
+      "weight": 0.11553024864275074
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.01316763269527288,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": -0.0051718604751895825,
+      "test_end": "2023-07-10 00:00:00",
+      "test_start": "2023-07-03 00:00:00",
+      "train_tail_return": 0.00772990511940308,
+      "validation_return": 0.01860536027114268,
+      "weight": 0.2583227280174729
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.011200597533953749,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m12_base1y",
+      "realized_test_return": 0.01014098573500366,
+      "test_end": "2023-07-10 00:00:00",
+      "test_start": "2023-07-03 00:00:00",
+      "train_tail_return": 0.002123825302345006,
+      "validation_return": 0.020277369765562492,
+      "weight": 0.24575941359185627
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.004229294008072926,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd14_vd7_td7",
+      "realized_test_return": -0.003037819235604755,
+      "test_end": "2023-07-10 00:00:00",
+      "test_start": "2023-07-03 00:00:00",
+      "train_tail_return": 0.005857858223362822,
+      "validation_return": 0.0026007297927830297,
+      "weight": 0.20085013470661067
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0017023640040193522,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0007045259691943473,
+      "test_end": "2023-07-10 00:00:00",
+      "test_start": "2023-07-03 00:00:00",
+      "train_tail_return": 0.0027009896122920374,
+      "validation_return": 0.000703738395746667,
+      "weight": 0.24266588820072604
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0012577560122793985,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0024844013666645015,
+      "test_end": "2023-07-10 00:00:00",
+      "test_start": "2023-07-03 00:00:00",
+      "train_tail_return": 0.0012781107771575595,
+      "validation_return": 0.0012374012474012375,
+      "weight": 0.05240183548333412
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.0164663093818187,
+      "job_id": "solusdt_4h_crypto_full_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.01067023402845857,
+      "test_end": "2023-07-17 00:00:00",
+      "test_start": "2023-07-10 00:00:00",
+      "train_tail_return": 0.02198407572907901,
+      "validation_return": 0.010948543034558389,
+      "weight": 0.2754694451651167
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.014380024306315131,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": 0.025511337572402093,
+      "test_end": "2023-07-17 00:00:00",
+      "test_start": "2023-07-10 00:00:00",
+      "train_tail_return": 0.02356214234662035,
+      "validation_return": 0.005197906266009911,
+      "weight": 0.4680148008755077
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0013993366519619022,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.001722331048845116,
+      "test_end": "2023-07-17 00:00:00",
+      "test_start": "2023-07-10 00:00:00",
+      "train_tail_return": 0.003593296968334325,
+      "validation_return": -0.0007946236644105209,
+      "weight": 0.0959676529442887
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0002901178999999976,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.005973387771427863,
+      "test_end": "2023-07-17 00:00:00",
+      "test_start": "2023-07-10 00:00:00",
+      "train_tail_return": 0.0004204003428569525,
+      "validation_return": 0.0001598354571430427,
+      "weight": 0.1433505214291747
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.00020034122867323978,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": 0.0004535604905047119,
+      "test_end": "2023-07-17 00:00:00",
+      "test_start": "2023-07-10 00:00:00",
+      "train_tail_return": 0.0034385016929512346,
+      "validation_return": -0.003037819235604755,
+      "weight": 0.01719757958591228
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.021123274159447147,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m12_base1y",
+      "realized_test_return": -0.0014902740394656666,
+      "test_end": "2023-07-24 00:00:00",
+      "test_start": "2023-07-17 00:00:00",
+      "train_tail_return": 0.01981348117953119,
+      "validation_return": 0.022433067139363105,
+      "weight": 0.41320763232531166
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.02023001888461151,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0039099006047945695,
+      "test_end": "2023-07-24 00:00:00",
+      "test_start": "2023-07-17 00:00:00",
+      "train_tail_return": 0.0076047863048218645,
+      "validation_return": 0.03285525146440116,
+      "weight": 0.19866499743309401
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.002605172782860543,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": -0.00015827053178252282,
+      "test_end": "2023-07-24 00:00:00",
+      "test_start": "2023-07-17 00:00:00",
+      "train_tail_return": 0.004756785075216374,
+      "validation_return": 0.0004535604905047119,
+      "weight": 0.14502171529281513
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.002102809281678275,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -1.0000000000065512e-05,
+      "test_end": "2023-07-24 00:00:00",
+      "test_start": "2023-07-17 00:00:00",
+      "train_tail_return": -0.0026747861842384424,
+      "validation_return": 0.0068804047475949925,
+      "weight": 0.13200375136380185
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0020191863642852192,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -3.2367571428437714e-05,
+      "test_end": "2023-07-24 00:00:00",
+      "test_start": "2023-07-17 00:00:00",
+      "train_tail_return": 0.00016521675714220585,
+      "validation_return": 0.0038731559714282326,
+      "weight": 0.11110190358497729
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.013861744504631623,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.00251240396355501,
+      "test_end": "2023-07-31 00:00:00",
+      "test_start": "2023-07-24 00:00:00",
+      "train_tail_return": 0.02865426471520993,
+      "validation_return": -0.0009307757059466848,
+      "weight": 0.23442004489944118
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.01363085333285452,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y_oracle_bc_pretrain_v1",
+      "realized_test_return": -0.0041310198246603536,
+      "test_end": "2023-07-31 00:00:00",
+      "test_start": "2023-07-24 00:00:00",
+      "train_tail_return": 0.02700260267657395,
+      "validation_return": 0.0002591039891350899,
+      "weight": 0.42757724681114284
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0021262169142854948,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0004103077999989546,
+      "test_end": "2023-07-31 00:00:00",
+      "test_start": "2023-07-24 00:00:00",
+      "train_tail_return": 0.0044315229857139204,
+      "validation_return": -0.00017908915714293094,
+      "weight": 0.13328727109963098
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0015925694663603829,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": 0.00022365872874541282,
+      "test_end": "2023-07-31 00:00:00",
+      "test_start": "2023-07-24 00:00:00",
+      "train_tail_return": 0.0033434094645032886,
+      "validation_return": -0.00015827053178252282,
+      "weight": 0.10393617639276524
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0013827637029325546,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0011077936427414947,
+      "test_end": "2023-07-31 00:00:00",
+      "test_start": "2023-07-24 00:00:00",
+      "train_tail_return": 0.0027755274058651747,
+      "validation_return": -1.0000000000065512e-05,
+      "weight": 0.10077926079701978
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.012978179479940843,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": 0.002091153327738793,
+      "test_end": "2023-08-07 00:00:00",
+      "test_start": "2023-07-31 00:00:00",
+      "train_tail_return": 0.015709563122953796,
+      "validation_return": 0.010246795836927891,
+      "weight": 0.5625740856457624
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.008384449037210917,
+      "job_id": "solusdt_4h_crypto_full_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.002317072148351196,
+      "test_end": "2023-08-07 00:00:00",
+      "test_start": "2023-07-31 00:00:00",
+      "train_tail_return": 0.004157502413903336,
+      "validation_return": 0.012611395660518498,
+      "weight": 0.17761370705000798
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0012080351454429872,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": -0.00126628105817439,
+      "test_end": "2023-08-07 00:00:00",
+      "test_start": "2023-07-31 00:00:00",
+      "train_tail_return": 0.0021924115621405615,
+      "validation_return": 0.00022365872874541282,
+      "weight": 0.10564260802723112
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0005055723905723619,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.000848825578646073,
+      "test_end": "2023-08-07 00:00:00",
+      "test_start": "2023-07-31 00:00:00",
+      "train_tail_return": -1.0000000000065512e-05,
+      "validation_return": 0.0010211447811447893,
+      "weight": 0.05026058083983637
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0002889333428570673,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0,
+      "test_end": "2023-08-07 00:00:00",
+      "test_start": "2023-07-31 00:00:00",
+      "train_tail_return": 0.000556411599999862,
+      "validation_return": 2.145508571427257e-05,
+      "weight": 0.10390901843716215
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.00552411544862097,
+      "job_id": "solusdt_4h_crypto_full_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.0002808797926618922,
+      "test_end": "2023-08-14 00:00:00",
+      "test_start": "2023-08-07 00:00:00",
+      "train_tail_return": 0.010520404138544937,
+      "validation_return": 0.0005278267586970031,
+      "weight": 0.25202782170327964
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.005177886422462197,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": -0.006921782848252067,
+      "test_end": "2023-08-14 00:00:00",
+      "test_start": "2023-08-07 00:00:00",
+      "train_tail_return": 0.004482884296320266,
+      "validation_return": 0.005872888548604127,
+      "weight": 0.3948160930103816
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0004995242642855668,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.00038209240000020017,
+      "test_end": "2023-08-14 00:00:00",
+      "test_start": "2023-08-07 00:00:00",
+      "train_tail_return": 0.00022874220000002055,
+      "validation_return": 0.0007703063285711131,
+      "weight": 0.09942836365405006
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.000348014956856435,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.000852180558722937,
+      "test_end": "2023-08-14 00:00:00",
+      "test_start": "2023-08-07 00:00:00",
+      "train_tail_return": -0.00012034818892403543,
+      "validation_return": 0.0008163781026369055,
+      "weight": 0.18053869155962074
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.00030742384251492005,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.000796291734062704,
+      "test_end": "2023-08-14 00:00:00",
+      "test_start": "2023-08-07 00:00:00",
+      "train_tail_return": -0.0007896119281747271,
+      "validation_return": 0.0014044596132045672,
+      "weight": 0.07318903007266798
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.004496233180348308,
+      "job_id": "solusdt_1h_crypto_full_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0017945626606354903,
+      "test_end": "2023-08-21 00:00:00",
+      "test_start": "2023-08-14 00:00:00",
+      "train_tail_return": 0.004535267512345342,
+      "validation_return": 0.004457198848351274,
+      "weight": 0.18792031999279657
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.004211116015403804,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": -0.0003721875235238592,
+      "test_end": "2023-08-21 00:00:00",
+      "test_start": "2023-08-14 00:00:00",
+      "train_tail_return": 0.007476558107008868,
+      "validation_return": 0.0009456739237987399,
+      "weight": 0.24754520368041866
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0011003756736336356,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.004227099353240282,
+      "test_end": "2023-08-21 00:00:00",
+      "test_start": "2023-08-14 00:00:00",
+      "train_tail_return": 0.0014044596132045672,
+      "validation_return": 0.000796291734062704,
+      "weight": 0.17659939977103994
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0008342793306799212,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0038939913620226196,
+      "test_end": "2023-08-21 00:00:00",
+      "test_start": "2023-08-14 00:00:00",
+      "train_tail_return": 0.0008163781026369055,
+      "validation_return": 0.000852180558722937,
+      "weight": 0.2800157791510239
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0006326878642854972,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.0006890505142853609,
+      "test_end": "2023-08-21 00:00:00",
+      "test_start": "2023-08-14 00:00:00",
+      "train_tail_return": 0.0007703063285711131,
+      "validation_return": 0.0004950693999998812,
+      "weight": 0.1079192974047209
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.0051006270069061665,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m6_base2y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": -0.003215656392543731,
+      "test_end": "2023-08-28 00:00:00",
+      "test_start": "2023-08-21 00:00:00",
+      "train_tail_return": 0.0013934734785412406,
+      "validation_return": 0.008807780535271093,
+      "weight": 0.169731451935121
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.004813118403849237,
+      "job_id": "solusdt_1h_crypto_full_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0013440489955268697,
+      "test_end": "2023-08-28 00:00:00",
+      "test_start": "2023-08-21 00:00:00",
+      "train_tail_return": 0.009602067864320718,
+      "validation_return": 2.416894337775588e-05,
+      "weight": 0.1388175708945843
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0029317079085953157,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0003284842758244366,
+      "test_end": "2023-08-28 00:00:00",
+      "test_start": "2023-08-21 00:00:00",
+      "train_tail_return": 0.000796291734062704,
+      "validation_return": 0.005067124083127927,
+      "weight": 0.24963210552791015
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0023730859603727783,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 5.4902728915395826e-05,
+      "test_end": "2023-08-28 00:00:00",
+      "test_start": "2023-08-21 00:00:00",
+      "train_tail_return": 0.000852180558722937,
+      "validation_return": 0.0038939913620226196,
+      "weight": 0.28190555632864234
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0003870597285712263,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.00011744720000028686,
+      "test_end": "2023-08-28 00:00:00",
+      "test_start": "2023-08-21 00:00:00",
+      "train_tail_return": 0.0003735875999999472,
+      "validation_return": 0.0004005318571425054,
+      "weight": 0.15991331531374228
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.007590599269204024,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": -0.004162904814084878,
+      "test_end": "2023-09-04 00:00:00",
+      "test_start": "2023-08-28 00:00:00",
+      "train_tail_return": 0.010989827979360989,
+      "validation_return": 0.0041913705590470585,
+      "weight": 0.23788009484673422
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.006603260093299146,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_fine_tune_recent_window_m3_base2y",
+      "realized_test_return": -0.004236976451275076,
+      "test_end": "2023-09-04 00:00:00",
+      "test_start": "2023-08-28 00:00:00",
+      "train_tail_return": 0.006330431383880342,
+      "validation_return": 0.00687608880271795,
+      "weight": 0.21358622024714344
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0019744470454690077,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0022994703221803636,
+      "test_end": "2023-09-04 00:00:00",
+      "test_start": "2023-08-28 00:00:00",
+      "train_tail_return": 0.0038939913620226196,
+      "validation_return": 5.4902728915395826e-05,
+      "weight": 0.18825067021432687
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.001877496072183904,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0026766405335389987,
+      "test_end": "2023-09-04 00:00:00",
+      "test_start": "2023-08-28 00:00:00",
+      "train_tail_return": 0.004227099353240282,
+      "validation_return": -0.00047210720887247426,
+      "weight": 0.11273238070971166
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.0008572661714287833,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -1.1466828571449206e-05,
+      "test_end": "2023-09-04 00:00:00",
+      "test_start": "2023-08-28 00:00:00",
+      "train_tail_return": 0.0017426388285715078,
+      "validation_return": -2.8106485713941254e-05,
+      "weight": 0.2475506339820838
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.010192175549212257,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": 0.0032560642521546335,
+      "test_end": "2023-09-11 00:00:00",
+      "test_start": "2023-09-04 00:00:00",
+      "train_tail_return": 0.005808155273260951,
+      "validation_return": 0.014576195825163563,
+      "weight": 0.47955825259491297
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.006384132016019728,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_warm_start_chain_1y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": 0.004029365056881895,
+      "test_end": "2023-09-11 00:00:00",
+      "test_start": "2023-09-04 00:00:00",
+      "train_tail_return": 0.005681969944108856,
+      "validation_return": 0.0070862940879306,
+      "weight": 0.2222719945850168
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0011771865255478797,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00036024534515388673,
+      "test_end": "2023-09-11 00:00:00",
+      "test_start": "2023-09-04 00:00:00",
+      "train_tail_return": 5.4902728915395826e-05,
+      "validation_return": 0.0022994703221803636,
+      "weight": 0.15746596820250167
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0011022666623332622,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0002127299853067477,
+      "test_end": "2023-09-11 00:00:00",
+      "test_start": "2023-09-04 00:00:00",
+      "train_tail_return": -0.00047210720887247426,
+      "validation_return": 0.0026766405335389987,
+      "weight": 0.11168617961568457
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.00016419968571423915,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -3.799479999977429e-05,
+      "test_end": "2023-09-11 00:00:00",
+      "test_start": "2023-09-04 00:00:00",
+      "train_tail_return": 4.9871799999934296e-05,
+      "validation_return": 0.000278527571428544,
+      "weight": 0.029017605001883984
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.006938972088203932,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_warm_start_chain_1y_oracle_bc_transfer_e5_v1",
+      "realized_test_return": 0.000479781714538996,
+      "test_end": "2023-09-18 00:00:00",
+      "test_start": "2023-09-11 00:00:00",
+      "train_tail_return": 0.004305863803404586,
+      "validation_return": 0.009572080373003278,
+      "weight": 0.09107121560765052
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.006562700229863161,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": -0.004099165418220196,
+      "test_end": "2023-09-18 00:00:00",
+      "test_start": "2023-09-11 00:00:00",
+      "train_tail_return": 0.004685387392079576,
+      "validation_return": 0.008440013067646746,
+      "weight": 0.11753322909150546
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0015910766491760153,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0010231950989633143,
+      "test_end": "2023-09-18 00:00:00",
+      "test_start": "2023-09-11 00:00:00",
+      "train_tail_return": 0.002541595677534314,
+      "validation_return": 0.0006405576208177166,
+      "weight": 0.06306860146956021
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0013298578336671252,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0012983606167670247,
+      "test_end": "2023-09-18 00:00:00",
+      "test_start": "2023-09-11 00:00:00",
+      "train_tail_return": 0.0022994703221803636,
+      "validation_return": 0.00036024534515388673,
+      "weight": 0.07225941206805998
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0011531580177874257,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_warm_start_chain_3y",
+      "realized_test_return": -0.0013895557016389004,
+      "test_end": "2023-09-18 00:00:00",
+      "test_start": "2023-09-11 00:00:00",
+      "train_tail_return": 0.0026838126547554797,
+      "validation_return": -0.0003774966191806284,
+      "weight": 0.6560675417632238
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.007397574178093502,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": 0.00041028474365112366,
+      "test_end": "2023-09-25 00:00:00",
+      "test_start": "2023-09-18 00:00:00",
+      "train_tail_return": 0.0093197695507099,
+      "validation_return": 0.005475378805477105,
+      "weight": 0.16586477865916416
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.006618341029367869,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y_oracle_bc_pretrain_v1",
+      "realized_test_return": -0.0027634027748992818,
+      "test_end": "2023-09-25 00:00:00",
+      "test_start": "2023-09-18 00:00:00",
+      "train_tail_return": 0.005262812086892721,
+      "validation_return": 0.007973869971843017,
+      "weight": 0.15456185417109797
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0009452619452338107,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_exec_event_no_trade_overlay_v1_sac_scratch_1y",
+      "realized_test_return": -0.0015331154556439408,
+      "test_end": "2023-09-25 00:00:00",
+      "test_start": "2023-09-18 00:00:00",
+      "train_tail_return": 0.0007023616825925227,
+      "validation_return": 0.0011881622078750986,
+      "weight": 0.6287758922486947
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.00046914395833902445,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.001967283102348505,
+      "test_end": "2023-09-25 00:00:00",
+      "test_start": "2023-09-18 00:00:00",
+      "train_tail_return": -0.0003028756306447944,
+      "validation_return": 0.0012411635473228433,
+      "weight": 0.03321335012360462
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0003322307568861538,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0016151137746486244,
+      "test_end": "2023-09-25 00:00:00",
+      "test_start": "2023-09-18 00:00:00",
+      "train_tail_return": -0.0007996231272167087,
+      "validation_return": 0.0014640846409890163,
+      "weight": 0.01758412479743858
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.008555000528951306,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y_oracle_bc_pretrain_v1",
+      "realized_test_return": -0.004762213449216124,
+      "test_end": "2023-10-02 00:00:00",
+      "test_start": "2023-09-25 00:00:00",
+      "train_tail_return": 0.015544067371491499,
+      "validation_return": 0.001565933686411114,
+      "weight": 0.2235812969894878
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.003662466003273801,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m6_base2y_oracle_bc_transfer_e5_v1",
+      "realized_test_return": 0.0012243151738604574,
+      "test_end": "2023-10-02 00:00:00",
+      "test_start": "2023-09-25 00:00:00",
+      "train_tail_return": 0.00483605703929757,
+      "validation_return": 0.002488874967250032,
+      "weight": 0.08285800976503302
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0009727992222187676,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_exec_event_no_trade_overlay_v1_sac_scratch_3y",
+      "realized_test_return": 0.0005207293118845158,
+      "test_end": "2023-10-02 00:00:00",
+      "test_start": "2023-09-25 00:00:00",
+      "train_tail_return": -4.484750362354628e-05,
+      "validation_return": 0.0019904459480610814,
+      "weight": 0.657295055811007
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0003141998515156508,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.001809174433603733,
+      "test_end": "2023-10-02 00:00:00",
+      "test_start": "2023-09-25 00:00:00",
+      "train_tail_return": -0.0014840846409890363,
+      "validation_return": 0.002112484344020338,
+      "weight": 0.020124068358315726
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.00013646753512636112,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0029574009132673496,
+      "test_end": "2023-10-02 00:00:00",
+      "test_start": "2023-09-25 00:00:00",
+      "train_tail_return": -0.0012983606167670247,
+      "validation_return": 0.001571295687019747,
+      "weight": 0.016141569076156402
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.0084409404624477,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m12_base2y",
+      "realized_test_return": 0.0032989282196143055,
+      "test_end": "2023-10-09 00:00:00",
+      "test_start": "2023-10-02 00:00:00",
+      "train_tail_return": 0.00013234550047891425,
+      "validation_return": 0.016749535424416484,
+      "weight": 0.2837099858049932
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.007339875860598255,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y_oracle_bc_pretrain_v1",
+      "realized_test_return": -0.0004866960439355861,
+      "test_end": "2023-10-09 00:00:00",
+      "test_start": "2023-10-02 00:00:00",
+      "train_tail_return": 0.00022336446871262794,
+      "validation_return": 0.014456387252483882,
+      "weight": 0.34540388730237415
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0019513031829214156,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd14_vd7_td7",
+      "realized_test_return": -0.0003726646886798024,
+      "test_end": "2023-10-09 00:00:00",
+      "test_start": "2023-10-02 00:00:00",
+      "train_tail_return": -0.00029414383912829134,
+      "validation_return": 0.0041967502049711225,
+      "weight": 0.16059840492071237
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0001516549552083024,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00020205937794526285,
+      "test_end": "2023-10-09 00:00:00",
+      "test_start": "2023-10-02 00:00:00",
+      "train_tail_return": 0.002112484344020338,
+      "validation_return": -0.001809174433603733,
+      "weight": 0.02173162346983614
+    },
+    {
+      "asset_key": "adausdt_4h",
+      "composite_signal": 0.0001463904000003069,
+      "job_id": "adausdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -1.5128000000474984e-06,
+      "test_end": "2023-10-09 00:00:00",
+      "test_start": "2023-10-02 00:00:00",
+      "train_tail_return": 0.0001602791000001602,
+      "validation_return": 0.00013250170000045358,
+      "weight": 0.18855609850208416
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.009648233690207508,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": -0.001759162898916422,
+      "test_end": "2023-10-16 00:00:00",
+      "test_start": "2023-10-09 00:00:00",
+      "train_tail_return": 0.009872956566731483,
+      "validation_return": 0.009423510813683533,
+      "weight": 0.2937822842247332
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.008385308021349402,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m12_base2y",
+      "realized_test_return": -0.001384415607696976,
+      "test_end": "2023-10-16 00:00:00",
+      "test_start": "2023-10-09 00:00:00",
+      "train_tail_return": 0.009195436329322293,
+      "validation_return": 0.007575179713376512,
+      "weight": 0.32539275941142476
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.002342465804132221,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00023461595110640943,
+      "test_end": "2023-10-16 00:00:00",
+      "test_start": "2023-10-09 00:00:00",
+      "train_tail_return": 0.00385118622602576,
+      "validation_return": 0.000833745382238682,
+      "weight": 0.1827175489654519
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.00191204275814566,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y",
+      "realized_test_return": 1.4405752050361542e-05,
+      "test_end": "2023-10-16 00:00:00",
+      "test_start": "2023-10-09 00:00:00",
+      "train_tail_return": 0.0041967502049711225,
+      "validation_return": -0.0003726646886798024,
+      "weight": 0.14659033715750303
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0005154615016428332,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0008633624454148503,
+      "test_end": "2023-10-16 00:00:00",
+      "test_start": "2023-10-09 00:00:00",
+      "train_tail_return": 0.0012294244170463209,
+      "validation_return": -0.00019850141376065444,
+      "weight": 0.05151707024088715
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.003919404034117391,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": -1.4272760680777985e-05,
+      "test_end": "2023-10-23 00:00:00",
+      "test_start": "2023-10-16 00:00:00",
+      "train_tail_return": 0.006499233226667789,
+      "validation_return": 0.0013395748415669928,
+      "weight": 0.2773873935974518
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.003598656995357219,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m12_base2y",
+      "realized_test_return": -0.006820933041787769,
+      "test_end": "2023-10-23 00:00:00",
+      "test_start": "2023-10-16 00:00:00",
+      "train_tail_return": 0.006430981528795288,
+      "validation_return": 0.0007663324619191503,
+      "weight": 0.32379813189133694
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.00033243051582709793,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0012370588235293134,
+      "test_end": "2023-10-23 00:00:00",
+      "test_start": "2023-10-16 00:00:00",
+      "train_tail_return": -0.00019850141376065444,
+      "validation_return": 0.0008633624454148503,
+      "weight": 0.08257357913460708
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.000207794538593431,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd14_vd7_td7",
+      "realized_test_return": 0.002876937408502922,
+      "test_end": "2023-10-23 00:00:00",
+      "test_start": "2023-10-16 00:00:00",
+      "train_tail_return": 0.00040118332513650046,
+      "validation_return": 1.4405752050361542e-05,
+      "weight": 0.0514235947418563
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.00014041849999990585,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.00047486911428551437,
+      "test_end": "2023-10-23 00:00:00",
+      "test_start": "2023-10-16 00:00:00",
+      "train_tail_return": 0.0002206903999997234,
+      "validation_return": 6.014660000008831e-05,
+      "weight": 0.26481730063474795
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.010524718170319636,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m6_base2y",
+      "realized_test_return": 0.000345388544827685,
+      "test_end": "2023-10-30 00:00:00",
+      "test_start": "2023-10-23 00:00:00",
+      "train_tail_return": 0.0001578000529580681,
+      "validation_return": 0.020891636287681203,
+      "weight": 0.4012152255109495
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.008307333492718616,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": 0.0013110325757708097,
+      "test_end": "2023-10-30 00:00:00",
+      "test_start": "2023-10-23 00:00:00",
+      "train_tail_return": -0.0031704804717174184,
+      "validation_return": 0.01978514745715465,
+      "weight": 0.2043321086242084
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.001482430659606293,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0004791062694531334,
+      "test_end": "2023-10-30 00:00:00",
+      "test_start": "2023-10-23 00:00:00",
+      "train_tail_return": 0.0017213519878485073,
+      "validation_return": 0.0012435093313640788,
+      "weight": 0.13592513581041368
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0014456715802766418,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_exec_event_no_trade_overlay_v1_sac_scratch_1y",
+      "realized_test_return": 0.0007222394487997885,
+      "test_end": "2023-10-30 00:00:00",
+      "test_start": "2023-10-23 00:00:00",
+      "train_tail_return": 1.4405752050361542e-05,
+      "validation_return": 0.002876937408502922,
+      "weight": 0.11690415175791971
+    },
+    {
+      "asset_key": "xrpusdt_4h",
+      "composite_signal": 0.00019140653571431132,
+      "job_id": "xrpusdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0003141636571428741,
+      "test_end": "2023-10-30 00:00:00",
+      "test_start": "2023-10-23 00:00:00",
+      "train_tail_return": -3.9851000000035164e-05,
+      "validation_return": 0.0004226640714286578,
+      "weight": 0.14162337829650873
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.019078694856563327,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y_oracle_bc_pretrain_v1",
+      "realized_test_return": 0.007602006224526114,
+      "test_end": "2023-11-06 00:00:00",
+      "test_start": "2023-10-30 00:00:00",
+      "train_tail_return": 0.028827100904516678,
+      "validation_return": 0.009330288808609977,
+      "weight": 0.47829795223923277
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.013468420169976625,
+      "job_id": "solusdt_4h_crypto_full_all_available_sac_fine_tune_recent_window_m12_base3y",
+      "realized_test_return": -0.0029877412435768136,
+      "test_end": "2023-11-06 00:00:00",
+      "test_start": "2023-10-30 00:00:00",
+      "train_tail_return": 0.018817734163576016,
+      "validation_return": 0.008119106176377233,
+      "weight": 0.3040392216454855
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0023871496343942367,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd14_vd7_td7",
+      "realized_test_return": 0.0021152025222410664,
+      "test_end": "2023-11-06 00:00:00",
+      "test_start": "2023-10-30 00:00:00",
+      "train_tail_return": 0.004052059819988685,
+      "validation_return": 0.0007222394487997885,
+      "weight": 0.09236110051990648
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0019780853075699323,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00026910731171359004,
+      "test_end": "2023-11-06 00:00:00",
+      "test_start": "2023-10-30 00:00:00",
+      "train_tail_return": 0.002979152365433002,
+      "validation_return": 0.0009770182497068625,
+      "weight": 0.0806822758341677
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0008580825464912234,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0036807033540435796,
+      "test_end": "2023-11-06 00:00:00",
+      "test_start": "2023-10-30 00:00:00",
+      "train_tail_return": 0.0012370588235293134,
+      "validation_return": 0.0004791062694531334,
+      "weight": 0.044619449761207595
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.013512115984039785,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m3_base2y",
+      "realized_test_return": 0.00636744089177399,
+      "test_end": "2023-11-13 00:00:00",
+      "test_start": "2023-11-06 00:00:00",
+      "train_tail_return": 0.006499007127681367,
+      "validation_return": 0.020525224840398204,
+      "weight": 0.18178969728880717
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.010435225499999867,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_scratch_1y",
+      "realized_test_return": 0.015710255999999978,
+      "test_end": "2023-11-13 00:00:00",
+      "test_start": "2023-11-06 00:00:00",
+      "train_tail_return": 0.0100261091999998,
+      "validation_return": 0.010844341799999935,
+      "weight": 0.2588985887793264
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.009098409309247324,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": 0.01589680302081775,
+      "test_end": "2023-11-13 00:00:00",
+      "test_start": "2023-11-06 00:00:00",
+      "train_tail_return": 0.004307767765208581,
+      "validation_return": 0.013889050853286067,
+      "weight": 0.10157282295021075
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0020799048117483565,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00029500203334675845,
+      "test_end": "2023-11-13 00:00:00",
+      "test_start": "2023-11-06 00:00:00",
+      "train_tail_return": 0.0004791062694531334,
+      "validation_return": 0.0036807033540435796,
+      "weight": 0.06076331728984416
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0006230627807102262,
+      "job_id": "btcusdt_4h_sota_low_cost_sac_scratch_4y",
+      "realized_test_return": 0.0033964994790380842,
+      "test_end": "2023-11-13 00:00:00",
+      "test_start": "2023-11-06 00:00:00",
+      "train_tail_return": 0.0009770182497068625,
+      "validation_return": 0.00026910731171359004,
+      "weight": 0.3969755736918116
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.024404660019747948,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m6_base2y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": 0.0009747918986446891,
+      "test_end": "2023-11-20 00:00:00",
+      "test_start": "2023-11-13 00:00:00",
+      "train_tail_return": 0.01706379955435211,
+      "validation_return": 0.031745520485143786,
+      "weight": 0.2323249987504278
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.022893542178714088,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y_oracle_bc_pretrain_v1",
+      "realized_test_return": 0.009326443506601612,
+      "test_end": "2023-11-20 00:00:00",
+      "test_start": "2023-11-13 00:00:00",
+      "train_tail_return": 0.020908540481735516,
+      "validation_return": 0.02487854387569266,
+      "weight": 0.3378721648417136
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.013277298899999956,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_scratch_1y",
+      "realized_test_return": -0.002868794999999924,
+      "test_end": "2023-11-20 00:00:00",
+      "test_start": "2023-11-13 00:00:00",
+      "train_tail_return": 0.010844341799999935,
+      "validation_return": 0.015710255999999978,
+      "weight": 0.2406289665238414
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.001987852693695169,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00021412795436015486,
+      "test_end": "2023-11-20 00:00:00",
+      "test_start": "2023-11-13 00:00:00",
+      "train_tail_return": 0.0036807033540435796,
+      "validation_return": 0.00029500203334675845,
+      "weight": 0.10829090874416293
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0018328033953758371,
+      "job_id": "btcusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0017838951856150587,
+      "test_end": "2023-11-20 00:00:00",
+      "test_start": "2023-11-13 00:00:00",
+      "train_tail_return": 0.00026910731171359004,
+      "validation_return": 0.0033964994790380842,
+      "weight": 0.08088296113985423
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.026928113821777178,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e1_v1",
+      "realized_test_return": -0.006294092162679066,
+      "test_end": "2023-11-27 00:00:00",
+      "test_start": "2023-11-20 00:00:00",
+      "train_tail_return": 0.022667823149945754,
+      "validation_return": 0.0311884044936086,
+      "weight": 0.2618643054908007
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.019828787790907798,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_fine_tune_recent_window_m6_base3y",
+      "realized_test_return": 0.0029780441864888374,
+      "test_end": "2023-11-27 00:00:00",
+      "test_start": "2023-11-20 00:00:00",
+      "train_tail_return": 0.022971402444373457,
+      "validation_return": 0.01668617313744214,
+      "weight": 0.25009725099417823
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.007171174061040619,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": 0.002123080802419741,
+      "test_end": "2023-11-27 00:00:00",
+      "test_start": "2023-11-20 00:00:00",
+      "train_tail_return": 0.013631174828689918,
+      "validation_return": 0.0007111732933913206,
+      "weight": 0.25379857411524614
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0025901973323265715,
+      "job_id": "btcusdt_4h_sota_low_cost_sac_scratch_4y",
+      "realized_test_return": 0.0011999680579746208,
+      "test_end": "2023-11-27 00:00:00",
+      "test_start": "2023-11-20 00:00:00",
+      "train_tail_return": 0.0033964994790380842,
+      "validation_return": 0.0017838951856150587,
+      "weight": 0.15086696116374831
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0019909064319368897,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.001868316646922219,
+      "test_end": "2023-11-27 00:00:00",
+      "test_start": "2023-11-20 00:00:00",
+      "train_tail_return": 0.0015757439310886134,
+      "validation_return": 0.002406068932785166,
+      "weight": 0.08337290823602662
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.0252201682547335,
+      "job_id": "solusdt_1h_kitchen_sink_guarded_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.003539066780512856,
+      "test_end": "2023-12-04 00:00:00",
+      "test_start": "2023-11-27 00:00:00",
+      "train_tail_return": 0.038302803725908996,
+      "validation_return": 0.012137532783558003,
+      "weight": 0.19941931843248775
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.013033010086596852,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m3_base3y",
+      "realized_test_return": 0.003993216551255507,
+      "test_end": "2023-12-04 00:00:00",
+      "test_start": "2023-11-27 00:00:00",
+      "train_tail_return": 0.019875279356315723,
+      "validation_return": 0.006190740816877982,
+      "weight": 0.22442401464319647
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0033908136373410613,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": 0.0028571444283780334,
+      "test_end": "2023-12-04 00:00:00",
+      "test_start": "2023-11-27 00:00:00",
+      "train_tail_return": 0.0046585464722623815,
+      "validation_return": 0.002123080802419741,
+      "weight": 0.26453557921037874
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0017961598302776993,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00014297202797197706,
+      "test_end": "2023-12-04 00:00:00",
+      "test_start": "2023-11-27 00:00:00",
+      "train_tail_return": 0.0023851958808758233,
+      "validation_return": 0.0012071237796795753,
+      "weight": 0.14715013456109044
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0014919316217948397,
+      "job_id": "btcusdt_4h_sota_low_cost_sac_scratch_4y",
+      "realized_test_return": 0.002402531916313011,
+      "test_end": "2023-12-04 00:00:00",
+      "test_start": "2023-11-27 00:00:00",
+      "train_tail_return": 0.0017838951856150587,
+      "validation_return": 0.0011999680579746208,
+      "weight": 0.16447095315284663
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.010321019499999973,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_scratch_1y",
+      "realized_test_return": 0.014144790000000018,
+      "test_end": "2023-12-11 00:00:00",
+      "test_start": "2023-12-04 00:00:00",
+      "train_tail_return": 0.0062420097999997814,
+      "validation_return": 0.014400029200000164,
+      "weight": 0.301623858567323
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.007518082939442006,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_warm_start_chain_1y_oracle_bc_transfer_e5_v1",
+      "realized_test_return": -0.00658656333788965,
+      "test_end": "2023-12-11 00:00:00",
+      "test_start": "2023-12-04 00:00:00",
+      "train_tail_return": 0.007843762263092247,
+      "validation_return": 0.007192403615791765,
+      "weight": 0.170755304590502
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.006228632401793388,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e5_v1",
+      "realized_test_return": 0.009698569776941612,
+      "test_end": "2023-12-11 00:00:00",
+      "test_start": "2023-12-04 00:00:00",
+      "train_tail_return": 0.003852983982219005,
+      "validation_return": 0.008604280821367771,
+      "weight": 0.13298926508885328
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.001801249987143816,
+      "job_id": "btcusdt_4h_sota_low_cost_sac_scratch_4y",
+      "realized_test_return": 0.00010517807624688125,
+      "test_end": "2023-12-11 00:00:00",
+      "test_start": "2023-12-04 00:00:00",
+      "train_tail_return": 0.0011999680579746208,
+      "validation_return": 0.002402531916313011,
+      "weight": 0.3463402738133986
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0003251558754208128,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0010165682117334596,
+      "test_end": "2023-12-11 00:00:00",
+      "test_start": "2023-12-04 00:00:00",
+      "train_tail_return": 0.00029042489270403316,
+      "validation_return": 0.00035988685813759247,
+      "weight": 0.04829129793992323
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.014272409600000091,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_scratch_1y",
+      "realized_test_return": -0.005535028399999975,
+      "test_end": "2023-12-18 00:00:00",
+      "test_start": "2023-12-11 00:00:00",
+      "train_tail_return": 0.014400029200000164,
+      "validation_return": 0.014144790000000018,
+      "weight": 0.2226286543943622
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.01338912126360825,
+      "job_id": "solusdt_1h_crypto_full_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": 0.013860653954928415,
+      "test_end": "2023-12-18 00:00:00",
+      "test_start": "2023-12-11 00:00:00",
+      "train_tail_return": 0.006756857574493624,
+      "validation_return": 0.020021384952722876,
+      "weight": 0.14432289518547053
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.010779222078560413,
+      "job_id": "solusdt_4h_crypto_full_all_available_sac_fine_tune_recent_window_m1_base2y",
+      "realized_test_return": 0.0013259357289741036,
+      "test_end": "2023-12-18 00:00:00",
+      "test_start": "2023-12-11 00:00:00",
+      "train_tail_return": 0.011786525257404312,
+      "validation_return": 0.009771918899716514,
+      "weight": 0.275818180068021
+    },
+    {
+      "asset_key": "btcusdt_4h",
+      "composite_signal": 0.0012538549962799461,
+      "job_id": "btcusdt_4h_sota_low_cost_sac_warm_start_chain_4y",
+      "realized_test_return": 0.000305430252555805,
+      "test_end": "2023-12-18 00:00:00",
+      "test_start": "2023-12-11 00:00:00",
+      "train_tail_return": 0.002402531916313011,
+      "validation_return": 0.00010517807624688125,
+      "weight": 0.11141620270556257
+    },
+    {
+      "asset_key": "adausdt_4h",
+      "composite_signal": 0.0008572663071427788,
+      "job_id": "adausdt_4h_sota_low_cost_all_available_sac_warm_start_chain_1y",
+      "realized_test_return": -0.0009674378571429276,
+      "test_end": "2023-12-18 00:00:00",
+      "test_start": "2023-12-11 00:00:00",
+      "train_tail_return": 9.422919999990675e-05,
+      "validation_return": 0.001620303414285651,
+      "weight": 0.24581406764658378
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.011207922426673123,
+      "job_id": "solusdt_4h_sota_low_cost_all_available_sac_fine_tune_recent_window_m1_base1y",
+      "realized_test_return": 0.010869683330294366,
+      "test_end": "2023-12-25 00:00:00",
+      "test_start": "2023-12-18 00:00:00",
+      "train_tail_return": 0.011235445972977764,
+      "validation_return": 0.01118039888036848,
+      "weight": 0.16837294937967642
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.009594508859511408,
+      "job_id": "solusdt_1h_crypto_full_all_available_1h_sac_warm_start_chain_1y",
+      "realized_test_return": -0.005947259082315748,
+      "test_end": "2023-12-25 00:00:00",
+      "test_start": "2023-12-18 00:00:00",
+      "train_tail_return": -0.0025148182888417026,
+      "validation_return": 0.02170383600786452,
+      "weight": 0.07533329659400384
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.0053842508943166,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": 0.001422121857182157,
+      "test_end": "2023-12-25 00:00:00",
+      "test_start": "2023-12-18 00:00:00",
+      "train_tail_return": 0.010015504110877815,
+      "validation_return": 0.0007529976777553848,
+      "weight": 0.3316051298206187
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0024866614688798805,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 6.816375872031877e-05,
+      "test_end": "2023-12-25 00:00:00",
+      "test_start": "2023-12-18 00:00:00",
+      "train_tail_return": 0.0013693169230808433,
+      "validation_return": 0.0036040060146789177,
+      "weight": 0.1357998123306704
+    },
+    {
+      "asset_key": "adausdt_4h",
+      "composite_signal": 0.0012808505571429984,
+      "job_id": "adausdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.0007814348285712924,
+      "test_end": "2023-12-25 00:00:00",
+      "test_start": "2023-12-18 00:00:00",
+      "train_tail_return": 0.0023925293428574967,
+      "validation_return": 0.00016917177142850015,
+      "weight": 0.2888888118750306
+    },
+    {
+      "asset_key": "solusdt_1h",
+      "composite_signal": 0.028463774260643282,
+      "job_id": "solusdt_1h_sota_low_cost_all_available_1h_sac_warm_start_chain_1y_oracle_bc_transfer_e5_v1",
+      "realized_test_return": -0.011277628776590443,
+      "test_end": "2024-01-01 00:00:00",
+      "test_start": "2023-12-25 00:00:00",
+      "train_tail_return": 0.0064542528436581925,
+      "validation_return": 0.05047329567762837,
+      "weight": 0.2053726908054163
+    },
+    {
+      "asset_key": "solusdt_4h",
+      "composite_signal": 0.02221476900410324,
+      "job_id": "solusdt_4h_kitchen_sink_guarded_all_available_sac_warm_start_chain_1y_oracle_bc_transfer_e2_v1",
+      "realized_test_return": -0.012215526187314807,
+      "test_end": "2024-01-01 00:00:00",
+      "test_start": "2023-12-25 00:00:00",
+      "train_tail_return": 0.012687630994264287,
+      "validation_return": 0.031741907013942194,
+      "weight": 0.15720891371017381
+    },
+    {
+      "asset_key": "ethusdt_4h",
+      "composite_signal": 0.004547364687550459,
+      "job_id": "ethusdt_4h_sota_low_cost_plus_event_engineered_v1_sac_fine_tune_recent_window_m12_base1y_etd28_vd7_td7",
+      "realized_test_return": -0.00013747417045761878,
+      "test_end": "2024-01-01 00:00:00",
+      "test_start": "2023-12-25 00:00:00",
+      "train_tail_return": 0.007672607517918761,
+      "validation_return": 0.001422121857182157,
+      "weight": 0.30303256791367966
+    },
+    {
+      "asset_key": "bnbusdt_4h",
+      "composite_signal": 0.0018213244168217013,
+      "job_id": "bnbusdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": -0.0026666677138323935,
+      "test_end": "2024-01-01 00:00:00",
+      "test_start": "2023-12-25 00:00:00",
+      "train_tail_return": 0.0028708208366219345,
+      "validation_return": 0.0007718279970214681,
+      "weight": 0.09889679509469852
+    },
+    {
+      "asset_key": "adausdt_4h",
+      "composite_signal": 0.001280860257143246,
+      "job_id": "adausdt_4h_sota_low_cost_all_available_sac_scratch_1y",
+      "realized_test_return": 0.00045542142857213364,
+      "test_end": "2024-01-01 00:00:00",
+      "test_start": "2023-12-25 00:00:00",
+      "train_tail_return": 0.0006193930285718352,
+      "validation_return": 0.0019423274857146566,
+      "weight": 0.2354890324760317
+    }
+  ],
+  "config": {
+    "lookback_weeks": 12,
+    "max_assets": 5,
+    "max_weight": 0.5,
+    "method": "score_inverse_vol",
+    "min_signal": 0.0,
+    "min_test_start": null,
+    "require_trade_gate": true,
+    "risk_floor": 0.0001
+  },
+  "generated_at": "2026-06-17T09:45:04+00:00",
+  "run_id": "project3_portfolio_score_inverse_vol_smoke_20260617",
+  "summary": {
+    "allocations": 160,
+    "cumulative_return": 0.020536882814629287,
+    "cvar_20_weekly": -0.0038463923024042597,
+    "lookback_weeks": 12,
+    "max_assets": 5,
+    "max_drawdown": -0.016637025317651766,
+    "max_weight": 0.5,
+    "mean_weekly_return": 0.0006458141888061086,
+    "method": "score_inverse_vol",
+    "min_signal": 0.0,
+    "risk_floor": 0.0001,
+    "sharpe_like_weekly": 0.13955688285956766,
+    "std_weekly_return": 0.004627605429221102,
+    "weeks": 32
+  },
+  "weekly": [
+    {
+      "portfolio_return": 0.0001591191555815696,
+      "selected_assets": 5,
+      "test_start": "2023-05-22 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0012145039862086326,
+      "selected_assets": 5,
+      "test_start": "2023-05-29 00:00:00"
+    },
+    {
+      "portfolio_return": -0.001907270046065421,
+      "selected_assets": 5,
+      "test_start": "2023-06-05 00:00:00"
+    },
+    {
+      "portfolio_return": -0.01144920706207377,
+      "selected_assets": 5,
+      "test_start": "2023-06-12 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0021351053042089965,
+      "selected_assets": 5,
+      "test_start": "2023-06-19 00:00:00"
+    },
+    {
+      "portfolio_return": 0.011185021886264877,
+      "selected_assets": 5,
+      "test_start": "2023-06-26 00:00:00"
+    },
+    {
+      "portfolio_return": 0.00024493558615006723,
+      "selected_assets": 5,
+      "test_start": "2023-07-03 00:00:00"
+    },
+    {
+      "portfolio_return": 0.015577807347631633,
+      "selected_assets": 5,
+      "test_start": "2023-07-10 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0014204218012918283,
+      "selected_assets": 5,
+      "test_start": "2023-07-17 00:00:00"
+    },
+    {
+      "portfolio_return": -0.002498373131413838,
+      "selected_assets": 5,
+      "test_start": "2023-07-24 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0014115367449732401,
+      "selected_assets": 5,
+      "test_start": "2023-07-31 00:00:00"
+    },
+    {
+      "portfolio_return": -0.00241191953369612,
+      "selected_assets": 5,
+      "test_start": "2023-08-07 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0014818760554251734,
+      "selected_assets": 5,
+      "test_start": "2023-08-14 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0008176798533476186,
+      "selected_assets": 5,
+      "test_start": "2023-08-21 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0011634497092606908,
+      "selected_assets": 5,
+      "test_start": "2023-08-28 00:00:00"
+    },
+    {
+      "portfolio_return": 0.002488952355822318,
+      "selected_assets": 5,
+      "test_start": "2023-09-04 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0015080864962736004,
+      "selected_assets": 5,
+      "test_start": "2023-09-11 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0014167913317058832,
+      "selected_assets": 5,
+      "test_start": "2023-09-18 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0007051697798691071,
+      "selected_assets": 5,
+      "test_start": "2023-09-25 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0007120886489304103,
+      "selected_assets": 5,
+      "test_start": "2023-10-02 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0008778316101996211,
+      "selected_assets": 5,
+      "test_start": "2023-10-09 00:00:00"
+    },
+    {
+      "portfolio_return": -0.0020882271795199564,
+      "selected_assets": 5,
+      "test_start": "2023-10-16 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0005115236499927397,
+      "selected_assets": 5,
+      "test_start": "2023-10-23 00:00:00"
+    },
+    {
+      "portfolio_return": 0.003108939069446523,
+      "selected_assets": 5,
+      "test_start": "2023-10-30 00:00:00"
+    },
+    {
+      "portfolio_return": 0.008205834050078284,
+      "selected_assets": 5,
+      "test_start": "2023-11-06 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0028547738442061044,
+      "selected_assets": 5,
+      "test_start": "2023-11-13 00:00:00"
+    },
+    {
+      "portfolio_return": -2.776000134952766e-05,
+      "selected_assets": 5,
+      "test_start": "2023-11-20 00:00:00"
+    },
+    {
+      "portfolio_return": 0.001362416828174862,
+      "selected_assets": 5,
+      "test_start": "2023-11-27 00:00:00"
+    },
+    {
+      "portfolio_return": 0.004418857181844374,
+      "selected_assets": 5,
+      "test_start": "2023-12-04 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0009300910069370102,
+      "selected_assets": 5,
+      "test_start": "2023-12-11 00:00:00"
+    },
+    {
+      "portfolio_return": 0.0020887213166726204,
+      "selected_assets": 5,
+      "test_start": "2023-12-18 00:00:00"
+    },
+    {
+      "portfolio_return": -0.004434643859851718,
+      "selected_assets": 5,
+      "test_start": "2023-12-25 00:00:00"
+    }
+  ]
+}

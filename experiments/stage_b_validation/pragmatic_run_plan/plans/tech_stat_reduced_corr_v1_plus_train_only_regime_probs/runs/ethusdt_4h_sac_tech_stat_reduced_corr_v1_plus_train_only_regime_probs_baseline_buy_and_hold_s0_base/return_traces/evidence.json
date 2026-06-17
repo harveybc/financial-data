@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "77af1eb9782a11a862f37b9e6ce97b97dcbbb931c72b0756d93f82b34bc996b2",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/train.csv",
+  "data_file_hash": "dba7efea9730a17f1d03686d5d452eca107dce9d387bf59c2783a127ac30ad5e",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T13:35:45Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 0,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "07100955a30b516b91c4c438ca1489450b7edc3904d957a5a78c5bfa54d80f0e"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "6f55ac6b23fad4e9532542a9cdb62724d3befa4085010dcfe85aad5217162211"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_buy_and_hold_s0_base/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "ab1dfe3386aef93b29c31da217ab6e9c4ca1a6b528fa05c30687fd94f66fc7bf"
+    }
+  ]
+}

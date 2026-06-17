@@ -1,0 +1,21 @@
+{
+  "current_step": 0,
+  "executor_finished_at_utc": "2026-05-14T04:22:13.588879+00:00",
+  "executor_started_at_utc": "2026-05-14T04:22:00.057277+00:00",
+  "exit_code": 0,
+  "failure_reason": "",
+  "no_trade_anomaly": false,
+  "num_timesteps": 0,
+  "profit_percent": 0.0,
+  "progress_pct": 0.0,
+  "progress_percent": 0.0,
+  "run_id": "baseline_momentum_tech_stat_full_plus_force_close_obs_s2_plus_50pct",
+  "schema_version": "project3_training_progress_v1",
+  "source": "stage_b_executor",
+  "status": "complete",
+  "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/force_close_obs_run_plan/plans/tech_stat_full_plus_force_close_obs/runs/ethusdt_4h_sac_tech_stat_full_plus_force_close_obs_baseline_momentum_s2_plus_50pct/agent_multi_stdout.log",
+  "total_return": 0.0,
+  "total_timesteps": 0,
+  "trades_total": 0,
+  "updated_at_utc": "2026-05-14T04:22:13.588869+00:00"
+}

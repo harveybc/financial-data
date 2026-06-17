@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "3e27802fd6e836a3fb088f4bc0c1bf002176a0b32d34d5385960ba0b028ddbb4",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/train.csv",
+  "data_file_hash": "dba7efea9730a17f1d03686d5d452eca107dce9d387bf59c2783a127ac30ad5e",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T14:33:44Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 2,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "711bebb100c7c2fbc1c020325fccff22fc9d29f74754288adcaaccf3adc77aee"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "026b5c68e802118ccc60daf630bd8172812870f7a355089c90c78ee319ba3a8c"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_baseline_no_trade_s2_plus_100pct/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "ab0ca37904260b3d2c6bc34cb8af4cae572daec43b6b104007c80063f724a167"
+    }
+  ]
+}

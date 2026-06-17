@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9999.044145430738,
+  "total_return": -9.55854569261172e-05,
+  "max_drawdown_pct": 0.023666115303539605,
+  "max_drawdown_money": 2.366903475991421,
+  "sharpe_ratio": -9.958695028550313,
+  "sqn": -0.553468235557573,
+  "trades_total": 781,
+  "trades_won": 375,
+  "trades_lost": 406,
+  "avg_trade_pnl": -0.0012238854920614598,
+  "episode_reward": -9.558545692616555e-05,
+  "episode_length": 118479,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/solusdt_15m_dqn_sota_low_cost_direct_atr_sltp_s2_20260509T063420Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

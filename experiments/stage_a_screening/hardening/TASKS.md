@@ -1,10 +1,10 @@
 # Promotion Hardening — Task Ledger
 
-Generated: 2026-05-03T06:19:08.777361+00:00
+Generated: 2026-06-02T09:51:49.218094+00:00
 
 ## COMPLETED checks (this worker)
 
-- [x] load_stage_a_index() — loaded 356 runs from index.csv
+- [x] load_stage_a_index() — loaded 5663 runs from index.csv
 - [x] load_run_ledger() — loaded events from artifacts/run_ledger.jsonl
 - [x] verify_ledger_membership() — per run, by (asset, tf, algo, preset, seed)
 - [x] validate_required_metadata() — asset, timeframe, algo, preset, seed, machine
@@ -16,60 +16,35 @@ Generated: 2026-05-03T06:19:08.777361+00:00
 - [x] compute_bootstrap_ci() — 95% bootstrap CI for total_return by preset (n_boot=2000)
 - [x] compute_dsr_placeholder_or_approximation() — directional approximation, caveat-flagged
 - [x] compute_pbo_placeholder() — not_enough_structure documented
+- [x] consume B1/B10 leakage-heldout evidence — loaded leakage_heldout_audit.csv when present
+- [x] consume B8 simple-baseline evidence — loaded simple_baseline_report.json when present
+- [x] consume B9 family-ablation evidence — loaded family_ablation_report.json when present
 - [x] classify_candidate() — deterministic KILL_* / PROMOTE_BLOCKED_HARDENING
 - [x] write_reports() — SPEC.md, PLAN.md, TASKS.md, .csv, .md, .json
 
 ## KILLED runs
 
-- 355 runs killed at KILL gate (no_trades, non_positive_return, negative_sharpe, ledger_missing, invalid_metrics)
-- 1 run(s) survive KILLs but blocked by governance
+- 5576 runs killed at KILL gate (no_trades, non_positive_return, negative_sharpe, ledger_missing, invalid_metrics)
+- 87 run(s) survive KILLs but blocked by governance
 
-## SKIPPED checks (require external evidence — not implementable from summary.json)
+## Evidence now wired into this gate
 
-- [ ] B1: Leakage audit — requires timestamp inspection of train.csv and fitted-transform metadata
+- [x] B1: Leakage/heldout evidence consumed from `leakage_heldout_audit.csv`
+- [x] B8: Simple baseline evidence consumed from `simple_baseline_report.json`
+- [x] B9: Feature-family ablation evidence consumed from `family_ablation_report.json`
+- [x] B10: Heldout firewall evidence consumed from `leakage_heldout_audit.csv`
 - [ ] B2: Availability/vintage contract — requires features/AVAILABILITY_CONTRACT.md per preset
 - [ ] B3: Rigorous DSR — requires per-bar annualized return series with skewness/kurtosis
 - [ ] B4: PBO/CSCV — requires multi-fold split structure (deferred to Stage B)
-- [ ] B8: Simple baselines — requires running no-trade, B&H, random, momentum, reversal strategies
-- [ ] B9: Feature-family ablation — requires matched runs with one family removed per config
-- [ ] B10: Heldout firewall — requires timestamp audit of inputs/{asset}/{tf}/{preset}/train.csv
 
-## BLOCKERS for Stage B (summary)
+## BLOCKERS for current best surviving run
 
-All 1 surviving run(s) carry these unresolved blockers:
-
-1. **B1 LEAKAGE**: Complete leakage_audit.md checks (transform windows, scaler windows, heldout exclusion)
-2. **B2 AVAILABILITY**: Verify availability/vintage contracts for cross-source presets
-3. **B3 DSR**: Compute rigorous Deflated Sharpe Ratio with annualized return series
-4. **B4 PBO**: Implement PBO/CSCV at Stage B with purged k-fold validation
-5. **B8 BASELINES**: Run simple baseline comparisons (no-trade, B&H, random, momentum, reversal)
-6. **B9 ABLATION**: Run feature-family ablation (one family removed per matched pair)
-7. **B10 HELDOUT**: Audit train.csv timestamps to confirm no 2025 rows
+1. B3_DSR: Deflated Sharpe Ratio not rigorously computed. Requires annualized return series with skewness/kurtosis. Current approximation is directional only and not sufficient for promotion.
+2. B4_PBO: PBO/CSCV not feasible with Stage A single-split structure. Deferred to Stage B per multiple_testing_correction.md.
 
 ## NEXT implementation tasks (priority order)
 
-1. **Implement B1 leakage audit worker** (`stage31_leakage_audit_worker.py`):
-   - Read train.csv timestamp columns for each run's input file
-   - Verify max(timestamp) < 2025-01-01T00:00:00Z
-   - Inspect fitted-transform metadata files for window violations
-   - Output: experiments/design/leakage_audit_results.json
-
-2. **Implement B8 simple baseline worker** (`stage31_simple_baseline_worker.py`):
-   - Run no-trade (cash) return = 0 for each run period
-   - Run buy-and-hold return from input CSV first/last close
-   - Run random policy (turnover-matched) 100x Monte Carlo → CI
-   - Run simple momentum (past-N-bar return sign) strategy
-   - Output: experiments/stage_a_screening/baseline_comparisons.csv
-
-3. **Implement B9 family ablation worker** (`stage31_family_ablation_worker.py`):
-   - For each surviving config, identify matched runs with one family removed
-   - Compute paired marginal contribution per family
-   - Output: experiments/design/family_ablation_results.csv
-
-4. **Verify B10 heldout firewall** (can be added to leakage audit worker):
-   - Read each input CSV, check max(date) < 2025-01-01
-   - Flag any train.csv with post-cutoff rows as KILL_LEAKAGE
-
-5. **At Stage B**: implement B3 (rigorous DSR) and B4 (PBO/CSCV) with longer run artifacts.
-
-6. **At Stage B**: implement B2 (availability contract) for any cross-source promoted config.
+1. **At Stage B**: implement B3 rigorous DSR with per-bar annualized return series, skewness, kurtosis, and multiple-testing correction.
+2. **At Stage B**: implement B4 PBO/CSCV with purged k-fold or CSCV-compatible split artifacts.
+3. **Before any cross-source candidate promotes**: implement B2 availability/vintage contract validation.
+4. Keep B1/B8/B9/B10 evidence refreshed as new Stage A/Stage B runs complete.

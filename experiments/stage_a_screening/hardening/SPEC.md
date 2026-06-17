@@ -1,6 +1,6 @@
 # Promotion Hardening Evaluator — SPEC
 
-Generated: 2026-05-03T06:19:08.537491+00:00
+Generated: 2026-06-02T09:51:38.738825+00:00
 
 ## Purpose
 

@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 10001.427260854856,
+  "total_return": 0.0001427260854856005,
+  "max_drawdown_pct": 0.011028329341745548,
+  "max_drawdown_money": 1.1029773360060062,
+  "sharpe_ratio": -13.4138034868394,
+  "sqn": 0.6187591391719803,
+  "trades_total": 468,
+  "trades_won": 207,
+  "trades_lost": 260,
+  "avg_trade_pnl": 0.0014031566882104672,
+  "episode_reward": 0.00014391608548558092,
+  "episode_length": 29432,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/solusdt_1h_dqn_crypto_full_direct_atr_sltp_s2_20260509T065742Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

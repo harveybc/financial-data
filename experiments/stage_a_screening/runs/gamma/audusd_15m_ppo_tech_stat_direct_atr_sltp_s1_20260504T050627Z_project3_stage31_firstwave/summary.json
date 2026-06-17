@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9997.90223665936,
+  "total_return": -0.00020977633406404905,
+  "max_drawdown_pct": 0.01576161791645928,
+  "max_drawdown_money": 1.5761620154080447,
+  "sharpe_ratio": -70.25357681465513,
+  "sqn": -10.622305425463788,
+  "trades_total": 16696,
+  "trades_won": 7721,
+  "trades_lost": 8974,
+  "avg_trade_pnl": -9.428951876288952e-05,
+  "episode_reward": -0.00020978133406406995,
+  "episode_length": 468445,
+  "eval_seed": 1,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/audusd_15m_ppo_tech_stat_direct_atr_sltp_s1_20260504T050627Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

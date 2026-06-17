@@ -1,0 +1,19 @@
+{
+  "asset": "usdcad",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-05-24T03:11:51.552092+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/usdcad/1h/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 111146,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/usdcad/1h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "1h"
+}

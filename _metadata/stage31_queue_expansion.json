@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-05-03T07:25:33.916901+00:00",
+  "generated_at": "2026-06-17T10:22:39.099742+00:00",
   "results": [
     {
       "appended": 0,
       "appended_run_ids": [],
       "machine": "dragon",
-      "pending_after": 48,
+      "pending_after": 0,
       "queue": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json",
-      "target_pending": 48
+      "target_pending": 24
     },
     {
       "appended": 0,
       "appended_run_ids": [],
       "machine": "gamma",
-      "pending_after": 48,
+      "pending_after": 0,
       "queue": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json",
-      "target_pending": 48
+      "target_pending": 24
     },
     {
       "appended": 0,
@@ -23,7 +23,7 @@
       "machine": "omega",
       "pending_after": 0,
       "queue": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/omega.json",
-      "target_pending": 48
+      "target_pending": 24
     }
   ],
   "stage": "3.1"

@@ -1,0 +1,28 @@
+schema_version: "project3_stage_b_cost_scenario_manifest_v1"
+generated_at: "2026-05-13T02:44:47.862507+00:00"
+heldout_start: "2025-01-01"
+stage_c_allowed: false
+cost_scenarios:
+  -
+    name: "base"
+    fee_multiplier: 1.0
+    slippage_multiplier: 1.0
+    role: "minimum_realistic_cost"
+  -
+    name: "plus_50pct"
+    fee_multiplier: 1.5
+    slippage_multiplier: 1.5
+    role: "moderate_cost_stress"
+  -
+    name: "plus_100pct"
+    fee_multiplier: 2.0
+    slippage_multiplier: 2.0
+    role: "hard_cost_stress"
+required_for_stage_b_promotion:
+  - "base"
+  - "plus_50pct"
+  - "plus_100pct"
+notes:
+  - "base is the minimum realistic cost scenario"
+  - "plus_50pct and plus_100pct are stress scenarios, not tuning knobs"
+  - "all three scenarios must be paired by seed and feature variant"

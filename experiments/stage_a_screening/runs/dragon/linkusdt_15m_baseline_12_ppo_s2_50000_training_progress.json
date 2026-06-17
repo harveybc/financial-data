@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "ppo_agent",
+  "asset": "linkusdt",
+  "features_preset": "baseline_12",
+  "num_timesteps": 50000,
+  "pid": 3246609,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 100.0,
+  "run_id": "linkusdt_15m_baseline_12_ppo_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_complete",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T13:59:44.026122+00:00"
+}

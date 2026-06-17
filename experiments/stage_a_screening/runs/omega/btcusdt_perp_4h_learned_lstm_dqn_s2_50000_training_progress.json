@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "dqn_agent",
+  "asset": "btcusdt_perp",
+  "features_preset": "learned_lstm",
+  "num_timesteps": 0,
+  "pid": 4102903,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "btcusdt_perp_4h_learned_lstm_dqn_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_failed",
+  "timeframe": "4h",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T05:28:47.236658+00:00"
+}

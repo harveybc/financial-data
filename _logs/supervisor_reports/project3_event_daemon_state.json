@@ -50,29 +50,15 @@
       "state": "supervising"
     },
     {
-      "lock": {
-        "command": "agent-multi sac btcusdt_perp 15m tech_stat_decomp seed=0",
-        "lock_present": true,
-        "pid": 3784360,
-        "pid_alive": true,
-        "removed_stale": false,
-        "stage": "3.1"
-      },
       "machine": "dragon",
-      "state": "busy"
+      "reason": "no validated ready Stage 2.4 job found",
+      "state": "idle"
     },
     {
-      "lock": {
-        "command": "agent-multi sac usdjpy 15m learned_cnn seed=0",
-        "lock_present": true,
-        "pid": 3879452,
-        "pid_alive": true,
-        "removed_stale": false,
-        "stage": "3.1"
-      },
       "machine": "gamma",
-      "state": "busy"
+      "reason": "no validated ready Stage 2.4 job found",
+      "state": "idle"
     }
   ],
-  "updated_at": "2026-05-03T07:25:08.624441+00:00"
+  "updated_at": "2026-06-17T10:22:57.119446+00:00"
 }

@@ -1,0 +1,19 @@
+{
+  "asset": "nzdusd",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-05-30T06:03:32.713199+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/nzdusd/4h/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 29498,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/nzdusd/4h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "4h"
+}

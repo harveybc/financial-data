@@ -1,0 +1,19 @@
+{
+  "asset": "adausdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-09T21:32:00.365719+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_lstm"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/adausdt/4h/learned_lstm/train.csv",
+  "preset": "learned_lstm",
+  "rows": 12500,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/adausdt/4h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "4h"
+}

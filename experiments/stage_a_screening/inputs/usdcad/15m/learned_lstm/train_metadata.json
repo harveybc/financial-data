@@ -1,0 +1,19 @@
+{
+  "asset": "usdcad",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-05T04:29:03.646560+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_lstm"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/usdcad/15m/learned_lstm/train.csv",
+  "preset": "learned_lstm",
+  "rows": 443046,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/usdcad/15m.parquet"
+  ],
+  "split": "train",
+  "timeframe": "15m"
+}

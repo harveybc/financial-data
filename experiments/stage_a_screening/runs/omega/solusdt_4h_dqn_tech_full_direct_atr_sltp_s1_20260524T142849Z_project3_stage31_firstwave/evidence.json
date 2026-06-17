@@ -1,0 +1,49 @@
+{
+  "asset": "solusdt_4h",
+  "broker_profile": null,
+  "calendar_policy_id": null,
+  "config_hash": "67cc91580381d13d5f8aafeb38813ff15a3bad6e0dc762659c8d14e393b38423",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/solusdt/4h/tech_full/train.csv",
+  "data_file_hash": "8218ff62b3b55ef8a73060965bdf22affc6140d7ca328bae110fbafc31d68af8",
+  "feature_column_count": 0,
+  "feature_columns": null,
+  "feature_list_hash": null,
+  "generated_at": "2026-05-24T14:30:33Z",
+  "heldout_boundary": "2025-01-01",
+  "market_type": null,
+  "observation_state_fields": [
+    "equity_norm",
+    "position",
+    "prices",
+    "returns",
+    "steps_remaining_norm",
+    "unrealized_pnl_norm"
+  ],
+  "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+  "pipeline_plugin": "rl_pipeline",
+  "run_id": "solusdt_4h_dqn_tech_full_direct_atr_sltp_s1_20260524T142849Z_project3_stage31_firstwave",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 1,
+  "stage_c_authorized": false,
+  "timeframe": "4h",
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "solusdt_4h_dqn_tech_full_direct_atr_sltp_s1_20260524T142849Z_project3_stage31_firstwave::eval0",
+      "feature_column_count": 0,
+      "feature_list_hash": null,
+      "first_timestamp": "2020-09-13 08:00:00",
+      "last_timestamp": "2023-12-31 20:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/solusdt_4h_dqn_tech_full_direct_atr_sltp_s1_20260524T142849Z_project3_stage31_firstwave/return_trace.csv.meta.json",
+      "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+      "row_count": 7228,
+      "split": "evaluation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/solusdt_4h_dqn_tech_full_direct_atr_sltp_s1_20260524T142849Z_project3_stage31_firstwave/return_trace.csv",
+      "trace_file_sha256": "0f53362c527e451e1b585e4c67f6a82b7020be7dadd00c6954198f1e8714d2f0"
+    }
+  ],
+  "trade_rate_band_id": null
+}

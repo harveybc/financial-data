@@ -1,0 +1,318 @@
+{
+  "approval_summary": {
+    "any_stage_b_ready": false,
+    "n_stage_b_ready": 0,
+    "n_with_stageb_stat_gate": 21,
+    "status_counts": {
+      "BLOCKED_BASELINE_COMPARISON": 4,
+      "BLOCKED_DSR_DEFERRED": 19,
+      "BLOCKED_FAMILY_ABLATION": 8,
+      "BLOCKED_MISSING_EVIDENCE": 13,
+      "KILL_NEGATIVE_SHARPE": 974,
+      "KILL_NON_POSITIVE_RETURN": 2761,
+      "KILL_NO_TRADES": 1154
+    },
+    "total_candidates": 4933
+  },
+  "cluster_summary": {
+    "all_queries_ok": true,
+    "counts": {
+      "aborted_no_trade": 0,
+      "done": 90,
+      "failed": 0,
+      "not_started": 0,
+      "running": 0
+    },
+    "generated_at_utc": "2026-05-14T08:53:47.013193+00:00",
+    "next_expected_poll_utc": "2026-05-14T08:54:47.013193+00:00",
+    "poll_interval_seconds": 60,
+    "query_errors": {}
+  },
+  "generated_at_utc": "2026-05-14T09:00:37.143568+00:00",
+  "hard_stop_reasons": [
+    "NO_PASS_STAGE_B_READY_CANDIDATE",
+    "NO_STAGE_B_CANDIDATE_PASSED_ALL_STATISTICAL_GATES"
+  ],
+  "heldout_start": "2025-01-01",
+  "machine_run_plan_counts": {
+    "dragon": {
+      "DONE": 360
+    },
+    "gamma": {
+      "DONE": 369
+    },
+    "omega": {
+      "DONE": 171
+    }
+  },
+  "next_actions": [
+    {
+      "action": "Killed by hardening. Do not rerun blindly; only create a new counted trial if a documented parameter/data defect is found.",
+      "blocker_code": "NON_POSITIVE_RETURN",
+      "count": 2761
+    },
+    {
+      "action": "Killed by hardening. Diagnose action deadband/hold-collapse from trace logs before any remediation rerun; no-trade output is not evidence.",
+      "blocker_code": "NO_TRADES",
+      "count": 1154
+    },
+    {
+      "action": "Killed by hardening. Do not promote; investigate only if needed for failure analysis or a new counted trial design.",
+      "blocker_code": "NEGATIVE_SHARPE",
+      "count": 974
+    },
+    {
+      "action": "Review per-bar net-return traces, N_raw/N_eff policy, skew/kurtosis, and autocorrelation adjustment; candidate cannot advance until rigorous DSR clears.",
+      "blocker_code": "DSR_RIGOROUS_FAIL",
+      "count": 127
+    },
+    {
+      "action": "Review matched baseline/family bootstrap tests; raw return is not enough if family-level data-snooping test fails.",
+      "blocker_code": "FAMILY_REALITY_CHECK_FAIL",
+      "count": 127
+    },
+    {
+      "action": "Provide paired seed evidence, minimum five seeds per candidate/cost scenario, or keep blocked.",
+      "blocker_code": "SEED_UNCERTAINTY_BLOCKED",
+      "count": 113
+    },
+    {
+      "action": "Reject or repair no-trade configuration before rerun; do not count no-trade output as useful evidence.",
+      "blocker_code": "FINAL_NO_TRADES",
+      "count": 45
+    },
+    {
+      "action": "Implement or run purged/embargoed CSCV/PBO evidence; current PBO-lite gate is blocking.",
+      "blocker_code": "PBO_DEFERRED_OR_FAIL",
+      "count": 33
+    },
+    {
+      "action": "Produce agent-multi evidence.json and return traces, then re-run the Stage B evaluator.",
+      "blocker_code": "STAGEB_STAT_EVIDENCE_MISSING",
+      "count": 23
+    },
+    {
+      "action": "Reject or constrain pathological overtrading; hard trade-rate gate exceeded.",
+      "blocker_code": "FINAL_EXCESSIVE_TRADES_HARD",
+      "count": 16
+    },
+    {
+      "action": "Feature/source family must show marginal value versus matched ablation.",
+      "blocker_code": "ABLATION_FAIL",
+      "count": 8
+    },
+    {
+      "action": "Generate both base and pessimistic cost-scenario evidence for the same candidate identity.",
+      "blocker_code": "MISSING_COST_SCENARIO",
+      "count": 4
+    }
+  ],
+  "schema_version": "project3_stage_b_decision_readiness_v1",
+  "source_files": {
+    "approval_packet": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_b_approval/stage_b_approval_packet.json",
+    "cluster_status": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_cluster_live_status.json",
+    "handoff_spec": "/home/harveybc/Documents/GitHub/financial-data/work_plan/PROJECT3_AGENT_HANDOFF_SPEC_KIT_2026_05_12.md",
+    "run_plan_status": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_run_plan_status.json",
+    "stageb_stat_report": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/hardening/stageb_dsr_pbo_report.json"
+  },
+  "stage_c_allowed": false,
+  "stage_c_decision": "BLOCK_STAGE_C",
+  "stage_c_locked": true,
+  "statistical_summary": {
+    "candidate_gate_fail": 106,
+    "candidate_gate_pass": 0,
+    "dsr_fail": 675,
+    "dsr_fail_n_raw": 675,
+    "dsr_pass": 0,
+    "dsr_pass_n_raw": 0,
+    "evidence_fail": 0,
+    "evidence_files": 1310,
+    "evidence_pass": 1310,
+    "family_test_group_count": 13,
+    "generated_at_utc": "2026-05-14T09:00:26.704063+00:00",
+    "pbo_group_count": 6,
+    "promotion_allowed": false,
+    "run_count": 1310,
+    "schema_version": "project3_stageb_statistical_evaluator_v2",
+    "seed_group_count": 81,
+    "stage": "stage_b",
+    "stage_c_allowed": false,
+    "stage_c_blocked_reason": "NO_STAGE_B_CANDIDATE_PASSED_ALL_STATISTICAL_GATES",
+    "statistical_governance_status": "BLOCKED",
+    "trace_found": 1310,
+    "trace_missing": 0,
+    "trial_count_for_deflation": 5025,
+    "trial_count_n_eff": 14,
+    "trial_count_n_raw": 5025
+  },
+  "top_blocked_candidates": [
+    {
+      "blocker_codes": [
+        "DSR_RIGOROUS_FAIL",
+        "FAMILY_REALITY_CHECK_FAIL",
+        "FINAL_ALWAYS_IN_MARKET_LOSING",
+        "PBO_DEFERRED_OR_FAIL",
+        "SEED_UNCERTAINTY_BLOCKED"
+      ],
+      "run_slug": "ethusdt_perp_15m_sac_tech_full_direct_atr_sltp_s1_20260503T141731Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.06986118428368665,
+      "stage_b_status": "BLOCKED_DSR_DEFERRED",
+      "total_return": 0.529359354815133
+    },
+    {
+      "blocker_codes": [
+        "ABLATION_FAIL",
+        "STAGEB_STAT_EVIDENCE_MISSING"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s0_20260503T204356Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.04657334060811648,
+      "stage_b_status": "BLOCKED_FAMILY_ABLATION",
+      "total_return": 0.182129791500377
+    },
+    {
+      "blocker_codes": [
+        "ABLATION_FAIL",
+        "STAGEB_STAT_EVIDENCE_MISSING"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s1_20260503T204807Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.04657334060811648,
+      "stage_b_status": "BLOCKED_FAMILY_ABLATION",
+      "total_return": 0.182129791500377
+    },
+    {
+      "blocker_codes": [
+        "DSR_RIGOROUS_FAIL",
+        "FAMILY_REALITY_CHECK_FAIL",
+        "MISSING_COST_SCENARIO",
+        "SEED_UNCERTAINTY_BLOCKED"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s0_20260503T194830Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.04657334060811648,
+      "stage_b_status": "BLOCKED_MISSING_EVIDENCE",
+      "total_return": 0.182129791500377
+    },
+    {
+      "blocker_codes": [
+        "DSR_RIGOROUS_FAIL",
+        "FAMILY_REALITY_CHECK_FAIL",
+        "SEED_UNCERTAINTY_BLOCKED"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s1_20260503T195207Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.04657334060811648,
+      "stage_b_status": "BLOCKED_DSR_DEFERRED",
+      "total_return": 0.182129791500377
+    },
+    {
+      "blocker_codes": [
+        "ABLATION_FAIL",
+        "STAGEB_STAT_EVIDENCE_MISSING"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260509T060619Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.04657334060811648,
+      "stage_b_status": "BLOCKED_FAMILY_ABLATION",
+      "total_return": 0.182129791500377
+    },
+    {
+      "blocker_codes": [
+        "STAGEB_STAT_EVIDENCE_MISSING"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.04657334060811648,
+      "stage_b_status": "BLOCKED_MISSING_EVIDENCE",
+      "total_return": 0.182129791500377
+    },
+    {
+      "blocker_codes": [
+        "STAGEB_STAT_EVIDENCE_MISSING"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_tech_full_direct_atr_sltp_s2_20260509T063348Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.031075804331862158,
+      "stage_b_status": "BLOCKED_MISSING_EVIDENCE",
+      "total_return": 0.17502261471533376
+    },
+    {
+      "blocker_codes": [
+        "DSR_RIGOROUS_FAIL",
+        "FAMILY_REALITY_CHECK_FAIL",
+        "SEED_UNCERTAINTY_BLOCKED"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_baseline_12_direct_atr_sltp_s1_20260503T192405Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.02853817014110193,
+      "stage_b_status": "BLOCKED_DSR_DEFERRED",
+      "total_return": 0.16745549785451508
+    },
+    {
+      "blocker_codes": [
+        "DSR_RIGOROUS_FAIL",
+        "FAMILY_REALITY_CHECK_FAIL",
+        "SEED_UNCERTAINTY_BLOCKED"
+      ],
+      "run_slug": "ethusdt_perp_4h_sac_baseline_12_direct_atr_sltp_s2_20260509T054549Z_project3_stage31_firstwave",
+      "sharpe_ratio": 0.02853817014110193,
+      "stage_b_status": "BLOCKED_DSR_DEFERRED",
+      "total_return": 0.16745549785451508
+    }
+  ],
+  "top_stage_b_blockers": [
+    {
+      "blocker_code": "NON_POSITIVE_RETURN",
+      "count": 2761
+    },
+    {
+      "blocker_code": "NO_TRADES",
+      "count": 1154
+    },
+    {
+      "blocker_code": "NEGATIVE_SHARPE",
+      "count": 974
+    },
+    {
+      "blocker_code": "DSR_RIGOROUS_FAIL",
+      "count": 127
+    },
+    {
+      "blocker_code": "FAMILY_REALITY_CHECK_FAIL",
+      "count": 127
+    },
+    {
+      "blocker_code": "SEED_UNCERTAINTY_BLOCKED",
+      "count": 113
+    },
+    {
+      "blocker_code": "FINAL_NO_TRADES",
+      "count": 45
+    },
+    {
+      "blocker_code": "PBO_DEFERRED_OR_FAIL",
+      "count": 33
+    },
+    {
+      "blocker_code": "STAGEB_STAT_EVIDENCE_MISSING",
+      "count": 23
+    },
+    {
+      "blocker_code": "FINAL_EXCESSIVE_TRADES_HARD",
+      "count": 16
+    },
+    {
+      "blocker_code": "ABLATION_FAIL",
+      "count": 8
+    },
+    {
+      "blocker_code": "MISSING_COST_SCENARIO",
+      "count": 4
+    },
+    {
+      "blocker_code": "BASELINE_FAIL",
+      "count": 4
+    },
+    {
+      "blocker_code": "FINAL_ALWAYS_IN_MARKET_LOSING",
+      "count": 3
+    },
+    {
+      "blocker_code": "ABLATION_NO_MATCH",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "current_step": 0,
+  "executor_finished_at_utc": "2026-05-11T19:02:39.173663+00:00",
+  "executor_started_at_utc": "2026-05-11T19:02:38.657936+00:00",
+  "exit_code": 1,
+  "failure_reason": "",
+  "no_trade_anomaly": false,
+  "num_timesteps": 0,
+  "profit_percent": 0.0,
+  "progress_pct": 0.0,
+  "progress_percent": 0.0,
+  "run_id": "rl_baseline_12_ethusdt_perp_1h_sac_baseline_12_direct_atr_sltp_s0_20260503T170545Z_project3_stage31_firstwave_pessimistic",
+  "schema_version": "project3_training_progress_v1",
+  "source": "stage_b_executor",
+  "status": "failed",
+  "stdout_log": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/runs/locked_plan/rl_baseline_12_ethusdt_perp_1h_sac_baseline_12_direct_atr_sltp_s0_20260503T170545Z_project3_stage31_firstwave_pessimistic/agent_multi_stdout.log",
+  "total_return": 0.0,
+  "total_timesteps": 1000000,
+  "trades_total": 0,
+  "updated_at_utc": "2026-05-11T19:02:39.173653+00:00"
+}

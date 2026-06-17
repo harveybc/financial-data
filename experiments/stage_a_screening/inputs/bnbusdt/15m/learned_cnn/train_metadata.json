@@ -1,0 +1,19 @@
+{
+  "asset": "bnbusdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-09T18:23:43.494713+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/bnbusdt/15m/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 215159,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/bnbusdt/15m.parquet"
+  ],
+  "split": "train",
+  "timeframe": "15m"
+}

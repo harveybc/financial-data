@@ -1,439 +1,87 @@
-# Stage 3.2 — Results Synthesis
+# Stage 3.2 - Weekly Walk-Forward Results Synthesis
 
-## 2026-05-23 Active Synthesis Contract: Weekly Walk-Forward Evidence
+Date: 2026-06-04
+Status: ACTIVE
 
-This document originally described synthesis for a static Stage A/B/C matrix.
-The active synthesis target is now the weekly-retrained portfolio protocol:
+## Purpose
 
-- aggregate many historical weekend-retrain / next-week-test anchors;
-- rank data sources, input assets, feature families, and preprocessing choices
-  by repeated next-week utility;
-- keep model comparisons fair by optimizing data/preprocessing/hyperparameters
-  before comparing model families;
-- later evaluate portfolio-level allocation/no-trade policies above per-asset
-  trading agents.
+Stage 3.2 aggregates weekly walk-forward pool results. A result is meaningful
+only after repeated weekly anchors, not after one short smoke run.
 
-Active outputs:
+## Source Of Truth
 
-- `weekly_walk_forward_summary.md` — distribution of next-week returns,
-  drawdowns, trade counts, force-close exposure, and broker-policy compliance.
-- `target_asset_input_value_ranking.md` — for each traded asset, which own-asset
-  and cross-asset inputs helped.
-- `data_source_value_ranking.md` — paid/free source marginal utility after
-  coverage, leakage, and cost checks.
-- `preprocessing_value_ranking.md` — scaling, clipping, lagging, windowing,
-  regime-conditioning, and learned representation utility.
-- `sac_hyperparameter_pareto_front.md` — DEAP/NSGA candidates ranked by
-  profit/risk/cost/trade-frequency objectives.
-- `portfolio_supervisor_value_ranking.md` — later stage only, once per-asset
-  streams exist.
-- `subscription_cancellation_recommendations.md` — keep/cancel based on
-  marginal value versus free alternatives.
+Primary source:
 
-Do not summarize a single lucky week as tradability. Report median, IQM,
-tail-risk, probability of improvement versus baselines, seed dispersion, and
-cost sensitivity across weekly anchors.
-
-Stage C remains locked until a later promotion packet explicitly passes the
-hard governance gates.
-
-**Stage goal:** Aggregate Phase 3 experiment results into a comprehensive final report. Identify which data sources, feature techniques, asset/timeframe combinations actually improved RL trading performance. Recommend cancellations of mediocre subscriptions.
-
-**Inputs:** Stage 3.1 complete with Stage A/B/C results documented.
-
-**Outputs:**
-- `PROJECT_3_FINAL_REPORT.md` — comprehensive final synthesis
-- `data_source_value_ranking.md` — ranked contribution of each data source
-- `feature_technique_value_ranking.md` — ranked contribution of each Phase 2 technique
-- `subscription_cancellation_recommendations.md` — paid sources flagged for cancellation
-- `feature_family_value_ranking.md` — matched ablation ranking by source/feature family
-- `leakage_and_availability_audit_summary.md` — promotion-blocker status and exceptions
-- `cost_sensitivity_summary.md` — optimistic/base/pessimistic cost outcomes
-- `baseline_comparison_summary.md` — RL versus simple/null/supervised baselines
-- Phase 1 + 2 + 3 audit closing
-
-**Machine:** Omega (analysis + reporting, no compute).
-
----
-
-<!-- AGENT_INFRA_NOTE_v2 -->
-## Agent Infrastructure Note
-
-This stage is executed by the multi-tier agent system defined in `01_AGENT_INFRASTRUCTURE.md` (architecture v2). Read that document before executing this stage. Key rules:
-
-- **Tier 2 (OpenCode Go on Omega) dispatches** the per-machine tasks listed below; you (the user) do not run them by hand.
-- **Tier 1 supervisors** (Hermes + Gemma 3 31B on Dragon and Gamma, cron-invoked, GPU-lockfile-aware) watch worker logs and produce status reports.
-- **Heavy GPU jobs MUST acquire `/tmp/gpu_busy.lock`** via `_scripts/lib/gpu_lock.py` before starting. See infrastructure doc §4.
-- **Auto-validation is full auto** (master plan Rule M.15). When you confirm a manual prerequisite is done, the agents proceed through validation, deliverable generation, and downstream prep automatically. Only blockers ping you.
-- **Escalation routing (v2 simplified — no automated frontier API):**
-  - Code/data anomalies, scope ≤2 files, severity ≤ high → Tier 3 (local Hermes + Gemma 31B, bounded: max 3 attempts, max 2 files, 30 min/attempt). If Tier 3 confidence <0.7 or attempts exhausted → hands off to Tier 4.
-  - Plan decisions, synthesis, final-report writing, blocker severity, or scope >2 files → Tier 4 (you, with ChatGPT 5.5 Pro via Codex / Copilot Opus 4.7 / Claude Pro Max as your tools).
-  - **No automated frontier API calls anywhere.** Frontier models are human-driven only.
-
-The "machine assignment" tables below describe which machine runs which workers. The dispatcher (Tier 2) handles SSH, conda activation, and result collection.
----
-
-## 1. Synthesis Procedure
-
-For active Stage 3X work, the first synthesis axis is weekly walk-forward
-performance. The older source/feature ranking method below is still useful, but
-each comparison must be matched by target asset, timeframe, broker profile,
-weekly anchor, seed, cost scenario, and model/preprocessing family.
-
-Three analyses run in parallel:
-
-1. **Data source value ranking:** for each data source acquired in Phase 1, quantify its marginal contribution to RL performance
-2. **Feature technique value ranking:** for each Phase 2 technique, quantify marginal contribution
-3. **Subscription cancellation evaluation:** apply Rule M.10 mediocrity criterion to each paid subscription
-
----
-
-## 2. Data Source Value Ranking
-
-### 2.1 Methodology
-
-For each data source S in Phase 1 inventory:
-
-1. Identify all Phase 3 experiments that included S in their feature set
-2. Identify matching experiments WITHOUT S (controlled comparison)
-3. Compute mean validation Sharpe difference: ΔSharpe = mean_with_S - mean_without_S
-4. Apply DSR correction
-5. Rank by adjusted ΔSharpe
-6. Report net performance under base cost and pessimistic cost
-7. Mark whether availability/vintage/staleness metadata passed
-
-```python
-def rank_data_source_value(experiments_df):
-    """Rank data sources by marginal contribution."""
-    ranking = []
-    
-    for source in DATA_SOURCES:
-        with_source = experiments_df[experiments_df["features"].apply(lambda f: source in f)]
-        without_source = experiments_df[experiments_df["features"].apply(lambda f: source not in f)]
-        
-        # Match on (asset, timeframe, algo) for fair comparison
-        matched_pairs = match_by_keys(with_source, without_source, ["asset", "timeframe", "algo"])
-        
-        delta_sharpes = matched_pairs["sharpe_with"] - matched_pairs["sharpe_without"]
-        
-        ranking.append({
-            "source": source,
-            "n_experiments": len(matched_pairs),
-            "mean_delta_sharpe": delta_sharpes.mean(),
-            "std_delta_sharpe": delta_sharpes.std(),
-            "dsr_pvalue": deflated_sharpe_ratio_test(delta_sharpes, n_trials=...),
-            "verdict": "VALUABLE" if delta_sharpes.mean() > 0.1 and dsr_pvalue < 0.05 else "NEUTRAL/NEGATIVE",
-        })
-    
-    return sorted(ranking, key=lambda x: -x["mean_delta_sharpe"])
+```text
+financial-data/experiments/weekly_walkforward_pool/project3_weekly_pool.sqlite
 ```
 
-### 2.2 Output
+The database stores jobs, subjobs, machine heartbeats, artifacts, and results.
+File artifacts are referenced by the DB for reproducibility.
 
-`data_source_value_ranking.md`:
+## Required Aggregations
 
-```markdown
-# Data Source Value Ranking
+Aggregate by:
 
-| Rank | Source | ΔSharpe (mean) | DSR p-value | Verdict |
-|------|--------|----------------|-------------|---------|
-| 1 | FRED yield curve | +0.45 | 0.001 | VALUABLE |
-| 2 | Glassnode SOPR | +0.32 | 0.008 | VALUABLE |
-| 3 | VIX term structure | +0.28 | 0.01 | VALUABLE |
-| ... | | | | |
-| K | Wikipedia traffic | -0.05 | 0.6 | NOT VALUABLE (and excluded per Rule P1.7 anyway) |
+- target asset;
+- timeframe;
+- training policy;
+- train_years;
+- feature preset;
+- feature selection method;
+- preprocessing profile;
+- market-state profile;
+- hyperparameter family;
+- seed;
+- cost scenario;
+- broker profile.
 
-## Verdict per category
+## Required Metrics
 
-- HIGH-value sources: [list]
-- MEDIUM-value: [list]
-- NEUTRAL: [list]
-- NEGATIVE (added noise): [list]
+Per job:
+
+- completed subjob count;
+- failed subjob count;
+- mean, median, and IQM test return;
+- positive test-week rate;
+- validation/test return correlation;
+- test Sharpe;
+- downside Sharpe;
+- max drawdown;
+- CVaR;
+- test trades/week;
+- cost-to-gross-edge ratio;
+- action entropy and action balance;
+- broker/Friday violation count;
+- seed stability.
+
+## Required Leaderboards
+
+- best by mean test return;
+- best by median/IQM test return;
+- best by risk-adjusted return;
+- best by low drawdown/CVaR;
+- best by train_years;
+- best feature/preprocessing combination;
+- best model hyperparameter region;
+- worst/fragile candidates to kill.
+
+## Required Reports
+
+```text
+weekly_walkforward_summary.md
+training_window_sweep.md
+feature_preprocessing_value_ranking.md
+hyperparameter_value_ranking.md
+asset_input_value_ranking.md
+failure_and_blocker_report.md
+reproducibility_index.md
 ```
 
-The ranking must distinguish raw gross performance from cost-adjusted evidence. A source is not valuable if its apparent contribution disappears under base transaction costs or depends on research-only final-revised data.
-
----
-
-## 3. Feature Technique Value Ranking
-
-### 3.1 Methodology
-
-For each Phase 2 technique T (technical/statistical/wavelet/Hilbert/multitaper/EMD/fracdiff/transformer-AE/LSTM-AE/CNN-AE/VAE/CVAE):
-
-1. Identify experiments using technique T
-2. Compare to experiments without T (matched on asset, timeframe, algo, other features)
-3. Compute ΔSharpe + DSR-corrected p-value
-4. Rank
-5. Confirm leakage-audit status for fitted techniques and learned embeddings
-6. Report regime-sliced contribution where available
-
-### 3.2 Output
-
-`feature_technique_value_ranking.md`:
-
-```markdown
-# Feature Technique Value Ranking
-
-| Rank | Technique | ΔSharpe | DSR p-value | Verdict |
-|------|-----------|---------|-------------|---------|
-| 1 | Wavelet (DWT) | +0.42 | 0.005 | VALUABLE |
-| 2 | Fractional differentiation | +0.38 | 0.01 | VALUABLE |
-| 3 | LSTM autoencoder | +0.30 | 0.02 | VALUABLE |
-| ... | | | | |
-
-## Best technique per asset class
-
-- BTC/ETH (crypto): [technique X]
-- EUR/USD (FX): [technique Y]
-- ...
-
-## Best technique per timeframe
-
-- 5m: [technique W]
-- 1h: [technique Z]
-```
-
----
-
-## 3.5 Feature Family Value Ranking
-
-Use `experiments/design/feature_family_ablation_plan.md` as the source of family ids. The synthesis must report matched marginal contribution for:
-
-- `base`
-- `technical_statistical`
-- `decomposition`
-- `learned_embeddings`
-- `macro_risk`
-- `crypto_structure`
-- `fx_structure`
-- `cross_asset_context`
-- `paid_or_subscription`
-- `all_free_features`
-- `kitchen_sink_guarded`
-
-Output: `feature_family_value_ranking.md`
-
-Required columns:
-
-```markdown
-| Family | Asset class | Matched runs | Δ net Sharpe base cost | Δ max DD | Δ turnover | DSR/PBO note | Availability/leakage status | Verdict |
-```
-
----
-
-## 4. Subscription Cancellation Evaluation (Rule M.10)
-
-### 4.1 Methodology
-
-For each paid subscription:
-
-1. Identify all features derived from that subscription's data
-2. From data source value ranking, check if those features ranked VALUABLE
-3. If features ranked NEUTRAL/NEGATIVE → flag for cancellation
-4. If features ranked VALUABLE but free alternative exists → consider cancellation if free covers 80%+ of value
-5. Document decision
-6. Require marginal value over the best free feature stack, not only inclusion in a winning all-feature model
-7. Reject paid data that cannot satisfy point-in-time availability requirements
-
-### 4.2 Output
-
-`subscription_cancellation_recommendations.md`:
-
-```markdown
-# Subscription Cancellation Recommendations
-
-## Active subscriptions evaluated
-
-### Glassnode Standard ($30/mo)
-
-- Features derived: SOPR, MVRV, NUPL, NVT, advanced address counts
-- Value ranking: VALUABLE (avg +0.32 ΔSharpe)
-- Free alternative: CoinMetrics Community covers ~30% of metrics
-- Verdict: KEEP — net value clearly justifies $30/mo
-
-### CryptoQuant Standard ($39/mo)
-
-- Features derived: Exchange flows, miner flows
-- Value ranking: NEUTRAL (avg +0.05 ΔSharpe, DSR p=0.4)
-- Free alternative: Some exchange flow proxies derivable from on-chain
-- Verdict: CANCEL — no clear value-add over Glassnode
-
-### Polygon.io Developer ($79/mo)
-
-[similar analysis]
-
-### FMP Starter ($14/mo)
-
-[similar analysis]
-
-## Total monthly savings if cancellations applied
-
-$XX/month savings.
-
-## User Gate: confirm cancellations
-```
-
-User reviews and confirms each cancellation. Agent updates `_metadata/subscriptions.json` with cancelled list and reason.
-
----
-
-## 5. PROJECT_3_FINAL_REPORT.md
-
-The capstone document:
-
-```markdown
-# Project 3 Final Report
-
-## Date: YYYY-MM-DD
-
-## Executive Summary
-
-[1-paragraph summary of major findings]
-
-## Key Findings
-
-### Finding 1: Best (asset, timeframe, feature set) combination
-
-[The single best configuration found, with held-out Sharpe + significance]
-
-### Finding 2: Most valuable data sources
-
-[Top 5 data sources from value ranking]
-
-### Finding 3: Most valuable feature techniques
-
-[Top 5 techniques]
-
-### Finding 4: Asset/timeframe insights
-
-[Which asset classes responded best, which timeframes provided most signal]
-
-### Finding 5: Subscription value verdicts
-
-[Summary of subscription cancellation decisions]
-
-## Quantitative Results
-
-### Held-out performance per top candidate
-
-| Candidate | Asset | TF | Features | Algo | Net Sharpe base | Net Sharpe pessimistic | Max DD | Trades | DSR/PBO note |
-|-----------|-------|----|----|------|-----------------|-----------------------|--------|--------|--------------|
-| #1 | BTC | 1h | wavelet+macro | PPO | 0.85 | 0.51 | 18% | 245 | DSR p=0.008 |
-| #2 | EUR/USD | 4h | tech+macro+COT | PPO | 0.72 | 15% | 89 | 0.02 |
-| #3 | ... | | | | | | | |
-
-### Comparison to baselines
-
-| Method | Net Sharpe base cost | Source |
-|--------|----------------------|--------|
-| Buy and hold (BTC) | 0.45 | passive |
-| Random walk | 0.0 | random |
-| Project 2 best | 0.21 | Stage II-7 BTC PPO |
-| Project 3 best | 0.85 | this report |
-
-Project 3 demonstrates [improvement / no improvement] over Project 2.
-
-## Hypothesis Testing Results
-
-| Hypothesis | Verdict | Evidence |
-|------------|---------|----------|
-| H1: Macro features help FX | CONFIRMED | EUR/USD with macro: +0.34 ΔSharpe |
-| H2: On-chain helps crypto | CONFIRMED | BTC with Glassnode: +0.32 ΔSharpe |
-| H3: Wavelet adds value | CONFIRMED | +0.42 ΔSharpe |
-| H4: AE outperforms raw | MIXED | LSTM-AE works; Transformer-AE high variance |
-| H5: Lower TF more signal | NOT CONFIRMED | 1h often beats 5m; 5m noisy |
-| ... | | |
-
-## What Did NOT Work (negative findings)
-
-[Honest catalog of approaches tried that failed]
-
-- Order book microstructure features (limited data scope, noise dominated)
-- Twitter/news sentiment (excluded per Rule P1.7, but if included would likely fail)
-- Specific autoencoder configs (e.g., transformer with d_model=256 overfit)
-
-## Limitations
-
-1. **Sample size on certain combinations limited.** Some (asset, TF, feature set) cells had <50 effective observations after applying DSR correction.
-
-2. **Compute budget bounded experimental scope.** True systematic evaluation of all 4-D combinations would require 10000+ runs; we executed ~600 across stages.
-
-3. **Project 2 algorithm configs may not be optimal for new feature sets.** Phase 3 used fixed algos; future work should re-tune for best feature sets.
-
-4. **Held-out is one calendar year (2025).** Single market regime; results don't generalize across all regimes.
-
-5. **Trading costs assumed 10 bps; real costs vary.** Sensitivity analysis would help.
-
-## Future Work (Project 4 candidates)
-
-1. **NEAT capstone.** Use Project 3's best (asset, feature set) configurations as inputs to NEAT-evolved policies.
-
-2. **Sentiment data.** If signals continue to be elusive, news + social sentiment could be added (separate Project 4).
-
-3. **Ensembles.** Combine top candidates into ensemble policies.
-
-4. **Online learning.** Test whether continual update during 2026 paper trading improves performance.
-
-5. **Microstructure.** If real-time order book capture deemed worthwhile.
-
-## Subscription Status After Project 3
-
-| Service | Original cost | Status | Reason |
-|---------|--------------|--------|--------|
-| Glassnode | $30/mo | ACTIVE | Confirmed valuable |
-| CryptoQuant | $39/mo | CANCELLED | Mediocre value |
-| Polygon | $79/mo | [decide] | [decision] |
-| FMP | $14/mo | [decide] | [decision] |
-
-Final monthly subscription cost: $XX/month
-
-## Files
-
-- Full Phase 1 inventory: `/home/harveybc/Documents/GitHub/financial-data/INVENTORY.md`
-- Full Phase 2 feature library: `/home/harveybc/Documents/GitHub/financial-data/features/`
-- Full Phase 3 experiment runs: `/home/harveybc/Documents/GitHub/financial-data/experiments/`
-- Data source ranking: `data_source_value_ranking.md`
-- Feature technique ranking: `feature_technique_value_ranking.md`
-- Subscription decisions: `subscription_cancellation_recommendations.md`
-
-## Conclusion
-
-[1-paragraph closing statement on whether Project 3 demonstrated systematic edge in retail RL trading or confirmed null result; what was learned regardless]
-```
-
----
-
-## 6. Stage 3.2 Deliverable
-
-`STAGE_3.2_DELIVERABLE.md` (brief, references main report):
-
-```markdown
-# Stage 3.2 Deliverable — Results Synthesis
-
-## Status: COMPLETE
-
-See `PROJECT_3_FINAL_REPORT.md` for full synthesis.
-
-## Files Produced
-
-- PROJECT_3_FINAL_REPORT.md
-- data_source_value_ranking.md
-- feature_technique_value_ranking.md
-- subscription_cancellation_recommendations.md
-
-## Project 3 Status
-
-CLOSED. User reviews final report and decides on:
-1. Subscription cancellations
-2. Whether Project 4 should proceed (NEAT, productization, etc.)
-```
-
----
-
-## 7. User Gate (final)
-
-User reviews Project 3 Final Report. Decisions:
-1. Cancel mediocre subscriptions per recommendations
-2. Approve / decline subsequent Project 4 ideas
-3. Project 3 closed.
+## Interpretation Rules
+
+- A single profitable week proves nothing.
+- A single unprofitable week kills nothing.
+- A candidate becomes interesting when it improves repeated next-week
+  profit/risk across anchors, seeds, and costs.
+- Stage C remains untouched until explicitly approved.

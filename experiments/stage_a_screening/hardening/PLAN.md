@@ -1,6 +1,6 @@
 # Promotion Hardening Evaluator — PLAN
 
-Generated: 2026-05-03T06:19:08.537688+00:00
+Generated: 2026-06-02T09:51:38.739219+00:00
 
 ## Data Flow
 

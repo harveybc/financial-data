@@ -1,0 +1,44 @@
+Attempting to load plugin: gym_fx_env from group: env.plugins
+Successfully loaded plugin: gym_fx_env (class-level defaults, see config_out.json for actual): {'env_mode': 'inference', 'input_data_file': None, 'price_column': 'CLOSE', 'date_column': 'DATE_TIME', 'headers': True, 'max_rows': None, 'window_size': 32, 'initial_cash': 10000.0, 'position_size': 1.0, 'commission': 0.0, 'slippage': 0.0, 'data_feed_plugin': 'default_data_feed', 'broker_plugin': 'default_broker', 'strategy_plugin': 'default_strategy', 'preprocessor_plugin': 'default_preprocessor', 'reward_plugin': 'pnl_reward', 'metrics_plugin': 'default_metrics'}
+Attempting to load plugin: sac_agent from group: agent.plugins
+Successfully loaded plugin: sac_agent (class-level defaults, see config_out.json for actual): {'total_timesteps': 10000, 'learning_rate': 0.0003, 'buffer_size': 100000, 'learning_starts': 1000, 'batch_size': 256, 'tau': 0.005, 'gamma': 0.99, 'train_freq': 1, 'gradient_steps': 1, 'ent_coef': 'auto', 'target_update_interval': 1, 'target_entropy': 'auto', 'use_sde': False, 'net_arch': (256, 256), 'device': 'auto', 'agent_verbose': 0, 'train_seed': 0, 'training_progress_file': None, 'progress_file': None, 'progress_update_interval_steps': 1000, 'ga_fitness_dd_lambda': 1.0}
+Attempting to load plugin: rl_pipeline from group: pipeline.plugins
+Successfully loaded plugin: rl_pipeline (class-level defaults, see config_out.json for actual): {'eval_seed': 0, 'train_seed': 0, 'total_timesteps': 10000, 'save_model': './agent_model.zip', 'load_model': None, 'return_trace_file': None}
+Traceback (most recent call last):
+  File "/home/harveybc/anaconda3/envs/tensorflow/bin/agent-multi", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/harveybc/Documents/GitHub/agent-multi/app/main.py", line 99, in main
+    summary = _run(config)
+              ^^^^^^^^^^^^
+  File "/home/harveybc/Documents/GitHub/agent-multi/app/main.py", line 79, in _run
+    summary = pipeline_plugin.run_pipeline(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/Documents/GitHub/agent-multi/pipeline_plugins/rl_pipeline.py", line 71, in run_pipeline
+    base_env = env_plugin.make_env(config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/Documents/GitHub/agent-multi/env_plugins/gym_fx_env.py", line 81, in make_env
+    self._env = GymFxEnv(
+                ^^^^^^^^^
+  File "/home/harveybc/Documents/GitHub/gym-fx/app/env.py", line 63, in __init__
+    self.dataframe = self.data_feed_plugin.load_data(self.config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/Documents/GitHub/gym-fx/data_feed_plugins/default_data_feed.py", line 40, in load_data
+    df = pd.read_csv(file_path, header=0 if headers else None, nrows=max_rows)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/harveybc/anaconda3/envs/tensorflow/lib/python3.12/site-packages/pandas/io/common.py", line 926, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt_perp/1h/baseline_12/train.csv'

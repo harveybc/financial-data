@@ -1,271 +1,234 @@
 {
   "active_stage": "Stage 3.1 Experiment Framework, Stage A screening",
-  "generated_at": "2026-05-03T07:24:09.902354+00:00",
+  "generated_at": "2026-06-17T10:22:13.284940+00:00",
   "project_root": "/home/harveybc/Documents/GitHub/financial-data",
   "queues": [
     {
       "active": [],
       "counts": {
-        "complete": 152
+        "blocked_duplicate_kept_on_dragon": 774,
+        "blocked_duplicate_kept_on_gamma": 208,
+        "blocked_no_trade_early_abort": 2259,
+        "blocked_no_trade_preflight": 419,
+        "complete": 430,
+        "failed": 232
       },
       "machine": "omega",
       "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/omega.json",
       "pending_sample": []
     },
     {
-      "active": [
-        {
-          "algorithm": null,
-          "asset": "btcusdt_perp",
-          "feature_preset": null,
-          "run_id": "btcusdt_perp_15m_tech_stat_decomp_sac_s0_50000",
-          "seed": 0,
-          "started_at": null,
-          "status": "training",
-          "timeframe": "15m"
-        }
-      ],
+      "active": [],
       "counts": {
-        "complete": 370,
-        "pending": 48,
-        "training": 1
+        "blocked_duplicate_cancelled_kept_on_gamma": 4,
+        "blocked_duplicate_kept_on_gamma": 21,
+        "blocked_duplicate_kept_on_omega": 16,
+        "blocked_resolved_rerouted_to_omega": 153,
+        "complete": 205
       },
       "machine": "dragon",
       "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/dragon.json",
-      "pending_sample": [
-        "btcusdt_perp_15m_tech_stat_decomp_sac_s1_50000",
-        "btcusdt_perp_15m_tech_stat_decomp_ppo_s0_50000",
-        "btcusdt_perp_15m_tech_stat_decomp_ppo_s1_50000",
-        "btcusdt_perp_15m_tech_stat_decomp_dqn_s0_50000",
-        "btcusdt_perp_15m_tech_stat_decomp_dqn_s1_50000",
-        "btcusdt_perp_15m_learned_lstm_sac_s0_50000",
-        "btcusdt_perp_15m_learned_lstm_sac_s1_50000",
-        "btcusdt_perp_15m_learned_lstm_ppo_s0_50000"
-      ]
+      "pending_sample": []
     },
     {
-      "active": [
-        {
-          "algorithm": null,
-          "asset": "usdjpy",
-          "feature_preset": null,
-          "run_id": "usdjpy_15m_learned_cnn_sac_s0_50000",
-          "seed": 0,
-          "started_at": null,
-          "status": "training",
-          "timeframe": "15m"
-        }
-      ],
+      "active": [],
       "counts": {
-        "blocked_resolved_rerouted_to_dragon": 3,
-        "complete": 284,
-        "pending": 48,
-        "training": 1
+        "blocked_duplicate_kept_on_dragon": 141,
+        "blocked_no_trade_early_abort": 580,
+        "blocked_resolved_rerouted_to_dragon": 80,
+        "blocked_resolved_rerouted_to_omega": 10,
+        "complete": 40
       },
       "machine": "gamma",
       "path": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/queues/gamma.json",
-      "pending_sample": [
-        "usdjpy_15m_learned_cnn_sac_s1_50000",
-        "usdjpy_15m_learned_cnn_sac_s2_50000",
-        "usdjpy_15m_learned_cnn_ppo_s0_50000",
-        "usdjpy_15m_learned_cnn_ppo_s1_50000",
-        "usdjpy_15m_learned_cnn_ppo_s2_50000",
-        "usdjpy_15m_learned_cnn_dqn_s0_50000",
-        "usdjpy_15m_learned_cnn_dqn_s1_50000",
-        "usdjpy_15m_learned_cnn_dqn_s2_50000"
-      ]
+      "pending_sample": []
     }
   ],
   "recent_event_daemon_events": [
     {
-      "generated_at": "2026-05-03T06:28:00.273162+00:00",
+      "generated_at": "2026-06-17T09:21:36.347224+00:00",
       "job_id": "audit:stage24_progress",
       "machine": "omega",
-      "pid": "2045943",
+      "pid": "57127",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:32:00.690298+00:00",
+      "generated_at": "2026-06-17T09:30:30.574001+00:00",
       "job_id": "manifest:stage2_deliverables",
       "machine": "omega",
-      "pid": "2048898",
+      "pid": "65734",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:38:23.007545+00:00",
+      "generated_at": "2026-06-17T09:32:06.814262+00:00",
       "job_id": "audit:stage24_progress",
       "machine": "omega",
-      "pid": "2054193",
+      "pid": "67026",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:47:13.471043+00:00",
+      "generated_at": "2026-06-17T09:42:34.108989+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "75903",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-06-17T09:45:47.688531+00:00",
       "job_id": "manifest:stage2_deliverables",
       "machine": "omega",
-      "pid": "2060997",
+      "pid": "78671",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:48:51.136692+00:00",
+      "generated_at": "2026-06-17T09:53:02.762971+00:00",
       "job_id": "audit:stage24_progress",
       "machine": "omega",
-      "pid": "2062079",
+      "pid": "84669",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:59:21.780184+00:00",
-      "job_id": "audit:stage24_progress",
-      "machine": "omega",
-      "pid": "2068633",
-      "type": "cpu_maintenance_started"
-    },
-    {
-      "generated_at": "2026-05-03T07:02:35.089107+00:00",
+      "generated_at": "2026-06-17T10:01:05.653716+00:00",
       "job_id": "manifest:stage2_deliverables",
       "machine": "omega",
-      "pid": "2070844",
+      "pid": "90765",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T07:09:50.706656+00:00",
+      "generated_at": "2026-06-17T10:03:35.368480+00:00",
       "job_id": "audit:stage24_progress",
       "machine": "omega",
-      "pid": "2076638",
+      "pid": "92430",
       "type": "cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T07:17:54.945461+00:00",
+      "generated_at": "2026-06-17T10:14:04.650745+00:00",
+      "job_id": "audit:stage24_progress",
+      "machine": "omega",
+      "pid": "102123",
+      "type": "cpu_maintenance_started"
+    },
+    {
+      "generated_at": "2026-06-17T10:16:28.946207+00:00",
       "job_id": "manifest:stage2_deliverables",
       "machine": "omega",
-      "pid": "2083520",
-      "type": "cpu_maintenance_started"
-    },
-    {
-      "generated_at": "2026-05-03T07:20:18.543953+00:00",
-      "job_id": "audit:stage24_progress",
-      "machine": "omega",
-      "pid": "2085901",
+      "pid": "104346",
       "type": "cpu_maintenance_started"
     }
   ],
   "recent_stage31_watchdog_events": [
     {
-      "generated_at": "2026-05-03T05:58:09.625891+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T08:34:03.443547+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T05:59:47.283533+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T08:44:04.556031+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:04:07.937692+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T08:56:03.886185+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:08:09.720758+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T09:06:05.026824+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:28:08.344741+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "54044 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage32_stage_a_synthesis_worker.py",
+      "generated_at": "2026-06-17T09:18:05.543604+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:42:12.402148+00:00",
-      "machine": "gamma",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T09:30:04.388788+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:50:09.663854+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T09:42:03.731758+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T06:50:17.114918+00:00",
-      "machine": "gamma",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T09:54:04.182561+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T07:12:09.672240+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "92670 /home/harveybc/anaconda3/envs/tensorflow/bin/python _scripts/workers/stage32_stage_a_synthesis_worker.py",
+      "generated_at": "2026-06-17T10:04:05.616615+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     },
     {
-      "generated_at": "2026-05-03T07:20:08.112056+00:00",
-      "machine": "dragon",
-      "pending": 48,
-      "type": "launched"
+      "detail": "",
+      "generated_at": "2026-06-17T10:16:04.008218+00:00",
+      "task": "stage32_stage_a_synthesis",
+      "type": "omega_cpu_maintenance_started"
     }
   ],
-  "recent_telegram_gateway_sessions": [
-    {
-      "mtime": 1777776171.0679784,
-      "session": "/home/harveybc/.hermes/sessions/session_20260502_214034_82006f21.json"
-    }
-  ],
+  "recent_telegram_gateway_sessions": [],
   "recent_telegram_sent_events": [
     {
-      "digest": "a8c900b39284",
-      "event": "stage31-watchdog:launched:dragon",
-      "last_sent_at": 1777792808.1548502
-    },
-    {
-      "digest": "f1bea1bbff9c",
+      "digest": "7406e7a6add4",
       "event": "tier1:omega:ok",
-      "last_sent_at": 1777792806.3909516
+      "last_sent_at": 1781691607.593437
     },
     {
-      "digest": "2a8645f29c3d",
-      "event": "event-daemon:idle:dragon",
-      "last_sent_at": 1777792530.9605227
-    },
-    {
-      "digest": "876aec40fe24",
+      "digest": "3ddff92b48cc",
       "event": "tier2:global_status",
-      "last_sent_at": 1777792412.0091248
+      "last_sent_at": 1781691365.7132747
     },
     {
       "digest": "c4356cae57c7",
       "event": "event-daemon:idle:gamma",
-      "last_sent_at": 1777792240.4611416
+      "last_sent_at": 1781690566.8840044
     },
     {
-      "digest": "65e8b48a6c0a",
-      "event": "stage31-watchdog:launched:gamma",
-      "last_sent_at": 1777791017.155701
+      "digest": "2a8645f29c3d",
+      "event": "event-daemon:idle:dragon",
+      "last_sent_at": 1781690564.6872675
     },
     {
-      "digest": "6697e00bb36b",
-      "event": "codex_orchestrator",
-      "last_sent_at": 1777786368.5023036
+      "digest": "b804243c4bfe",
+      "event": "event-daemon:daemon_error",
+      "last_sent_at": 1781239424.7277503
     },
     {
-      "digest": "53049561b894",
-      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_ppo_s0_12500:complete",
-      "last_sent_at": 1777719623.0800252
+      "digest": "130d9270f641",
+      "event": "stage31-watchdog:supervisor_service_started",
+      "last_sent_at": 1781239215.9962618
     },
     {
-      "digest": "fafd616587f9",
-      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_ppo_s0_12500:start",
-      "last_sent_at": 1777719561.6505582
+      "digest": "f6650f648ec0",
+      "event": "stage31:omega:linkusdt_1h_crypto_full_sac_s2_50000:blocked_no_trade_early_abort",
+      "last_sent_at": 1781041224.7957501
     },
     {
-      "digest": "5f15b65631ad",
-      "event": "stage31:omega:eurgbp_4h_tech_stat_decomp_dqn_s0_12500:complete",
-      "last_sent_at": 1777719537.2985518
+      "digest": "b5a97f26ce97",
+      "event": "stage31:omega:linkusdt_1h_crypto_full_sac_s2_50000:start",
+      "last_sent_at": 1781041193.6049638
+    },
+    {
+      "digest": "ac44f0508931",
+      "event": "stage31:omega:linkusdt_15m_sota_low_cost_ppo_s2_50000:blocked_no_trade_early_abort",
+      "last_sent_at": 1781041183.1639166
+    },
+    {
+      "digest": "79fa24548d78",
+      "event": "stage31:omega:linkusdt_15m_sota_low_cost_ppo_s2_50000:start",
+      "last_sent_at": 1781041136.8635397
     }
   ],
   "relevant_docs": [

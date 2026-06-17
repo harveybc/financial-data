@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "d8344355e54367c857f5d89365d8ea3c8ca7b0f753b7635e228c6e526c0734ec",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_session_calendar/train.csv",
+  "data_file_hash": "4d9b61a583fac6cc436a7ce4a5e684c27ea31beb1b19962795a239bb19d2f2c7",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T22:43:22Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 0,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "9d186efff08e537f4b9596d4a7cac0d50f38e3462085e338fb6f31ce5ace4655"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "96b28167efe0ddfe4b4ab90c1c444f27458c283665ac31940a8f3025b9e9cbce"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/session_calendar_run_plan/plans/tech_stat_reduced_corr_v1_plus_session_calendar/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_session_calendar_baseline_momentum_s0_base/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "f93195cdc7d7cd9757cebe77e8a593b130abc2e87d9a181d87af9bf411b93dcb"
+    }
+  ]
+}

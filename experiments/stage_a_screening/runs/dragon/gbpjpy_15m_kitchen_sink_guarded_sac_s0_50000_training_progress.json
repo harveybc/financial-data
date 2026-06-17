@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "sac_agent",
+  "asset": "gbpjpy",
+  "features_preset": "kitchen_sink_guarded",
+  "num_timesteps": 50000,
+  "pid": 2165217,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 100.0,
+  "run_id": "gbpjpy_15m_kitchen_sink_guarded_sac_s0_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 0,
+  "source": "stage31_worker",
+  "status": "subprocess_complete",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-08T22:33:17.510901+00:00"
+}

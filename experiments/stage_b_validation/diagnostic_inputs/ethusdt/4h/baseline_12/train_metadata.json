@@ -1,0 +1,32 @@
+{
+  "asset": "ethusdt",
+  "columns": 18,
+  "config_hash": "0146d5c5d1f486522788051ace4db105b6f4b3bcdefbe946e9a8f79f255ed2f3",
+  "feature_columns": [
+    "returns",
+    "log_returns",
+    "rsi_14",
+    "macd_hist",
+    "bb_pos",
+    "volume_ratio",
+    "ema_cross",
+    "atr_norm",
+    "obv_delta",
+    "momentum_5",
+    "momentum_20",
+    "vol_20"
+  ],
+  "first_timestamp": "2017-08-25 08:00:00",
+  "fit_uses_stage_c": false,
+  "fit_uses_validation": false,
+  "generated_at": "2026-05-13T20:09:00.648005+00:00",
+  "heldout_start": "2025-01-01",
+  "last_timestamp": "2023-12-31 20:00:00",
+  "max_timestamp_lt_heldout": true,
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/baseline_12/train.csv",
+  "rows": 13902,
+  "schema_version": "project3_stage_b_feature_variant_v1",
+  "source_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt/4h/baseline_12/train.csv",
+  "timeframe": "4h",
+  "variant": "baseline_12"
+}

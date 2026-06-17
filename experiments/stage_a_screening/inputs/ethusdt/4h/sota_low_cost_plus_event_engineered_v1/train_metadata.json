@@ -1,0 +1,68 @@
+{
+  "dropped_heldout_or_later_input_rows": 0,
+  "event_audit": {
+    "actual_columns_detected": [
+      "actual",
+      "transformed_actual"
+    ],
+    "actual_fields_used": false,
+    "currency_column": null,
+    "disabled_point_in_time_fields_reason": "actual/forecast/revision/surprise fields lack first_available_ts",
+    "event_source_file": "/home/harveybc/Documents/GitHub/financial-data/economic_calendar/scheduled_events/fred_release_date_proxy/scheduled_events.parquet",
+    "event_source_hash": "c683be065f7a0fb3d4bdded8505012edb0301468482e8ded584f91dc0399004b",
+    "family_column": "event_name",
+    "first_available_timestamp_column": null,
+    "forecast_columns_detected": [
+      "consensus_estimate"
+    ],
+    "forecast_fields_used": false,
+    "importance_column": null,
+    "raw_event_rows": 1200,
+    "revision_columns_detected": [],
+    "revision_fields_used": false,
+    "scheduled_pre_heldout_event_rows": 940,
+    "scheduled_timestamp_column": "scheduled_date_proxy",
+    "surprise_columns_detected": [
+      "surprise"
+    ],
+    "surprise_fields_used": false,
+    "target_currencies": [
+      "USD"
+    ]
+  },
+  "event_feature_columns": [
+    "event_upcoming_high_count_24h",
+    "event_upcoming_high_count_72h",
+    "event_upcoming_high_count_168h",
+    "event_min_hours_to_high_impact",
+    "event_sum_importance_weighted_relevance_24h",
+    "event_sum_importance_weighted_relevance_168h",
+    "event_cluster_count_6h",
+    "event_cluster_count_12h",
+    "event_cluster_count_24h",
+    "event_cpi_week_flag",
+    "event_nfp_week_flag",
+    "event_fomc_week_flag",
+    "event_central_bank_week_flag",
+    "event_time_since_last_high_impact_hours",
+    "event_recent_abs_surprise_z_max_24h",
+    "event_recent_signed_surprise_z_sum_24h",
+    "event_no_trade_window_active",
+    "event_spread_stress_multiplier",
+    "event_slippage_stress_multiplier"
+  ],
+  "generated_at_utc": "2026-06-09T16:38:27+00:00",
+  "input_data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt/4h/sota_low_cost/train.csv",
+  "input_data_hash": "ea78d0f22d73bd96b7959f197de9c1ba69029f57a93169d9ad5dfc7061782796",
+  "input_rows_before_filter": 8971,
+  "no_trade_hours": 6.0,
+  "output_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt/4h/sota_low_cost_plus_event_engineered_v1/train.csv",
+  "output_hash": "51957ecded53e38cdfa169a79d8936e1bfdaebc1b401dc90c4bada36759f2fbb",
+  "output_rows": 8971,
+  "schema_version": "project3_event_engineered_summary_v1",
+  "stage_c_access": "DENIED",
+  "stage_c_allowed": false,
+  "target_asset": "ethusdt",
+  "time_column": "DATE_TIME",
+  "training_launched": false
+}

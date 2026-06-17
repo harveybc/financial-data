@@ -1,0 +1,71 @@
+{
+  "active_rows": [],
+  "all_queries_ok": true,
+  "assigned": 180,
+  "counts": {
+    "aborted_no_trade": 0,
+    "done": 180,
+    "failed": 0,
+    "not_started": 0,
+    "running": 0
+  },
+  "generated_at_utc": "2026-05-14T22:53:44.698313+00:00",
+  "machines": [
+    {
+      "active": [],
+      "assigned": 68,
+      "counts": {
+        "aborted_no_trade": 0,
+        "done": 68,
+        "failed": 0,
+        "not_started": 0,
+        "running": 0
+      },
+      "gpu": "0, NVIDIA GeForce RTX 4090 Laptop GPU, 0, 63, 16376",
+      "hostname": "dragon",
+      "machine": "dragon",
+      "plan_json": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_locked_run_plan.json",
+      "processes": "",
+      "query_ok": true
+    },
+    {
+      "active": [],
+      "assigned": 77,
+      "counts": {
+        "aborted_no_trade": 0,
+        "done": 77,
+        "failed": 0,
+        "not_started": 0,
+        "running": 0
+      },
+      "gpu": "0, NVIDIA GeForce RTX 5070 Ti Laptop GPU, 17, 14, 12227",
+      "hostname": "gamma",
+      "machine": "gamma",
+      "plan_json": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_locked_run_plan.json",
+      "processes": "",
+      "query_ok": true
+    },
+    {
+      "active": [],
+      "assigned": 35,
+      "counts": {
+        "aborted_no_trade": 0,
+        "done": 35,
+        "failed": 0,
+        "not_started": 0,
+        "running": 0
+      },
+      "gpu": "0, NVIDIA GeForce RTX 4070 Laptop GPU, 39, 3877, 8188",
+      "hostname": "omega",
+      "machine": "omega",
+      "plan_json": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/run_plan/stage_b_locked_run_plan.json",
+      "processes": "",
+      "query_ok": true
+    }
+  ],
+  "next_expected_poll_utc": "2026-05-14T22:54:44.698313+00:00",
+  "plan_json": "",
+  "poll_interval_seconds": 60,
+  "query_errors": {},
+  "schema_version": "project3_stage_b_cluster_live_status_v1"
+}

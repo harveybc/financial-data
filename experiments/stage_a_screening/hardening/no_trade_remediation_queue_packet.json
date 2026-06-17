@@ -1,0 +1,28 @@
+{
+  "appended_counts": {
+    "dragon": 0,
+    "gamma": 0,
+    "omega": 0
+  },
+  "diagnostic_rows_considered": 546,
+  "execute": false,
+  "generated_at_utc": "2026-05-12T21:42:55.187443+00:00",
+  "jobs": {
+    "dragon": [],
+    "gamma": [],
+    "omega": []
+  },
+  "plan_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/hardening/no_trade_remediation_plan.csv",
+  "policy": {
+    "diagnostic_jobs_are_new_trials": true,
+    "exact_existing_signatures_not_enqueued": true,
+    "first_layer_no_trade_preflight_required": true,
+    "promotion_eligible": false,
+    "telemetry_only_rows_not_enqueued": true
+  },
+  "schema_version": "project3_no_trade_remediation_queue_packet_v1",
+  "skipped": {
+    "already_known_run_id": 546
+  },
+  "timesteps_cap": 10000
+}

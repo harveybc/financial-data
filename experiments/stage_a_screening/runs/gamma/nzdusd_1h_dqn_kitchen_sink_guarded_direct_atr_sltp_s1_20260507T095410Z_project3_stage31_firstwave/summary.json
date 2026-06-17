@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 9998.17141253933,
+  "total_return": -0.00018285874606704944,
+  "max_drawdown_pct": 0.01918004831210101,
+  "max_drawdown_money": 1.918005105233533,
+  "sharpe_ratio": -54.647598564734,
+  "sqn": -3.1976104202237883,
+  "trades_total": 17381,
+  "trades_won": 8137,
+  "trades_lost": 9243,
+  "avg_trade_pnl": -0.00010532484317771116,
+  "episode_reward": -0.00018281374606704065,
+  "episode_length": 113402,
+  "eval_seed": 1,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/nzdusd_1h_dqn_kitchen_sink_guarded_direct_atr_sltp_s1_20260507T095410Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

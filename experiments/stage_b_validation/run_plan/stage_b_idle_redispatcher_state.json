@@ -1,0 +1,41 @@
+{
+  "copied_inputs": {},
+  "execute": true,
+  "generated_at_utc": "2026-05-19T08:51:58.117396+00:00",
+  "launch_results": [],
+  "machine_active": {
+    "dragon": [],
+    "gamma": [],
+    "omega": []
+  },
+  "machine_counts": {
+    "dragon": {
+      "aborted_no_trade": 0,
+      "done": 68,
+      "failed": 0,
+      "not_started": 0,
+      "running": 0
+    },
+    "gamma": {
+      "aborted_no_trade": 0,
+      "done": 77,
+      "failed": 0,
+      "not_started": 0,
+      "running": 0
+    },
+    "omega": {
+      "aborted_no_trade": 0,
+      "done": 35,
+      "failed": 0,
+      "not_started": 0,
+      "running": 0
+    }
+  },
+  "machine_query_ok": {
+    "dragon": true,
+    "gamma": true,
+    "omega": true
+  },
+  "moves": [],
+  "schema_version": "project3_stage_b_idle_redispatcher_v1"
+}

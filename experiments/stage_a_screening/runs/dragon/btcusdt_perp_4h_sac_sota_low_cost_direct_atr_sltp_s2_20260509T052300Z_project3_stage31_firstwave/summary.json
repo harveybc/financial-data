@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 10839.68957353418,
+  "total_return": 0.08396895735341814,
+  "max_drawdown_pct": 7.225820096813825,
+  "max_drawdown_money": 803.3458156764045,
+  "sharpe_ratio": 0.008267011635856683,
+  "sqn": 1.1908280342104232,
+  "trades_total": 451,
+  "trades_won": 200,
+  "trades_lost": 250,
+  "avg_trade_pnl": 1.8599561287356952,
+  "episode_reward": 0.08352371414563162,
+  "episode_length": 9201,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/dragon/btcusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260509T052300Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "dqn_agent",
+  "asset": "gbpjpy",
+  "features_preset": "tech_stat_decomp",
+  "num_timesteps": 0,
+  "pid": 3795411,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "gbpjpy_1h_tech_stat_decomp_dqn_s0_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 0,
+  "source": "stage31_worker",
+  "status": "subprocess_failed",
+  "timeframe": "1h",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-08T22:50:41.012924+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "ethusdt_perp_4h",
+  "broker_profile": null,
+  "calendar_policy_id": null,
+  "config_hash": "e4d29306c8569722fb0712c913d59bd168823e942e98a87326f3292bd3387f0c",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt_perp/4h/baseline_12/train.csv",
+  "data_file_hash": "cbc46ad5103129a089d3090657dd5d28201bc0a699904eb5a73f85d010809992",
+  "feature_column_count": 0,
+  "feature_columns": null,
+  "feature_list_hash": null,
+  "generated_at": "2026-05-16T05:59:27Z",
+  "heldout_boundary": "2025-01-01",
+  "market_type": null,
+  "observation_state_fields": [
+    "equity_norm",
+    "position",
+    "prices",
+    "returns",
+    "steps_remaining_norm",
+    "unrealized_pnl_norm"
+  ],
+  "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+  "pipeline_plugin": "rl_pipeline",
+  "run_id": "ethusdt_perp_4h_sac_baseline_12_direct_atr_sltp_s2_20260516T055135Z_project3_stage31_firstwave",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 2,
+  "stage_c_authorized": false,
+  "timeframe": "4h",
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_perp_4h_sac_baseline_12_direct_atr_sltp_s2_20260516T055135Z_project3_stage31_firstwave::eval0",
+      "feature_column_count": 0,
+      "feature_list_hash": null,
+      "first_timestamp": "2019-12-05 08:00:00",
+      "last_timestamp": "2023-12-31 20:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/ethusdt_perp_4h_sac_baseline_12_direct_atr_sltp_s2_20260516T055135Z_project3_stage31_firstwave/return_trace.csv.meta.json",
+      "observation_state_hash": "a1b97276bf4bd7fae0ba79fc580caaa16c6274e1055a86f3ae9260d816090946",
+      "row_count": 8926,
+      "split": "evaluation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/ethusdt_perp_4h_sac_baseline_12_direct_atr_sltp_s2_20260516T055135Z_project3_stage31_firstwave/return_trace.csv",
+      "trace_file_sha256": "18c6db9a53fcd539c2902a1afc674f2b3e7220699f25816263fff7e42085582b"
+    }
+  ],
+  "trade_rate_band_id": null
+}

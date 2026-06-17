@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "ppo_agent",
+  "asset": "linkusdt",
+  "features_preset": "tech_stat_decomp",
+  "num_timesteps": 0,
+  "pid": 125461,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "linkusdt_15m_tech_stat_decomp_ppo_s1_10000_notrade_ppo_entropy_003",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 1,
+  "source": "stage31_worker",
+  "status": "failed",
+  "timeframe": "15m",
+  "total_timesteps": 10000,
+  "updated_at_utc": "2026-05-09T23:32:08.510368+00:00"
+}

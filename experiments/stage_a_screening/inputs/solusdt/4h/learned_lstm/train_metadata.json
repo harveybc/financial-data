@@ -1,0 +1,19 @@
+{
+  "asset": "solusdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-09T20:53:44.064890+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_lstm"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/solusdt/4h/learned_lstm/train.csv",
+  "preset": "learned_lstm",
+  "rows": 7427,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/solusdt/4h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "4h"
+}

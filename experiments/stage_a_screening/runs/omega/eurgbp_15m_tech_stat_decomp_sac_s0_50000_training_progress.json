@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "sac_agent",
+  "asset": "eurgbp",
+  "features_preset": "tech_stat_decomp",
+  "num_timesteps": 0,
+  "pid": 3392513,
+  "progress_detail": "no-trade preflight diagnosis=forced_actions_not_seen_by_strategy closed_trades=0 orders=0",
+  "progress_percent": 0.0,
+  "run_id": "eurgbp_15m_tech_stat_decomp_sac_s0_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 0,
+  "source": "stage31_worker",
+  "status": "blocked_no_trade_preflight",
+  "timeframe": "15m",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-16T04:12:58.811639+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "asset": "linkusdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-06-09T20:38:00.072219+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_lstm"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/linkusdt/15m/learned_lstm/train.csv",
+  "preset": "learned_lstm",
+  "rows": 173546,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/linkusdt/15m.parquet"
+  ],
+  "split": "train",
+  "timeframe": "15m"
+}

@@ -1,0 +1,43 @@
+{
+  "action": "manual_rebalance_gamma_pending_to_dragon_round3",
+  "dragon_counts_after": {
+    "complete": 1696,
+    "pending": 24
+  },
+  "dragon_first_pending": "usdchf_1h_tech_stat_decomp_sac_s1_50000",
+  "gamma_counts_after": {
+    "blocked_resolved_rerouted_to_dragon": 51,
+    "complete": 1178,
+    "pending": 24,
+    "training": 1
+  },
+  "gamma_first_pending": "usdchf_1h_learned_cnn_dqn_s1_50000",
+  "generated_at": "2026-05-06T18:48:54.068794+00:00",
+  "moved_count": 24,
+  "moved_run_ids": [
+    "usdchf_1h_tech_stat_decomp_sac_s1_50000",
+    "usdchf_1h_tech_stat_decomp_sac_s2_50000",
+    "usdchf_1h_tech_stat_decomp_ppo_s0_50000",
+    "usdchf_1h_tech_stat_decomp_ppo_s1_50000",
+    "usdchf_1h_tech_stat_decomp_ppo_s2_50000",
+    "usdchf_1h_tech_stat_decomp_dqn_s0_50000",
+    "usdchf_1h_tech_stat_decomp_dqn_s1_50000",
+    "usdchf_1h_tech_stat_decomp_dqn_s2_50000",
+    "usdchf_1h_learned_lstm_sac_s0_50000",
+    "usdchf_1h_learned_lstm_sac_s1_50000",
+    "usdchf_1h_learned_lstm_sac_s2_50000",
+    "usdchf_1h_learned_lstm_ppo_s0_50000",
+    "usdchf_1h_learned_lstm_ppo_s1_50000",
+    "usdchf_1h_learned_lstm_ppo_s2_50000",
+    "usdchf_1h_learned_lstm_dqn_s0_50000",
+    "usdchf_1h_learned_lstm_dqn_s1_50000",
+    "usdchf_1h_learned_lstm_dqn_s2_50000",
+    "usdchf_1h_learned_cnn_sac_s0_50000",
+    "usdchf_1h_learned_cnn_sac_s1_50000",
+    "usdchf_1h_learned_cnn_sac_s2_50000",
+    "usdchf_1h_learned_cnn_ppo_s0_50000",
+    "usdchf_1h_learned_cnn_ppo_s1_50000",
+    "usdchf_1h_learned_cnn_ppo_s2_50000",
+    "usdchf_1h_learned_cnn_dqn_s0_50000"
+  ]
+}

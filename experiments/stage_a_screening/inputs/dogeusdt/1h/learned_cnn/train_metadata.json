@@ -1,0 +1,19 @@
+{
+  "asset": "dogeusdt",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-05-30T03:03:34.882873+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_cnn"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/dogeusdt/1h/learned_cnn/train.csv",
+  "preset": "learned_cnn",
+  "rows": 39328,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/dogeusdt/1h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "1h"
+}

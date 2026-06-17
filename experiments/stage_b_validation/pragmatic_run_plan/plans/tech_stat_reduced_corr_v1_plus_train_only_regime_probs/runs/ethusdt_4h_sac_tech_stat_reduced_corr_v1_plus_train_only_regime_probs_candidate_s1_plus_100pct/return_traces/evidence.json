@@ -1,0 +1,55 @@
+{
+  "asset": "ethusdt_4h",
+  "config_hash": "4e63e6f9e4debd0ae774fa799b447b769421aee94a18097717cc9ba1d981fd0f",
+  "contains_heldout_rows": false,
+  "data_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/train.csv",
+  "data_file_hash": "dba7efea9730a17f1d03686d5d452eca107dce9d387bf59c2783a127ac30ad5e",
+  "feature_list_hash": null,
+  "generated_at": "2026-05-13T14:01:47Z",
+  "heldout_boundary": "2025-01-01",
+  "pipeline_plugin": "rl_pipeline_with_validation",
+  "run_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct",
+  "schema_version": "project3_return_trace_evidence_v1",
+  "seed": 1,
+  "stage_c_authorized": false,
+  "timeframe": null,
+  "trace_schema_version": "stage_b_return_trace_v1",
+  "traces": [
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct::train",
+      "first_timestamp": "2017-09-28 04:00:00",
+      "last_timestamp": "2021-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct/return_traces/train_return_trace.csv.meta.json",
+      "row_count": 8750,
+      "split": "train",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct/return_traces/train_return_trace.csv",
+      "trace_file_sha256": "dc2dae3447f3f8c468d7e41bd85399ba628e19a1ac35b42689d32ed55bd5c0b4"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct::validation",
+      "first_timestamp": "2021-09-28 04:00:00",
+      "last_timestamp": "2022-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct/return_traces/validation_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "validation",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct/return_traces/validation_return_trace.csv",
+      "trace_file_sha256": "59fefb14ab7ad1897df8989108a1ee4800b8e4b12942829eaffb2284957dfffb"
+    },
+    {
+      "contains_heldout_rows": false,
+      "episode_id": "ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct::test",
+      "first_timestamp": "2022-09-28 04:00:00",
+      "last_timestamp": "2023-09-28 00:00:00",
+      "metadata_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct/return_traces/test_return_trace.csv.meta.json",
+      "row_count": 2190,
+      "split": "test",
+      "stage_c_authorized": false,
+      "trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/tech_stat_reduced_corr_v1_plus_train_only_regime_probs/runs/ethusdt_4h_sac_tech_stat_reduced_corr_v1_plus_train_only_regime_probs_candidate_s1_plus_100pct/return_traces/test_return_trace.csv",
+      "trace_file_sha256": "eb64c20c842e3a8b77e1e70f23b7d3bcfb93db28f718987a23e590200d09e90e"
+    }
+  ]
+}

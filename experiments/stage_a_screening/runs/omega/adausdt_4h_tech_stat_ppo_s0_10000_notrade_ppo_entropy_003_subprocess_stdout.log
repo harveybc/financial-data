@@ -1,0 +1,12 @@
+[seed_sweep] running seed=0 run_dir=/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/adausdt_4h_ppo_tech_stat_direct_atr_sltp_s0_20260509T211745Z_project3_stage31_firstwave
+{
+  "ok": false,
+  "results": [
+    {
+      "seed": 0,
+      "exit_code": 1,
+      "summary": {},
+      "run_dir": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/omega/adausdt_4h_ppo_tech_stat_direct_atr_sltp_s0_20260509T211745Z_project3_stage31_firstwave"
+    }
+  ]
+}

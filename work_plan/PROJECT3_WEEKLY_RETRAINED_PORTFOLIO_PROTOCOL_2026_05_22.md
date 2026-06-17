@@ -1,422 +1,687 @@
 # Project 3 Weekly-Retrained Portfolio Protocol
 
-Date: 2026-05-22
+Date: 2026-06-04
+Status: ACTIVE CANONICAL PLAN
 
 ## Decision
 
-Project 3 is no longer framed as "find one RL model that trades well for a
-full year after training." The practical target is:
+Project 3 is a weekly-retrained portfolio trading system. It is not a static
+one-year benchmark and it is not a short-window smoke-test project.
 
-> Every weekend, retrain/update the system using data available through the
-> completed week, then trade only the next week under a weekly portfolio
-> supervisor.
+The production-shaped loop is:
 
-The active research object is therefore the complete weekly production loop:
+1. train or update models over the weekend using only data known before the
+   decision cutoff;
+2. validate on the next historical week during research;
+3. test/simulate the following week only;
+4. repeat across many historical weekly anchors;
+5. aggregate results across weeks, seeds, costs, assets, and training-window
+   lengths;
+6. later use a portfolio supervisor to allocate capital and no-trade flags
+   across the per-asset models.
 
-1. choose tradable assets;
-2. build per-asset input contracts using all useful own-asset and cross-asset
-   data from free and paid sources;
-3. optimize feature selection, preprocessing, SAC hyperparameters, and
-   portfolio/risk controls;
-4. allocate capital weekly across the selected assets/models;
-5. trade the following week only;
-6. record weekly evidence and feed it into the next weekend retrain.
+The previous the previous short-window run family is obsolete for
+optimization. Its artifacts were deleted. Tiny windows may be used only for
+mechanical unit tests, never as evidence that a model/data/preprocessing choice
+is good.
 
-This protocol supersedes any interpretation of Stage 3X that blocks progress
-because an unoptimized short smoke model is not yet a Stage B/Stage C-ready
-candidate. Stage C remains locked, but Stage 3X optimization is allowed to
-continue while all data-safety and mechanical evidence checks pass.
+## Non-Negotiable Evaluation Unit
 
-## Why This Is The Right Target
+Every serious experiment is a collection of weekly subjobs.
 
-The user-facing system is not a static academic benchmark. It is intended to be
-a live portfolio trading engine. A model that is retrained every weekend should
-be judged by its next-week behavior, not by pretending it must remain optimal
-for a year without retraining.
+```text
+job:
+  model/data/preprocessing/hyperparameter/training-policy candidate
 
-The research question changes from:
+subjob:
+  one weekly anchor for that job
 
-- "Can this single model survive a long static OOS period?"
+subjob split:
+  train      = N years before validation window
+  train_tail = configurable final slice of train used only for early-stop scoring
+  validation = configurable calendar days immediately after training
+  test       = configurable calendar days immediately after validation
+```
 
-to:
+The result of a job is the aggregate of its subjobs, not one lucky week.
 
-- "Can this automated weekend retrain + weekly portfolio allocation process
-  produce repeated next-week risk-adjusted edge after costs?"
+Primary sweep:
 
-Long validation still matters, but only as repeated weekly walk-forward
-episodes. The correct sample is many historical "train on past / trade next
-week" anchors, not one monolithic year-long deployment.
+```text
+train_years in [1,2,3,4,5,6,7,8,9,10]
+early_stop_train_tail_days in [7,14,28]
+validation_days in [7,14,28]
+test_days in [7,14,28]
+```
 
-## Rolling Weekly Split Policy
+The 4-year window is a strong prior from previous predictor work, but it is not
+hard-coded as truth. The sweep must measure whether 1, 2, 3, 4, or more years
+produce better repeated next-week profit/risk.
 
-For each historical anchor week `W`, the production-like split is:
+Early stopping is based on the average of the trading performance in the final
+slice of the training window and the validation window:
 
-- **Training:** approximately 4 years ending before the validation week.
-- **Validation:** the week immediately before the simulated trading week, or a
-  small rolling bundle of recent weeks when a single week is too noisy.
-- **Test / next-week simulation:** exactly the following week.
-- **Live deployment analogy:** after the real weekend retrain, the next live
-  week is the only intended model lifetime.
+```text
+early_stop_score = 0.5 * train_tail_total_return + 0.5 * validation_total_return
+```
 
-Default research policy:
+The full training dataset remains `train_years=N`; `train_tail` is only the
+evaluation slice used for the early-stop score. Patience increments only when
+this score does not improve by `l1_min_delta`; patience resets to zero whenever
+the score improves and the checkpoint is saved.
 
-- micro smoke: 14d train / 7d validation / 7d test only to prove mechanics;
-- micro-NSGA: many tiny weekly anchors, cheap enough to iterate;
-- serious Stage 3X validation: repeated rolling weekly anchors across multiple
-  regimes;
-- Stage B promotion: still requires cost scenarios, seeds, baselines,
-  statistical gates, and no Stage C rows;
-- Stage C: still one-shot final heldout.
+## Training Policies To Compare
 
-Do not use a single one-week result as proof of tradability. Use it as one
-episode in an optimizer and later aggregate across many weekly anchors.
+The first implementation must support three training policies as separate
+families. Do not mix their scores in one label.
 
-## Data And Input Policy
+| Policy | Meaning | Research use |
+| --- | --- | --- |
+| `scratch_n_years` | Train from scratch for every weekly anchor using `train_years=N`. | Cleanest comparison for data, preprocessing, and hyperparameters. |
+| `warm_start_4y_then_1y` | Initial model trained on 4 years, then weekly fine-tune using last 1 year plus optional replay. | Production-like candidate after scratch baselines exist. |
+| `warm_start_4y_light` | Initial model trained on 4 years, then weekly light update using the same 4-year window. | Stability check against catastrophic forgetting. |
 
-For every target trading asset, the input universe may include:
+Initial orchestration should start with `scratch_n_years` because it gives the
+least ambiguous comparison. Warm-start policies are then compared against the
+best scratch candidates.
 
-- own-asset OHLCV, returns, volatility, trend, momentum, liquidity, and
-  technical/statistical features;
-- prices/returns/volatility/liquidity of other tradable assets;
-- cross-asset spreads, correlations, beta-like exposures, relative strength,
-  lead/lag features, and regime features;
-- FX/crypto/macro/event-calendar variables when available;
-- paid-source features only when the provider gives enough historical coverage
-  to enter train/validation screening;
-- free-source equivalents when paid data does not prove unique value.
+## Seasonality Policy
 
-This is important: asset prices are not only tradable instruments. They are
-also valid inputs for models trading other assets. The data-space worker must
-therefore treat `input_asset_mask` and `target_asset` as separate genome genes.
+With 4 years of training, there are only about 4 direct examples of the exact
+same week-of-year. That is too little to let week identity dominate the model.
 
-Paid data is not used because it was paid for. It is used only when it passes
-coverage, leakage, freshness, cost, and train/validation utility checks.
+Allowed seasonal features:
 
-## Asset And Portfolio Selection
+- hour sine/cosine;
+- day-of-week sine/cosine;
+- month sine/cosine;
+- week-of-year sine/cosine;
+- hours-to-Friday-close;
+- Monday entry window flag;
+- event-calendar risk score known before the cutoff.
 
-Do not hard-code "top 10 assets" as a permanent rule. Start with a safe
-operational cap, then let evidence choose the number.
+Forbidden as primary decision keys:
 
-Initial caps:
+- hard one-hot week-of-year as a dominant feature;
+- any feature fitted using validation, test, or Stage C rows;
+- any calendar/event value learned after the decision cutoff.
 
-- single-asset micro-NSGA remains active;
-- portfolio mechanical smoke: up to 5 assets;
-- later production research: configurable cap, probably 3-10 assets depending
-  on liquidity, spread, correlation, and operational risk.
+Seasonality is a soft context feature. Market state, volatility, liquidity,
+trend, cost, and event risk must compete with it.
 
-Asset eligibility metrics:
+## Active Data/Input Search
 
-- data coverage and feature availability;
-- spread/slippage/cost model quality;
-- liquidity and market-hour compatibility;
-- next-week walk-forward net return distribution;
-- downside risk / CVaR / drawdown;
-- correlation to other selected strategy streams;
-- marginal contribution to portfolio risk-adjusted return;
+For each target asset, the system may use:
+
+- own-asset OHLCV and engineered features;
+- other tradable assets as cross-asset inputs;
+- macro/event/calendar features when available at the decision cutoff;
+- paid-source features only when historical coverage, leakage safety, and
+  marginal value are proven;
+- market-state summaries and embeddings fitted train-only.
+
+`target_asset` and `input_asset_mask` are separate genes. A model trading one
+asset may use other asset prices/features as inputs.
+
+## Weekly Portfolio Supervisor Layer
+
+The product is a portfolio service, not a one-asset signal service.
+
+Current scope boundary:
+
+- **In scope now:** normalized control signals, per-asset model selection,
+  no-trade flags, and weekly portfolio weights.
+- **Out of scope now:** user-account plumbing, deposits, PAMM/social-trading
+  execution, per-user capital accounting, and conversion of signals into
+  broker-specific orders for each customer.
+
+The system may later be consumed by a separate execution service that maps our
+signals and normalized portfolio weights into user-specific trades. For current
+research, portfolio weights are unit-capital normalized research outputs, not
+customer-dollar instructions.
+
+Each client account may hold several active asset streams at the same time.
+The per-asset SAC agents decide trade direction/management inside their own
+asset environment, but a higher layer decides every weekend:
+
+- which asset/model streams are active for the coming week;
+- which streams receive a no-trade flag;
+- how much capital/order-size budget each active stream receives;
+- portfolio-level caps such as max weight per asset, max number of active
+  assets, and max exposure to highly correlated streams.
+
+The weekly rebalance must use only information available before the simulated
+next week:
+
+- current subjob train-tail and validation performance;
+- prior realized weekly strategy returns;
+- prior covariance/downside-risk estimates;
+- event/context/market-state embeddings known before the decision cutoff;
+- broker cost/spread constraints and weekend-flat rules.
+
+It must not use the next week test return when choosing weights.
+
+Canonical architecture:
+
+1. **Market/context representation layer**
+   - converts multi-asset prices, event calendar data, event surprises,
+     seasonal features, unsupervised market-state features, technical/fundamental
+     inputs, and cross-asset context into fixed or variable-length market
+     representations;
+   - may be a simple engineered feature layer, train-only embeddings, or later
+     a trading-language/market-description transformer.
+2. **Per-asset specialist layer**
+   - trains one or more agents specifically for each tradable target asset;
+   - may consume its own asset data plus cross-asset/context embeddings;
+   - outputs asset-specific trading policy evidence and weekly signal streams.
+3. **Weekly portfolio supervisor**
+   - chooses active asset/model streams and normalized weights for the coming
+     week;
+   - may start as rule/MPT/PMPT baselines and later become an ML/meta-allocator
+     that consumes the same market/context representation.
+4. **External execution/user layer**
+   - deliberately deferred;
+   - maps signals/weights to actual user orders, account-specific capital,
+     broker constraints, and service-specific execution policies.
+
+All trainable layers above must follow the same weekly walk-forward rule:
+
+```text
+fit/update using information available before the rebalance cutoff;
+score selection with train-tail + validation;
+record test only after selection;
+repeat across all historical weekly anchors;
+average weekly results for model and portfolio comparison.
+```
+
+Initial portfolio methods to compare:
+
+| Method | Purpose |
+| --- | --- |
+| `equal_weight` | mechanical baseline for selected active streams |
+| `score_weight` | allocate by current known composite signal |
+| `score_inverse_vol` | MPT-style diagonal risk approximation using prior realized weekly volatility |
+| `score_inverse_cvar` | post-modern/downside-risk approximation using prior realized weekly left-tail returns |
+
+Full Markowitz/Black-Litterman/ML allocation is deferred until the simple
+baselines exist and we can measure whether better covariance/expected-return
+estimation is actually worth the complexity.
+
+The first executable supervisor is:
+
+```text
+agent-multi/tools/project3_portfolio_supervisor.py
+```
+
+It reads completed weekly-pool subjobs, selects the best stream per asset for
+each rebalance week using known composite scores, allocates weights with the
+methods above, records weekly portfolio returns, and can write reproducible
+SQLite tables:
+
+```text
+portfolio_runs
+portfolio_weekly_returns
+portfolio_allocations
+```
+
+This tool is not the final production allocator. It is the baseline simulator
+that makes portfolio behavior measurable while the per-asset model search
+continues.
+
+## Event-Context Input Lane
+
+The 2026-06-09 event-context addendum is now part of this protocol.
+
+Canonical documents:
+
+```text
+work_plan/project3_orchestrator_event_context_representation_addendum_2026_06_09.md
+work_plan/PROJECT3_RESEARCH_AGENT_PRAGMATIC_CONTEXT_2026_06_09.md
+```
+
+Event context is not a separate academic gate. It is a candidate input family
+inside the weekly pool.
+
+The first implementation target is:
+
+```text
+event_engineered_summary_v1
+```
+
+The correct order is:
+
+1. audit event/calendar/news source coverage and timestamp semantics;
+2. build point-in-time engineered features only from fields known before the
+   model decision timestamp;
+3. join those features into matched candidate input files;
+4. enqueue matched baseline vs event-context jobs using the same weekly anchors;
+5. rank by the existing early-stop/selection score:
+
+```text
+score = 0.5 * train_tail_total_return + 0.5 * validation_total_return
+```
+
+Direct LLM trading, broad transformer work, and learned event-token encoders
+are deferred until engineered event context proves practical value against a
+matched baseline. If actual/forecast/revision/surprise fields do not have a
+reliable `first_available_ts`, those fields are not allowed in trading
+observations and may only appear in coverage/audit reports.
+
+## Oracle Behavior Pretraining Lane
+
+The ZigZag oracle and anti-oracle baselines are now also a future training
+signal candidate, not only a chart reference.
+
+This lane is explicitly pragmatic: it tries to transfer useful behavior from a
+hindsight teacher into the trading policy, then verifies whether that improves
+the existing weekly walk-forward score.
+
+Allowed training signal:
+
+- compute oracle labels only inside each training window;
+- use the same execution sizing, pessimistic spread/cost assumptions, and
+  weekend-flat rule as the SAC environment;
+- encode labels as `oracle_action` in `{-1, 0, +1}`, `anti_oracle_action`,
+  and a confidence weight from net move after cost;
+- never train on validation/test oracle labels. Validation/test oracle values
+  are reporting baselines only.
+
+Candidate experiments:
+
+- `oracle_bc_pretrain_then_sac`: behavior-cloning pretraining from train-window
+  oracle actions, followed by normal SAC;
+- `oracle_aux_loss_sac`: SAC with an auxiliary train-window oracle-action loss;
+- `oracle_contrastive_anti_loss_sac`: encourage distance from anti-oracle
+  behavior while preserving SAC reward optimization.
+
+These experiments must use the same weekly anchors, assets, data inputs, and
+selection rule as the current pool. Selection remains:
+
+```text
+score = 0.5 * train_tail_total_return + 0.5 * validation_total_return
+```
+
+The goal is not to copy the oracle perfectly. The goal is to reduce the gap
+between the current best composite and the averaged ZigZag oracle composite
+without worsening out-of-sample test diagnostics.
+
+Active execution note, 2026-06-15:
+
+- the previous non-oracle pending/running pool items were stopped and marked
+  `superseded`;
+- oracle/anti-oracle train-only labels were generated for the current top 3
+  composite candidates under
+  `financial-data/experiments/oracle_behavior_pretraining/labels`;
+- the first production batch is
+  `oracle_bc_pretrain_then_sac_v1_top3_plan.json`, 52 subjobs across 3
+  independent chains, intended to keep omega, dragon, and gamma pulling work
+  in parallel;
+- the first subjob in each chain starts without an external warm-start parent
+  so the pool plan remains self-contained; subsequent weeks warm-start from
+  the previous oracle-BC subjob in the same chain;
+- scoring remains the same composite:
+
+```text
+score = 0.5 * train_tail_total_return + 0.5 * validation_total_return
+```
+
+## Job Pool Architecture
+
+The next code milestone is a persistent SQLite-backed job pool.
+
+Default database:
+
+```text
+financial-data/experiments/weekly_walkforward_pool/project3_weekly_pool.sqlite
+```
+
+Core tables:
+
+```text
+jobs:
+  job_id
+  status
+  created_at
+  updated_at
+  target_asset
+  timeframe
+  model_family
+  agent_plugin
+  env_plugin
+  pipeline_plugin
+  training_policy
+  train_years
+  validation_days
+  test_days
+  feature_preset
+  feature_selection_method
+  preprocessing_profile
+  selected_features_json
+  input_data_file
+  input_data_hash
+  market_state_profile_id
+  broker_profile
+  cost_scenario
+  hyperparameters_json
+  stage_c_access
+  notes
+
+subjobs:
+  subjob_id
+  job_id
+  status
+  priority
+  assigned_machine
+  worker_pid
+  claimed_at
+  started_at
+  finished_at
+  heartbeat_at
+  weekly_anchor_id
+  train_start
+  train_end
+  validation_start
+  validation_end
+  test_start
+  test_end
+  train_rows
+  validation_rows
+  test_rows
+  config_file
+  run_dir
+  stdout_log
+  stderr_log
+  evidence_file
+  result_file
+  failure_reason
+
+results:
+  result_id
+  subjob_id
+  job_id
+  seed
+  train_return
+  validation_return
+  test_return
+  train_sharpe
+  validation_sharpe
+  test_sharpe
+  test_max_drawdown
+  test_cvar
+  validation_trades
+  test_trades
+  validation_trades_per_week
+  test_trades_per_week
+  test_cost_to_gross_edge
+  friday_force_close_violations
+  broker_policy_violations
+  action_entropy
+  long_action_count
+  short_action_count
+  hold_action_count
+
+machine_heartbeats:
+  machine_id
+  hostname
+  gpu_name
+  gpu_utilization
+  gpu_memory_used
+  gpu_memory_total
+  active_subjob_id
+  status
+  updated_at
+```
+
+The DB is the source of truth. File artifacts are referenced from the DB, not
+used as the only status source.
+
+## Worker Pool Behavior
+
+Each machine runs a worker loop:
+
+1. send heartbeat with GPU/process status;
+2. atomically claim the highest-priority pending subjob;
+3. materialize the agent-multi config for that subjob;
+4. run training/evaluation;
+5. write evidence and result files;
+6. insert metrics into SQLite;
+7. mark subjob done/failed;
+8. claim the next pending subjob.
+
+The worker must never require the user to ask for status. It must keep working
+until the queue is empty or a real mechanical blocker appears.
+
+Machines:
+
+- local/Omega: RTX 4070 Laptop, slow worker plus dashboard host;
+- `dragon`: RTX 4090 Laptop, fastest GPU worker;
+- `gamma`: RTX 5070 Ti Laptop, GPU worker.
+
+Workers run at different speeds. The pool must not allocate fixed equal batches
+that leave fast machines idle.
+
+## AdminLTE Monitoring Dashboard
+
+The next code milestone includes a local dashboard.
+
+Default URL:
+
+```text
+http://127.0.0.1:8787
+```
+
+Required dashboard sections:
+
+- global queue totals: pending, running, done, failed;
+- machine cards: GPU, active subjob, ETA, heartbeat age;
+- active subjobs: job id, weekly anchor, asset, timeframe, train window,
+  validation window, test window, rows per split, seed, config, ETA;
+- current best job: by aggregated composite score, with train-tail,
+  validation, test, Sharpe, drawdown, CVaR, cost-to-gross-edge, and
+  positive-week-rate diagnostics;
+- training-window sweep: performance by `train_years=1..10`;
+- data/preprocessing leaderboard;
+- full reproducibility pane: selected features, preprocessing params,
+  hyperparameters, data hash, config path, run path;
+- failure table with exact failure reason;
+- Stage C firewall status.
+
+AdminLTE may be loaded from CDN for local monitoring, with a simple fallback
+HTML table if network is unavailable. The server should use Python standard
+library plus SQLite unless a dependency is explicitly justified.
+
+## Aggregation Metrics
+
+A job is ranked from aggregated weekly subjobs.
+
+Primary metrics:
+
+- mean, median, and IQM composite score, where weekly composite is
+  `0.5 * train_tail_total_return + 0.5 * validation_total_return`;
+- train-tail, validation, and test return diagnostics;
+- percent of positive validation and test weeks;
+- validation/test Sharpe and downside Sharpe;
+- max drawdown and CVaR;
+- cost-to-gross-edge ratio;
 - trade frequency inside broker policy bands;
-- no persistent no-trade, overtrade, or always-in-market-losing behavior.
+- action diversity / no degenerate always-one-action policy;
+- seed stability;
+- improvement versus baselines.
 
-The selected portfolio should be the smallest set that improves risk-adjusted
-weekly portfolio behavior, not the largest list of assets we can run.
+Test return is never the ranking metric. It is inspected only after a candidate
+is selected by composite.
 
-## Weekly Portfolio Supervisor
+The first baseline set:
 
-The portfolio supervisor is above the per-asset SAC agents.
+- no-trade/cash;
+- buy-and-hold where meaningful;
+- simple momentum;
+- simple reversal;
+- previous-week trend sign;
+- equal-weight portfolio baseline later.
 
-Inputs:
+## Stage C Firewall
 
-- per-asset model health from the previous week;
-- latest feature/regime state;
-- expected next-week event-calendar risk score;
-- per-asset spread/slippage/cost estimates;
-- recent weekly returns of each strategy stream;
-- covariance/correlation of strategy streams, not only raw asset prices;
-- broker constraints and Friday force-close policy.
+Stage C remains locked.
 
-Outputs:
-
-- target asset/model weights for the next week;
-- no-trade flags per asset/model;
-- per-asset risk budgets;
-- weekly trade-rate budgets;
-- max weekly loss / drawdown guard;
-- forced flattening schedule.
-
-First allocation policies to compare:
-
-- equal weight;
-- inverse volatility;
-- trend-weighted inverse volatility;
-- downside-risk / CVaR-weighted allocation;
-- HRP/risk-parity style allocation;
-- later: NSGA-optimized weight-policy parameters.
-
-Riskfolio-Lib and PyPortfolioOpt are useful reference engines for CPU research,
-but the project should own its evidence contract and weekly simulator. External
-libraries may help compute weights; they should not become opaque truth.
-
-## Event Calendar Risk Overlay
-
-The first event-calendar implementation is a risk overlay, not a magical alpha
-source.
-
-Minimum fields:
-
-- events in the upcoming trading week;
-- currency/asset relevance;
-- importance score;
-- time-to-event;
-- expected volatility impact;
-- optional actual-vs-forecast field later.
-
-Initial behavior:
-
-- high-risk event week can reduce size or enable no-trade for affected assets;
-- during-week actual-vs-expected reactions are deferred until the weekly system
-  works;
-- event features must be lagged/known at decision time; no leaked outcome data.
-
-## Market-State Causal Contract
-
-The causal layer is framed around the weekly business mechanic, not around a
-generic static prediction task.
-
-Role mapping:
-
-- **Patient:** one tradable target asset at one weekly anchor.
-- **Patient state:** the market state observed before the weekly decision
-  cutoff.
-- **Medicine:** the input families, portfolio no-trade flags, exposure buckets,
-  and supervisor settings available before the cutoff.
-- **Outcome:** the next-week market-status vector for that asset/model stream.
-
-Default timing:
-
-- the decision cutoff is at least 12 hours before the new trading week starts;
-- a 6-hour cutoff is the minimum allowed for future experiments;
-- the default market-state lookback is 168 hours ending at the cutoff;
-- snapshot encoding is allowed only as a cheaper ablation against the window
-  summary;
-- all weekend-border data must be strictly known before the cutoff.
-
-The first implemented artifact is:
+No subjob may use rows on or after:
 
 ```text
-experiments/stage3x_market_state_causal_contract/
+2025-01-01
 ```
 
-It emits 12 weekly causal units from the current tiny weekly fixture, keeps
-`stage_c_access=DENIED`, launches no training, and records zero temporal
-issues. The contract supports later EconML / DML / causal-forest style audits,
-but it explicitly forbids treating causal scores as proof of alpha or as an
-automatic feature-deletion rule.
+until a final one-shot heldout evaluation is explicitly authorized. The pool
+must store `stage_c_access="DENIED"` on every job and subjob during current
+work.
 
-The active representation-search plan is:
+## What Was Deleted
+
+The obsolete short-window short-window artifacts, SAC smoke result
+folders, auto-chain logs, pids, nohups, and remote launch logs were deleted
+because they used windows such as:
 
 ```text
-work_plan/PROJECT3_MARKET_STATE_REPRESENTATION_OPTIMIZATION_PLAN_2026_05_23.md
+train_days = 28
+val_days = 14
+test_days = 14
 ```
 
-That plan defines the efficient test ladder for `1h` vs `4h`, engineered
-summaries, PCA, autoencoders, TS2Vec/Patch-style embeddings, regime
-probabilities, and hybrid profiles. The rule is CPU-first, GPU-second: learned
-state encoders must beat engineered/PCA baselines in split-safe diagnostics
-before they consume SAC smoke GPU time.
-
-## Optimization Genome Additions
-
-The Stage 3X genome now includes:
-
-- `target_asset`;
-- `input_asset_mask`;
-- `input_source_mask`;
-- `paid_source_mask`;
-- `feature_family_mask`;
-- `feature_subset_mask`;
-- `preprocessing_profile`;
-- `window_size`;
-- `weekly_anchor_id`;
-- `validation_week_policy`;
-- `event_calendar_profile`;
-- `portfolio_allocation_policy`;
-- `portfolio_max_assets`;
-- `portfolio_no_trade_thresholds`;
-- `risk_budget_profile`;
-- `market_state_causal_profile`;
-- `pretrade_gap_hours`;
-- `market_state_lookback_hours`;
-- `market_state_encoding_mode`;
-- `SAC_hyperparameters`;
-- `cost_scenario`;
-- `broker_profile`.
-
-Optimization objectives:
-
-- maximize repeated next-week net return after costs;
-- maximize next-week IQM/median return across anchors/seeds;
-- maximize probability of improvement vs matched baselines;
-- minimize weekly drawdown/CVaR;
-- minimize cost-to-gross-edge ratio;
-- keep trades/week inside broker policy bands;
-- minimize Friday-late exposure;
-- minimize feature count/redundancy when performance is similar;
-- maximize portfolio diversification by strategy-stream correlation.
-
-## Mechanical Blockers Vs Optimizer Objectives
-
-Mechanical blockers still stop a run:
-
-- Stage C access not `DENIED`;
-- 2025-01-01+ rows in any non-Stage-C artifact;
-- missing/bad evidence;
-- missing feature list/hash or observation fields/hash;
-- impossible portfolio accounting;
-- missing broker profile for broker-specific policy;
-- all completed seeds show no trades;
-- trade-frequency hard max exceeded;
-- OANDA FX Friday-force-flat or daily-break violation;
-- locked config cannot preserve split, feature, preprocessing, SAC, broker, or
-  portfolio fields.
-
-Optimizer objectives/warnings do not stop Stage 3X micro-optimization:
-
-- negative one-week return;
-- low Sharpe;
-- cost fragility below hard limit;
-- weak single-anchor result;
-- sibling seed disagreement;
-- trade rate outside preferred band but below hard max.
-
-Reason: without simultaneous optimization of features, preprocessing, assets,
-portfolio policy, and SAC hyperparameters, early weak returns are objective
-values, not a reason to stop the search.
+Those results are not used for profit/risk conclusions and are not active
+optimization evidence.
 
 ## Immediate Implementation Order
 
-1. Finish and synthesize the current micro-NSGA generation.
-2. Continue micro-NSGA while mechanical blockers are clear.
-3. Add a weekly walk-forward contract worker in financial-data:
-   - emits historical weekly anchors;
-   - records train/validation/next-week windows;
-   - prevents Stage C rows;
-   - supports tiny smoke anchors and larger validation anchors.
-4. Extend the parametric data-space worker:
-   - separate `target_asset` from `input_asset_mask`;
-   - include cross-asset features;
-   - include paid/free source flags and coverage quality.
-5. Add a CPU weekly portfolio supervisor worker:
-   - consumes per-asset weekly return streams or synthetic fixtures first;
-   - compares equal weight, inverse vol, downside-risk, trend-inverse-vol, and
-     HRP/risk-parity style policies;
-   - emits target weights, no-trade flags, and risk budgets.
-6. Add a market-state causal contract worker:
-   - maps patient/state/medicine/outcome at weekly anchors;
-   - enforces 6h minimum / 12h default pretrade gap;
-   - blocks any row at or after the Stage C boundary;
-   - emits diagnostic-only causal estimator policy.
-7. Add portfolio evidence contract:
-   - per-asset returns/trades/cost/exposure;
-   - portfolio return/drawdown/CVaR/cost;
-   - weekly allocation decisions;
-   - broker and Friday force-close compliance.
-8. Only after the CPU supervisor contract passes, add agent-multi/gym-fx
-   config-gated portfolio-mode mechanical support.
-9. Then expose portfolio and market-state causal genes to DEAP/NSGA.
-
-## Current Status
-
-Updated: 2026-05-23 local / 2026-05-24 UTC.
-
-- G15 dispatch completed: `36/36`.
-- G15 evidence validated: `36`.
-- G15 Stage C access: `DENIED`.
-- G18 dispatch is active: `8 done`, `4 running`, `24 pending`, `0 failed` at
-  the last status check.
-- G18 Stage C access: `DENIED`.
-- The positive median one-week test return is promising only as optimizer
-  feedback, not a tradability proof.
-- Weekly walk-forward, portfolio sanity, and market-state causal contracts now
-  exist as CPU-first financial-data workers with passing tests.
-- Market-state profile generation and CPU screening now exist:
-  - total profiles: `144`;
-  - implemented CPU profiles: `72`;
-  - learned-encoder stubs: `72`;
-  - selected nonredundant profiles: `12`;
-  - selected packet:
-    `experiments/stage3x_market_state_profile/selected_market_state_profiles.json`.
-- The next protocol shift is to expose cross-asset inputs, market-state causal
-  context, and weekly portfolio allocation into the optimizer instead of
-  freezing on one single asset/model stream.
-
-## Agent Work Packages
-
-For market-state representation work, use the dedicated active handoff:
+1. Implement SQLite schema and queue CLI.
+2. Implement job/subjob materialization for weekly walk-forward splits.
+3. Implement atomic worker claim/heartbeat/result recording.
+4. Implement AdminLTE dashboard.
+5. Create a tiny mechanical test queue with 2 assets, 1 timeframe, 2 anchors,
+   and low timesteps to prove plumbing.
+6. Create the first real scratch sweep:
 
 ```text
-work_plan/PROJECT3_MARKET_STATE_REPRESENTATION_AGENT_SPECS_2026_05_23.md
+target_asset = btcusdt_perp first
+timeframe = 4h first
+train_years = 1..10
+early_stop_train_tail_days = 7 initially, then 14/28 comparison
+validation_days = 7 initially, then 14/28 comparison
+test_days = 7 initially, then 14/28 comparison
+anchors = representative pre-2025 weekly anchors
+seeds = 0,1,2
 ```
 
-### Claude / financial-data
+7. After the pool and dashboard are stable, expand to more assets and 1h.
 
-Mission: implement/review CPU-only weekly walk-forward and portfolio-supervisor
-contracts.
+## Active Automated Runtime
 
-Read first:
+As of 2026-06-07, the weekly walk-forward pool is operated as a persistent
+queue system, not as manual one-off launches.
 
-1. `work_plan/PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
-2. `work_plan/PROJECT3_SAC_NSGA_INPUT_OPTIMIZATION_PROTOCOL_2026_05_14.md`
-3. `experiments/stage3x_micro_nsga_g15_results/stage3x_sac_smoke_result_synthesis.json`
-4. `_scripts/workers/stage3x_micro_nsga_nextgen_worker.py`
-5. `_scripts/workers/stage3x_sac_smoke_result_synthesis_worker.py`
+Active database:
 
-Deliverables:
+```text
+financial-data/experiments/weekly_walkforward_pool/project3_weekly_pool.sqlite
+```
 
-- weekly walk-forward contract worker;
-- portfolio-supervisor CPU worker with tiny fixtures;
-- tests for Stage C denial, no leakage, weekly split correctness, and
-  portfolio accounting.
+Active dashboard:
 
-No training. No Stage C. No PPO/SAC/DQN edits.
+```text
+http://127.0.0.1:8787
+```
 
-### Copilot / agent-multi + gym-fx
+Active local services:
 
-Mission: prepare config-gated portfolio-mode plumbing only after the
-financial-data CPU contract is defined.
+```text
+project3-weekly-dashboard.service
+project3-weekly-worker.service
+project3-weekly-supervisor.service
+project3-weekly-phase-orchestrator.service
+```
 
-Read first:
+The supervisor is responsible for:
 
-1. this protocol;
-2. `work_plan/PROJECT3_STAGE3X_PORTFOLIO_ENV_AGENT_SPECS_2026_05_19.md`;
-3. `agent-multi/pipeline_plugins/_return_trace.py`;
-4. `agent-multi/tools/project3_stage3x_sac_smoke_plan.py`;
-5. `gym-fx/app/env.py`.
+- keeping the dashboard alive;
+- restarting or starting the persistent worker when needed;
+- leaving an already-running worker alone;
+- re-queuing stale `running` subjobs if the worker process is gone and the
+  heartbeat is stale;
+- keeping the machine polling the SQLite pool without waiting for manual
+  status requests.
 
-Deliverables:
+The phase orchestrator is responsible for:
 
-- config schema for portfolio mode;
-- no-training mechanical tests with 2-asset and 5-asset fixtures;
-- evidence fields for per-asset and portfolio accounting.
+- watching the same SQLite pool independently of manual status requests;
+- doing nothing while `pending + running >= 120`;
+- automatically generating and enqueuing the next useful phase when backlog
+  falls below that threshold;
+- using unique job/subjob ids for every generated phase so already-completed
+  work is not repeated accidentally;
+- recording its enqueue decisions in `pool_events`.
 
-No broad GPU launch. No Stage C. No PPO/SAC/DQN source edits.
+Active phase chain, as programmed on 2026-06-17:
 
-### ChatGPT 5.5 Pro Web
+1. `eventctx_seed_robustness_phase2_v1`
+   - ETHUSDT 4h event-engineered context vs matched baseline;
+   - scratch and warm-start policies;
+   - 1-year and 3-year training windows;
+   - seeds 1, 2, and 3.
+2. `eventctx_metric_window_phase3_v1`
+   - same ETHUSDT 4h event-context comparison;
+   - train-tail early-stopping metric windows of 14 and 28 days;
+   - validation/test still one week;
+   - unique seed 4.
+3. `event_token_embedding_phase4_v1`
+   - first executable embedding lane;
+   - per-subjob train-only `event_token_attention_v1` encoder;
+   - creates `ctx_evt_*` columns from `event_*` source columns;
+   - freezes train-fit encoder before transforming validation/test rows;
+   - unique seed 6.
+4. `asset_preset_broadening_phase5_v1`
+   - broaden from the event-context ETH probe to multiple liquid assets,
+     4h/1h, and existing safe presets;
+   - compare warm-start and fine-tune recent-window policies;
+   - unique seed 5.
+5. `oracle_bc_followup_phase6_v1`
+   - generate train-window-only ZigZag oracle/anti-oracle labels for current
+     top jobs;
+   - run oracle behavior-cloning pretraining epochs 1, 3, and 5 followed by
+     normal SAC;
+   - keep validation/test oracle labels out of training.
+6. Adaptive top-winner seed extension
+   - if all configured phases already exist and the pool drains, extend the
+     current top completed jobs with additional seeds 6 through 9, capped per
+     job, to avoid idle machines without inventing unrelated work.
 
-Use only for research review if needed. Best prompt:
+The heavier transformer/token encoder is specified separately and should be
+implemented only after the first train-only embedding lane is mechanically
+validated:
 
-> Review this weekly-retrained portfolio protocol for an RL trading system.
-> Focus on practical profit/risk, weekly walk-forward validation, PMPT/MPT/HRP
-> allocation, event-calendar risk overlays, and how to avoid leakage. Do not
-> suggest Stage C tuning or broad academic gates. Output concrete engineering
-> recommendations and failure modes.
+```text
+work_plan/PROJECT3_EVENT_TOKEN_TRANSFORMER_AGENT_SPEC_2026_06_17.md
+```
 
-Attach this protocol, the FINRA/OANDA memo, and the latest G15 synthesis.
+The current active experiment queue compares:
 
-## Explicit Non-Actions
+- 4-year scratch baseline;
+- scratch recent-window retraining;
+- fine-tune recent-window chains that preserve prior policy weights;
+- recent fine-tune windows of 12, 6, 3, and 1 months;
+- weekly validation/test anchors before the Stage C firewall.
 
-- Do not unlock Stage C.
-- Do not treat one positive micro week as tradability proof.
-- Do not stop Stage 3X optimization because early unoptimized returns are weak.
-- Do not pay for expensive data unless historical coverage and train/validation
-  utility are proven.
-- Do not merge portfolio support into SAC algorithm code; keep it config-gated
-  in environment/evidence/supervisor layers.
+Selection/ranking policy:
+
+- select by aggregated composite:
+  `0.5 * train_tail_total_return + 0.5 * validation_total_return`;
+- require trades in train-tail and validation;
+- record test only after selection;
+- never use test return in `score`.
+
+## Required External Agent Specs
+
+The current code implementation is large enough to split across agents. Use:
+
+```text
+work_plan/PROJECT3_WEEKLY_WALKFORWARD_POOL_AGENT_SPECS_2026_06_04.md
+```
+
+That file contains copy-ready specs for coding agents.

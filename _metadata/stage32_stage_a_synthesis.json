@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-03T07:21:40.309622+00:00",
+  "generated_at": "2026-06-17T10:16:03.835442+00:00",
   "outputs": [
     "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/index.csv",
     "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/stage_a_summary.md"
   ],
-  "runs": 356,
+  "runs": 5734,
   "source_stage": "3.1_stage_a",
   "stage": "3.2",
   "status": "preliminary_blocked_until_hardening"

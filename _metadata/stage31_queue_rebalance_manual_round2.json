@@ -1,0 +1,43 @@
+{
+  "action": "manual_rebalance_gamma_pending_to_dragon_round2",
+  "dragon_counts_after": {
+    "complete": 1672,
+    "pending": 24
+  },
+  "dragon_first_pending": "usdchf_15m_baseline_12_sac_s2_50000",
+  "gamma_counts_after": {
+    "blocked_resolved_rerouted_to_dragon": 51,
+    "complete": 1080,
+    "pending": 24,
+    "training": 1
+  },
+  "gamma_first_pending": "usdchf_15m_tech_stat_dqn_s2_50000",
+  "generated_at": "2026-05-06T10:10:09.009799+00:00",
+  "moved_count": 24,
+  "moved_run_ids": [
+    "usdchf_15m_baseline_12_sac_s2_50000",
+    "usdchf_15m_baseline_12_ppo_s0_50000",
+    "usdchf_15m_baseline_12_ppo_s1_50000",
+    "usdchf_15m_baseline_12_ppo_s2_50000",
+    "usdchf_15m_baseline_12_dqn_s0_50000",
+    "usdchf_15m_baseline_12_dqn_s1_50000",
+    "usdchf_15m_baseline_12_dqn_s2_50000",
+    "usdchf_15m_tech_full_sac_s0_50000",
+    "usdchf_15m_tech_full_sac_s1_50000",
+    "usdchf_15m_tech_full_sac_s2_50000",
+    "usdchf_15m_tech_full_ppo_s0_50000",
+    "usdchf_15m_tech_full_ppo_s1_50000",
+    "usdchf_15m_tech_full_ppo_s2_50000",
+    "usdchf_15m_tech_full_dqn_s0_50000",
+    "usdchf_15m_tech_full_dqn_s1_50000",
+    "usdchf_15m_tech_full_dqn_s2_50000",
+    "usdchf_15m_tech_stat_sac_s0_50000",
+    "usdchf_15m_tech_stat_sac_s1_50000",
+    "usdchf_15m_tech_stat_sac_s2_50000",
+    "usdchf_15m_tech_stat_ppo_s0_50000",
+    "usdchf_15m_tech_stat_ppo_s1_50000",
+    "usdchf_15m_tech_stat_ppo_s2_50000",
+    "usdchf_15m_tech_stat_dqn_s0_50000",
+    "usdchf_15m_tech_stat_dqn_s1_50000"
+  ]
+}

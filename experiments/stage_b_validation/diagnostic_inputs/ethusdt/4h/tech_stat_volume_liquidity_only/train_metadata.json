@@ -1,0 +1,27 @@
+{
+  "asset": "ethusdt",
+  "columns": 13,
+  "config_hash": "fb1274904a87eb914ef6b46090186f79ae3fa6dc7abfe6bd6d3b8a18701ebe5c",
+  "feature_columns": [
+    "obv",
+    "obv_delta_20",
+    "volume_sma_10",
+    "volume_sma_20",
+    "volume_ratio_20",
+    "vwap_60",
+    "mfi_14"
+  ],
+  "first_timestamp": "2017-09-28 04:00:00",
+  "fit_uses_stage_c": false,
+  "fit_uses_validation": false,
+  "generated_at": "2026-05-13T20:09:06.767694+00:00",
+  "heldout_start": "2025-01-01",
+  "last_timestamp": "2023-12-31 20:00:00",
+  "max_timestamp_lt_heldout": true,
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/diagnostic_inputs/ethusdt/4h/tech_stat_volume_liquidity_only/train.csv",
+  "rows": 13699,
+  "schema_version": "project3_stage_b_feature_variant_v1",
+  "source_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+  "timeframe": "4h",
+  "variant": "tech_stat_volume_liquidity_only"
+}

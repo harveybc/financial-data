@@ -1,0 +1,528 @@
+{
+  "generated_at": "2026-05-10T04:19:21.153287+00:00",
+  "machines": [
+    {
+      "active_jobs": [],
+      "gpu": {
+        "gpus": [
+          {
+            "gpu_util_pct": "39",
+            "index": "0",
+            "memory_total_mib": "8188",
+            "memory_used_mib": "3246",
+            "name": "NVIDIA GeForce RTX 4070 Laptop GPU"
+          }
+        ],
+        "raw": "0, NVIDIA GeForce RTX 4070 Laptop GPU, 39, 3246, 8188"
+      },
+      "machine": "omega",
+      "queue_counts": {
+        "blocked_duplicate_kept_on_dragon": 108,
+        "blocked_duplicate_kept_on_gamma": 50,
+        "blocked_no_trade_early_abort": 274,
+        "blocked_no_trade_preflight": 35,
+        "complete": 152,
+        "failed": 232
+      },
+      "trace_inventory": {
+        "count": 0,
+        "recent": []
+      },
+      "trace_validation": {
+        "invalid_recent": [],
+        "valid_recent": []
+      }
+    },
+    {
+      "active_jobs": [],
+      "gpu": {
+        "gpus": [
+          {
+            "gpu_util_pct": "0",
+            "index": "0",
+            "memory_total_mib": "16376",
+            "memory_used_mib": "63",
+            "name": "NVIDIA GeForce RTX 4090 Laptop GPU"
+          }
+        ],
+        "raw": "0, NVIDIA GeForce RTX 4090 Laptop GPU, 0, 63, 16376"
+      },
+      "machine": "dragon",
+      "queue_counts": {
+        "blocked_duplicate_cancelled_kept_on_gamma": 21,
+        "blocked_duplicate_kept_on_gamma": 28,
+        "blocked_duplicate_kept_on_omega": 133,
+        "blocked_no_trade_early_abort": 166,
+        "blocked_no_trade_preflight": 1,
+        "blocked_resolved_rerouted_to_omega": 141,
+        "complete": 2483,
+        "failed": 17
+      },
+      "trace_inventory": {
+        "count": 1982,
+        "recent": [
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778339081.76211,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T150337Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338995.35987,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_sota_low_cost_direct_atr_sltp_s2_20260509T150211Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338918.4937668,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_dqn_crypto_full_direct_atr_sltp_s2_20260509T150116Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338805.0351384,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_sac_tech_stat_decomp_direct_atr_sltp_s2_20260509T145633Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338585.4789872,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_tech_stat_direct_atr_sltp_s2_20260509T145522Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338448.5730224,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_sac_tech_full_direct_atr_sltp_s2_20260509T145041Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338234.766954,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_baseline_12_direct_atr_sltp_s2_20260509T144930Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338151.0137517,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_1h_dqn_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T144812Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778338031.874042,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_1h_ppo_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T144546Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778337894.189066,
+            "path": "experiments/stage_a_screening/runs/dragon/linkusdt_1h_sac_crypto_full_direct_atr_sltp_s2_20260509T144104Z_project3_stage31_firstwave/return_trace.csv"
+          }
+        ]
+      },
+      "trace_validation": {
+        "invalid_recent": [],
+        "valid_recent": [
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T150337Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_sota_low_cost_direct_atr_sltp_s2_20260509T150211Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_dqn_crypto_full_direct_atr_sltp_s2_20260509T150116Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_sac_tech_stat_decomp_direct_atr_sltp_s2_20260509T145633Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_tech_stat_direct_atr_sltp_s2_20260509T145522Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_sac_tech_full_direct_atr_sltp_s2_20260509T145041Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_4h_ppo_baseline_12_direct_atr_sltp_s2_20260509T144930Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_1h_dqn_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T144812Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_1h_ppo_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T144546Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/dragon/linkusdt_1h_sac_crypto_full_direct_atr_sltp_s2_20260509T144104Z_project3_stage31_firstwave/return_trace.csv"
+        ]
+      }
+    },
+    {
+      "active_jobs": [],
+      "gpu": {
+        "gpus": [
+          {
+            "gpu_util_pct": "15",
+            "index": "0",
+            "memory_total_mib": "12227",
+            "memory_used_mib": "14",
+            "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU"
+          }
+        ],
+        "raw": "0, NVIDIA GeForce RTX 5070 Ti Laptop GPU, 15, 14, 12227"
+      },
+      "machine": "gamma",
+      "queue_counts": {
+        "blocked_duplicate_kept_on_dragon": 301,
+        "blocked_duplicate_kept_on_omega": 58,
+        "blocked_no_trade_early_abort": 248,
+        "blocked_resolved_rerouted_to_dragon": 321,
+        "blocked_resolved_rerouted_to_omega": 72,
+        "complete": 2280,
+        "failed": 13
+      },
+      "trace_inventory": {
+        "count": 1903,
+        "recent": [
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778337211.3009245,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_sac_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T143019Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336996.2075295,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_sota_low_cost_direct_atr_sltp_s2_20260509T142913Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336929.4907172,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260509T142540Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336712.5263274,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_sac_crypto_full_direct_atr_sltp_s2_20260509T142200Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336489.412955,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_learned_cnn_direct_atr_sltp_s2_20260509T142049Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336437.2661068,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_ppo_learned_cnn_direct_atr_sltp_s2_20260509T141938Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336347.1403694,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_learned_lstm_direct_atr_sltp_s2_20260509T141826Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336294.1505237,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_ppo_learned_lstm_direct_atr_sltp_s2_20260509T141714Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336203.362788,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_tech_stat_decomp_direct_atr_sltp_s2_20260509T141602Z_project3_stage31_firstwave/return_trace.csv"
+          },
+          {
+            "columns": [
+              "step",
+              "timestamp",
+              "bar_index",
+              "action_raw",
+              "reward",
+              "equity",
+              "step_return",
+              "pnl",
+              "position",
+              "price",
+              "trade_cost",
+              "trades",
+              "commission_paid"
+            ],
+            "has_rows": true,
+            "mtime": 1778336150.517942,
+            "path": "experiments/stage_a_screening/runs/gamma/linkusdt_4h_ppo_tech_stat_decomp_direct_atr_sltp_s2_20260509T141451Z_project3_stage31_firstwave/return_trace.csv"
+          }
+        ]
+      },
+      "trace_validation": {
+        "invalid_recent": [],
+        "valid_recent": [
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_sac_kitchen_sink_guarded_direct_atr_sltp_s2_20260509T143019Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_sota_low_cost_direct_atr_sltp_s2_20260509T142913Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260509T142540Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_sac_crypto_full_direct_atr_sltp_s2_20260509T142200Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_learned_cnn_direct_atr_sltp_s2_20260509T142049Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_ppo_learned_cnn_direct_atr_sltp_s2_20260509T141938Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_learned_lstm_direct_atr_sltp_s2_20260509T141826Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_ppo_learned_lstm_direct_atr_sltp_s2_20260509T141714Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_dqn_tech_stat_decomp_direct_atr_sltp_s2_20260509T141602Z_project3_stage31_firstwave/return_trace.csv",
+          "experiments/stage_a_screening/runs/gamma/linkusdt_4h_ppo_tech_stat_decomp_direct_atr_sltp_s2_20260509T141451Z_project3_stage31_firstwave/return_trace.csv"
+        ]
+      }
+    }
+  ]
+}

@@ -1,19 +1,19 @@
 # Leakage & Held-Out Firewall Audit Report — Stage A
 
-Generated: 2026-05-03T06:19:08.491275+00:00
+Generated: 2026-05-10T04:28:18.299916+00:00
 
 ---
 
 ## 1. Executive Summary
 
-- **Total runs audited:** 356
-- **PASS_HELDOUT_FIREWALL:** 206
+- **Total runs audited:** 4933
+- **PASS_HELDOUT_FIREWALL:** 3515
 - **FAIL_HELDOUT_LEAKAGE:** 0
-- **BLOCKED_INPUT_MISSING:** 150
+- **BLOCKED_INPUT_MISSING:** 1418
 - **BLOCKED_TIMESTAMP_INVALID:** 0
 - **Runs with warnings:** 0
-- **Unique (asset, timeframe, preset) combos in run index:** 106
-- **Of those, with input CSV found and audited:** 76
+- **Unique (asset, timeframe, preset) combos in run index:** 509
+- **Of those, with input CSV found and audited:** 368
 
 **Best run** (`ethusdt_4h_sac_tech_stat_direct_atr_sltp_s0_20260502T051413Z_project3_stage31_firstwave`):
   - Input audit status: **PASS_HELDOUT_FIREWALL**
@@ -25,7 +25,7 @@ Generated: 2026-05-03T06:19:08.491275+00:00
   - B10 firewall cleared: **True**
 
 **B1_LEAKAGE_AUDIT clearance:** PARTIALLY_CLEARED — heldout_timestamp_exclusion checked for auditable runs. All other B1 sub-checks are NOT_APPLICABLE (own-asset OHLCV presets) or DEFERRED (learned presets — require Stage B model artifacts).
-**B10_HELDOUT_FIREWALL clearance:** PARTIALLY_CLEARED — 206 runs pass; 150 runs have unauditable inputs (no train.csv)
+**B10_HELDOUT_FIREWALL clearance:** PARTIALLY_CLEARED — 3515 runs pass; 1418 runs have unauditable inputs (no train.csv)
 
 ---
 
@@ -33,9 +33,9 @@ Generated: 2026-05-03T06:19:08.491275+00:00
 
 | Status | Count |
 | --- | ---: |
-| PASS_HELDOUT_FIREWALL | 206 |
+| PASS_HELDOUT_FIREWALL | 3515 |
 | FAIL_HELDOUT_LEAKAGE | 0 |
-| BLOCKED_INPUT_MISSING | 150 |
+| BLOCKED_INPUT_MISSING | 1418 |
 | BLOCKED_TIMESTAMP_INVALID | 0 |
 | Runs with any warning | 0 |
 
@@ -45,7 +45,7 @@ Generated: 2026-05-03T06:19:08.491275+00:00
 
 | Check | Auditable Now | Verdict | Notes |
 | --- | :---: | --- | --- |
-| `heldout_timestamp_exclusion` | Yes | PARTIAL PASS (206 pass, 150 unauditable) | max(DATE_TIME) < 2025-01-01 check on train.csv |
+| `heldout_timestamp_exclusion` | Yes | PARTIAL PASS (3515 pass, 1418 unauditable) | max(DATE_TIME) < 2025-01-01 check on train.csv |
 | `transform_fit_window_check` | No | NOT_APPLICABLE / DEFERRED | No fitted-transform metadata artifacts found in Stage A inputs. |
 | `scaler_fit_window_check` | No | NOT_APPLICABLE / DEFERRED | Scaler is fit inside training process; no Stage A artifact to inspect. |
 | `autoencoder_fit_window_check` | No | NOT_APPLICABLE / DEFERRED | Applicable to learned presets only; encoder model artifacts not present in inputs/. |
@@ -66,12 +66,12 @@ Generated: 2026-05-03T06:19:08.491275+00:00
 The stage_b_promotion_gate.yaml requires `heldout_start: 2025-01-01T00:00:00Z`.
 This audit verifies `max(DATE_TIME) < 2025-01-01 00:00:00` for every train.csv found.
 
-- Runs with input CSV found: **206**
-- Of those, passing heldout firewall: **206**
+- Runs with input CSV found: **3515**
+- Of those, passing heldout firewall: **3515**
 - Of those, failing (data leakage): **0**
-- Runs with missing input (cannot verify): **150**
+- Runs with missing input (cannot verify): **1418**
 
-> **B10 PARTIALLY CLEARED:** All audited inputs pass. However, 150 runs have missing input files and cannot be verified. These correspond to presets/timeframes without generated train.csv (crypto_full, fx_full, kitchen_sink_guarded, sota_low_cost, learned_cnn, all 15m runs).
+> **B10 PARTIALLY CLEARED:** All audited inputs pass. However, 1418 runs have missing input files and cannot be verified. These correspond to presets/timeframes without generated train.csv (crypto_full, fx_full, kitchen_sink_guarded, sota_low_cost, learned_cnn, all 15m runs).
 
 ---
 
@@ -79,16 +79,26 @@ This audit verifies `max(DATE_TIME) < 2025-01-01 00:00:00` for every train.csv f
 
 | Group | Total | PASS | FAIL | BLOCKED | Warned |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| audusd | 16 | 16 | 0 | 0 | 0 |
-| btcusdt | 113 | 27 | 0 | 86 | 0 |
-| ethusdt | 20 | 17 | 0 | 3 | 0 |
-| eurgbp | 16 | 16 | 0 | 0 | 0 |
-| eurusd | 90 | 32 | 0 | 58 | 0 |
-| gbpusd | 16 | 16 | 0 | 0 | 0 |
-| nzdusd | 16 | 16 | 0 | 0 | 0 |
-| usdcad | 16 | 16 | 0 | 0 | 0 |
-| usdchf | 16 | 16 | 0 | 0 | 0 |
-| usdjpy | 37 | 34 | 0 | 3 | 0 |
+| adausdt | 217 | 155 | 0 | 62 | 0 |
+| audusd | 232 | 205 | 0 | 27 | 0 |
+| bnbusdt | 219 | 157 | 0 | 62 | 0 |
+| btcusdt | 243 | 171 | 0 | 72 | 0 |
+| btcusdt_perp | 224 | 180 | 0 | 44 | 0 |
+| dogeusdt | 229 | 166 | 0 | 63 | 0 |
+| ethusdt | 241 | 171 | 0 | 70 | 0 |
+| ethusdt_perp | 223 | 187 | 0 | 36 | 0 |
+| eurgbp | 318 | 272 | 0 | 46 | 0 |
+| eurjpy | 396 | 222 | 0 | 174 | 0 |
+| eurusd | 250 | 104 | 0 | 146 | 0 |
+| gbpjpy | 217 | 105 | 0 | 112 | 0 |
+| gbpusd | 232 | 124 | 0 | 108 | 0 |
+| linkusdt | 219 | 157 | 0 | 62 | 0 |
+| nzdusd | 257 | 212 | 0 | 45 | 0 |
+| solusdt | 225 | 154 | 0 | 71 | 0 |
+| usdcad | 235 | 223 | 0 | 12 | 0 |
+| usdchf | 280 | 229 | 0 | 51 | 0 |
+| usdjpy | 253 | 143 | 0 | 110 | 0 |
+| xrpusdt | 223 | 178 | 0 | 45 | 0 |
 
 ---
 
@@ -96,9 +106,9 @@ This audit verifies `max(DATE_TIME) < 2025-01-01 00:00:00` for every train.csv f
 
 | Group | Total | PASS | FAIL | BLOCKED | Warned |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 15m | 110 | 0 | 0 | 110 | 0 |
-| 1h | 137 | 105 | 0 | 32 | 0 |
-| 4h | 109 | 101 | 0 | 8 | 0 |
+| 15m | 1570 | 685 | 0 | 885 | 0 |
+| 1h | 1649 | 1366 | 0 | 283 | 0 |
+| 4h | 1714 | 1464 | 0 | 250 | 0 |
 
 ---
 
@@ -106,16 +116,16 @@ This audit verifies `max(DATE_TIME) < 2025-01-01 00:00:00` for every train.csv f
 
 | Group | Total | PASS | FAIL | BLOCKED | Warned |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| baseline_12 | 72 | 57 | 0 | 15 | 0 |
-| crypto_full | 6 | 0 | 0 | 6 | 0 |
-| fx_full | 2 | 0 | 0 | 2 | 0 |
-| kitchen_sink_guarded | 6 | 0 | 0 | 6 | 0 |
-| learned_cnn | 22 | 0 | 0 | 22 | 0 |
-| learned_lstm | 30 | 1 | 0 | 29 | 0 |
-| sota_low_cost | 10 | 0 | 0 | 10 | 0 |
-| tech_full | 74 | 52 | 0 | 22 | 0 |
-| tech_stat | 77 | 62 | 0 | 15 | 0 |
-| tech_stat_decomp | 57 | 34 | 0 | 23 | 0 |
+| baseline_12 | 612 | 461 | 0 | 151 | 0 |
+| crypto_full | 248 | 179 | 0 | 69 | 0 |
+| fx_full | 306 | 188 | 0 | 118 | 0 |
+| kitchen_sink_guarded | 549 | 378 | 0 | 171 | 0 |
+| learned_cnn | 554 | 349 | 0 | 205 | 0 |
+| learned_lstm | 569 | 350 | 0 | 219 | 0 |
+| sota_low_cost | 248 | 195 | 0 | 53 | 0 |
+| tech_full | 615 | 461 | 0 | 154 | 0 |
+| tech_stat | 633 | 500 | 0 | 133 | 0 |
+| tech_stat_decomp | 599 | 454 | 0 | 145 | 0 |
 
 ---
 
@@ -123,9 +133,9 @@ This audit verifies `max(DATE_TIME) < 2025-01-01 00:00:00` for every train.csv f
 
 | Group | Total | PASS | FAIL | BLOCKED | Warned |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| dqn | 136 | 90 | 0 | 46 | 0 |
-| ppo | 147 | 94 | 0 | 53 | 0 |
-| sac | 73 | 22 | 0 | 51 | 0 |
+| dqn | 1659 | 1191 | 0 | 468 | 0 |
+| ppo | 1683 | 1206 | 0 | 477 | 0 |
+| sac | 1591 | 1118 | 0 | 473 | 0 |
 
 ---
 
@@ -133,8 +143,8 @@ This audit verifies `max(DATE_TIME) < 2025-01-01 00:00:00` for every train.csv f
 
 | Group | Total | PASS | FAIL | BLOCKED | Warned |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| dragon | 120 | 31 | 0 | 89 | 0 |
-| gamma | 83 | 22 | 0 | 61 | 0 |
+| dragon | 2490 | 1779 | 0 | 711 | 0 |
+| gamma | 2290 | 1583 | 0 | 707 | 0 |
 | omega | 153 | 153 | 0 | 0 | 0 |
 
 ---

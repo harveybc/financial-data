@@ -1,0 +1,71 @@
+Attempting to load plugin: gym_fx_env from group: env.plugins
+Successfully loaded plugin: gym_fx_env (class-level defaults, see config_out.json for actual): {'env_mode': 'inference', 'input_data_file': None, 'price_column': 'CLOSE', 'date_column': 'DATE_TIME', 'headers': True, 'max_rows': None, 'window_size': 32, 'initial_cash': 10000.0, 'position_size': 1.0, 'commission': 0.0, 'slippage': 0.0, 'data_feed_plugin': 'default_data_feed', 'broker_plugin': 'default_broker', 'strategy_plugin': 'default_strategy', 'preprocessor_plugin': 'default_preprocessor', 'reward_plugin': 'pnl_reward', 'metrics_plugin': 'default_metrics'}
+Attempting to load plugin: project3_sac_actor_critic_agent from group: agent.plugins
+Successfully loaded plugin: project3_sac_actor_critic_agent (class-level defaults, see config_out.json for actual): {'total_timesteps': 25000, 'learning_rate': 0.0001, 'buffer_size': 200000, 'learning_starts': 5000, 'batch_size': 256, 'tau': 0.005, 'gamma': 0.99, 'train_freq': 1, 'gradient_steps': 1, 'ent_coef': 'auto', 'target_update_interval': 1, 'target_entropy': 'auto', 'use_sde': True, 'net_arch': (256, 256), 'device': 'cuda', 'agent_verbose': 0, 'train_seed': 0, 'ga_fitness_dd_lambda': 1.0, 'action_space_mode': 'continuous', 'continuous_action_threshold': 0.1, 'window_size': 32, 'price_column': 'CLOSE', 'strategy_plugin': 'direct_atr_sltp', 'reward_plugin': 'pnl_reward', 'atr_period': 14, 'k_sl': 2.0, 'k_tp': 3.0, 'rel_volume': 0.05, 'size_mode': 'notional', 'leverage': 1.0, 'min_order_volume': 0.0, 'max_order_volume': 100.0, 'commission': 0.0002, 'slippage': 0.0, 'initial_cash': 10000.0, 'project3_strict': True}
+Attempting to load plugin: rl_pipeline_with_validation from group: pipeline.plugins
+Successfully loaded plugin: rl_pipeline_with_validation (class-level defaults, see config_out.json for actual): {'train_years': 4, 'val_years': 1, 'test_years': 1, 'split_anchor': 'start', 'epoch_timesteps': 2000, 'max_epochs': 30, 'l1_patience': 5, 'l1_min_delta': 0.0001, 'eval_seed': 0, 'train_seed': 0, 'save_model': './agent_model.zip', 'load_model': None, 'return_trace_dir': None}
+Using cuda device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+[epoch   1/60] L1 0/10  L2 -/4  composite=+0.0227 best=+0.0227 (IMPROVED, model saved) actor|w|=3141.48 Δa=-3.5642 critic|w|=6413.10 Δc=+133.6147 ent=nan steps=0->8000 buf=0->8000
+            TRAIN trades= 786 win%=48.85 sharpe=-0.0007 profit=+5.26% bal=10525.53
+            VAL   trades= 221 win%=47.06 sharpe=-0.0313 profit=-0.71% bal=9928.72
+[epoch   2/60] L1 1/10  L2 -/4  composite=-0.0245 best=+0.0227  actor|w|=3149.31 Δa=+7.8286 critic|w|=6594.80 Δc=+181.7029 ent=nan steps=8000->16000 buf=8000->16000
+            TRAIN trades= 778 win%=43.32 sharpe=-0.0327 profit=-5.26% bal=9474.30
+            VAL   trades= 221 win%=45.70 sharpe=-0.0148 profit=+0.36% bal=10035.64
+[epoch   3/60] L1 2/10  L2 -/4  composite=-0.0228 best=+0.0227  actor|w|=3144.43 Δa=-4.8853 critic|w|=6699.35 Δc=+104.5460 ent=nan steps=16000->24000 buf=16000->24000
+            TRAIN trades= 773 win%=43.60 sharpe=-0.0347 profit=-5.60% bal=9440.49
+            VAL   trades= 218 win%=45.87 sharpe=-0.0051 profit=+1.04% bal=10104.02
+[epoch   4/60] L1 3/10  L2 -/4  composite=-0.0050 best=+0.0227  actor|w|=3141.49 Δa=-2.9394 critic|w|=6813.03 Δc=+113.6882 ent=nan steps=24000->32000 buf=24000->32000
+            TRAIN trades=  24 win%=45.83 sharpe=-0.0663 profit=-0.67% bal=9933.38
+            VAL   trades=   3 win%=33.33 sharpe=-0.1609 profit=-0.34% bal=9966.05
+[epoch   5/60] L1 4/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3140.84 Δa=-0.6479 critic|w|=6933.08 Δc=+120.0497 ent=nan steps=32000->40000 buf=32000->40000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+[epoch   6/60] L1 5/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3140.51 Δa=-0.3338 critic|w|=7075.93 Δc=+142.8498 ent=nan steps=40000->48000 buf=40000->48000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+[epoch   7/60] L1 6/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3139.89 Δa=-0.6206 critic|w|=7226.57 Δc=+150.6389 ent=nan steps=48000->56000 buf=48000->56000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+[epoch   8/60] L1 7/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3139.40 Δa=-0.4805 critic|w|=7325.32 Δc=+98.7456 ent=nan steps=56000->64000 buf=56000->64000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 8.75e+03 |
+|    ep_rew_mean     | -0.103   |
+| time/              |          |
+|    episodes        | 8        |
+|    fps             | 226      |
+|    time_elapsed    | 26       |
+|    total_timesteps | 70008    |
+| train/             |          |
+|    actor_loss      | 2.87     |
+|    critic_loss     | 0.0362   |
+|    ent_coef        | 0.05     |
+|    learning_rate   | 0.0001   |
+|    n_updates       | 69007    |
+---------------------------------
+[epoch   9/60] L1 8/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3138.82 Δa=-0.5878 critic|w|=7425.59 Δc=+100.2703 ent=nan steps=64000->72000 buf=64000->72000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+[epoch  10/60] L1 9/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3138.51 Δa=-0.3067 critic|w|=7578.21 Δc=+152.6224 ent=nan steps=72000->80000 buf=72000->80000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+[epoch  11/60] L1 10/10  L2 -/4  composite=+0.0000 best=+0.0227  actor|w|=3137.97 Δa=-0.5428 critic|w|=7706.52 Δc=+128.3060 ent=nan steps=80000->88000 buf=80000->88000
+            TRAIN trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+            VAL   trades=   0 win%= 0.00 sharpe=+nan profit=+0.00% bal=10000.00
+[train] L1 EARLY STOP at epoch 11 (no improvement for 10 epochs, patience=10)
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+
+=== Final results (best-composite checkpoint) ===
++------------+--------+-------+---------+--------+----------+
+| Split      | Trades | Win % | Sharpe  | Profit | Balance  |
++------------+--------+-------+---------+--------+----------+
+| Train      | 786    | 48.85 | -0.0007 | 5.26%  | 10525.53 |
+| Validation | 221    | 47.06 | -0.0313 | -0.71% | 9928.72  |
+| Test       | 223    | 45.74 | -0.0237 | 0.23%  | 10023.11 |
++------------+--------+-------+---------+--------+----------+
+[results] wrote /home/harveybc/Documents/GitHub/financial-data/experiments/stage_b_validation/pragmatic_run_plan/plans/baseline_12/runs/ethusdt_4h_sac_baseline_12_candidate_s3_plus_50pct/results.json

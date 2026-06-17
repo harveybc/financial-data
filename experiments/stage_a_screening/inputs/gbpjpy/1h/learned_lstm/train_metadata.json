@@ -1,0 +1,19 @@
+{
+  "asset": "gbpjpy",
+  "columns": 6,
+  "feature_columns": [],
+  "generated_at": "2026-05-08T23:43:13.125436+00:00",
+  "machine": "omega",
+  "missing_baseline_features_filled_zero": [],
+  "missing_feature_families": [
+    "learned_lstm"
+  ],
+  "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/gbpjpy/1h/learned_lstm/train.csv",
+  "preset": "learned_lstm",
+  "rows": 117329,
+  "sources": [
+    "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/gbpjpy/1h.parquet"
+  ],
+  "split": "train",
+  "timeframe": "1h"
+}

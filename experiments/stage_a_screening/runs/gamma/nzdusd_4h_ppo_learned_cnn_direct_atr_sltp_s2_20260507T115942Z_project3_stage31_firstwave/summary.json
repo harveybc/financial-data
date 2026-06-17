@@ -1,0 +1,18 @@
+{
+  "initial_cash": 10000.0,
+  "final_equity": 10000.0,
+  "total_return": 0.0,
+  "max_drawdown_pct": 0.0,
+  "max_drawdown_money": 0.0,
+  "sharpe_ratio": null,
+  "sqn": 0,
+  "trades_total": 0,
+  "trades_won": 0,
+  "trades_lost": 0,
+  "avg_trade_pnl": null,
+  "episode_reward": 0.0,
+  "episode_length": 29499,
+  "eval_seed": 2,
+  "return_trace_file": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/runs/gamma/nzdusd_4h_ppo_learned_cnn_direct_atr_sltp_s2_20260507T115942Z_project3_stage31_firstwave/return_trace.csv",
+  "mode": "train"
+}

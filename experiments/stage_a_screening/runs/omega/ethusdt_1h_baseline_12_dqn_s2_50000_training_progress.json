@@ -1,0 +1,17 @@
+{
+  "agent_plugin": "dqn_agent",
+  "asset": "ethusdt",
+  "features_preset": "baseline_12",
+  "num_timesteps": 0,
+  "pid": 4018049,
+  "progress_detail": "agent-multi seed_sweep subprocess finished",
+  "progress_percent": 0.0,
+  "run_id": "ethusdt_1h_baseline_12_dqn_s2_50000",
+  "schema_version": "project3_training_progress_v1",
+  "seed": 2,
+  "source": "stage31_worker",
+  "status": "subprocess_failed",
+  "timeframe": "1h",
+  "total_timesteps": 50000,
+  "updated_at_utc": "2026-05-09T03:36:26.373037+00:00"
+}
