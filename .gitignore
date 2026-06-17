@@ -13,9 +13,11 @@ _logs/supervisor_reports/tier4_handoffs/*.md
 !_logs/supervisor_reports/tier4_handoffs/README.md
 
 # Generated logs and runtime state
+_logs/
 _logs/**/*.log
 _logs/**/*.out
 _logs/**/*.pid
+_logs/stage_b/
 _logs/supervisor_reports/*.lock/
 _logs/supervisor_reports/*_status.json
 _logs/supervisor_reports/*_context_packet.md
@@ -50,3 +52,17 @@ _logs/supervisor_reports/telegram_chat_discovery.json
 __pycache__/
 *.pyc
 .DS_Store
+
+# Project 3 runtime outputs and machine-local experiment state
+_metadata/
+artifacts/run_ledger_summary.json
+experiments/stage_a_screening/configs/
+experiments/stage_a_screening/job_timing/
+experiments/stage_a_screening/queues/
+experiments/stage_a_screening/runs/
+experiments/weekly_walkforward_pool/
+experiments/oracle_behavior_pretraining/labels/
+experiments/oracle_behavior_pretraining/labels_auto/
+experiments/oracle_behavior_pretraining/plans/
+experiments/portfolio_supervisor/
+experiments/stage3x_event_context/

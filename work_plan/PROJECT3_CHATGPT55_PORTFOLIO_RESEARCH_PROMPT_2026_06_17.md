@@ -1,104 +1,164 @@
 # Prompt For ChatGPT 5.5 Pro Research Agent
 
-We need pragmatic research for Project 3, a weekly-retrained portfolio trading
-system. This is not an academic publication project. The only useful outcome
-is better repeated next-week profit/risk after realistic costs for a paid
-trading/portfolio service.
+You are the research agent for Project 3. Your task is to give a practical,
+evidence-backed research review that Codex can translate into code and
+experiments. This is not an academic publication project. The only useful
+outcome is better repeated next-week portfolio profit/risk after realistic
+costs, under the exact weekly retraining business mechanic described below.
 
-Current business model:
+## Attach These Documents
 
-- Every weekend, train/update per-asset trading agents using only data known
-  before the decision cutoff.
-- During live operation, clients do not hold just one asset. They hold a
-  portfolio of active asset streams.
-- A higher portfolio supervisor decides weekly:
-  - which assets/model streams are active;
-  - which streams receive no-trade flags;
-  - capital/order-size weights per active stream;
-  - max exposure and risk constraints.
-- Per-asset SAC/RL agents still decide trading actions inside their assigned
-  asset budget.
-- The portfolio rebalance happens every weekend.
+Attach these 5 files to your research session and use them as the source of
+truth for the project context:
 
-Current evaluation:
+1. `PROJECT3_WEEKLY_RETRAINED_PORTFOLIO_PROTOCOL_2026_05_22.md`
+2. `PROJECT3_EVENT_TOKEN_TRANSFORMER_AGENT_SPEC_2026_06_17.md`
+3. `project3_orchestrator_event_context_representation_addendum_2026_06_09.md`
+4. `PROJECT3_RESEARCH_AGENT_PRAGMATIC_CONTEXT_2026_06_09.md`
+5. `PROJECT3_WEEKLY_WALKFORWARD_POOL_AGENT_SPECS_2026_06_04.md`
+
+If you need more information, ask for it explicitly. Do not assume an older
+Project 3 stage plan is still valid unless it is repeated in those documents.
+
+## Business Mechanic You Must Respect
+
+Project 3 is a weekly-retrained multi-asset portfolio trading system.
+
+- The product is a portfolio service, not a single-asset toy backtest.
+- Each tradable asset can have one or more specialist trading agents.
+- The specialist agent trades only its target asset, but it may consume context
+  from other assets, economic events, market-state embeddings, technical
+  indicators, fundamental features, and seasonal features.
+- A higher weekly portfolio supervisor decides:
+  - which asset/model streams are active next week;
+  - which streams receive a no-trade flag;
+  - normalized capital/order-size weights for active streams;
+  - max weight, max active assets, and correlation/exposure caps.
+- The final user-account/execution layer is out of scope for now. We are not
+  designing deposits, PAMM/social-trading plumbing, broker routing, or
+  user-specific order conversion. Our current output is research-grade control
+  signals and normalized portfolio weights.
+- Every trainable layer must be evaluated by weekly walk-forward simulation.
+
+## Mandatory Evaluation Rule
+
+For every weekly anchor:
 
 ```text
-per weekly anchor:
-  train: N years before validation
-  train_tail: final slice of train for early-stop score
-  validation: next historical week
-  test: following week only
+fit/update only with information available before the rebalance cutoff;
+train window: N years before validation, often 1-4 years depending experiment;
+train-tail metric window: last configurable weeks of the train window;
+validation window: next configurable week(s);
+test window: following configurable week(s), recorded only after selection;
+selection metric: train-tail + validation composite, not test;
+repeat across all weekly anchors in the evaluation year;
+compare methods by the average weekly metrics across anchors.
 ```
 
-Selection metric:
+The test period must never be used to select models, weights, features,
+hyperparameters, no-trade flags, or portfolio allocation parameters.
 
-```text
-composite = 0.5 * train_tail_total_return + 0.5 * validation_total_return
-```
+## Current Implemented System
 
-Test is recorded only after selection. No Stage C / final heldout rows may be
-used.
+We currently have:
 
-Current implementation:
-
-- SQLite weekly pool of per-asset SAC subjobs.
-- Early stopping by train-tail + validation composite.
-- Event-context engineered features.
-- First train-only event-token embedding bridge.
-- First portfolio supervisor simulator with:
+- SQLite weekly job/subjob pool for multi-machine walk-forward experiments.
+- Per-asset SAC jobs with scratch training, warm-start chain training, and
+  recent-window fine tuning.
+- Early stopping based on train-tail + validation composite.
+- Event-engineered features.
+- A first train-only event-token embedding bridge, not yet a full transformer.
+- Zig-zag oracle and anti-oracle baselines for reference and possible future
+  behavior-cloning pretraining.
+- A first portfolio supervisor simulator with:
   - equal weight;
-  - score weighting;
+  - score weight;
   - score inverse volatility;
   - score inverse CVaR.
 
-Research question:
+## Research Questions
 
-What is the most practical next-step portfolio allocation method for weekly
-retrained strategy streams, given that expected returns, covariance, and
-downside risk must be estimated without knowing the future?
+### A. Weekly Portfolio Allocation
 
-Please research and answer with citations to real sources. Focus on practical
-implementability, not theoretical elegance.
+Find the most practical next portfolio allocation methods for weekly-retrained
+strategy streams when expected returns, covariance, and downside risk must be
+estimated only from past data and current pre-week context.
 
-Compare:
+Compare at least:
 
-1. Modern Portfolio Theory / Markowitz mean-variance.
-2. Post-modern portfolio theory / downside risk / semivariance / CVaR.
-3. Black-Litterman or Bayesian shrinkage variants for unstable expected
-   returns.
-4. Hierarchical Risk Parity / risk parity for unstable covariance.
-5. Kelly/fractional Kelly or volatility targeting for position sizing.
-6. Online/rolling portfolio selection methods.
-7. ML/meta-allocator approaches using market-state/context embeddings.
+1. Equal weight and score-weight baselines.
+2. Markowitz / mean-variance portfolio optimization.
+3. Downside-risk / semivariance / CVaR / post-modern portfolio theory.
+4. Black-Litterman, Bayesian shrinkage, and expected-return shrinkage.
+5. Hierarchical Risk Parity and other covariance-robust allocation methods.
+6. Risk parity / volatility targeting / fractional Kelly.
+7. Online portfolio selection / rolling allocation methods.
+8. ML or meta-allocator methods using market-state/context embeddings.
 
 For each method, answer:
 
 - What variables are required?
-- Which variables can we estimate from our weekly walk-forward pool?
-- What data leakage traps exist?
-- How much historical lookback is usually needed?
-- Does it handle changing regimes?
-- Is it suitable for only weekly rebalance?
-- How should no-trade flags be incorporated?
-- How should transaction costs/spread be included?
-- What simple baseline should we implement first?
-- What more advanced method should wait until the baseline has evidence?
+- Which variables can be estimated from our weekly pool without leakage?
+- What minimum history is realistic for weekly strategy streams?
+- What fails when expected-return estimates are noisy?
+- How should no-trade flags enter the optimizer?
+- How should max active assets and max weight per asset be handled?
+- How should transaction costs, spread, and weekend-flat policy be included?
+- What should be the first implementable baseline?
+- What should wait until simpler baselines show evidence?
 
-Important project philosophy:
+### B. Trading-Language / Market-Context Transformer
 
-- Do not recommend broad academic gates that block progress.
-- Do not recommend a complex model unless it can be evaluated against a simple
-  baseline in the weekly pool.
-- Prefer small, testable experiments that can run on our current multi-machine
-  pool.
-- The final recommendation must become implementable code tasks.
+Assess whether a variable-length context model is useful for:
 
-Please provide:
+- per-asset specialist agents;
+- portfolio allocation;
+- no-trade prediction;
+- regime/context-conditioned model selection.
+
+The "language" is not natural language. It is a market/event token language:
+economic-calendar events, event surprise values, time-to-future-events,
+historical event outcomes, cross-asset price/return tokens, technical/fundamental
+tokens, seasonal tokens, and unsupervised market-state tokens.
+
+Research:
+
+- practical architectures for variable-length numeric/event-token sequences;
+- whether a small transformer, Set Transformer, TabTransformer/FT-Transformer,
+  Temporal Fusion Transformer, Perceiver-style encoder, or simple attention
+  pooling is the best first implementation;
+- how to avoid leakage when events have actual/expected/revised values;
+- how to pretrain with self-supervised objectives without contaminating test;
+- how to connect embeddings to SAC agents and to the portfolio supervisor;
+- what to do first if compute is limited.
+
+### C. Oracle Behavior Pretraining
+
+We have an ideal zig-zag oracle and anti-oracle baseline. Research how to use
+that safely:
+
+- behavior cloning from oracle action labels;
+- auxiliary loss for policy pretraining;
+- contrastive positive/negative examples using oracle vs anti-oracle actions;
+- whether this risks teaching impossible future-aware behavior;
+- how to restrict the use to train-only labels so validation/test remain honest;
+- how to evaluate whether oracle pretraining improves next-week performance.
+
+## Required Output Format
+
+Give a concise but complete research report with:
 
 1. Executive recommendation.
-2. Ranked method list from most practical now to later.
-3. Minimum viable portfolio simulator design.
-4. Suggested features for an ML/meta-allocator.
-5. Suggested no-trade and max-weight constraints.
-6. References/citations.
-7. Open questions we must answer with our own data.
+2. Ranked immediate experiments for the next 1-2 weeks of coding.
+3. Portfolio allocation method comparison table.
+4. Market-context transformer architecture recommendation.
+5. Oracle pretraining recommendation and leakage controls.
+6. Exact variables/features needed for each recommended experiment.
+7. Data leakage traps and how to prevent them.
+8. Metrics to record in the weekly pool and dashboard.
+9. Concrete code tasks for Codex/Claude.
+10. Real citations with links. Cite primary sources or strong library docs
+    where possible; do not invent references.
+
+Be blunt. Reject any idea that sounds impressive but is not testable in our
+weekly walk-forward pool.
