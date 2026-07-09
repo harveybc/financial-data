@@ -238,6 +238,37 @@ Full Markowitz/Black-Litterman/ML allocation is deferred until the simple
 baselines exist and we can measure whether better covariance/expected-return
 estimation is actually worth the complexity.
 
+### Portfolio Horizon Buckets
+
+The portfolio target is not "one global best stream". It is a diversified set
+of specialist streams grouped by trading horizon. The annual asset/timeframe
+survey must therefore produce selection candidates for at least:
+
+- **short-horizon sleeve:** 3 or more asset/timeframe streams, normally from
+  15m and 1h candidates, intended to react more frequently and provide higher
+  trade cadence;
+- **long-horizon sleeve:** 3 or more asset/timeframe streams, normally from 4h
+  and later higher-period candidates, intended to capture slower regimes with
+  lower turnover and potentially better risk-adjusted behavior.
+
+The two sleeves may use different allocation strategies and screening metrics,
+because their useful features are likely different. Short-horizon streams may
+need stronger cost, spread, turnover, and trade-count controls. Long-horizon
+streams may need stronger drawdown, regime, event/context, and opportunity
+decay controls. A portfolio candidate is not ready if it only proves one asset
+or one crypto-only cluster, even when that stream has an attractive annual RAP.
+
+Selection reports must therefore show:
+
+- best full-year streams by asset and timeframe;
+- best short-horizon candidates;
+- best long-horizon candidates;
+- cross-asset and cross-cluster coverage;
+- whether any sleeve is dominated by one asset, one market family, or one
+  timeframe;
+- which candidates are merely negative/flat survey evidence versus true
+  promotion candidates for later optimization.
+
 ### Opportunity/Bloom Portfolio Allocator
 
 The SOLUSDT 4h partial results observed in the 2026-06-29 OLAP transversal
@@ -777,12 +808,27 @@ The supervisor is responsible for:
 The phase orchestrator is responsible for:
 
 - watching the same SQLite pool independently of manual status requests;
-- doing nothing while `pending + running >= 120`;
+- doing nothing while `pending + running` is above the configured deadline
+  buffer, currently `360`;
 - automatically generating and enqueuing the next useful phase when backlog
   falls below that threshold;
 - using unique job/subjob ids for every generated phase so already-completed
   work is not repeated accidentally;
 - recording its enqueue decisions in `pool_events`.
+
+2026-07-04 deadline amendment:
+
+- the automatic adaptive seed extension is capped at seed20;
+- no seed21-seed25 ETH-only expansion should be generated before the Monday
+  `doin` switch unless explicitly requested;
+- the SOLUSDT 4h deadline diversity block
+  `deadline_lane_b_solusdt_4h_bloom_feature_diversity` was reactivated from
+  `deferred` to `pending` so the next claims are not all ETHUSDT 4h;
+- automatic broad deferred promotion is disabled for the deadline period; the
+  adaptive scheduler should not inject another 600-job block while trying to
+  finish the weekend queue;
+- broad `deferred` work remains intentionally inactive unless a named deadline
+  reason justifies reactivation.
 
 Active phase chain, as updated on 2026-06-26:
 
@@ -1072,6 +1118,20 @@ Canonical OLAP views:
 | `weekly_result_full_year_protocol_olap` | one annual validation/test block per candidate/profile dimension | Only source for the explicit full-year validation/test protocol. |
 | `weekly_result_artifact_olap` | one indexed file artifact per subjob | Audit every persisted `results.json`, log, progress file, policy, config, context manifest, and return trace. |
 
+Configuration contract:
+
+- every experiment must have one canonical JSON configuration in
+  `jobs.config_json`;
+- every materialized weekly subjob must have the concrete resolved JSON path in
+  `subjobs.config_path`;
+- `weekly_result_olap.job_config_json` exposes the canonical job JSON string so
+  Metabase, DOIN, LTS, and ad-hoc scripts can export it directly to a
+  `--config` / `--load_config` file without reverse-engineering code defaults;
+- `weekly_result_olap.subjob_result_json` exposes the raw metrics payload used
+  for audit/debugging when derived columns are insufficient;
+- new model/data/optimizer/training parameters must be represented in JSON
+  first, with code defaults treated only as fallback values for old runs.
+
 Physical artifact table:
 
 ```text
@@ -1121,7 +1181,7 @@ artifact
 | Field group | Columns |
 | --- | --- |
 | Identity | `subjob_id`, `job_id`, `candidate_id`, `asset`, `timeframe`, `model_family`, `train_years`, `training_policy`, `experiment_phase`, `evaluation_protocol`, `evaluation_block`, `configured_validation_year`, `configured_test_year`, `annual_eval_min_weeks`, `olap_profile_key` |
-| Data provenance | `input_data_file`, `feature_count`, `config_path`, `run_dir` |
+| Data provenance | `input_data_file`, `feature_count`, `config_path`, `run_dir`, `job_config_json`, `subjob_result_json` |
 | Walk-forward windows | `weekly_anchor_id`, `train_start`, `train_end`, `validation_start`, `validation_end`, `test_start`, `test_end`, `validation_year`, `validation_week_start`, `test_year`, `test_week_start` |
 | Selection scores | `score`, `raw_score`, `selection_metric`, `composite`, `risk_composite`, `risk_penalty_lambda`, `l1_score`, `l1_mean_score`, `l1_gap`, `l1_gap_penalty`, `l1_gap_beta` |
 | Return metrics | `train_tail_return`, `validation_return`, `test_return` |
@@ -1723,3 +1783,270 @@ candidate metrics. Project3 must preserve interoperability:
 7. Benchmark candidates/hour across machines.
 8. Start evolutionary optimization only on meaningful high-level parameters,
    not low-level noise.
+
+### Sunday Night Freeze Before RTX 5090 / DOIN Switch
+
+On 2026-07-05 15:31 COT the deadline execution was switched to finish-only
+mode:
+
+- `project3-weekly-phase-orchestrator.service` stopped;
+- `project3-weekly-adaptive-scheduler.service` stopped;
+- pool API, dashboard, supervisor, and workers left running;
+- no seed21+ or broad deferred promotion is allowed before the Monday handoff;
+- the active pending/running queue should finish, then OLAP and finalist
+  summaries should be used to select the handoff candidate family for `doin`.
+
+This freeze avoids starting new work hours before the RTX 5090 / eGPU handoff
+and keeps the remaining Sunday night work bounded and auditable.
+
+### Handoff Candidate Pack And Bloom Priority - 2026-07-05
+
+The opportunity/bloom allocator lane remains official, but it must not create a
+new broad Sunday-night execution phase. The Monday `doin` handoff uses the
+current OLAP evidence instead:
+
+- primary full-year control: ETHUSDT 4h kitchen_sink_guarded SAC
+  `fixed_rv0p10_sl1p5_tp2`, 52 test weeks, mean weekly return +0.1302%,
+  annual return +6.7688%, mean weekly RAP -0.0365%, annual RAP -1.8978%;
+- secondary bloom/opportunity seed: SOLUSDT 4h kitchen_sink_guarded SAC
+  margin-aware rel_volume 0.50 candidate, 10 observed test weeks, mean weekly
+  return +6.3157%, projected observed-week annual return +63.1570%, mean
+  weekly RAP +4.6243%, projected observed-week annual RAP +46.2434%;
+- SOLUSDT has the clearest rush-week evidence in the current OLAP snapshot:
+  12.45% of weekly OLAP rows exceed both +1% return and +1% RAP, versus 3.84%
+  for ETHUSDT.
+
+The detailed snapshot is recorded in:
+
+```text
+work_plan/PROJECT3_DOIN_HANDOFF_CANDIDATE_PACK_2026_07_05.md
+```
+
+Decision:
+
+1. Do not promote deferred broad work before the Monday hardware switch.
+2. Let the three workers finish the bounded ETHUSDT 4h phase7 queue.
+3. Use the ETH full-year control and SOL bloom seed as the first `doin`
+   candidates/search priors.
+4. Treat rush-week detection as a portfolio/meta-allocation research lane after
+   the `doin` transition, not as a blocker for Monday morning.
+
+At 2026-07-05 16:51 COT the active pending queue was further narrowed to satisfy
+the same-day finish constraint:
+
+- keep all ETHUSDT 4h phase7 `rel_volume=0.10` pending jobs;
+- keep only the top 30 ETHUSDT 4h phase7 `rel_volume=0.075` pending jobs;
+- defer 66 lower-priority `rel_volume=0.075` jobs.
+
+This is an execution cutoff, not a scientific rejection of `rel_volume=0.075`.
+The reason is deadline pragmatism: `rel_volume=0.10` is closer to the current
+best full-year control and must receive priority before the Monday `doin`
+handoff.
+
+At 2026-07-05 17:15 COT the ETA was still too close to midnight, so the
+`rel_volume=0.075` sample was narrowed again from 30 pending jobs to the top 15
+pending jobs. All pending `rel_volume=0.10` jobs remain selected.
+
+### Annual Diversity Survey Rescue - 2026-07-06
+
+On 2026-07-06 the Monday handoff freeze was superseded by an explicit portfolio
+coverage correction. The previous queue had too much ETH/SOL 4h evidence and
+too little asset/timeframe diversity for portfolio selection. The correction is
+not a final optimization phase; it is a fast annual survey whose output is a
+comparable asset/timeframe table for deciding what should later be optimized.
+
+Execution profile:
+
+- `annual_diversity_survey_v1`;
+- evaluation protocol: weekly retrained full-year test survey;
+- validation year: 2022, retained only as metadata in the source full-year
+  plan;
+- active execution block: 2023 `test_year`;
+- required annual coverage: 48+ weekly test windows before a row can be treated
+  as decision-grade;
+- policies: `scratch_n_years`, `train_years=1`;
+- feature mode: `all_available`;
+- crypto preset: `kitchen_sink_guarded`;
+- FX preset: `fx_full` with `tech_stat_decomp` fallback only if needed;
+- assets: ADAUSDT, BNBUSDT, BTCUSDT, BTCUSDT_PERP, DOGEUSDT, ETHUSDT,
+  ETHUSDT_PERP, LINKUSDT, SOLUSDT, XRPUSDT, AUDUSD, EURGBP, EURJPY, EURUSD,
+  GBPJPY, GBPUSD, NZDUSD, USDCAD, USDCHF, USDJPY;
+- timeframes: 15m, 1h, 4h;
+- total matrix: 60 streams x 52 weekly 2023 test windows = 3120 subjobs.
+
+Survey risk/execution profile:
+
+- `selection_metric=risk_adjusted_return`;
+- `reward_plugin=dd_penalized_reward`;
+- `risk_penalty_lambda=0.5`;
+- `rel_volume=0.10`;
+- `baseline_rel_volume=0.05`;
+- `max_risk_rel_volume=0.50`;
+- `sltp_risk_mode=fixed_atr`;
+- `atr_period=14`;
+- `k_sl=1.5`;
+- `k_tp=2.0`;
+- `sltp_profile_tag=annual_survey_rv0p10_sl1p5_tp2`;
+- budget: `total_timesteps=120000`, `max_epochs=60`, `l1_patience=8`.
+
+Deadline correction:
+
+The initial `annual_diversity_survey_v1` budget was still too expensive for the
+one-day RTX 5090/eGPU handoff window. Pending v1 work was deferred and replaced
+with a clean, separately identified fast survey:
+
+- `annual_diversity_survey_fast40k_v2`;
+- same 60 asset/timeframe streams and same 52 weekly 2023 test windows;
+- same risk profile and OLAP interpretation rules;
+- `sltp_profile_tag=annual_survey_fast40k_rv0p10_sl1p5_tp2`;
+- budget: `total_timesteps=40000`, `max_epochs=20`, `l1_patience=4`.
+
+Do not merge v1 and v2 rows when comparing survey results. The v2 rows are the
+deadline survey rows. Any v1 rows that completed before the switch are
+transition artifacts only.
+
+Operational correction on 2026-07-06:
+
+- FX 4h streams initially failed because the validation/test weekly windows
+  contain about 31 four-hour bars after weekend gaps, while the materializer
+  default `min_split_rows=40` rejected those otherwise valid windows.
+- After that, the environment still rejected FX 4h validation/test windows
+  because `window_size=32` is larger than the roughly 31-row weekly split.
+- For all FX 4h survey streams, `hyperparameters.min_split_rows=25` and
+  `hyperparameters.window_size=16` were applied and failed/interrupted weekly
+  rows were requeued.
+- This does not change the trading metric, reward, SL/TP profile, or annual
+  interpretation. It only makes the split-size guard and sequence window
+  compatible with FX market hours at 4h periodicity.
+
+Interpretation rules:
+
+1. Do not select assets from partial weekly rows unless the row is explicitly
+   labelled as partial evidence.
+2. Decision-grade asset/timeframe rows must come from
+   `weekly_result_full_year_protocol_olap` with `metric_block='test_year'` and
+   `has_near_full_year_coverage=1`.
+3. The key metrics for portfolio screening are:
+   `unique_weeks`, `coverage_ratio_52w`, `mean_weekly_return`,
+   `annual_return`, `mean_weekly_drawdown`, `mean_weekly_rap`, `annual_rap`,
+   `worst_weekly_rap`, `best_weekly_rap`, and `mean_weekly_trades`.
+4. Negative RAP or return is still useful in this survey. The purpose is to map
+   the asset/timeframe/configuration surface before final `doin` optimization,
+   not to prove that an unoptimized SAC configuration is already investable.
+5. The old short `diversity_rescue_v1` pending queue was deferred so it cannot
+   block the annual survey. Already-running short jobs may be stopped if they
+   occupy a GPU needed for the annual matrix.
+6. The survey output must be interpreted by horizon bucket, not only by global
+   rank. The portfolio selection table must identify at least 3 short-horizon
+   candidates and at least 3 long-horizon candidates when coverage exists, even
+   if some are negative/flat survey rows that need later optimization.
+
+Canonical OLAP query for the annual selection table:
+
+```sql
+SELECT
+  asset,
+  timeframe,
+  candidate_id,
+  unique_weeks,
+  coverage_ratio_52w,
+  has_near_full_year_coverage,
+  mean_weekly_return,
+  annual_return,
+  mean_weekly_drawdown,
+  mean_weekly_rap,
+  annual_rap,
+  worst_weekly_rap,
+  best_weekly_rap,
+  mean_weekly_trades,
+  first_week,
+  last_week,
+  last_completed_at
+FROM weekly_result_full_year_protocol_olap
+WHERE metric_block='test_year'
+  AND candidate_id LIKE '%annual_diversity_survey_fast40k_v2%'
+ORDER BY has_near_full_year_coverage DESC,
+         annual_rap DESC,
+         annual_return DESC;
+```
+
+### Market-Token Transformer Probe - 2026-07-08
+
+The RTX 5090 / eGPU enclosure was delayed again, creating a small compute
+window after the annual diversity survey completed. The variable-length
+context/embedding lane is therefore reactivated in a compact, auditable form.
+
+Prior evidence:
+
+- `event_token_transformer_phase_next_v1` exists and ran on ETHUSDT 4h, but
+  only as a small partial phase over event-engineered rows;
+- that first encoder was a train-only frozen random-projection transformer with
+  a ridge auxiliary readout, not a fully trainable transformer;
+- partial results did not beat the simpler event/context baselines, so this is
+  not yet a promotion candidate;
+- only ETHUSDT 4h currently has true `event_*` engineered columns, so a broad
+  event-token sweep would be fake for the other assets.
+
+Decision:
+
+- do not launch a broad "LLM-like" or fully trainable transformer before the
+  implementation exists;
+- use the existing leakage-safe encoder as a **market-token transformer probe**
+  over variable feature families already present in `kitchen_sink_guarded`;
+- test whether a fixed train-only context embedding adds signal on top of the
+  same annual weekly protocol used by the diversity survey.
+
+Execution profile:
+
+- phase id: `market_token_transformer_probe_v1_20260708`;
+- assets: `SOLUSDT`, `ETHUSDT`, `BTCUSDT_PERP`;
+- timeframes: `4h`, `1h`;
+- input preset: `kitchen_sink_guarded`;
+- policy: `scratch_n_years`, `train_years=1`;
+- block: 2023 `test_year`;
+- matrix: 6 streams x 52 weekly test windows = 312 subjobs;
+- context profile family: `event_token_transformer_v1`;
+- output prefix: `ctx_mkt_tr`;
+- token source prefixes include return, log-return, SOTA, rolling-stat,
+  volatility, trend, volume, funding, and technical-indicator families;
+- selection/reward/risk profile matches the fast annual survey:
+  `selection_metric=risk_adjusted_return`,
+  `reward_plugin=dd_penalized_reward`, `risk_penalty_lambda=0.5`,
+  `rel_volume=0.10`, `k_sl=1.5`, `k_tp=2.0`,
+  `sltp_risk_mode=fixed_atr`;
+- budget: `total_timesteps=40000`, `max_epochs=20`, `l1_patience=4`.
+
+Interpretation:
+
+- compare against the matching `annual_diversity_survey_fast40k_v2`
+  `kitchen_sink_guarded` rows, not against unrelated older phases;
+- require 48+ weekly test windows before decision-grade interpretation;
+- inspect `context_embedding_manifest.json` artifacts to confirm train-only
+  fitting, selected token count, and `ctx_mkt_tr_*` columns;
+- treat no-trade/flat output as useful evidence that this embedding did not
+  unlock the stream under the current policy;
+- if this probe improves annual RAP or hard-week behavior, the next step is a
+  real trainable encoder or portfolio-level context model, not more frozen
+  random-projection variants.
+
+### Supervisor Failover And Artifact Retention - 2026-07-09
+
+Operational continuity is now part of the protocol. The weekly pool SQLite DB
+is canonical runtime state but is too large for normal GitHub commits, so it is
+handled as a replicated failover artifact rather than source code.
+
+Reference procedure:
+
+```text
+financial-data/work_plan/PROJECT3_SUPERVISOR_FAILOVER_AND_ARTIFACT_RETENTION_2026_07_09.md
+```
+
+Current retention rule:
+
+- preserve OLAP metrics, job/subjob state, configs, results, evidence, and
+  selected model policies needed for reproduction or warm-start;
+- prune reproducible local artifacts such as return trace CSVs, generated
+  context embedding CSVs, stdout logs, and training progress files only after a
+  fresh failover backup exists;
+- keep code, scripts, and procedures in GitHub; keep compressed SQLite failover
+  packs replicated across machines outside Git.
