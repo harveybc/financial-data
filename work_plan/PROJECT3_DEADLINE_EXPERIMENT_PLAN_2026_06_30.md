@@ -261,3 +261,144 @@ On Monday 2026-07-06 morning:
 2. freeze the best available Project3 candidate;
 3. start `doin` integration/optimization preparation with that candidate;
 4. do not wait for remaining Project3 sweeps to finish.
+
+## Execution Amendment - 2026-07-04 17:30 COT
+
+The deadline is now hard operational reality. The project has roughly the
+weekend left before the RTX 5090 / eGPU switch, so the remaining queue must be
+managed by time budget and coverage, not by exhaustive completion.
+
+Actions applied:
+
+- The phase orchestrator backlog buffer was raised from `120` to `360` so the
+  machines should not idle between status checks.
+- The automatic adaptive ETH seed extension was capped at seed20:
+  `--adaptive-seed-start 18 --adaptive-seed-stop 20`.
+- Seed20 was already enqueued: `adaptive_top_seed_extension_seed20_v1`,
+  360 subjobs.
+- No further ETH-only seed21-seed25 expansion should be created before the
+  Monday switch unless the user explicitly asks.
+- The queue was no longer allowed to remain all ETHUSDT 4h. The
+  SOLUSDT 4h deadline diversity block was reactivated:
+  `deadline_lane_b_solusdt_4h_bloom_feature_diversity`, 56 subjobs.
+- The reactivated SOLUSDT 4h block covers four data representations:
+  `crypto_full`, `kitchen_sink_guarded`, `sota_low_cost`, and
+  `tech_stat_decomp`.
+- The SOLUSDT 4h block keeps its original priority range `2314-2623`, which
+  means it will be claimed before the ETH seed-extension backlog whose current
+  priority range starts around `10422`.
+- The adaptive scheduler's automatic deferred promotion was disabled for the
+  deadline period. It previously had `--promote-deferred --promote-quota 600
+  --promote-when-active-lte 600`, which could have injected another broad block
+  when the active backlog fell below 600. During the final weekend it may prune
+  or keep the queue organized, but it must not create broad new work.
+
+Current execution intent:
+
+1. Keep all three machines busy continuously.
+2. Finish the already-enqueued ETH seed18-seed20 robustness evidence, but do
+   not keep expanding ETH-only seeds.
+3. Let the reactivated SOLUSDT 4h representation-diversity jobs run next.
+4. At each status check, inspect the new SOLUSDT partials. If one SOLUSDT
+   representation keeps positive RAP and enough trades, promote only the best
+   one or two to missing-week completion.
+5. Do not revive broad `deferred` work just because it exists. Reactivation
+   requires a named reason tied to the deadline plan.
+6. If the active backlog is still large on Sunday morning, defer low-value
+   ETH-only seed-extension leftovers before starting any new branch.
+7. Sunday morning: run only targeted missing-week completion, finalist
+   summary, OLAP consistency checks, and handoff documentation.
+8. Sunday noon onward: no new broad sweeps. Freeze winner and backup shortlist.
+
+Decision rule for the final weekend:
+
+- full-year or near-full-year evidence still wins over partials;
+- partial SOLUSDT bloom evidence can only become Monday-relevant if it survives
+  additional weeks without collapsing in RAP;
+- if SOLUSDT remains partial by Sunday evening, it is a DOIN search seed, not
+  the primary winner;
+- if no candidate obtains positive full-year RAP, the Monday handoff winner is
+  the best available full-year RAP control plus the strongest partial as a
+  secondary DOIN exploration seed.
+
+## Execution Amendment - 2026-07-05 15:31 COT
+
+The RTX 5090 / eGPU hardware is expected on Monday 2026-07-06, so the Sunday
+night closeout must be deterministic. Planning is frozen now.
+
+Actions applied:
+
+- Stopped `project3-weekly-phase-orchestrator.service`.
+- Stopped `project3-weekly-adaptive-scheduler.service`.
+- Left the pool API, dashboard, supervisor, and worker machines running.
+- Recorded `deadline_freeze_planning` in the pool event log.
+
+Reason:
+
+- the phase orchestrator reported `phase_orchestrator_exhausted`, meaning all
+  configured phases were already present and the seed18-seed20 adaptive range
+  was exhausted;
+- the adaptive scheduler had `promote_deferred=false`, but keeping it active was
+  no longer useful for the Sunday night finish-only mode;
+- stopping both services prevents accidental new broad work or reordering while
+  the workers finish the active queue.
+
+Current closeout mode:
+
+1. Finish only the active `pending` and `running` queue.
+2. Do not promote deferred work.
+3. Do not enqueue seed21+ or any broad new sweep.
+4. Keep all worker machines consuming the active queue until it is empty.
+5. After completion, consolidate OLAP, snapshot best full-year and best partial
+   candidates, then prepare for the Monday `doin` handoff.
+
+Status correction - 2026-07-05 15:46 COT:
+
+- The first simple throughput estimate overcounted completed jobs because it
+  compared ISO timestamps as strings. The corrected `julianday(completed_at)`
+  throughput was about 18-22 jobs/hour.
+- At that corrected rate, the full active queue would not finish cleanly before
+  the Monday handoff.
+- Therefore 120 low-priority tail jobs with `priority >= 60418` were deferred
+  with reason
+  `deadline_closeout_deferred_2026_07_05_low_priority_tail_priority_ge_60418`.
+- The remaining active queue is the bounded ETHUSDT 4h `risk_adjusted_reward`
+  phase7 block plus the three already-running jobs.
+
+Status correction - 2026-07-05 16:45 COT:
+
+- The opportunity/bloom portfolio idea is useful and is already part of the
+  main protocol, but it must not trigger another broad Sunday-night sweep.
+- A handoff pack was created at
+  `work_plan/PROJECT3_DOIN_HANDOFF_CANDIDATE_PACK_2026_07_05.md`.
+- Monday `doin` preparation should start from:
+  1. ETHUSDT 4h kitchen_sink_guarded SAC full-year control
+     (`fixed_rv0p10_sl1p5_tp2`, 52 weeks);
+  2. SOLUSDT 4h kitchen_sink_guarded SAC bloom seed
+     (`margin_aware_rv0p50`, 10 weeks observed).
+- The remaining ETHUSDT 4h phase7 queue should continue running to completion;
+  do not reactivate deferred broad jobs before the RTX 5090 / eGPU handoff.
+
+Status correction - 2026-07-05 16:51 COT:
+
+- The user required that the selected work finish today, not merely before the
+  Monday handoff.
+- The pending queue was narrowed from 192 to 126 jobs:
+  - keep all pending ETHUSDT 4h phase7 `rel_volume=0.10` jobs because the best
+    full-year control uses `rel_volume=0.10`;
+  - keep only the top 30 pending ETHUSDT 4h phase7 `rel_volume=0.075` jobs by
+    scheduler priority;
+  - defer the remaining 66 lower-priority `rel_volume=0.075` jobs with reason
+    `deadline_today_trim_2026_07_05_keep_rv0p10_all_and_top30_rv0p075`.
+- This keeps the machines busy with the most promising bounded work while
+  targeting completion before midnight COT.
+
+Status correction - 2026-07-05 17:15 COT:
+
+- Throughput drift made the prior ETA too close to midnight.
+- A second small deadline trim kept all pending `rel_volume=0.10` jobs and only
+  the top 15 pending `rel_volume=0.075` jobs.
+- 15 additional lower-priority `rel_volume=0.075` jobs were deferred with reason
+  `deadline_today_trim2_2026_07_05_keep_rv0p10_all_and_top15_rv0p075`.
+- This leaves the active queue focused on the best-known full-year risk region
+  while still retaining a small `rel_volume=0.075` comparison sample.
