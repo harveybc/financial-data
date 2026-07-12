@@ -19,7 +19,7 @@ SSH_PORT = "22022"
 WORKER_MAX_JOBS = int(os.environ.get("PROJECT3_STAGE31_WORKER_MAX_JOBS", "10"))
 HOSTS = {
     "dragon": "192.0.2.13",
-    "gamma": "192.0.2.15",
+    "gamma": "192.0.2.16",
 }
 RUNNABLE_STATUSES = {"", "pending", "queued", "retry", "needs_retry"}
 ACTIVE_STATUSES = {"preparing_input", "training", "running", "registered"}

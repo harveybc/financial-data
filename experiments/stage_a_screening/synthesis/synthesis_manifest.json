@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T01:04:03.021102+00:00",
+  "generated_at": "2026-07-08T03:13:44.511760+00:00",
   "outputs": [
     "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/synthesis/feature_technique_value_ranking.md",
     "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/synthesis/data_source_value_ranking.md",
@@ -10,7 +10,7 @@
     "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/synthesis/leakage_and_availability_audit_summary.md",
     "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/synthesis/PROJECT_3_FINAL_REPORT.md"
   ],
-  "runs": 5669,
+  "runs": 6397,
   "stage": "3.2",
   "stage_b_ready": 0,
   "status": "diagnostic_synthesis_complete_stage_c_blocked"

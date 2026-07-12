@@ -1,6 +1,6 @@
 # Subscription Cancellation Recommendations
 
-Generated: 2026-06-04T01:04:02.990978+00:00
+Generated: 2026-07-08T03:13:44.477398+00:00
 
 No paid-source cancellation is recommended from the current evidence. The correct action is `DEFER`, because no candidate passed Stage B.
 

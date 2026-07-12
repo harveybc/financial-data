@@ -60,6 +60,7 @@ experiments/stage_a_screening/configs/
 experiments/stage_a_screening/job_timing/
 experiments/stage_a_screening/queues/
 experiments/stage_a_screening/runs/
+experiments/stage_a_screening/no_trade_state/
 experiments/weekly_walkforward_pool/
 experiments/oracle_behavior_pretraining/labels/
 experiments/oracle_behavior_pretraining/labels_auto/

@@ -2050,3 +2050,17 @@ Current retention rule:
   fresh failover backup exists;
 - keep code, scripts, and procedures in GitHub; keep compressed SQLite failover
   packs replicated across machines outside Git.
+
+### Final Consolidated OLAP Archive - 2026-07-12
+
+The integrity-checked handoff snapshot and all compressed OLAP exports are
+published as GitHub release `project3-olap-2026-07-12`. Counts, hashes,
+restoration steps and retention scope are recorded in:
+
+```text
+financial-data/work_plan/PROJECT3_OLAP_ARCHIVE_2026_07_12.md
+```
+
+This archive is the evidence boundary for the completed Project 3 campaign.
+Historical deferred jobs are preserved for analysis but must not restart
+automatically when another workstation becomes supervisor.

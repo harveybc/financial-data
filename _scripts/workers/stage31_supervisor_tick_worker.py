@@ -24,7 +24,7 @@ PYTHON = os.environ.get("PROJECT3_PYTHON", sys.executable)
 PYTHON_Q = shlex.quote(PYTHON)
 SSH = {
     "dragon": "ssh -p 22022 harveybc@192.0.2.13",
-    "gamma": "ssh -p 22022 harveybc@192.0.2.15",
+    "gamma": "ssh -p 22022 harveybc@192.0.2.16",
 }
 STRIP_MACHINE_FIELDS = {
     "completed_at",
@@ -218,13 +218,13 @@ def sync_remote(machine: str) -> None:
         f"_metadata/stage31_worker_{machine}.json",
         f"experiments/stage_a_screening/queues/{machine}.json",
     ]:
-        src = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:{PROJECT_ROOT / rel}"
+        src = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.16'}:{PROJECT_ROOT / rel}"
         dst = PROJECT_ROOT / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         run(f"rsync -az -e 'ssh -p 22022' {src} {dst} || true", timeout=30)
 
     src = (
-        f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:"
+        f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.16'}:"
         f"{PROJECT_ROOT / 'artifacts' / 'run_ledger_events' / f'{machine}.jsonl'}"
     )
     dst = PROJECT_ROOT / "artifacts" / "run_ledger_events" / f"{machine}.remote.jsonl"
@@ -232,7 +232,7 @@ def sync_remote(machine: str) -> None:
     run(f"rsync -az -e 'ssh -p 22022' {src} {dst} || true", timeout=30)
 
     src_progress = (
-        f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:"
+        f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.16'}:"
         f"{PROJECT_ROOT / 'experiments' / 'stage_a_screening' / 'runs' / machine}/*_training_progress.json"
     )
     dst_progress = PROJECT_ROOT / "experiments" / "stage_a_screening" / "runs" / machine / ""
@@ -242,7 +242,7 @@ def sync_remote(machine: str) -> None:
 
 def push_remote_queue(machine: str) -> None:
     rel = f"experiments/stage_a_screening/queues/{machine}.json"
-    dst = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.15'}:{PROJECT_ROOT / rel}"
+    dst = f"harveybc@{'192.0.2.13' if machine == 'dragon' else '192.0.2.16'}:{PROJECT_ROOT / rel}"
     run(f"rsync -az -e 'ssh -p 22022' {PROJECT_ROOT / rel} {dst} || true", timeout=30)
 
 

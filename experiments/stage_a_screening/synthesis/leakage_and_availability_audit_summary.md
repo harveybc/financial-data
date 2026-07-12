@@ -1,6 +1,6 @@
 # Leakage And Availability Audit Summary
 
-Generated: 2026-06-04T01:04:03.015724+00:00
+Generated: 2026-07-08T03:13:44.505976+00:00
 
 Stage C remains untouched. No 2025-01-01+ data may be inspected for tuning.
 

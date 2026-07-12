@@ -1,6 +1,6 @@
 # Project 3 Final Report Draft
 
-Generated: 2026-06-04T01:04:03.020637+00:00
+Generated: 2026-07-08T03:13:44.511334+00:00
 
 ## Executive Summary
 
@@ -10,7 +10,7 @@ Stage A and the current Stage B trace audit are complete enough for diagnostic s
 
 | Gate | Current result |
 | --- | --- |
-| Stage A indexed runs | 5669 |
+| Stage A indexed runs | 6397 |
 | Stage B ready candidates | 0 |
 | DSR pass/fail | 0/693 |
 | Return traces found/missing | 1346/0 |
@@ -22,19 +22,19 @@ Stage A and the current Stage B trace audit are complete enough for diagnostic s
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `ethusdt_perp_15m_sac_tech_full_direct_atr_sltp_s1_20260503T141731Z_project3_stage31_firstwave` | ethusdt_perp | 15m | sac | tech_full | 0.5294 | 0.0699 | 198 |
 | 2 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s0_20260503T204356Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 3 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s1_20260503T204807Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 4 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260516T053653Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 5 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s0_20260503T194830Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
-| 6 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s1_20260503T195207Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
-| 7 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260509T060619Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 8 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260530T102748Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 9 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
-| 10 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s1_20260524T104911Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 11 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260530T104519Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
-| 12 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s1_20260524T091707Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
-| 13 | `ethusdt_perp_4h_sac_tech_full_direct_atr_sltp_s2_20260509T063348Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_full | 0.1750 | 0.0311 | 498 |
-| 14 | `ethusdt_perp_4h_sac_tech_full_direct_atr_sltp_s2_20260530T101542Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_full | 0.1750 | 0.0311 | 498 |
-| 15 | `ethusdt_perp_4h_sac_tech_full_direct_atr_sltp_s1_20260524T085243Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_full | 0.1750 | 0.0311 | 498 |
+| 3 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s0_20260704T150341Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
+| 4 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s1_20260503T204807Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
+| 5 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260516T053653Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
+| 6 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260705T121836Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
+| 7 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s0_20260503T194830Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
+| 8 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s0_20260704T140312Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
+| 9 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s1_20260503T195207Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
+| 10 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s1_20260704T140742Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
+| 11 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260509T060619Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
+| 12 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s2_20260530T102748Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
+| 13 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260509T055037Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
+| 14 | `ethusdt_perp_4h_sac_tech_stat_direct_atr_sltp_s2_20260705T114308Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | tech_stat | 0.1821 | 0.0466 | 166 |
+| 15 | `ethusdt_perp_4h_sac_sota_low_cost_direct_atr_sltp_s1_20260524T104911Z_project3_stage31_firstwave` | ethusdt_perp | 4h | sac | sota_low_cost | 0.1821 | 0.0466 | 166 |
 
 ## Decision
 

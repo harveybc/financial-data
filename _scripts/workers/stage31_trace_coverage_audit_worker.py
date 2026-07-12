@@ -19,7 +19,7 @@ SSH_PORT = os.environ.get("PROJECT3_SSH_PORT", "22022")
 MACHINES: dict[str, str | None] = {
     "omega": None,
     "dragon": "192.0.2.13",
-    "gamma": "192.0.2.15",
+    "gamma": "192.0.2.16",
 }
 
 REQUIRED_TRACE_COLUMNS = {

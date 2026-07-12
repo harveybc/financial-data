@@ -132,11 +132,11 @@ probe_curator() {
 }
 
 dragon_status="$(probe_machine dragon 192.0.2.13)"
-gamma_status="$(probe_machine gamma 192.0.2.15)"
+gamma_status="$(probe_machine gamma 192.0.2.16)"
 omega_status="$("$HERMES_BIN" status 2>&1 | sed -n '1,35p')"
 omega_curator="$("$HERMES_BIN" curator status 2>&1 | sed -n '1,16p'; test -f /home/harveybc/.hermes/skills/data-science/project3-autonomous-supervisor/SKILL.md && echo PROJECT3_SKILL_INSTALLED)"
 dragon_curator="$(probe_curator dragon 192.0.2.13)"
-gamma_curator="$(probe_curator gamma 192.0.2.15)"
+gamma_curator="$(probe_curator gamma 192.0.2.16)"
 if [ "$PROJECT3_ENABLE_LEGACY_STAGE1_CRON" = "1" ]; then
   dispatch_output="$(PYTHONDONTWRITEBYTECODE=1 python "$PROJECT_ROOT/_scripts/workers/stage13_autonomous_orchestrator.py" 2>&1)"
   dispatch_rc=$?

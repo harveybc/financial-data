@@ -26,7 +26,7 @@ LOCAL_TZ = ZoneInfo(os.environ.get("PROJECT3_LOCAL_TZ", "America/Bogota"))
 
 REMOTE = {
     "dragon": ("harveybc@192.0.2.13", "22022"),
-    "gamma": ("harveybc@192.0.2.15", "22022"),
+    "gamma": ("harveybc@192.0.2.16", "22022"),
 }
 ACTIVE = {"training", "running", "registered", "preparing_input"}
 RUNNABLE = {"", "pending", "queued", "retry", "needs_retry"}

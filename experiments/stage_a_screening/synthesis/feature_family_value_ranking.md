@@ -1,6 +1,6 @@
 # Feature Family Value Ranking
 
-Generated: 2026-06-04T01:04:02.998199+00:00
+Generated: 2026-07-08T03:13:44.484392+00:00
 
 This report consumes the Stage A family-ablation artifact when available and falls back to matched diagnostic deltas.
 

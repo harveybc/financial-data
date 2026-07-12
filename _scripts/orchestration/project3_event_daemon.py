@@ -38,7 +38,7 @@ class Machine:
 MACHINES = (
     Machine("omega"),
     Machine("dragon", "192.0.2.13"),
-    Machine("gamma", "192.0.2.15"),
+    Machine("gamma", "192.0.2.16"),
 )
 
 ASSETS = ("btcusdt", "ethusdt", "btcusdt_perp", "eurusd", "usdjpy")

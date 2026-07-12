@@ -28,12 +28,15 @@ mkdir -p "$PROJECT_ROOT/_logs/supervisor_reports"
   PYTHONDONTWRITEBYTECODE=1 nice -n 5 python -u _scripts/workers/stage31_combine_ledger_worker.py
 
   ledger_hash="$(sha256sum "$PROJECT_ROOT/artifacts/run_ledger.jsonl" | awk '{print $1}')"
-  previous_hash=""
+  index_hash="$(sha256sum "$INDEX_FILE" | awk '{print $1}')"
+  previous_ledger_hash=""
+  previous_index_hash=""
   if [ -f "$STATE_FILE" ]; then
-    previous_hash="$(grep '^ledger_hash=' "$STATE_FILE" | tail -1 | cut -d= -f2- || true)"
+    previous_ledger_hash="$(grep '^ledger_hash=' "$STATE_FILE" | tail -1 | cut -d= -f2- || true)"
+    previous_index_hash="$(grep '^index_hash=' "$STATE_FILE" | tail -1 | cut -d= -f2- || true)"
   fi
-  if [ "$ledger_hash" = "$previous_hash" ] && [ -s "$INDEX_FILE" ] && [ -s "$SUMMARY_FILE" ]; then
-    echo "stage32_hardening_refresh: skipped synthesis; ledger hash unchanged ($ledger_hash)"
+  if [ "$ledger_hash" = "$previous_ledger_hash" ] && [ "$index_hash" = "$previous_index_hash" ] && [ -s "$INDEX_FILE" ] && [ -s "$SUMMARY_FILE" ]; then
+    echo "stage32_hardening_refresh: skipped synthesis; ledger and index hashes unchanged (ledger=$ledger_hash, index=$index_hash)"
     exit 0
   fi
 
@@ -42,6 +45,7 @@ mkdir -p "$PROJECT_ROOT/_logs/supervisor_reports"
   mkdir -p "$(dirname "$STATE_FILE")"
   {
     echo "ledger_hash=$ledger_hash"
+    echo "index_hash=$index_hash"
     echo "updated_at=$(date --iso-8601=seconds)"
   } > "$STATE_FILE"
   echo "stage32_hardening_refresh: done"
