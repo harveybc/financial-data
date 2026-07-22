@@ -43,7 +43,7 @@ SMOKE_SHORTLIST_JSON = OUT_ROOT / "selected_feature_contracts_smoke_shortlist.js
 
 AGENT_MULTI_TOOL = AGENT_MULTI_ROOT / "tools" / "project3_stage3x_sac_smoke_plan.py"
 AGENT_MULTI_OUTPUT_DIR = AGENT_MULTI_ROOT / "experiments" / "stage3x_sac_smoke_plan"
-PYTHON_BIN = Path("/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON_BIN = Path("/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 
 SCHEMA_VERSION = "project3_stage3x_sac_smoke_request_v1"
 HELDOUT_START = "2025-01-01"

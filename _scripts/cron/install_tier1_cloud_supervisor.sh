@@ -12,7 +12,7 @@ WRAPPER="$PROJECT_ROOT/_scripts/cron/run_tier1_supervisor.sh"
 source "$HOME/.bashrc" >/dev/null 2>&1 || true
 if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
   source "$HOME/anaconda3/etc/profile.d/conda.sh"
-  conda activate tensorflow >/dev/null 2>&1 || true
+  conda activate trading-stack >/dev/null 2>&1 || true
 fi
 
 mkdir -p "$(dirname "$CRON_LOG")"

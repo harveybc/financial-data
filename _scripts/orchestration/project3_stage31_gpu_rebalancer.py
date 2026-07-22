@@ -14,7 +14,7 @@ from typing import Any
 
 
 ROOT = Path(os.environ.get("PROJECT3_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
-PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 SSH_PORT = "22022"
 WORKER_MAX_JOBS = int(os.environ.get("PROJECT3_STAGE31_WORKER_MAX_JOBS", "10"))
 HOSTS = {
@@ -178,7 +178,7 @@ def launch_worker(machine: str) -> str:
     cmd = (
         "source ~/.bashrc >/dev/null 2>&1 || true; "
         "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1 || true; "
-        "conda activate tensorflow >/dev/null 2>&1 || true; "
+        "conda activate trading-stack >/dev/null 2>&1 || true; "
         f"cd {shlex.quote(str(ROOT))} || exit 1; "
         f"setsid -f python _scripts/workers/stage31_agent_multi_run_worker.py --machine {shlex.quote(machine)} "
         f"--max-jobs {WORKER_MAX_JOBS} --timeout-minutes 180 "

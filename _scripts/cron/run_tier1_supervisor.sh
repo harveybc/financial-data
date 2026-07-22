@@ -76,7 +76,7 @@ mkdir -p "$LOG_DIR"
 source "$HOME/.bashrc" >/dev/null 2>&1 || true
 if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
   source "$HOME/anaconda3/etc/profile.d/conda.sh"
-  conda activate tensorflow >/dev/null 2>&1 || true
+  conda activate trading-stack >/dev/null 2>&1 || true
 fi
 
 "$HERMES_BIN" curator resume >/dev/null 2>&1 || true

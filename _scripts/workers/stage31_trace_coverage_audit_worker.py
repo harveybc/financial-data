@@ -13,7 +13,7 @@ from typing import Any
 
 
 ROOT = Path(os.environ.get("PROJECT3_ROOT", "/home/harveybc/Documents/GitHub/financial-data"))
-PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 SSH_PORT = os.environ.get("PROJECT3_SSH_PORT", "22022")
 
 MACHINES: dict[str, str | None] = {
@@ -49,7 +49,7 @@ def machine_shell(machine: str, cmd: str, timeout: int = 60) -> subprocess.Compl
     prefix = (
         "source ~/.bashrc >/dev/null 2>&1 || true; "
         "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1 || true; "
-        "conda activate tensorflow >/dev/null 2>&1 || true; "
+        "conda activate trading-stack >/dev/null 2>&1 || true; "
         f"cd {shlex.quote(str(ROOT))} || exit 1; "
     )
     full = prefix + cmd

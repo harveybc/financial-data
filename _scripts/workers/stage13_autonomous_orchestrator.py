@@ -25,7 +25,7 @@ def remote(host: str, command: str, timeout: int = 60) -> subprocess.CompletedPr
     wrapped = (
         "source ~/.bashrc >/dev/null 2>&1; "
         "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1; "
-        "conda activate tensorflow >/dev/null 2>&1; "
+        "conda activate trading-stack >/dev/null 2>&1; "
         f"cd {shlex.quote(str(ROOT))}; {command}"
     )
     return run(["ssh", host, "bash", "-lc", wrapped], timeout=timeout)

@@ -19,7 +19,7 @@ LOG_DIR = ROOT / "_logs" / "supervisor_reports"
 STATE_PATH = LOG_DIR / "project3_event_daemon_state.json"
 REPORT_PATH = LOG_DIR / "project3_event_daemon_status.md"
 EVENT_LOG = LOG_DIR / "project3_event_daemon_events.jsonl"
-PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 SSH_PORT = 22022
 SSH_USER = "harveybc"
 
@@ -95,7 +95,7 @@ def machine_shell(machine: Machine, cmd: str, timeout: int = 120) -> subprocess.
     prefix = (
         "source ~/.bashrc >/dev/null 2>&1 || true; "
         "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1 || true; "
-        "conda activate tensorflow >/dev/null 2>&1 || true; "
+        "conda activate trading-stack >/dev/null 2>&1 || true; "
         f"cd {shlex.quote(str(ROOT))} || exit 1; "
     )
     full = prefix + cmd

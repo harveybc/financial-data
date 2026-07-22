@@ -23,7 +23,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 AGENT_MULTI_ROOT = Path("/home/harveybc/Documents/GitHub/agent-multi")
-PYTHON = Path("/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON = Path("/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 AGENT_MULTI_TOOL = AGENT_MULTI_ROOT / "tools" / "project3_stageb_run_plan.py"
 AGENT_MULTI_TEMPLATE = (
     AGENT_MULTI_ROOT / "examples" / "config" / "project3_ethusdt_4h_sac_train_val_test_v3.json"

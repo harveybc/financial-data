@@ -45,7 +45,7 @@ STRIP_MACHINE_FIELDS = {
 }
 PREFIX = (
     "source ~/.bashrc >/dev/null 2>&1; "
-    "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1 && conda activate tensorflow; "
+    "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1 && conda activate trading-stack; "
 )
 
 

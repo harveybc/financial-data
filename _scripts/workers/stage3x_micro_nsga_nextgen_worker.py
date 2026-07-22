@@ -19,7 +19,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 AGENT_MULTI_ROOT = ROOT.parent / "agent-multi"
-PYTHON_BIN = Path("/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON_BIN = Path("/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 AGENT_MULTI_TOOL = AGENT_MULTI_ROOT / "tools" / "project3_stage3x_sac_smoke_plan.py"
 
 DEFAULT_MICRO_SYNTHESIS = (

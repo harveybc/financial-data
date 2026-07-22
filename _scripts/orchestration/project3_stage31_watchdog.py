@@ -19,7 +19,7 @@ LOG_DIR = ROOT / "_logs" / "supervisor_reports"
 REPORT_PATH = LOG_DIR / "stage31_watchdog.md"
 STATE_PATH = LOG_DIR / "stage31_watchdog.json"
 EVENT_LOG = LOG_DIR / "stage31_watchdog_events.jsonl"
-PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON = os.environ.get("PROJECT3_PYTHON", "/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 SSH_PORT = "22022"
 WORKER_MAX_JOBS = int(os.environ.get("PROJECT3_STAGE31_WORKER_MAX_JOBS", "10"))
 
@@ -60,7 +60,7 @@ def machine_shell(machine: Machine, cmd: str, timeout: int = 60) -> subprocess.C
     prefix = (
         "source ~/.bashrc >/dev/null 2>&1 || true; "
         "source /home/harveybc/anaconda3/etc/profile.d/conda.sh >/dev/null 2>&1 || true; "
-        "conda activate tensorflow >/dev/null 2>&1 || true; "
+        "conda activate trading-stack >/dev/null 2>&1 || true; "
         f"cd {shlex.quote(str(ROOT))} || exit 1; "
     )
     full = prefix + cmd

@@ -25,7 +25,7 @@ OUT_JSON = PLAN_DIR / "stage_b_cluster_live_status.json"
 OUT_CSV = PLAN_DIR / "stage_b_cluster_live_status.csv"
 OUT_MD = PLAN_DIR / "stage_b_cluster_live_status.md"
 MACHINES = ("dragon", "gamma", "omega")
-REMOTE_PYTHON = "/home/harveybc/anaconda3/envs/tensorflow/bin/python"
+REMOTE_PYTHON = "/home/harveybc/anaconda3/envs/trading-stack/bin/python"
 WORKER = "_scripts/workers/stage_b_machine_live_status_worker.py"
 POLL_INTERVAL_SECONDS = 60
 

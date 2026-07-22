@@ -7,7 +7,7 @@ GLOBAL_STATUS="$LOG_DIR/global_status.md"
 QUEUE="$LOG_DIR/escalation_queue.json"
 CONTEXT_PACKET="$LOG_DIR/tier2_context_packet.md"
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-SSH_PREFIX="bash -lc 'source ~/.bashrc >/dev/null 2>&1; source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda activate tensorflow >/dev/null 2>&1;"
+SSH_PREFIX="bash -lc 'source ~/.bashrc >/dev/null 2>&1; source /home/harveybc/anaconda3/etc/profile.d/conda.sh && conda activate trading-stack >/dev/null 2>&1;"
 HERMES_BIN="${HERMES_BIN:-$HOME/.local/bin/hermes}"
 PROJECT3_HERMES_SKILLS="${PROJECT3_HERMES_SKILLS:-project3-autonomous-supervisor,project3-stage31-autonomous-worker,project3-realtime-telegram-orchestration,project3-deliverable-validator,systematic-debugging,subagent-driven-development,hermes-agent-skill-authoring}"
 PROJECT3_ENABLE_LEGACY_STAGE1_CRON="${PROJECT3_ENABLE_LEGACY_STAGE1_CRON:-0}"
@@ -82,7 +82,7 @@ trap 'rm -rf "$RUN_LOCK"' EXIT
 source "$HOME/.bashrc" >/dev/null 2>&1 || true
 if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
   source "$HOME/anaconda3/etc/profile.d/conda.sh"
-  conda activate tensorflow >/dev/null 2>&1 || true
+  conda activate trading-stack >/dev/null 2>&1 || true
 fi
 
 if [ ! -f "$QUEUE" ]; then

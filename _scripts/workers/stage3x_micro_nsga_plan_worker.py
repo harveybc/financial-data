@@ -24,7 +24,7 @@ OUT_SELECTED = OUT_ROOT / "selected_feature_contracts_micro_nsga_seed_population
 
 AGENT_MULTI_TOOL = AGENT_MULTI_ROOT / "tools" / "project3_stage3x_sac_smoke_plan.py"
 AGENT_MULTI_OUTPUT_DIR = AGENT_MULTI_ROOT / "experiments" / "stage3x_micro_nsga_plan"
-PYTHON_BIN = Path("/home/harveybc/anaconda3/envs/tensorflow/bin/python")
+PYTHON_BIN = Path("/home/harveybc/anaconda3/envs/trading-stack/bin/python")
 
 SCHEMA_VERSION = "project3_stage3x_micro_nsga_plan_v1"
 SELECTED_SCHEMA_VERSION = "project3_stage3x_selected_feature_contracts_v1"
