@@ -130,6 +130,7 @@
   "output_csv": "/home/harveybc/Documents/GitHub/financial-data/experiments/stage_a_screening/inputs/usdcad/4h/kitchen_sink_guarded/train.csv",
   "preset": "kitchen_sink_guarded",
   "rows": 28576,
+  "sha256": "f2fa13f4ab9df7cb6577e9785d0e5952362c554e24a2e28c79dffdc8b698818b",
   "sources": [
     "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_data/usdcad/4h.parquet",
     "/home/harveybc/Documents/GitHub/financial-data/features/trading_asset_features/usdcad/4h/technical.parquet",
