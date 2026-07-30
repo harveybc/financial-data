@@ -1,0 +1,265 @@
+{
+  "assets": [
+    {
+      "broker_availability": "pending_practice_preflight",
+      "canonical_asset": "eurusd",
+      "e4_validation": null,
+      "execution_permission": "read_only",
+      "historical_activity_proxy": {
+        "annual_rap": 0.0,
+        "annual_return": 0.0,
+        "candidate_id": "eurusd_1h_fx_full_exec_annual_diversity_survey_fast40k_v2_sac_annual_fyv2022_fyt2023_scratch_1y",
+        "experiment_phase": "annual_diversity_survey_fast40k_v2",
+        "mean_weekly_trades": 0.0,
+        "model_family": "sac",
+        "unique_validation_weeks": 51,
+        "worst_weekly_rap": 0.0
+      },
+      "oanda_instrument": "EUR_USD",
+      "observation_priority_score": 34.5,
+      "phase": "day_1",
+      "portfolio_relevance": 1.0,
+      "priority": 1,
+      "role": "execution_control",
+      "score_components": {
+        "e4_seed_stability": 0.25,
+        "e4_validation_quality_rank": 0.35,
+        "evidence_coverage": 0.35,
+        "historical_activity": 0.0,
+        "portfolio_relevance": 1.0
+      },
+      "timeframe": "1h"
+    },
+    {
+      "broker_availability": "pending_practice_preflight",
+      "canonical_asset": "gbpjpy",
+      "e4_validation": {
+        "annual_rap_seed_stddev": 0.016186139548145923,
+        "best_artifact_job_id": "e4__gbpjpy__1h__seed2701__c977321ae9c812ab",
+        "best_seed_annual_rap": -0.05920652973367387,
+        "evaluation_protocol_id": "project3.feature_proxy.one_bar_execution.v3",
+        "feature_selection_method": "mutual_info_topk",
+        "mean_annual_rap": -0.07344154569558056,
+        "mean_annual_return": -0.017393180026298933,
+        "mean_evaluation_weeks": 53.0,
+        "mean_max_drawdown": 0.01900831970094359,
+        "model_family": "sac",
+        "preprocessing_mode": "rolling_zscore",
+        "seed_count": 3,
+        "selected_feature_count": 32,
+        "worst_seed_annual_rap": -0.09608354756945282
+      },
+      "execution_permission": "read_only",
+      "historical_activity_proxy": {
+        "annual_rap": -0.03324394261403857,
+        "annual_return": -0.0023348155862902287,
+        "candidate_id": "gbpjpy_1h_fx_full_exec_annual_diversity_survey_fast40k_v2_sac_annual_fyv2022_fyt2023_scratch_1y",
+        "experiment_phase": "annual_diversity_survey_fast40k_v2",
+        "mean_weekly_trades": 10.862745098039216,
+        "model_family": "sac",
+        "unique_validation_weeks": 51,
+        "worst_weekly_rap": -0.00408961432460685
+      },
+      "oanda_instrument": "GBP_JPY",
+      "observation_priority_score": 80.311,
+      "phase": "day_1",
+      "portfolio_relevance": 0.9,
+      "priority": 2,
+      "role": "activity_diversification_shadow",
+      "score_components": {
+        "e4_seed_stability": 0.676277,
+        "e4_validation_quality_rank": 0.333333,
+        "evidence_coverage": 1.0,
+        "historical_activity": 1.0,
+        "portfolio_relevance": 0.9
+      },
+      "timeframe": "1h"
+    },
+    {
+      "broker_availability": "pending_practice_preflight",
+      "canonical_asset": "usdcad",
+      "e4_validation": {
+        "annual_rap_seed_stddev": 0.0032370289971468628,
+        "best_artifact_job_id": "e4__usdcad__4h__seed2703__fdc025aaa9b531a9",
+        "best_seed_annual_rap": -0.002322975865556995,
+        "evaluation_protocol_id": "project3.feature_proxy.one_bar_execution.v3",
+        "feature_selection_method": "mutual_info_topk",
+        "mean_annual_rap": -0.006897942572675685,
+        "mean_annual_return": -0.0005315456236476187,
+        "mean_evaluation_weeks": 53.0,
+        "mean_max_drawdown": 0.0011736491601611085,
+        "model_family": "sac",
+        "preprocessing_mode": "rolling_zscore",
+        "seed_count": 3,
+        "selected_feature_count": 12,
+        "worst_seed_annual_rap": -0.009326119970604766
+      },
+      "execution_permission": "read_only",
+      "historical_activity_proxy": {
+        "annual_rap": 0.0,
+        "annual_return": 0.0,
+        "candidate_id": "usdcad_4h_fx_full_exec_annual_diversity_survey_fast40k_v2_sac_annual_fyv2022_fyt2023_scratch_1y",
+        "experiment_phase": "annual_diversity_survey_fast40k_v2",
+        "mean_weekly_trades": 0.0,
+        "model_family": "sac",
+        "unique_validation_weeks": 51,
+        "worst_weekly_rap": 0.0
+      },
+      "oanda_instrument": "USD_CAD",
+      "observation_priority_score": 74.029,
+      "phase": "day_1",
+      "portfolio_relevance": 1.0,
+      "priority": 3,
+      "role": "long_horizon_alpha_shadow",
+      "score_components": {
+        "e4_seed_stability": 0.935259,
+        "e4_validation_quality_rank": 1.0,
+        "evidence_coverage": 1.0,
+        "historical_activity": 0.0,
+        "portfolio_relevance": 1.0
+      },
+      "timeframe": "4h"
+    },
+    {
+      "broker_availability": "pending_practice_preflight",
+      "canonical_asset": "usdjpy",
+      "e4_validation": {
+        "annual_rap_seed_stddev": 0.0065406196577624835,
+        "best_artifact_job_id": "e4__usdjpy__1h__seed2701__7e94950e30223142",
+        "best_seed_annual_rap": -0.07703308495565653,
+        "evaluation_protocol_id": "project3.feature_proxy.one_bar_execution.v3",
+        "feature_selection_method": "mutual_info_topk",
+        "mean_annual_rap": -0.08454655913933513,
+        "mean_annual_return": -0.02553499100883035,
+        "mean_evaluation_weeks": 53.0,
+        "mean_max_drawdown": 0.027543858806624646,
+        "model_family": "sac",
+        "preprocessing_mode": "rolling_zscore",
+        "seed_count": 3,
+        "selected_feature_count": 32,
+        "worst_seed_annual_rap": -0.09297559090613447
+      },
+      "execution_permission": "read_only",
+      "historical_activity_proxy": {
+        "annual_rap": -0.01814466000713792,
+        "annual_return": 0.003970051168073252,
+        "candidate_id": "usdjpy_1h_fx_full_exec_annual_diversity_survey_fast40k_v2_sac_annual_fyv2022_fyt2023_scratch_1y",
+        "experiment_phase": "annual_diversity_survey_fast40k_v2",
+        "mean_weekly_trades": 8.27450980392157,
+        "model_family": "sac",
+        "unique_validation_weeks": 51,
+        "worst_weekly_rap": -0.0023677658912113764
+      },
+      "oanda_instrument": "USD_JPY",
+      "observation_priority_score": 71.759,
+      "phase": "day_1",
+      "portfolio_relevance": 0.7,
+      "priority": 4,
+      "role": "activity_alternate",
+      "score_components": {
+        "e4_seed_stability": 0.869188,
+        "e4_validation_quality_rank": 0.0,
+        "evidence_coverage": 1.0,
+        "historical_activity": 0.928844,
+        "portfolio_relevance": 0.7
+      },
+      "timeframe": "1h"
+    },
+    {
+      "broker_availability": "pending_practice_preflight",
+      "canonical_asset": "nzdusd",
+      "e4_validation": {
+        "annual_rap_seed_stddev": 0.0005495844325299688,
+        "best_artifact_job_id": "e4__nzdusd__1h__seed2701__eb64de262982b935",
+        "best_seed_annual_rap": -0.009044721675143657,
+        "evaluation_protocol_id": "project3.feature_proxy.one_bar_execution.v3",
+        "feature_selection_method": "mutual_info_topk",
+        "mean_annual_rap": -0.009530935776525218,
+        "mean_annual_return": -0.0018218916191528045,
+        "mean_evaluation_weeks": 49.0,
+        "mean_max_drawdown": 0.0024029652083310793,
+        "model_family": "sac",
+        "preprocessing_mode": "rolling_zscore",
+        "seed_count": 3,
+        "selected_feature_count": 32,
+        "worst_seed_annual_rap": -0.010299172771546183
+      },
+      "execution_permission": "read_only",
+      "historical_activity_proxy": {
+        "annual_rap": 0.0,
+        "annual_return": 0.0,
+        "candidate_id": "nzdusd_1h_fx_full_exec_annual_diversity_survey_fast40k_v2_sac_annual_fyv2022_fyt2023_scratch_1y",
+        "experiment_phase": "annual_diversity_survey_fast40k_v2",
+        "mean_weekly_trades": 0.0,
+        "model_family": "sac",
+        "unique_validation_weeks": 51,
+        "worst_weekly_rap": 0.0
+      },
+      "oanda_instrument": "NZD_USD",
+      "observation_priority_score": 68.168,
+      "phase": "day_1",
+      "portfolio_relevance": 1.0,
+      "priority": 5,
+      "role": "short_horizon_alpha_shadow",
+      "score_components": {
+        "e4_seed_stability": 0.989008,
+        "e4_validation_quality_rank": 0.666667,
+        "evidence_coverage": 1.0,
+        "historical_activity": 0.0,
+        "portfolio_relevance": 1.0
+      },
+      "timeframe": "1h"
+    },
+    {
+      "broker_availability": "pending_practice_preflight",
+      "canonical_asset": "eurjpy",
+      "e4_validation": null,
+      "execution_permission": "read_only",
+      "historical_activity_proxy": {
+        "annual_rap": 0.004255997693606257,
+        "annual_return": 0.020604737320298883,
+        "candidate_id": "eurjpy_4h_fx_full_exec_annual_diversity_survey_fast40k_v2_sac_annual_fyv2022_fyt2023_scratch_1y",
+        "experiment_phase": "annual_diversity_survey_fast40k_v2",
+        "mean_weekly_trades": 2.6470588235294117,
+        "model_family": "sac",
+        "unique_validation_weeks": 51,
+        "worst_weekly_rap": -0.0017802949046075945
+      },
+      "oanda_instrument": "EUR_JPY",
+      "observation_priority_score": 41.99,
+      "phase": "day_1",
+      "portfolio_relevance": 0.6,
+      "priority": 6,
+      "role": "historical_positive_comparator",
+      "score_components": {
+        "e4_seed_stability": 0.25,
+        "e4_validation_quality_rank": 0.35,
+        "evidence_coverage": 0.35,
+        "historical_activity": 0.539607,
+        "portfolio_relevance": 0.6
+      },
+      "timeframe": "4h"
+    }
+  ],
+  "day_1_metrics": [
+    "instrument_availability",
+    "price_observation_coverage",
+    "spread_bps_p50_p95",
+    "api_error_rate",
+    "transaction_reconciliation"
+  ],
+  "generated_at": "2026-07-30T01:04:37.374655+00:00",
+  "schema": "project3.oanda_practice_asset_selection.v1",
+  "selection_scope": "OANDA Practice execution-reality calibration",
+  "selection_warning": "The score orders observation effort. It is not a financial promotion metric and it does not combine incompatible protocols as profit evidence.",
+  "week_1_metrics": [
+    "protected_order_acceptance_rate",
+    "sl_tp_attachment_rate",
+    "implementation_shortfall",
+    "realized_spread_cost",
+    "financing",
+    "execution_adjusted_weekly_return",
+    "execution_adjusted_weekly_rap",
+    "backtest_live_metric_drift"
+  ]
+}
