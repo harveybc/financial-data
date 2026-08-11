@@ -50,7 +50,8 @@ It does **not**:
 | [`reference_data/`](reference_data) | Reference/static data |
 | [`features/`](features) | Derived feature stores: cross-source features and statistics, learned inputs and learned models; governed by [`features/MANIFEST.json`](features/MANIFEST.json) and [`features/AVAILABILITY_CONTRACT.md`](features/AVAILABILITY_CONTRACT.md), with its own [`features/README.md`](features/README.md) |
 
-Under [`features/learned_inputs/`](features/learned_inputs), per-asset and
+Under `features/learned_inputs/` (untracked local data; tracked parent:
+[`features/`](features)), per-asset and
 per-timeframe directories carry `feature_extractor_config_template.json`
 files — the bridge to
 [feature-extractor](https://github.com/harveybc/feature-extractor), which
@@ -79,12 +80,12 @@ trains the corresponding autoencoder representations (Stage 2.4).
 - `STAGE_*.md` at the root (e.g.
   [`STAGE_2.4_DELIVERABLE.md`](STAGE_2.4_DELIVERABLE.md)) — point-in-time
   deliverable reports per completed stage.
-- [`_metadata/`](_metadata) — data catalog, acquisition logs and
-  validation/preflight records (JSON/CSV) that document what was ingested,
-  when, and with what quality checks.
+- `_metadata/` (untracked private records) — data catalog, acquisition
+  logs and validation/preflight records (JSON/CSV) that document what was
+  ingested, when, and with what quality checks.
 - [`_templates/`](_templates), [`configs/`](configs),
   [`artifacts/`](artifacts), [`deliverables/`](deliverables),
-  [`experiments/`](experiments), [`_logs/`](_logs) — supporting templates,
+  [`experiments/`](experiments), `_logs/` (untracked) — supporting templates,
   run configurations, produced artifacts and logs.
 
 ### Research corpus
@@ -115,7 +116,7 @@ README.
 ## Reproducibility
 
 Every acquisition and derivation is expected to leave a trace: catalog entries
-and acquisition logs in [`_metadata/`](_metadata), manifests and availability
+and acquisition logs in `_metadata/` (untracked), manifests and availability
 contracts under [`features/`](features), dataset hashes recorded in commits
 and deliverable reports, and per-stage validation JSONs. When re-deriving
 data, follow the corresponding `work_plan/` stage document rather than ad-hoc
