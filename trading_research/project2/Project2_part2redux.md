@@ -15,17 +15,18 @@ This plan contains live credentials. Agent MUST observe these rules:
 1. **Do NOT commit this file or any file containing these credentials to git.** Add to `.gitignore` immediately.
 2. **Do NOT echo credentials into logs, stdout, stderr, or any file visible in git.** Scripts load credentials from environment variables, not hardcoded strings.
 3. **Do NOT reproduce credentials in deliverable markdown documents.** Reference "TrueFX credentials from plan" not actual username.
-4. **After Part II-Redux completes, user will rotate credentials.** TrueFX password changeable, FRED key regeneratable.
-5. **This plan file should have restrictive permissions:** `chmod 600` on any machine where copied.
+4. Credentials are provided only through the local process environment.
+5. Any credential previously exposed in version control must be rotated before
+   reuse.
 
-### 0.1 Credentials (for agent use only)
+### 0.1 Required environment variables
 
 **TrueFX:**
-- Username: `<set via TRUEFX_USER>`
-- Password: `[REDACTED_COMPROMISED_PASSWORD]`
+- `TRUEFX_USER`
+- `TRUEFX_PASS`
 
 **FRED API:**
-- API Key: `[REDACTED_COMPROMISED_KEY]`
+- `FRED_API_KEY`
 
 **OANDA:** PENDING (user email not received yet). Non-blocking. Agent proceeds without it.
 
@@ -36,8 +37,8 @@ Agent creates `trading_research/project2/part_II_redux/.env` (gitignored):
 ```
 # DO NOT COMMIT - credentials for Part II-Redux
 export TRUEFX_USER="<set locally>"
-export TRUEFX_PASS="[REDACTED_COMPROMISED_PASSWORD]"
-export FRED_API_KEY="[REDACTED_COMPROMISED_KEY]"
+export TRUEFX_PASS="<set locally>"
+export FRED_API_KEY="<set locally>"
 # OANDA_TOKEN="<pending>"
 # OANDA_ACCOUNT_ID="<pending>"
 # OANDA_ENV="practice"

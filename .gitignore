@@ -4,6 +4,11 @@ _metadata/credential_validation.json
 _metadata/ai_subscriptions.json
 *.env
 .env
+*.pem
+*.p12
+*.key
+credentials/
+secrets/
 
 # Private companion docs containing actual key values
 *_PRIVATE.md

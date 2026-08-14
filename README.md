@@ -127,9 +127,11 @@ processing.
 - **No credentials, API keys or account identifiers are committed** to this
   repository, and none may be added. Acquisition scripts obtain any required
   access configuration from the local environment, outside version control.
-- Data-source names, account details and commercial terms are deliberately
-  not documented in this README; the repository is private and its datasets
-  are not redistributed.
+- Paid or restricted datasets are not redistributed. This public repository
+  contains acquisition code, metadata contracts and only data whose source
+  permits publication.
+- Private network routes, account fingerprints and operator details remain
+  outside version control. See [`SECURITY.md`](SECURITY.md).
 - The data here is historical research material. Nothing in this repository
   is financial advice.
 
@@ -161,5 +163,5 @@ processing.
 
 ## License
 
-No license file is present; this is a private repository and its contents are
-all rights reserved to the owner.
+No license file is present. No permission to reuse the repository contents is
+granted beyond rights supplied by the original data sources.
