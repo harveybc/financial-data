@@ -1,6 +1,6 @@
 # financial-data
 
-Private data lake and research substrate for the harveybc trading stack. This
+Data lake and research substrate for the harveybc trading stack. This
 repository holds the organized historical market and contextual datasets, the
 feature stores and learned representations derived from them, the automation
 scripts that acquire/validate/transform that data, the staged work plan that
@@ -10,8 +10,24 @@ installable application.
 
 ## Status
 
-**Active** — this repository is the working data and research substrate of the
-stack. It is a **private** repository; its contents are not redistributed.
+**Active** — this is the working data and research substrate of the stack. It
+is a **public** repository (see [`SECURITY.md`](SECURITY.md) for what may and
+may not be committed). Paid or restricted datasets are not redistributed.
+
+**A clone does not contain the data.** `.gitignore` excludes `*.parquet` and
+`*.csv` globally, so `git ls-files '*.parquet'` returns 0 and only 67 CSVs are
+tracked, 59 of them under [`trading_research/`](trading_research). The
+[`market_data/`](market_data) and [`features/`](features) trees ship
+documentation, `data_dictionary.md` and `provenance.json` hash records; the
+data itself exists only on a provisioned machine.
+
+## Run this with an AI agent
+
+Paste this into Claude Code, Cursor, Codex, GitHub Copilot or any coding agent with shell access:
+
+> Read `AGENTS.md` in this repository and follow the **Agent quickstart** section end to end: set up the environment, locate and load one committed dataset, check its integrity against the recorded manifests, then tell me the exact file paths where I can see the results and one analysis I should try first. This is a data repository — do not modify, move or delete any data.
+
+`AGENTS.md` is the [agents.md](https://agents.md) convention, read natively by most coding agents.
 
 ## Role and non-responsibilities
 
@@ -90,12 +106,13 @@ trains the corresponding autoencoder representations (Stage 2.4).
 
 ### Research corpus
 
-[`trading_research/`](trading_research) is the cross-repo research authority:
+[`trading_research/`](trading_research) holds the cross-repo research:
 evaluation harnesses, baseline and sensitivity studies, portfolio analyses,
 extended-history tooling and audit documents that classify and review the
 surrounding repositories. Conclusions recorded here (for example, which
 repositories are superseded) are treated as evidence by the rest of the
-stack's documentation.
+stack's documentation. It also contains the only committed bulk CSV data in
+this repository.
 
 ## Requirements and usage
 
@@ -109,9 +126,16 @@ consumed by sibling repositories as files. Typical usage is:
 3. verify the produced data against the `_metadata/` validation records;
 4. record the stage outcome as a `STAGE_*.md` deliverable.
 
-No installation or test commands are claimed here; script execution depends
-on locally provisioned data-source access and was not exercised for this
-README.
+Step 3 is only possible on a provisioned machine — `_metadata/` is gitignored
+in full and is not present in a clone.
+
+Acquisition and orchestration scripts were not exercised for this README: they
+depend on provider API credentials supplied through the environment, and the
+orchestration layer additionally requires SSH access to a GPU cluster
+configured out of band. See [`AGENTS.md`](AGENTS.md) for the read-only paths
+that were verified — locating and loading a committed dataset, reading
+[`features/MANIFEST.json`](features/MANIFEST.json), and re-checking recorded
+SHA-256 hashes from a `provenance.json`.
 
 ## Reproducibility
 
@@ -141,10 +165,20 @@ processing.
   historical documents; later stages (see
   [`STAGE_2.4_DELIVERABLE.md`](STAGE_2.4_DELIVERABLE.md) and subsequent
   commits) supersede them. Treat root-level stage reports as point-in-time
-  records, not current status.
-- There is no package-level test suite; validation lives in per-stage
-  validation records and [`_scripts/tests/`](_scripts/tests).
-- Large binary datasets make this repository heavy; clone accordingly.
+  records, not current status. `INVENTORY.md`'s totals are stale by orders of
+  magnitude.
+- [`_scripts/tests/`](_scripts/tests) is a real pytest suite: 401 tests
+  collect. Collection is interrupted by one module that imports `yaml`, so run
+  it as
+  `python -m pytest _scripts/tests -q --ignore=_scripts/tests/test_p3x_feature_redundancy_stability.py`.
+  There is no packaging, so there is nothing to install first.
+- Hashes are recorded but not automatically verified. Every data directory has
+  a `provenance.json` carrying per-file SHA-256, but no shipped command
+  re-checks them; the only runtime hash check is the trace-file comparison in
+  `_scripts/workers/stageb_dsr_pbo_evaluator.py`. A ten-line verification
+  recipe is in [`AGENTS.md`](AGENTS.md).
+- The working tree on a provisioned machine is very large. A clone is not,
+  because the bulk data is untracked — see Status.
 
 ## Related repositories
 
