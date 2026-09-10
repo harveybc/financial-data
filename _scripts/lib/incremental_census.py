@@ -51,7 +51,7 @@ UNKNOWN = "UNKNOWN"
 UNAVAILABLE = "UNAVAILABLE"
 
 DIGEST_POLICIES = ("selected", "all", "none")
-PROFILE_FULL = "FULL_PROFILE_EXTERNALLY_BOUND"
+PROFILE_FULL = "FULL_PROFILE_PHYSICALLY_VERIFIED"
 PROFILE_SAMPLED = "SAMPLED_VALUE_PROFILE"
 PROFILE_DECLARED = "DECLARED_SCHEMA_ONLY"
 
@@ -252,6 +252,53 @@ def load_availability_contract(root: Path) -> dict:
     }
 
 
+def map_families_to_entities(instances: dict,
+                             entities: list[tuple]) -> dict:
+    """Explicit, executable join from contract families to lake
+    entities.
+
+    The previous census indexed availability instances by
+    `feature_family` and then looked them up by `entity`. The two
+    namespaces coincide only by accident, so the first real
+    contract could land and still leave every variable
+    UNAVAILABLE. The join is now declared and reported:
+
+      * an entity matches a family when its name IS the family,
+        or when the family is a path prefix of the entity's own
+        `__`-encoded source path;
+      * a family that matches nothing is reported as UNMATCHED
+        rather than silently dropped;
+      * an entity that matches TWO families is reported as
+        AMBIGUOUS and receives no availability, because a census
+        does not choose between contracts.
+    """
+    by_family, by_entity = {}, {}
+    for family in sorted(instances):
+        fam_path = family.replace("/", "__").strip("__")
+        matched = []
+        for source_class, entity in entities:
+            if entity == family or entity == fam_path:
+                matched.append(entity)
+            elif entity.startswith(fam_path + "__"):
+                matched.append(entity)
+        by_family[family] = sorted(set(matched))
+        for e in matched:
+            by_entity.setdefault(e, []).append(family)
+    ambiguous = {e: sorted(f) for e, f in by_entity.items()
+                 if len(f) > 1}
+    resolved = {e: f[0] for e, f in by_entity.items()
+                if len(f) == 1}
+    return {
+        "by_family": by_family,
+        "entity_to_family": resolved,
+        "ambiguous_entities": ambiguous,
+        "unmatched_families": sorted(
+            f for f, e in by_family.items() if not e),
+        "rule": "entity == family, or the family is a "
+                "__-separated path prefix of the entity",
+    }
+
+
 # --------------------------------------------------------------
 # grain 1: physical appearances
 # --------------------------------------------------------------
@@ -289,20 +336,43 @@ def build_appearances(root: Path, manifest: dict, provenance: dict,
         size = abs_p.stat().st_size if present else None
         mtime_ns = abs_p.stat().st_mtime_ns if present else None
         prev = prev_by_id.get(aid)
+        ctime_ns = abs_p.stat().st_ctime_ns if present else None
+        # C6: an appearance is NEW when the previous census does
+        # not carry it, or carried it without a verified digest.
+        # A first census therefore digests EVERYTHING present:
+        # stat() is not a digest and was never allowed to stand
+        # in for one.
+        prev_digest = (prev or {}).get("physical_sha256")
+        prev_verified = (
+            prev is not None
+            and isinstance(prev_digest, str)
+            and prev_digest != UNAVAILABLE)
+        is_new = not prev_verified
+        # Physical identity: size alone missed an equal-length
+        # mutation. mtime_ns and ctime_ns are compared too, and
+        # any difference forces a re-hash.
         changed_physically = bool(
-            prev and (prev.get("size_bytes") != size))
-        # Incremental by design: under "selected" we digest only
-        # what was explicitly selected or what stat() shows has
-        # changed since the previous census. A first census
-        # therefore does NOT read 14 GB to say what the manifest
-        # already declares — and says so in its coverage.
+            prev_verified and (
+                prev.get("size_bytes") != size
+                or prev.get("mtime_ns") != mtime_ns
+                or prev.get("ctime_ns") != ctime_ns))
+        explicitly_selected = (aid in selected or rel in selected)
         want_digest = (
-            digest_policy == "all"
-            or (digest_policy == "selected"
-                and (aid in selected or rel in selected
-                     or changed_physically)))
+            digest_policy != "none"
+            and (digest_policy == "all" or is_new
+                 or changed_physically or explicitly_selected))
         digest = (sha256_file(abs_p)
                   if (present and want_digest) else None)
+        if digest is None and present and prev_verified:
+            # unchanged by every physical signal: the previously
+            # VERIFIED digest is carried forward, and labelled as
+            # carried rather than freshly computed
+            digest = prev_digest
+            digest_state = "REUSED_FROM_PREVIOUS_VERIFIED_CENSUS"
+        elif digest is not None:
+            digest_state = "PHYSICALLY_DIGESTED"
+        else:
+            digest_state = "DECLARED_ONLY_NOT_DIGESTED"
         prov = (provenance.get(rel)
                 or provenance.get(str(Path(rel).parent))
                 if rel else None)
@@ -320,9 +390,12 @@ def build_appearances(root: Path, manifest: dict, provenance: dict,
             "declared_columns": list(s.get("columns") or []),
             "size_bytes": size,
             "mtime_ns": mtime_ns,
+            "ctime_ns": ctime_ns,
             "physical_sha256": digest or UNAVAILABLE,
-            "digest_state": ("PHYSICALLY_DIGESTED" if digest
-                             else "DECLARED_ONLY_NOT_DIGESTED"),
+            "digest_state": digest_state,
+            "bytes_read_for_digest": (
+                size if digest_state == "PHYSICALLY_DIGESTED"
+                and size else 0),
             "provenance": prov or UNAVAILABLE,
             "profile_depth": PROFILE_DECLARED,
         })
@@ -382,8 +455,11 @@ def _dictionary_lookup(dicts: dict, rel_path: str, concept: str,
 
 def build_variables(root: Path, appearances: list[dict],
                     dicts: dict, provenance: dict,
-                    availability: dict) -> list[dict]:
+                    availability: dict,
+                    family_join: dict | None = None) -> list[dict]:
     by_var: dict[str, dict] = {}
+    entity_to_family = (family_join or {}).get(
+        "entity_to_family", {})
     lineage_cache: dict[tuple, list[str]] = {}
     for a in appearances:
         key = (a["source_class"], a["entity"])
@@ -399,7 +475,11 @@ def build_variables(root: Path, appearances: list[dict],
                 sem, dict_file = _dictionary_lookup(
                     dicts, a["relative_path"], concept,
                     upstream)
-                inst = availability["instances"].get(a["entity"])
+                # C7: resolved through the EXPLICIT family join,
+                # never by hoping two namespaces coincide
+                fam = entity_to_family.get(a["entity"])
+                inst = (availability["instances"].get(fam)
+                        if fam else None)
                 v = by_var[vid] = {
                     "variable_id": vid,
                     "source_class": a["source_class"],
@@ -744,8 +824,13 @@ def build_census(root: Path, censused_at: str,
     appearances = build_appearances(root, manifest, provenance,
                                     digest_policy, selected,
                                     previous)
+    entities = sorted({(a["source_class"], a["entity"])
+                       for a in appearances})
+    family_join = map_families_to_entities(
+        availability["instances"], entities)
     variables = build_variables(root, appearances, dicts,
-                                provenance, availability)
+                                provenance, availability,
+                                family_join)
     # value sweep level 2: a declared, deterministic selection
     profiled = []
     if value_profile_per_class > 0:
@@ -772,6 +857,14 @@ def build_census(root: Path, censused_at: str,
 
     digested = sum(1 for a in appearances
                    if a["digest_state"] == "PHYSICALLY_DIGESTED")
+    reused = sum(1 for a in appearances
+                 if a["digest_state"] ==
+                 "REUSED_FROM_PREVIOUS_VERIFIED_CENSUS")
+    undigested = sum(1 for a in appearances
+                     if a["digest_state"] ==
+                     "DECLARED_ONLY_NOT_DIGESTED")
+    bytes_read = sum(a.get("bytes_read_for_digest") or 0
+                     for a in appearances)
     present = sum(1 for a in appearances
                   if a["presence"] == "PRESENT")
     declared_bytes = sum(a["size_bytes"] or 0 for a in appearances)
@@ -807,9 +900,17 @@ def build_census(root: Path, censused_at: str,
             "appearances_present": present,
             "appearances_missing": len(appearances) - present,
             "appearances_physically_digested": digested,
+            "appearances_digest_reused": reused,
+            "appearances_not_digested": undigested,
+            "bytes_read_for_digest": bytes_read,
             "digest_coverage_fraction": (
-                round(digested / len(appearances), 6)
+                round((digested + reused) / len(appearances), 6)
                 if appearances else 0.0),
+            "digest_coverage_note":
+                "coverage counts appearances whose bytes have "
+                "been hashed at least once and verified "
+                "unchanged since; stat() is never counted as a "
+                "digest",
             "declared_column_occurrences": occurrences,
             "conceptual_variables": len(variables),
             "entities": len(
@@ -839,6 +940,7 @@ def build_census(root: Path, censused_at: str,
                 availability["schema_required_fields"],
             "document_present": availability["document_present"],
             "instances_found": len(availability["instances"]),
+            "family_join": family_join,
             "consequence": (
                 "every variable's available_time is UNAVAILABLE "
                 "until a per-family contract instance exists"

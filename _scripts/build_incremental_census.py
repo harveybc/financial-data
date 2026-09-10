@@ -35,35 +35,80 @@ sys.path.insert(0, str(ROOT / "_scripts" / "lib"))
 import incremental_census as ic  # noqa: E402
 
 
-def _load_external_full_profiles(paths: list[Path]) -> list[dict]:
-    """Bind FULL profiles produced by a consuming repository
-    (predictor's CRISP-DM inventory) by digest.
+def _load_external_full_profiles(paths: list[Path],
+                                 roots: dict) -> list[dict]:
+    """Bind FULL profiles produced by a consuming repository, and
+    VERIFY them.
 
-    The census does not re-profile those bytes; it records who
-    profiled them, the digest that was profiled, and the counts
-    claimed — so a later disagreement is visible instead of
-    silently averaged away.
+    The previous version copied an external inventory's own
+    self-digest, row counts and dataset digests without checking
+    one byte. A self-consistent summary is not a verified profile,
+    so it is no longer labelled as one: this recomputes the
+    inventory's self digest, requires the exact document schema,
+    and re-hashes every dataset the inventory claims to have
+    profiled. Anything it cannot verify is carried as
+    DECLARED_ONLY_NOT_VERIFIED and says why.
     """
     out = []
     for p in paths:
-        doc = json.loads(Path(p).read_text())
-        for ds in doc.get("datasets", []):
-            out.append({
-                "external_profile_source": str(Path(p).name),
-                "external_inventory_sha256":
-                    doc.get("inventory_sha256", ic.UNKNOWN),
+        p = Path(p)
+        doc = json.loads(p.read_text())
+        required = {"datasets", "inventoried_at",
+                    "inventory_sha256", "schema", "scope",
+                    "summary"}
+        if set(doc) != required:
+            raise SystemExit(
+                f"REFUSED: {p.name} is not the exact external "
+                f"inventory schema (diff: "
+                f"{sorted(set(doc) ^ required)})")
+        declared = doc["inventory_sha256"]
+        recomputed = ic._self_sha(doc, "inventory_sha256")
+        inventory_verified = (declared == recomputed)
+        for ds in doc["datasets"]:
+            rel = ds.get("relative_path")
+            root = roots.get(ds.get("root_id"))
+            physical = ds.get("physical_sha256", ic.UNAVAILABLE)
+            state, reason = "DECLARED_ONLY_NOT_VERIFIED", None
+            recomputed_file = ic.UNAVAILABLE
+            if not inventory_verified:
+                reason = ("the external inventory's own self "
+                          "digest does not re-derive")
+            elif root is None:
+                reason = (f"no local root was supplied for "
+                          f"root_id={ds.get('root_id')!r}")
+            else:
+                target = Path(root) / rel
+                if not target.is_file():
+                    reason = (f"the profiled file is absent at "
+                              f"{rel}")
+                else:
+                    recomputed_file = ic.sha256_file(target)
+                    if recomputed_file == physical:
+                        state = "FULL_PROFILE_PHYSICALLY_VERIFIED"
+                    else:
+                        reason = ("the profiled bytes do not "
+                                  "match the declared digest")
+            entry = {
+                "external_profile_source": p.name,
+                "external_inventory_sha256": declared,
+                "external_inventory_self_digest_verified":
+                    inventory_verified,
                 "dataset_id": ds.get("dataset_id"),
-                "relative_path": ds.get("relative_path"),
-                "physical_sha256": ds.get("physical_sha256",
-                                          ic.UNKNOWN),
+                "relative_path": rel,
+                "declared_physical_sha256": physical,
+                "recomputed_physical_sha256": recomputed_file,
                 "row_count": ds.get("row_count"),
                 "variable_count": ds.get("variable_count"),
                 "profile_status": ds.get("profile_status"),
-                "profile_depth": ic.PROFILE_FULL,
-                "binding_rule": "bound by digest; this census "
-                                "never re-profiles externally "
-                                "profiled bytes",
-            })
+                "binding_state": state,
+                "binding_rule":
+                    "a profile is FULL only when this census has "
+                    "re-derived the inventory digest AND re-hashed "
+                    "the bytes it claims to describe",
+            }
+            if reason:
+                entry["not_verified_because"] = reason
+            out.append(entry)
     return out
 
 
@@ -94,6 +139,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--summary", type=Path, required=True,
                     help="small Git-appropriate summary")
     ap.add_argument("--receipt", type=Path, required=True)
+    ap.add_argument("--external-root", action="append",
+                    default=[],
+                    help="ROOT_ID=PATH for an external "
+                         "inventory's datasets, so their bytes "
+                         "can be re-hashed; repeatable")
     ap.add_argument("--value-profile-per-class", type=int,
                     default=0,
                     help="level-2 value sweep: profile this many "
@@ -111,7 +161,12 @@ def main(argv: list[str] | None = None) -> int:
                      if ln.strip()}
     previous = (json.loads(a.previous.read_text())
                 if a.previous else None)
-    ext = _load_external_full_profiles(a.external_full_profile)
+    ext_roots = {}
+    for spec in a.external_root:
+        rid, _, rpath = spec.partition("=")
+        ext_roots[rid] = rpath
+    ext = _load_external_full_profiles(a.external_full_profile,
+                                       ext_roots)
 
     census = ic.build_census(
         a.root, a.censused_at, digest_policy=a.digest_policy,
@@ -124,13 +179,26 @@ def main(argv: list[str] | None = None) -> int:
     census_path = (a.out_dir /
                    f"census-{census['census_sha256']}.json")
     payload = json.dumps(census, indent=1, sort_keys=True)
-    fd = os.open(str(census_path),
-                 os.O_CREAT | os.O_TRUNC | os.O_WRONLY, 0o600)
-    try:
-        os.write(fd, payload.encode())
-        os.fsync(fd)
-    finally:
-        os.close(fd)
+    # C6: the name is content-addressed, so an existing file is
+    # either the SAME artifact or a collision. Truncating it was
+    # a defect; verify full byte equality instead.
+    if census_path.exists():
+        existing = census_path.read_bytes()
+        if existing != payload.encode():
+            raise SystemExit(
+                "REFUSED: a different artifact already occupies "
+                f"{census_path.name} — a content-addressed name "
+                "is never overwritten")
+        print(json.dumps({"census_file": census_path.name,
+                          "write": "SKIPPED_IDENTICAL"}))
+    else:
+        fd = os.open(str(census_path),
+                     os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+        try:
+            os.write(fd, payload.encode())
+            os.fsync(fd)
+        finally:
+            os.close(fd)
 
     a.summary.parent.mkdir(parents=True, exist_ok=True)
     a.summary.write_text(json.dumps(ic.summarize(census),

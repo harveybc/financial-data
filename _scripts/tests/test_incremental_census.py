@@ -296,25 +296,51 @@ def test_unchanged_lake_reports_everything_unchanged(lake,
 # honesty of the sweep and of the digest policy
 # --------------------------------------------------------------
 
-def test_first_census_does_not_re_read_the_lake(census):
+def test_first_census_binds_every_appearance_to_bytes(census):
+    """CORRECTED (order C6). This test previously asserted the
+    opposite — that a first census digested NOTHING — which is
+    the defect the audit found: stat() was standing in for a
+    digest. A first census now hashes every present appearance,
+    and the SECOND census is the one that reads no bytes."""
     cov = census["coverage"]
+    assert cov["appearances_physically_digested"] == 3
+    assert cov["digest_coverage_fraction"] == 1.0
+    assert all(a["digest_state"] == "PHYSICALLY_DIGESTED"
+               for a in census["appearances"])
+    assert all(len(a["physical_sha256"]) == 64
+               for a in census["appearances"])
+
+
+def test_the_second_census_is_the_one_that_reads_no_bytes(
+        lake, census):
+    again = ic.build_census(lake, "2026-09-11T00:00:00Z",
+                            previous=census)
+    cov = again["coverage"]
+    assert cov["bytes_read_for_digest"] == 0
+    assert cov["appearances_digest_reused"] == 3
     assert cov["appearances_physically_digested"] == 0
-    assert cov["digest_coverage_fraction"] == 0.0
-    assert all(a["digest_state"] == "DECLARED_ONLY_NOT_DIGESTED"
-               for a in census["appearances"])
-    assert all(a["physical_sha256"] == ic.UNAVAILABLE
-               for a in census["appearances"])
 
 
-def test_selected_slices_are_physically_digested(lake):
+def test_an_explicit_selection_re_hashes_even_when_unchanged(
+        lake):
+    """CORRECTED (order C6): a first census digests everything,
+    so selection is only distinguishable on a LATER census, where
+    it must re-hash a slice that every physical signal says is
+    unchanged."""
+    first = ic.build_census(lake, "2026-09-10T00:00:00Z")
+    assert first["coverage"][
+        "appearances_physically_digested"] == 3
     sel = {"features/trading_asset_data/aaausdt/1h.parquet"}
-    c = ic.build_census(lake, "2026-09-10T00:00:00Z",
-                        selected=sel)
-    digested = [a for a in c["appearances"]
-                if a["digest_state"] == "PHYSICALLY_DIGESTED"]
-    assert len(digested) == 1
-    assert c["coverage"]["appearances_physically_digested"] == 1
-    assert 0 < c["coverage"]["digest_coverage_fraction"] < 1
+    second = ic.build_census(lake, "2026-09-11T00:00:00Z",
+                             previous=first, selected=sel)
+    states = {a["relative_path"]: a["digest_state"]
+              for a in second["appearances"]}
+    assert states[
+        "features/trading_asset_data/aaausdt/1h.parquet"] == \
+        "PHYSICALLY_DIGESTED"
+    assert second["coverage"][
+        "appearances_physically_digested"] == 1
+    assert second["coverage"]["appearances_digest_reused"] == 2
 
 
 def test_changed_bytes_are_re_digested_incrementally(lake,

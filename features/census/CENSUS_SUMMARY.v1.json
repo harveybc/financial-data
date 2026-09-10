@@ -2,6 +2,13 @@
  "availability_contract": {
   "consequence": "every variable's available_time is UNAVAILABLE until a per-family contract instance exists",
   "document_present": true,
+  "family_join": {
+   "ambiguous_entities": {},
+   "by_family": {},
+   "entity_to_family": {},
+   "rule": "entity == family, or the family is a __-separated path prefix of the entity",
+   "unmatched_families": []
+  },
   "instances_found": 0,
   "schema_file": "configs/availability_contract.schema.json",
   "schema_present": true,
@@ -16,7 +23,7 @@
    "timezone"
   ]
  },
- "census_sha256": "65d0efe6ff60351f47f1ec25d399c1a0a08612275b236ad025ee2397954ceb3a",
+ "census_sha256": "e1845971c3decbc4221db5373c0dbc627a4eec81154a302019d0bdf53cf74881",
  "censused_at": "2026-09-10T00:00:00Z",
  "conflict_count": 5,
  "conflicts": [
@@ -77,14 +84,18 @@
   }
  ],
  "coverage": {
+  "appearances_digest_reused": 0,
   "appearances_missing": 0,
-  "appearances_physically_digested": 0,
+  "appearances_not_digested": 0,
+  "appearances_physically_digested": 1680,
   "appearances_present": 1680,
   "appearances_total": 1680,
+  "bytes_read_for_digest": 14436534039,
   "conceptual_variables": 1965,
   "declared_bytes_from_stat": 14436534039,
   "declared_column_occurrences": 7860,
-  "digest_coverage_fraction": 0.0,
+  "digest_coverage_fraction": 1.0,
+  "digest_coverage_note": "coverage counts appearances whose bytes have been hashed at least once and verified unchanged since; stat() is never counted as a digest",
   "entities": 420,
   "externally_bound_full_profiles": 2,
   "sampled_value_profile_fraction": 0.007143,
