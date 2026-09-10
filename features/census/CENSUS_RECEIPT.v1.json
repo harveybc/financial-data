@@ -1,0 +1,19 @@
+{
+ "census_file_bytes": 3897737,
+ "census_file_sha256": "9c825a53145493be5865169065e3a97ecf3d41182298db3a816ba5f13172e3c5",
+ "census_logical_location": "census-65d0efe6ff60351f47f1ec25d399c1a0a08612275b236ad025ee2397954ceb3a.json",
+ "census_sha256": "65d0efe6ff60351f47f1ec25d399c1a0a08612275b236ad025ee2397954ceb3a",
+ "censused_at": "2026-09-10T00:00:00Z",
+ "code_identity": {
+  "_scripts/build_incremental_census.py": "1477e5af9173d542d7d55585bf9525d997dea9dcb2ca90dc0e1e539611712c9a",
+  "_scripts/lib/incremental_census.py": "e99481e5292c4ea4adade3d01a157f4a47b8cdf5891eef19f326afc97378b870"
+ },
+ "grants_nothing": "a census records what exists; it confers no eligibility on any variable or operator",
+ "inputs": {
+  "manifest_generated_at": "2026-05-02T00:48:03.101943+00:00",
+  "manifest_sha256": "ee00957c4ca52fdde580442419d69e44e4f560c2a152a46d2feb327eeef32a10"
+ },
+ "receipt_sha256": "2dfc9cedf69194b838c2a8f05af48d57968e5daaf498989e3df9415a5578b975",
+ "schema": "financial_data.incremental_census_receipt.v1",
+ "summary_file_sha256": "c84d8cee8b98a604ff7a114fe9f3e486783839a29a2f98d9a67d0d4f00996628"
+}

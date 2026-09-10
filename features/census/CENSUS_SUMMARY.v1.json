@@ -1,0 +1,151 @@
+{
+ "availability_contract": {
+  "consequence": "every variable's available_time is UNAVAILABLE until a per-family contract instance exists",
+  "document_present": true,
+  "instances_found": 0,
+  "schema_file": "configs/availability_contract.schema.json",
+  "schema_present": true,
+  "schema_required_fields": [
+   "available_from_ts_col",
+   "feature_family",
+   "license_scope",
+   "min_latency_minutes",
+   "observation_ts_col",
+   "provider",
+   "revision_policy",
+   "timezone"
+  ]
+ },
+ "census_sha256": "65d0efe6ff60351f47f1ec25d399c1a0a08612275b236ad025ee2397954ceb3a",
+ "censused_at": "2026-09-10T00:00:00Z",
+ "conflict_count": 5,
+ "conflicts": [
+  {
+   "conflict_id": "cft_caecde4605a96407",
+   "consequence": "these may or may not be the same concept; the census refuses to decide",
+   "entity_count": 128,
+   "kind": "SPELLING_VARIANTS_UNDER_ONE_NORMAL_FORM",
+   "normalized_concept": "close",
+   "spellings": [
+    "Close",
+    "close"
+   ]
+  },
+  {
+   "conflict_id": "cft_41a815550953a433",
+   "consequence": "these may or may not be the same concept; the census refuses to decide",
+   "entity_count": 128,
+   "kind": "SPELLING_VARIANTS_UNDER_ONE_NORMAL_FORM",
+   "normalized_concept": "high",
+   "spellings": [
+    "High",
+    "high"
+   ]
+  },
+  {
+   "conflict_id": "cft_e4540d9f9d274e4f",
+   "consequence": "these may or may not be the same concept; the census refuses to decide",
+   "entity_count": 128,
+   "kind": "SPELLING_VARIANTS_UNDER_ONE_NORMAL_FORM",
+   "normalized_concept": "low",
+   "spellings": [
+    "Low",
+    "low"
+   ]
+  },
+  {
+   "conflict_id": "cft_b07f1659cdcd0d5d",
+   "consequence": "these may or may not be the same concept; the census refuses to decide",
+   "entity_count": 128,
+   "kind": "SPELLING_VARIANTS_UNDER_ONE_NORMAL_FORM",
+   "normalized_concept": "open",
+   "spellings": [
+    "Open",
+    "open"
+   ]
+  },
+  {
+   "conflict_id": "cft_895afba7608cd997",
+   "consequence": "these may or may not be the same concept; the census refuses to decide",
+   "entity_count": 118,
+   "kind": "SPELLING_VARIANTS_UNDER_ONE_NORMAL_FORM",
+   "normalized_concept": "volume",
+   "spellings": [
+    "Volume",
+    "volume"
+   ]
+  }
+ ],
+ "coverage": {
+  "appearances_missing": 0,
+  "appearances_physically_digested": 0,
+  "appearances_present": 1680,
+  "appearances_total": 1680,
+  "conceptual_variables": 1965,
+  "declared_bytes_from_stat": 14436534039,
+  "declared_column_occurrences": 7860,
+  "digest_coverage_fraction": 0.0,
+  "entities": 420,
+  "externally_bound_full_profiles": 2,
+  "sampled_value_profile_fraction": 0.007143,
+  "sampled_value_profiles": 12
+ },
+ "delta": {
+  "appearances": {
+   "ADDED": 1680,
+   "CHANGED": 0,
+   "MISSING": 0,
+   "UNCHANGED": 0
+  },
+  "basis": "FIRST_CENSUS_NO_PREDECESSOR",
+  "previous_census": "UNAVAILABLE",
+  "variables": {
+   "ADDED": 1965,
+   "CHANGED": 0,
+   "MISSING": 0,
+   "UNCHANGED": 0
+  }
+ },
+ "dictionary_coverage": {
+  "by_kind": {
+   "COVERAGE_STUB_SELF_DECLARED_NON_SEMANTIC": 330,
+   "PRESENT_BUT_NO_PARSEABLE_COLUMN_DECLARATIONS": 2,
+   "SEMANTIC_DICTIONARY": 622
+  },
+  "files_indexed": 954,
+  "honesty_note": "a data dictionary that self-declares it is not a semantic schema is counted as a coverage stub, never as documented semantics"
+ },
+ "equivalence_class_count": 65,
+ "gap_counts": {
+  "ambiguous_provenance": {
+   "entities": 100,
+   "variables": 340
+  },
+  "availability_gap": {
+   "entities": 420,
+   "variables": 1965
+  },
+  "license_gap": {
+   "entities": 420,
+   "variables": 1965
+  },
+  "physically_missing_appearances": 0,
+  "provenance_gap": {
+   "entities": 133,
+   "variables": 406
+  },
+  "role_gap": {
+   "entities": 420,
+   "variables": 1965
+  },
+  "semantics_gap": {
+   "entities": 410,
+   "variables": 1675
+  },
+  "unit_gap": {
+   "entities": 420,
+   "variables": 1965
+  }
+ },
+ "schema": "financial_data.incremental_census_summary.v1"
+}
