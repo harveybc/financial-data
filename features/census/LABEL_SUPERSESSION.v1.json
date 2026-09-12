@@ -1,0 +1,141 @@
+{
+ "acceptance_c57_c58": {
+  "requirement": "log_return_1, macd, stoch_k, cci_14 and mfi_14 must no longer appear as causal with lookback 1 and an empty direct_inputs",
+  "result": {
+   "cci_14": {
+    "class": "CAUSAL_ACTIVE",
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 14,
+    "parameter_inputs": []
+   },
+   "log_return_1": {
+    "class": "CAUSAL_ACTIVE",
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 1,
+    "parameter_inputs": []
+   },
+   "macd": {
+    "class": "UNRESOLVED",
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": null,
+    "parameter_inputs": [
+     "span"
+    ]
+   },
+   "mfi_14": {
+    "class": "CAUSAL_ACTIVE",
+    "leaves": [
+     "close",
+     "high",
+     "low",
+     "volume"
+    ],
+    "lookback_bars": 14,
+    "parameter_inputs": []
+   },
+   "stoch_k": {
+    "class": "CAUSAL_ACTIVE",
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 14,
+    "parameter_inputs": []
+   }
+  },
+  "v1_signature_still_present": []
+ },
+ "grants_nothing": "renaming a label corrects a claim. It promotes nothing and makes nothing eligible",
+ "labels_that_stand": [
+  {
+   "label": "UNRESOLVED_PRODUCER",
+   "value": 45,
+   "why": "it claimed exactly what it measured \u2014 that no producer was found. A refusal that names itself needs no supersession"
+  }
+ ],
+ "recorded_at": "2026-09-12T00:00:00Z",
+ "retired_labels": [
+  {
+   "measured_by": "financial_data.demand_levels.v1",
+   "new": "INPUT_FILES_PRESENT_CONFIG_CANDIDATES",
+   "old": "ACTIVE_EXECUTION_DEMAND.executable_configs",
+   "value": 137,
+   "why": "the measurement was `the x and y files this config names exist on disk`. It built no effective configuration, resolved no entry point and validated no target. Neither word in the old name was earned: not `active`, not `execution`"
+  },
+  {
+   "measured_by": "financial_data.demand_levels.v1",
+   "new": "INPUT_FILES_ABSENT_CONFIGS",
+   "old": "ACTIVE_EXECUTION_DEMAND.unreachable_configs",
+   "value": 87,
+   "why": "`unreachable` implies a reachability analysis. The measurement was that a named file is absent"
+  },
+  {
+   "measured_by": "financial_data.demand_levels.v1",
+   "new": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "old": "grains.active_x_subjects",
+   "value": 162,
+   "why": "derived from the RAW config text, before defaults, plugin parameters or CLI precedence. What a run actually consumes is known only after the effective configuration is built"
+  },
+  {
+   "measured_by": "financial_data.demand_levels.v1",
+   "new": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "old": "grains.active_y_subjects",
+   "value": 162,
+   "why": "same provenance as the x side"
+  },
+  {
+   "measured_by": "financial_data.demand_levels.v1",
+   "new": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "old": "grains.targets",
+   "value": 2,
+   "why": "a target named in a file is not a target a target plugin accepts"
+  },
+  {
+   "measured_by": "financial_data.feature_dag.v2",
+   "new": "PRODUCER_ASSIGNMENTS_LOCATED_PENDING_TRANSITIVE_RESOLUTION",
+   "old": "feature_dag.v1 CAUSAL (producer assignment located)",
+   "value": 52,
+   "why": "v1 read ONE assignment line. A dependency held in a local variable or computed by a helper was invisible, so log_return_1, macd, stoch_k, cci_14 and mfi_14 were all reported CAUSAL with lookback 1 and NO inputs. Locating an assignment is not resolving a lineage"
+  }
+ ],
+ "rule": "history is superseded ADDITIVELY. No file below is edited, no number below is changed, and no record is deleted. What changes is the NAME, because the name asserted more than the measurement supported",
+ "schema": "financial_data.label_supersession.v1",
+ "successor_measurements": {
+  "financial_data.demand_levels.v1": {
+   "file": "DEMAND_LEVELS.v1.json",
+   "observed_execution_runs": 9,
+   "refused": 204,
+   "sha256": "2bb0f52127a8636dcd0a7599402118dc47270cc7ec69e41c9521926199e841f8",
+   "validated_runnable": 20
+  },
+  "financial_data.feature_dag.v2": {
+   "by_class": {
+    "CAUSAL_ACTIVE": 37,
+    "HISTORICAL_OR_RETIRED_PRODUCER": 5,
+    "UNRESOLVED": 55
+   },
+   "columns_examined": 97,
+   "file": "FEATURE_DAG.v2.json",
+   "sha256": "8fbe787a8b8279b5b1736665de447b4ddbfbdbe5a4c6c5d11e5c043236e9cb65"
+  }
+ },
+ "supersedes": {
+  "document": "financial_data.demand_universes.v1",
+  "file": "DEMAND_UNIVERSES.v1.json",
+  "sha256": "712008f7f5cbd811a50a6e2f163f80aae028b6a990391364e72762ba4d8d3503",
+  "successor": [
+   "financial_data.demand_levels.v1",
+   "financial_data.feature_dag.v2"
+  ]
+ },
+ "supersession_sha256": "76cb88487076a979ccfc71ab447b7a3abe5494b36827b7f7a4097ad1aac5a342"
+}

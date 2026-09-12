@@ -1,0 +1,3049 @@
+{
+ "by_class": {
+  "CAUSAL_ACTIVE": 37,
+  "HISTORICAL_OR_RETIRED_PRODUCER": 5,
+  "UNRESOLVED": 55
+ },
+ "columns_examined": 97,
+ "dag_sha256": "c8190c8622f77850b8c2fb6f978c01a2859b6a3ba052e6853c9595c967ee38cd",
+ "derived_at": "2026-09-12T00:00:00Z",
+ "grants_nothing": "a lineage describes how a value comes to exist. It confers no eligibility",
+ "nodes": [
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "OPEN"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "HIGH"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "LOW"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "CLOSE"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "VOLUME"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "HISTORICAL_OR_RETIRED_PRODUCER",
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "Close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+    "line": 265,
+    "repository": "financial-data",
+    "symbol": "_compute_basic_features"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward; the only producer found lives under a retired path"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "HISTORICAL_OR_RETIRED_PRODUCER",
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "Close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+    "line": 265,
+    "repository": "financial-data",
+    "symbol": "_compute_basic_features"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward; the only producer found lives under a retired path"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "HISTORICAL_OR_RETIRED_PRODUCER",
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "Close"
+   ],
+   "lookback_bars": 50,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+    "line": 265,
+    "repository": "financial-data",
+    "symbol": "_compute_basic_features"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward; the only producer found lives under a retired path"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "HISTORICAL_OR_RETIRED_PRODUCER",
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "Close"
+   ],
+   "lookback_bars": 200,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+    "line": 265,
+    "repository": "financial-data",
+    "symbol": "_compute_basic_features"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward; the only producer found lives under a retired path"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "ema"
+    },
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "ema"
+    }
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": null,
+   "parameter_inputs": [
+    "span"
+   ],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [
+    "window from parameter span"
+   ],
+   "why": "the window size arrives as a parameter (span), so no lookback is statically known"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "ema"
+    }
+   ],
+   "leaves": [
+    "macd",
+    "timestamp"
+   ],
+   "lookback_bars": null,
+   "parameter_inputs": [
+    "span"
+   ],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [
+    "window from parameter span"
+   ],
+   "why": "the window size arrives as a parameter (span), so no lookback is statically known"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "macd",
+    "macd_signal",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "HISTORICAL_OR_RETIRED_PRODUCER",
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "Close"
+   ],
+   "lookback_bars": 14,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+    "line": 265,
+    "repository": "financial-data",
+    "symbol": "_compute_basic_features"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward; the only producer found lives under a retired path"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 14,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "stoch_k",
+    "timestamp"
+   ],
+   "lookback_bars": 3,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 14,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 14,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "bb_lower",
+    "bb_upper",
+    "close",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "bb_lower",
+    "bb_middle",
+    "bb_upper",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "true_range"
+    }
+   ],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 14,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [
+    "shift() with a non-literal amount"
+   ],
+   "why": "a dependency could not be followed: shift() with a non-literal amount"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "atr_14",
+    "close",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "ema_10",
+    "ema_50",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "ema_100",
+    "ema_20",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "timestamp",
+    "trend_slope_50"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "volume"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "obv",
+    "timestamp"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "timestamp",
+    "volume",
+    "volume_sma_20"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low",
+    "volume"
+   ],
+   "lookback_bars": 60,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low",
+    "volume"
+   ],
+   "lookback_bars": 14,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 111,
+    "repository": "financial-data",
+    "symbol": "compute_technical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 12,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 48,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "rolling_autocorr"
+    }
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [
+    "lag",
+    "window"
+   ],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [
+    "shift() with a non-literal amount"
+   ],
+   "why": "a dependency could not be followed: shift() with a non-literal amount"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "rolling_autocorr"
+    }
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [
+    "lag",
+    "window"
+   ],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [
+    "shift() with a non-literal amount"
+   ],
+   "why": "a dependency could not be followed: shift() with a non-literal amount"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "rolling_autocorr"
+    }
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [
+    "lag",
+    "window"
+   ],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [
+    "shift() with a non-literal amount"
+   ],
+   "why": "a dependency could not be followed: shift() with a non-literal amount"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 252,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 252,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "hurst_proxy"
+    },
+    {
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "repo": "financial-data",
+     "symbol": "rolling_autocorr"
+    }
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [
+    "lag",
+    "window"
+   ],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [
+    "shift() with a non-literal amount"
+   ],
+   "why": "a dependency could not be followed: shift() with a non-literal amount"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 100,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+    "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "line": 183,
+    "repository": "financial-data",
+    "symbol": "compute_statistical"
+   },
+   "unresolved_because": [],
+   "why": "every path ends at a declared leaf and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "OPEN",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "OPEN"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "LOW",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "LOW"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "HIGH",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "HIGH"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "the dataset does not declare what its timestamp MEANS \u2014 bar open, bar close or publication. event_time is never copied and no bar width is assumed"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "CLOSE",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "CLOSE"
+   ],
+   "lookback_bars": 1,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [],
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "BC-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": null,
+   "unresolved_because": [
+    "no producer"
+   ],
+   "why": "no producer in the searched repositories assigns this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "BH-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "HIGH",
+    "LOW"
+   ],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "9293ac4cd046f98604e42eb3e9ae6e341b18a716bb1826367c69fc458a02d564",
+    "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+    "file": "app/plugins/tech_indicator.py",
+    "line": 222,
+    "repository": "feature-eng",
+    "symbol": "process_additional_datasets"
+   },
+   "unresolved_because": [
+    "positional indexing in process_additional_datasets",
+    "unfollowed call Timestamp()"
+   ],
+   "why": "a dependency could not be followed: positional indexing in process_additional_datasets; unfollowed call Timestamp()"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "BH-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "HIGH",
+    "OPEN"
+   ],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "9293ac4cd046f98604e42eb3e9ae6e341b18a716bb1826367c69fc458a02d564",
+    "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+    "file": "app/plugins/tech_indicator.py",
+    "line": 222,
+    "repository": "feature-eng",
+    "symbol": "process_additional_datasets"
+   },
+   "unresolved_because": [
+    "positional indexing in process_additional_datasets",
+    "unfollowed call Timestamp()"
+   ],
+   "why": "a dependency could not be followed: positional indexing in process_additional_datasets; unfollowed call Timestamp()"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "an unresolved path leaves the whole output unavailable"
+   },
+   "class": "UNRESOLVED",
+   "column": "BO-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "forward_reads": [],
+   "helpers_followed": [],
+   "leaves": [
+    "LOW",
+    "OPEN"
+   ],
+   "lookback_bars": null,
+   "parameter_inputs": [],
+   "producer": {
+    "code_sha256": "9293ac4cd046f98604e42eb3e9ae6e341b18a716bb1826367c69fc458a02d564",
+    "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+    "file": "app/plugins/tech_indicator.py",
+    "line": 222,
+    "repository": "feature-eng",
+    "symbol": "process_additional_datasets"
+   },
+   "unresolved_because": [
+    "positional indexing in process_additional_datasets",
+    "unfollowed call Timestamp()"
+   ],
+   "why": "a dependency could not be followed: positional indexing in process_additional_datasets; unfollowed call Timestamp()"
+  }
+ ],
+ "non_causal": [],
+ "producer_files_scanned": 252,
+ "producer_repositories": {
+  "feature-eng": {
+   "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+   "present": true
+  },
+  "feature-extractor": {
+   "commit": "0f234a85d95420fab80b81aefabeadbc0f16e945",
+   "present": true
+  },
+  "financial-data": {
+   "commit": "19fe375a1d5b65710b199d3c2026bffdbb00707b",
+   "present": true
+  }
+ },
+ "rules": {
+  "availability": "never event_time + one bar by default: the dataset must declare what its timestamp means, and provider latency is added",
+  "forward": "a centred window, a negative shift or roll, a bfill or positional indexing anywhere on a path makes the output NON_CAUSAL",
+  "transitive": "locals and intermediates are resolved inside the defining symbol and helpers are followed where they can be traced; every path ends at a leaf or the output is UNRESOLVED",
+  "unknown": "one unfollowed call, one ambiguous helper or one cycle leaves the whole output UNRESOLVED"
+ },
+ "schema": "financial_data.feature_dag.v2",
+ "supersedes": "financial_data.feature_dag.v1 \u2014 which read one assignment line and called the result causal",
+ "symbols_indexed": 2383,
+ "unresolved": [
+  "BC-BO",
+  "BH-BL",
+  "BH-BO",
+  "BO-BL",
+  "atr_14",
+  "autocorr_lag1_100",
+  "autocorr_lag5_100",
+  "close_sma_ratio_10",
+  "close_sma_ratio_100",
+  "close_sma_ratio_20",
+  "close_sma_ratio_200",
+  "close_sma_ratio_50",
+  "ema_10",
+  "ema_100",
+  "ema_20",
+  "hist_vol_10",
+  "hist_vol_20",
+  "hist_vol_60",
+  "hurst_proxy_200",
+  "log_return_10",
+  "log_return_20",
+  "log_return_5",
+  "log_return_60",
+  "macd",
+  "macd_signal",
+  "return_1",
+  "return_10",
+  "return_60",
+  "roc_10",
+  "roc_20",
+  "roc_60",
+  "roll_kurt_ret_20",
+  "roll_kurt_ret_252",
+  "roll_kurt_ret_60",
+  "roll_mean_ret_20",
+  "roll_mean_ret_252",
+  "roll_mean_ret_60",
+  "roll_skew_ret_20",
+  "roll_skew_ret_252",
+  "roll_skew_ret_60",
+  "roll_std_ret_20",
+  "roll_std_ret_252",
+  "roll_std_ret_60",
+  "rsi_21",
+  "rsi_7",
+  "sma_10",
+  "sma_100",
+  "sma_20",
+  "sma_200",
+  "sma_50",
+  "sqret_autocorr_lag1_100",
+  "statistical__log_return_1",
+  "typical_price",
+  "volume_sma_10",
+  "volume_sma_20"
+ ]
+}

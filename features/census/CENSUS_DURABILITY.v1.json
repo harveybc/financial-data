@@ -1,0 +1,19 @@
+{
+ "bytes": 4073269,
+ "census_file_sha256": "818063ba501bc460182e83f1705ee4c2b6b033559e036cec92e85eb20fcad134",
+ "census_logical_id": "census-49a8813d782a0e11cfcfde3e02a946fa04883db9f4e9563dced2fa24a7a1b82d.json",
+ "census_sha256_declared_inside": "49a8813d782a0e11cfcfde3e02a946fa04883db9f4e9563dced2fa24a7a1b82d",
+ "conceptual_variables": 1965,
+ "consumed_by": {
+  "census_sha256_it_declares": "49a8813d782a0e11cfcfde3e02a946fa04883db9f4e9563dced2fa24a7a1b82d",
+  "pre_ledger": "crispdm.lake_characterization_pre_ledger.v1"
+ },
+ "correction": "the census artifact is placed in the repository under its own content address and committed. No byte is changed: the copy is verified to hash to the name it already carried",
+ "defect": "MY OWN. The census that fixes the denominator of all 1,965 lake characterization terminals existed only inside a session scratchpad directory. A terminal set whose denominator lives in a temporary directory is anchored to nothing: the directory is removed and the 1,965 identities can never be re-derived or re-checked",
+ "grants_nothing": "making a record durable makes it checkable. It confers no eligibility",
+ "name_matches_declared_digest": true,
+ "physical_appearances": 1680,
+ "record_sha256": "6f5ea6390d37ba47eb873cc63faf096f60fd7742ff81bb6c8e8d29b6369cef26",
+ "recorded_at": "2026-09-12T00:00:00Z",
+ "schema": "financial_data.census_durability_correction.v1"
+}

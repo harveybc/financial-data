@@ -1,0 +1,3571 @@
+{
+ "INPUT_FILES_PRESENT_CONFIG_CANDIDATES": {
+  "input_files_absent": 87,
+  "input_files_present": 137,
+  "raw_config_derived_subjects": {
+   "label": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "targets": 2,
+   "x": 162,
+   "y": 162
+  },
+  "source": "DEMAND_UNIVERSES.v1.json",
+  "source_sha256": "712008f7f5cbd811a50a6e2f163f80aae028b6a990391364e72762ba4d8d3503",
+  "state": "CENSUS_OF_CONFIGS_WHOSE_INPUTS_ARE_PRESENT",
+  "superseded_labels": {
+   "active_x_subjects": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "active_y_subjects": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "executable_configs": "INPUT_FILES_PRESENT_CONFIG_CANDIDATES",
+   "targets": "RAW_CONFIG_DERIVED_PENDING_EFFECTIVE_CONFIG",
+   "unreachable_configs": "INPUT_FILES_ABSENT_CONFIGS"
+  }
+ },
+ "OBSERVED_EXECUTION_DEMAND": {
+  "consumed_subjects": 248,
+  "identities": "SANITIZED \u2014 campaign keys and run ids are published as logical ids bound to a digest of the original. The raw values are private evidence, never a public record",
+  "note": "these subjects were consumed by runs that reached a terminal state. That is evidence of EXECUTION; it says nothing about whether those configurations would run today",
+  "path_shaped_identity_finding": "4 of 9 terminal runs are identified in the cube by a FILESYSTEM PATH rather than by an opaque id. That is a defect in how those producers name their runs; it is reported, not corrected here, because rewriting a historical identity would rewrite history",
+  "runs": [
+   {
+    "campaign_logical": "campaign-3e120bc731a9041c",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "248656a46cab5dff6d7a64ed31b5cb9b044033027ff0e55e99b6ecff4a5cc9ad",
+    "producer": "predictor",
+    "run_id_shape": "OPAQUE_IDENTITY",
+    "run_logical": "run-1ed2f5b99407ab59",
+    "terminal_state": "COMPLETE"
+   },
+   {
+    "campaign_logical": "campaign-51efaa89b10d223d",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "UNAVAILABLE",
+    "producer": "M4 residual capacity",
+    "run_id_shape": "OPAQUE_IDENTITY",
+    "run_logical": "run-5d6bf905d024dfe3",
+    "terminal_state": "MIXED"
+   },
+   {
+    "campaign_logical": "campaign-3ec2d4632cee6a8d",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "UNAVAILABLE",
+    "producer": "predictor",
+    "run_id_shape": "PATH_SHAPED_IDENTITY",
+    "run_logical": "run-cf994e55576af2e7",
+    "terminal_state": "REFUSED"
+   },
+   {
+    "campaign_logical": "campaign-7012f18cdfe2bf88",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "UNAVAILABLE",
+    "producer": "predictor",
+    "run_id_shape": "PATH_SHAPED_IDENTITY",
+    "run_logical": "run-757efe42321eee51",
+    "terminal_state": "COMPLETE"
+   },
+   {
+    "campaign_logical": "campaign-173a3d1b1d50a9ec",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "UNAVAILABLE",
+    "producer": "predictor",
+    "run_id_shape": "PATH_SHAPED_IDENTITY",
+    "run_logical": "run-757efe42321eee51",
+    "terminal_state": "COMPLETE"
+   },
+   {
+    "campaign_logical": "campaign-58ee3e2dab180ed2",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "UNAVAILABLE",
+    "producer": "predictor",
+    "run_id_shape": "PATH_SHAPED_IDENTITY",
+    "run_logical": "run-757efe42321eee51",
+    "terminal_state": "COMPLETE"
+   },
+   {
+    "campaign_logical": "campaign-58ee3e2dab180ed2",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "UNAVAILABLE",
+    "producer": "predictor",
+    "run_id_shape": "UNDECLARED",
+    "run_logical": "run-eb0be6d636d52794",
+    "terminal_state": "COMPLETE"
+   },
+   {
+    "campaign_logical": "campaign-4a70ab278e650994",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "7bcd3f0d6a95b30ce105df3b1e7e13614b7fe6b3",
+    "producer": "agent-multi",
+    "run_id_shape": "OPAQUE_IDENTITY",
+    "run_logical": "run-73f850b38c871519",
+    "terminal_state": "COMPLETE"
+   },
+   {
+    "campaign_logical": "campaign-6b00428bb4e60dd5",
+    "campaign_shape": "OPAQUE_IDENTITY",
+    "code_identity": "4761df4a8b324442a83a0554cc53d3005025500d9e8d0c3b2272a729c9714752",
+    "producer": "T2 public forecasting screen",
+    "run_id_shape": "OPAQUE_IDENTITY",
+    "run_logical": "run-73f850b38c871519",
+    "terminal_state": "MIXED"
+   }
+  ],
+  "runs_identified_by_a_path": 4,
+  "runs_total": 9,
+  "state": "DERIVED_FROM_TERMINAL_RUNS",
+  "subjects_by_kind": {
+   "dataset": 4,
+   "operator": 2,
+   "variable": 242
+  }
+ },
+ "VALIDATED_RUNNABLE_CONFIGS": {
+  "note": "each verdict comes from a subprocess that built the effective configuration, resolved every entry point and derived the subjects, then stopped. The caller asserts from OUTSIDE that no framework was imported and no file was created",
+  "refused": [
+   {
+    "config": "examples/config/phase_1/phase_1_ann_12600_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "d1d5140822aa8f9937a90bf5b6f256cc0ee452a2678e3a40dced095baaf29c98",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_ann_1575_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "4b7210420370210731b8d83c4b4fee1000dda9a5b38fe4609953a36a0e05338f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "09d956ae002c96cdba812c326fbc0d0a112e9b5a0cb4341e023b9a47773ec633",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_ann_3150_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "6dcdbd7a2ea613df13dd9637ee8dbbbd20a334339dd6a704311535d938bd4b9a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_ann_6300_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "eacf188a033b842fd1f07135346e2f527dae51da76658bf68a812d1f06614198",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_cnn_12600_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "a82bc7260f83d301e33a10695766e49a50ceb2edb06b5409158b9818144e6e17",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_cnn_1575_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "71effbb99b8398051e6738c1fa1b53f8c7b806dc10534dbdb35deb97b34e8ccf",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "44b55defb6eaa3ae97207730c68a1fed3a116af25e4cec0fe3953987ac9f4054",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_cnn_3150_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "e670556b6ed8bf9679e8a6926b8063aee16d516ed7ee1aad0a4a301f025bb601",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_cnn_6300_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "56bf6dce3face6f742c641804d6f17d6de3e23b0d506c5dc73983a7a1c373483",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_lstm_12600_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "d55762c041af82c30acc0ea37c136e6daadad23a23be4ddc2816155cb66e8341",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_lstm_1575_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "db814ba1315e9405d73ccfcfcc81514d491c112e30f8f20948a9bedaf5b07044",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "e0db8b3bc9d374b74b4856429af3c512418a1e9e1df8714159ae5fab99f6abfd",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_lstm_3150_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "a08c68c695be9ff65fc8ed919095f88d76ecb63aa41abace399406034e6d2dca",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_lstm_6300_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "5e7acb3da703191953920bcbc9a49dcac865db642e5745a3434ef0d26851badb",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_transformer_12600_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "88552f9185b92f4da810e6904a83ef241c2d47d71690fbbf3dac2eb62c06b43c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_transformer_1575_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "b86303c06cc10903a1d9949026fd778adbf69e3a4554e7cc2bb5d07d28f0a759",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "8ec8e91e1a73dcd6d89a6f4845913ed979cf995b5492f73d2c2f357c82a9feb2",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_transformer_3150_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "92826746f2bef62877613731ba7919c664080ffdcc7e147b14d0338762062a1e",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1_transformer_6300_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "c8bbedd14379f08177a3ebd91f99a6f94e3fdc128d2bfaa4bbaea6d99919bba4",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1/phase_1b_candlestick_cnn_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "cf68674579a4de2d73613bf9c761bc7f748b878c7d5f0131d371a7f04b249ad2",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_cnn_1d_optimization_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "3eccf36e499de59d7c5163b3e0a5475987dc978d83d7ae21e4267d437b7ee078",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_lstm_1d_optimization_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "e596855e19031d2e087b4e24f26a37de1c0feacb04651ecd81c869106ca8c1ad",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_prophet_1d_optimization_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: entry point 'prophet' is registered in neither the installed registry nor this repository's setup.py for group 'predictor.plugins' \u2014 a plugi"
+    ],
+    "sha256": "905b3fec39a58d2e2fdde3cf5948bddf3b84e438e57a9510f23ca8f583f1c19b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_transformer_1d_optimization_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "bb80408212de3d9976df0d650ae897a5342eaa2040c0ac763df5b7eb0d1ef28f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_cnn_12600_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "5487fc92758734aefbc313dd0e32f9f9aac6e07d55fb136858778d083b7844d2",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_cnn_1575_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "70501f2f8b81f0fa43dfd116728dd3d4f0ea48df4517b3589d2669a086c30c1f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "4dd796fbe58467300523621cca6823f72b3f721bb78d43f3fb03ef0e18e0c69c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_cnn_25200_1d_config_naive.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "de9261adc9db04eda421732fa371292b5c2afb57d81dbd85dd2151a8329c36ac",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_cnn_3150_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "8762b0537dde1f13e0ffce54fa9de5ef1bfeeb5cd3f470a888a3fae1736b47fc",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_cnn_6300_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "7be272d30c7412be3f72b08707aa84651b56d52781a4e900f82a68cca5a3207b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_lstm_12600_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "d6dde09cbc7413401a8963b527a112c57a1b5e261411b770b5cff8191164c5f1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_lstm_1575_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "10adc5122d74781c797d79e98ceec1a846d7407a068e167c328f27e9dc811293",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "50360e2dd9224759c0e396cd9768105dafd27e73f483d936d7bd4629efa34e06",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_lstm_3150_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "ddf59ed8f730e823e544fba1f9add26c0b735d8750081874ba7e5ebe7a6e7b07",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_lstm_6300_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "3a7782be5cfc9873680db715bfdc6507b9a728ba6b31214562500a285b95577c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_transformer_12600_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "84ca712beafc04fc1333db9efc00bd788a888090f8db421864d9232b18c9f151",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_transformer_1575_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "f00d5d036a00338d10e0d7cc674e662c29578eb8178e5bb91f2ed2bbc8d1f136",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "8f30e0cc630958f8f85336fbe3c1f8e9991e9e340cfa1b969e2f9c6e77a5bb50",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_transformer_3150_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "ac9157d6b452797c7cf2e3d5bf16f3cc3180c5273f98ca5c2f419ccb51e9d974",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_transformer_6300_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "d962e09c20680df93549da9b5a4969f42f9e7f5f31d37b2b1fcba36983c94ea2",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/champion_inference_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "9c4acedecb58776de45817ea9aba2cc628c57a02d771ed8d7708d60ebc17fad7",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_ann_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "7e0114899612107c6e232f57e8fd1f0cc3b99f4731aa28ecb8fc5c88e4a74614",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_ann_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "b75278614af7f49aefaa79e834f3028d48eabbef7d19381f71739cff6d3628b4",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_ann_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "363cd954a0dd33cd7215cf785fb4d3cf9e35e335a1a4c5208ad5d8d9cfa34389",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_ann_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "95097db0e6a368bb2d9a0e1bba014589f47816bb2141078d33e4b3fb68012f6e",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_cnn_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "b6de30536a789bd5f64837d09972f773e31c74afe9f3f9cfc0940903e13310ab",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_cnn_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "53d7858de7568c35b1ab412f88df214e33436b73356953e95c1e0177ffcb542a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_cnn_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "1fcfa2ebf789cf802664503c46c49320354b7c0137fcb751120a8bd176f81f92",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_cnn_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "5b56b291292416d52757bdb4bbf1e4ee709bda0e61838ad92ea09ac52e6cf25c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_lstm_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "subjects: REFUSED: the declared target 'typical_price' appears on neither the x nor the y side of any partition \u2014 a target that is not in the data is not a contract"
+    ],
+    "sha256": "cb965f8b45c78352de67d448e5efe551a9bf981adc46752c7ae9ae7a25d00839",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_lstm_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "subjects: REFUSED: the declared target 'typical_price' appears on neither the x nor the y side of any partition \u2014 a target that is not in the data is not a contract"
+    ],
+    "sha256": "6b4b3df04f7610236439ee7ad7ad71de4f8f4eb1623ea28f4e8abad9af0512aa",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_lstm_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "subjects: REFUSED: the declared target 'typical_price' appears on neither the x nor the y side of any partition \u2014 a target that is not in the data is not a contract"
+    ],
+    "sha256": "0479f29a43dfe8497aff0fa6b28a58d373a21729c174c01a93aa8de9254ddb82",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_lstm_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "subjects: REFUSED: the declared target 'typical_price' appears on neither the x nor the y side of any partition \u2014 a target that is not in the data is not a contract"
+    ],
+    "sha256": "fdbb3f2a98b944e1e3c565667a0935dc2e193097e3077fbf996f66a4a4f7e86b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_mimo_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "17d90c9ad4da3dc9d4c1e41e80951b24e728b896685971b5cff5babe3cce495c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_mimo_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "09d5b6191c803690235df0569adb24b025b72ff3298bfd423ed475db47ff9acb",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_mimo_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "2ad40b086da86b3b5a5693d8c2cd8f9d6b50a20b54d1abfaf8c85795367f648c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_mimo_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "0ec4be1af3a9e524c8ad3348001b1c74ce5031f19db28c45ae2000e0e123e67b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_n_beats_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "d754bf28d7e8309cb4b33fe6267a37392e106779cae1b2c0a02d6e8f303c0552",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_n_beats_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "a3f62ed393332468b021c41d4da4c7b21564e5915d84f93d586f72fbccbf804c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_n_beats_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "288883e14b7abf8d5996fef0388e922cc164b87ef9fef3323738c8132241075b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_n_beats_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "67ec9b50adcc628bf27af658c007f3fcf9622fe3f08b1f05d4b2e26262d72440",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tcn_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "699607b527d76e44efa5990806f972b68c80fd999e3976e30b88db821d5d5bfc",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tcn_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "c0d6acd174b456252211148b5014f55cacddf249994a1114d4617f1e5494b448",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tcn_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "3e1f2d0355ecf8cd4680a47a0392eee468e29a834f13d991a7d08f44e54a6469",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tcn_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "3b86ef89834046c93309c75549f3b41848d1ebfa59c10f33c45b61662009f349",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tft_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "f26a618e53e6f0a891f002312c7f15e0e2a1d8ccc94a0b64407ee09fa09dfe15",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tft_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "594fc634bd0b35a26bbb3fa75a894adb128d3dab45950b39ae203f85d7e732e8",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tft_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "d716d52bafeccb05e4fc1857b334195ed1143a846f002c014d5335bb14c805b0",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_tft_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "2ce536cf9e4df64b5bec3128bb2e0155bffa99ebeb32d8811f7a9fa8c003166f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_transformer_buy_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "533a8bf6dc43a265000ed6c2fce1fb8ee90c84e4b96a5f3ba23d20d31dc6c352",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_transformer_buy_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "45dfe445ce8b9f92779ae13253dcadeccdc1bfeddaa18c10cda7b347c4733614",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_transformer_sell_entry_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "c2075eacc03d2a003c0554ddde8c93b930b2b93a1932305fc74d4fcb50527ec6",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/optimization/phase_1b_binary_transformer_sell_exit_1d_optimization_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "48c741c2f626353e749ba6f7044a2b8f0032a8ccb151aa74f245cd4685d6b603",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_ann_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "5bd8c4c91379fc0730b845a97c82c3c350850572c235b654dc09e3bacfac4094",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_ann_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "e7c7314daa780fe3f4483436c2e63866be50abd3fe5d3f782d56fe4963fc68d7",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_ann_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "8128f34aa76aef217edfe0bb1de00d33f5c5bd207ee0f0c2ebc29bd269b9b629",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_ann_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "19707148b4a4b2c75b68c9140da2200c9251cfb2acbee6efece198ef1f6bb808",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_cnn_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "0f02a9f190160a0806912a44576c1825b55435c9038394847ba6daf238d366f8",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_cnn_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "8aa3227f1bc6de2b0898a7b9e2231c36be43d4470c462505283b62075a576bfa",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_cnn_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "bbd74166f54bff416dfe84ebe557d8b7305a0e46733ba5dd2e3782986245a1e5",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_cnn_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "772a74f28ff28a9ee24250135217a04fe86a03303768f66b2b8099e72533d95f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_mimo_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "2f91c33efdfc189169ad4bc0d839d19bd7e9dd009b95650c5488ba7528762e9a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_mimo_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "4f85cc6e239a91e09548231f870094b6ccd0e85a9d8128847bf331d5f5b4f2ec",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_mimo_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "cfa8b702b72682ddeba1e46c6ea4661c635196db061b211412eca16871c5b37f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_mimo_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "b4d5557975671a8bfac7bdee4a435c5dc7591912bb7ffe4503196a1be286a679",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_n_beats_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "4df87e5a0be1d73088cceb8bb4987c8aeb253e2d2c0df839ea9905fb7ae962d6",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_n_beats_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "6e39b59ae2bf0301a74bbcd8877633647acae717dd074f16b5ac6110b2f918c0",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_n_beats_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "48d8b3354a48e9f02dabb3d3677f1637d12af6b61c0a35f0c4c955c7d9b16180",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_n_beats_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "8b6acd3f8e1a0a8937be893b1c3465f132e565c714b1accbe04342a5ec89b101",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tcn_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "c54401f44f971dab7c27fbbdd806a1d731d2b6d7abf9ef73e84585b017c893cf",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tcn_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "19a374b073a65e4cac79dd51913e30123c5f6b8f4cf75671a98e09ca317a1fa7",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tcn_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "f143f575109523c13d01465ee2c7b77f0bde35ee050762898548df91e62976b3",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tcn_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "ceb5b1507349752ef603a6209cf0626fe218fa7a8de178caf4d98782090c1a40",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tft_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "2309e16b0a0d262168251b6bb1eb7a3835423515bbdd4f24b3ee7d91858119c1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tft_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "ffd2dd0ef9720142928b962222245e41a98e36cc4ea1b8ebf0c34d104abf0600",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tft_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "315799f417e252ed7b157e3914f9d23f9902962c0d59ed6167697923f0c44c32",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_tft_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "b3c832bfa590c68a3dcfe713fd7063bacbfa435582a780c47284b479ccc26823",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_transformer_buy_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "ad85fb99ba2bb8ec0c0953ea2fa19d313b2816257c784220f901c155dbece480",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_transformer_buy_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "17189e145fdbbab94b67b82bf270094eed8359ddee2715045055975d13162a3a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_transformer_sell_entry_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "3e0391f7d9d061653d509028adc36349d092f9f912cea8c46f81d6b99ed25778",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_transformer_sell_exit_1d_config.json",
+    "reasons": [
+     "predictor parameters: REFUSED: predictor: Plugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and SUBMIT_ONLY does"
+    ],
+    "sha256": "3e47aeb923f90d05ddf698f401b3055171569eeaa0e2fcc599ee96a88d3096b0",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_ann_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "61c7d946a20d3b9567f7285363f1e70b3b5035fdaa4930fa7760c073f7c9baed",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_ann_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "90afb36f709d9d533b1c26ae6bb3f0d828923e4d7ed0b02e22afd8cbaaf471f2",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_cnn_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "24b3f76aa5277093b8c45fa4b72fc81a959ab6b92ffef58b23530a4d731ff5a6",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_cnn_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "a7df2660e71c7abdd27c8deb1593c671aa7b34b8480a7a1baa8d0b5da15bc440",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_logistic_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "2dcaa9bfb7198abcebdff26252f4d2da029c906853d1efbf77e0ffce0dc4207b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_logistic_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "33694b98720118de23f1cdb8196c1e7b52365c097cf129139be7dd4add758fc1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_lstm_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "c0ff52d0ac11d82f51ff69474fb1492ad937d540fdb71149beb9d469b3fd1bdb",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_lstm_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "28e62409226f420f720f1c9df5d05b15c990cbb64a823b25509b96888989c2a9",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_mimo_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "2662d28c2d2e5f8c1d91b6e5dda1cec664bd9ff3425cd38bc7947dc4a3cc97ef",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_mimo_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "04052887fa05aaffcf90dddf8b40f758ee1c9bddf28e9e90b0e4b33625aa7fc1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_n_beats_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "616bcb352ce9040f31d4e0adb9b0bfca67369cbf001dcd95bca21549c76fc31d",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_n_beats_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "a8f5bcb01981cc542c7effea838bf2c4a11a36444890db17617455a79805a27f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_tcn_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "bd6da706759b2291db8171babc311d7b22bb3260996fae55c53a32ace5312843",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_tcn_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "5d1b112d08dea14149cf4a02d5f6dccfe844bfaef5904322ed1bc4850179315a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_tft_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "ce641d2a10077c12e3487b375eda0506d59b339470f0316e0ce869748d048770",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_tft_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "ab0114a7cf02c9889dbb1c30b919ac47d19968839f1cd05d7f6120e8979b1114",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_transformer_direction_long_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "2e5310d42c96805a76d8b59555f4a5e72088654fc48e36343b01b241310f67b2",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/inference/phase_1c_direction_transformer_direction_short_1d_inference_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "4f9c2b3c02079cd096d90e22d0a704e1bb350e1c3a60eb9becc23c140ef24501",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_ann_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "8fcd999bc4f021ff7ef6ce4815d038d5e1a00cb6edbbe1bee70fb8a8cf477980",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_ann_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "784d9bffb6cae4acab256a4d6941d3fdf367a597c0aff4971b53025fab9b77cb",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_cnn_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "d07adc8cc54b15bd5f33cc765b621169dd17ca12e9fee741ee0eafa3791cdea4",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_cnn_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "f133deda1b902240baf74b27e1aa3ae7a423fb2796c9ff86e099726d8dee612e",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_logistic_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "8dc4ad59bfb306cdb59236d0966747ab9f0b32f5ad5c499f1578515661b347a4",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_logistic_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "5efa5cc7ab9d45ab01f29758df9c395c6ad9311982cf5b723c7a2042ff292cb1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_lstm_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "a7c1c414c9c07b8632995a33b1d4f7bc187b57db3a8b98a793e57adbf2bf8809",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_lstm_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "de4fdde86838345290b020b5900a26f5710c69c3deaeae700d27ef737f3afa2b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_mimo_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "5a1896dff6ea3b876b66f1d08b42d60e09366134cc689dd79398030565eee22f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_mimo_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "f5f9f631f4d21ba604eabd37a12d50b2d0ed7eaff3bc6f25b5eb24a087efe72e",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_n_beats_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "13c7b6d90fe6c9b49e06244556abc5a3e2eb09ba380689e8e7d3d4528443020a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_n_beats_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "b6f63ca55ab28ae7d52ce32f5912d7b63707c1ad47a1799e190d0279f55b92ec",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_tcn_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "f72b4ea144a9d62a7d43da8a440f3b529b4368ea786b5fc32a6261979858e939",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_tcn_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "a0a4793f21ff164dcb6a1fae771a43910bb9d602294ab7a1efdba0c5415287c5",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_tft_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "a89ca5cedf0be9441e9fa57fba732fdc1b5cca3fafa54aa7b05c41c3e7dbd9a3",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_tft_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "10ef9b22bd7a0ec292413c2f1640f4d506d1f7d6ed013b7a3b08ef4503072617",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_transformer_direction_long_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "59339d96aa8499aaffd72ea9788db32451cf2c934682b4926633e2d1e5a5a651",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1c_direction/optimization/phase_1c_direction_transformer_direction_short_1d_optimization_config.json",
+    "reasons": [
+     "pipeline parameters: REFUSED: pipeline: DirectionPipelinePlugin.plugin_params is computed, not declared, so it cannot be read without executing the module \u2014 and "
+    ],
+    "sha256": "1c1fe5032309be4d1bdd81df0e4c0faf57f68e22b79b4cbea5a9a61185b6c412",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_1_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "1d81f82f801d1fc2b7a837de5b3458a2c4af59791183ad6158e759ce8dd54517",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_1_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "1cc17769a9e62c3dcf7216e66088e1332de9dfbda43be4788dd7cb27d709e871",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_1_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "3e3c334b59b544250830442663c0d5d29cb2df212d156337240b159cf3fa904b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_1_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "82816c9776d3fa2a5df5e8faa6124450cf58a5a345673c204ebeacb0834cb9f8",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_2_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "141c0cd13fccc90101f3803319ded938d357e7721182fd5e0c94a0279eb20c92",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_2_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "30c6106afbd496eda3666c969d0a8a0b4b0245cc8f54d6bf4d486ba5b82474c5",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_2_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "f670fc9a48e058b0ab0f27cf50074fb3d7eaa5f1971032715d407f5c882cb647",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_2_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "76730543a810adc8a231d152a3457889051ebc2607c6c5b913f9a018baaadd47",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_3_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "1f3396affac5b88c86ad59852de86b8798c2883fbe1f92219878c3b1b2e3b8ec",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_3_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "4b267558afeb0ccb932a0e1594f04c5386581e3c27f4f8a0bd4e9ee94ee652e8",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_3_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "9719d053767668985949fb59b7ebb8499e8e8e590cefec8863385330efeacb71",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_3_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "56a5b22a8b236980a8851fbd93057565205905d4248d42e402d554af6219b87c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_4_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "6b6c2c054512e860ae3016afc23fecaaa8b461a0b09339d114afa719404c0906",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_4_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "995748319f1e635929972dc2fee87eed5c469f93de71b797238bffb21694512e",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_4_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "00340227a95c759cccfce5dde57a3a1651e3034ca7a325cb37ec01c8daf2356d",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2/phase_2_4_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "a27e9cf5bf0e39c4b2e6d1a851c608c71b93b778f4f6680923da5b2d853a0bb9",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_1_ann_25200_1d_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "1907749248446ec88734a14bfbc6e790b3f28bc87c06173dd2814e36064ca8bd",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_1_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "01890f6846d9de346627857c402d6e1cffe167c3bf81257234a93593cac544d6",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_1_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "b64e7799bb0b8fe7b3cda22b9d28d06c7651220c221ef76908faab6b3812b10f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_1_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "c65eb8611994501e46bc9739884531b6bdd6298525214c602930d818188dea3f",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_2_ann_25200_1d_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "c06db917e305281b34b436b02b91cbffce476c5e7edbf7758b79e5ead1b133b9",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_2_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "d04ff952d0e00cf22b9ef72904412e362965395aa1d48084f9890548d1a9e67a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_2_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "ada4c7d83efa38ee9baad8ebd1f2fa0217454b81ea38934096eb1fde27f03aa6",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_2_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "a75d8e0ad829923fb753f3cad84083809762ab81ffc2066748ea073edee20d80",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_3_ann_25200_1d_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "474db0a2f2ea00ac6d3240667db32338e45fa5d3ac5cb21d8f5d9bbb307acac1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_3_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "a4e0e00b5a36e476968e12438ff1eafa46fbfd65f2798fb4ad882e3a8337d745",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_3_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "c274647f3f28a3e59a1689aab361760af1ec7ba3454995e876c263766059dff7",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_3_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "d6296d167f81b636c7096ee6b1376367914591f975641640a0bc0e42d8b0dbca",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_4_ann_25200_1d_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "2ba3426aae40d611199b555f4fa7d4b26aa9f04c0f08d1527d6e5ded54ce50c9",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_4_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "65a50e372f049962ae04d7ca8186cc899846fb5bcba37001e88d80c6003f52e7",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_4_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "8fb90c8c72c4a359b33b7f72afd216c2458f1c1fe268489bf7dd65380626be04",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_2_daily/phase_2_4_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "0785116155f91c2881c0fffaa745f2f031e469fe33017464b01a361156749a16",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1/phase_3_1_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "81659aa6abe76a090bac928763d497e430ff17e360b4a944fe189099018d1ee1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1/phase_3_1_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "069be43e206506950b05d5ccd562e2fcf02cda551b081522e7a3cd17c828aa5c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1/phase_3_1_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "e432c99035cc43fbc364e3d1f58ab0da5130e5f31384db6aa6bdbdf2d3ea7769",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1/phase_3_1_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "fe074d472c6677286109d0414e529f6ba1d809665d767822a57b6c2342edd734",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1_daily/phase_3_1_ann_25200_1d_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "3d5c09649ea9ae89ea91f75a1fb5f9c157e84d7e454b267dbc9ac3ecbb1a0968",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1_daily/phase_3_1_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "06c111e39343c4418bfb0161e14263241619e76ec26fc7668a761c2f8addecdf",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1_daily/phase_3_1_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "a999da471427dd01eda467461476630f9999a10d53c00e2654b63567bf3c3534",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_1_daily/phase_3_1_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "ddf448a88682244c9dd4e2f2130fd31d9c1725d1991d3e97bdd7df8656f110d7",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2/phase_3_2_ann_25200_1h_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "fae73c17d39dc83562e7e73d8cc382333186c75365de3e3e11d7a385cb77d7ea",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2/phase_3_2_cnn_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "969c120b359d63529a0283a7ff1f256680a8a4d4e5bac34eeb5366a0d752b994",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2/phase_3_2_lstm_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "f4fc5bd5e2a7e58d98545a6382737f9157eb957bf635f56bed60d745d2bb97f5",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2/phase_3_2_transformer_25200_1h_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "939659096b49bab8a5090bf799aa25d67716ab3d7270a736b541768d4c48f947",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2_daily/phase_3_2_ann_25200_1d_config.json",
+    "reasons": [
+     "x_test_file: declared input is not present",
+     "x_train_file: declared input is not present"
+    ],
+    "sha256": "701441c7b6bc1eabc6365eb0e38d123fc1079e05f34bcf4f20a29bd419c67413",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2_daily/phase_3_2_cnn_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "4938521d165b526643c514cc8e76039b6163958246761e134fa59fd77b953a94",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2_daily/phase_3_2_lstm_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='lstm' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and recor"
+    ],
+    "sha256": "7ac71300266b3a8583253263dca42a3f386f406212bd5c1db98688e4922ea09c",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_3_2_daily/phase_3_2_transformer_25200_1d_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "fafe2d96365bc3fbc9c12ce3b48c82390778b2e61f4d90cb57cbf93158a7c442",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_1/phase_4_1_transformer_1h_12600_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "8934c4937ef733e3bf79c8b5eb042345e47a117b8fad5a161cabbc7f7d34ec00",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_1/phase_4_1_transformer_1h_25200_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "a5bcc593c4ae0026a3eac817e75d36e38f6d3794b4cf35d6e1712c3bc9a53a69",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_1/phase_4_1_transformer_1h_50400_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "299f6375c9254ac9fefc6b5e98c0f4c229fe1f73338cb3cd1dbb1ab201da445a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_1_daily/phase_4_1_cnn_1d_12600_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "7ae845102f2ab2aa61970d61b08d44b710b72eb9a2ebc7335f09646dd7117c64",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_1_daily/phase_4_1_cnn_1d_25200_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "c0ef3d766da04580d45405543b5fea5a7e89dcf9a3f982094341216e479d99b8",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_1_daily/phase_4_1_cnn_1d_50400_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "0f44b545cbb2d5984ebb968dabdd15321aff7fc79b98aaca2f1cb6566e327839",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_2/phase_4_2_transformer_1h_12600_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "a92d4af2574291a441ede1b050cadf3d08dc50ed153a9105beffb85c7035ece5",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_2/phase_4_2_transformer_1h_25200_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "1373271f7834fb006d94a619d43ab1f47e503941b2ce17bf973ca42bd099263d",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_2/phase_4_2_transformer_1h_50400_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "df8e97df8a1c048b590c72a981a3cbfe0bd443935385f3095490ac69a6d22a44",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_2_daily/phase_4_2_cnn_1d_12600_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "22fe209f7f15fcabca75a3a9d9ffbe3a642377b86726026ddeda9133ebe422b0",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_2_daily/phase_4_2_cnn_1d_25200_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "16b8527d8c385ff0d5ecd537ed019851de828b1083f6fceccaaa7dc439ab38ae",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_2_daily/phase_4_2_cnn_1d_50400_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "ba7fbf95e1860efda3ececea2336cea259f1d4b2c32e6d0a82605df1d958551b",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_3/phase_4_3_transformer_1h_12600_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "04b895aa02b8775182adb3b0a512612d66f86624e14abc33015b994b6612ba61",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_3/phase_4_3_transformer_1h_25200_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "1017c56723f3c60642faa4f2767303b97b9a6620365f5fc154bead40481ef07a",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_3/phase_4_3_transformer_1h_50400_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='transformer' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin an"
+    ],
+    "sha256": "13ed1943162cb824c74c4f10d08882a66b43f96d2ac3bf954cb62ebac3934cd4",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_3_daily/phase_4_3_cnn_1d_12600_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "6e04d53ea74db33c01c700b8d9fafb4a89396a9f6ff1bbd3ba9ff2c9efdd13eb",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_3_daily/phase_4_3_cnn_1d_25200_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "ade0ba4a16aea9dfb29cb64331b2302c9d8f03a900d4d08976d001cf76641ad1",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_4_3_daily/phase_4_3_cnn_1d_50400_config.json",
+    "reasons": [
+     "entry point: REFUSED: predictor: predictor_plugin='cnn' and legacy plugin='ann' disagree. The executor obeys the canonical key, so this run would train one plugin and record"
+    ],
+    "sha256": "e4b89bb499a54fcdd81aae2d48a97893caa995a6a92c2e071bc444bb722dca77",
+    "sides": {},
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [],
+    "verdict": "NOT_RUNNABLE"
+   }
+  ],
+  "refused_total": 204,
+  "runnable": [
+   {
+    "config": "examples/config/phase_1/optimization/phase_1_ann_optimization_config.json",
+    "reasons": [],
+    "sha256": "7b43c035e285820f2424ceebdfde988731b0c6f20ea0efa1393e648d39feae0f",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_ann_1d_optimization_config.json",
+    "reasons": [],
+    "sha256": "3fba2f656080ac7366e9cbf18562bb8ab7b17c87239d6df5c9f584377fe8b4b0",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_cnn_1d_incremental_optimization_config.json",
+    "reasons": [],
+    "sha256": "4a92ef691f3e519eebc1048c2017e1d0f9640cb8e845afd841c17bf85ccb9884",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_mimo_1d_optimization_config.json",
+    "reasons": [],
+    "sha256": "3989fa92293dd3442c2541e249f16f9af333137298b302eac0ab488c1661be0a",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_n_beats_1d_optimization_config.json",
+    "reasons": [],
+    "sha256": "0884fa7945b61e506344b4cbcdad0e00916f341ffb203cffe21ec38ea8a92bc6",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_tcn_1d_optimization_config.json",
+    "reasons": [],
+    "sha256": "81372cd8a6396fb66c8ed38564b01ec5eacbd26347e9df6c54a302f8f6873cfa",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_tcn_neat_1d_optimization_config.json",
+    "reasons": [],
+    "sha256": "3b6fd44dcce3c5433dbac9df6ade8599dce1cffa8ee344191be4aaca88102cb6",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/optimization/phase_1_tft_1d_optimization_config.json",
+    "reasons": [],
+    "sha256": "e7888369a4a64eeb0d37f30602a85b7612e406a5a4751be956357a54d713d5eb",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_ann_12600_1d_config.json",
+    "reasons": [],
+    "sha256": "6e1bb56b3e19d02efa1fc3045a79f84e3f58b957de4b0b697df397c4abc9bd33",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_ann_1575_1d_config.json",
+    "reasons": [],
+    "sha256": "e72b02947ea5f3a6f8c0a886c464625c167cbd30f1fefc36ed8a323d0e1e2606",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_ann_25200_1d_config.json",
+    "reasons": [],
+    "sha256": "a075bedcc7ad83b4afcef455cfb043cf0053cf8d125c4b2dee8dd021fbbf3627",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_ann_3150_1d_config.json",
+    "reasons": [],
+    "sha256": "5932eadaac944167b83b394be5a85fce400a29229bdbcc21bf361db0d90ae26a",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_ann_6300_1d_config.json",
+    "reasons": [],
+    "sha256": "485f8ebd42ed9c5d0ddec127a562eb79e268640f41652ffb5821af5fe69c1515",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_mimo_25200_1d_config.json",
+    "reasons": [],
+    "sha256": "70f0a82ad22495d85dd30bd88c59d952d5b76c469037b57d77037201beecf96b",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1_daily/phase_1_tcn_neat_champion_1d_config.json",
+    "reasons": [],
+    "sha256": "f03fc7e05982576107a46e642539b0a7bf9c211876544d71226f5faaded17b1e",
+    "sides": {
+     "x": 1,
+     "y": 1
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "typical_price"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_logistic_buy_entry_1d_config.json",
+    "reasons": [],
+    "sha256": "dfef959fff97f92cb727a0bc18d50024e110f56cdfa06b75444a2f0085669a09",
+    "sides": {
+     "x": 27,
+     "y": 27
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "ATR"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_lstm_buy_entry_1d_config.json",
+    "reasons": [],
+    "sha256": "d6ce2a7841eb11fad47402ba7ea45f320006cf813c74a3b57454c777a1868a79",
+    "sides": {
+     "x": 27,
+     "y": 27
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "ATR"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_lstm_buy_exit_1d_config.json",
+    "reasons": [],
+    "sha256": "902385f7f11b281f177c7d0a855a3e6d272384ed798ff1bb1c4b0aeb84fa5ae0",
+    "sides": {
+     "x": 27,
+     "y": 27
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "ATR"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_lstm_sell_entry_1d_config.json",
+    "reasons": [],
+    "sha256": "837787b04662254f7981d9a7bd9dec76a53576590aebcc8dde1dfd11e3c57157",
+    "sides": {
+     "x": 27,
+     "y": 27
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "ATR"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   },
+   {
+    "config": "examples/config/phase_1b_binary/phase_1b_binary_lstm_sell_exit_1d_config.json",
+    "reasons": [],
+    "sha256": "133b2d0ff985ce87b4c2dbad1b93dca3480840a691c86c50961517a5fe98ca24",
+    "sides": {
+     "x": 27,
+     "y": 27
+    },
+    "subprocess_proof": {
+     "exit_code": 0,
+     "files_created_in_checkout_root": [],
+     "frameworks_imported": []
+    },
+    "targets": [
+     "ATR"
+    ],
+    "verdict": "VALIDATED_RUNNABLE"
+   }
+  ],
+  "runnable_total": 20,
+  "state": "EFFECTIVE_CONFIGURATION_BUILT_AND_VALIDATED"
+ },
+ "derived_at": "2026-09-12T00:00:00Z",
+ "grants_nothing": "this describes what runs, what could run and what merely exists. It confers no eligibility",
+ "levels_sha256": "598c1197cd74ca81778ce0a7000867a7ce25f1ecd8c067a77581ad2e8ebb0e31",
+ "rule": "a level is never promoted to the one above it. A registry entry is not a candidate config, a candidate config is not validated, and a validated config is not an observed execution",
+ "schema": "financial_data.demand_levels.v1"
+}
