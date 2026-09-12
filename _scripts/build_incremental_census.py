@@ -205,7 +205,26 @@ def main(argv: list[str] | None = None) -> int:
                                     indent=1, sort_keys=True))
     code = [ROOT / "_scripts/lib/incremental_census.py",
             ROOT / "_scripts/build_incremental_census.py"]
-    rec = ic.receipt(census, census_path, a.summary, a.root, code)
+    # C42/C43: the receipt must be able to reproduce its own census.
+    # Every argument that changes the artifact is recorded, and the
+    # external profiles by digest — naming a path would let the same
+    # receipt point at different bytes tomorrow.
+    invocation = {
+        "censused_at": a.censused_at,
+        "digest_policy": a.digest_policy,
+        "selected": sorted(selected),
+        "value_profile_per_class": a.value_profile_per_class,
+        "value_profile_row_cap": a.value_profile_row_cap,
+        "previous_census_sha256": (previous or {}).get(
+            "census_sha256", "NONE"),
+        "external_full_profiles": [
+            {"path": str(x.name),
+             "sha256": ic.sha256_file(x)}
+            for x in sorted(a.external_full_profile)],
+        "external_roots": sorted(ext_roots),
+    }
+    rec = ic.receipt(census, census_path, a.summary, a.root, code,
+                     invocation=invocation)
     a.receipt.parent.mkdir(parents=True, exist_ok=True)
     a.receipt.write_text(json.dumps(rec, indent=1,
                                     sort_keys=True))

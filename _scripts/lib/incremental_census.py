@@ -987,7 +987,22 @@ def summarize(census: dict) -> dict:
 
 def receipt(census: dict, census_path: Path,
             summary_path: Path, root: Path,
-            code_files: list[Path]) -> dict:
+            code_files: list[Path],
+            invocation: dict | None = None) -> dict:
+    """The receipt of ONE census, including how to produce it again.
+
+    C42/C43 (order 2026-09-11): the receipt recorded the census digest
+    and the manifest, and nothing about the ARGUMENTS. Rebuilding from
+    the same lake at the same `censused_at` therefore produced a
+    different content address, and the committed receipt named an
+    artifact nobody could reproduce. A content-addressed name is only
+    useful if the address can be arrived at twice.
+
+    `invocation` carries the digest policy, the selections and the
+    external profiles that were bound, each by digest. It is recorded
+    as UNDECLARED when a caller does not supply it, so the absence is
+    visible rather than assumed empty.
+    """
     doc = {
         "schema": "financial_data.incremental_census_receipt.v1",
         "censused_at": census["censused_at"],
@@ -1011,6 +1026,9 @@ def receipt(census: dict, census_path: Path,
             "manifest_generated_at":
                 census["manifest_generated_at"],
         },
+        "invocation": (invocation if invocation is not None
+                       else "UNDECLARED — this receipt cannot "
+                            "reproduce its own census"),
         "grants_nothing": "a census records what exists; it "
                           "confers no eligibility on any "
                           "variable or operator",

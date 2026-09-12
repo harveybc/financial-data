@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import re
 import sys
@@ -53,26 +54,78 @@ def _norm(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
 
 
+#: columns that identify a row in time rather than describe it. Kept
+#: in step with predictor's own exclusion list.
+TEMPORAL_IDENTIFIERS = ("DATE_TIME", "date_time", "datetime",
+                        "timestamp", "TIMESTAMP", "date", "DATE",
+                        "time", "TIME", "index", "period")
+
+
+def _sha_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _is_temporal(column: str) -> bool:
+    return (column in TEMPORAL_IDENTIFIERS
+            or column.strip().lower() in
+            {c.lower() for c in TEMPORAL_IDENTIFIERS})
+
+
 def demand_columns(predictor_root: Path,
                    agent_multi_root: Path) -> dict:
-    """Every column an ACTIVE consumer declares it will read."""
-    supervised, sources = {}, []
+    """Every column an ACTIVE consumer declares it will read.
+
+    C42 (order 2026-09-11): this used to take EVERY header of every
+    declared view and EVERY json under `examples/config`, which
+    counted a timestamp, a target and an unreferenced draft config as
+    "demand". Three corrections:
+
+      * temporal identifiers are excluded, exactly as the eligibility
+        derivation excludes them — a row identifier is not a feature;
+      * declared TARGETS are excluded from input demand and reported
+        separately. A target is consumed on the y side and its
+        availability question is a different question;
+      * a config counts as an active RL consumer only if it declares
+        BOTH `feature_columns` and an `observation_contract`. A draft
+        that lists columns but binds no contract is not a consumer,
+        and every config that does count is bound by its exact path
+        AND its byte digest.
+    """
+    supervised, targets, sources = {}, {}, []
     inv = (predictor_root /
            "examples/research/crispdm_dataset_inventory.v1.json")
     if inv.is_file():
         doc = json.loads(inv.read_text())
+        declared_targets = {str(t) for ds in doc.get("datasets", [])
+                            for t in (ds.get("target_columns") or [])}
+        if doc.get("target_column"):
+            declared_targets.add(str(doc["target_column"]))
         for ds in doc.get("datasets", []):
             rel = ds.get("relative_path")
             p = predictor_root / rel if rel else None
-            if p and p.is_file():
-                cols = _header(p)
-                sources.append({"dataset_id": ds["dataset_id"],
-                                "relative_path": rel,
-                                "columns": len(cols)})
-                for c in cols:
-                    supervised.setdefault(c, []).append(
-                        ds["dataset_id"])
-    rl, rl_configs, contract_configs = {}, [], []
+            if not (p and p.is_file()):
+                continue
+            cols = _header(p)
+            kept, excluded = [], []
+            for c in cols:
+                if _is_temporal(c):
+                    excluded.append({"column": c,
+                                     "reason": "ROW_IDENTIFIER"})
+                    continue
+                if c in declared_targets:
+                    targets.setdefault(c, []).append(ds["dataset_id"])
+                    excluded.append({"column": c,
+                                     "reason": "DECLARED_TARGET"})
+                    continue
+                kept.append(c)
+                supervised.setdefault(c, []).append(ds["dataset_id"])
+            sources.append({"dataset_id": ds["dataset_id"],
+                            "relative_path": rel,
+                            "sha256": _sha_file(p),
+                            "columns_in_file": len(cols),
+                            "columns_demanded": len(kept),
+                            "columns_excluded": excluded})
+    rl, rl_configs, contract_configs, rejected = {}, [], [], []
     for cfg in sorted((agent_multi_root /
                        "examples/config").rglob("*.json")):
         try:
@@ -82,17 +135,42 @@ def demand_columns(predictor_root: Path,
         if not isinstance(c, dict):
             continue
         rel = str(cfg.relative_to(agent_multi_root))
-        if "observation_contract" in c:
-            contract_configs.append(rel)
-        for col in (c.get("feature_columns") or []):
-            rl.setdefault(str(col), []).append(rel)
-        if c.get("feature_columns"):
-            rl_configs.append(rel)
+        has_contract = "observation_contract" in c
+        cols = [str(x) for x in (c.get("feature_columns") or [])]
+        if has_contract:
+            contract_configs.append({"config": rel,
+                                     "sha256": _sha_file(cfg)})
+        if not cols:
+            continue
+        if not has_contract:
+            rejected.append({"config": rel,
+                             "feature_columns": len(cols),
+                             "reason": "declares feature_columns but "
+                                       "binds no observation_contract, "
+                                       "so it is a draft, not an "
+                                       "active consumer"})
+            continue
+        digest = _sha_file(cfg)
+        rl_configs.append({"config": rel, "sha256": digest,
+                           "feature_columns": len(cols)})
+        for col in cols:
+            if _is_temporal(col):
+                continue
+            rl.setdefault(col, []).append({"config": rel,
+                                           "sha256": digest})
     return {"supervised_columns": supervised,
+            "supervised_targets": targets,
             "supervised_sources": sources,
             "rl_columns": rl,
             "rl_configs": rl_configs,
-            "observation_contract_configs": contract_configs}
+            "rl_configs_rejected": rejected,
+            "observation_contract_configs": contract_configs,
+            "derivation": (
+                "active consumers only: temporal identifiers and "
+                "declared targets are excluded from input demand, and "
+                "an RL config counts only when it binds an "
+                "observation_contract. Every source and config is "
+                "bound by its byte digest")}
 
 
 def build_bridge(root: Path, census_doc: dict,
@@ -219,16 +297,24 @@ def main(argv=None) -> int:
         "census_sha256": census_doc.get("census_sha256",
                                         ic.UNKNOWN),
         "demand": {
+            "derivation": demand["derivation"],
             "supervised_columns":
                 len(demand["supervised_columns"]),
+            "supervised_targets": sorted(demand["supervised_targets"]),
             "supervised_sources": demand["supervised_sources"],
             "rl_columns": len(demand["rl_columns"]),
             "rl_configs": demand["rl_configs"],
+            "rl_configs_rejected": demand["rl_configs_rejected"],
             "observation_contract_configs":
                 demand["observation_contract_configs"],
-            "configs_declaring_both": sorted(
-                set(demand["rl_configs"])
-                & set(demand["observation_contract_configs"])),
+            # C42: a config counts as a consumer only when it binds an
+            # observation contract, so "declaring both" is now the
+            # definition of an active RL config rather than a separate
+            # intersection computed over paths.
+            "configs_declaring_both": [c["config"]
+                                       for c in demand["rl_configs"]],
+            "rl_is_subset_of_supervised": set(demand["rl_columns"])
+            <= set(demand["supervised_columns"]),
         },
         "bridge": {
             "columns_examined": bridge["columns_examined"],

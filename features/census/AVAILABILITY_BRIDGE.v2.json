@@ -1,0 +1,929 @@
+{
+ "bridge": {
+  "chain": "column -> conceptual variable -> physical appearance -> family -> temporal contract",
+  "columns_examined": 93,
+  "links": [],
+  "no_config_was_edited": "the gap between observation_contract and feature_columns is crossed with physical evidence; no configuration was changed to manufacture a match",
+  "resolved": 0,
+  "unresolved": 93,
+  "unresolved_detail": [
+   {
+    "column": "BC-BO",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "BH-BL",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "BH-BO",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "BO-BL",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "candidate_entities": [
+     "adausdt",
+     "adausdt_perp",
+     "asterusdt",
+     "audusd",
+     "avaxusdt",
+     "avaxusdt_perp",
+     "bchusdt",
+     "bnbusdt",
+     "bnbusdt_perp",
+     "btcusdt",
+     "btcusdt_perp",
+     "dogeusdt"
+    ],
+    "candidate_entity_count": 128,
+    "column": "CLOSE",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "the concept appears on several entities; a bridge never chooses between them",
+    "stage": "variable_to_entity"
+   },
+   {
+    "candidate_entities": [
+     "adausdt",
+     "adausdt_perp",
+     "asterusdt",
+     "audusd",
+     "avaxusdt",
+     "avaxusdt_perp",
+     "bchusdt",
+     "bnbusdt",
+     "bnbusdt_perp",
+     "btcusdt",
+     "btcusdt_perp",
+     "dogeusdt"
+    ],
+    "candidate_entity_count": 128,
+    "column": "HIGH",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "the concept appears on several entities; a bridge never chooses between them",
+    "stage": "variable_to_entity"
+   },
+   {
+    "candidate_entities": [
+     "adausdt",
+     "adausdt_perp",
+     "asterusdt",
+     "audusd",
+     "avaxusdt",
+     "avaxusdt_perp",
+     "bchusdt",
+     "bnbusdt",
+     "bnbusdt_perp",
+     "btcusdt",
+     "btcusdt_perp",
+     "dogeusdt"
+    ],
+    "candidate_entity_count": 128,
+    "column": "LOW",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "the concept appears on several entities; a bridge never chooses between them",
+    "stage": "variable_to_entity"
+   },
+   {
+    "candidate_entities": [
+     "adausdt",
+     "adausdt_perp",
+     "asterusdt",
+     "audusd",
+     "avaxusdt",
+     "avaxusdt_perp",
+     "bchusdt",
+     "bnbusdt",
+     "bnbusdt_perp",
+     "btcusdt",
+     "btcusdt_perp",
+     "dogeusdt"
+    ],
+    "candidate_entity_count": 128,
+    "column": "OPEN",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "the concept appears on several entities; a bridge never chooses between them",
+    "stage": "variable_to_entity"
+   },
+   {
+    "candidate_entities": [
+     "adausdt",
+     "adausdt_perp",
+     "asterusdt",
+     "avaxusdt",
+     "avaxusdt_perp",
+     "bchusdt",
+     "bnbusdt",
+     "bnbusdt_perp",
+     "btcusdt",
+     "btcusdt_perp",
+     "dogeusdt",
+     "dogeusdt_perp"
+    ],
+    "candidate_entity_count": 118,
+    "column": "VOLUME",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "the concept appears on several entities; a bridge never chooses between them",
+    "stage": "variable_to_entity"
+   },
+   {
+    "column": "atr_14",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "autocorr_lag1_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "autocorr_lag5_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "bb_lower",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "bb_middle",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "bb_pct_b",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "bb_upper",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "bb_width",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "cci_14",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "close_sma_ratio_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "close_sma_ratio_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "close_sma_ratio_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "close_sma_ratio_200",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "close_sma_ratio_50",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_200",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_50",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_cross_10_50",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "ema_cross_20_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "hist_vol_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "hist_vol_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "hist_vol_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "hurst_proxy_200",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "log_return_1",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "log_return_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "log_return_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "log_return_5",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "log_return_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "macd",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "macd_hist",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "macd_signal",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "mfi_14",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "mom_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "mom_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "natr_14",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "obv",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "obv_delta_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "realized_var_12",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "realized_var_48",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "return_1",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "return_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "return_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "return_5",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "return_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roc_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roc_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roc_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_kurt_ret_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_kurt_ret_252",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_kurt_ret_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_mean_ret_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_mean_ret_252",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_mean_ret_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_skew_ret_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_skew_ret_252",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_skew_ret_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_std_ret_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_std_ret_252",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "roll_std_ret_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "rsi_14",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "rsi_21",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "rsi_7",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "sma_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "sma_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "sma_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "sma_200",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "sma_50",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "sqret_autocorr_lag1_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "statistical__log_return_1",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "stoch_d",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "stoch_k",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "trend_slope_50",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "trend_strength_50",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "typical_price",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "vol_regime_high",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "vol_regime_low",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "volume_ratio_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "volume_sma_10",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "volume_sma_20",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "vwap_60",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "williams_r_14",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   },
+   {
+    "column": "zscore_close_100",
+    "consumers": [
+     "supervised"
+    ],
+    "reason": "no conceptual variable in the census carries this concept \u2014 the column is derived downstream of the lake, or the lake does not contain it",
+    "stage": "column_to_variable"
+   }
+  ]
+ },
+ "bridge_sha256": "e9276155b3e7c4b5817cef50e3e168915b3f1967bf829e997fd4c2b02ea2ad08",
+ "census_sha256": "49a8813d782a0e11cfcfde3e02a946fa04883db9f4e9563dced2fa24a7a1b82d",
+ "contracts": {
+  "blocked": [],
+  "blocked_by_missing_field": {},
+  "complete": [],
+  "families_reached": 0
+ },
+ "demand": {
+  "configs_declaring_both": [],
+  "derivation": "active consumers only: temporal identifiers and declared targets are excluded from input demand, and an RL config counts only when it binds an observation_contract. Every source and config is bound by its byte digest",
+  "observation_contract_configs": [
+   {
+    "config": "examples/config/phase_3_eth_sac_dynamics/l2_curriculum_arms_v1.json",
+    "sha256": "1005fe1710e21681850111aa570117aab0a79f4614c4c90573c12a2c2a16be5d"
+   },
+   {
+    "config": "examples/config/phase_3_eth_sac_dynamics/p1_difficulty_lr_factorial_v2.json",
+    "sha256": "f5544a5f57d0a6a5d658e1fde4bcc941331346e5c7cc67dbc6740703c0594d0c"
+   }
+  ],
+  "rl_columns": 0,
+  "rl_configs": [],
+  "rl_configs_rejected": [
+   {
+    "config": "examples/config/project3_ethusdt_4h_sac_actor_critic_feature_aware.json",
+    "feature_columns": 83,
+    "reason": "declares feature_columns but binds no observation_contract, so it is a draft, not an active consumer"
+   },
+   {
+    "config": "examples/config/project3_ethusdt_4h_sac_synth_bootstrap_v1.json",
+    "feature_columns": 83,
+    "reason": "declares feature_columns but binds no observation_contract, so it is a draft, not an active consumer"
+   },
+   {
+    "config": "examples/config/project3_ethusdt_4h_sac_train_val_test.json",
+    "feature_columns": 83,
+    "reason": "declares feature_columns but binds no observation_contract, so it is a draft, not an active consumer"
+   },
+   {
+    "config": "examples/config/project3_ethusdt_4h_sac_train_val_test_v2.json",
+    "feature_columns": 83,
+    "reason": "declares feature_columns but binds no observation_contract, so it is a draft, not an active consumer"
+   },
+   {
+    "config": "examples/config/project3_ethusdt_4h_sac_train_val_test_v3.json",
+    "feature_columns": 83,
+    "reason": "declares feature_columns but binds no observation_contract, so it is a draft, not an active consumer"
+   }
+  ],
+  "rl_is_subset_of_supervised": true,
+  "supervised_columns": 93,
+  "supervised_sources": [
+   {
+    "columns_demanded": 89,
+    "columns_excluded": [
+     {
+      "column": "DATE_TIME",
+      "reason": "ROW_IDENTIFIER"
+     }
+    ],
+    "columns_in_file": 90,
+    "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+    "relative_path": "examples/data/project3/ethusdt_4h_tech_stat_full_model_ready.csv",
+    "sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f"
+   },
+   {
+    "columns_demanded": 8,
+    "columns_excluded": [
+     {
+      "column": "DATE_TIME",
+      "reason": "ROW_IDENTIFIER"
+     }
+    ],
+    "columns_in_file": 9,
+    "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+    "relative_path": "examples/data/phase_1/base_d6.csv",
+    "sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95"
+   }
+  ],
+  "supervised_targets": []
+ },
+ "derived_at": "2026-09-12T00:00:00Z",
+ "required_fields": [
+  "feature_family",
+  "provider",
+  "observation_ts_col",
+  "available_from_ts_col",
+  "revision_policy",
+  "timezone",
+  "min_latency_minutes",
+  "license_scope"
+ ],
+ "rules": {
+  "event_time_is_never_available_time": "an available time is derived from a publication policy, a worker or a provider statement \u2014 never copied from the event time",
+  "zero_is_a_valid_answer": "the goal is not a positive count; a family whose evidence does not exist stays blocked"
+ },
+ "schema": "financial_data.availability_bridge.v1"
+}
