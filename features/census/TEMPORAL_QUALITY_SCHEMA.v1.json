@@ -1,0 +1,196 @@
+{
+  "$id": "financial_data.temporal_quality_schema.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "mask_artifact": {
+      "required": [
+        "relative_path",
+        "sha256",
+        "rows",
+        "columns"
+      ],
+      "type": "object"
+    },
+    "parameters": {
+      "properties": {
+        "development_window": {
+          "enum": [
+            "EXPANDING"
+          ]
+        },
+        "embargo_bars": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "inner_validation_embargo_bars": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "inner_validation_fraction": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        "max_operator_warmup_bars": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "model_lookback_bars": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "n_rolling_origins": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "target_horizon_nominal_bars": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "test_block_bars": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "model_lookback_bars",
+        "max_operator_warmup_bars",
+        "target_horizon_nominal_bars",
+        "n_rolling_origins",
+        "test_block_bars",
+        "embargo_bars",
+        "development_window",
+        "inner_validation_fraction",
+        "inner_validation_embargo_bars"
+      ],
+      "type": "object",
+      "x-defaults": {
+        "development_window": "EXPANDING",
+        "embargo_bars": 24,
+        "inner_validation_embargo_bars": 0,
+        "inner_validation_fraction": 0.1,
+        "max_operator_warmup_bars": 512,
+        "model_lookback_bars": 24,
+        "n_rolling_origins": 5,
+        "target_horizon_nominal_bars": 1,
+        "test_block_bars": 1000
+      }
+    },
+    "supersedes": {
+      "description": "The v1 availability contract, preserved byte for byte and bound by digest.",
+      "required": [
+        "relative_path",
+        "sha256"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact",
+    "supersedes",
+    "availability_contract",
+    "parameters",
+    "layers",
+    "bar_layer_summary",
+    "sample_summary",
+    "rolling_origins",
+    "mask_artifact",
+    "self_digest"
+  ],
+  "self_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "json.dumps(document_without_self_digest, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')",
+    "value": "14a4c820fa9655d12524ad5cc96ad979100ea48f78a441db8e068d49160b636b"
+  },
+  "title": "Temporal quality contract and sample eligibility mask (C98-C99)",
+  "type": "object",
+  "x-enums": {
+    "origin_status_reasons": [
+      "NO_ELIGIBLE_SAMPLES",
+      "DEVELOPMENT_REGION_BEFORE_FIRST_BAR",
+      "NO_TRAIN_SAMPLES",
+      "NO_VALIDATION_SAMPLES",
+      "NO_TEST_SAMPLES"
+    ],
+    "origin_statuses": [
+      "SUPPORTED",
+      "INSUFFICIENT_SUPPORT",
+      "NOT_CONSTRUCTED"
+    ],
+    "region_codes": [
+      "DEVELOPMENT",
+      "EMBARGO",
+      "TEST_BLOCK",
+      "AFTER_TEST_BLOCK"
+    ],
+    "role_codes": [
+      "TRAIN",
+      "VALIDATION",
+      "TEST",
+      "NOT_ELIGIBLE",
+      "INNER_TRAIN_PURGED_BEFORE_VALIDATION",
+      "DEV_TARGET_CROSSES_EMBARGO_START",
+      "EMBARGO",
+      "TEST_TARGET_CROSSES_BLOCK_END",
+      "AFTER_TEST_BLOCK"
+    ],
+    "sample_reason_codes": [
+      "LOOKBACK_BEFORE_FIRST_BAR",
+      "LOOKBACK_CROSSES_GAP",
+      "LOOKBACK_CONTAINS_TRUNCATED_BAR",
+      "LOOKBACK_CONTAINS_UNAVAILABLE_BAR",
+      "OPERATOR_WINDOW_BEFORE_FIRST_BAR",
+      "OPERATOR_WINDOW_CROSSES_GAP",
+      "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR",
+      "OPERATOR_WINDOW_CONTAINS_UNAVAILABLE_BAR",
+      "TARGET_NOMINAL_BAR_ABSENT",
+      "TARGET_CONTAINS_TRUNCATED_BAR",
+      "TARGET_CONTAINS_UNAVAILABLE_BAR"
+    ],
+    "step_states": [
+      "REGULAR",
+      "GAP",
+      "UNKNOWN_LAST_ROW"
+    ],
+    "structural_refusal_codes": [
+      "EMPTY_DATASET",
+      "LENGTH_MISMATCH",
+      "AVAILABILITY_CONTRACT_INVALID",
+      "AVAILABILITY_CONTRACT_NOT_BAR_OPEN",
+      "OPEN_TIME_ABSENT",
+      "OPEN_TIME_NOT_STRICTLY_INCREASING",
+      "OPEN_TIME_OFF_NOMINAL_GRID",
+      "CLOSE_TIME_BEFORE_OPEN_TIME",
+      "CLOSE_TIME_EXCEEDS_NOMINAL_BAR",
+      "CLOSE_TIME_OVERLAPS_NEXT_BAR",
+      "AVAILABILITY_REFUSED"
+    ]
+  },
+  "x-implementation": {
+    "availability_library": "_scripts/temporal_availability.py",
+    "relative_path": "_scripts/temporal_quality.py",
+    "root_id": "financial-data"
+  },
+  "x-layers": {
+    "availability": "v1 causal_information_bound RESOLVED for the bar (temporal_availability.py, unchanged).",
+    "completeness": "close_time present and close_time - open_time == nominal_ms - (1 if INCLUSIVE_LAST_MILLISECOND else 0); shorter = TRUNCATED.",
+    "eligibility": "Sample at nominal position q is ELIGIBLE iff every position of lookback [q-L+1,q], operator window [q-W+1,q] and target [q+1,q+h] is a present, available, complete bar. No interpolation, no filling; next bar = next NOMINAL interval.",
+    "regularity": "next_open - open == nominal_ms -> REGULAR; greater -> GAP (missing = step/nominal - 1); last row -> UNKNOWN_LAST_ROW."
+  },
+  "x-mask-columns": {
+    "bar_available": "bool, layer 1",
+    "bar_interval_complete": "bool, layer 2",
+    "bar_truncated": "bool, layer 2",
+    "close_time_ms": "int64 UTC ms, null if absent",
+    "eligible_support_through": "int32, eligible samples with row_index <= this row (prefix-invariant)",
+    "ineligibility_reasons": "list<string> subset of sample reason codes in declared order; empty iff eligible",
+    "missing_nominal_intervals_after": "int32, null for the last row",
+    "next_step_state": "string in ['REGULAR', 'GAP', 'UNKNOWN_LAST_ROW'], layer 3",
+    "open_time_ms": "int64 UTC ms",
+    "origin_<j>_role": "string in ['TRAIN', 'VALIDATION', 'TEST', 'NOT_ELIGIBLE', 'INNER_TRAIN_PURGED_BEFORE_VALIDATION', 'DEV_TARGET_CROSSES_EMBARGO_START', 'EMBARGO', 'TEST_TARGET_CROSSES_BLOCK_END', 'AFTER_TEST_BLOCK'] (NOT prefix-invariant; anchored at the last eligible sample)",
+    "row_index": "int32, 0-based row of the dataset",
+    "sample_eligible": "bool, layer 4"
+  },
+  "x-prefix-invariance": "sample_eligible, ineligibility_reasons and eligible_support_through of a row depend only on rows with open time in [open_t - (max(L,W)-1)*nominal, open_t + h*nominal] and earlier rows (support). Rolling-origin roles are not prefix-invariant. A structurally invalid dataset is refused as a whole.",
+  "x-rolling-origin-rule": "Deterministic rolling-origin assignment on the eligible timeline. Rule (positions are nominal grid indices, all blocks in NOMINAL bars): * Anchor: q_last = position of the LAST eligible sample; the last test block ends at B_n = q_last + h (the last eligible sample's target). * Test block j (j = 1..n, oldest first): B_j = B_n - (n - j) * test_block, T_j = B_j - test_block + 1; positions [T_j, B_j]; blocks are contiguous and non-overlapping. * Embargo: positions [T_j - embargo, T_j - 1]. * Development region (EXPANDING): positions [first bar, dev_end], dev_end = T_j - embargo - 1. * TEST: eligible, T_j <= q and q + h <= B_j. An eligible q in the block whose target passes B_j is TEST_TARGET_CROSSES_BLOCK_END. * EMBARGO: eligible q inside the embargo. * DEV_TARGET_CROSSES_EMBARGO_START: eligible q <= dev_end, q + h > dev_end. * D = remaining eligible development samples, ordered. n_val = floor(Fraction(str(inner_validation_fraction)) * |D|); VALIDATION is the last n_val of D, starting at position V. TRAIN: q + h <= V - 1 - inner_validation_embargo_bars; other D samples before V are INNER_TRAIN_PURGED_BEFORE_VALIDATION. * Test samples' lookback/operator windows MAY reach before T_j (causal past); they are counted, not excluded. * Every ineligible sample is NOT_ELIGIBLE in every origin; q > B_j is AFTER_TEST_BLOCK."
+}
