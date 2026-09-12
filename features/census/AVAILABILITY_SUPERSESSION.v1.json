@@ -1,0 +1,59 @@
+{
+ "external_review": "still mandatory. No tool here grants PUBLICLY_ELIGIBLE and none of these artifacts is self-authorizing",
+ "nothing_deleted": "the three superseded artifacts remain byte-intact on this branch as the history of what was believed and why it was wrong",
+ "rule": "only a feature with a located producer, an executable causal DAG and a derived earliest-available time may enter a future submission. A column whose producer was not located asserts nothing",
+ "schema": "financial_data.availability_supersession.v1",
+ "superseded": [
+  {
+   "artifact": "AVAILABILITY_BRIDGE.v2.json",
+   "kept": "BYTE_INTACT",
+   "sha256": "cf596e7ccd4fe7c933fc9b987702857056cb585e42db910e9aece54da61c9449",
+   "what_it_claimed": "93 supervised columns of ACTIVE consumer demand",
+   "what_it_was": "the column names of two datasets in the CRISP-DM research registry. One of them has no consuming configuration at all; the other is read only by configurations that bind no observation contract. A registry entry is a candidate, not a consumption"
+  },
+  {
+   "artifact": "FEATURE_LINEAGE.v1.json",
+   "kept": "BYTE_INTACT",
+   "sha256": "91507d071c9453141da113b2a122fefc7177beb6fa67a4b8f1b86d24ab9b1abc",
+   "what_it_claimed": "89 of 97 columns resolved with a derived earliest-available time",
+   "what_it_was": "one generic sentence applied to every derived feature and one generic availability formula. A rolling mean, a lagged return and an externally published series do not share a graph"
+  },
+  {
+   "artifact": "FINANCIAL_AVAILABILITY_CANDIDATE.v1.json",
+   "kept": "BYTE_INTACT",
+   "sha256": "92843bd3e92e9255ebd698ceb20b949b28bb30326ff03c30f42d0cc9e39bb7e1",
+   "what_it_claimed": "89 columns ready for external review as consumed-variable availability",
+   "what_it_was": "an inventory of RESEARCH BANK CANDIDATES. It cannot authorize consumed variables because those datasets have no executable consumer"
+  }
+ ],
+ "superseded_at": "2026-09-12T00:00:00Z",
+ "supersedes_with": [
+  {
+   "artifact": "DEMAND_UNIVERSES.v1.json",
+   "sha256": "712008f7f5cbd811a50a6e2f163f80aae028b6a990391364e72762ba4d8d3503",
+   "what_it_separates": {
+    "ACTIVE_EXECUTION_DEMAND": {
+     "active_x_subjects": 162,
+     "active_y_subjects": 162,
+     "rl_active_columns": 0,
+     "supervised_executable_configs": 137,
+     "supervised_unreachable_configs": 87,
+     "targets": 2
+    },
+    "CONFIRMATORY_RESERVED": 9,
+    "RESEARCH_BANK_CANDIDATES": 97
+   }
+  },
+  {
+   "artifact": "FEATURE_DAG.v1.json",
+   "by_class": {
+    "CAUSAL": 52,
+    "UNRESOLVED_PRODUCER": 45
+   },
+   "resolved_only_in_retired_paths": 5,
+   "sha256": "4991e36862d42b8af5fa145e8a818bb4efe102b6f1c46f85aecce0182ab09a5b",
+   "unresolved_producers": 45
+  }
+ ],
+ "supersession_sha256": "704c774ee95788884ef302fe9bfbd88f785144608b27b43edba6b20ad053c3d0"
+}
