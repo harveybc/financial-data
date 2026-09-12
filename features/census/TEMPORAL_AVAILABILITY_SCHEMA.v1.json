@@ -1,0 +1,278 @@
+{
+  "$id": "financial_data.temporal_availability_schema.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "timestamp_semantics": {
+            "const": "BAR_OPEN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "information_complete_not_before": {
+            "const": "PER_BAR_CLOSE_TIME"
+          },
+          "nominal_bar_seconds": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "bar_close_time_convention"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "timestamp_semantics": {
+            "const": "BAR_CLOSE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "information_complete_not_before": {
+            "const": "TIMESTAMP_ITSELF"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "timestamp_semantics": {
+            "const": "PUBLICATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "information_complete_not_before": {
+            "const": "PUBLICATION_TIMESTAMP"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provider_delivery_latency": {
+            "properties": {
+              "status": {
+                "const": "UNOBSERVED"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "provider_delivery_latency": {
+            "properties": {
+              "seconds": {
+                "const": null
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "bar_close_time_convention": {
+      "description": "Required for BAR_OPEN.",
+      "enum": [
+        "INCLUSIVE_LAST_MILLISECOND",
+        "EXCLUSIVE_END"
+      ]
+    },
+    "contract_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "dataset_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "dataset_sha256": {
+      "description": "Digest of the exact bytes the contract governs. A contract applied to other bytes is refused (DATASET_TRANSPLANTED).",
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "information_complete_not_before": {
+      "description": "Must equal the rule implied by timestamp_semantics.",
+      "enum": [
+        "PER_BAR_CLOSE_TIME",
+        "TIMESTAMP_ITSELF",
+        "PUBLICATION_TIMESTAMP",
+        "UNDECLARED"
+      ],
+      "x-rule-by-semantics": {
+        "BAR_CLOSE": "TIMESTAMP_ITSELF",
+        "BAR_OPEN": "PER_BAR_CLOSE_TIME",
+        "PUBLICATION": "PUBLICATION_TIMESTAMP",
+        "UNDECLARED": "UNDECLARED"
+      }
+    },
+    "nominal_bar_seconds": {
+      "description": "NOMINAL bar length. Required for BAR_OPEN. Never used to infer a missing close_time: individual bars may be truncated.",
+      "exclusiveMinimum": 0,
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "provenance": {
+      "properties": {
+        "basis": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "DECLARED",
+            "EVIDENCED_BY_EXACT_MATCH_WITH_DECLARED_UPSTREAM",
+            "EVIDENCED_BY_EXACT_MATCH_NOT_BY_DECLARATION",
+            "UNDECLARED"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "provider_delivery_latency": {
+      "properties": {
+        "evidence": {
+          "type": "string"
+        },
+        "seconds": {
+          "description": "null iff status is UNOBSERVED. UNOBSERVED is never zero.",
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "OBSERVED",
+            "DECLARED",
+            "UNOBSERVED"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "seconds",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "timestamp_semantics": {
+      "enum": [
+        "BAR_OPEN",
+        "BAR_CLOSE",
+        "PUBLICATION",
+        "UNDECLARED"
+      ]
+    }
+  },
+  "required": [
+    "contract_id",
+    "dataset_id",
+    "dataset_sha256",
+    "timestamp_semantics",
+    "information_complete_not_before",
+    "nominal_bar_seconds",
+    "provider_delivery_latency",
+    "provenance"
+  ],
+  "self_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "json.dumps(document_without_self_digest, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')",
+    "value": "71f1529897e0436592690cb12a55888b688cf9d316fe68dd6d3d12c675011302"
+  },
+  "title": "Temporal availability contract (C81-C83)",
+  "type": "object",
+  "x-enums": {
+    "bound_kinds": [
+      "causal_information_bound",
+      "operational_delivery_bound"
+    ],
+    "bound_statuses": [
+      "RESOLVED",
+      "UNRESOLVED",
+      "UNOBSERVED",
+      "REFUSED"
+    ],
+    "gate_ids": [
+      "E5a",
+      "E5b"
+    ],
+    "gate_statuses": [
+      "OPEN",
+      "CLOSED"
+    ],
+    "reason_codes": [
+      "CONTRACT_INVALID",
+      "DATASET_DIGEST_NOT_PRESENTED",
+      "DATASET_TRANSPLANTED",
+      "PROVENANCE_UNDECLARED",
+      "TIMESTAMP_SEMANTICS_UNDECLARED",
+      "TIMESTAMP_ABSENT",
+      "NON_INCREASING_TIMESTAMP",
+      "PER_BAR_CLOSE_TIME",
+      "CLOSE_TIME_ABSENT_NOT_INFERRED_FROM_NOMINAL_BAR",
+      "CLOSE_TIME_BEFORE_OPEN_TIME",
+      "CLOSE_TIME_EXCEEDS_NOMINAL_BAR",
+      "CLOSE_TIME_OVERLAPS_NEXT_BAR",
+      "TRUNCATED_BAR",
+      "ZERO_SPAN_BAR",
+      "FOLLOWED_BY_GAP",
+      "TIMESTAMP_IS_BAR_CLOSE",
+      "CLOSE_TIME_CONTRADICTS_BAR_CLOSE_SEMANTICS",
+      "PUBLICATION_TIMESTAMP",
+      "PUBLICATION_TIME_ABSENT",
+      "PUBLICATION_BEFORE_EVENT_TIME",
+      "BOUND_KIND_MISMATCH",
+      "BOUND_FROM_OTHER_CONTRACT",
+      "CAUSAL_BOUND_NOT_RESOLVED",
+      "PROVIDER_DELIVERY_LATENCY_UNOBSERVED",
+      "PROVIDER_DELIVERY_LATENCY_OBSERVED",
+      "PROVIDER_DELIVERY_LATENCY_DECLARED",
+      "CAUSAL_INFORMATION_BOUND_RESOLVED",
+      "CAUSAL_INFORMATION_BOUND_NOT_RESOLVED",
+      "OPERATIONAL_DELIVERY_BOUND_ABSENT",
+      "OFFLINE_CAUSAL_BOUND_PRESENTED_AS_OPERATIONAL",
+      "OPERATIONAL_DELIVERY_BOUND_NOT_RESOLVED",
+      "OPERATIONAL_BOUND_PRECEDES_CAUSAL_BOUND",
+      "OPERATIONAL_DELIVERY_BOUND_RESOLVED",
+      "NECESSARY_CONDITIONS_ONLY_NOT_A_LIVE_VIABILITY_GRANT",
+      "NO_ROWS_EVALUATED"
+    ]
+  },
+  "x-gates": {
+    "E5a": "Offline experiments. OPEN iff the causal_information_bound is RESOLVED under a valid contract whose dataset_sha256 equals the observed digest.",
+    "E5b": "Live. OPEN iff E5a is OPEN AND an operational_delivery_bound (never a causal bound) is RESOLVED, from the same contract, not before the causal bound. OPEN states necessary temporal conditions only; it grants no live viability."
+  },
+  "x-implementation": {
+    "relative_path": "_scripts/temporal_availability.py",
+    "root_id": "financial-data"
+  },
+  "x-notions": {
+    "causal_information_bound": "Earliest instant the datum could be complete by definition of its period. BAR_OPEN -> per-bar close_time; BAR_CLOSE -> the timestamp; PUBLICATION -> the publication timestamp.",
+    "operational_delivery_bound": "Instant the provider was observed or guaranteed to deliver the datum: causal bound + observed/declared latency. UNOBSERVED latency yields an UNOBSERVED bound, never a zero-latency one."
+  },
+  "x-row-fields": {
+    "close_time_ms": "integer UTC ms; the bar's own close time as recorded by the source",
+    "next_timestamp_ms": "integer UTC ms; the next SOURCE bar, for overlap and gap detection",
+    "publication_time_ms": "integer UTC ms; PUBLICATION only",
+    "timestamp_ms": "integer UTC ms; the dataset timestamp interpreted per timestamp_semantics (event time for PUBLICATION)"
+  }
+}
