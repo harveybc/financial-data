@@ -14,6 +14,8 @@ def _client(tmp_path):
             "include_globs": ["market_data/**/*.csv"],
             "secret_key": "t",
             "lake_service_token": TOKEN,
+            "spool_dir": str(tmp_path / "var" / "spool"),
+            "cuts_dir": str(tmp_path / "var" / "cuts"),
         }
     )
     plugins = assemble(config)

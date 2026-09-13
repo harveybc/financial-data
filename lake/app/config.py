@@ -1,6 +1,7 @@
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parents[2]
+_LAKE = Path(__file__).resolve().parents[1]
 
 DEFAULT_VALUES = {
     "pipeline_plugin": "default_pipeline",
@@ -32,7 +33,12 @@ DEFAULT_VALUES = {
         "features/**/*.csv",
     ],
     "time_column": None,
+    "time_columns": {},
+    "untimed": [],
     "holdout_start": "2025-01-01",
+    "spool_dir": str(_LAKE / "var" / "spool"),
+    "cuts_dir": str(_LAKE / "var" / "cuts"),
+    "max_downloads": 2,
     "load_config": None,
     "save_config": None,
     "quiet_mode": False,
