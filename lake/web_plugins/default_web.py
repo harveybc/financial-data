@@ -8,6 +8,10 @@ from pathlib import Path
 from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
 
 from app.config_handler import save_config
+from app.lake_auth import check_bearer, load_token
+
+MAX_READ_ROWS = 8000
+MAX_SPAN_DAYS = 366
 
 
 def _fmt_bytes(n):
@@ -90,20 +94,38 @@ class Plugin:
             flash(json.dumps(payload, default=str)[:800], "info")
             return redirect(url_for("home"))
 
+        def _api_ok():
+            expected = cfg().get("lake_service_token") or load_token()
+            if check_bearer(request.headers.get("Authorization"), expected):
+                return None
+            return jsonify({"error": "unauthenticated"}), 401
+
         @app.get("/api/v1/describe")
         def api_describe():
+            denied = _api_ok()
+            if denied:
+                return denied
             return jsonify(inv().describe())
 
         @app.get("/api/v1/storage")
         def api_storage():
+            denied = _api_ok()
+            if denied:
+                return denied
             return jsonify(inv().storage())
 
         @app.get("/api/v1/discover")
         def api_discover():
+            denied = _api_ok()
+            if denied:
+                return denied
             return jsonify({"resources": inv().discover()})
 
         @app.get("/api/v1/coverage")
         def api_coverage():
+            denied = _api_ok()
+            if denied:
+                return denied
             resource = request.args.get("resource")
             try:
                 return jsonify(inv().coverage(resource))
@@ -112,18 +134,34 @@ class Plugin:
 
         @app.get("/api/v1/read")
         def api_read():
+            denied = _api_ok()
+            if denied:
+                return denied
             resource = request.args.get("resource")
             start = request.args.get("from")
             end = request.args.get("to")
+            if not start or not end:
+                return jsonify({"error": "from and to are required"}), 400
+            try:
+                from datetime import date as _date
+
+                span = (_date.fromisoformat(str(end)[:10]) - _date.fromisoformat(str(start)[:10])).days
+            except ValueError:
+                return jsonify({"error": "invalid from/to"}), 400
+            if span < 0 or span > MAX_SPAN_DAYS:
+                return jsonify({"error": "date span exceeds limit"}), 400
             holdout = inv().params.get("holdout_start")
-            if holdout and end and str(end)[:10] >= str(holdout)[:10]:
+            if holdout and str(end)[:10] >= str(holdout)[:10]:
                 return jsonify({"error": "holdout"}), 403
-            if holdout and start and str(start)[:10] >= str(holdout)[:10]:
+            if holdout and str(start)[:10] >= str(holdout)[:10]:
                 return jsonify({"error": "holdout"}), 403
             try:
-                return jsonify(inv().read(resource, start=start, end=end))
+                payload = inv().read(resource, start=start, end=end)
             except FileNotFoundError:
                 return jsonify({"error": "unknown resource"}), 404
+            if len(payload.get("rows") or []) > MAX_READ_ROWS:
+                return jsonify({"error": "result too large; narrow the range"}), 400
+            return jsonify(payload)
 
         return app
 
