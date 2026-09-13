@@ -1,0 +1,11 @@
+{
+  "pipeline_plugin": "default_pipeline",
+  "web_plugin": "default_web",
+  "inventory_plugin": "fs_inventory",
+  "web_host": "127.0.0.1",
+  "web_port": 5056,
+  "lake_id": "financial_files",
+  "title": "financial-data",
+  "description": "Full file lake: parquet/csv under data roots. Discover uses stat(); sha256 only on read.",
+  "holdout_start": "2025-01-01"
+}

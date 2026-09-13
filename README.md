@@ -5,8 +5,10 @@ repository holds the organized historical market and contextual datasets, the
 feature stores and learned representations derived from them, the automation
 scripts that acquire/validate/transform that data, the staged work plan that
 governs the effort, and the research corpus used to evaluate strategies and
-audit the surrounding repositories. It is data and evidence, not an
-installable application.
+audit the surrounding repositories. It is data and evidence first. An optional **lake service** (`lake/`)
+exposes inventory + HTTP for [data-gov](https://github.com/harveybc/data-gov)
+(GUI http://127.0.0.1:5056). Discover uses `stat()` only; content hashes
+happen on read. See [`lake/README.md`](lake/README.md).
 
 ## Status
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>financial-data lake</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/adminlte.min.css') }}">
+  <style>
+    body { background:#1f2d3d; color:#f8f9fa; font-size:14px; }
+    .content-wrapper { margin-left:0 !important; background:#1f2d3d; }
+  </style>
+</head>
+<body class="hold-transition layout-top-nav dark-mode">
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <span class="navbar-brand"><strong>financial-data</strong> lake</span>
+  </nav>
+  <div class="content-wrapper">
+    <section class="content pt-3">
+      <div class="container-fluid">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% for cat, msg in messages %}
+            <div class="alert alert-{{ cat }}">{{ msg }}</div>
+          {% endfor %}
+        {% endwith %}
+        <div class="row">
+          <div class="col-md-4">
+            <div class="small-box bg-info"><div class="inner">
+              <h3>{{ meta.n_resources }}</h3><p>Inventoried files (stat only, no content hash)</p>
+            </div></div>
+            <div class="card card-dark">
+              <div class="card-header"><h3 class="card-title">Storage</h3></div>
+              <div class="card-body">
+                <p>Host free <strong>{{ fmt_bytes(storage.host_free) }}</strong> / {{ fmt_bytes(storage.host_total) }}</p>
+                <p class="mb-0">Matched files {{ fmt_bytes(storage.lake_bytes) }}</p>
+                <p class="small text-muted">{{ storage.root }}</p>
+                <p class="small">Holdout from <code>{{ meta.holdout_start }}</code></p>
+              </div>
+            </div>
+            <div class="card card-dark">
+              <div class="card-header"><h3 class="card-title">Configure inventory</h3></div>
+              <div class="card-body">
+                <form method="post" action="{{ url_for('save') }}">
+                  <label>include_globs (one per line)</label>
+                  <textarea name="globs" class="form-control" rows="8">{{ globs }}</textarea>
+                  <label class="mt-2">holdout_start</label>
+                  <input name="holdout_start" class="form-control" value="{{ holdout }}">
+                  <button class="btn btn-primary btn-block mt-2" type="submit">Save &amp; refresh</button>
+                </form>
+              </div>
+            </div>
+            <div class="card card-dark">
+              <div class="card-header"><h3 class="card-title">Coverage probe</h3></div>
+              <div class="card-body">
+                <form method="post" action="{{ url_for('ops_coverage') }}">
+                  <input name="resource" class="form-control" placeholder="resource_id">
+                  <button class="btn btn-secondary btn-block mt-2" type="submit">Coverage</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card card-dark">
+              <div class="card-header"><h3 class="card-title">Inventory</h3></div>
+              <div class="card-body p-0 table-responsive" style="max-height:70vh">
+                <table class="table table-sm table-striped table-dark mb-0">
+                  <thead><tr><th>Resource</th><th>Bytes</th><th>mtime</th></tr></thead>
+                  <tbody>
+                    {% for r in resources %}
+                    <tr>
+                      <td><code>{{ r.resource_id }}</code></td>
+                      <td>{{ fmt_bytes(r.bytes) }}</td>
+                      <td class="small">{{ r.mtime }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="3">No files matched the globs.</td></tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

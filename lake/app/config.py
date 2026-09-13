@@ -1,0 +1,39 @@
+from pathlib import Path
+
+_REPO = Path(__file__).resolve().parents[2]
+
+DEFAULT_VALUES = {
+    "pipeline_plugin": "default_pipeline",
+    "web_plugin": "default_web",
+    "inventory_plugin": "fs_inventory",
+    "web_host": "127.0.0.1",
+    "web_port": 5056,
+    "secret_key": "change-me-finlake",
+    "lake_id": "financial_files",
+    "title": "financial-data",
+    "description": "Curated market and contextual files. Hash on read, not on discover.",
+    "kind": "files_inventory",
+    "root_path": str(_REPO),
+    "include_globs": [
+        "market_data/**/*.parquet",
+        "market_data/**/*.csv",
+        "macro_economic/**/*.parquet",
+        "macro_economic/**/*.csv",
+        "alternative_data/**/*.parquet",
+        "alternative_data/**/*.csv",
+        "reference_data/**/*.parquet",
+        "reference_data/**/*.csv",
+        "economic_calendar/**/*.parquet",
+        "economic_calendar/**/*.csv",
+        "derivatives/**/*.parquet",
+        "fundamental/**/*.parquet",
+        "microstructure/**/*.parquet",
+        "features/**/*.parquet",
+        "features/**/*.csv",
+    ],
+    "time_column": None,
+    "holdout_start": "2025-01-01",
+    "load_config": None,
+    "save_config": None,
+    "quiet_mode": False,
+}
