@@ -223,9 +223,14 @@ class Plugin:
         return self.discover()
 
     def _path(self, resource_id: str) -> Path:
-        path = self._root() / resource_id
-        if not path.is_file():
-            raise FileNotFoundError(resource_id)
+        # A resource id is a relative path inside the lake: no absolute ids, no '..', no escape by symlink.
+        rid = str(resource_id or "")
+        if not rid or rid.startswith(("/", "\\")) or "\\" in rid or any(p in ("", ".", "..") for p in rid.split("/")):
+            raise FileNotFoundError(rid)
+        root = self._root().resolve()
+        path = (root / rid).resolve()
+        if not path.is_relative_to(root) or not path.is_file():
+            raise FileNotFoundError(rid)
         return path
 
     def _frame(self, resource_id: str):
@@ -448,8 +453,11 @@ class Plugin:
         }
 
     def read(self, resource_id: str, start=None, end=None):
-        frame = self._frame(resource_id)
         col = self._time_col(resource_id, self._path(resource_id))
+        if col is None and self._holdout() is not None and resource_id not in (self.params.get("untimed") or []):
+            # same rule as download: without a time column nothing proves the rows end before the holdout
+            raise HoldoutError("no time column under holdout")
+        frame = self._frame(resource_id)
         if start is not None or end is not None:
             lo, hi = day_range(start, end)
             if col is not None:
