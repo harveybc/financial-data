@@ -1,17 +1,35 @@
 # financial-data
 
-Private data lake and research substrate for the harveybc trading stack. This
+Data lake, provenance metadata and research substrate for time-series experiments. This
 repository holds the organized historical market and contextual datasets, the
 feature stores and learned representations derived from them, the automation
 scripts that acquire/validate/transform that data, the staged work plan that
 governs the effort, and the research corpus used to evaluate strategies and
-audit the surrounding repositories. It is data and evidence, not an
-installable application.
+audit the surrounding repositories. The optional [file-lake service](lake/README.md)
+exposes inventory and governed deliveries to [data-gov](https://github.com/harveybc/data-gov).
+The data repository and its service adapter have separate setup requirements.
 
 ## Status
 
-**Active** — this repository is the working data and research substrate of the
-stack. It is a **private** repository; its contents are not redistributed.
+**Research infrastructure under active development.** Published code and metadata
+do not grant access to every dataset referenced by an inventory. A clone is not
+a copy of the provisioned lake; paid and restricted datasets are not redistributed.
+Dataset terms and availability must be checked separately from the code license.
+
+## Current implementation and research
+
+This default branch includes the file-lake adapter from the tested revision
+`13e6b1f47`: download receipts, range materialization and real HTTP-server
+regressions. [Service setup and tests](lake/README.md) live with the adapter.
+Resource contracts are intentionally empty in the financial default config;
+configure factual contracts for your own data rather than assuming a timestamp
+is also its publication or availability time.
+
+The broader inventory, characterization and producer-lineage work is available
+in the [published research snapshot](https://github.com/harveybc/financial-data/tree/f00bc6c151392d3cc3193f24a1c797c7ba7988d8).
+Those campaign artifacts have not all been merged into this default branch.
+The [research repository map](https://github.com/harveybc/predictor/blob/master/docs/RESEARCH_STACK.md)
+explains how the lake, preprocessing and representation-learning components connect.
 
 ## Role and non-responsibilities
 
@@ -21,8 +39,8 @@ notes.
 
 It does **not**:
 
-- implement reusable libraries or services — there is no Python packaging
-  here, and nothing is importable as a package;
+- replace the governance system: policies and experiment accounting belong to
+  data-gov; the installable `lake/` adapter serves this repository's data;
 - train production models — that is
   [predictor](https://github.com/harveybc/predictor) (autoencoder training
   configs generated here are executed with
