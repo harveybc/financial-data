@@ -33,3 +33,27 @@ def test_the_provider_declares_the_capabilities_the_inventory_implements():
     assert store.capabilities() == CAPABILITIES
     identity = store.source_identity()
     assert identity["distribution"] == "financial-data-store"
+
+
+def test_the_provider_carries_the_domain_defaults_the_legacy_application_supplied():
+    """A generic host passes only the configured settings; the inventory shape is ours.
+
+    Found by the deployment dry run (2026-09-14): with only the runtime file, the new host
+    inventoried 16,346 resources where the deployed service inventories 5,275, because
+    `include_globs` lived in the lake application's DEFAULT_VALUES rather than in the
+    provider. The defaults are compared against that application's, file to file.
+    """
+    import sys
+
+    sys.path.insert(0, str(REPO / "store" / "src"))
+    sys.path.insert(0, str(REPO / "lake"))
+    from app.config import DEFAULT_VALUES  # the legacy application this provider comes from
+    from financial_data_store.provider import DEFAULT_SETTINGS, FinancialStore
+
+    for field in ("include_globs", "time_column", "time_columns", "untimed",
+                  "resource_contracts", "holdout_start", "max_downloads", "kind"):
+        assert DEFAULT_SETTINGS[field] == DEFAULT_VALUES[field], field
+    store = FinancialStore()
+    assert store.params["include_globs"] == DEFAULT_VALUES["include_globs"]
+    store.set_params(include_globs=["only/**/*.csv"])
+    assert store.params["include_globs"] == ["only/**/*.csv"], "host settings must still win"
