@@ -19,8 +19,9 @@ Dataset terms and availability must be checked separately from the code license.
 ## Current implementation and research
 
 This default branch includes the file-lake adapter from the tested revision
-`13e6b1f47`: download receipts, range materialization and real HTTP-server
-regressions. [Service setup and tests](lake/README.md) live with the adapter.
+`f00bc6c15`: download receipts, range materialization, explicit availability
+completion bounds and real HTTP-server regressions.
+[Service setup and tests](lake/README.md) live with the adapter.
 Resource contracts are intentionally empty in the financial default config;
 configure factual contracts for your own data rather than assuming a timestamp
 is also its publication or availability time.
@@ -117,8 +118,8 @@ stack's documentation.
 
 ## Requirements and usage
 
-There is no packaging (`setup.py`/`pyproject.toml`) and no installable
-entry point — this repository is operated through the scripts in
+The research repository root has no packaging or root-level installable
+entry point. Its research workflows are operated through scripts in
 [`_scripts/`](_scripts) inside the stack's unified Python environment, and
 consumed by sibling repositories as files. Typical usage is:
 
@@ -127,9 +128,20 @@ consumed by sibling repositories as files. Typical usage is:
 3. verify the produced data against the `_metadata/` validation records;
 4. record the stage outcome as a `STAGE_*.md` deliverable.
 
-No installation or test commands are claimed here; script execution depends
-on locally provisioned data-source access and was not exercised for this
-README.
+Those research scripts require locally provisioned data-source access and
+were not all exercised for this README. The separate **`lake/` service does
+have packaging, entry points and tests**; use [its instructions](lake/README.md)
+in its own environment rather than attempting `pip install -e .` at the root.
+
+## Use with a coding agent
+
+> Read this README, the relevant work-plan stage and lake/README.md. Distinguish
+> an inventory entry from a locally available, licensed dataset. Use a tiny
+> disposable fixture to check the file-lake API and its time contract; do not
+> launch acquisition workers or profile the entire lake for a smoke test.
+> Report source/delivery hashes, producer timing, exclusions and exact outputs.
+> Do not infer availability from event time or duplicate datasets across repos.
+> Scientific results must follow the project's governed reporting path.
 
 ## Reproducibility
 
@@ -160,8 +172,8 @@ processing.
   [`STAGE_2.4_DELIVERABLE.md`](STAGE_2.4_DELIVERABLE.md) and subsequent
   commits) supersede them. Treat root-level stage reports as point-in-time
   records, not current status.
-- There is no package-level test suite; validation lives in per-stage
-  validation records and [`_scripts/tests/`](_scripts/tests).
+- Research validation lives in per-stage records and [`_scripts/tests/`](_scripts/tests).
+  The separately packaged file-lake API has its own `lake/tests` suite.
 - Large binary datasets make this repository heavy; clone accordingly.
 
 ## Related repositories
