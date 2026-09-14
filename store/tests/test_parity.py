@@ -45,6 +45,10 @@ def test_the_provider_carries_the_domain_defaults_the_legacy_application_supplie
     """
     import sys
 
+    import pytest
+
+    if not (REPO / "lake" / "app" / "config.py").is_file():
+        pytest.skip("the lake application is not in this checkout; nothing to compare against")
     sys.path.insert(0, str(REPO / "store" / "src"))
     sys.path.insert(0, str(REPO / "lake"))
     from app.config import DEFAULT_VALUES  # the legacy application this provider comes from

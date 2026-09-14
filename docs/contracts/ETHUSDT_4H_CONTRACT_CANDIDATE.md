@@ -1,6 +1,13 @@
 # Candidate availability contract: `market_data/crypto/spot_top50/ethusdt/4h.parquet`
 
-Date: 2026-09-14. Author: Satoshi. Review: Musashi. Status: **candidate, not installed**.
+> **SUPERSEDED on 2026-09-14** by
+> [`ETHUSDT_4H_CHARACTERISATION.md`](ETHUSDT_4H_CHARACTERISATION.md) after Musashi's review.
+> Its central claim — `available_time_column: close_time` with `completion_lag_max: "0s"` —
+> **is withdrawn**: a window's close is when the window ended, not when the data could be
+> known, and the same submission declared delivery latency UNOBSERVED. The measurements below
+> stand; the contract they were used to justify does not. The file is kept, not edited away.
+
+Date: 2026-09-14. Author: Satoshi. Review: Musashi. Status: **withdrawn, superseded**.
 Order: A2 of `predictor/docs/handoffs/MUSASHI_TO_SATOSHI_CONTRACTS_AND_CONSUMER_ADOPTION_2026_09_14.md`.
 
 This is the first financial resource followed to its producer. It is not installed: making a
