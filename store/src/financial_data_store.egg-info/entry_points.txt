@@ -1,0 +1,2 @@
+[datalake.backends]
+financial_files = financial_data_store.provider:backend

@@ -1,0 +1,11 @@
+setup.py
+src/financial_data_store/__init__.py
+src/financial_data_store/inventory.py
+src/financial_data_store/provider.py
+src/financial_data_store.egg-info/PKG-INFO
+src/financial_data_store.egg-info/SOURCES.txt
+src/financial_data_store.egg-info/dependency_links.txt
+src/financial_data_store.egg-info/entry_points.txt
+src/financial_data_store.egg-info/requires.txt
+src/financial_data_store.egg-info/top_level.txt
+tests/test_parity.py
