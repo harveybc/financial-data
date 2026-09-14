@@ -24,6 +24,61 @@ import pandas as _pd
 _pd.set_option("mode.string_storage", "python")
 
 CHUNK_ROWS = 100_000
+
+# Availability scope of a resource contract (optional `availability` block), the same
+# words as data-gov's files lake: what the available-time label denotes, how long after
+# it the information is complete at the latest, whether the time zone is evidenced,
+# and the use the resource is fit for. Executed here: a cut keeps a row only when
+# `label + completion_lag_max < range end`; AS_IS under holdout needs
+# `max(label) + completion_lag_max < holdout`; ranges are calendar days.
+AVAILABILITY_LABELS = {"WINDOW_END", "WINDOW_START", "EVENT_INSTANT", "UNKNOWN"}
+AVAILABILITY_USE = {"OFFLINE_DAY_GRANULAR", "LIVE_EQUIVALENT"}
+TIMEZONE_EVIDENCE = {"PRODUCER_STATEMENT", "UNKNOWN"}
+UNDECLARED_SCOPE = {"label": "UNKNOWN", "completion_lag_max": None,
+                    "timezone_evidence": "UNKNOWN", "use_class": "UNDECLARED"}
+
+
+def availability_scope(block) -> dict:
+    """Validate an `availability` block; returns it with `completion_lag` as a Timedelta."""
+    keys = {"label", "completion_lag_max", "timezone_evidence", "use_class"}
+    if not isinstance(block, dict) or set(block) != keys:
+        raise UnsupportedError("invalid resource contract availability")
+    if block["label"] not in AVAILABILITY_LABELS:
+        raise UnsupportedError("invalid resource contract availability label")
+    if block["timezone_evidence"] not in TIMEZONE_EVIDENCE:
+        raise UnsupportedError("invalid resource contract timezone_evidence")
+    if block["use_class"] not in AVAILABILITY_USE:
+        raise UnsupportedError("invalid resource contract use_class")
+    if block["completion_lag_max"] is None:
+        raise UnsupportedError("resource contract availability needs completion_lag_max")
+    try:
+        delta = _pd.Timedelta(str(block["completion_lag_max"]))
+    except ValueError as exc:
+        raise UnsupportedError("invalid resource contract completion_lag_max") from exc
+    if _pd.isna(delta) or delta < _pd.Timedelta(0):
+        raise UnsupportedError("invalid resource contract completion_lag_max")
+    if block["use_class"] == "LIVE_EQUIVALENT" and (
+        delta != _pd.Timedelta(0) or block["label"] == "UNKNOWN"
+        or block["timezone_evidence"] != "PRODUCER_STATEMENT"
+    ):
+        raise UnsupportedError(
+            "LIVE_EQUIVALENT needs a known label, zero completion lag and a producer time-zone statement"
+        )
+    return dict(block, completion_lag=delta)
+
+
+def scope_of(contract) -> dict:
+    block = contract.get("availability")
+    if block is None:
+        return dict(UNDECLARED_SCOPE)
+    scope = availability_scope(block)
+    return {"label": scope["label"], "completion_lag_max": str(block["completion_lag_max"]),
+            "timezone_evidence": scope["timezone_evidence"], "use_class": scope["use_class"]}
+
+
+def completion_lag(contract):
+    block = contract.get("availability")
+    return availability_scope(block)["completion_lag"] if block is not None else _pd.Timedelta(0)
 HASH_CHUNK = 1024 * 1024
 DAY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # A trailing ISO 8601 zone designator is dropped before parsing so that the
@@ -423,8 +478,10 @@ class Plugin:
             "event_time_column", "available_time_column", "timezone", "time_unit",
             "frequency",
         }
-        if not isinstance(contract, dict) or set(contract) != required:
+        if not isinstance(contract, dict) or set(contract) - {"availability"} != required:
             raise UnsupportedError("resource availability contract required")
+        if "availability" in contract:
+            availability_scope(contract["availability"])
         for name in ("event_time_column", "available_time_column", "timezone", "frequency"):
             if not isinstance(contract[name], str) or not contract[name]:
                 raise UnsupportedError(f"invalid resource contract {name}")
@@ -517,16 +574,19 @@ class Plugin:
             raise UnsupportedError("available_time column missing") from exc
 
     def _contract_mask(self, fd, suffix, column, contract, lo=None, hi=None):
+        """Rows whose information is complete before `hi` (label + completion lag < hi),
+        and the completion time of the latest row seen."""
         import numpy as np
 
+        lag = completion_lag(contract)
         masks, maximum = [], None
         for block in self._contract_blocks(fd, suffix, column, contract):
             keep = np.ones(len(block), dtype=bool) if lo is None else (
-                (block >= lo) & (block < hi)
+                (block >= lo) & (block + lag < hi)
             ).to_numpy()
             masks.append(keep)
             if len(block):
-                top = block.max()
+                top = block.max() + lag
                 maximum = top if maximum is None or top > maximum else maximum
         return (np.concatenate(masks) if masks else np.zeros(0, dtype=bool)), maximum
 
@@ -593,6 +653,7 @@ class Plugin:
                     "availability_contract_sha256": hashlib.sha256(
                         json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
                     ).hexdigest(),
+                    "availability": scope_of(contract),
                     "handle": os.fdopen(fd, "rb"),
                 }
             lo, hi = day_range(start, end)
@@ -632,6 +693,7 @@ class Plugin:
                     "filename": Path(resource_id).name, "sha256": source_sha,
                     "bytes": size, "source_sha256": source_sha, "delivery": "AS_IS",
                     "time_column": column, "availability_contract_sha256": contract_sha,
+                    "availability": scope_of(contract),
                     "handle": os.fdopen(fd, "rb"),
                 }
         except BaseException:
@@ -645,6 +707,7 @@ class Plugin:
             "bytes": os.fstat(out_fd).st_size, "source_sha256": source_sha,
             "delivery": "CUT", "time_column": column,
             "availability_contract_sha256": contract_sha,
+            "availability": scope_of(contract),
             "handle": os.fdopen(out_fd, "rb"),
         }
 

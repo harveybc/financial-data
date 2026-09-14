@@ -332,6 +332,13 @@ class Plugin:
             response.headers["X-Availability-Contract-SHA256"] = (
                 info["availability_contract_sha256"]
             )
+            scope = info.get("availability") or {}
+            response.headers["X-Availability-Label"] = str(scope.get("label") or "UNKNOWN")
+            response.headers["X-Availability-Completion-Lag-Max"] = str(
+                scope.get("completion_lag_max") if scope.get("completion_lag_max") is not None else ""
+            )
+            response.headers["X-Timezone-Evidence"] = str(scope.get("timezone_evidence") or "UNKNOWN")
+            response.headers["X-Availability-Use"] = str(scope.get("use_class") or "UNDECLARED")
             return response
 
         return app
