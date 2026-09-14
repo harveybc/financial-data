@@ -12,6 +12,17 @@ import uuid
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+import pandas as _pd
+
+# pandas 3.0.3 + pyarrow 25 on this stack: the default pyarrow-backed string
+# storage segfaults inside pandas' string_arrow._from_sequence on the second
+# read_csv issued from a werkzeug worker thread after a streamed delivery
+# (observed on the second /api/v2/download, 2026-09-13; reproduced with and
+# without holdout). Plain threads and the main thread never fault. Python
+# storage is exact for the strings these paths build (column labels, ISO
+# timestamps) and removes the fault; set once at import, before any frame.
+_pd.set_option("mode.string_storage", "python")
+
 CHUNK_ROWS = 100_000
 HASH_CHUNK = 1024 * 1024
 DAY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")

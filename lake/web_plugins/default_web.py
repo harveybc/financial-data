@@ -79,6 +79,32 @@ class _SlotFile(io.FileIO):
                 release()
 
 
+class _ReleasingHandle:
+    """A retained delivery descriptor whose close returns the download slot once."""
+
+    def __init__(self, handle, release):
+        self._handle = handle
+        self._release = release
+
+    def read(self, size=-1):
+        return self._handle.read(size)
+
+    @property
+    def closed(self):
+        return self._handle.closed
+
+    def close(self):
+        release, self._release = self._release, None
+        try:
+            self._handle.close()
+        finally:
+            if release is not None:
+                release()
+
+    def __getattr__(self, name):
+        return getattr(self._handle, name)
+
+
 class Plugin:
     plugin_params = {"web_host": "127.0.0.1", "web_port": 5056, "secret_key": "x"}
 
@@ -273,30 +299,28 @@ class Plugin:
                 }
             try:
                 info = inv().governed_download(resource, start=start, end=end)
-                handle = info["handle"]
+                # The slot returns when the descriptor is closed. send_file answers
+                # in direct passthrough, and for such a response the development
+                # server closes only the file wrapper: Response.call_on_close never
+                # fires there (verified 2026-09-13; two deliveries exhausted the
+                # slots for the life of the process), so the release is tied to
+                # the handle itself, as the v1 route does with _SlotFile.
+                handle = _ReleasingHandle(info["handle"], slots.release)
             except (FileNotFoundError, LakeError, ValueError) as exc:
                 slots.release()
                 return _lake_error(exc)
             except BaseException:
                 slots.release()
                 raise
-            released = False
-
-            def close():
-                nonlocal released
-                if not released:
-                    released = True
-                    handle.close()
-                    slots.release()
 
             try:
                 response = send_file(
                     handle, mimetype="application/octet-stream", as_attachment=True,
                     download_name=info["filename"], conditional=False, etag=False,
                 )
-                response.call_on_close(close)
+                response.call_on_close(handle.close)
             except BaseException:
-                close()
+                handle.close()
                 raise
             quoted = info["filename"].replace("\\", "\\\\").replace('"', '\\"')
             response.headers["Content-Disposition"] = f'attachment; filename="{quoted}"'
