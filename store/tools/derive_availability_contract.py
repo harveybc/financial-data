@@ -196,14 +196,20 @@ def clocks(facts: dict, declaration: dict, clock_declaration: dict | None = None
     data existed for anybody else.
     """
     measured = facts.get("measured")
+    acquired = declaration.get("acquired_at")
+    reception_state = ({"status": "BOUNDED_AT_FILE_GRAIN", "bound": acquired,
+                        "evidence": "the producer's acquisition log and declaration place the "
+                                    f"whole file in our hands no later than {acquired}; this "
+                                    "is an upper bound for every row at once, not a per-row "
+                                    "clock, and it supports no point-in-time claim"}
+                       if acquired else
+                       {"status": "UNOBSERVED",
+                        "evidence": "no acquisition timestamp is recorded for this file"})
     unobserved = {"publication": {"status": "UNOBSERVED",
                                   "evidence": "no producer statement declares a publication "
                                               "column, and no artefact records when any row "
                                               "was published"},
-                  "reception": {"status": "UNOBSERVED",
-                                "evidence": f"one file-level acquisition timestamp "
-                                            f"({declaration.get('acquired_at')}) bounds the "
-                                            f"whole file, not a row"}}
+                  "reception": reception_state}
     publication, reception = unobserved["publication"], unobserved["reception"]
     statement = clock_declaration or {}
     column_name, role = statement.get("column"), statement.get("role")

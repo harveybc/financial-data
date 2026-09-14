@@ -35,8 +35,9 @@
    "evidence": "no producer statement declares a publication column, and no artefact records when any row was published"
   },
   "reception": {
-   "status": "UNOBSERVED",
-   "evidence": "one file-level acquisition timestamp (2026-05-01T15:58:56.166673+00:00) bounds the whole file, not a row"
+   "status": "BOUNDED_AT_FILE_GRAIN",
+   "bound": "2026-05-01T15:58:56.166673+00:00",
+   "evidence": "the producer's acquisition log and declaration place the whole file in our hands no later than 2026-05-01T15:58:56.166673+00:00; this is an upper bound for every row at once, not a per-row clock, and it supports no point-in-time claim"
   },
   "revision": {
    "status": "UNKNOWN",

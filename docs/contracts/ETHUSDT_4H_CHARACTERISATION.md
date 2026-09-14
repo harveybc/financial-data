@@ -14,7 +14,7 @@ Order: N1–N2 of `predictor/docs/handoffs/MUSASHI_TO_SATOSHI_TEMPORAL_SEMANTICS
 | window end | **MEASURED** | `close_time`; modal span = 4 h − 1 ms |
 | finalization | **NOT DEMONSTRATED** | the file carries no field saying whether a row is final; 21 rows have a non-nominal span |
 | publication | **UNOBSERVED** | no producer statement declares a publication column, and no artefact records when any row was published |
-| reception / ingestion | **UNOBSERVED** | one file-level acquisition timestamp bounds the whole file, not a row |
+| reception / ingestion | **BOUNDED AT FILE GRAIN** | the producer's own acquisition log and declaration put the whole file in our hands no later than `2026-05-01T15:58:56Z`; an upper bound for every row at once, not a per-row clock |
 | revision | **UNKNOWN** | a single acquisition cannot show whether past rows are restated |
 
 **Publication and reception are different clocks, and the role of a column comes from the
@@ -102,11 +102,29 @@ counterexamples frozen in `store/tests/frozen/`:
   `None` and any `Exception`);
 * the real resource is characterised as a retrospective archive, with its 21 bars classified.
 
-## 6. Still open, with its owner
+## 6. What the producer's own code says (primary source, 2026-09-14)
+
+The acquisition script is in this repository, so the provenance question is answerable
+without asking anyone:
+
+| question | answer, from `_scripts/workers/stage13_dragon_crypto_worker.py` |
+|---|---|
+| endpoint | `GET https://api.binance.com/api/v3/klines`, paginated with `startTime`/`endTime`/`limit=1000` — the **historical REST** endpoint, not a stream |
+| end bound | `END_MS = 2025-12-31T23:59:00Z`, a fixed past instant: no in-progress interval beyond it was ever requested |
+| time zone | `open_time` and `close_time` are the payload's epoch milliseconds converted with `utc=True`; the UTC in the schema comes from the provider's own encoding, not from a column name |
+| per-row publication or reception | **none recorded**: the script stores no arrival time per row |
+| file-grain reception | the log shows the fetch starting `2026-05-01T15:58:48.409Z` and paging at 15:58:50/52/54, and the declaration records `acquired_at 2026-05-01T15:58:56.166Z` |
+| revisions | a single pass with a fixed end bound; nothing in the repository establishes whether past bars are restated |
+| rights | the script calls a public endpoint; **no terms of use are recorded here** |
+
+This does not explain the 21 anomalous bars: they sit inside the series, not at the end
+bound, so their construction stays undemonstrated exactly as stated above.
+
+## 7. Still open, with its owner
 
 | question | owner | next |
 |---|---|---|
 | publication / delivery latency | the producer chain | a per-row publication field, an acquisition log, or a stated bound |
 | finality of the 21 bars | the producer chain | a field or statement; until then they stay excluded from any finality-requiring use |
-| revision policy | the producer chain | a second acquisition compares two snapshots; it does not establish a policy |
-| usage rights | the data owner | primary terms from the provider; not inferable from an SDK licence or another dataset |
+| revision policy | Satoshi can measure it | re-fetching the same window from the same endpoint and comparing would show whether *those* bars changed — an outward network call, proposed, not performed. It measures two snapshots, never a policy |
+| usage rights | **the owner, and only here** | the exact action: obtain and record the terms that apply to market data from `api.binance.com/api/v3/klines` for our use (analysis, derived artefacts, publication). Everything else about this resource was answerable from the repository; this is not |

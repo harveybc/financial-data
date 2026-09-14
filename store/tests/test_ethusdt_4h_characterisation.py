@@ -337,7 +337,10 @@ def test_the_real_resource_is_characterised_as_a_retrospective_archive():
                                                   "SHORTER_NOMINAL_INTERVAL": 12,
                                                   "PARTIAL_AGGREGATE": 8}
     assert clocks["publication"]["status"] == "UNOBSERVED"
-    assert clocks["reception"]["status"] == "UNOBSERVED"
+    # the producer's acquisition log bounds the whole file at once; that is a real fact and
+    # still not a per-row clock, so it supports no point-in-time claim
+    assert clocks["reception"]["status"] == "BOUNDED_AT_FILE_GRAIN"
+    assert clocks["reception"]["bound"] == declaration["acquired_at"]
     assert verdict["kind"] == "ARCHIVE_RETROSPECTIVE"
     assert verdict["installable_availability_contract"] is False
 
