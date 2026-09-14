@@ -1,0 +1,97 @@
+{
+ "schema": "financial_resource_contract_candidate.v1",
+ "resource": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+ "bytes": 1578451,
+ "sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+ "producer_declaration": {
+  "provenance.json": {
+   "source": "Binance Spot",
+   "description": "ETHUSDT spot OHLCV 4h",
+   "acquired_at": "2026-05-01T15:58:56.166673+00:00",
+   "declared_sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+   "declares_this_file": true,
+   "path": "market_data/crypto/spot_top50/ethusdt/provenance.json"
+  }
+ },
+ "digest_matches_producer_declaration": true,
+ "measured": {
+  "rows": 18337,
+  "event_column": {
+   "dtype": "datetime64[ms, UTC]",
+   "timezone_in_schema": "UTC",
+   "is_datetime": true,
+   "nulls": 0,
+   "first": "2017-08-17 04:00:00+00:00",
+   "last": "2025-12-31 20:00:00+00:00"
+  },
+  "available_column": {
+   "dtype": "datetime64[ms, UTC]",
+   "timezone_in_schema": "UTC",
+   "is_datetime": true,
+   "nulls": 0,
+   "first": "2017-08-17 07:59:59.999000+00:00",
+   "last": "2025-12-31 23:59:59.999000+00:00"
+  },
+  "event_monotonic_increasing": true,
+  "event_duplicates": 0,
+  "measured": true,
+  "available_minus_event_ms": {
+   "min": 0,
+   "max": 14399999,
+   "distinct": 12,
+   "modal": 14399999
+  },
+  "available_at_or_after_event_always": true,
+  "available_strictly_after_event": 18336,
+  "available_equal_to_event": 1,
+  "available_within_one_step_always": true,
+  "spacing_seconds": {
+   "min": 14400.0,
+   "max": 115200.0,
+   "modal": 14400.0,
+   "distinct": 4
+  },
+  "nominal_step_seconds": 14400.0,
+  "gaps": 8,
+  "rows_on_nominal_grid": 18337,
+  "rows_off_nominal_grid": 0,
+  "truncated_bars": 21,
+  "first_event": "2017-08-17 04:00:00+00:00",
+  "last_event": "2025-12-31 20:00:00+00:00",
+  "first_available": "2017-08-17 07:59:59.999000+00:00",
+  "last_available": "2025-12-31 23:59:59.999000+00:00"
+ },
+ "candidate_contract": {
+  "event_time_column": "open_time",
+  "available_time_column": "close_time",
+  "timezone": "UTC",
+  "time_unit": null,
+  "frequency": "4h",
+  "availability": {
+   "label": "WINDOW_END",
+   "completion_lag_max": "0s",
+   "timezone_evidence": "PRODUCER_STATEMENT",
+   "use_class": "OFFLINE_DAY_GRANULAR"
+  }
+ },
+ "contract_sha256": "998e3f80d0a5d2ab15d9a04235a6ec2c418ff8f784a630a45c755405eff0792d",
+ "unknowns": [
+  {
+   "property": "provider_delivery_latency",
+   "status": "UNOBSERVED",
+   "why": "no artifact records when the provider published any bar; the acquisition timestamp bounds the whole file, not a bar. UNOBSERVED is not zero, which is why the use class is OFFLINE_DAY_GRANULAR and not LIVE_EQUIVALENT"
+  },
+  {
+   "property": "revision_policy",
+   "status": "UNKNOWN",
+   "why": "the producer documents one acquisition with a pinned digest and no statement about restatements; a second acquisition would be needed to observe whether past bars change"
+  },
+  {
+   "property": "usage_rights",
+   "status": "UNKNOWN",
+   "why": "the provenance names the source but no licence or terms of use are recorded in this repository; a scientific publication needs that answered"
+  }
+ ],
+ "status": "CANDIDATE_NOT_INSTALLED",
+ "note": "installing this contract makes the resource deliverable under governance; that is a scientific eligibility change and belongs to review"
+}
