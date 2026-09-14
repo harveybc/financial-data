@@ -4,7 +4,8 @@ Operator UI + HTTP adapter for [data-gov](https://github.com/harveybc/data-gov).
 This is **the file lake**, not a toy glob of one parquet.
 
 - UI: http://127.0.0.1:5056 — inventory, globs, holdout, coverage probe
-- API for data-gov: `/api/v1/discover`, `/coverage`, `/read`, `/download`
+- Governing API for data-gov: `/api/v2/download`
+- Legacy API: `/api/v1/discover`, `/coverage`, `/read`, `/download`
 - Discover walks `market_data`, `macro_economic`, … with `stat()` only
 - Coverage reads the time column only (parquet: that column; CSV: `usecols` in chunks)
 - Content `sha256` is computed **on download**, never on inventory
@@ -20,7 +21,30 @@ sh scripts/serve.sh
 
 AAA (who may call the API) is **data-gov**, not this process. Bind is localhost.
 
-## `GET /api/v1/download?resource=&from=&to=`
+## Governing delivery: `GET /api/v2/download`
+
+Decision-bearing experiments use this endpoint. Each resource must have an
+exact entry in `resource_contracts` with `event_time_column`,
+`available_time_column`, `timezone`, `time_unit` and `frequency`. Missing or
+ambiguous contracts fail closed; the service never guesses that event time was
+also availability time. The response includes
+`X-Availability-Contract-SHA256`, and data-gov carries that identity through
+the verified delivery and terminal into the OLAP cube.
+
+The requested range is applied to `available_time_column`. Source bytes are
+opened without following path components, hashed from the retained descriptor,
+and streamed from that same object. CSV and Parquet inspection and cuts use
+bounded batches. Cuts are content-addressed by source, availability contract
+and materializer configuration, and are published without replacement.
+
+The inventory, holdout and contracts are startup configuration. `POST /config`
+is deliberately refused so a running campaign cannot change them.
+
+An empty `resource_contracts` mapping is a valid fail-closed installation: it
+serves no governing temporal data until the operator supplies factual contracts.
+Do not fill the mapping by inference merely to make a run pass.
+
+## Legacy delivery: `GET /api/v1/download?resource=&from=&to=`
 
 What is delivered is a file that exists on this disk; its sha256 is the identity.
 
@@ -31,10 +55,11 @@ What is delivered is a file that exists on this disk; its sha256 is the identity
   `from 00:00 <= t < (to + 1 day) 00:00` on the column's **own wall clock** (tz-aware values
   compared after dropping the zone) are kept. The cut is `var/cuts/<source_sha256>/<from>_<to>.<ext>`,
   materialised once, never rewritten. A cut that removes no rows is not written: the source is
-  served `AS_IS`. After the cut `max(t) < holdout_start` is asserted (else 403 `holdout`).
+  served `AS_IS`. Generated paths also include the cut-materializer identity;
+  after the cut `max(t) < holdout_start` is asserted (else 403 `holdout`).
 - CSV cuts are a byte subset of the source (header + kept lines); multi-line quoted records are
-  422 `unsupported csv`. Parquet cuts filter by row group with pinned writer options
-  (snappy, format 2.6, dictionary, statistics, the source's row group size).
+  422 `unsupported csv`. Parquet cuts use bounded record batches with pinned writer options
+  (snappy, format 2.6, dictionary and statistics).
 - The time column is `time_columns[resource]`, else `time_column`, else the first column named
   `ts,time,date,datetime,timestamp` or containing `time`/`date`. String columns must be ISO 8601;
   numbers (epoch) or blanks are 422 `unparseable time column`.
@@ -47,7 +72,8 @@ What is delivered is a file that exists on this disk; its sha256 is the identity
 
 - Every intermediate file lives under `var/` (gitignored): `spool_dir` (default `var/spool/`,
   swept at process start, never `tempfile`) and `cuts_dir` (default `var/cuts/`).
-- `var/source_sha256.json` memoises file hashes per `(path, size, mtime_ns)`; hashing streams
+- `var/source_sha256.json` memoises file hashes only while
+  `(device, inode, size, mtime_ns, ctime_ns)` remains exact; hashing streams
   1 MiB chunks.
 - `max_downloads` (default 2) bounds concurrent downloads; the slot is held until the response
   is closed.
@@ -59,6 +85,7 @@ What is delivered is a file that exists on this disk; its sha256 is the identity
 | `holdout_start` | `2025-01-01` | first day that can never be served |
 | `time_column` | `null` | lake-wide time column name |
 | `time_columns` | `{}` | `resource_id → column` overrides |
+| `resource_contracts` | `{}` | exact per-resource availability contracts; empty means no governing delivery |
 | `untimed` | `[]` | resources without a time axis, served `AS_IS` (declared by a human) |
 | `spool_dir` / `cuts_dir` | `var/spool`, `var/cuts` | on-disk intermediates and cuts |
 | `max_downloads` | `2` | concurrent download slots |

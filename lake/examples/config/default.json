@@ -7,5 +7,6 @@
   "lake_id": "financial_files",
   "title": "financial-data",
   "description": "Full file lake: parquet/csv under data roots. Discover uses stat(); sha256 only on read.",
+  "resource_contracts": {},
   "holdout_start": "2025-01-01"
 }

@@ -156,8 +156,7 @@ def test_cut_parquet_across_row_groups(tmp_path):
     got = pq.read_table(info["path"])
     assert got.column("v").to_pylist() == [1, 2, 3, 4]
     meta = pq.read_metadata(info["path"])
-    # one written row group per source row group that kept rows, at the source's size
-    assert [meta.row_group(i).num_rows for i in range(meta.num_row_groups)] == [2, 2]
+    assert [meta.row_group(i).num_rows for i in range(meta.num_row_groups)] == [4]
     assert lake.coverage("rg.parquet") == {
         "resource_id": "rg.parquet",
         "rows": 7,
@@ -165,6 +164,24 @@ def test_cut_parquet_across_row_groups(tmp_path):
         "t_max": "2025-01-02 00:00:00",
         "time_column": "date",
     }
+
+
+def test_cut_parquet_never_reads_an_unbounded_row_group(tmp_path, monkeypatch):
+    lake = _lake(tmp_path)
+    days = pd.date_range("2024-01-01", periods=12, freq="D")
+    _parquet(
+        tmp_path,
+        "bounded.parquet",
+        pa.table({"date": pa.array(days), "v": list(range(12))}),
+        row_group_size=12,
+    )
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("governed cuts must use bounded record batches")
+
+    monkeypatch.setattr(pq.ParquetFile, "read_row_group", forbidden)
+    info = lake.download("bounded.parquet", start="2024-01-03", end="2024-01-05")
+    assert pq.read_table(info["path"]).column("v").to_pylist() == [2, 3, 4]
 
 
 REAL_TZ_PARQUET = (
@@ -351,7 +368,14 @@ def test_source_sha256_memo(tmp_path):
     memo = json.loads((tmp_path / "var" / "source_sha256.json").read_text())
     entry = memo[str(path)]
     st = path.stat()
-    assert entry == {"size": st.st_size, "mtime_ns": st.st_mtime_ns, "sha256": first["sha256"]}
+    assert entry == {
+        "dev": st.st_dev,
+        "ino": st.st_ino,
+        "size": st.st_size,
+        "mtime_ns": st.st_mtime_ns,
+        "ctime_ns": st.st_ctime_ns,
+        "sha256": first["sha256"],
+    }
     path.write_bytes(b"ts,v\n2024-12-30,9\n2024-12-31,8\n")
     os.utime(path, ns=(st.st_atime_ns, st.st_mtime_ns + 1_000_000))
     second = lake.download("a.csv")

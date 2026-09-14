@@ -34,6 +34,7 @@ DEFAULT_VALUES = {
     ],
     "time_column": None,
     "time_columns": {},
+    "resource_contracts": {},
     "untimed": [],
     "holdout_start": "2025-01-01",
     "spool_dir": str(_LAKE / "var" / "spool"),

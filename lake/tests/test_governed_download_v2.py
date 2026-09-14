@@ -5,6 +5,9 @@ import os
 from pathlib import Path
 
 import pytest
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 
 from app.config import DEFAULT_VALUES
 from app.main import assemble
@@ -32,12 +35,13 @@ def _inventory(tmp_path, **overrides):
     source.parent.mkdir(parents=True)
     source.write_text(BODY)
     plugin = Plugin()
-    plugin.set_params(
-        root_path=str(root), include_globs=["market_data/**/*.csv"],
-        holdout_start="2025-01-01", cuts_dir=str(tmp_path / "cuts"),
-        spool_dir=str(tmp_path / "spool"), resource_contracts={RESOURCE: CONTRACT},
-        **overrides,
-    )
+    params = {
+        "root_path": str(root), "include_globs": ["market_data/**/*.csv"],
+        "holdout_start": "2025-01-01", "cuts_dir": str(tmp_path / "cuts"),
+        "spool_dir": str(tmp_path / "spool"), "resource_contracts": {RESOURCE: CONTRACT},
+    }
+    params.update(overrides)
+    plugin.set_params(**params)
     return plugin, source
 
 
@@ -121,3 +125,53 @@ def test_cut_publication_never_overwrites_different_bytes(tmp_path):
     with pytest.raises(RuntimeError, match="cut identity conflict"):
         Plugin._commit(second, target)
     assert target.read_bytes() == b"first"
+
+
+def test_runtime_configuration_cannot_change_holdout_or_inventory(tmp_path):
+    root = tmp_path / "root"
+    source = root / RESOURCE
+    source.parent.mkdir(parents=True)
+    source.write_text(BODY)
+    config = dict(DEFAULT_VALUES)
+    config.update({
+        "root_path": str(root), "include_globs": ["market_data/**/*.csv"],
+        "holdout_start": "2025-01-01", "lake_service_token": TOKEN,
+        "cuts_dir": str(tmp_path / "cuts"), "spool_dir": str(tmp_path / "spool"),
+    })
+    plugins = assemble(config)
+    app = plugins["web"].create_app({"config": config, "plugins": plugins})
+    response = app.test_client().post(
+        "/config", data={"holdout_start": "", "globs": "**/*"}
+    )
+    assert response.status_code == 403
+    assert config["holdout_start"] == "2025-01-01"
+    assert config["include_globs"] == ["market_data/**/*.csv"]
+
+
+def test_governed_parquet_contract_and_cut_are_memory_bounded(tmp_path, monkeypatch):
+    resource = "market_data/bounded.parquet"
+    root = tmp_path / "root"
+    source = root / resource
+    source.parent.mkdir(parents=True)
+    pq.write_table(pa.table({
+        "event_time": pa.array(pd.date_range("2024-01-01", periods=12, freq="D")),
+        "available_at": pa.array(pd.date_range("2024-01-02", periods=12, freq="D")),
+        "value": range(12),
+    }), source, row_group_size=12)
+    inventory = Plugin()
+    inventory.set_params(
+        root_path=str(root), include_globs=["market_data/**/*.parquet"],
+        holdout_start=None, cuts_dir=str(tmp_path / "cuts"),
+        spool_dir=str(tmp_path / "spool"),
+        resource_contracts={resource: CONTRACT},
+    )
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("governing parquet reads must use bounded record batches")
+
+    monkeypatch.setattr(pq.ParquetFile, "read_row_group", forbidden)
+    info = inventory.governed_download(resource, "2024-01-03", "2024-01-05")
+    try:
+        assert pq.read_table(info["handle"])["value"].to_pylist() == [1, 2, 3]
+    finally:
+        info["handle"].close()

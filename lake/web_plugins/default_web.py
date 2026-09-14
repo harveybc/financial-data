@@ -11,7 +11,6 @@ from pathlib import Path
 
 from flask import Flask, flash, jsonify, redirect, render_template, request, send_file, url_for
 
-from app.config_handler import save_config
 from app.lake_auth import check_bearer, load_token
 from inventory_plugins.fs_inventory import (
     DAY_RE,
@@ -128,20 +127,7 @@ class Plugin:
 
         @app.post("/config")
         def save():
-            globs = [
-                line.strip()
-                for line in (request.form.get("globs") or "").splitlines()
-                if line.strip()
-            ]
-            holdout = (request.form.get("holdout_start") or "").strip() or None
-            cfg()["include_globs"] = globs
-            cfg()["holdout_start"] = holdout
-            inv().set_params(**cfg())
-            inv().discover(refresh=True)
-            dest = Path(__file__).resolve().parents[1] / "examples" / "config" / "local.json"
-            save_config({k: cfg()[k] for k in cfg() if k != "plugins"}, dest)
-            flash(f"Saved {dest.name} and refreshed inventory.", "success")
-            return redirect(url_for("home"))
+            return jsonify({"error": "runtime data contract is immutable"}), 403
 
         @app.post("/ops/coverage")
         def ops_coverage():
@@ -269,6 +255,59 @@ class Plugin:
             response.headers["X-Source-SHA256"] = info["source_sha256"]
             response.headers["X-Delivery"] = info["delivery"]
             response.headers["X-Time-Column"] = info["time_column"] or ""
+            return response
+
+        @app.get("/api/v2/download")
+        def api_governed_download():
+            denied = _api_ok()
+            if denied:
+                return denied
+            resource = request.args.get("resource") or ""
+            start = request.args.get("from")
+            end = request.args.get("to")
+            if (start is not None or end is not None) and _day_range(start, end) is None:
+                return jsonify({"error": "invalid from/to"}), 400
+            if not slots.acquire(blocking=False):
+                return jsonify({"error": "download slots busy"}), 503, {
+                    "Retry-After": RETRY_AFTER
+                }
+            try:
+                info = inv().governed_download(resource, start=start, end=end)
+                handle = info["handle"]
+            except (FileNotFoundError, LakeError, ValueError) as exc:
+                slots.release()
+                return _lake_error(exc)
+            except BaseException:
+                slots.release()
+                raise
+            released = False
+
+            def close():
+                nonlocal released
+                if not released:
+                    released = True
+                    handle.close()
+                    slots.release()
+
+            try:
+                response = send_file(
+                    handle, mimetype="application/octet-stream", as_attachment=True,
+                    download_name=info["filename"], conditional=False, etag=False,
+                )
+                response.call_on_close(close)
+            except BaseException:
+                close()
+                raise
+            quoted = info["filename"].replace("\\", "\\\\").replace('"', '\\"')
+            response.headers["Content-Disposition"] = f'attachment; filename="{quoted}"'
+            response.headers["Content-Length"] = str(info["bytes"])
+            response.headers["X-Content-SHA256"] = info["sha256"]
+            response.headers["X-Source-SHA256"] = info["source_sha256"]
+            response.headers["X-Delivery"] = info["delivery"]
+            response.headers["X-Time-Column"] = info["time_column"]
+            response.headers["X-Availability-Contract-SHA256"] = (
+                info["availability_contract_sha256"]
+            )
             return response
 
         return app

@@ -6,7 +6,9 @@ import hashlib
 import json
 import os
 import re
+import stat
 import threading
+import uuid
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -25,6 +27,7 @@ PARQUET_WRITER = {
     "use_dictionary": True,
     "write_statistics": True,
 }
+CUT_MATERIALIZER = "finlake-causal-cut.v2"
 _LAKE = Path(__file__).resolve().parents[1]
 
 
@@ -101,17 +104,27 @@ def _cut_csv(source: Path, dest: Path, mask):
     """Pass two: copy the header and the kept lines byte for byte."""
     n = len(mask)
     i = 0
-    with open(source, "rb") as src, open(dest, "wb") as out:
-        header = src.readline()
-        if not header:
-            raise UnsupportedError("unsupported csv")
-        out.write(header)
-        for line in src:
-            if line.strip(b"\r\n") == b"":
-                continue  # pandas skips blank lines; the parsed count does not include them
-            if i < n and mask[i]:
-                out.write(line)
-            i += 1
+    owns_source = not hasattr(source, "read")
+    src = open(source, "rb") if owns_source else source
+    try:
+        src.seek(0)
+        out = open(dest, "wb")
+        try:
+            header = src.readline()
+            if not header:
+                raise UnsupportedError("unsupported csv")
+            out.write(header)
+            for line in src:
+                if line.strip(b"\r\n") == b"":
+                    continue  # pandas skips blank lines; the parsed count does not include them
+                if i < n and mask[i]:
+                    out.write(line)
+                i += 1
+        finally:
+            out.close()
+    finally:
+        if owns_source:
+            src.close()
     if i != n:
         # multi-line quoted records: the physical lines do not map 1:1 to rows
         raise UnsupportedError("unsupported csv")
@@ -122,20 +135,20 @@ def _cut_parquet(source: Path, dest: Path, mask):
     import pyarrow.parquet as pq
 
     reader = pq.ParquetFile(source)
-    meta = reader.metadata
-    sizes = [meta.row_group(i).num_rows for i in range(meta.num_row_groups)]
-    row_group_size = max(sizes) if sizes else None
     offset = 0
     with pq.ParquetWriter(dest, reader.schema_arrow, **PARQUET_WRITER) as writer:
-        for i, n in enumerate(sizes):
+        for batch in reader.iter_batches(batch_size=CHUNK_ROWS):
+            n = batch.num_rows
             keep = mask[offset : offset + n]
             offset += n
             if not keep.any():
                 continue
-            table = reader.read_row_group(i)
+            table = pa.Table.from_batches([batch])
             if not keep.all():
                 table = table.filter(pa.array(keep))
-            writer.write_table(table, row_group_size=row_group_size)
+            writer.write_table(table, row_group_size=CHUNK_ROWS)
+    if offset != len(mask):
+        raise RuntimeError("parquet row count changed while materialising cut")
 
 
 class Plugin:
@@ -145,6 +158,7 @@ class Plugin:
         "holdout_start": "2025-01-01",
         "time_column": None,
         "time_columns": {},
+        "resource_contracts": {},
         "untimed": [],
         "spool_dir": None,
         "cuts_dir": None,
@@ -272,8 +286,8 @@ class Plugin:
 
             try:
                 reader = pq.ParquetFile(path)
-                for i in range(reader.num_row_groups):
-                    yield _arrow_wall_clock(reader.read_row_group(i, columns=[col]).column(0))
+                for batch in reader.iter_batches(batch_size=CHUNK_ROWS, columns=[col]):
+                    yield _arrow_wall_clock(batch.column(0))
             except pa.ArrowException as exc:
                 raise UnsupportedError("unsupported parquet") from exc
             return
@@ -340,34 +354,288 @@ class Plugin:
         return self._memo
 
     def sha256(self, path) -> tuple[str, int]:
-        """sha256 of a file on disk, memoised per (path, size, mtime_ns)."""
+        """Hash one stable file identity; cache hits bind all mutable stat facts."""
         path = Path(path)
         key = str(path)
-        before = path.stat()
+        fd = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0))
+        before = os.fstat(fd)
+        named = path.stat(follow_symlinks=False)
+        if (before.st_dev, before.st_ino) != (named.st_dev, named.st_ino):
+            os.close(fd)
+            raise RuntimeError("source identity changed")
         with self._lock:
             hit = self._load_memo().get(key)
-        if hit and hit.get("size") == before.st_size and hit.get("mtime_ns") == before.st_mtime_ns:
+        facts = {
+            "dev": before.st_dev,
+            "ino": before.st_ino,
+            "size": before.st_size,
+            "mtime_ns": before.st_mtime_ns,
+            "ctime_ns": before.st_ctime_ns,
+        }
+        if hit and all(hit.get(name) == value for name, value in facts.items()):
+            os.close(fd)
             return hit["sha256"], before.st_size
         digest = hashlib.sha256()
-        with open(path, "rb") as handle:
-            for block in iter(lambda: handle.read(HASH_CHUNK), b""):
-                digest.update(block)
-        after = path.stat()
-        if (after.st_size, after.st_mtime_ns) != (before.st_size, before.st_mtime_ns):
-            return self.sha256(path)  # changed while hashing: do not memoise that digest
+        try:
+            with os.fdopen(fd, "rb", closefd=False) as handle:
+                for block in iter(lambda: handle.read(HASH_CHUNK), b""):
+                    digest.update(block)
+            after = os.fstat(fd)
+            named_after = path.stat(follow_symlinks=False)
+        finally:
+            os.close(fd)
+        after_facts = {
+            "dev": after.st_dev,
+            "ino": after.st_ino,
+            "size": after.st_size,
+            "mtime_ns": after.st_mtime_ns,
+            "ctime_ns": after.st_ctime_ns,
+        }
+        if facts != after_facts or (after.st_dev, after.st_ino) != (
+            named_after.st_dev, named_after.st_ino
+        ):
+            raise RuntimeError("source identity changed")
+        value = digest.hexdigest()
         with self._lock:
             memo = self._load_memo()
-            memo[key] = {
-                "size": after.st_size,
-                "mtime_ns": after.st_mtime_ns,
-                "sha256": digest.hexdigest(),
-            }
+            memo[key] = {**after_facts, "sha256": value}
             target = self._memo_path()
             target.parent.mkdir(parents=True, exist_ok=True)
-            tmp = target.with_name(target.name + ".tmp")
+            tmp = target.with_name(f".{target.name}.{uuid.uuid4().hex}.tmp")
             tmp.write_text(json.dumps(memo, indent=1, sort_keys=True), encoding="utf-8")
             os.replace(tmp, target)
-        return digest.hexdigest(), after.st_size
+        return value, after.st_size
+
+    def _resource_contract(self, resource_id):
+        contract = (self.params.get("resource_contracts") or {}).get(resource_id)
+        required = {
+            "event_time_column", "available_time_column", "timezone", "time_unit",
+            "frequency",
+        }
+        if not isinstance(contract, dict) or set(contract) != required:
+            raise UnsupportedError("resource availability contract required")
+        for name in ("event_time_column", "available_time_column", "timezone", "frequency"):
+            if not isinstance(contract[name], str) or not contract[name]:
+                raise UnsupportedError(f"invalid resource contract {name}")
+        if contract["timezone"] not in {"UTC", "NAIVE_WALL_CLOCK"}:
+            raise UnsupportedError("invalid resource contract timezone")
+        if contract["time_unit"] not in {None, "s", "ms", "us", "ns"}:
+            raise UnsupportedError("invalid resource contract time_unit")
+        return contract
+
+    def _open_resource(self, resource_id):
+        parts = str(resource_id or "").split("/")
+        if not parts or any(part in {"", ".", ".."} for part in parts):
+            raise FileNotFoundError(str(resource_id or ""))
+        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+        directory = os.open(self._root(), flags | getattr(os, "O_DIRECTORY", 0))
+        try:
+            for part in parts[:-1]:
+                child = os.open(
+                    part, flags | getattr(os, "O_DIRECTORY", 0), dir_fd=directory
+                )
+                os.close(directory)
+                directory = child
+            fd = os.open(parts[-1], flags, dir_fd=directory)
+        except (FileNotFoundError, NotADirectoryError, OSError) as exc:
+            raise FileNotFoundError(str(resource_id or "")) from exc
+        finally:
+            os.close(directory)
+        if not stat.S_ISREG(os.fstat(fd).st_mode):
+            os.close(fd)
+            raise FileNotFoundError(str(resource_id or ""))
+        return fd
+
+    @staticmethod
+    def _contract_time(series, *, time_unit, timezone_mode):
+        import pandas as pd
+
+        try:
+            if pd.api.types.is_datetime64_any_dtype(series):
+                out = series
+            elif pd.api.types.is_numeric_dtype(series) and not pd.api.types.is_bool_dtype(series):
+                if time_unit is None:
+                    raise UnparseableError("unparseable time column")
+                out = pd.to_datetime(series, unit=time_unit, utc=(timezone_mode == "UTC"))
+            else:
+                out = pd.to_datetime(series, format="ISO8601", utc=(timezone_mode == "UTC"))
+        except (ValueError, TypeError, OverflowError) as exc:
+            raise UnparseableError("unparseable time column") from exc
+        if out.isna().any():
+            raise UnparseableError("unparseable time column")
+        if out.dt.tz is not None:
+            out = (
+                out.dt.tz_convert("UTC").dt.tz_localize(None)
+                if timezone_mode == "UTC"
+                else out.dt.tz_localize(None)
+            )
+        return out.reset_index(drop=True)
+
+    def _contract_blocks(self, fd, suffix, column, contract):
+        handle = os.fdopen(os.dup(fd), "rb")
+        if suffix == ".parquet":
+            import pyarrow.parquet as pq
+
+            reader = pq.ParquetFile(handle)
+            if column not in reader.schema_arrow.names:
+                handle.close()
+                raise UnsupportedError("available_time column missing")
+            try:
+                for batch in reader.iter_batches(
+                    batch_size=CHUNK_ROWS, columns=[column]
+                ):
+                    values = batch.column(0).to_pandas()
+                    yield self._contract_time(
+                        values, time_unit=contract["time_unit"],
+                        timezone_mode=contract["timezone"],
+                    )
+            finally:
+                handle.close()
+            return
+        import pandas as pd
+
+        try:
+            with handle:
+                with pd.read_csv(handle, usecols=[column], chunksize=CHUNK_ROWS) as chunks:
+                    for chunk in chunks:
+                        yield self._contract_time(
+                            chunk[column], time_unit=contract["time_unit"],
+                            timezone_mode=contract["timezone"],
+                        )
+        except ValueError as exc:
+            raise UnsupportedError("available_time column missing") from exc
+
+    def _contract_mask(self, fd, suffix, column, contract, lo=None, hi=None):
+        import numpy as np
+
+        masks, maximum = [], None
+        for block in self._contract_blocks(fd, suffix, column, contract):
+            keep = np.ones(len(block), dtype=bool) if lo is None else (
+                (block >= lo) & (block < hi)
+            ).to_numpy()
+            masks.append(keep)
+            if len(block):
+                top = block.max()
+                maximum = top if maximum is None or top > maximum else maximum
+        return (np.concatenate(masks) if masks else np.zeros(0, dtype=bool)), maximum
+
+    @staticmethod
+    def _sha256_fd(fd):
+        digest = hashlib.sha256()
+        os.lseek(fd, 0, os.SEEK_SET)
+        while True:
+            block = os.read(fd, HASH_CHUNK)
+            if not block:
+                break
+            digest.update(block)
+        os.lseek(fd, 0, os.SEEK_SET)
+        return digest.hexdigest()
+
+    @staticmethod
+    def _commit(part, target):
+        target.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            os.link(part, target)
+        except FileExistsError:
+            def digest(path):
+                out = hashlib.sha256()
+                with open(path, "rb") as handle:
+                    for block in iter(lambda: handle.read(HASH_CHUNK), b""):
+                        out.update(block)
+                return out.digest()
+
+            if digest(part) != digest(target):
+                raise RuntimeError("cut identity conflict")
+        finally:
+            part.unlink(missing_ok=True)
+
+    def governed_download(self, resource_id, start=None, end=None):
+        """Deliver bytes selected only by the declared availability timestamp."""
+        contract = self._resource_contract(resource_id)
+        suffix = Path(resource_id).suffix.lower()
+        if suffix not in {".csv", ".parquet"}:
+            raise UnsupportedError("unsupported file type")
+        fd = self._open_resource(resource_id)
+        try:
+            source_sha = self._sha256_fd(fd)
+            size = os.fstat(fd).st_size
+            holdout = self._holdout()
+            column = contract["available_time_column"]
+            if (start is None) != (end is None):
+                raise ValueError("invalid from/to")
+            if start is None:
+                _, available_max = self._contract_mask(
+                    fd, suffix, column, contract
+                )
+                if holdout is not None and (
+                    available_max is None or not available_max < holdout
+                ):
+                    raise HoldoutError("spans holdout: request a range")
+                os.lseek(fd, 0, os.SEEK_SET)
+                return {
+                    "filename": Path(resource_id).name,
+                    "sha256": source_sha,
+                    "bytes": size,
+                    "source_sha256": source_sha,
+                    "delivery": "AS_IS",
+                    "time_column": column,
+                    "availability_contract_sha256": hashlib.sha256(
+                        json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
+                    ).hexdigest(),
+                    "handle": os.fdopen(fd, "rb"),
+                }
+            lo, hi = day_range(start, end)
+            import pandas as pd
+
+            if holdout is not None and hi - pd.Timedelta(days=1) >= holdout:
+                raise HoldoutError("holdout")
+            mask, _ = self._contract_mask(fd, suffix, column, contract, lo, hi)
+            contract_sha = hashlib.sha256(
+                json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
+            ).hexdigest()
+            materializer_sha = hashlib.sha256(json.dumps({
+                "schema": CUT_MATERIALIZER,
+                "writer": PARQUET_WRITER if suffix == ".parquet" else "byte-line-subset.v1",
+            }, sort_keys=True, separators=(",", ":")).encode("ascii")).hexdigest()
+            target = (
+                self.cuts_dir() / source_sha / contract_sha / materializer_sha
+                / f"{start}_{end}{suffix}"
+            )
+            if not mask.all():
+                part = target.with_name(f".{target.name}.{uuid.uuid4().hex}.part")
+                part.parent.mkdir(parents=True, exist_ok=True)
+                try:
+                    source = os.fdopen(os.dup(fd), "rb")
+                    if suffix == ".parquet":
+                        _cut_parquet(source, part, mask)
+                    else:
+                        _cut_csv(source, part, mask)
+                    source.close()
+                    self._commit(part, target)
+                except BaseException:
+                    part.unlink(missing_ok=True)
+                    raise
+            else:
+                os.lseek(fd, 0, os.SEEK_SET)
+                return {
+                    "filename": Path(resource_id).name, "sha256": source_sha,
+                    "bytes": size, "source_sha256": source_sha, "delivery": "AS_IS",
+                    "time_column": column, "availability_contract_sha256": contract_sha,
+                    "handle": os.fdopen(fd, "rb"),
+                }
+        except BaseException:
+            os.close(fd)
+            raise
+        os.close(fd)
+        out_fd = os.open(target, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0))
+        cut_sha = self._sha256_fd(out_fd)
+        return {
+            "filename": target.name, "sha256": cut_sha,
+            "bytes": os.fstat(out_fd).st_size, "source_sha256": source_sha,
+            "delivery": "CUT", "time_column": column,
+            "availability_contract_sha256": contract_sha,
+            "handle": os.fdopen(out_fd, "rb"),
+        }
 
     def coverage(self, resource_id: str):
         path = self._path(resource_id)
