@@ -13,9 +13,18 @@ Order: N1–N2 of `predictor/docs/handoffs/MUSASHI_TO_SATOSHI_TEMPORAL_SEMANTICS
 | window start | **MEASURED** | `open_time` of every row, tz-aware **UTC** in the physical schema |
 | window end | **MEASURED** | `close_time`; modal span = 4 h − 1 ms |
 | finalization | **NOT DEMONSTRATED** | the file carries no field saying whether a row is final; 21 rows have a non-nominal span |
-| publication | **UNOBSERVED** | no artefact records when the provider published any row |
+| publication | **UNOBSERVED** | no producer statement declares a publication column, and no artefact records when any row was published |
 | reception / ingestion | **UNOBSERVED** | one file-level acquisition timestamp bounds the whole file, not a row |
 | revision | **UNKNOWN** | a single acquisition cannot show whether past rows are restated |
+
+**Publication and reception are different clocks, and the role of a column comes from the
+producer** (corrected after the review of PR #2). The first version of this tool took a
+column passed on the command line and marked *publication* MEASURED; that was inference, not
+evidence. The tool now takes the producer's statement — column, role, source — and only
+checks its consistency against the bytes: a column earlier than the window it describes, or
+one the file does not carry, is REFUSED. Without a statement both clocks stay UNOBSERVED
+however well a column behaves. Reception bounds what **we** could have known; publication is
+the provider's act, and one never substitutes for the other.
 
 The correction that matters: **a window's close is not availability**. A bar closing at
 23:59:59.999 can be published the next morning; a UTC stamp shows how the clock is written,
@@ -81,8 +90,9 @@ counterexamples frozen in `store/tests/frozen/`:
   is refused for the class;
 * **this** resource cannot claim point-in-time or live, asserted as refusals with their
   measurements (the previous test called the validator without expecting a refusal);
-* the positive path: an *observed* publication column is what supports availability, and a
-  publication column earlier than the window it describes is refused;
+* a timestamp column alone promotes nothing: without a producer statement both clocks stay
+  unobserved; with one, the declared role is the one that is measured, and a statement the
+  bytes contradict (or that names an absent column) is refused;
 * reception on the following day is not availability on the first — the auditor's case;
 * a bar that is not final is reported as such rather than delivered silently;
 * a late revision changes the delivery identity;

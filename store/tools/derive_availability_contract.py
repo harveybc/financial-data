@@ -123,6 +123,7 @@ def classify_bars(frame, event_column, end_column, step, extra_columns) -> dict:
 
 def measure(path: Path, event_column: str, end_column: str, frequency: str,
             publication_column: str | None = None) -> dict:
+    """`publication_column` is the column the producer's statement names, whatever its role."""
     import numpy as np
     import pandas as pd
 
@@ -176,31 +177,58 @@ def measure(path: Path, event_column: str, end_column: str, frequency: str,
                 "max": float((published - window_end).dt.total_seconds().max())}
         else:
             described["at_or_after_window_end_always"] = False
-        facts["publication_column"] = described
+        facts["clock_column"] = described
     return facts
 
 
-def clocks(facts: dict, declaration: dict, publication_column: str | None = None) -> dict:
+def clocks(facts: dict, declaration: dict, clock_declaration: dict | None = None) -> dict:
     """Which clocks the evidence establishes, and which stay unobserved.
 
-    A publication clock exists only when the producer carries one in the bytes: a column
-    that records when each row became available, verified to sit at or after the window it
-    describes. Nothing else promotes `UNOBSERVED` to `MEASURED`.
+    **The role of a column comes from the producer, never from this tool** (Musashi, B/P6):
+    a timestamp column that sits after a window can be when the provider published the row,
+    when we received it, or something else entirely. The caller passes the producer's
+    statement — `{"column": "received_time", "role": "reception", "source": "..."}` — and the
+    measurement only *checks its consistency*. Without such a statement both clocks stay
+    UNOBSERVED, whatever columns the file happens to carry.
+
+    The two roles are not interchangeable: publication is the provider's act, reception is
+    ours. A reception clock bounds what *we* could have known; it says nothing about when the
+    data existed for anybody else.
     """
     measured = facts.get("measured")
-    publication = {"status": "UNOBSERVED",
-                   "evidence": "no artefact records when the provider published any row; "
-                               "the producer declaration states no publication time"}
-    if publication_column and facts.get("publication_column"):
-        column = facts["publication_column"]
-        if column.get("is_datetime") and column.get("at_or_after_window_end_always"):
-            publication = {"status": "MEASURED", "column": publication_column,
-                           "evidence": "every row carries a publication timestamp at or "
-                                       "after the end of the window it describes"}
+    unobserved = {"publication": {"status": "UNOBSERVED",
+                                  "evidence": "no producer statement declares a publication "
+                                              "column, and no artefact records when any row "
+                                              "was published"},
+                  "reception": {"status": "UNOBSERVED",
+                                "evidence": f"one file-level acquisition timestamp "
+                                            f"({declaration.get('acquired_at')}) bounds the "
+                                            f"whole file, not a row"}}
+    publication, reception = unobserved["publication"], unobserved["reception"]
+    statement = clock_declaration or {}
+    column_name, role = statement.get("column"), statement.get("role")
+    if column_name and role in ("publication", "reception"):
+        column = (facts.get("clock_column") or {})
+        if not column:
+            state = {"status": "REFUSED", "column": column_name, "role": role,
+                     "evidence": "the producer statement names a column the file does not carry"}
+        elif not column.get("is_datetime"):
+            state = {"status": "REFUSED", "column": column_name, "role": role,
+                     "evidence": "the declared column is not a timestamp in the physical schema"}
+        elif not column.get("at_or_after_window_end_always"):
+            state = {"status": "REFUSED", "column": column_name, "role": role,
+                     "evidence": "the declared column is earlier than the window it describes "
+                                 "in at least one row: the statement and the bytes disagree"}
         else:
-            publication = {"status": "REFUSED", "column": publication_column,
-                           "evidence": "the declared publication column is not a timestamp "
-                                       "at or after every window it describes"}
+            state = {"status": "MEASURED", "column": column_name, "role": role,
+                     "source": statement.get("source"),
+                     "evidence": "the producer declares this column as the "
+                                 f"{role} clock, and every row is at or after the end of the "
+                                 "window it describes"}
+        if role == "publication":
+            publication = state
+        else:
+            reception = state
     tz = (facts.get("event_column") or {}).get("timezone_in_schema")
     return {
         "window_start": {"status": "MEASURED" if measured else "UNKNOWN",
@@ -212,10 +240,7 @@ def clocks(facts: dict, declaration: dict, publication_column: str | None = None
         "finalization": {"status": "NOT_DEMONSTRATED",
                          "evidence": (facts.get("anomalous_bars") or {}).get("why")},
         "publication": publication,
-        "reception": {"status": "UNOBSERVED",
-                      "evidence": f"one file-level acquisition timestamp "
-                                  f"({declaration.get('acquired_at')}) bounds the whole file, "
-                                  f"not a row"},
+        "reception": reception,
         "revision": {"status": "UNKNOWN",
                      "evidence": "a single acquisition cannot show whether past rows are "
                                  "restated; the producer declaration states no policy"},
@@ -244,7 +269,8 @@ def eligibility(facts: dict, clock_states: dict, declaration: dict) -> dict:
     if declaration.get("declared_sha256") and not declaration.get("digest_matches"):
         refusals.append({"reason": "DIGEST_DOES_NOT_MATCH_PRODUCER",
                          "detail": "the bytes are not the ones the producer pinned"})
-    if clock_states["publication"]["status"] != "MEASURED":
+    if clock_states["publication"]["status"] != "MEASURED" \
+            and clock_states["reception"]["status"] != "MEASURED":
         refusals.append({"reason": "PUBLICATION_TIME_UNOBSERVED",
                          "detail": "no availability column can be asserted: a window's close "
                                    "is geometry, not knowledge"})
@@ -256,12 +282,14 @@ def eligibility(facts: dict, clock_states: dict, declaration: dict) -> dict:
     blocking = {"MEASUREMENT_FAILED", "EVENT_CLOCK_NOT_MONOTONIC", "DUPLICATE_EVENT_TIMES",
                 "WINDOW_END_BEFORE_START", "DIGEST_DOES_NOT_MATCH_PRODUCER"}
     unusable = [r for r in refusals if r["reason"] in blocking]
-    point_in_time = (not unusable
-                     and clock_states["publication"]["status"] == "MEASURED"
+    knowable = [name for name in ("publication", "reception")
+                if clock_states[name]["status"] == "MEASURED"]
+    point_in_time = (not unusable and knowable
                      and clock_states["finalization"]["status"] != "NOT_DEMONSTRATED")
     if point_in_time:
         return {"installable_availability_contract": True, "kind": "POINT_IN_TIME",
-                "refusals": refusals, "point_in_time_claim": "SUPPORTED",
+                "clock_used": knowable[0], "refusals": refusals,
+                "point_in_time_claim": "SUPPORTED",
                 "live_claim": "REFUSED",
                 "what_would_change_it": ["a producer statement bounding delivery latency to "
                                          "zero would be needed for a live claim"]}
@@ -324,9 +352,13 @@ def main(argv=None) -> int:
     parser.add_argument("--event-column", required=True)
     parser.add_argument("--window-end-column", required=True)
     parser.add_argument("--frequency", required=True)
-    parser.add_argument("--publication-column",
-                        help="a column recording when each row became available, when the "
-                             "producer carries one; absent means unobserved, not zero")
+    parser.add_argument("--clock-column",
+                        help="the column the producer's statement names as a clock")
+    parser.add_argument("--clock-role", choices=("publication", "reception"),
+                        help="what the producer says that column is; without a role the "
+                             "column is measured but promotes nothing")
+    parser.add_argument("--clock-source",
+                        help="where that statement comes from (document, field, message)")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args(argv)
 
@@ -340,13 +372,15 @@ def main(argv=None) -> int:
     declaration["digest_matches"] = (declaration.get("declared_sha256") == digest
                                      if declaration.get("declared_sha256") else None)
     facts = measure(path, args.event_column, args.window_end_column, args.frequency,
-                    args.publication_column)
-    clock_states = clocks(facts, declaration, args.publication_column)
+                    args.clock_column)
+    statement = ({"column": args.clock_column, "role": args.clock_role,
+                  "source": args.clock_source} if args.clock_column and args.clock_role else None)
+    clock_states = clocks(facts, declaration, statement)
     verdict = eligibility(facts, clock_states, declaration)
     contract = None
     if facts.get("measured"):
         contract = (availability_contract(args.event_column, args.frequency, facts, verdict,
-                                          args.publication_column)
+                                          args.clock_column)
                     or archive_contract(args.event_column, args.window_end_column,
                                         args.frequency, facts, verdict))
     receipt = {

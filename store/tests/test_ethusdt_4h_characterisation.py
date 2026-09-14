@@ -152,28 +152,58 @@ def test_this_resource_cannot_claim_live_or_point_in_time(tmp_path):
     assert "FINALITY_NOT_DEMONSTRATED" in reasons
 
 
-def test_an_observed_publication_column_is_what_supports_availability(tmp_path):
-    """The positive case: when the producer records reception, the contract is supported."""
+def test_a_column_alone_promotes_nothing_without_a_producer_statement(tmp_path):
+    """Corrected after the review: a timestamp column is not evidence of publication.
+
+    The file may carry `received_time`; what that column *means* comes from the producer, and
+    without a statement both clocks stay unobserved however well the column behaves.
+    """
     tool = load_tool()
     rows = [bar("2024-01-01T00:00:00Z", received="2024-01-01T04:05:00Z"),
             bar("2024-01-01T04:00:00Z", received="2024-01-01T08:05:00Z")]
     root, resource = write(tmp_path, rows)
     facts = tool.measure(root / resource, "open_time", "close_time", "4h", "received_time")
-    clocks = tool.clocks(facts, {"acquired_at": None}, "received_time")
-    assert clocks["publication"]["status"] == "MEASURED"
-    verdict = tool.eligibility(facts, clocks, {})
-    # finality is still not demonstrated for a nominal-span file, so this stays an archive:
-    # the publication clock alone does not make a bar final
-    assert clocks["finalization"]["status"] == "NOT_DEMONSTRATED"
-    assert verdict["kind"] == "ARCHIVE_RETROSPECTIVE"
+    clocks = tool.clocks(facts, {"acquired_at": None}, None)
+    assert clocks["publication"]["status"] == "UNOBSERVED"
+    assert clocks["reception"]["status"] == "UNOBSERVED"
 
 
-def test_a_publication_column_before_the_window_end_is_refused(tmp_path):
+def test_the_two_clocks_are_distinguished_by_what_the_producer_declares(tmp_path):
+    """Reception is ours, publication is theirs; the same column cannot be both by default."""
+    tool = load_tool()
+    rows = [bar("2024-01-01T00:00:00Z", received="2024-01-01T04:05:00Z"),
+            bar("2024-01-01T04:00:00Z", received="2024-01-01T08:05:00Z")]
+    root, resource = write(tmp_path, rows)
+    facts = tool.measure(root / resource, "open_time", "close_time", "4h", "received_time")
+
+    as_reception = tool.clocks(facts, {}, {"column": "received_time", "role": "reception",
+                                           "source": "acquisition script, field received_time"})
+    assert as_reception["reception"]["status"] == "MEASURED"
+    assert as_reception["reception"]["role"] == "reception"
+    assert as_reception["publication"]["status"] == "UNOBSERVED", (
+        "knowing when we received a row says nothing about when the provider published it")
+
+    as_publication = tool.clocks(facts, {}, {"column": "received_time", "role": "publication",
+                                             "source": "provider documentation"})
+    assert as_publication["publication"]["status"] == "MEASURED"
+    assert as_publication["reception"]["status"] == "UNOBSERVED"
+
+
+def test_a_declared_clock_that_the_bytes_contradict_is_refused(tmp_path):
     tool = load_tool()
     rows = [bar("2024-01-01T00:00:00Z", received="2024-01-01T00:00:01Z")]  # before the close
     root, resource = write(tmp_path, rows)
     facts = tool.measure(root / resource, "open_time", "close_time", "4h", "received_time")
-    clocks = tool.clocks(facts, {}, "received_time")
+    clocks = tool.clocks(facts, {}, {"column": "received_time", "role": "reception"})
+    assert clocks["reception"]["status"] == "REFUSED"
+    assert "disagree" in clocks["reception"]["evidence"]
+
+
+def test_a_statement_naming_a_column_that_is_not_there_is_refused(tmp_path):
+    tool = load_tool()
+    root, resource = write(tmp_path, [bar("2024-01-01T00:00:00Z")])
+    facts = tool.measure(root / resource, "open_time", "close_time", "4h", "published_at")
+    clocks = tool.clocks(facts, {}, {"column": "published_at", "role": "publication"})
     assert clocks["publication"]["status"] == "REFUSED"
 
 

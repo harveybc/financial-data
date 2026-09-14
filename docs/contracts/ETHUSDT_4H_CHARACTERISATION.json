@@ -32,7 +32,7 @@
   },
   "publication": {
    "status": "UNOBSERVED",
-   "evidence": "no artefact records when the provider published any row; the producer declaration states no publication time"
+   "evidence": "no producer statement declares a publication column, and no artefact records when any row was published"
   },
   "reception": {
    "status": "UNOBSERVED",
