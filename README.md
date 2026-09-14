@@ -28,6 +28,10 @@ is also its publication or availability time.
 
 The broader inventory, characterization and producer-lineage work is available
 in the [published research snapshot](https://github.com/harveybc/financial-data/tree/f00bc6c151392d3cc3193f24a1c797c7ba7988d8).
+
+The [adapter publication record](docs/ADAPTER_PUBLICATION_PROVENANCE_2026_09_14.md)
+maps selected files to their source revision and hashes. Selected content on
+master does not imply that the whole research branch was merged.
 Those campaign artifacts have not all been merged into this default branch.
 The [research repository map](https://github.com/harveybc/predictor/blob/master/docs/RESEARCH_STACK.md)
 explains how the lake, preprocessing and representation-learning components connect.
