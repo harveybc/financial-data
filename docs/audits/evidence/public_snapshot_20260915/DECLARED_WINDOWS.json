@@ -1,0 +1,43 @@
+{
+ "schema": "public_snapshot_declaration.v1",
+ "declared_at": "2026-09-15T05:08:38.679Z",
+ "endpoint": "https://api.binance.com/api/v3/klines",
+ "symbol": "ETHUSDT",
+ "interval": "4h",
+ "archive": "4h.parquet",
+ "archive_sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+ "archive_rows": 18337,
+ "anomalous_bars_in_archive": 18337,
+ "limits": {
+  "requests": 3,
+  "bars_per_request": 1000,
+  "total_bytes": 5242880,
+  "timeout_seconds": 30,
+  "retries_after_denial": 0
+ },
+ "windows": [
+  {
+   "name": "anomalous",
+   "startTime": 1502942400000,
+   "limit": 1000,
+   "why": "the first bar whose window span is not the nominal one"
+  },
+  {
+   "name": "ordinary",
+   "startTime": 1635192000000,
+   "limit": 1000,
+   "why": "the middle of the archive: bars with nothing remarkable"
+  },
+  {
+   "name": "end_bound",
+   "startTime": 1752825600000,
+   "limit": 1000,
+   "why": "the last bars, where the producer's fixed END_MS sits"
+  }
+ ],
+ "what_this_cannot_settle": [
+  "agreement proves neither finality nor the absence of revisions",
+  "one comparison at one moment is not a policy"
+ ],
+ "declaration_sha256": "020e4223ba256750c363a1a7fb29b03b4c28bce6332712f06c602d336ed960bb"
+}
