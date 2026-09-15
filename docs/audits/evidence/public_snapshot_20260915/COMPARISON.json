@@ -1,0 +1,544 @@
+{
+ "schema": "public_snapshot_comparison.v1",
+ "compared_at": "2026-09-15T05:12:06.620Z",
+ "archive_sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+ "windows": {
+  "anomalous": {
+   "bars_in_snapshot": 1000,
+   "matched": 1000,
+   "not_in_archive": 0,
+   "differing": 0,
+   "materially_differing": 0,
+   "differences": []
+  },
+  "end_bound": {
+   "bars_in_snapshot": 1000,
+   "matched": 1000,
+   "not_in_archive": 0,
+   "differing": 86,
+   "materially_differing": 0,
+   "differences": [
+    {
+     "open_time_ms": 1752969600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "436896815.31092894",
+       "snapshot": "436896815.31092900",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1752998400000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "401091438.70441294",
+       "snapshot": "401091438.70441300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753012800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "497673785.96909106",
+       "snapshot": "497673785.96909100",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753113600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "806846243.3247831",
+       "snapshot": "806846243.32478300",
+       "kind": "representation"
+      },
+      "taker_buy_quote_volume": {
+       "archive": "368568661.37379295",
+       "snapshot": "368568661.37379300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753272000000,
+     "fields": {
+      "quote_volume": {
+       "archive": "967561556.1264861",
+       "snapshot": "967561556.12648600",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753358400000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "389338002.32254493",
+       "snapshot": "389338002.32254500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753372800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "502215246.18592495",
+       "snapshot": "502215246.18592500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753632000000,
+     "fields": {
+      "quote_volume": {
+       "archive": "420479958.22689694",
+       "snapshot": "420479958.22689700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753718400000,
+     "fields": {
+      "quote_volume": {
+       "archive": "380269003.66075104",
+       "snapshot": "380269003.66075100",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753747200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "371039062.63571507",
+       "snapshot": "371039062.63571500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1753963200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "416368113.20467293",
+       "snapshot": "416368113.20467300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754049600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "554527651.3548449",
+       "snapshot": "554527651.35484500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754078400000,
+     "fields": {
+      "quote_volume": {
+       "archive": "494325899.95312494",
+       "snapshot": "494325899.95312500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754150400000,
+     "fields": {
+      "quote_volume": {
+       "archive": "532780867.10641295",
+       "snapshot": "532780867.10641300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754553600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "695025955.1825911",
+       "snapshot": "695025955.18259100",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754654400000,
+     "fields": {
+      "quote_volume": {
+       "archive": "990058665.2527859",
+       "snapshot": "990058665.25278600",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754712000000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "456491358.23348093",
+       "snapshot": "456491358.23348100",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754884800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "395999987.54044306",
+       "snapshot": "395999987.54044300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1754913600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "752738492.2174591",
+       "snapshot": "752738492.21745900",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1755000000000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "736847536.7669871",
+       "snapshot": "736847536.76698700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1755014400000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "364702305.40958494",
+       "snapshot": "364702305.40958500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1755028800000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "434300809.32598495",
+       "snapshot": "434300809.32598500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1755187200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "935648292.6905769",
+       "snapshot": "935648292.69057700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1755216000000,
+     "fields": {
+      "quote_volume": {
+       "archive": "495386314.34605104",
+       "snapshot": "495386314.34605100",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1755273600000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "370640435.27568895",
+       "snapshot": "370640435.27568900",
+       "kind": "representation"
+      }
+     }
+    }
+   ]
+  },
+  "ordinary": {
+   "bars_in_snapshot": 1000,
+   "matched": 1000,
+   "not_in_archive": 0,
+   "differing": 59,
+   "materially_differing": 0,
+   "differences": [
+    {
+     "open_time_ms": 1635321600000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "411663754.64644706",
+       "snapshot": "411663754.64644700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635451200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "394350242.16281503",
+       "snapshot": "394350242.16281500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635508800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "559952234.79224",
+       "snapshot": "559952234.79224010",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635523200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "386972306.71162593",
+       "snapshot": "386972306.71162590",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635739200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "376834938.78850895",
+       "snapshot": "376834938.78850900",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635840000000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "268232570.23495528",
+       "snapshot": "268232570.23495530",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635854400000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "255208532.85748047",
+       "snapshot": "255208532.85748050",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635940800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "428621488.78983694",
+       "snapshot": "428621488.78983700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1635955200000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "261888722.96828872",
+       "snapshot": "261888722.96828870",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636185600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "376475783.88550097",
+       "snapshot": "376475783.88550100",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636329600000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "251971413.82077208",
+       "snapshot": "251971413.82077210",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636387200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "275035760.40697914",
+       "snapshot": "275035760.40697910",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636430400000,
+     "fields": {
+      "quote_volume": {
+       "archive": "226750390.91935432",
+       "snapshot": "226750390.91935430",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636545600000,
+     "fields": {
+      "quote_volume": {
+       "archive": "467015189.27851367",
+       "snapshot": "467015189.27851370",
+       "kind": "representation"
+      },
+      "taker_buy_quote_volume": {
+       "archive": "232236654.38869512",
+       "snapshot": "232236654.38869510",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636560000000,
+     "fields": {
+      "quote_volume": {
+       "archive": "411891532.47555697",
+       "snapshot": "411891532.47555700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1636732800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "438339224.55070305",
+       "snapshot": "438339224.55070300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1637020800000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "430922591.43684894",
+       "snapshot": "430922591.43684900",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1637064000000,
+     "fields": {
+      "quote_volume": {
+       "archive": "442435737.08289695",
+       "snapshot": "442435737.08289700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1637107200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "505600425.99647695",
+       "snapshot": "505600425.99647700",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1637539200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "486370138.27213293",
+       "snapshot": "486370138.27213300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1637668800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "499956961.61386305",
+       "snapshot": "499956961.61386300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1638273600000,
+     "fields": {
+      "taker_buy_quote_volume": {
+       "archive": "500983313.73225296",
+       "snapshot": "500983313.73225300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1638316800000,
+     "fields": {
+      "quote_volume": {
+       "archive": "518081668.10655504",
+       "snapshot": "518081668.10655500",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1638360000000,
+     "fields": {
+      "quote_volume": {
+       "archive": "381623540.32810307",
+       "snapshot": "381623540.32810300",
+       "kind": "representation"
+      }
+     }
+    },
+    {
+     "open_time_ms": 1638403200000,
+     "fields": {
+      "quote_volume": {
+       "archive": "489774891.25960493",
+       "snapshot": "489774891.25960500",
+       "kind": "representation"
+      }
+     }
+    }
+   ]
+  }
+ },
+ "verdict": "no material difference in the compared bars. 145 bars differ only in the last digits of quote-denominated columns: the archive stores the producer's decimal strings as float64 and loses them there. That is a property of the stored artefact, not a revision. Agreement settles neither finality nor the absence of revisions"
+}

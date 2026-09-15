@@ -1,0 +1,339 @@
+{
+ "schema": "financial_resource_characterisation.v2",
+ "supersedes": "financial_resource_contract_candidate.v1 (its zero-lag availability claim is withdrawn: window close is not publication)",
+ "resource": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+ "bytes": 1578451,
+ "sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+ "producer_declaration": {
+  "present": true,
+  "source": "Binance Spot",
+  "description": "ETHUSDT spot OHLCV 4h",
+  "acquired_at": "2026-05-01T15:58:56.166673+00:00",
+  "declared_sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+  "declares_this_file": true,
+  "states_publication_time": false,
+  "states_reception_time": false,
+  "states_revision_policy": false,
+  "states_usage_rights": false,
+  "digest_matches": true
+ },
+ "clocks": {
+  "window_start": {
+   "status": "MEASURED",
+   "evidence": "the event column of every row, tz-aware UTC in the physical schema"
+  },
+  "window_end": {
+   "status": "MEASURED",
+   "evidence": "the window-end column; modal span equals the nominal window minus one millisecond"
+  },
+  "finalization": {
+   "status": "NOT_DEMONSTRATED",
+   "evidence": "the file carries no field stating whether a bar is final; a span shorter than the nominal window is consistent with a partial aggregate, a different interval or a collection boundary, and none of those is a demonstrated final bar"
+  },
+  "publication": {
+   "status": "UNOBSERVED",
+   "evidence": "no producer statement declares a publication column, and no artefact records when any row was published"
+  },
+  "reception": {
+   "status": "BOUNDED_AT_FILE_GRAIN",
+   "bound": "2026-05-01T15:58:56.166673+00:00",
+   "evidence": "the producer's acquisition log and declaration place the whole file in our hands no later than 2026-05-01T15:58:56.166673+00:00; this is an upper bound for every row at once, not a per-row clock, and it supports no point-in-time claim"
+  },
+  "revision": {
+   "status": "UNKNOWN",
+   "evidence": "a single acquisition cannot show whether past rows are restated; the producer declaration states no policy"
+  }
+ },
+ "measured": {
+  "rows": 18337,
+  "columns": [
+   "open_time",
+   "open",
+   "high",
+   "low",
+   "close",
+   "volume",
+   "close_time",
+   "quote_volume",
+   "trade_count",
+   "taker_buy_base_volume",
+   "taker_buy_quote_volume"
+  ],
+  "event_column": {
+   "dtype": "datetime64[ms, UTC]",
+   "timezone_in_schema": "UTC",
+   "is_datetime": true,
+   "nulls": 0,
+   "first": "2017-08-17 04:00:00+00:00",
+   "last": "2025-12-31 20:00:00+00:00"
+  },
+  "window_end_column": {
+   "dtype": "datetime64[ms, UTC]",
+   "timezone_in_schema": "UTC",
+   "is_datetime": true,
+   "nulls": 0,
+   "first": "2017-08-17 07:59:59.999000+00:00",
+   "last": "2025-12-31 23:59:59.999000+00:00"
+  },
+  "event_monotonic_increasing": true,
+  "event_duplicates": 0,
+  "measured": true,
+  "window_end_minus_start_ms": {
+   "min": 0,
+   "max": 14399999,
+   "distinct": 12,
+   "modal": 14399999
+  },
+  "window_end_at_or_after_start_always": true,
+  "window_end_within_one_step_always": true,
+  "spacing_seconds": {
+   "min": 14400.0,
+   "max": 115200.0,
+   "modal": 14400.0,
+   "distinct": 4
+  },
+  "nominal_step_seconds": 14400.0,
+  "gaps": 8,
+  "rows_on_nominal_grid": 18337,
+  "rows_off_nominal_grid": 0,
+  "first_event": "2017-08-17 04:00:00+00:00",
+  "last_event": "2025-12-31 20:00:00+00:00",
+  "anomalous_bars": {
+   "count": 21,
+   "by_kind": {
+    "EMPTY_PLACEHOLDER": 1,
+    "PARTIAL_AGGREGATE": 8,
+    "SHORTER_NOMINAL_INTERVAL": 12
+   },
+   "precedes_gap": 8,
+   "finality_demonstrated": false,
+   "why": "the file carries no field stating whether a bar is final; a span shorter than the nominal window is consistent with a partial aggregate, a different interval or a collection boundary, and none of those is a demonstrated final bar",
+   "rows": [
+    {
+     "index": 123,
+     "open_time": "2017-09-06 16:00:00+00:00",
+     "span_ms": 0,
+     "kind": "EMPTY_PLACEHOLDER",
+     "precedes_gap": false,
+     "volume": 0.0,
+     "trade_count": 0
+    },
+    {
+     "index": 839,
+     "open_time": "2018-01-04 00:00:00+00:00",
+     "span_ms": 10814849,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": false,
+     "volume": 13290.75778,
+     "trade_count": 18649
+    },
+    {
+     "index": 1049,
+     "open_time": "2018-02-08 00:00:00+00:00",
+     "span_ms": 1694799,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": true,
+     "volume": 10516.2619,
+     "trade_count": 8507
+    },
+    {
+     "index": 1870,
+     "open_time": "2018-06-26 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": true,
+     "volume": 9200.14356,
+     "trade_count": 9407
+    },
+    {
+     "index": 1916,
+     "open_time": "2018-07-04 00:00:00+00:00",
+     "span_ms": 1345562,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": true,
+     "volume": 2287.1044,
+     "trade_count": 2362
+    },
+    {
+     "index": 2558,
+     "open_time": "2018-10-19 04:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 21405.69848,
+     "trade_count": 10023
+    },
+    {
+     "index": 2713,
+     "open_time": "2018-11-14 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": true,
+     "volume": 9896.16004,
+     "trade_count": 3861
+    },
+    {
+     "index": 3420,
+     "open_time": "2019-03-12 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": true,
+     "volume": 26092.4914,
+     "trade_count": 8985
+    },
+    {
+     "index": 3803,
+     "open_time": "2019-05-15 00:00:00+00:00",
+     "span_ms": 10799999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": true,
+     "volume": 124534.23021,
+     "trade_count": 34884
+    },
+    {
+     "index": 4353,
+     "open_time": "2019-08-15 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": true,
+     "volume": 27285.50284,
+     "trade_count": 13384
+    },
+    {
+     "index": 4892,
+     "open_time": "2019-11-13 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 13976.29838,
+     "trade_count": 7616
+    },
+    {
+     "index": 4964,
+     "open_time": "2019-11-25 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 111978.53975,
+     "trade_count": 32902
+    },
+    {
+     "index": 5482,
+     "open_time": "2020-02-19 08:00:00+00:00",
+     "span_ms": 12932298,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": true,
+     "volume": 100503.93617,
+     "trade_count": 42208
+    },
+    {
+     "index": 5875,
+     "open_time": "2020-04-25 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 44191.29534,
+     "trade_count": 12590
+    },
+    {
+     "index": 6259,
+     "open_time": "2020-06-28 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 42088.08093,
+     "trade_count": 13464
+    },
+    {
+     "index": 7318,
+     "open_time": "2020-12-21 12:00:00+00:00",
+     "span_ms": 6440528,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": false,
+     "volume": 144433.84092,
+     "trade_count": 80391
+    },
+    {
+     "index": 7627,
+     "open_time": "2021-02-11 00:00:00+00:00",
+     "span_ms": 13255829,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": false,
+     "volume": 78669.51899,
+     "trade_count": 86673
+    },
+    {
+     "index": 8035,
+     "open_time": "2021-04-20 00:00:00+00:00",
+     "span_ms": 7199999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 125491.90313,
+     "trade_count": 144549
+    },
+    {
+     "index": 8066,
+     "open_time": "2021-04-25 04:00:00+00:00",
+     "span_ms": 59271,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": false,
+     "volume": 161.74877,
+     "trade_count": 412
+    },
+    {
+     "index": 8725,
+     "open_time": "2021-08-13 00:00:00+00:00",
+     "span_ms": 7199000,
+     "kind": "PARTIAL_AGGREGATE",
+     "precedes_gap": false,
+     "volume": 50008.14934,
+     "trade_count": 92871
+    },
+    {
+     "index": 9008,
+     "open_time": "2021-09-29 04:00:00+00:00",
+     "span_ms": 10799999,
+     "kind": "SHORTER_NOMINAL_INTERVAL",
+     "precedes_gap": false,
+     "volume": 55910.9303,
+     "trade_count": 87529
+    }
+   ]
+  }
+ },
+ "eligibility": {
+  "installable_availability_contract": false,
+  "kind": "ARCHIVE_RETROSPECTIVE",
+  "refusals": [
+   {
+    "reason": "PUBLICATION_TIME_UNOBSERVED",
+    "detail": "no availability column can be asserted: a window's close is geometry, not knowledge"
+   },
+   {
+    "reason": "FINALITY_NOT_DEMONSTRATED",
+    "detail": "21 bars have a span other than the nominal one and none is shown to be final"
+   }
+  ],
+  "point_in_time_claim": "REFUSED",
+  "live_claim": "REFUSED",
+  "what_would_change_it": [
+   "a producer statement or observation of publication time per row, or a bound on it",
+   "a field or producer statement distinguishing final rows from partial aggregates"
+  ]
+ },
+ "contract": {
+  "event_time_column": "open_time",
+  "available_time_column": "close_time",
+  "timezone": "UTC",
+  "time_unit": null,
+  "frequency": "4h",
+  "availability": {
+   "label": "WINDOW_END",
+   "completion_lag_max": "UNKNOWN",
+   "timezone_evidence": "PRODUCER_STATEMENT",
+   "use_class": "ARCHIVE_RETROSPECTIVE"
+  }
+ },
+ "contract_sha256": "a85c3c0767f84ce3174d1143e1a33aa3af17211ee87e688683ef06048152cfb0",
+ "status": "CHARACTERISATION_ONLY_NOT_INSTALLED"
+}

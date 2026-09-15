@@ -1,0 +1,34 @@
+{
+ "schema": "public_snapshot_fetch.v1",
+ "declaration_sha256": "020e4223ba256750c363a1a7fb29b03b4c28bce6332712f06c602d336ed960bb",
+ "responses": [
+  {
+   "window": "anomalous",
+   "url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=4h&startTime=1502942400000&limit=1000",
+   "requested_at": "2026-09-15T05:09:58.156Z",
+   "status": 200,
+   "received_at": "2026-09-15T05:09:59.129Z",
+   "bytes": 167873,
+   "sha256": "c26e69c9515626b158b23c0eac7d3651979d1ef2035fac664aa55ae8c97ab6cc"
+  },
+  {
+   "window": "ordinary",
+   "url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=4h&startTime=1635192000000&limit=1000",
+   "requested_at": "2026-09-15T05:10:00.129Z",
+   "status": 200,
+   "received_at": "2026-09-15T05:10:00.802Z",
+   "bytes": 180429,
+   "sha256": "f574608a3deb5851fb36229fe1680bbc290fab4b6b562f8935e184b85361803d"
+  },
+  {
+   "window": "end_bound",
+   "url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=4h&startTime=1752825600000&limit=1000",
+   "requested_at": "2026-09-15T05:10:01.802Z",
+   "status": 200,
+   "received_at": "2026-09-15T05:10:03.290Z",
+   "bytes": 181141,
+   "sha256": "3f590ac2460dc746769d8f483f774be7476aa3693eba1c3f5e08182fe1ec580b"
+  }
+ ],
+ "total_bytes": 529443
+}

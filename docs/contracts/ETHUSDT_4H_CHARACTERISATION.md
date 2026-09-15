@@ -1,0 +1,130 @@
+# Temporal characterisation: `market_data/crypto/spot_top50/ethusdt/4h.parquet`
+
+Date: 2026-09-14. Author: Satoshi. Review: Musashi.
+Status: **characterisation, no installable availability contract**.
+Supersedes [`ETHUSDT_4H_CONTRACT_CANDIDATE.md`](ETHUSDT_4H_CONTRACT_CANDIDATE.md), whose
+zero-lag availability claim is withdrawn.
+Order: N1–N2 of `predictor/docs/handoffs/MUSASHI_TO_SATOSHI_TEMPORAL_SEMANTICS_AND_REAL_HOST_ADOPTION_2026_09_14.md`.
+
+## 1. The five clocks, separated
+
+| clock | status | evidence |
+|---|---|---|
+| window start | **MEASURED** | `open_time` of every row, tz-aware **UTC** in the physical schema |
+| window end | **MEASURED** | `close_time`; modal span = 4 h − 1 ms |
+| finalization | **NOT DEMONSTRATED** | the file carries no field saying whether a row is final; 21 rows have a non-nominal span |
+| publication | **UNOBSERVED** | no producer statement declares a publication column, and no artefact records when any row was published |
+| reception / ingestion | **BOUNDED AT FILE GRAIN** | the producer's own acquisition log and declaration put the whole file in our hands no later than `2026-05-01T15:58:56Z`; an upper bound for every row at once, not a per-row clock |
+| revision | **UNKNOWN** | a single acquisition cannot show whether past rows are restated |
+
+**Publication and reception are different clocks, and the role of a column comes from the
+producer** (corrected after the review of PR #2). The first version of this tool took a
+column passed on the command line and marked *publication* MEASURED; that was inference, not
+evidence. The tool now takes the producer's statement — column, role, source — and only
+checks its consistency against the bytes: a column earlier than the window it describes, or
+one the file does not carry, is REFUSED. Without a statement both clocks stay UNOBSERVED
+however well a column behaves. Reception bounds what **we** could have known; publication is
+the provider's act, and one never substitutes for the other.
+
+The correction that matters: **a window's close is not availability**. A bar closing at
+23:59:59.999 can be published the next morning; a UTC stamp shows how the clock is written,
+not when the data arrived. The previous candidate copied `close_time` into
+`available_time_column` with zero lag while the same submission declared latency UNOBSERVED.
+That is withdrawn. `UNOBSERVED` is not `0s`.
+
+## 2. The 21 non-nominal bars, classified from the bytes
+
+| class | count | what the bytes show |
+|---|---|---|
+| `EMPTY_PLACEHOLDER` | 1 | span 0 ms, volume 0, 0 trades (2017-09-06 16:00Z) |
+| `SHORTER_NOMINAL_INTERVAL` | 12 | span exactly 2 h − 1 ms (10), 3 h − 1 ms (2): a clean sub-interval end, not a 4 h window |
+| `PARTIAL_AGGREGATE` | 8 | arbitrary spans (28 min, 59 s, 3 h 00 m 14 s …), all with volume and trades |
+
+Eight of the 21 sit immediately before one of the file's 8 gaps — consistent with a
+collection boundary. **None of them is demonstrated to be a final bar**, so none may be used
+where finality is required; they are excluded from that set with their origin and reason,
+and the 8 gaps are left as gaps (nothing is interpolated).
+
+## 3. What the resource is eligible to promise
+
+```
+kind:                               ARCHIVE_RETROSPECTIVE
+installable availability contract:  NO
+point-in-time claim:                REFUSED   (publication time unobserved)
+live claim:                         REFUSED
+refusals:                           PUBLICATION_TIME_UNOBSERVED, FINALITY_NOT_DEMONSTRATED
+```
+
+What would change it: a producer statement or an observation of publication time per row (or
+a defensible bound on it), and a field or statement distinguishing final rows from partial
+aggregates.
+
+## 4. The minimal schema extension this needs
+
+The existing vocabulary cannot say *"the event geometry is known and publication is not"*:
+every use class requires a numeric `completion_lag_max`, which forces an invented number.
+The extension is one value and one rule, additive, in the lake:
+
+```json
+{"availability": {"label": "WINDOW_END", "completion_lag_max": "UNKNOWN",
+                  "timezone_evidence": "PRODUCER_STATEMENT",
+                  "use_class": "ARCHIVE_RETROSPECTIVE"}}
+```
+
+* only this class may declare `completion_lag_max: "UNKNOWN"`, and it **must**;
+* a resource declared this way is delivered **whole** (`AS_IS`) or not at all — a ranged
+  delivery is refused with its reason, because a range would be a point-in-time claim;
+* under a configured holdout, even the whole delivery is refused: an archive cannot be shown
+  to predate the holdout.
+
+Nothing changes for `OFFLINE_DAY_GRANULAR` or `LIVE_EQUIVALENT`, and no installed contract
+declares the new class. The archive contract for this resource would be
+`a85c3c0767f84ce3174d1143e1a33aa3af17211ee87e688683ef06048152cfb0` — **not installed**.
+
+## 5. Tests
+
+`store/tests/test_ethusdt_4h_characterisation.py`, 19 tests, and the auditor's four
+counterexamples frozen in `store/tests/frozen/`:
+
+* an archive is delivered whole; a ranged delivery is refused with its reason; a numeric lag
+  is refused for the class;
+* **this** resource cannot claim point-in-time or live, asserted as refusals with their
+  measurements (the previous test called the validator without expecting a refusal);
+* a timestamp column alone promotes nothing: without a producer statement both clocks stay
+  unobserved; with one, the declared role is the one that is measured, and a statement the
+  bytes contradict (or that names an absent column) is refused;
+* reception on the following day is not availability on the first — the auditor's case;
+* a bar that is not final is reported as such rather than delivered silently;
+* a late revision changes the delivery identity;
+* every invalidating measurement (unreadable file, non-monotonic clock, duplicates, end
+  before start, digest ≠ producer's) refuses instead of emitting a contract;
+* exact UTC, and the typed refusal of an intrabar range (the previous versions accepted
+  `None` and any `Exception`);
+* the real resource is characterised as a retrospective archive, with its 21 bars classified.
+
+## 6. What the producer's own code says (primary source, 2026-09-14)
+
+The acquisition script is in this repository, so the provenance question is answerable
+without asking anyone:
+
+| question | answer, from `_scripts/workers/stage13_dragon_crypto_worker.py` |
+|---|---|
+| endpoint | `GET https://api.binance.com/api/v3/klines`, paginated with `startTime`/`endTime`/`limit=1000` — the **historical REST** endpoint, not a stream |
+| end bound | `END_MS = 2025-12-31T23:59:00Z`, a fixed past instant: no in-progress interval beyond it was ever requested |
+| time zone | `open_time` and `close_time` are the payload's epoch milliseconds converted with `utc=True`; the UTC in the schema comes from the provider's own encoding, not from a column name |
+| per-row publication or reception | **none recorded**: the script stores no arrival time per row |
+| file-grain reception | the log shows the fetch starting `2026-05-01T15:58:48.409Z` and paging at 15:58:50/52/54, and the declaration records `acquired_at 2026-05-01T15:58:56.166Z` |
+| revisions | a single pass with a fixed end bound; nothing in the repository establishes whether past bars are restated |
+| rights | the script calls a public endpoint; **no terms of use are recorded here** |
+
+This does not explain the 21 anomalous bars: they sit inside the series, not at the end
+bound, so their construction stays undemonstrated exactly as stated above.
+
+## 7. Still open, with its owner
+
+| question | owner | next |
+|---|---|---|
+| publication / delivery latency | the producer chain | a per-row publication field, an acquisition log, or a stated bound |
+| finality of the 21 bars | the producer chain | a field or statement; until then they stay excluded from any finality-requiring use |
+| revision policy | Satoshi can measure it | re-fetching the same window from the same endpoint and comparing would show whether *those* bars changed — an outward network call, proposed, not performed. It measures two snapshots, never a policy |
+| usage rights | **the owner, and only here** | the exact action: obtain and record the terms that apply to market data from `api.binance.com/api/v3/klines` for our use (analysis, derived artefacts, publication). Everything else about this resource was answerable from the repository; this is not |

@@ -32,17 +32,49 @@ CHUNK_ROWS = 100_000
 # `label + completion_lag_max < range end`; AS_IS under holdout needs
 # `max(label) + completion_lag_max < holdout`; ranges are calendar days.
 AVAILABILITY_LABELS = {"WINDOW_END", "WINDOW_START", "EVENT_INSTANT", "UNKNOWN"}
-AVAILABILITY_USE = {"OFFLINE_DAY_GRANULAR", "LIVE_EQUIVALENT"}
+# ARCHIVE_RETROSPECTIVE (2026-09-14): the class for a resource whose *publication* time was
+# never observed. A window's close is not evidence of availability — a bar closing at
+# 23:59:59.999 can be published the next morning, and a UTC stamp shows how the clock is
+# written, not when the data arrived. Such a contract declares `completion_lag_max:
+# "UNKNOWN"` (the only class allowed, and required, to do so: a number here would be the
+# invention this class prevents) and is delivered WHOLE or not at all — a ranged delivery
+# would assert a point in time nothing supports. Nothing changes for the other classes.
+AVAILABILITY_USE = {"OFFLINE_DAY_GRANULAR", "LIVE_EQUIVALENT", "ARCHIVE_RETROSPECTIVE"}
+ARCHIVE_RETROSPECTIVE = "ARCHIVE_RETROSPECTIVE"
+UNKNOWN_LAG = "UNKNOWN"
+ARCHIVE_RANGE_REFUSAL = (
+    "this resource is a retrospective archive: its publication time was never observed, so a "
+    "date range over it would assert availability that no evidence supports; request the "
+    "whole resource"
+)
 TIMEZONE_EVIDENCE = {"PRODUCER_STATEMENT", "UNKNOWN"}
 UNDECLARED_SCOPE = {"label": "UNKNOWN", "completion_lag_max": None,
                     "timezone_evidence": "UNKNOWN", "use_class": "UNDECLARED"}
 
 
+def is_archive(contract) -> bool:
+    """True when the contract declares the retrospective-archive class."""
+    block = (contract or {}).get("availability") or {}
+    return block.get("use_class") == ARCHIVE_RETROSPECTIVE
+
+
 def availability_scope(block) -> dict:
-    """Validate an `availability` block; returns it with `completion_lag` as a Timedelta."""
+    """Validate an `availability` block; returns it with `completion_lag` as a Timedelta.
+
+    For a retrospective archive the lag is `None`: unobserved, not zero.
+    """
     keys = {"label", "completion_lag_max", "timezone_evidence", "use_class"}
     if not isinstance(block, dict) or set(block) != keys:
         raise UnsupportedError("invalid resource contract availability")
+    if block.get("use_class") == ARCHIVE_RETROSPECTIVE:
+        if block["completion_lag_max"] != UNKNOWN_LAG:
+            raise UnsupportedError(
+                "a retrospective archive declares completion_lag_max UNKNOWN")
+        if block["label"] not in AVAILABILITY_LABELS:
+            raise UnsupportedError("invalid resource contract availability label")
+        if block["timezone_evidence"] not in TIMEZONE_EVIDENCE:
+            raise UnsupportedError("invalid resource contract timezone_evidence")
+        return dict(block, completion_lag=None)
     if block["label"] not in AVAILABILITY_LABELS:
         raise UnsupportedError("invalid resource contract availability label")
     if block["timezone_evidence"] not in TIMEZONE_EVIDENCE:
@@ -72,13 +104,24 @@ def scope_of(contract) -> dict:
     if block is None:
         return dict(UNDECLARED_SCOPE)
     scope = availability_scope(block)
+    if scope["use_class"] == ARCHIVE_RETROSPECTIVE:
+        return {"label": scope["label"], "completion_lag_max": UNKNOWN_LAG,
+                "timezone_evidence": scope["timezone_evidence"],
+                "use_class": ARCHIVE_RETROSPECTIVE}
     return {"label": scope["label"], "completion_lag_max": str(block["completion_lag_max"]),
             "timezone_evidence": scope["timezone_evidence"], "use_class": scope["use_class"]}
 
 
 def completion_lag(contract):
     block = contract.get("availability")
-    return availability_scope(block)["completion_lag"] if block is not None else _pd.Timedelta(0)
+    if block is None:
+        return _pd.Timedelta(0)
+    lag = availability_scope(block)["completion_lag"]
+    if lag is None:
+        # a retrospective archive is never cut by availability; a caller that reaches here
+        # with a range has skipped the refusal
+        raise UnsupportedError(ARCHIVE_RANGE_REFUSAL)
+    return lag
 HASH_CHUNK = 1024 * 1024
 DAY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # A trailing ISO 8601 zone designator is dropped before parsing so that the
@@ -623,6 +666,8 @@ class Plugin:
     def governed_download(self, resource_id, start=None, end=None):
         """Deliver bytes selected only by the declared availability timestamp."""
         contract = self._resource_contract(resource_id)
+        if is_archive(contract) and (start is not None or end is not None):
+            raise UnsupportedError(ARCHIVE_RANGE_REFUSAL)
         suffix = Path(resource_id).suffix.lower()
         if suffix not in {".csv", ".parquet"}:
             raise UnsupportedError("unsupported file type")
@@ -635,13 +680,22 @@ class Plugin:
             if (start is None) != (end is None):
                 raise ValueError("invalid from/to")
             if start is None:
-                _, available_max = self._contract_mask(
-                    fd, suffix, column, contract
-                )
-                if holdout is not None and (
-                    available_max is None or not available_max < holdout
-                ):
-                    raise HoldoutError("spans holdout: request a range")
+                if is_archive(contract):
+                    # no availability clock: the whole resource is deliverable, and only
+                    # when no holdout has to be demonstrated. A range was refused above.
+                    if holdout is not None:
+                        raise HoldoutError(
+                            "a retrospective archive cannot be shown to predate the holdout: "
+                            "its publication time was never observed")
+                    available_max = None
+                else:
+                    _, available_max = self._contract_mask(
+                        fd, suffix, column, contract
+                    )
+                    if holdout is not None and (
+                        available_max is None or not available_max < holdout
+                    ):
+                        raise HoldoutError("spans holdout: request a range")
                 os.lseek(fd, 0, os.SEEK_SET)
                 return {
                     "filename": Path(resource_id).name,
