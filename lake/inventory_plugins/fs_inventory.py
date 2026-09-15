@@ -707,6 +707,12 @@ class Plugin:
                     "availability_contract_sha256": hashlib.sha256(
                         json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
                     ).hexdigest(),
+                    # S2: the exact bytes the digest is taken over travel with the delivery.
+                    # A consumer holding only the digest cannot say what the contract SAID
+                    # once this producer stops, and the published scope headers do not
+                    # reproduce the digest, so they cannot stand in for it.
+                    "availability_contract_canonical": json.dumps(
+                        contract, sort_keys=True, separators=(",", ":")),
                     "availability": scope_of(contract),
                     "handle": os.fdopen(fd, "rb"),
                 }
@@ -747,6 +753,8 @@ class Plugin:
                     "filename": Path(resource_id).name, "sha256": source_sha,
                     "bytes": size, "source_sha256": source_sha, "delivery": "AS_IS",
                     "time_column": column, "availability_contract_sha256": contract_sha,
+                    "availability_contract_canonical": json.dumps(
+                        contract, sort_keys=True, separators=(",", ":")),
                     "availability": scope_of(contract),
                     "handle": os.fdopen(fd, "rb"),
                 }
@@ -761,6 +769,8 @@ class Plugin:
             "bytes": os.fstat(out_fd).st_size, "source_sha256": source_sha,
             "delivery": "CUT", "time_column": column,
             "availability_contract_sha256": contract_sha,
+            "availability_contract_canonical": json.dumps(
+                contract, sort_keys=True, separators=(",", ":")),
             "availability": scope_of(contract),
             "handle": os.fdopen(out_fd, "rb"),
         }
