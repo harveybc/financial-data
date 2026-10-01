@@ -1,0 +1,206 @@
+{
+ "schema": "financial_data.census_extension_index.v1",
+ "extends": "features/census/artifacts/census-49a8813d782a0e11cfcfde3e02a946fa04883db9f4e9563dced2fa24a7a1b82d.json (unchanged)",
+ "batches": [
+  {
+   "file": "CENSUS_EXTENSION.batch_BEA_Data_API.json",
+   "provider": "BEA Data API",
+   "count": 3,
+   "bytes_digested": 259220,
+   "batch_sha256": "eda2d6827a6ad6d9bbb01f845ee45dc283447c1d6b90576d7179f6fb915cf3b5",
+   "file_sha256": "01622b9d7dab1804f12ee0777d3ddf5cd0f80596b03a8dc39e3bee26e4bf9df9"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_BLS_Public_API.json",
+   "provider": "BLS Public API",
+   "count": 1,
+   "bytes_digested": 16233,
+   "batch_sha256": "644e3f8922f1a4a7c8b71e0aab82c61b7ea07359fcc8f9e572329690f58a9a49",
+   "file_sha256": "117df7e9caeb02e2f6643b39e7a793afed8e7105acc33e54a174770899369a6e"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_Binance_Futures.json",
+   "provider": "Binance Futures",
+   "count": 402,
+   "bytes_digested": 9356180416,
+   "batch_sha256": "675acbd6b99d7cae1102f61eb2e8c0aa7ed3af4edaf372ddb88fa26f071d6d0d",
+   "file_sha256": "2f0b32b793585cb6eecdbbbdbf75ff61fe32a6124c1e2f4cfa9fcbc64f23c08c"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_Binance_Spot.json",
+   "provider": "Binance Spot",
+   "count": 1024,
+   "bytes_digested": 22960434267,
+   "batch_sha256": "f225e3a06611e3ed8e2bac846365475e4b71d84ab2bd4723d4a8416b30906c6f",
+   "file_sha256": "bee0d6d8a7711edc541ee1f774b1fabe1c1906ce5560c1d1accbab99dd0a98dd"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_Blockchain_com.json",
+   "provider": "Blockchain.com",
+   "count": 6,
+   "bytes_digested": 140914,
+   "batch_sha256": "ed2d18e19550c14cb1e4a0f8e51a18e8be9b71aecae52fc677f87f3a68332013",
+   "file_sha256": "3e1891538c0b9ddfda81de665336d56f917d124f7289d364e7d2f9cf14d53455"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_CoinMetrics_Community.json",
+   "provider": "CoinMetrics Community",
+   "count": 50,
+   "bytes_digested": 264147080,
+   "batch_sha256": "0ba643fba8516de2624f1377ce2f4c8d07f4f8a80e9725fc9de85264a5dbd0a8",
+   "file_sha256": "771176ed9a3c2e2f3a23392ab356b646b32e71dae87c18e9fb994bfa1e87b70d"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_DeFiLlama.json",
+   "provider": "DeFiLlama",
+   "count": 1,
+   "bytes_digested": 5459631,
+   "batch_sha256": "ac44dbcbca77f2c24347b9993d7897dd94e43b116333360a378a857c0df08709",
+   "file_sha256": "d89f121bbef29ebd976804e0b6b6ff1548eea48d8bfafbb6ff779f6060b44c34"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_Etherscan_API_V2.json",
+   "provider": "Etherscan API V2",
+   "count": 1,
+   "bytes_digested": 3945,
+   "batch_sha256": "ae6b11bd248b261f7734f91a8da280d2b9aa42563162caec960d32deb5b6cc0e",
+   "file_sha256": "eb548e5ea48d066289839655156c2f935a53ead06ef866edc2a1aab11bcb5a02"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_FINRA_Query_API_consolidatedShortInterest.json",
+   "provider": "FINRA Query API consolidatedShortInterest",
+   "count": 1,
+   "bytes_digested": 14098355,
+   "batch_sha256": "31b1852248aa6ef33cc6e2f5d6f5ef4bd47d195888129c38cd5ac64530dacd68",
+   "file_sha256": "9d71ab996f2f356db6ca406664170203c49dbad8425524a3a02f252df03c218e"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_FINRA_Reg_SHO_Daily_Short_Sale_Volume.json",
+   "provider": "FINRA Reg SHO Daily Short Sale Volume",
+   "count": 3,
+   "bytes_digested": 86161429,
+   "batch_sha256": "07c77cb14bfd1c56be7eb3313a799bdbf2277ff5470cf8bbfa8ac7b326e08e0b",
+   "file_sha256": "cc31c137d7b58bfb60add5d115c616e5fe8537ce744fcc51e48ff8d4bfc6d808"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_FRED.json",
+   "provider": "FRED",
+   "count": 685,
+   "bytes_digested": 9555036955,
+   "batch_sha256": "0866013b7fdb573e673b9559359417e4fe496eebba716646b6e83c274d2f6476",
+   "file_sha256": "f9810528439b7b618e15f1fa453bc0357bbe2bf5f7d08a01c311316fe5f8ba6a"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_FRED_derived_release_date_proxy.json",
+   "provider": "FRED-derived release-date proxy",
+   "count": 1,
+   "bytes_digested": 29936,
+   "batch_sha256": "28aade9bef593ef15414e34ed998c8cb02ad9d744a37d2698f60174ef23dc099",
+   "file_sha256": "306d693ed5af6df715c99d6d78df39917c5bf261bc829a91262611e6f24013ab"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_FXMacroData.json",
+   "provider": "FXMacroData",
+   "count": 10,
+   "bytes_digested": 7163658,
+   "batch_sha256": "e7a55730fb1d1274ac6056dc4acacf72d9046205462bc4b791c86e9396c3431a",
+   "file_sha256": "48c4c49164ee084060b5a1afbe3e79d3d3a9da96fbeb5f501a6f3975f8f48c97"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_HistData.json",
+   "provider": "HistData",
+   "count": 380,
+   "bytes_digested": 26581725902,
+   "batch_sha256": "d19539d812b7bdfd564577e3890becf60e9191a790cae7dcbac9e3d9e4f58910",
+   "file_sha256": "6b02fdfa4bf42e8b810218fd385d67482bc2b9f46edc3eefb5e286648b3c27df"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_OECD_SDMX.json",
+   "provider": "OECD SDMX",
+   "count": 5,
+   "bytes_digested": 30664072,
+   "batch_sha256": "f3de57a4de1cd17e0be307b56f6cabc256145ec499457c6beb035e3addd7be38",
+   "file_sha256": "379ba5a039f9fa63590573ece8c8c15b6e313741fcae5ba733b14de61cb6f5a3"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_SEC_EDGAR.json",
+   "provider": "SEC EDGAR",
+   "count": 1,
+   "bytes_digested": 277317,
+   "batch_sha256": "2bb8124ff5827401c6731b0dd1861c6bec47e1352bf03b76251f984ab843ba7c",
+   "file_sha256": "bb98804847c6c7a3ef5693624a85bbff71e8041ad9ff8b0674c8d2a36ee566b6"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_SEC_EDGAR_submissions_API.json",
+   "provider": "SEC EDGAR submissions API",
+   "count": 1,
+   "bytes_digested": 5338387,
+   "batch_sha256": "1a883a670021bca2ef11f683b052d3948bda35a77a1d76ae093ba7ff0b554f28",
+   "file_sha256": "f374929e7303665b6577a387673f1c4905616ce7f642590f9be62b85502f03ff"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_UNRESOLVED.json",
+   "provider": "UNRESOLVED",
+   "count": 520,
+   "bytes_digested": 711046913,
+   "batch_sha256": "c7db279ae4e99d20b19be66d05a710e4755d19bdbfd45ae6636fc7fe7defc682",
+   "file_sha256": "0cf050d368169bf09c43e1538108d089bb9123215aaf7a717649b1c3c4af27f7"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_US_Treasury_FiscalData.json",
+   "provider": "US Treasury FiscalData",
+   "count": 1,
+   "bytes_digested": 33813,
+   "batch_sha256": "9bfda7ce505af30f52ae7e8f5cc6b0b032847a51741766e6d2b009960124932c",
+   "file_sha256": "e1c3f7f063d5af6cb7a87e55a177ddcf16ef446ee7181c53295c061b11d8ed1a"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_Yahoo_Finance.json",
+   "provider": "Yahoo Finance",
+   "count": 390,
+   "bytes_digested": 9986010088,
+   "batch_sha256": "7565f48339c348092dadbf0392de74c12268bef1912ee91f41e7af76b3d119b0",
+   "file_sha256": "29ea16b21bbe486dceb72f7e25687c36a5799d8eb244f6b9de8ffc8a1b3cedd8"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_autogenerated_stage13_doc_backfill.json",
+   "provider": "autogenerated_stage13_doc_backfill",
+   "count": 97,
+   "bytes_digested": 850946,
+   "batch_sha256": "d46c2c4d1917fbf7b9c741a8beca45865331acc64114387debe5b340b02e800b",
+   "file_sha256": "8da74f611c9bb47431978925ceaec938bec5a065a7853dc8637c3c4c76cf6da4"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_fallback_calendar_generator.json",
+   "provider": "fallback calendar generator",
+   "count": 6,
+   "bytes_digested": 709402,
+   "batch_sha256": "e9f17e6ec37028049850ecf1f3983203ecde00f91277b362fe58a51b094b40de",
+   "file_sha256": "f75412a81364bd715b0b26c9d0c25065398d1fd7105cbf934126aa9b34f30b42"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_mempool_space.json",
+   "provider": "mempool.space",
+   "count": 3,
+   "bytes_digested": 17132,
+   "batch_sha256": "5aec7d3b8c2fa83a7ae257debd8ce75ce97a5eab07cfdb08322f12910e0949a3",
+   "file_sha256": "c7485f902ffbbc1bff4655b5a7494206c0230a6a5eca484ce474b08a88fe05eb"
+  },
+  {
+   "file": "CENSUS_EXTENSION.batch_python_holidays.json",
+   "provider": "python-holidays",
+   "count": 1,
+   "bytes_digested": 10336,
+   "batch_sha256": "b979444936bb2672657548ba3eedd34ba172b9739faea5b4404e4e66b7324c70",
+   "file_sha256": "0cb4f3b027f6ddad212cad26cabddd10f6fc2496ab4b5f29babe76a6a654a107"
+  }
+ ],
+ "entries_total": 3593,
+ "unresolved_entries": 520,
+ "not_market_sources": [
+  "autogenerated_stage13_doc_backfill",
+  "fallback calendar generator",
+  "python-holidays"
+ ],
+ "rule": "census identity via incremental_census.appearance_id (sha a43892da); digests computed 2026-10-01; provenance from provenance.json or UNRESOLVED; availability UNAVAILABLE; no TRAIN contract; grants nothing"
+}
