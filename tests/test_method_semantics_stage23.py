@@ -116,23 +116,56 @@ def test_required_wavelet_metadata_carries_an_honest_method_id():
     assert metadata["native_coverage_claimed"] is False
 
 
+NATIVE_WAVELET_PATH = ROOT / "_scripts" / "lib" / "native_wavelet.py"
+
+
+def _native_wavelet_producer():
+    """The native producer: on the worker, or lane B's successor `_scripts/lib/native_wavelet.py` (financial-data
+    satoshi/b-native-wavelet-20261001 @ 028f42847), imported by path. The stage23 worker itself is not required to host it."""
+    producer = getattr(worker, "compute_wavelet_native", None)
+    if producer is not None:
+        return producer
+    if NATIVE_WAVELET_PATH.exists():
+        spec = importlib.util.spec_from_file_location("native_wavelet_under_test", NATIVE_WAVELET_PATH)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules["native_wavelet_under_test"] = module
+        spec.loader.exec_module(module)
+        return getattr(module, "compute_wavelet_native", None)
+    return None
+
+
 def test_required_native_wavelet_producer_exists_and_is_past_only():
-    """A genuine wavelet family: PyWavelets db4 applied per past-only window, declared NATIVE, separate from the proxy."""
-    native = getattr(worker, "compute_wavelet_native", None)
+    """A genuine wavelet family: PyWavelets db4 on each past-only window, declared NATIVE, separate from the proxy."""
+    native = _native_wavelet_producer()
     if native is None:
-        _missing("no `compute_wavelet_native` producer exists (pywt is imported, wavedec never called)",
-                 "compute_wavelet_native(df, window=W, wavelet='db4', level=4) exists, computes pywt.wavedec on each "
-                 "past-only window [t-W, t], emits the last coefficient per level at t, and its metadata carries "
-                 "method_id='NATIVE', library='pywt', version=pywt.__version__, window=W")
+        _missing("no `compute_wavelet_native` producer exists on this tree (pywt is imported by the worker, wavedec "
+                 "never called); lane B's successor lives at _scripts/lib/native_wavelet.py on branch "
+                 "satoshi/b-native-wavelet-20261001 @ 028f42847 and is not merged here",
+                 "compute_wavelet_native(df, window=W, wavelet='db4', level=L, frozen_from={fold_id, train_end}, "
+                 "sample_interval_seconds=S) exists, applies pywt.wavedec to each past-only window, and declares "
+                 "method_id='NATIVE', library='pywt'")
     df = series(1200)
-    out, metadata = native(df, window=256, wavelet="db4", level=4)
+    kwargs = dict(window=256, wavelet="db4", level=4,
+                  frozen_from={"fold_id": "synthetic-fold", "train_end": "2024-01-20T00:00:00+00:00"},
+                  sample_interval_seconds=3600)
+    out, metadata = native(df, **kwargs)
     assert metadata["method_id"] == "NATIVE" and metadata["library"] == "pywt"
+    assert metadata.get("proxy_of") is None
     # past-only: perturbing the future never changes an emitted value
     disturbed = df.copy()
     disturbed.loc[disturbed.index >= 900, "close"] += 10.0
-    out2, _ = native(disturbed, window=256, wavelet="db4", level=4)
+    out2, _ = native(disturbed, **kwargs)
     cols = [c for c in out.columns if c != "timestamp"]
     pd.testing.assert_frame_equal(out.loc[:899, cols], out2.loc[:899, cols])
+    # oracle: the emitted detail at t is the right-edge level-1 db4 coefficient of pywt.wavedec on [t-W+1, t]
+    t = 700
+    coeffs = pywt.wavedec(df["close"].to_numpy(dtype=float)[t - 255:t + 1], "db4", level=4,
+                          mode=metadata.get("mode", "symmetric"))
+    d1 = [c for c in out.columns if c.endswith("D1") and "energy" not in c]
+    assert d1 and np.isclose(out.loc[t, d1[0]], coeffs[-1][-1])
+    # the proxy and the native family are different objects, never the same column set
+    proxy, _ = worker.compute_wavelet(df)
+    assert not set(cols) & set(proxy.columns)
 
 
 # ------------------------------------------------------------------------------------- Hilbert and multitaper: semantics
