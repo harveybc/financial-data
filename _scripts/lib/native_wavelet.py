@@ -32,7 +32,8 @@ def compute_wavelet_native(df: pd.DataFrame, *, window: int, wavelet: str, level
     max_level = pywt.dwt_max_level(window, w.dec_len)
     if not 1 <= level <= max_level:
         raise ValueError(f"level {level} is not supported by a window of {window} for {wavelet} (max {max_level})")
-    x = pd.to_numeric(df[column], errors="coerce").to_numpy(dtype=float)
+    # a writable copy: pandas >= 3 can hand out read-only views, which PyWavelets' Cython rejects
+    x = np.array(pd.to_numeric(df[column], errors="coerce"), dtype=float, copy=True)
     n = x.shape[0]
     names = [f"wavelet_native_A{level}"] + [f"wavelet_native_D{lev}" for lev in range(level, 0, -1)] \
         + [f"wavelet_native_energy_D{lev}" for lev in range(level, 0, -1)]

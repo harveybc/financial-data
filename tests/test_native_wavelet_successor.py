@@ -69,7 +69,7 @@ def test_values_are_pywt_wavedec_of_the_trailing_window():
     df = series(600, period=24)
     out, meta = run(df)
     t = 450
-    win = df["close"].to_numpy()[t - 127:t + 1]
+    win = np.array(df["close"].to_numpy()[t - 127:t + 1], dtype=float, copy=True)   # writable for PyWavelets under pandas 3
     coeffs = pywt.wavedec(win, "db4", level=3, mode=meta["mode"])
     assert out.loc[t, "wavelet_native_A3"] == pytest.approx(coeffs[0][-1])
     for k, lev in enumerate(range(3, 0, -1), start=1):
@@ -118,3 +118,14 @@ def test_warmup_and_missing_values_are_nan_never_interpolated():
 def test_no_hard_coded_user_home_default():
     src = (ROOT / "_scripts" / "lib" / "native_wavelet.py").read_text()
     assert "/home/" not in src and "expanduser" not in src
+
+
+def test_read_only_input_is_accepted():
+    """pandas >= 3 may expose read-only arrays; the producer must copy rather than fail in PyWavelets."""
+    df = series(300)
+    arr = df["close"].to_numpy(copy=True)
+    arr.setflags(write=False)
+    ro = pd.DataFrame({"timestamp": df["timestamp"], "close": arr})
+    a, _ = run(ro)
+    b, _ = run(df)
+    pd.testing.assert_frame_equal(a[cols(a)], b[cols(b)])
