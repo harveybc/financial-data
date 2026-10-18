@@ -68,3 +68,18 @@ def test_real_governed_schema_physical_readback_and_closed_copy(tmp_path):
     sha=module.snapshot(source,[report])
     assert module.snapshot(source,[report])==sha
     assert module.copy_closed(source,tmp_path/'copy.duckdb')==sha
+
+
+def test_clock_evidence_is_not_a_forecasting_metric_or_calendar_certificate():
+    q=dict(schema='financial_data.native_source_clock_diagnostic.v1',admitted=False,
+        clock_verified=False,prices_spliced=False,automatic_clock_selection=False,
+        comparisons=[dict(pair='eurusd',clock_hypothesis='EUROPE_BERLIN',
+            support={'complete_hours':60},overall={'paired_hours':10,
+            'median_absolute_quote_difference':.0001})])
+    report=module.build_clock_report('eurusd',q,'a'*64,'code')
+    assert report['phase']=='NATIVE_SOURCE_CLOCK_DIAGNOSTIC'
+    assert report['tags']['admission']=='NOT_ADMITTED'
+    assert all('MAE' not in row['metric'] for row in report['metrics'])
+    assert len(report['metrics'])==3
+    q['clock_verified']=True
+    with pytest.raises(ValueError):module.build_clock_report('eurusd',q,'a'*64,'code')

@@ -50,3 +50,15 @@ def test_quality_and_publication_never_confer_lake_admission(tmp_path):
     assert r['publication']['warehouse']['delivered']==2
     assert r['data_admission_complete'] is False and r['feature_selection_complete'] is False
     assert r['native_quality']['eurusd']['missing_expected_open_hours']==2
+
+
+def test_unavailable_dates_show_weekdays_without_certifying_closures(tmp_path):
+    put(tmp_path/'GAP_RECOVERY_PLAN.json',{'requested_dates':['2020-01-04','2020-12-25'],
+        'batches':[{'attempts':[{'result':{'failures':[
+            {'date':'2020-01-04','reason':'NO_REQUIRED_PAIRS'},
+            {'date':'2020-12-25','reason':'NO_REQUIRED_PAIRS'}]}}]}]})
+    r=module.snapshot(tmp_path)
+    details=r['alternative']['unavailable_date_diagnostics']
+    assert details[0]['weekday']=='Saturday'
+    assert details[1]['weekday']=='Friday'
+    assert all(d['calendar_disposition']=='UNVERIFIED' for d in details)

@@ -6,6 +6,13 @@ range, a successful download and a high finite-value fraction are insufficient.
 This is the required procedure. Deployment and whole-inventory acceptance are
 not yet complete; do not describe this document as proof that the lake is clean.
 
+Priority update2026-10-18: after actual data admission and recomputed selection,
+RL is the first downstream consumer. Forecasting and NEAT experiments are
+deferred, not automatic successors of this recovery. Reuse accepted pipeline
+code; do not reuse withdrawn metrics/weights or call selection already done.
+Predictive validation within selection is a scoped probe, not permission to
+restart the deferred forecasting campaign.
+
 ## 1. Scope And Responsibilities
 
 Inventory every variable in the configured research population, including all
@@ -176,8 +183,10 @@ into the new cube. Recompute on the admitted population with a new identity.
 4. Predictive validation: temporal folds and the configured weekly business
    protocol, with a per-horizon naive on exactly the same rows/scale. Mark
    VALIDATION tuning as development, never as independent performance.
-5. Only after these stages: feature extraction/model architecture experiments,
-   strategy simulation and DEMO/PAPER as specified in the master work plan.
+5. Only after these stages: the RL environment/business tests, matched
+   baselines and SAC/modular comparison in the master's RL-first subplan.
+   Keep policy/direction/risk relevance distinct from price-MAE relevance.
+   Reconstruction/forecasting/NEAT studies do not block the first RL trial.
 
 Partition content is immutable. Quality inspection of already-used TEST does
 not make it a pristine future holdout. Do not silently change the held-out
@@ -259,6 +268,7 @@ each acquisition year and forces GPUs invisible.
 | NR10 | The existing governed outbox requires exact warehouse readback; closed analytical copies are hashed locally and on a second host |
 | NR11 | Missing-hour dates trigger bounded alternative-source acquisition with adjacent overlap; native clocks stay unchanged |
 | NR12 | Alternative-source dates are checked, provider cooldowns respected and completed batches not redownloaded |
+| NR13 | Independent source-clock hypotheses use real paired prices at bar-end availability; incomplete hours and DST ambiguity never become accepted replacements |
 
 These tests precede implementation. Real source readback, clock witnesses and
 native coverage are required afterwards. This is not an authorization to
@@ -328,6 +338,38 @@ candidate dates acquired even in partially unavailable batches:
 ```bash
 python _scripts/native_recovery_status.py --root "$CURATION_ROOT" --alternative-output "$ALTERNATIVE_RAW_ROOT"
 ```
+
+Clock/value diagnostics are reproducible without editing native prices. Run
+after candidate acquisition is terminal; the result is never lake admission:
+
+```bash
+python _scripts/compare_native_fx_sources.py --primary-root "$PRIMARY_RAW_ROOT" --candidate-root "$ALTERNATIVE_RAW_ROOT" --output "$CURATION_ROOT/CLOCK_COMPARISON.json"
+```
+
+Only hours containing60 distinct minute endpoints are compared. Availability
+is the completed-hour endpoint. FixedUTC+1, fixedUTC+2 and Europe/Berlin are
+explicit hypotheses, with no automatic winner; DST-ambiguous/nonexistent
+minutes are counted, not guessed. Report pair/month support, quote difference
+median/p95/max, rounding agreement and candidate hours absent from the primary
+feed. Those absent hours are not automatically required open-market gaps.
+The candidate archive's quote side remains unverified. Source/code hashes are
+retained and outputs reject conflicting overwrite. The diagnostic scans the
+actual candidate directory; it can include additional diagnostic overlap days
+outside the110-date recovery request. Its denominator is recorded independently.
+
+The publisher accepts `--runtime-code-commit` and `--alternative-output` for
+this extension. Retain the original `--code-commit` for unchanged source-quality
+reports, avoiding duplicate publication under a different code label. The new
+runtime and clock diagnostic code must match their pinned commit; recheck all
+source hashes. Clock results use `NATIVE_SOURCE_CLOCK_DIAGNOSTIC`, never MAE or
+trading performance. Both phases use the same governed outbox/physical mirrors.
+
+Measured recovery checkpoint2026-10-18:612/636 requested source-week files;
+84/110 requested candidate dates,100,610 minute observations per pair in that
+request. The26 remaining dates comprise23 Saturdays, one Sunday and two Friday
+holidays by date label; this is not a certified closure calendar. All have
+NO_REQUIRED_PAIRS, not a demonstrated transport failure. This checkpoint is
+not admission, repaired-hour coverage or completion of the full inventory.
 
 Source-side discrepancy counts concern all loaded source rows; monthly
 coverage, scoped observation counts and TRAIN-referenced return diagnostics

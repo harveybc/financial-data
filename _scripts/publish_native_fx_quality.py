@@ -58,6 +58,38 @@ def build_report(pair,q,identity,code_commit):
             for name,value in sorted(q['source_sha256'].items())],metrics=metrics)
 
 
+def build_clock_report(pair,q,identity,code_commit):
+    if (pair not in ('eurusd','gbpusd') or q.get('schema')!='financial_data.native_source_clock_diagnostic.v1'
+            or any(q.get(k) is not False for k in ('admitted','clock_verified','prices_spliced','automatic_clock_selection'))):
+        raise ValueError('UNADMITTED_CLOCK_DIAGNOSTIC_REQUIRED')
+    sha=hashlib.sha256(json.dumps(q,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+    metrics=[]
+    for item in q['comparisons']:
+        if item['pair']!=pair:continue
+        prefix=item['clock_hypothesis']+'.'+item.get('month_utc','overall')
+        for group in ('support','overall','metrics'):
+            for field,value in item.get(group,{}).items():
+                metrics.append(dict(metric=prefix+'.'+field,value=value,split='quality',horizon=None,
+                    unit='quote_difference' if 'difference' in field else 'count'))
+    if not metrics:raise ValueError('NO_CLOCK_COMPARISONS_FOR_PAIR')
+    return dict(experiment_key=f'native-fx-clock:{pair}:{sha}',experiment_set_key='canonical-native-fx-recovery',
+        actor='canonical-data-curation',lake='acquisition-not-admitted',lineage='UNVERIFIED',
+        project='financial-data',phase='NATIVE_SOURCE_CLOCK_DIAGNOSTIC',config_sha256=identity,code_commit=code_commit,
+        tags=dict(kind='native_source_clock_diagnostic',pair=pair,admission='NOT_ADMITTED',
+            source_clock_sha256=sha,clock_selection='NONE',quote_side='UNVERIFIED',model_training='false'),
+        datasets=[],metrics=metrics)
+
+
+def verify_clock_diagnostic(q,primary,candidate):
+    if q.get('code_sha256')!=file_sha(Path(__file__).with_name('compare_native_fx_sources.py')):
+        raise ValueError('CLOCK_DIAGNOSTIC_CODE_MISMATCH')
+    if not q.get('files'):raise ValueError('CLOCK_DIAGNOSTIC_SOURCES_REQUIRED')
+    for kind,base in (('primary_eurusd',primary),('primary_gbpusd',primary),('candidate',candidate)):
+        sources={r['relative_path']:r['sha256'] for r in q['files'] if r['kind']==kind}
+        if not sources:raise ValueError('CLOCK_DIAGNOSTIC_SOURCE_KIND_MISSING')
+        verify_sources({'source_sha256':sources},base)
+
+
 def write_json(path,body):
     path=Path(path);temp=path.with_suffix('.partial')
     with temp.open('w') as f:
@@ -129,6 +161,7 @@ def main():
     p.add_argument('--root',required=True);p.add_argument('--predictor-root')
     p.add_argument('--warehouse-url');p.add_argument('--token-env',default='DATA_GOV_LAKE_TOKEN')
     p.add_argument('--code-commit')
+    p.add_argument('--runtime-code-commit');p.add_argument('--alternative-output')
     p.add_argument('--mirror-host');p.add_argument('--mirror-relative-path')
     a=p.parse_args();root=Path(a.root);target=root/'PUBLICATION_STATUS.json'
     if a.command=='status':print(target.read_text());return
@@ -145,7 +178,8 @@ def main():
             return
         runtime=Path(a.predictor_root).resolve();sys.path.insert(0,str(runtime))
         from tools.i6dmo.outbox import Outbox,HttpWarehouse
-        pinned=subprocess.run(['git','-C',str(Path(__file__).parents[1]),'show',a.code_commit+':_scripts/publish_native_fx_quality.py'],capture_output=True,check=True).stdout
+        runtime_code=a.runtime_code_commit or a.code_commit
+        pinned=subprocess.run(['git','-C',str(Path(__file__).parents[1]),'show',runtime_code+':_scripts/publish_native_fx_quality.py'],capture_output=True,check=True).stdout
         if hashlib.sha256(pinned).hexdigest()!=file_sha(__file__):raise ValueError('PUBLISHER_CODE_NOT_PINNED')
         code=a.code_commit
         box=Outbox(root/'quality-outbox.sqlite')
@@ -153,13 +187,25 @@ def main():
             for pair,path in ready:
                 q=json.loads(path.read_text());verify_sources(q,Path(state['output']))
                 box.enqueue(build_report(pair,q,state['identity'],code),source_unit='native-source-quality:'+pair)
+            clock_path=root/'CLOCK_COMPARISON.json'
+            expected=len(ready)
+            if a.alternative_output and clock_path.is_file():
+                q=json.loads(clock_path.read_text())
+                verify_clock_diagnostic(q,Path(state['output']),Path(a.alternative_output))
+                pinned_clock=subprocess.run(['git','-C',str(Path(__file__).parents[1]),'show',
+                    runtime_code+':_scripts/compare_native_fx_sources.py'],capture_output=True,check=True).stdout
+                if hashlib.sha256(pinned_clock).hexdigest()!=q['code_sha256']:
+                    raise ValueError('CLOCK_COMPARISON_CODE_NOT_PINNED')
+                for pair,_ in ready:
+                    box.enqueue(build_clock_report(pair,q,state['identity'],runtime_code),source_unit='native-source-clock:'+pair)
+                expected+=len(ready)
             delivery=box.pump(HttpWarehouse(a.warehouse_url,a.token_env))
             reports=[json.loads(item['body']) for item in box.items()]
             physical=root/'native_fx_quality.duckdb';sha=snapshot(physical,reports)
             copy=Path(state['output']).parent/'quality-copies/native_fx_quality.duckdb'
             if copy_closed(physical,copy)!=sha:raise ValueError('LOCAL_MIRROR_MISMATCH')
             mirror=mirror_closed(physical,a.mirror_host,a.mirror_relative_path)
-            complete=delivery['pending']==0 and delivery['mismatch']==0 and delivery['delivered']==len(ready)
+            complete=delivery['pending']==0 and delivery['mismatch']==0 and delivery['delivered']==expected
             write_json(target,dict(state='QUALITY_PUBLISHED_NOT_ADMITTED' if complete else 'QUALITY_PUBLICATION_PENDING',
                 admitted=False,warehouse=delivery,physical_sha256=sha,second_machine=mirror))
         except Exception as exc:
