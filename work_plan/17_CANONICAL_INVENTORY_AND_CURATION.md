@@ -257,6 +257,8 @@ each acquisition year and forces GPUs invisible.
 | NR08 | Acquisition success does not imply admission, selection or training permission |
 | NR09 | Quality-only reports preserve undefined metrics, verify actual source digests and cannot relabel old experiments |
 | NR10 | The existing governed outbox requires exact warehouse readback; closed analytical copies are hashed locally and on a second host |
+| NR11 | Missing-hour dates trigger bounded alternative-source acquisition with adjacent overlap; native clocks stay unchanged |
+| NR12 | Alternative-source dates are checked, provider cooldowns respected and completed batches not redownloaded |
 
 These tests precede implementation. Real source readback, clock witnesses and
 native coverage are required afterwards. This is not an authorization to

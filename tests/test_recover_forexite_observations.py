@@ -26,3 +26,8 @@ def test_native_time_retained_without_invented_utc_offset():
 @pytest.mark.parametrize('row,reason',[(GOOD+GOOD,'DUPLICATE'),(GOOD.replace('1.095','nan'),'INVALID_PRICE'),(GOOD.replace('1.10','1.07'),'INVALID_OHLC')])
 def test_invalid_quotes_not_adopted(row,reason):
     with pytest.raises(ValueError,match=reason):parse(archive(row))
+
+
+def test_valid_archive_for_wrong_requested_day_is_not_adopted():
+    with pytest.raises(ValueError,match='WRONG_SOURCE_DAY'):parse(archive(GOOD),'2023-07-04')
+    assert len(parse(archive(GOOD),'2023-07-03'))==1

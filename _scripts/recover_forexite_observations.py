@@ -4,6 +4,8 @@ These files are recovery candidates outside the admitted lake. This script
 does not guess a UTC offset, fill a price or authorize model training.
 """
 import argparse
+from datetime import datetime,timezone
+from email.utils import parsedate_to_datetime
 import hashlib
 import io
 import json
@@ -17,7 +19,7 @@ import pandas as pd
 import requests
 
 
-def parse(raw):
+def parse(raw,expected_date=None):
     if len(raw)>16*1024**2:raise ValueError('ARCHIVE_TOO_LARGE')
     with zipfile.ZipFile(io.BytesIO(raw)) as z:
         if sum(i.file_size for i in z.infolist())>64*1024**2 or z.testzip() is not None:
@@ -31,6 +33,8 @@ def parse(raw):
     df=df[df.TICKER.isin(['EURUSD','GBPUSD'])].copy()
     if df.empty:raise ValueError('NO_REQUIRED_PAIRS')
     df['timestamp_native']=pd.to_datetime(df.DTYYYYMMDD+df.TIME.str.zfill(6),format='%Y%m%d%H%M%S',errors='raise')
+    if expected_date is not None and not df.timestamp_native.dt.date.eq(pd.Timestamp(expected_date).date()).all():
+        raise ValueError('WRONG_SOURCE_DAY')
     values=df[['OPEN','HIGH','LOW','CLOSE']].to_numpy(float)
     if not np.isfinite(values).all() or (values<=0).any():raise ValueError('INVALID_PRICE')
     if (df.HIGH<df[['OPEN','LOW','CLOSE']].max(axis=1)).any() or (df.LOW>df[['OPEN','HIGH','CLOSE']].min(axis=1)).any():
@@ -48,8 +52,9 @@ def main():
     p.add_argument('--output',required=True)
     p.add_argument('--dates',nargs='+',required=True)
     a=p.parse_args();root=Path(a.output);root.mkdir(parents=True,exist_ok=True)
-    status=dict(state='ACQUIRING',total=len(a.dates),complete=0,results=[],failures=[],
+    status=dict(state='ACQUIRING',total=len(a.dates),requested_dates=a.dates,complete=0,results=[],failures=[],
                 qualification='OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED',interpolation=False)
+    write_json(root/'STATUS.json',status)
     with requests.Session() as session:
         for value in a.dates:
             date=pd.Timestamp(value)
@@ -58,9 +63,19 @@ def main():
             try:
                 if not raw.exists():
                     url=f'https://www.forexite.com/free_forex_quotes/{date.year}/{date.month:02d}/{name}.zip'
-                    r=session.get(url,timeout=(15,40));r.raise_for_status();parse(r.content)
+                    r=session.get(url,timeout=(15,40))
+                    if r.status_code==429:
+                        value=r.headers.get('Retry-After','3600')
+                        try:delay=float(value)
+                        except ValueError:
+                            try:delay=(parsedate_to_datetime(value)-datetime.now(timezone.utc)).total_seconds()
+                            except (ValueError,TypeError):delay=3600
+                        status.update(state='RATE_LIMITED',retry_not_before_epoch=time.time()+max(60,delay))
+                        write_json(root/'STATUS.json',status)
+                        break
+                    r.raise_for_status();parse(r.content,date)
                     temp=raw.with_suffix('.partial');temp.write_bytes(r.content);os.replace(temp,raw)
-                df=parse(raw.read_bytes())
+                df=parse(raw.read_bytes(),date)
                 target=root/(name+'.parquet')
                 if target.exists():pd.testing.assert_frame_equal(pd.read_parquet(target),df.reset_index(drop=True))
                 else:df.reset_index(drop=True).to_parquet(target,index=False)
@@ -70,7 +85,8 @@ def main():
                 status['results'].append(record);status['complete']+=1;print(json.dumps(record),flush=True)
             except Exception as exc:status['failures'].append(dict(date=value,error_type=type(exc).__name__))
             write_json(root/'STATUS.json',status);time.sleep(.3)
-    status['state']='ACQUIRED' if not status['failures'] else 'INCOMPLETE';write_json(root/'STATUS.json',status)
+    if status['state']!='RATE_LIMITED':status['state']='ACQUIRED' if not status['failures'] else 'INCOMPLETE'
+    write_json(root/'STATUS.json',status)
     raise SystemExit(0 if status['state']=='ACQUIRED' else 2)
 
 
