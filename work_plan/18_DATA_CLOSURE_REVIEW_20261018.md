@@ -98,6 +98,22 @@ on the coordinator, bulk partition and second machine. The bounded publisher
 finished in 4.392 s with 104.3 MiB peak memory and no swap. Normalization and
 publication receipts are separate: neither means prices are admitted.
 
+Expanded recovery/quality suite after these changes: 75 passed, 1 skipped,
+4 timezone-to-period warnings. The warnings do not change source timestamps.
+
+### Next source-clock check
+
+The separately acquired HistData annual 2023 candidates are present, not merely
+unavailable downloads. Their fixed-EST interpretation must NOT be spliced into
+the primary feed yet: an exploratory monthly overlap check against native FXCM
+found seasonal disagreement despite the provider's fixed-EST documentation.
+Reproduce on complete 60-minute hourly candidates, matching their bar-end label
+to FXCM's bar start plus one hour, with explicit -1/0/+1-hour negative controls.
+Resolve this using raw-minute observations around both US and European DST
+transitions and independent source overlap. Do not automatically choose the
+lowest-error offset, silently change the clock, or mark those candidate hours
+repaired. The retained source ZIPs and Parquet manifests remain unchanged.
+
 Map missing observations to actual provider file intervals and actual session
 closures, resolve timestamp/quote semantics, verify replacements, then admit
 the inventory and recompute preprocessing/selection. The candidate inventory
