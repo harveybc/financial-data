@@ -31,3 +31,11 @@ def test_invalid_quotes_not_adopted(row,reason):
 def test_valid_archive_for_wrong_requested_day_is_not_adopted():
     with pytest.raises(ValueError,match='WRONG_SOURCE_DAY'):parse(archive(GOOD),'2023-07-04')
     assert len(parse(archive(GOOD),'2023-07-03'))==1
+
+
+def test_completed_day_includes_next_midnight_but_not_next_minute():
+    end='EURUSD,20230704,000000,1.09,1.10,1.08,1.095\n'
+    data=parse(archive(GOOD+end),'2023-07-03')
+    assert len(data)==2 and data.timestamp_native.max()==pd.Timestamp('2023-07-04T00:00')
+    with pytest.raises(ValueError,match='WRONG_SOURCE_DAY'):
+        parse(archive(GOOD+end.replace('000000','000100')),'2023-07-03')

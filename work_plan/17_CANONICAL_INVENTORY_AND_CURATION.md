@@ -288,6 +288,10 @@ After both quality reports exist, run the missing-date follower. Its batches
 contain at most 14 native dates and adjacent-day overlap. It checks each
 archive's actual date, resumes cached observations and respects provider
 cooldowns. It does not guess the alternative source's UTC clock or merge prices.
+Forexite's requested daily archive contains completed-minute endpoints in
+`(native day 00:00, next day 00:00]`: the final midnight is valid, the following
+minute is not. The parser preserves those native endpoints without shifting
+them or treating the final observed minute as a future quote.
 
 ```bash
 python _scripts/recover_native_fx_gaps.py run --root "$CURATION_ROOT" --output "$ALTERNATIVE_RAW_ROOT" --config configs/native_fx_recovery.v1.json
@@ -317,6 +321,19 @@ The acquisition ETA covers remaining source requests only. It does not include
 unmeasured alternative-source work, calendar resolution, whole-inventory
 curation, preprocessing or recomputed selection; retry/blocked states have no
 promised completion ETA.
+
+For an aggregate read-only view, including actual weekly files available and
+candidate dates acquired even in partially unavailable batches:
+
+```bash
+python _scripts/native_recovery_status.py --root "$CURATION_ROOT" --alternative-output "$ALTERNATIVE_RAW_ROOT"
+```
+
+Source-side discrepancy counts concern all loaded source rows; monthly
+coverage, scoped observation counts and TRAIN-referenced return diagnostics
+use the required range. Outside-range rows and identical duplicates are
+accounted separately. Do not report dates downloaded as hours repaired: UTC
+clock, quote-side and calendar verification must precede that claim.
 
 Tests must demonstrate detection of a missing month despite100% finite retained
 rows, one missing open hour versus a weekend, conflicting duplicates, bad OHLC,

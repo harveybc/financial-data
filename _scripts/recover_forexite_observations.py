@@ -33,8 +33,11 @@ def parse(raw,expected_date=None):
     df=df[df.TICKER.isin(['EURUSD','GBPUSD'])].copy()
     if df.empty:raise ValueError('NO_REQUIRED_PAIRS')
     df['timestamp_native']=pd.to_datetime(df.DTYYYYMMDD+df.TIME.str.zfill(6),format='%Y%m%d%H%M%S',errors='raise')
-    if expected_date is not None and not df.timestamp_native.dt.date.eq(pd.Timestamp(expected_date).date()).all():
-        raise ValueError('WRONG_SOURCE_DAY')
+    if expected_date is not None:
+        start=pd.Timestamp(pd.Timestamp(expected_date).date())
+        end=start+pd.Timedelta(days=1)
+        if not (df.timestamp_native.gt(start)&df.timestamp_native.le(end)).all():
+            raise ValueError('WRONG_SOURCE_DAY')
     values=df[['OPEN','HIGH','LOW','CLOSE']].to_numpy(float)
     if not np.isfinite(values).all() or (values<=0).any():raise ValueError('INVALID_PRICE')
     if (df.HIGH<df[['OPEN','LOW','CLOSE']].max(axis=1)).any() or (df.LOW>df[['OPEN','HIGH','CLOSE']].min(axis=1)).any():
@@ -83,7 +86,7 @@ def main():
                             source_sha256=hashlib.sha256(raw.read_bytes()).hexdigest(),
                             parquet_sha256=hashlib.sha256(target.read_bytes()).hexdigest())
                 status['results'].append(record);status['complete']+=1;print(json.dumps(record),flush=True)
-            except Exception as exc:status['failures'].append(dict(date=value,error_type=type(exc).__name__))
+            except Exception as exc:status['failures'].append(dict(date=value,error_type=type(exc).__name__,reason=str(exc)))
             write_json(root/'STATUS.json',status);time.sleep(.3)
     if status['state']!='RATE_LIMITED':status['state']='ACQUIRED' if not status['failures'] else 'INCOMPLETE'
     write_json(root/'STATUS.json',status)
