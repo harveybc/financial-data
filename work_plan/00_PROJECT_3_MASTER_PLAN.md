@@ -1,5 +1,18 @@
 # Project 3 — Master Plan
 
+## Current Corrective Priority: 2026-10-18
+
+Inventory, recover and curate the actual data before any new model or selector
+run. Completeness means source-calendar and prepared-window coverage, not just
+finite values in retained rows. The owner requires removal of affected results,
+configs, weights, metrics and copies, without an invalid-result archive. Paid
+and free sources must be tried for observed replacements; no interpolated price
+data, synthetic weekends or target cleaning. Only admitted resources enter the
+canonical lake root; recompute preprocessing and selection evidence after repair.
+This overrides the old "acquire everything then filter during experiments"
+principle below. Procedure: [canonical inventory and curation](17_CANONICAL_INVENTORY_AND_CURATION.md).
+Policy: [curation_policy.v1.json](../configs/curation_policy.v1.json).
+
 **Project name:** Comprehensive Data Acquisition + Feature Engineering + Systematic RL Evaluation
 **Predecessor:** Project 2 (closed with marginal RL results on BTC 1h technical features)
 **Core hypothesis:** Project 2's null/marginal results were caused by insufficient data diversity, not by RL algorithms being unsuitable. By systematically acquiring ALL plausibly relevant data and engineering ALL state-of-the-art feature representations, we will identify which data combinations and feature representations produce best policies for RL trading agents.
