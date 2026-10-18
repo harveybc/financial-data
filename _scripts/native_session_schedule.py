@@ -1,9 +1,10 @@
 """Observed session schedule of the native FXCM H1 feed and typed classification of missing runs.
 
-Separates SOURCE_FILE_ABSENT (the weekly source file failed), CALENDAR_RESOLUTION_CANDIDATE
+Separates SOURCE_WEEK_FAILURE_CANDIDATE (an ISO week has a failed download), CALENDAR_RESOLUTION_CANDIDATE
 (in-file absence on a date commonly associated with a holiday; NOT a verified closure) and
 MISSING_QUOTE_OPEN_SESSION (in-file absence inside an ordinary open session). Nothing is
-auto-closed, filled or admitted."""
+auto-closed, filled or admitted. An ISO-week match is not a verified mapping
+to a provider archive: in particular a Sunday can belong to a different file."""
 import argparse
 import json
 import os
@@ -37,24 +38,35 @@ def weekly_schedule(timestamps):
 def classify_runs(pair, runs, failed_weeks):
     out = []
     for run in runs:
-        start = pd.Timestamp(run['start'])
-        end = pd.Timestamp(run['end'])
-        iso = start.isocalendar()
-        covered_failed = {w for (p, y, w) in failed_weeks if p == pair and y == start.year}
-        dates = {d.strftime('%m-%d') for d in pd.date_range(start.floor('D'), end.floor('D'), freq='D')}
-        if run['hours'] >= 100 or iso.week in covered_failed or (start.year, iso.week) in {(y, w) for (p, y, w) in failed_weeks if p == pair}:
-            klass = 'SOURCE_FILE_ABSENT' if (iso.week in covered_failed or run['hours'] >= 100) else 'MISSING_QUOTE_OPEN_SESSION'
-        elif dates & HOLIDAY_CANDIDATE_MMDD:
-            klass = 'CALENDAR_RESOLUTION_CANDIDATE'
-        else:
-            klass = 'MISSING_QUOTE_OPEN_SESSION'
-        out.append({**run, 'pair': pair, 'iso_week': int(iso.week), 'class': klass, 'closure_verified': False})
+        start, end = pd.to_datetime([run['start'], run['end']], utc=True)
+        hours = pd.date_range(start, end, freq='h')
+        if len(hours) != run['hours'] or not len(hours) or hours[-1] != end:
+            raise ValueError('MISSING_RUN_SUPPORT_MISMATCH')
+        previous_key = None
+        for stamp in hours:
+            iso = stamp.isocalendar()
+            if (pair, iso.year, iso.week) in failed_weeks:
+                klass = 'SOURCE_WEEK_FAILURE_CANDIDATE'
+            elif stamp.strftime('%m-%d') in HOLIDAY_CANDIDATE_MMDD:
+                klass = 'CALENDAR_RESOLUTION_CANDIDATE'
+            else:
+                klass = 'MISSING_QUOTE_OPEN_SESSION'
+            key = (iso.year, iso.week, klass)
+            if key == previous_key:
+                out[-1]['end'] = stamp.isoformat()
+                out[-1]['hours'] += 1
+            else:
+                out.append({'start': stamp.isoformat(), 'end': stamp.isoformat(),
+                            'hours': 1, 'pair': pair, 'iso_year': int(iso.year),
+                            'iso_week': int(iso.week), 'class': klass,
+                            'source_absence_verified': False, 'closure_verified': False})
+            previous_key = key
     return out
 
 
 def run(primary_root, quality_dir):
     primary_root, quality_dir = Path(primary_root), Path(quality_dir)
-    report = {'schema': 'financial_data.native_session_schedule.v1', 'state': 'OBSERVED_NOT_CERTIFIED',
+    report = {'schema': 'financial_data.native_session_schedule.v2', 'state': 'OBSERVED_NOT_CERTIFIED',
               'calendar_certified': False, 'pairs': {}}
     for pair in ('eurusd', 'gbpusd'):
         paths = sorted(primary_root.glob(f'*/{pair}/*-1h.parquet'))

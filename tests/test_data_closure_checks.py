@@ -140,7 +140,11 @@ def test_missing_runs_separate_source_closure_file_absence_and_missing_quote():
             {'start': '2024-12-25T00:00:00+00:00', 'end': '2024-12-25T21:00:00+00:00', 'hours': 22},
             {'start': '2024-03-13T07:00:00+00:00', 'end': '2024-03-13T07:00:00+00:00', 'hours': 1}]
     out = schedule.classify_runs('eurusd', runs, failed_weeks)
-    assert [r['class'] for r in out] == ['SOURCE_FILE_ABSENT', 'CALENDAR_RESOLUTION_CANDIDATE', 'MISSING_QUOTE_OPEN_SESSION']
+    assert out[0]['class'] == 'MISSING_QUOTE_OPEN_SESSION'
+    assert out[1]['class'] == 'SOURCE_WEEK_FAILURE_CANDIDATE'
+    assert out[2]['class'] == 'CALENDAR_RESOLUTION_CANDIDATE'
+    assert out[3]['class'] == 'MISSING_QUOTE_OPEN_SESSION'
+    assert sum(r['hours'] for r in out) == 143
     assert all(r['closure_verified'] is False for r in out)                      # never auto-closed
 
 
@@ -177,3 +181,30 @@ def test_inventory_keeps_every_configured_variable_and_counts_missing_files(tmp_
     assert byid['catalog:a']['monthly_coverage'][1]['observed_rows'] == 1
     assert byid['catalog:a']['monthly_coverage'][-1]['observed_rows'] == 0           # 2025-12 absent, still listed
     assert inv['hardcoded_population_sizes'] == []
+
+
+def test_long_gap_alone_does_not_prove_a_source_failure():
+    run = {'start': '2024-03-11T00:00:00Z', 'end': '2024-03-15T23:00:00Z', 'hours': 120}
+    result = schedule.classify_runs('eurusd', [run], set())
+    assert result[0]['class'] == 'MISSING_QUOTE_OPEN_SESSION'
+    assert result[0]['hours'] == 120
+
+
+def test_missing_run_splits_at_iso_year_and_never_guesses_the_cause():
+    run = {'start': '2021-01-03T23:00:00Z', 'end': '2021-01-04T01:00:00Z', 'hours': 3}
+    result = schedule.classify_runs('eurusd', [run], {('eurusd', 2020, 53)})
+    assert [(r['iso_year'], r['iso_week'], r['hours']) for r in result] == [(2020, 53, 1), (2021, 1, 2)]
+    assert result[0]['class'] == 'SOURCE_WEEK_FAILURE_CANDIDATE'
+    assert all(r['source_absence_verified'] is False for r in result)
+
+
+def test_inventory_counts_infinities_and_nullable_missing_values(tmp_path):
+    path = tmp_path / 'values.parquet'
+    pd.DataFrame({'timestamp': pd.date_range('2021-01-01', periods=4, tz='UTC'),
+                  'value': pd.Series([np.inf, -np.inf, pd.NA, 1], dtype='Float64')}).to_parquet(path)
+    assert inventory.monthly(path)['nonfinite_cells'] == 3
+
+
+def test_conflicting_groups_do_not_turn_distinct_rows_into_identical_duplicates():
+    frame = pd.DataFrame({'timestamp': ['2021-01-01'] * 4, 'value': [1, 2, 3, 3]})
+    assert checks.duplicate_report(frame) == {'identical': 1, 'conflicting': 1}

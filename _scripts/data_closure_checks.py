@@ -43,7 +43,7 @@ def duplicate_report(frame, key='timestamp', strict=False):
         conflicting = int((dup.groupby(key).nunique(dropna=False) > 1).any(axis=1).sum())
     if strict and conflicting:
         raise ValueError('CONFLICTING_DUPLICATE')
-    return {'identical': int(frame[key].duplicated().sum()) - conflicting, 'conflicting': conflicting}
+    return {'identical': int(frame.duplicated().sum()), 'conflicting': conflicting}
 
 
 def ohlc_report(frame, side):

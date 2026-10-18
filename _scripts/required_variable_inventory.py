@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 REQUIRED_START, REQUIRED_END = '2020-01-01', '2026-01-01'
@@ -43,7 +44,7 @@ def monthly(path, time_col=None, start=REQUIRED_START, end=REQUIRED_END):
     return {'time_column': col, 'rows': int(len(frame)), 'first': ts.min().isoformat() if len(ts) else None,
             'last': ts.max().isoformat() if len(ts) else None, 'inferred_median_spacing': cadence,
             'unparseable_timestamps': int(ts.isna().sum()),
-            'nonfinite_cells': int((~numeric.map(lambda v: v == v)).sum().sum()) if not numeric.empty else 0,
+            'nonfinite_cells': int((~np.isfinite(numeric.to_numpy(dtype=float, na_value=np.nan))).sum()) if not numeric.empty else 0,
             'duplicate_timestamps': int(ts.duplicated().sum()),
             'monthly_coverage': [{'month': str(m), 'observed_rows': int(counts.get(m, 0))} for m in months]}
 
