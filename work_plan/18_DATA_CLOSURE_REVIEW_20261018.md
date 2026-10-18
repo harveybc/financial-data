@@ -91,6 +91,13 @@ New focused tests: 25 passed (clock normalization, source comparison and
 publication validation); initial publisher test collection failed before its
 implementation. Public source artifacts remain outside Git.
 
+Publication executed at code pin `f7d051754`: 1 report, 6 metrics delivered and
+read back, 0 pending, 0 mismatched. Physical snapshot 1,585,152 bytes, SHA-256
+`739f3bfd5ef8a71378c99b2c2c23be3c56ea37c8d9412808547eb39263e2ef1a`, verified
+on the coordinator, bulk partition and second machine. The bounded publisher
+finished in 4.392 s with 104.3 MiB peak memory and no swap. Normalization and
+publication receipts are separate: neither means prices are admitted.
+
 Map missing observations to actual provider file intervals and actual session
 closures, resolve timestamp/quote semantics, verify replacements, then admit
 the inventory and recompute preprocessing/selection. The candidate inventory
