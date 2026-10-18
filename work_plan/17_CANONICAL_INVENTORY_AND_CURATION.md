@@ -232,6 +232,12 @@ partial week cannot disappear. A provider refusal or empty week remains an
 explicit failure; completeness is checked against the independent required
 date range, not the number of downloaded files.
 
+The configured price view is BID. Retain source ask columns and flag any
+crossing between side-bar endpoints, without claiming that their cause is
+known or that bid/ask endpoints form a synchronous executable spread. Do not
+silently flip sides, change prices or use them to calibrate trading costs.
+Independent bid-price corroboration is still required before admission.
+
 The unattended CPU controller advances through all years, retries a partial
 download at most once, resumes verified year terminals and exposes read-only
 status/ETA. Native bid/ask, source timestamps and bar-end availability remain

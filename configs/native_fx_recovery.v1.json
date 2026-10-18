@@ -2,6 +2,7 @@
   "schema": "financial_data.native_fx_recovery.v1",
   "provider": "FXCM",
   "periodicity": "H1",
+  "quote_view": "BID",
   "pairs": ["eurusd", "gbpusd"],
   "required_start": "2020-01-01T00:00:00Z",
   "required_end_exclusive": "2026-01-01T00:00:00Z",

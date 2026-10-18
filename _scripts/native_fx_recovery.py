@@ -28,7 +28,7 @@ def write_json(path,body):
 
 def validate(c):
     if (c.get('schema')!='financial_data.native_fx_recovery.v1'
-            or c.get('provider')!='FXCM' or c.get('periodicity')!='H1'):
+            or c.get('provider')!='FXCM' or c.get('periodicity')!='H1' or c.get('quote_view')!='BID'):
         raise ValueError('NATIVE_HOURLY_CONTRACT_REQUIRED')
     if any(c.get(k) is not False for k in ('interpolation','price_fill','admit_to_lake')):
         raise ValueError('NO_FILL_AND_NO_ADMISSION_REQUIRED')
@@ -64,7 +64,7 @@ def audit(frame,c):
     for side in ('Bid','Ask'):
         if (data[side+'High']<data[[side+'Open',side+'Low',side+'Close']].max(axis=1)).any() or (data[side+'Low']>data[[side+'Open',side+'High',side+'Close']].min(axis=1)).any():
             raise ValueError('INVALID_OHLC')
-    if (data.AskClose<data.BidClose).any() or (data.AskOpen<data.BidOpen).any():raise ValueError('CROSSED_QUOTES')
+    side_crossings=int(((data.AskClose<data.BidClose)|(data.AskOpen<data.BidOpen)).sum())
     data['timestamp']=ts;data['available_at']=available
     duplicates=data[data.timestamp.duplicated(keep=False)]
     if not duplicates.empty and (duplicates.groupby('timestamp')[columns+['available_at']].nunique()>1).any().any():
@@ -97,6 +97,7 @@ def audit(frame,c):
         flagged=(.6744897501960817*(returns-median).abs()/mad)>3.5
         outliers.update(state='FLAGGED_NOT_REMOVED',count=int(flagged.sum()))
     return dict(schema='financial_data.native_fx_quality.v1',admitted=False,
+        quote_view=c['quote_view'],executable_spread_eligible=False,crossed_side_bar_endpoints=side_crossings,
         state='SOURCE_VALIDATION_REQUIRED',calendar_basis=c['calendar_basis'],
         calendar_holidays_certified=False,months=months,observed_rows=len(data),
         missing_expected_open_hours=len(missing),outside_required_range_rows=outside,
@@ -218,7 +219,7 @@ def main():
                     write_json(root/'STATUS.json',state)
                     time.sleep(max(0,until-time.time()))
             command=[sys.executable,'-B','-m','tools.i6dmo.recover_fxcm_quotes',
-                '--output',str(Path(a.output)/str(year)),'--periodicity','H1','--year',str(year),
+                '--output',str(Path(a.output)/str(year)),'--periodicity','H1','--quote-view',c['quote_view'],'--year',str(year),
                 '--pairs',*c['pairs'],'--weeks',*map(str,c['weeks'])]
             env=dict(os.environ,CUDA_VISIBLE_DEVICES='',OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
             rc=subprocess.run(command,cwd=runtime,env=env,timeout=c['year_timeout_seconds']).returncode
