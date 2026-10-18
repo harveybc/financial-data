@@ -1,0 +1,21 @@
+{
+  "schema": "financial_data.native_fx_recovery.v1",
+  "provider": "FXCM",
+  "periodicity": "H1",
+  "pairs": ["eurusd", "gbpusd"],
+  "required_start": "2020-01-01T00:00:00Z",
+  "required_end_exclusive": "2026-01-01T00:00:00Z",
+  "train_start": "2020-01-01T00:00:00Z",
+  "train_end_exclusive": "2024-01-01T00:00:00Z",
+  "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53],
+  "retry_limit": 1,
+  "retry_wait_seconds": 30,
+  "year_timeout_seconds": 1800,
+  "minimum_memory_available_bytes": 4294967296,
+  "minimum_disk_free_bytes": 10737418240,
+  "allowed_output_filesystems": ["fuseblk", "ntfs", "ntfs3"],
+  "interpolation": false,
+  "price_fill": false,
+  "admit_to_lake": false,
+  "calendar_basis": "ASSUMED_NY_17_TO_17_NO_HOLIDAY_CERTIFICATE"
+}

@@ -223,6 +223,38 @@ SSD remnant has disappeared merely because active files were removed.
 
 ## 10. Verification And Acceptance
 
+### Native Hourly Recovery Subplan
+
+Download native FXCM H1 quotes before attempting minute aggregation. Reuse the
+existing parser in predictor, with its code identity pinned by the controller.
+Both pairs cover the required 2020-2025 years, requesting weeks 1-53 so a final
+partial week cannot disappear. A provider refusal or empty week remains an
+explicit failure; completeness is checked against the independent required
+date range, not the number of downloaded files.
+
+The unattended CPU controller advances through all years, retries a partial
+download at most once, resumes verified year terminals and exposes read-only
+status/ETA. Native bid/ask, source timestamps and bar-end availability remain
+unchanged; no synthetic minutes, interpolation or automatic lake admission.
+The service runs with a 2 GiB process-group cap; it reserves memory/disk before
+each acquisition year and forces GPUs invisible.
+
+| Requirement | Behavioral acceptance |
+|---|---|
+| NR01 | H1 gap stays a gap; actual quotes survive unchanged; no minute files |
+| NR02 | Off-grid native H1 timestamps and altered materialized outputs fail |
+| NR03 | All months are in the denominator even if entirely absent |
+| NR04 | NY DST/session exclusions are distinct from missing open hours; calendar remains explicitly assumed |
+| NR05 | Conflicting duplicate quotes or false availability fail; identical boundary duplicates are accounted |
+| NR06 | Return-outlier reference is TRAIN-only; zero scale is NOT_ESTIMABLE |
+| NR07 | Bounded retries, sequential successors, restart identity and read-only status are tested |
+| NR08 | Acquisition success does not imply admission, selection or training permission |
+
+These tests precede implementation. Real source readback, clock witnesses and
+native coverage are required afterwards. This is not an authorization to
+replace a missing quote with a fitted price or to treat assumed holidays as
+verified market closures.
+
 Tests must demonstrate detection of a missing month despite100% finite retained
 rows, one missing open hour versus a weekend, conflicting duplicates, bad OHLC,
 misaligned timezone/DST, publication after t, future perturbations, stale daily
