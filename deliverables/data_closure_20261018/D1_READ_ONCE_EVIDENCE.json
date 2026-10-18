@@ -1,0 +1,8539 @@
+{
+ "candidate_archives": {
+  "names": [
+   "010120.zip",
+   "010123.zip",
+   "010124.zip",
+   "010125.zip",
+   "010126.zip",
+   "020120.zip",
+   "020123.zip",
+   "020124.zip",
+   "020125.zip",
+   "020723.zip",
+   "030120.zip",
+   "030123.zip",
+   "030124.zip",
+   "030125.zip",
+   "030723.zip",
+   "040723.zip",
+   "050125.zip",
+   "050723.zip",
+   "060125.zip",
+   "060723.zip",
+   "070125.zip",
+   "070723.zip",
+   "080125.zip",
+   "090125.zip",
+   "100125.zip",
+   "100723.zip",
+   "130725.zip",
+   "140725.zip",
+   "150725.zip",
+   "151224.zip",
+   "160725.zip",
+   "161224.zip",
+   "170725.zip",
+   "171224.zip",
+   "180725.zip",
+   "181224.zip",
+   "191224.zip",
+   "200725.zip",
+   "201224.zip",
+   "210725.zip",
+   "220725.zip",
+   "221224.zip",
+   "230725.zip",
+   "231220.zip",
+   "231221.zip",
+   "231224.zip",
+   "231225.zip",
+   "240725.zip",
+   "241220.zip",
+   "241221.zip",
+   "241223.zip",
+   "241224.zip",
+   "241225.zip",
+   "250725.zip",
+   "250824.zip",
+   "251222.zip",
+   "251223.zip",
+   "251224.zip",
+   "251225.zip",
+   "260824.zip",
+   "261222.zip",
+   "261223.zip",
+   "261224.zip",
+   "261225.zip",
+   "270824.zip",
+   "271223.zip",
+   "271224.zip",
+   "280824.zip",
+   "281223.zip",
+   "290320.zip",
+   "290824.zip",
+   "291222.zip",
+   "291223.zip",
+   "300320.zip",
+   "300623.zip",
+   "300824.zip",
+   "301220.zip",
+   "301221.zip",
+   "301222.zip",
+   "301224.zip",
+   "301225.zip",
+   "311219.zip",
+   "311220.zip",
+   "311221.zip",
+   "311224.zip",
+   "311225.zip"
+  ],
+  "parquet_count": 86,
+  "zip_count": 86
+ },
+ "candidate_status": {
+  "complete": 10,
+  "failures": [
+   {
+    "date": "2025-07-26",
+    "error_type": "ValueError",
+    "reason": "NO_REQUIRED_PAIRS"
+   },
+   {
+    "date": "2025-12-27",
+    "error_type": "ValueError",
+    "reason": "NO_REQUIRED_PAIRS"
+   }
+  ],
+  "interpolation": false,
+  "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+  "requested_dates": [
+   "2025-07-23",
+   "2025-07-24",
+   "2025-07-25",
+   "2025-07-26",
+   "2025-12-23",
+   "2025-12-24",
+   "2025-12-25",
+   "2025-12-26",
+   "2025-12-27",
+   "2025-12-30",
+   "2025-12-31",
+   "2026-01-01"
+  ],
+  "results_n": 10,
+  "state": "INCOMPLETE",
+  "total": 12
+ },
+ "clock_comparison": {
+  "identity": {
+   "admitted": false,
+   "automatic_clock_selection": false,
+   "candidate_files": 86,
+   "candidate_minute_timestamp": "COMPLETED_MINUTE_ENDPOINT",
+   "candidate_quote_side": "UNVERIFIED_TRADE_ARCHIVE_NOT_ASSUMED_BID",
+   "clock_verified": false,
+   "code_sha256": "e1e38c1258560dcc336121a5dbd2cce3a8eaa77f7b2625b9d5c407a4a5cd02a4",
+   "n_files": 98,
+   "prices_spliced": false,
+   "schema": "financial_data.native_source_clock_diagnostic.v1",
+   "state": "DIAGNOSTIC_NOT_ADMITTED"
+  },
+  "monthly": [
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 19,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2019-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 47,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2020-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.004370000000000207,
+     "median_absolute_quote_difference": 0.0010300000000000864,
+     "p95_absolute_quote_difference": 0.0036280000000000956,
+     "paired_hours": 25,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2020-03",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00042999999999993044,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.000230000000000119,
+     "paired_hours": 86,
+     "rounded_4dp_agreement": 6
+    },
+    "month_utc": "2020-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00042999999999993044,
+     "median_absolute_quote_difference": 0.0001500000000000945,
+     "p95_absolute_quote_difference": 0.00022999999999995246,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2021-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 1,
+     "max_absolute_quote_difference": 0.00024999999999986144,
+     "median_absolute_quote_difference": 0.0001100000000000545,
+     "p95_absolute_quote_difference": 0.000220000000000109,
+     "paired_hours": 70,
+     "rounded_4dp_agreement": 12
+    },
+    "month_utc": "2022-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 8,
+     "max_absolute_quote_difference": 0.00031000000000003247,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.00024000000000001798,
+     "paired_hours": 41,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2023-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0043999999999999595,
+     "median_absolute_quote_difference": 0.0005499999999999394,
+     "p95_absolute_quote_difference": 0.0018100000000001446,
+     "paired_hours": 22,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-06",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": 0.0021899999999999142,
+     "median_absolute_quote_difference": 0.0003450000000000397,
+     "p95_absolute_quote_difference": 0.0016119999999999902,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-07",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 20,
+     "max_absolute_quote_difference": 0.0007699999999999374,
+     "median_absolute_quote_difference": 0.00013000000000018552,
+     "p95_absolute_quote_difference": 0.000200000000000089,
+     "paired_hours": 91,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2023-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 7,
+     "max_absolute_quote_difference": 0.00024000000000001798,
+     "median_absolute_quote_difference": 0.00013000000000018552,
+     "p95_absolute_quote_difference": 0.00020899999999982592,
+     "paired_hours": 42,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2024-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-08",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 238,
+     "max_absolute_quote_difference": 0.00021000000000004349,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.0001874999999999516,
+     "paired_hours": 46,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2024-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 149,
+     "max_absolute_quote_difference": 0.00036999999999998145,
+     "median_absolute_quote_difference": 0.00014999999999998348,
+     "p95_absolute_quote_difference": 0.00022349999999989858,
+     "paired_hours": 40,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2025-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 238,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2025-07",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 37,
+     "max_absolute_quote_difference": 0.0014300000000000423,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.0003659999999999105,
+     "paired_hours": 105,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2025-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 24,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2026-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 19,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2019-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 47,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2020-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0002500000000000835,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.00022199999999998875,
+     "paired_hours": 25,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2020-03",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0032399999999999096,
+     "median_absolute_quote_difference": 0.0005850000000000577,
+     "p95_absolute_quote_difference": 0.0022949999999999915,
+     "paired_hours": 86,
+     "rounded_4dp_agreement": 4
+    },
+    "month_utc": "2020-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0041199999999999015,
+     "median_absolute_quote_difference": 0.0005499999999998284,
+     "p95_absolute_quote_difference": 0.0019840000000000972,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2021-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 2,
+     "max_absolute_quote_difference": 0.002489999999999881,
+     "median_absolute_quote_difference": 0.00042999999999993044,
+     "p95_absolute_quote_difference": 0.002033999999999957,
+     "paired_hours": 69,
+     "rounded_4dp_agreement": 6
+    },
+    "month_utc": "2022-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 9,
+     "max_absolute_quote_difference": 0.007380000000000164,
+     "median_absolute_quote_difference": 0.0006800000000000139,
+     "p95_absolute_quote_difference": 0.0022790000000000176,
+     "paired_hours": 40,
+     "rounded_4dp_agreement": 3
+    },
+    "month_utc": "2023-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.000220000000000109,
+     "median_absolute_quote_difference": 0.00013999999999991797,
+     "p95_absolute_quote_difference": 0.00021850000000011026,
+     "paired_hours": 22,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2023-06",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": 0.00035999999999991594,
+     "median_absolute_quote_difference": 0.00014499999999995072,
+     "p95_absolute_quote_difference": 0.0002239999999999797,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2023-07",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 21,
+     "max_absolute_quote_difference": 0.004050000000000109,
+     "median_absolute_quote_difference": 0.00039999999999995595,
+     "p95_absolute_quote_difference": 0.002479000000000019,
+     "paired_hours": 90,
+     "rounded_4dp_agreement": 9
+    },
+    "month_utc": "2023-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 8,
+     "max_absolute_quote_difference": 0.003940000000000055,
+     "median_absolute_quote_difference": 0.0005799999999998029,
+     "p95_absolute_quote_difference": 0.0017599999999999838,
+     "paired_hours": 41,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2024-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-08",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 238,
+     "max_absolute_quote_difference": 0.006240000000000023,
+     "median_absolute_quote_difference": 0.00035999999999991594,
+     "p95_absolute_quote_difference": 0.002111999999999935,
+     "paired_hours": 47,
+     "rounded_4dp_agreement": 4
+    },
+    "month_utc": "2024-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 149,
+     "max_absolute_quote_difference": 0.0036599999999999966,
+     "median_absolute_quote_difference": 0.000460000000000127,
+     "p95_absolute_quote_difference": 0.0017659999999999586,
+     "paired_hours": 39,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2025-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 238,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2025-07",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 37,
+     "max_absolute_quote_difference": 0.0016700000000000603,
+     "median_absolute_quote_difference": 0.0003649999999999487,
+     "p95_absolute_quote_difference": 0.0013050000000000561,
+     "paired_hours": 106,
+     "rounded_4dp_agreement": 10
+    },
+    "month_utc": "2025-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 23,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2026-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 19,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2019-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 47,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2020-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0002500000000000835,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.00022199999999998875,
+     "paired_hours": 25,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2020-03",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00042999999999993044,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.000230000000000119,
+     "paired_hours": 86,
+     "rounded_4dp_agreement": 6
+    },
+    "month_utc": "2020-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00042999999999993044,
+     "median_absolute_quote_difference": 0.0001500000000000945,
+     "p95_absolute_quote_difference": 0.00022999999999995246,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2021-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 1,
+     "max_absolute_quote_difference": 0.00024999999999986144,
+     "median_absolute_quote_difference": 0.0001100000000000545,
+     "p95_absolute_quote_difference": 0.000220000000000109,
+     "paired_hours": 70,
+     "rounded_4dp_agreement": 12
+    },
+    "month_utc": "2022-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 8,
+     "max_absolute_quote_difference": 0.00031000000000003247,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.00024000000000001798,
+     "paired_hours": 41,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2023-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.000220000000000109,
+     "median_absolute_quote_difference": 0.00013999999999991797,
+     "p95_absolute_quote_difference": 0.00021850000000011026,
+     "paired_hours": 22,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2023-06",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": 0.00035999999999991594,
+     "median_absolute_quote_difference": 0.00014499999999995072,
+     "p95_absolute_quote_difference": 0.0002239999999999797,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2023-07",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 20,
+     "max_absolute_quote_difference": 0.0007699999999999374,
+     "median_absolute_quote_difference": 0.00013000000000018552,
+     "p95_absolute_quote_difference": 0.000200000000000089,
+     "paired_hours": 91,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2023-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 7,
+     "max_absolute_quote_difference": 0.00024000000000001798,
+     "median_absolute_quote_difference": 0.00013000000000018552,
+     "p95_absolute_quote_difference": 0.00020899999999982592,
+     "paired_hours": 42,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2024-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-08",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 238,
+     "max_absolute_quote_difference": 0.00021000000000004349,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.0001874999999999516,
+     "paired_hours": 46,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2024-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 149,
+     "max_absolute_quote_difference": 0.00036999999999998145,
+     "median_absolute_quote_difference": 0.00014999999999998348,
+     "p95_absolute_quote_difference": 0.00022349999999989858,
+     "paired_hours": 40,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2025-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 238,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2025-07",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 37,
+     "max_absolute_quote_difference": 0.0014300000000000423,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.0003659999999999105,
+     "paired_hours": 105,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2025-12",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 24,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2026-01",
+    "pair": "eurusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 19,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2019-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 47,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2020-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.005440000000000111,
+     "median_absolute_quote_difference": 0.0019099999999998563,
+     "p95_absolute_quote_difference": 0.004868000000000003,
+     "paired_hours": 25,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2020-03",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0006099999999999994,
+     "median_absolute_quote_difference": 0.00017000000000000348,
+     "p95_absolute_quote_difference": 0.0003300000000000525,
+     "paired_hours": 86,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2020-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0003500000000000725,
+     "median_absolute_quote_difference": 0.000180000000000069,
+     "p95_absolute_quote_difference": 0.00026700000000003945,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 6
+    },
+    "month_utc": "2021-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 1,
+     "max_absolute_quote_difference": 0.0009900000000000464,
+     "median_absolute_quote_difference": 0.00016999999999989246,
+     "p95_absolute_quote_difference": 0.0008609999999999673,
+     "paired_hours": 70,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2022-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 8,
+     "max_absolute_quote_difference": 0.0012499999999999734,
+     "median_absolute_quote_difference": 0.00015999999999993797,
+     "p95_absolute_quote_difference": 0.00028999999999990145,
+     "paired_hours": 41,
+     "rounded_4dp_agreement": 7
+    },
+    "month_utc": "2023-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00387000000000004,
+     "median_absolute_quote_difference": 0.0007949999999999902,
+     "p95_absolute_quote_difference": 0.0023780000000000467,
+     "paired_hours": 22,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-06",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": 0.00383,
+     "median_absolute_quote_difference": 0.0007549999999999502,
+     "p95_absolute_quote_difference": 0.002638000000000017,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2023-07",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 23,
+     "max_absolute_quote_difference": 0.000320000000000098,
+     "median_absolute_quote_difference": 0.000180000000000069,
+     "p95_absolute_quote_difference": 0.0002564999999999817,
+     "paired_hours": 88,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 7,
+     "max_absolute_quote_difference": 0.00046999999999997044,
+     "median_absolute_quote_difference": 0.00017500000000003624,
+     "p95_absolute_quote_difference": 0.00027850000000005914,
+     "paired_hours": 42,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2024-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 118,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-08",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 239,
+     "max_absolute_quote_difference": 0.0008999999999999009,
+     "median_absolute_quote_difference": 0.00015500000000001624,
+     "p95_absolute_quote_difference": 0.0002650000000000152,
+     "paired_hours": 46,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 148,
+     "max_absolute_quote_difference": 0.00042000000000008697,
+     "median_absolute_quote_difference": 0.00019500000000005624,
+     "p95_absolute_quote_difference": 0.0002714999999999911,
+     "paired_hours": 40,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2025-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 237,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2025-07",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 37,
+     "max_absolute_quote_difference": 0.0019299999999999873,
+     "median_absolute_quote_difference": 0.00018999999999991246,
+     "p95_absolute_quote_difference": 0.0011479999999999698,
+     "paired_hours": 105,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2025-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 24,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2026-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 19,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2019-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 47,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2020-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 1,
+     "max_absolute_quote_difference": 0.00041000000000002146,
+     "median_absolute_quote_difference": 0.00017000000000000348,
+     "p95_absolute_quote_difference": 0.00027250000000007536,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 3
+    },
+    "month_utc": "2020-03",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.005800000000000027,
+     "median_absolute_quote_difference": 0.0010100000000000664,
+     "p95_absolute_quote_difference": 0.002977500000000022,
+     "paired_hours": 86,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2020-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.003209999999999935,
+     "median_absolute_quote_difference": 0.0005500000000000504,
+     "p95_absolute_quote_difference": 0.002181000000000144,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 7
+    },
+    "month_utc": "2021-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 2,
+     "max_absolute_quote_difference": 0.00474999999999981,
+     "median_absolute_quote_difference": 0.0007099999999999884,
+     "p95_absolute_quote_difference": 0.002544000000000011,
+     "paired_hours": 69,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2022-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 9,
+     "max_absolute_quote_difference": 0.011800000000000033,
+     "median_absolute_quote_difference": 0.0006650000000000267,
+     "p95_absolute_quote_difference": 0.0036990000000000508,
+     "paired_hours": 40,
+     "rounded_4dp_agreement": 4
+    },
+    "month_utc": "2023-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00025999999999992696,
+     "median_absolute_quote_difference": 0.00018999999999991246,
+     "p95_absolute_quote_difference": 0.0002495000000000802,
+     "paired_hours": 22,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-06",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": 0.00039999999999995595,
+     "median_absolute_quote_difference": 0.00019999999999997797,
+     "p95_absolute_quote_difference": 0.00026700000000000606,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2023-07",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 24,
+     "max_absolute_quote_difference": 0.0035799999999999166,
+     "median_absolute_quote_difference": 0.000520000000000076,
+     "p95_absolute_quote_difference": 0.002712999999999988,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 6
+    },
+    "month_utc": "2023-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 8,
+     "max_absolute_quote_difference": 0.003409999999999913,
+     "median_absolute_quote_difference": 0.00039999999999995595,
+     "p95_absolute_quote_difference": 0.0024399999999999977,
+     "paired_hours": 41,
+     "rounded_4dp_agreement": 4
+    },
+    "month_utc": "2024-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 118,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-08",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 239,
+     "max_absolute_quote_difference": 0.004409999999999803,
+     "median_absolute_quote_difference": 0.0005300000000001415,
+     "p95_absolute_quote_difference": 0.002194000000000004,
+     "paired_hours": 47,
+     "rounded_4dp_agreement": 4
+    },
+    "month_utc": "2024-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 148,
+     "max_absolute_quote_difference": 0.003710000000000102,
+     "median_absolute_quote_difference": 0.0005800000000000249,
+     "p95_absolute_quote_difference": 0.002649999999999976,
+     "paired_hours": 39,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2025-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 237,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2025-07",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 37,
+     "max_absolute_quote_difference": 0.00279000000000007,
+     "median_absolute_quote_difference": 0.000500000000000056,
+     "p95_absolute_quote_difference": 0.001927499999999971,
+     "paired_hours": 106,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2025-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 23,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2026-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 19,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2019-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 47,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2020-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 1,
+     "max_absolute_quote_difference": 0.00041000000000002146,
+     "median_absolute_quote_difference": 0.00017000000000000348,
+     "p95_absolute_quote_difference": 0.00027250000000007536,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 3
+    },
+    "month_utc": "2020-03",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0006099999999999994,
+     "median_absolute_quote_difference": 0.00017000000000000348,
+     "p95_absolute_quote_difference": 0.0003300000000000525,
+     "paired_hours": 86,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2020-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.0003500000000000725,
+     "median_absolute_quote_difference": 0.000180000000000069,
+     "p95_absolute_quote_difference": 0.00026700000000003945,
+     "paired_hours": 87,
+     "rounded_4dp_agreement": 6
+    },
+    "month_utc": "2021-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 1,
+     "max_absolute_quote_difference": 0.0009900000000000464,
+     "median_absolute_quote_difference": 0.00016999999999989246,
+     "p95_absolute_quote_difference": 0.0008609999999999673,
+     "paired_hours": 70,
+     "rounded_4dp_agreement": 5
+    },
+    "month_utc": "2022-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 8,
+     "max_absolute_quote_difference": 0.0012499999999999734,
+     "median_absolute_quote_difference": 0.00015999999999993797,
+     "p95_absolute_quote_difference": 0.00028999999999990145,
+     "paired_hours": 41,
+     "rounded_4dp_agreement": 7
+    },
+    "month_utc": "2023-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 0,
+     "max_absolute_quote_difference": 0.00025999999999992696,
+     "median_absolute_quote_difference": 0.00018999999999991246,
+     "p95_absolute_quote_difference": 0.0002495000000000802,
+     "paired_hours": 22,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-06",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 119,
+     "max_absolute_quote_difference": 0.00039999999999995595,
+     "median_absolute_quote_difference": 0.00019999999999997797,
+     "p95_absolute_quote_difference": 0.00026700000000000606,
+     "paired_hours": 24,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2023-07",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 23,
+     "max_absolute_quote_difference": 0.000320000000000098,
+     "median_absolute_quote_difference": 0.000180000000000069,
+     "p95_absolute_quote_difference": 0.0002564999999999817,
+     "paired_hours": 88,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2023-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 7,
+     "max_absolute_quote_difference": 0.00046999999999997044,
+     "median_absolute_quote_difference": 0.00017500000000003624,
+     "p95_absolute_quote_difference": 0.00027850000000005914,
+     "paired_hours": 42,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2024-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 118,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-08",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 239,
+     "max_absolute_quote_difference": 0.0008999999999999009,
+     "median_absolute_quote_difference": 0.00015500000000001624,
+     "p95_absolute_quote_difference": 0.0002650000000000152,
+     "paired_hours": 46,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2024-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 148,
+     "max_absolute_quote_difference": 0.00042000000000008697,
+     "median_absolute_quote_difference": 0.00019500000000005624,
+     "p95_absolute_quote_difference": 0.0002714999999999911,
+     "paired_hours": 40,
+     "rounded_4dp_agreement": 1
+    },
+    "month_utc": "2025-01",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 237,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2025-07",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 37,
+     "max_absolute_quote_difference": 0.0019299999999999873,
+     "median_absolute_quote_difference": 0.00018999999999991246,
+     "p95_absolute_quote_difference": 0.0011479999999999698,
+     "paired_hours": 105,
+     "rounded_4dp_agreement": 2
+    },
+    "month_utc": "2025-12",
+    "pair": "gbpusd"
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "metrics": {
+     "candidate_hours_absent_from_primary": 24,
+     "max_absolute_quote_difference": null,
+     "median_absolute_quote_difference": null,
+     "p95_absolute_quote_difference": null,
+     "paired_hours": 0,
+     "rounded_4dp_agreement": 0
+    },
+    "month_utc": "2026-01",
+    "pair": "gbpusd"
+   }
+  ],
+  "overall": [
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "overall": {
+     "candidate_hours_absent_from_primary": 1026,
+     "max_absolute_quote_difference": 0.0043999999999999595,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.0006319999999998998,
+     "paired_hours": 679,
+     "rounded_4dp_agreement": 46
+    },
+    "pair": "eurusd",
+    "support": {
+     "complete_hours": 1705,
+     "incomplete_hours": 20,
+     "observed_minutes": 103429,
+     "unresolved_dst_minutes": 0
+    }
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "overall": {
+     "candidate_hours_absent_from_primary": 1029,
+     "max_absolute_quote_difference": 0.007380000000000164,
+     "median_absolute_quote_difference": 0.0004050000000000997,
+     "p95_absolute_quote_difference": 0.0019499999999999518,
+     "paired_hours": 676,
+     "rounded_4dp_agreement": 45
+    },
+    "pair": "eurusd",
+    "support": {
+     "complete_hours": 1705,
+     "incomplete_hours": 20,
+     "observed_minutes": 103429,
+     "unresolved_dst_minutes": 0
+    }
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "overall": {
+     "candidate_hours_absent_from_primary": 1026,
+     "max_absolute_quote_difference": 0.0014300000000000423,
+     "median_absolute_quote_difference": 0.000140000000000029,
+     "p95_absolute_quote_difference": 0.00022999999999995246,
+     "paired_hours": 679,
+     "rounded_4dp_agreement": 43
+    },
+    "pair": "eurusd",
+    "support": {
+     "complete_hours": 1705,
+     "incomplete_hours": 20,
+     "observed_minutes": 103429,
+     "unresolved_dst_minutes": 0
+    }
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_60",
+    "overall": {
+     "candidate_hours_absent_from_primary": 1027,
+     "max_absolute_quote_difference": 0.005440000000000111,
+     "median_absolute_quote_difference": 0.000180000000000069,
+     "p95_absolute_quote_difference": 0.0012749999999999706,
+     "paired_hours": 676,
+     "rounded_4dp_agreement": 29
+    },
+    "pair": "gbpusd",
+    "support": {
+     "complete_hours": 1703,
+     "incomplete_hours": 22,
+     "observed_minutes": 103429,
+     "unresolved_dst_minutes": 0
+    }
+   },
+   {
+    "clock_hypothesis": "FIXED_UTC_PLUS_120",
+    "overall": {
+     "candidate_hours_absent_from_primary": 1031,
+     "max_absolute_quote_difference": 0.011800000000000033,
+     "median_absolute_quote_difference": 0.0005250000000001087,
+     "p95_absolute_quote_difference": 0.0026800000000000157,
+     "paired_hours": 672,
+     "rounded_4dp_agreement": 39
+    },
+    "pair": "gbpusd",
+    "support": {
+     "complete_hours": 1703,
+     "incomplete_hours": 22,
+     "observed_minutes": 103429,
+     "unresolved_dst_minutes": 0
+    }
+   },
+   {
+    "clock_hypothesis": "EUROPE_BERLIN",
+    "overall": {
+     "candidate_hours_absent_from_primary": 1028,
+     "max_absolute_quote_difference": 0.0019299999999999873,
+     "median_absolute_quote_difference": 0.000180000000000069,
+     "p95_absolute_quote_difference": 0.00041300000000004067,
+     "paired_hours": 675,
+     "rounded_4dp_agreement": 29
+    },
+    "pair": "gbpusd",
+    "support": {
+     "complete_hours": 1703,
+     "incomplete_hours": 22,
+     "observed_minutes": 103429,
+     "unresolved_dst_minutes": 0
+    }
+   }
+  ]
+ },
+ "gap_recovery": {
+  "GAP_RECOVERY_PLAN.json": {
+   "admitted": false,
+   "batches": [
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355431.912016,
+       "result": {
+        "complete": 10,
+        "failures": [
+         {
+          "date": "2020-01-04",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2020-03-28",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2020-12-25",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2020-12-26",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2019-12-31",
+         "2020-01-01",
+         "2020-01-02",
+         "2020-01-03",
+         "2020-01-04",
+         "2020-03-28",
+         "2020-03-29",
+         "2020-03-30",
+         "2020-12-23",
+         "2020-12-24",
+         "2020-12-25",
+         "2020-12-26",
+         "2020-12-30",
+         "2020-12-31"
+        ],
+        "results": [
+         {
+          "date": "2019-12-31",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "6622b61f899291d0d71f69ca66bb6e143300ccd3cf28508192d0cbc35a28bf6e",
+          "source_sha256": "abc1a97b4db149ca861d34f0213bb2f30ea1df7ebbba1ad20589ab1075dbc014"
+         },
+         {
+          "date": "2020-01-01",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "673b83de4408bdd184924755569e5440f9cf0b2e18a4abdafd37497a47d93b59",
+          "source_sha256": "8d834ddfe1546ca91e783202ab2f5d4e8994c46c6b74d17fffb014c15caa184f"
+         },
+         {
+          "date": "2020-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "9420a2c194517538d94445cb4921090b731a9c2c0118366ca6832ddb59d7a3dd",
+          "source_sha256": "33ec6d4637b4175123f168cd31c81bca10747f0624ebe3f476ac68111d5395e0"
+         },
+         {
+          "date": "2020-01-03",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "77a815c677d66c113d10c8b0cce8c3d10a20eb20efd5c1613bce132b1c2bdce2",
+          "source_sha256": "2dcfcf734623683a3f73591941546a29f91d735851a3e6a88d7917a070c7e90e"
+         },
+         {
+          "date": "2020-03-29",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "aafce82d2572584d70eb73b772bff3321c09b4f8d9dcc32d2c35b9c0d1a74e64",
+          "source_sha256": "3b9483cf09f623fe8076b71aab13fb2761ac07468e5cfc7b707550d3af02e7a8"
+         },
+         {
+          "date": "2020-03-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "3e9dead51affefc927e63919cdbbcf5217a093b9b9a14f9a6353d59ee34634c5",
+          "source_sha256": "2424d62c31b47a946938db2aae3694b8765791605daae7a2f979fea3a8f9ff6a"
+         },
+         {
+          "date": "2020-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "0ab427e4ebf16685555a7d45fc108812819d94cdaa1a8b01aaef68b4332470ac",
+          "source_sha256": "0666a8efab32deb15edac4552df609738c931454c7d5b1371afc27bfb4933a5e"
+         },
+         {
+          "date": "2020-12-24",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "22aa0eb8702038ec790aeed04b77412eaa3441a0391bf4c99adb2b8b9d039020",
+          "source_sha256": "15dc22fb228729697e4847f0acd812254bee6e3db12c04267648f0aaf78ae887"
+         },
+         {
+          "date": "2020-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "1d89d92bfefea0c773721de6dc89236cfda3e31df98c1184043e4e1bf6d8ef47",
+          "source_sha256": "36a85665983b8a6da65b9aadce524ef3858ccd7d3e1f8489994bcf4f9b138f26"
+         },
+         {
+          "date": "2020-12-31",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "d9365028fd3d3fb783c97d4278021f5c9384b9c3ecd6125a501edfb2dc4b8d42",
+          "source_sha256": "7272a8dfdf7d1aa9ca02fe4607ab0f9b258dfc6c501658e8407c9ad9da42a128"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355415.552407,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355442.5197284,
+       "result": {
+        "complete": 10,
+        "failures": [
+         {
+          "date": "2020-01-04",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2020-03-28",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2020-12-25",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2020-12-26",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2019-12-31",
+         "2020-01-01",
+         "2020-01-02",
+         "2020-01-03",
+         "2020-01-04",
+         "2020-03-28",
+         "2020-03-29",
+         "2020-03-30",
+         "2020-12-23",
+         "2020-12-24",
+         "2020-12-25",
+         "2020-12-26",
+         "2020-12-30",
+         "2020-12-31"
+        ],
+        "results": [
+         {
+          "date": "2019-12-31",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "6622b61f899291d0d71f69ca66bb6e143300ccd3cf28508192d0cbc35a28bf6e",
+          "source_sha256": "abc1a97b4db149ca861d34f0213bb2f30ea1df7ebbba1ad20589ab1075dbc014"
+         },
+         {
+          "date": "2020-01-01",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "673b83de4408bdd184924755569e5440f9cf0b2e18a4abdafd37497a47d93b59",
+          "source_sha256": "8d834ddfe1546ca91e783202ab2f5d4e8994c46c6b74d17fffb014c15caa184f"
+         },
+         {
+          "date": "2020-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "9420a2c194517538d94445cb4921090b731a9c2c0118366ca6832ddb59d7a3dd",
+          "source_sha256": "33ec6d4637b4175123f168cd31c81bca10747f0624ebe3f476ac68111d5395e0"
+         },
+         {
+          "date": "2020-01-03",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "77a815c677d66c113d10c8b0cce8c3d10a20eb20efd5c1613bce132b1c2bdce2",
+          "source_sha256": "2dcfcf734623683a3f73591941546a29f91d735851a3e6a88d7917a070c7e90e"
+         },
+         {
+          "date": "2020-03-29",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "aafce82d2572584d70eb73b772bff3321c09b4f8d9dcc32d2c35b9c0d1a74e64",
+          "source_sha256": "3b9483cf09f623fe8076b71aab13fb2761ac07468e5cfc7b707550d3af02e7a8"
+         },
+         {
+          "date": "2020-03-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "3e9dead51affefc927e63919cdbbcf5217a093b9b9a14f9a6353d59ee34634c5",
+          "source_sha256": "2424d62c31b47a946938db2aae3694b8765791605daae7a2f979fea3a8f9ff6a"
+         },
+         {
+          "date": "2020-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "0ab427e4ebf16685555a7d45fc108812819d94cdaa1a8b01aaef68b4332470ac",
+          "source_sha256": "0666a8efab32deb15edac4552df609738c931454c7d5b1371afc27bfb4933a5e"
+         },
+         {
+          "date": "2020-12-24",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "22aa0eb8702038ec790aeed04b77412eaa3441a0391bf4c99adb2b8b9d039020",
+          "source_sha256": "15dc22fb228729697e4847f0acd812254bee6e3db12c04267648f0aaf78ae887"
+         },
+         {
+          "date": "2020-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "1d89d92bfefea0c773721de6dc89236cfda3e31df98c1184043e4e1bf6d8ef47",
+          "source_sha256": "36a85665983b8a6da65b9aadce524ef3858ccd7d3e1f8489994bcf4f9b138f26"
+         },
+         {
+          "date": "2020-12-31",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "d9365028fd3d3fb783c97d4278021f5c9384b9c3ecd6125a501edfb2dc4b8d42",
+          "source_sha256": "7272a8dfdf7d1aa9ca02fe4607ab0f9b258dfc6c501658e8407c9ad9da42a128"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355431.9120226,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2019-12-31",
+      "2020-01-01",
+      "2020-01-02",
+      "2020-01-03",
+      "2020-01-04",
+      "2020-03-28",
+      "2020-03-29",
+      "2020-03-30",
+      "2020-12-23",
+      "2020-12-24",
+      "2020-12-25",
+      "2020-12-26",
+      "2020-12-30",
+      "2020-12-31"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355461.6550562,
+       "result": {
+        "complete": 8,
+        "failures": [
+         {
+          "date": "2021-01-01",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2021-01-02",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2021-12-25",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2022-01-01",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2022-12-24",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2022-12-31",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2021-01-01",
+         "2021-01-02",
+         "2021-12-23",
+         "2021-12-24",
+         "2021-12-25",
+         "2021-12-30",
+         "2021-12-31",
+         "2022-01-01",
+         "2022-12-24",
+         "2022-12-25",
+         "2022-12-26",
+         "2022-12-29",
+         "2022-12-30",
+         "2022-12-31"
+        ],
+        "results": [
+         {
+          "date": "2021-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "7735130fa3fbbd8f80a4d37a8251576b1c486c9f70d46281153bbcade1c2477b",
+          "source_sha256": "e9d9a79ace19d60cda5f212b3aef1826107e32f2cdfbbee689fee1df9cef7ead"
+         },
+         {
+          "date": "2021-12-24",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "d779ae9fca17dcbf2abd3ecc143da442a2dcd41c503d7ca82dc2bf6f19f05623",
+          "source_sha256": "4aa4d8dcbd5ecb539afa47484087426133d1a4248d3c24487406fc8e3385baeb"
+         },
+         {
+          "date": "2021-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "110b65e7f6849b080fb9fac02b5b70ed4302ec3d93606093efc57622c9dd184f",
+          "source_sha256": "96757243ca2ffefba7de3b514008966965e3fe3218edb35886595103f7d2364f"
+         },
+         {
+          "date": "2021-12-31",
+          "observations": {
+           "EURUSD": 1200,
+           "GBPUSD": 1200
+          },
+          "parquet_sha256": "038b8d7a684c64a42fe39405302c2ac560d3031c732b045040deafe0d0cf5a1b",
+          "source_sha256": "3340ef915feacaccc22b18becb30157eac5ecaa0e6e141527fc853569d31b7bf"
+         },
+         {
+          "date": "2022-12-25",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "67b3a0231c46a8a3c9623551ac66db25b17a384924b7f5ddd4d3fa8495fa4a19",
+          "source_sha256": "c0b38d0eb37a0f39b28413ae486fd1629b0345334088cbbd3e8761eda3c82475"
+         },
+         {
+          "date": "2022-12-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "592724031adae9d236f80a28d335137c272334848b6b227ac13e82c44006c9d3",
+          "source_sha256": "1e23be4fc0b6fad60a57a2c29b398e9ea8a352d3ae0a9f8832b8022580dcface"
+         },
+         {
+          "date": "2022-12-29",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ff3c685263df5badf84707017f8891673f2ee8958f257fb09a60cdf292f7c109",
+          "source_sha256": "3ba8b646c0d2a3760b5aa34e2d76bcdbfa48f83c695df46dba5bc3e354fd6a31"
+         },
+         {
+          "date": "2022-12-30",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "8763e2f0488bf9f6ae74606fb52bf53f173c279850296573ab32ce778e31b1cf",
+          "source_sha256": "c9ee03374ffa346d4074a384b343ae54b8f4bda42eb2dde2efdfb4f38e663e4a"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355442.5219302,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355475.7691984,
+       "result": {
+        "complete": 8,
+        "failures": [
+         {
+          "date": "2021-01-01",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2021-01-02",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2021-12-25",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2022-01-01",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2022-12-24",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2022-12-31",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2021-01-01",
+         "2021-01-02",
+         "2021-12-23",
+         "2021-12-24",
+         "2021-12-25",
+         "2021-12-30",
+         "2021-12-31",
+         "2022-01-01",
+         "2022-12-24",
+         "2022-12-25",
+         "2022-12-26",
+         "2022-12-29",
+         "2022-12-30",
+         "2022-12-31"
+        ],
+        "results": [
+         {
+          "date": "2021-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "7735130fa3fbbd8f80a4d37a8251576b1c486c9f70d46281153bbcade1c2477b",
+          "source_sha256": "e9d9a79ace19d60cda5f212b3aef1826107e32f2cdfbbee689fee1df9cef7ead"
+         },
+         {
+          "date": "2021-12-24",
+          "observations": {
+           "EURUSD": 1199,
+           "GBPUSD": 1199
+          },
+          "parquet_sha256": "d779ae9fca17dcbf2abd3ecc143da442a2dcd41c503d7ca82dc2bf6f19f05623",
+          "source_sha256": "4aa4d8dcbd5ecb539afa47484087426133d1a4248d3c24487406fc8e3385baeb"
+         },
+         {
+          "date": "2021-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "110b65e7f6849b080fb9fac02b5b70ed4302ec3d93606093efc57622c9dd184f",
+          "source_sha256": "96757243ca2ffefba7de3b514008966965e3fe3218edb35886595103f7d2364f"
+         },
+         {
+          "date": "2021-12-31",
+          "observations": {
+           "EURUSD": 1200,
+           "GBPUSD": 1200
+          },
+          "parquet_sha256": "038b8d7a684c64a42fe39405302c2ac560d3031c732b045040deafe0d0cf5a1b",
+          "source_sha256": "3340ef915feacaccc22b18becb30157eac5ecaa0e6e141527fc853569d31b7bf"
+         },
+         {
+          "date": "2022-12-25",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "67b3a0231c46a8a3c9623551ac66db25b17a384924b7f5ddd4d3fa8495fa4a19",
+          "source_sha256": "c0b38d0eb37a0f39b28413ae486fd1629b0345334088cbbd3e8761eda3c82475"
+         },
+         {
+          "date": "2022-12-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "592724031adae9d236f80a28d335137c272334848b6b227ac13e82c44006c9d3",
+          "source_sha256": "1e23be4fc0b6fad60a57a2c29b398e9ea8a352d3ae0a9f8832b8022580dcface"
+         },
+         {
+          "date": "2022-12-29",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ff3c685263df5badf84707017f8891673f2ee8958f257fb09a60cdf292f7c109",
+          "source_sha256": "3ba8b646c0d2a3760b5aa34e2d76bcdbfa48f83c695df46dba5bc3e354fd6a31"
+         },
+         {
+          "date": "2022-12-30",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "8763e2f0488bf9f6ae74606fb52bf53f173c279850296573ab32ce778e31b1cf",
+          "source_sha256": "c9ee03374ffa346d4074a384b343ae54b8f4bda42eb2dde2efdfb4f38e663e4a"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355461.6550598,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2021-01-01",
+      "2021-01-02",
+      "2021-12-23",
+      "2021-12-24",
+      "2021-12-25",
+      "2021-12-30",
+      "2021-12-31",
+      "2022-01-01",
+      "2022-12-24",
+      "2022-12-25",
+      "2022-12-26",
+      "2022-12-29",
+      "2022-12-30",
+      "2022-12-31"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355493.7492945,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2023-07-01",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2023-07-08",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2023-12-23",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2023-01-01",
+         "2023-01-02",
+         "2023-01-03",
+         "2023-07-01",
+         "2023-07-02",
+         "2023-07-03",
+         "2023-07-04",
+         "2023-07-05",
+         "2023-07-06",
+         "2023-07-07",
+         "2023-07-08",
+         "2023-12-23",
+         "2023-12-24",
+         "2023-12-25"
+        ],
+        "results": [
+         {
+          "date": "2023-01-01",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "9ed1bc7535e2d95e0127437edb4164fb0d98e54c0c5d570ba31618b6d5c0e869",
+          "source_sha256": "f84fc23db30de5f3a1d8d31ab4ec7c53fa18bc4c73a595bed05563da9fab125a"
+         },
+         {
+          "date": "2023-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d5cb7114898906ecba3bdd6402b1a05049e4eb5d1f075f541ae82368d3369af1",
+          "source_sha256": "8339bc61c1aa73523bca4777698c3a24f3599a26721a656a55f22c433193eb9a"
+         },
+         {
+          "date": "2023-01-03",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "80540a040672d0a631f0b26a7a0710e3ab0f66af2f3c5d87937558d6c0aeaaca",
+          "source_sha256": "5633df07c72db2aefd7e5b54ef477a485def3a2639c726997801262990cb56b9"
+         },
+         {
+          "date": "2023-07-02",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "f7e646c899210fcbfa1d862eda52384761dbe1e882c9612295b08098ed1e26de",
+          "source_sha256": "b0a71a417ae6de23de5d2018c6c5e592f7a853ffc558e99a79b6c1f6b1da9d9c"
+         },
+         {
+          "date": "2023-07-03",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ee22968e5f9d0554cbe97d6703cbcff832a25f0bc1145568323f84b7df4abb26",
+          "source_sha256": "6ea470673c36b1c592a4c13edd97e6fe849a12610aac063ff0ebc1be5d172617"
+         },
+         {
+          "date": "2023-07-04",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "256fdea3f4e4505b64a49bccbdee338297b165f494131d83780130b331c617f0",
+          "source_sha256": "3b1a4e3eddf6a45190abbcfb6114b0b68bcfa57f7672d991b9e409292efc09cb"
+         },
+         {
+          "date": "2023-07-05",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ebec0685e44e3a7a6f0cec9d4564086153fc4a764dbd1ca1e41466d96cecfdeb",
+          "source_sha256": "3fc3aafc32319d7982250057d860c48252e98c10267fc953126357c347c17a32"
+         },
+         {
+          "date": "2023-07-06",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "e504f94e4c04376df7586836ff6e68ec5ec42fc6b0ab1e1a45bf9c52b50f8872",
+          "source_sha256": "d166b350068a821e57484c0329b2614f679f1bfb9c8e68822ed1eb43c3012a71"
+         },
+         {
+          "date": "2023-07-07",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "f6bd37b83b4acae0b17217c823e08d7bd54639ceae3a3bc0dd93eef94e5945d4",
+          "source_sha256": "ce8848131b5e113411893e5509e953e40cdd729254b2cc0e990faac0ae2b5c81"
+         },
+         {
+          "date": "2023-12-24",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "8f37d254d4a8f6d15e6284711699e5873baa9871881846e02d42e5d5f6afc429",
+          "source_sha256": "272bfdc5c9958673dec9b3858f8810bc993be97dee88230576a7a758c9ca41a4"
+         },
+         {
+          "date": "2023-12-25",
+          "observations": {
+           "EURUSD": 974,
+           "GBPUSD": 974
+          },
+          "parquet_sha256": "3e28bf0dbefafc49a1af230be856c5219308e4bde06d1ca5258dfd52a075eaec",
+          "source_sha256": "d7ebfaebb9688d3b341803b3713cc799ba0e97d1468e781572bf212a9b058c4e"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355475.7710228,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355503.8559353,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2023-07-01",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2023-07-08",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2023-12-23",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2023-01-01",
+         "2023-01-02",
+         "2023-01-03",
+         "2023-07-01",
+         "2023-07-02",
+         "2023-07-03",
+         "2023-07-04",
+         "2023-07-05",
+         "2023-07-06",
+         "2023-07-07",
+         "2023-07-08",
+         "2023-12-23",
+         "2023-12-24",
+         "2023-12-25"
+        ],
+        "results": [
+         {
+          "date": "2023-01-01",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "9ed1bc7535e2d95e0127437edb4164fb0d98e54c0c5d570ba31618b6d5c0e869",
+          "source_sha256": "f84fc23db30de5f3a1d8d31ab4ec7c53fa18bc4c73a595bed05563da9fab125a"
+         },
+         {
+          "date": "2023-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d5cb7114898906ecba3bdd6402b1a05049e4eb5d1f075f541ae82368d3369af1",
+          "source_sha256": "8339bc61c1aa73523bca4777698c3a24f3599a26721a656a55f22c433193eb9a"
+         },
+         {
+          "date": "2023-01-03",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "80540a040672d0a631f0b26a7a0710e3ab0f66af2f3c5d87937558d6c0aeaaca",
+          "source_sha256": "5633df07c72db2aefd7e5b54ef477a485def3a2639c726997801262990cb56b9"
+         },
+         {
+          "date": "2023-07-02",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "f7e646c899210fcbfa1d862eda52384761dbe1e882c9612295b08098ed1e26de",
+          "source_sha256": "b0a71a417ae6de23de5d2018c6c5e592f7a853ffc558e99a79b6c1f6b1da9d9c"
+         },
+         {
+          "date": "2023-07-03",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ee22968e5f9d0554cbe97d6703cbcff832a25f0bc1145568323f84b7df4abb26",
+          "source_sha256": "6ea470673c36b1c592a4c13edd97e6fe849a12610aac063ff0ebc1be5d172617"
+         },
+         {
+          "date": "2023-07-04",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "256fdea3f4e4505b64a49bccbdee338297b165f494131d83780130b331c617f0",
+          "source_sha256": "3b1a4e3eddf6a45190abbcfb6114b0b68bcfa57f7672d991b9e409292efc09cb"
+         },
+         {
+          "date": "2023-07-05",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ebec0685e44e3a7a6f0cec9d4564086153fc4a764dbd1ca1e41466d96cecfdeb",
+          "source_sha256": "3fc3aafc32319d7982250057d860c48252e98c10267fc953126357c347c17a32"
+         },
+         {
+          "date": "2023-07-06",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "e504f94e4c04376df7586836ff6e68ec5ec42fc6b0ab1e1a45bf9c52b50f8872",
+          "source_sha256": "d166b350068a821e57484c0329b2614f679f1bfb9c8e68822ed1eb43c3012a71"
+         },
+         {
+          "date": "2023-07-07",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "f6bd37b83b4acae0b17217c823e08d7bd54639ceae3a3bc0dd93eef94e5945d4",
+          "source_sha256": "ce8848131b5e113411893e5509e953e40cdd729254b2cc0e990faac0ae2b5c81"
+         },
+         {
+          "date": "2023-12-24",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "8f37d254d4a8f6d15e6284711699e5873baa9871881846e02d42e5d5f6afc429",
+          "source_sha256": "272bfdc5c9958673dec9b3858f8810bc993be97dee88230576a7a758c9ca41a4"
+         },
+         {
+          "date": "2023-12-25",
+          "observations": {
+           "EURUSD": 974,
+           "GBPUSD": 974
+          },
+          "parquet_sha256": "3e28bf0dbefafc49a1af230be856c5219308e4bde06d1ca5258dfd52a075eaec",
+          "source_sha256": "d7ebfaebb9688d3b341803b3713cc799ba0e97d1468e781572bf212a9b058c4e"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355493.7492979,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2023-01-01",
+      "2023-01-02",
+      "2023-01-03",
+      "2023-07-01",
+      "2023-07-02",
+      "2023-07-03",
+      "2023-07-04",
+      "2023-07-05",
+      "2023-07-06",
+      "2023-07-07",
+      "2023-07-08",
+      "2023-12-23",
+      "2023-12-24",
+      "2023-12-25"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355522.4410222,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2023-12-30",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2023-12-31",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2024-08-24",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2023-12-26",
+         "2023-12-27",
+         "2023-12-28",
+         "2023-12-29",
+         "2023-12-30",
+         "2023-12-31",
+         "2024-01-01",
+         "2024-01-02",
+         "2024-01-03",
+         "2024-08-24",
+         "2024-08-25",
+         "2024-08-26",
+         "2024-08-27",
+         "2024-08-28"
+        ],
+        "results": [
+         {
+          "date": "2023-12-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "00b082aa50eeede50d3b61ff115509de1833822ac14300761d3a9b3dd1c5e0b4",
+          "source_sha256": "9308a1bd3a5576d4588d7ee217eb74398faa12ba2a01bdbb85d5d110b8a352e8"
+         },
+         {
+          "date": "2023-12-27",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "a74a59ac1c014d31d4ed92c58bde4993d47b0436d137216557eb6cbc0fb24e90",
+          "source_sha256": "99eb7eeb2c5367f208876a84576dae655c954f7d3fbfe6820d518ec2c729f29e"
+         },
+         {
+          "date": "2023-12-28",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "2b8ee7512445617de95672b6d036f700f763d61120cc2c6b57531b616cbb8988",
+          "source_sha256": "e6acfec7c1a0acb5fce5155f8529690a02b045eb8332365ca4aa4642228ae64e"
+         },
+         {
+          "date": "2023-12-29",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "fccba82b4760f9c704a684b9b022ed805d019d884803218b5327a69faffe49f7",
+          "source_sha256": "a99287ddd54b05132512edc3a1f9e4363a9a72ac74090381a91ee24afb32f84c"
+         },
+         {
+          "date": "2024-01-01",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "eb24b5ae0a6630085b970411c6ab32471f87f8ca80a3fc1d3ae57a3fa436b3f2",
+          "source_sha256": "ae857a6384ef139fb5ad699d8c5d3a5238d43f9a4fdab18f611436e27d94c3c1"
+         },
+         {
+          "date": "2024-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "33f919f019573df7fe6e3a0c6b75ee259a8d8bc0851843e326615f103a2dc262",
+          "source_sha256": "1e3b4bca10528f127ffebc906c1f6410f997a4f49060f30e4dc85dd5fb4dc824"
+         },
+         {
+          "date": "2024-01-03",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "f5fd2f4313800fba8bb973a0a039ea417cc2174b5a21abe599d0077c606c6116",
+          "source_sha256": "b45f7845ae062adc49b0b999be4e0d334075afc4324bd5bb334a8f902b5e3f63"
+         },
+         {
+          "date": "2024-08-25",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 58
+          },
+          "parquet_sha256": "086c641d246cf44e074fb783bcf2e800ac8a8a373acf4a1a232df09273b9892a",
+          "source_sha256": "b1114a6b00ca4ccd866f85b122a43056874debae6afe84f04e889fbdb84a28b0"
+         },
+         {
+          "date": "2024-08-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "345a365c17dde37b8d6cc46a8d5be008cfdedaf2cd91d3f9b4a052eb40166b25",
+          "source_sha256": "34c6a414253c2ed449ad16cfe4b4947f0acf6ddba27d958925fcd389cc50b578"
+         },
+         {
+          "date": "2024-08-27",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "546cc71c5273e1076ce954895f0ca30a83d509474e4f4c87cbdc6062fd534322",
+          "source_sha256": "ad220e816c2a42a1c7334cb89114c62119726655d773a7b22d1b1d794bd8e360"
+         },
+         {
+          "date": "2024-08-28",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "130847c983e54ebc96a0cdd40a081418ccd55f696cc09d6cd53a0abc46e31f25",
+          "source_sha256": "7c53012a2e8212aabc640f2c40e8be823f0bdf3af3606ba4e43420240e6c1861"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355503.8615603,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355532.2941961,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2023-12-30",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2023-12-31",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2024-08-24",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2023-12-26",
+         "2023-12-27",
+         "2023-12-28",
+         "2023-12-29",
+         "2023-12-30",
+         "2023-12-31",
+         "2024-01-01",
+         "2024-01-02",
+         "2024-01-03",
+         "2024-08-24",
+         "2024-08-25",
+         "2024-08-26",
+         "2024-08-27",
+         "2024-08-28"
+        ],
+        "results": [
+         {
+          "date": "2023-12-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "00b082aa50eeede50d3b61ff115509de1833822ac14300761d3a9b3dd1c5e0b4",
+          "source_sha256": "9308a1bd3a5576d4588d7ee217eb74398faa12ba2a01bdbb85d5d110b8a352e8"
+         },
+         {
+          "date": "2023-12-27",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "a74a59ac1c014d31d4ed92c58bde4993d47b0436d137216557eb6cbc0fb24e90",
+          "source_sha256": "99eb7eeb2c5367f208876a84576dae655c954f7d3fbfe6820d518ec2c729f29e"
+         },
+         {
+          "date": "2023-12-28",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "2b8ee7512445617de95672b6d036f700f763d61120cc2c6b57531b616cbb8988",
+          "source_sha256": "e6acfec7c1a0acb5fce5155f8529690a02b045eb8332365ca4aa4642228ae64e"
+         },
+         {
+          "date": "2023-12-29",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "fccba82b4760f9c704a684b9b022ed805d019d884803218b5327a69faffe49f7",
+          "source_sha256": "a99287ddd54b05132512edc3a1f9e4363a9a72ac74090381a91ee24afb32f84c"
+         },
+         {
+          "date": "2024-01-01",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "eb24b5ae0a6630085b970411c6ab32471f87f8ca80a3fc1d3ae57a3fa436b3f2",
+          "source_sha256": "ae857a6384ef139fb5ad699d8c5d3a5238d43f9a4fdab18f611436e27d94c3c1"
+         },
+         {
+          "date": "2024-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "33f919f019573df7fe6e3a0c6b75ee259a8d8bc0851843e326615f103a2dc262",
+          "source_sha256": "1e3b4bca10528f127ffebc906c1f6410f997a4f49060f30e4dc85dd5fb4dc824"
+         },
+         {
+          "date": "2024-01-03",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "f5fd2f4313800fba8bb973a0a039ea417cc2174b5a21abe599d0077c606c6116",
+          "source_sha256": "b45f7845ae062adc49b0b999be4e0d334075afc4324bd5bb334a8f902b5e3f63"
+         },
+         {
+          "date": "2024-08-25",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 58
+          },
+          "parquet_sha256": "086c641d246cf44e074fb783bcf2e800ac8a8a373acf4a1a232df09273b9892a",
+          "source_sha256": "b1114a6b00ca4ccd866f85b122a43056874debae6afe84f04e889fbdb84a28b0"
+         },
+         {
+          "date": "2024-08-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "345a365c17dde37b8d6cc46a8d5be008cfdedaf2cd91d3f9b4a052eb40166b25",
+          "source_sha256": "34c6a414253c2ed449ad16cfe4b4947f0acf6ddba27d958925fcd389cc50b578"
+         },
+         {
+          "date": "2024-08-27",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "546cc71c5273e1076ce954895f0ca30a83d509474e4f4c87cbdc6062fd534322",
+          "source_sha256": "ad220e816c2a42a1c7334cb89114c62119726655d773a7b22d1b1d794bd8e360"
+         },
+         {
+          "date": "2024-08-28",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "130847c983e54ebc96a0cdd40a081418ccd55f696cc09d6cd53a0abc46e31f25",
+          "source_sha256": "7c53012a2e8212aabc640f2c40e8be823f0bdf3af3606ba4e43420240e6c1861"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355522.4410257,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2023-12-26",
+      "2023-12-27",
+      "2023-12-28",
+      "2023-12-29",
+      "2023-12-30",
+      "2023-12-31",
+      "2024-01-01",
+      "2024-01-02",
+      "2024-01-03",
+      "2024-08-24",
+      "2024-08-25",
+      "2024-08-26",
+      "2024-08-27",
+      "2024-08-28"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355549.681546,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2024-08-31",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2024-12-14",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2024-12-21",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2024-08-29",
+         "2024-08-30",
+         "2024-08-31",
+         "2024-12-14",
+         "2024-12-15",
+         "2024-12-16",
+         "2024-12-17",
+         "2024-12-18",
+         "2024-12-19",
+         "2024-12-20",
+         "2024-12-21",
+         "2024-12-22",
+         "2024-12-23",
+         "2024-12-24"
+        ],
+        "results": [
+         {
+          "date": "2024-08-29",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d4b3c7e5da66919932def55431d14d050689b5e92fe43f3a0a9115f7121da220",
+          "source_sha256": "a571a84052283055f5cd829bc9b7176ce41b12ff6dfa21b41ea52500ddafb92f"
+         },
+         {
+          "date": "2024-08-30",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "9d795150ce5772863dcba74003a5552fed69ec9497cc8c660d60ab479fea7dd8",
+          "source_sha256": "46523d393ac9fce9bce9279b3e441d22d8d1ae00521a3e2b9e789e243b3d89f4"
+         },
+         {
+          "date": "2024-12-15",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "75fbc80db24f0a3a184bf7038a5fdc3fde1ad54bd078c07513048785f31d922a",
+          "source_sha256": "71895dd1fc7e80336e4fa3709fc4305aa38a082d3b513ccbb6ba4b6cf6f4f697"
+         },
+         {
+          "date": "2024-12-16",
+          "observations": {
+           "EURUSD": 1437,
+           "GBPUSD": 1437
+          },
+          "parquet_sha256": "4f3e95bcaf5abc94c62985e4fb73d95144cc817f99def5d5c58692204b43cb52",
+          "source_sha256": "9af14c5f0369ed44b6955dd4cf49621b1c4abf06306611fa960e5e7aa58cc851"
+         },
+         {
+          "date": "2024-12-17",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "7bcf15724fb029d3aa6093fa7df6657b760ad838e395fcba68243cbb81033f4b",
+          "source_sha256": "5521a478c508d52921117159b1291cc280e5fd037965e310e80159d990cf2091"
+         },
+         {
+          "date": "2024-12-18",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "e75ab916db9ccf14442939cc59d73f40939b4cf1b7dba4e9f8026e0944a2e816",
+          "source_sha256": "120c7b07f3ad1d135d1c844858ec75e47c1bc0351336b296ca00e8096d2002c8"
+         },
+         {
+          "date": "2024-12-19",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "9f8569eab9becec43b2ed50b8edbf0a6b46049e0431d3e367f2373ae42707b9c",
+          "source_sha256": "7a32b84278786473d71ebf25610aaa557e997ea300e94514b101327948e32686"
+         },
+         {
+          "date": "2024-12-20",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "f639a1cd7d2b2978671dbbf30b9b12b9bf797736edc049beebc4b05a153c401e",
+          "source_sha256": "01cc21eb56708c1ba109cbaeff5feda2b5b1228542ec9ddaf4df30b802a54934"
+         },
+         {
+          "date": "2024-12-22",
+          "observations": {
+           "EURUSD": 55,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "f418c195b9b6879a0c4c65aea328703e4b62971671117e7f3ff85cdabf9adc2d",
+          "source_sha256": "8555eddb912e9a3759e78446ed7867f256074c605034c0f2e0087318c20d35c3"
+         },
+         {
+          "date": "2024-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ffce5f842bc791bd24b4df4779ba69e0ddad3e18ea3dd3c1a1a5e934f9ac2d73",
+          "source_sha256": "c05336ffe96939ccecf2f1564e7bba5f6c8ce41d14470552df4fb5ab1799d6fe"
+         },
+         {
+          "date": "2024-12-24",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "a91384d901a39d69b08e2723869f037ca12d01f97ccc7e30c0246e322e8c6a1b",
+          "source_sha256": "3c33e80e22b08314817213ab32cb616af5c1906c7ee9fc2ace286a2fc9dcbae8"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355532.299364,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355561.1414106,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2024-08-31",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2024-12-14",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2024-12-21",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2024-08-29",
+         "2024-08-30",
+         "2024-08-31",
+         "2024-12-14",
+         "2024-12-15",
+         "2024-12-16",
+         "2024-12-17",
+         "2024-12-18",
+         "2024-12-19",
+         "2024-12-20",
+         "2024-12-21",
+         "2024-12-22",
+         "2024-12-23",
+         "2024-12-24"
+        ],
+        "results": [
+         {
+          "date": "2024-08-29",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d4b3c7e5da66919932def55431d14d050689b5e92fe43f3a0a9115f7121da220",
+          "source_sha256": "a571a84052283055f5cd829bc9b7176ce41b12ff6dfa21b41ea52500ddafb92f"
+         },
+         {
+          "date": "2024-08-30",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "9d795150ce5772863dcba74003a5552fed69ec9497cc8c660d60ab479fea7dd8",
+          "source_sha256": "46523d393ac9fce9bce9279b3e441d22d8d1ae00521a3e2b9e789e243b3d89f4"
+         },
+         {
+          "date": "2024-12-15",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "75fbc80db24f0a3a184bf7038a5fdc3fde1ad54bd078c07513048785f31d922a",
+          "source_sha256": "71895dd1fc7e80336e4fa3709fc4305aa38a082d3b513ccbb6ba4b6cf6f4f697"
+         },
+         {
+          "date": "2024-12-16",
+          "observations": {
+           "EURUSD": 1437,
+           "GBPUSD": 1437
+          },
+          "parquet_sha256": "4f3e95bcaf5abc94c62985e4fb73d95144cc817f99def5d5c58692204b43cb52",
+          "source_sha256": "9af14c5f0369ed44b6955dd4cf49621b1c4abf06306611fa960e5e7aa58cc851"
+         },
+         {
+          "date": "2024-12-17",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "7bcf15724fb029d3aa6093fa7df6657b760ad838e395fcba68243cbb81033f4b",
+          "source_sha256": "5521a478c508d52921117159b1291cc280e5fd037965e310e80159d990cf2091"
+         },
+         {
+          "date": "2024-12-18",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "e75ab916db9ccf14442939cc59d73f40939b4cf1b7dba4e9f8026e0944a2e816",
+          "source_sha256": "120c7b07f3ad1d135d1c844858ec75e47c1bc0351336b296ca00e8096d2002c8"
+         },
+         {
+          "date": "2024-12-19",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "9f8569eab9becec43b2ed50b8edbf0a6b46049e0431d3e367f2373ae42707b9c",
+          "source_sha256": "7a32b84278786473d71ebf25610aaa557e997ea300e94514b101327948e32686"
+         },
+         {
+          "date": "2024-12-20",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "f639a1cd7d2b2978671dbbf30b9b12b9bf797736edc049beebc4b05a153c401e",
+          "source_sha256": "01cc21eb56708c1ba109cbaeff5feda2b5b1228542ec9ddaf4df30b802a54934"
+         },
+         {
+          "date": "2024-12-22",
+          "observations": {
+           "EURUSD": 55,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "f418c195b9b6879a0c4c65aea328703e4b62971671117e7f3ff85cdabf9adc2d",
+          "source_sha256": "8555eddb912e9a3759e78446ed7867f256074c605034c0f2e0087318c20d35c3"
+         },
+         {
+          "date": "2024-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "ffce5f842bc791bd24b4df4779ba69e0ddad3e18ea3dd3c1a1a5e934f9ac2d73",
+          "source_sha256": "c05336ffe96939ccecf2f1564e7bba5f6c8ce41d14470552df4fb5ab1799d6fe"
+         },
+         {
+          "date": "2024-12-24",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "a91384d901a39d69b08e2723869f037ca12d01f97ccc7e30c0246e322e8c6a1b",
+          "source_sha256": "3c33e80e22b08314817213ab32cb616af5c1906c7ee9fc2ace286a2fc9dcbae8"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355549.6815512,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2024-08-29",
+      "2024-08-30",
+      "2024-08-31",
+      "2024-12-14",
+      "2024-12-15",
+      "2024-12-16",
+      "2024-12-17",
+      "2024-12-18",
+      "2024-12-19",
+      "2024-12-20",
+      "2024-12-21",
+      "2024-12-22",
+      "2024-12-23",
+      "2024-12-24"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355579.1698804,
+       "result": {
+        "complete": 12,
+        "failures": [
+         {
+          "date": "2024-12-28",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-01-04",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2024-12-25",
+         "2024-12-26",
+         "2024-12-27",
+         "2024-12-28",
+         "2024-12-30",
+         "2024-12-31",
+         "2025-01-01",
+         "2025-01-02",
+         "2025-01-03",
+         "2025-01-04",
+         "2025-01-05",
+         "2025-01-06",
+         "2025-01-07",
+         "2025-01-08"
+        ],
+        "results": [
+         {
+          "date": "2024-12-25",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "74f7e9fc8905fcf0e15e8bebcf88416e1aae5e4b2ea2c6defc6bf31fb8d6df8d",
+          "source_sha256": "2d3158ccab7590289598410bdda3a14e56296f0b17777a7fbb8696e16bd4a580"
+         },
+         {
+          "date": "2024-12-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "9991d712f6a5116b2fb7fd345ec3c3c1364da64850e9d6828bf7897a99b90f1a",
+          "source_sha256": "610510f621e684a20f4b46740c47a89f6740193791a6ddeb691b8d15be948159"
+         },
+         {
+          "date": "2024-12-27",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "31e29f647c4e14993e3cc2da23c3443f1af6fb0ce2452b80252518649787aa0d",
+          "source_sha256": "c8efaba28f7ba66837107f4ae4eeb31e8db6a72ff8e4052d40a4e5153948fbd7"
+         },
+         {
+          "date": "2024-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "3ff085af97ab13914c408f8a0e9040ce3b38b4401408bad404329a0ecb4e341c",
+          "source_sha256": "ff53d9b4eb8eb292050b8e8567014e77df49854ff691ef340f7f0bc199d94aa5"
+         },
+         {
+          "date": "2024-12-31",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "41bc7ce8f0361d90b0ecf617b1e6a6ab8b828f43149cde08188e6ce2195765ba",
+          "source_sha256": "2cb4863a34b01db25ffe7ef4b86485ce9d8beb183f03e7b0979773615caa8d12"
+         },
+         {
+          "date": "2025-01-01",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "bcfd30ca6d467e5003f5870c4733a1ec7b0bfa8fd0af41f73f44ce3617952e6c",
+          "source_sha256": "82349528d639f56895b7ea7d7eaa2ff55a6f756a493ba72a29a6f03e9d383dcd"
+         },
+         {
+          "date": "2025-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "7a116a85008019a76a8d16d8febbed27a2ddf5cefbc0968b5029b4b8e1f5c21a",
+          "source_sha256": "42036fa82dbc15a4815ca6f59c68063c75653885bcf83d86cb648cc7e534221f"
+         },
+         {
+          "date": "2025-01-03",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "be23177bc9d00c4b7ccc77de18529669250ce513c67d7771dadcfacdee5a286c",
+          "source_sha256": "34d8dde1f0d487ba7b6807653945dd9326c625a14acf6aa70221026d5a2991fc"
+         },
+         {
+          "date": "2025-01-05",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 58
+          },
+          "parquet_sha256": "cae61e7103c184e3baabb5910f57da89fdcd8eab720b57da0a31447fa2248ff4",
+          "source_sha256": "dde21a86d9811d9230763233895c8e4bcca2f35d782bc9fdc4afbcb17f0ed674"
+         },
+         {
+          "date": "2025-01-06",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d3bc5b6f340fe19a7984114a44e3555beec30f7a1422188fa2b8e1ea82dc4c0b",
+          "source_sha256": "a1186124d78d22161389829dee9004ecd57f6f1aa3da19b96b9b3f50d0ef60b1"
+         },
+         {
+          "date": "2025-01-07",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d463c38a5e6af486f586532184d70d4adaf03efa1dff4ae3f5ffc500d01639c8",
+          "source_sha256": "ae4c2c774f9059a3654c91017aef5cf6964b82468e3be4d46bd1d8dbc3042916"
+         },
+         {
+          "date": "2025-01-08",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "faf81f901298d763ad58bde9b91f3fd7fcfe2d59ea13d48f66ea728f3903d83d",
+          "source_sha256": "244da154071389d7e81131028d5a69b31987998eef647acf825ee7b49157d01b"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355561.1444368,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355588.819974,
+       "result": {
+        "complete": 12,
+        "failures": [
+         {
+          "date": "2024-12-28",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-01-04",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2024-12-25",
+         "2024-12-26",
+         "2024-12-27",
+         "2024-12-28",
+         "2024-12-30",
+         "2024-12-31",
+         "2025-01-01",
+         "2025-01-02",
+         "2025-01-03",
+         "2025-01-04",
+         "2025-01-05",
+         "2025-01-06",
+         "2025-01-07",
+         "2025-01-08"
+        ],
+        "results": [
+         {
+          "date": "2024-12-25",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "74f7e9fc8905fcf0e15e8bebcf88416e1aae5e4b2ea2c6defc6bf31fb8d6df8d",
+          "source_sha256": "2d3158ccab7590289598410bdda3a14e56296f0b17777a7fbb8696e16bd4a580"
+         },
+         {
+          "date": "2024-12-26",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "9991d712f6a5116b2fb7fd345ec3c3c1364da64850e9d6828bf7897a99b90f1a",
+          "source_sha256": "610510f621e684a20f4b46740c47a89f6740193791a6ddeb691b8d15be948159"
+         },
+         {
+          "date": "2024-12-27",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "31e29f647c4e14993e3cc2da23c3443f1af6fb0ce2452b80252518649787aa0d",
+          "source_sha256": "c8efaba28f7ba66837107f4ae4eeb31e8db6a72ff8e4052d40a4e5153948fbd7"
+         },
+         {
+          "date": "2024-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "3ff085af97ab13914c408f8a0e9040ce3b38b4401408bad404329a0ecb4e341c",
+          "source_sha256": "ff53d9b4eb8eb292050b8e8567014e77df49854ff691ef340f7f0bc199d94aa5"
+         },
+         {
+          "date": "2024-12-31",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "41bc7ce8f0361d90b0ecf617b1e6a6ab8b828f43149cde08188e6ce2195765ba",
+          "source_sha256": "2cb4863a34b01db25ffe7ef4b86485ce9d8beb183f03e7b0979773615caa8d12"
+         },
+         {
+          "date": "2025-01-01",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "bcfd30ca6d467e5003f5870c4733a1ec7b0bfa8fd0af41f73f44ce3617952e6c",
+          "source_sha256": "82349528d639f56895b7ea7d7eaa2ff55a6f756a493ba72a29a6f03e9d383dcd"
+         },
+         {
+          "date": "2025-01-02",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "7a116a85008019a76a8d16d8febbed27a2ddf5cefbc0968b5029b4b8e1f5c21a",
+          "source_sha256": "42036fa82dbc15a4815ca6f59c68063c75653885bcf83d86cb648cc7e534221f"
+         },
+         {
+          "date": "2025-01-03",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "be23177bc9d00c4b7ccc77de18529669250ce513c67d7771dadcfacdee5a286c",
+          "source_sha256": "34d8dde1f0d487ba7b6807653945dd9326c625a14acf6aa70221026d5a2991fc"
+         },
+         {
+          "date": "2025-01-05",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 58
+          },
+          "parquet_sha256": "cae61e7103c184e3baabb5910f57da89fdcd8eab720b57da0a31447fa2248ff4",
+          "source_sha256": "dde21a86d9811d9230763233895c8e4bcca2f35d782bc9fdc4afbcb17f0ed674"
+         },
+         {
+          "date": "2025-01-06",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d3bc5b6f340fe19a7984114a44e3555beec30f7a1422188fa2b8e1ea82dc4c0b",
+          "source_sha256": "a1186124d78d22161389829dee9004ecd57f6f1aa3da19b96b9b3f50d0ef60b1"
+         },
+         {
+          "date": "2025-01-07",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "d463c38a5e6af486f586532184d70d4adaf03efa1dff4ae3f5ffc500d01639c8",
+          "source_sha256": "ae4c2c774f9059a3654c91017aef5cf6964b82468e3be4d46bd1d8dbc3042916"
+         },
+         {
+          "date": "2025-01-08",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "faf81f901298d763ad58bde9b91f3fd7fcfe2d59ea13d48f66ea728f3903d83d",
+          "source_sha256": "244da154071389d7e81131028d5a69b31987998eef647acf825ee7b49157d01b"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355579.1698842,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2024-12-25",
+      "2024-12-26",
+      "2024-12-27",
+      "2024-12-28",
+      "2024-12-30",
+      "2024-12-31",
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355612.5775898,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2025-01-11",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-07-12",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-07-19",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2025-01-09",
+         "2025-01-10",
+         "2025-01-11",
+         "2025-07-12",
+         "2025-07-13",
+         "2025-07-14",
+         "2025-07-15",
+         "2025-07-16",
+         "2025-07-17",
+         "2025-07-18",
+         "2025-07-19",
+         "2025-07-20",
+         "2025-07-21",
+         "2025-07-22"
+        ],
+        "results": [
+         {
+          "date": "2025-01-09",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "f8105c42bb864ef0e0384c56448c83577f5cba5b4e2536fde82c9e21b72dfdee",
+          "source_sha256": "4e089127009405986e4636d435e1db614a6cac4ddb66296ab8f2e5a9947892ce"
+         },
+         {
+          "date": "2025-01-10",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "287b1e0e8a264b2da8956b2af15a2ba8d7918ccef4e5233314b60023adef414a",
+          "source_sha256": "b5fb0f6c0731c9b3ef3a7466ff777b6b20903b8f4d8a4dbe52ede0d111c9b04b"
+         },
+         {
+          "date": "2025-07-13",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "fb944ea2026a23608857230e4531f1d8c7a8f5c5fd233989e2c38092720b4151",
+          "source_sha256": "e3abbf8fd936402df1037db58ab69c6c07f6ee5f1bc63a7edbcf42ca547af666"
+         },
+         {
+          "date": "2025-07-14",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "430f57f75cf4ab8d1ff43dfbd6f6c827aad7335de7873e6ee735670aa7fbdb78",
+          "source_sha256": "e07910cd3faa55fd89ee61366055fdfe9f28f631b97d1783d270ae9046674daa"
+         },
+         {
+          "date": "2025-07-15",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "081d46a8d48474dbd8b6e27b43678321533a935d0043e49636a9119d79497cb4",
+          "source_sha256": "c5822a8ad45a14ef32f8491c7f564033b922e5e24c5cd8f58ad289755c80a1a2"
+         },
+         {
+          "date": "2025-07-16",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "42766ab401db791379e2782b4165771eb97ab40bed81c3b87f9f6638d01ae7e1",
+          "source_sha256": "b9929b03c453c6e4979d13a8ce86c8166343e8614066546179e1e9e13a38b614"
+         },
+         {
+          "date": "2025-07-17",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "28219cef99420ec3c07af5b8ee0db51e53757f8be5ebd95089546a7945fede0d",
+          "source_sha256": "9d26d6ef6a28280ae41187e89877805e625a3bccaf88ede551d6133998b97154"
+         },
+         {
+          "date": "2025-07-18",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "08ee49bf08fde76227be2777c7db6846cf54c50e9d93d31d34472b3e03aa823a",
+          "source_sha256": "875307071504d1de684fe151412ab56a822214cd1792ddba15ecbf33b6e28fb0"
+         },
+         {
+          "date": "2025-07-20",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 59
+          },
+          "parquet_sha256": "b89221ed731f442bf65f2959c92695d2fbdbf91aacdf7b64af5cb1b0adaee5e9",
+          "source_sha256": "0a66c8794db591712d61fdd31b7338f92d1c3b9da0f7dfcb8a54b2b2b097a5ac"
+         },
+         {
+          "date": "2025-07-21",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "f6b83337a8d81ae9e3dc89a44b2956862df04643f34160a4a1bc8d9bdcd5826b",
+          "source_sha256": "c7d6c79ca5d92df56275f47b0d7b9eeb02e0467d9dcf55eccf6b9b48f1438c2b"
+         },
+         {
+          "date": "2025-07-22",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "c1eb5482dbb496c2ae8f2b01506f42e0068647a773030fc3f42f73e57b1c5c70",
+          "source_sha256": "691f0b2ddd84e63c39c5e30f9bb7ee7ae7d1d18823c23c958827f83a86740862"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355588.828126,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355622.0898948,
+       "result": {
+        "complete": 11,
+        "failures": [
+         {
+          "date": "2025-01-11",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-07-12",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-07-19",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2025-01-09",
+         "2025-01-10",
+         "2025-01-11",
+         "2025-07-12",
+         "2025-07-13",
+         "2025-07-14",
+         "2025-07-15",
+         "2025-07-16",
+         "2025-07-17",
+         "2025-07-18",
+         "2025-07-19",
+         "2025-07-20",
+         "2025-07-21",
+         "2025-07-22"
+        ],
+        "results": [
+         {
+          "date": "2025-01-09",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "f8105c42bb864ef0e0384c56448c83577f5cba5b4e2536fde82c9e21b72dfdee",
+          "source_sha256": "4e089127009405986e4636d435e1db614a6cac4ddb66296ab8f2e5a9947892ce"
+         },
+         {
+          "date": "2025-01-10",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "287b1e0e8a264b2da8956b2af15a2ba8d7918ccef4e5233314b60023adef414a",
+          "source_sha256": "b5fb0f6c0731c9b3ef3a7466ff777b6b20903b8f4d8a4dbe52ede0d111c9b04b"
+         },
+         {
+          "date": "2025-07-13",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 60
+          },
+          "parquet_sha256": "fb944ea2026a23608857230e4531f1d8c7a8f5c5fd233989e2c38092720b4151",
+          "source_sha256": "e3abbf8fd936402df1037db58ab69c6c07f6ee5f1bc63a7edbcf42ca547af666"
+         },
+         {
+          "date": "2025-07-14",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "430f57f75cf4ab8d1ff43dfbd6f6c827aad7335de7873e6ee735670aa7fbdb78",
+          "source_sha256": "e07910cd3faa55fd89ee61366055fdfe9f28f631b97d1783d270ae9046674daa"
+         },
+         {
+          "date": "2025-07-15",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "081d46a8d48474dbd8b6e27b43678321533a935d0043e49636a9119d79497cb4",
+          "source_sha256": "c5822a8ad45a14ef32f8491c7f564033b922e5e24c5cd8f58ad289755c80a1a2"
+         },
+         {
+          "date": "2025-07-16",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "42766ab401db791379e2782b4165771eb97ab40bed81c3b87f9f6638d01ae7e1",
+          "source_sha256": "b9929b03c453c6e4979d13a8ce86c8166343e8614066546179e1e9e13a38b614"
+         },
+         {
+          "date": "2025-07-17",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "28219cef99420ec3c07af5b8ee0db51e53757f8be5ebd95089546a7945fede0d",
+          "source_sha256": "9d26d6ef6a28280ae41187e89877805e625a3bccaf88ede551d6133998b97154"
+         },
+         {
+          "date": "2025-07-18",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "08ee49bf08fde76227be2777c7db6846cf54c50e9d93d31d34472b3e03aa823a",
+          "source_sha256": "875307071504d1de684fe151412ab56a822214cd1792ddba15ecbf33b6e28fb0"
+         },
+         {
+          "date": "2025-07-20",
+          "observations": {
+           "EURUSD": 60,
+           "GBPUSD": 59
+          },
+          "parquet_sha256": "b89221ed731f442bf65f2959c92695d2fbdbf91aacdf7b64af5cb1b0adaee5e9",
+          "source_sha256": "0a66c8794db591712d61fdd31b7338f92d1c3b9da0f7dfcb8a54b2b2b097a5ac"
+         },
+         {
+          "date": "2025-07-21",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "f6b83337a8d81ae9e3dc89a44b2956862df04643f34160a4a1bc8d9bdcd5826b",
+          "source_sha256": "c7d6c79ca5d92df56275f47b0d7b9eeb02e0467d9dcf55eccf6b9b48f1438c2b"
+         },
+         {
+          "date": "2025-07-22",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "c1eb5482dbb496c2ae8f2b01506f42e0068647a773030fc3f42f73e57b1c5c70",
+          "source_sha256": "691f0b2ddd84e63c39c5e30f9bb7ee7ae7d1d18823c23c958827f83a86740862"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 14
+       },
+       "started_at": 1792355612.5775945,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-07-12",
+      "2025-07-13",
+      "2025-07-14",
+      "2025-07-15",
+      "2025-07-16",
+      "2025-07-17",
+      "2025-07-18",
+      "2025-07-19",
+      "2025-07-20",
+      "2025-07-21",
+      "2025-07-22"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    },
+    {
+     "attempts": [
+      {
+       "finished_at": 1792355638.5278552,
+       "result": {
+        "complete": 10,
+        "failures": [
+         {
+          "date": "2025-07-26",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-12-27",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2025-07-23",
+         "2025-07-24",
+         "2025-07-25",
+         "2025-07-26",
+         "2025-12-23",
+         "2025-12-24",
+         "2025-12-25",
+         "2025-12-26",
+         "2025-12-27",
+         "2025-12-30",
+         "2025-12-31",
+         "2026-01-01"
+        ],
+        "results": [
+         {
+          "date": "2025-07-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "4ece43bb8a710447e80ff1792192f9a5504c7c83cf1d911802f44e7dea293ccb",
+          "source_sha256": "9ab637a4f684a1e7f8f1486d3473d52c22aefd4a52490007fb857f52d2424233"
+         },
+         {
+          "date": "2025-07-24",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "fc0b55a3af062c21fe1c7f4305d63e8c8e33a8a399d2e5f6e501d05fc5e6801a",
+          "source_sha256": "31853a2db8593914609d38eb862f0158a07c231f1211008ad280992070cd729d"
+         },
+         {
+          "date": "2025-07-25",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "328e1ea6a2d75cf1d0a0729ae72fdc53e3ab736af4734d3af29338c6de60949b",
+          "source_sha256": "5ab2b34b582cf6bb2c51645bd993f0fcaa50d089a314ba750b10e1a2ce7e186d"
+         },
+         {
+          "date": "2025-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "a7505935fe1387dffc14be4792792cf3e58d350c3eafd89869f7bf7c9ae1a587",
+          "source_sha256": "ab1e2d63f22956d8be59a633df1a6779d6b9531639aec7cb994860e6085db333"
+         },
+         {
+          "date": "2025-12-24",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "70ba4576b09ab71e1b7936da43a0f5f0870d40706c6b379e92dc802015023098",
+          "source_sha256": "0c9da1338a68d57671f0f46103966478c00907552732c974cf69407b9a54bbde"
+         },
+         {
+          "date": "2025-12-25",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "3fb9139fd8fcdebcbc4a3948757f96fc53458a6c4d322024820a72e62e3a3e9b",
+          "source_sha256": "4819838d247523b147d3379c7f6c75c2c01119d52301ca9ab967241033943d41"
+         },
+         {
+          "date": "2025-12-26",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "2e6a8599bec0ff6fab09d560b964532c71692e2d8cdc6afad5c2a338e4a93afb",
+          "source_sha256": "ed71d690290a23d416b0a16b4e9e739dfd8b416cd0aa2752f2a874eff261d54c"
+         },
+         {
+          "date": "2025-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "1fc508175ff811a7522ba0c36262798cf7fe2cc0fd8fcfe1ada177c1682b07a5",
+          "source_sha256": "808b66c45cf6aa7f0645bbd4c17604fbf167f26f3aed841dc582ee1e292aa108"
+         },
+         {
+          "date": "2025-12-31",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "6fcc27bf0c9fa35bc3e5414b6152ea0b1b5c67e59e1e1956939ef1a8d63906c5",
+          "source_sha256": "6a670404350909d659bddbef8c9f7adc2e96567e2be9549e9826d010fc92fd77"
+         },
+         {
+          "date": "2026-01-01",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "31b101ef06c1b329ae6eecde79f84163597efe191dcdcdbcd70ac441321907d1",
+          "source_sha256": "0f57a4bc3d6f718abd543cc9b593c540dab0b5ceca7a17cf8618084466c00c5c"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 12
+       },
+       "started_at": 1792355622.098757,
+       "state": "INCOMPLETE"
+      },
+      {
+       "finished_at": 1792355646.7798443,
+       "result": {
+        "complete": 10,
+        "failures": [
+         {
+          "date": "2025-07-26",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         },
+         {
+          "date": "2025-12-27",
+          "error_type": "ValueError",
+          "reason": "NO_REQUIRED_PAIRS"
+         }
+        ],
+        "interpolation": false,
+        "qualification": "OBSERVED_CANDIDATES_NATIVE_CLOCK_NOT_YET_ADMITTED",
+        "requested_dates": [
+         "2025-07-23",
+         "2025-07-24",
+         "2025-07-25",
+         "2025-07-26",
+         "2025-12-23",
+         "2025-12-24",
+         "2025-12-25",
+         "2025-12-26",
+         "2025-12-27",
+         "2025-12-30",
+         "2025-12-31",
+         "2026-01-01"
+        ],
+        "results": [
+         {
+          "date": "2025-07-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "4ece43bb8a710447e80ff1792192f9a5504c7c83cf1d911802f44e7dea293ccb",
+          "source_sha256": "9ab637a4f684a1e7f8f1486d3473d52c22aefd4a52490007fb857f52d2424233"
+         },
+         {
+          "date": "2025-07-24",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "fc0b55a3af062c21fe1c7f4305d63e8c8e33a8a399d2e5f6e501d05fc5e6801a",
+          "source_sha256": "31853a2db8593914609d38eb862f0158a07c231f1211008ad280992070cd729d"
+         },
+         {
+          "date": "2025-07-25",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "328e1ea6a2d75cf1d0a0729ae72fdc53e3ab736af4734d3af29338c6de60949b",
+          "source_sha256": "5ab2b34b582cf6bb2c51645bd993f0fcaa50d089a314ba750b10e1a2ce7e186d"
+         },
+         {
+          "date": "2025-12-23",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "a7505935fe1387dffc14be4792792cf3e58d350c3eafd89869f7bf7c9ae1a587",
+          "source_sha256": "ab1e2d63f22956d8be59a633df1a6779d6b9531639aec7cb994860e6085db333"
+         },
+         {
+          "date": "2025-12-24",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "70ba4576b09ab71e1b7936da43a0f5f0870d40706c6b379e92dc802015023098",
+          "source_sha256": "0c9da1338a68d57671f0f46103966478c00907552732c974cf69407b9a54bbde"
+         },
+         {
+          "date": "2025-12-25",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "3fb9139fd8fcdebcbc4a3948757f96fc53458a6c4d322024820a72e62e3a3e9b",
+          "source_sha256": "4819838d247523b147d3379c7f6c75c2c01119d52301ca9ab967241033943d41"
+         },
+         {
+          "date": "2025-12-26",
+          "observations": {
+           "EURUSD": 1379,
+           "GBPUSD": 1379
+          },
+          "parquet_sha256": "2e6a8599bec0ff6fab09d560b964532c71692e2d8cdc6afad5c2a338e4a93afb",
+          "source_sha256": "ed71d690290a23d416b0a16b4e9e739dfd8b416cd0aa2752f2a874eff261d54c"
+         },
+         {
+          "date": "2025-12-30",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "1fc508175ff811a7522ba0c36262798cf7fe2cc0fd8fcfe1ada177c1682b07a5",
+          "source_sha256": "808b66c45cf6aa7f0645bbd4c17604fbf167f26f3aed841dc582ee1e292aa108"
+         },
+         {
+          "date": "2025-12-31",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "6fcc27bf0c9fa35bc3e5414b6152ea0b1b5c67e59e1e1956939ef1a8d63906c5",
+          "source_sha256": "6a670404350909d659bddbef8c9f7adc2e96567e2be9549e9826d010fc92fd77"
+         },
+         {
+          "date": "2026-01-01",
+          "observations": {
+           "EURUSD": 1440,
+           "GBPUSD": 1440
+          },
+          "parquet_sha256": "31b101ef06c1b329ae6eecde79f84163597efe191dcdcdbcd70ac441321907d1",
+          "source_sha256": "0f57a4bc3d6f718abd543cc9b593c540dab0b5ceca7a17cf8618084466c00c5c"
+         }
+        ],
+        "state": "INCOMPLETE",
+        "total": 12
+       },
+       "started_at": 1792355638.5278604,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "dates": [
+      "2025-07-23",
+      "2025-07-24",
+      "2025-07-25",
+      "2025-07-26",
+      "2025-12-23",
+      "2025-12-24",
+      "2025-12-25",
+      "2025-12-26",
+      "2025-12-27",
+      "2025-12-30",
+      "2025-12-31",
+      "2026-01-01"
+     ],
+     "state": "UNAVAILABLE_AFTER_ATTEMPTS"
+    }
+   ],
+   "identity": "108843adf800a75c578d58bb3250813e80f1494daeac95a35b7d2abbcf442349",
+   "native_clock_preserved": true,
+   "requested_dates": [
+    "2019-12-31",
+    "2020-01-01",
+    "2020-01-02",
+    "2020-01-03",
+    "2020-01-04",
+    "2020-03-28",
+    "2020-03-29",
+    "2020-03-30",
+    "2020-12-23",
+    "2020-12-24",
+    "2020-12-25",
+    "2020-12-26",
+    "2020-12-30",
+    "2020-12-31",
+    "2021-01-01",
+    "2021-01-02",
+    "2021-12-23",
+    "2021-12-24",
+    "2021-12-25",
+    "2021-12-30",
+    "2021-12-31",
+    "2022-01-01",
+    "2022-12-24",
+    "2022-12-25",
+    "2022-12-26",
+    "2022-12-29",
+    "2022-12-30",
+    "2022-12-31",
+    "2023-01-01",
+    "2023-01-02",
+    "2023-01-03",
+    "2023-07-01",
+    "2023-07-02",
+    "2023-07-03",
+    "2023-07-04",
+    "2023-07-05",
+    "2023-07-06",
+    "2023-07-07",
+    "2023-07-08",
+    "2023-12-23",
+    "2023-12-24",
+    "2023-12-25",
+    "2023-12-26",
+    "2023-12-27",
+    "2023-12-28",
+    "2023-12-29",
+    "2023-12-30",
+    "2023-12-31",
+    "2024-01-01",
+    "2024-01-02",
+    "2024-01-03",
+    "2024-08-24",
+    "2024-08-25",
+    "2024-08-26",
+    "2024-08-27",
+    "2024-08-28",
+    "2024-08-29",
+    "2024-08-30",
+    "2024-08-31",
+    "2024-12-14",
+    "2024-12-15",
+    "2024-12-16",
+    "2024-12-17",
+    "2024-12-18",
+    "2024-12-19",
+    "2024-12-20",
+    "2024-12-21",
+    "2024-12-22",
+    "2024-12-23",
+    "2024-12-24",
+    "2024-12-25",
+    "2024-12-26",
+    "2024-12-27",
+    "2024-12-28",
+    "2024-12-30",
+    "2024-12-31",
+    "2025-01-01",
+    "2025-01-02",
+    "2025-01-03",
+    "2025-01-04",
+    "2025-01-05",
+    "2025-01-06",
+    "2025-01-07",
+    "2025-01-08",
+    "2025-01-09",
+    "2025-01-10",
+    "2025-01-11",
+    "2025-07-12",
+    "2025-07-13",
+    "2025-07-14",
+    "2025-07-15",
+    "2025-07-16",
+    "2025-07-17",
+    "2025-07-18",
+    "2025-07-19",
+    "2025-07-20",
+    "2025-07-21",
+    "2025-07-22",
+    "2025-07-23",
+    "2025-07-24",
+    "2025-07-25",
+    "2025-07-26",
+    "2025-12-23",
+    "2025-12-24",
+    "2025-12-25",
+    "2025-12-26",
+    "2025-12-27",
+    "2025-12-30",
+    "2025-12-31",
+    "2026-01-01"
+   ]
+  },
+  "GAP_RECOVERY_STATUS.json": {
+   "admitted": false,
+   "batches": 8,
+   "completed_batches": 0,
+   "identity": "108843adf800a75c578d58bb3250813e80f1494daeac95a35b7d2abbcf442349",
+   "requested_dates": 110,
+   "state": "PARTIAL_CANDIDATES_CLOCK_NOT_ADMITTED",
+   "unavailable_batches": 8
+  },
+  "PUBLICATION_STATUS.json": {
+   "admitted": false,
+   "physical_sha256": "3770cfb70fb717e039175f4972ecd501c80144a0270aac860f1324c40704fbc7",
+   "second_machine": {
+    "bytes": 2895872,
+    "sha256": "3770cfb70fb717e039175f4972ecd501c80144a0270aac860f1324c40704fbc7"
+   },
+   "state": "QUALITY_PUBLISHED_NOT_ADMITTED",
+   "warehouse": {
+    "delivered": 4,
+    "delivery_seconds": [
+     0.15452933311462402,
+     0.14751434326171875,
+     0.30684375762939453,
+     0.24294042587280273
+    ],
+    "expected": 4,
+    "last_errors": [],
+    "mismatch": 0,
+    "pending": 0,
+    "posted": 0
+   }
+  },
+  "STATUS.json": {
+   "admitted": false,
+   "completed_years": 0,
+   "controller_process_token": "8398844",
+   "current_started_at": 1792354089.914494,
+   "current_year": null,
+   "eta_seconds": null,
+   "failed_years": 6,
+   "finished_at": 1792354352.7209744,
+   "identity": "9243f38c17c6873b4a242f6d897019201d65319e2a545ba6d2ff9cb9b105f154",
+   "jobs": [
+    {
+     "attempts": [
+      {
+       "attempt": 1,
+       "finished_at": 1792352910.646545,
+       "returncode": 2,
+       "started_at": 1792352794.423879,
+       "state": "INCOMPLETE"
+      },
+      {
+       "attempt": 2,
+       "finished_at": 1792353050.1978993,
+       "returncode": 2,
+       "started_at": 1792352940.64778,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "state": "FAILED",
+     "year": 2020
+    },
+    {
+     "attempts": [
+      {
+       "attempt": 1,
+       "finished_at": 1792353171.299113,
+       "returncode": 2,
+       "started_at": 1792353050.2016323,
+       "state": "INCOMPLETE"
+      },
+      {
+       "attempt": 2,
+       "finished_at": 1792353310.6156704,
+       "returncode": 2,
+       "started_at": 1792353201.3028574,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "state": "FAILED",
+     "year": 2021
+    },
+    {
+     "attempts": [
+      {
+       "attempt": 1,
+       "finished_at": 1792353431.551478,
+       "returncode": 2,
+       "started_at": 1792353310.6190453,
+       "state": "INCOMPLETE"
+      },
+      {
+       "attempt": 2,
+       "finished_at": 1792353570.9639747,
+       "returncode": 2,
+       "started_at": 1792353461.5554273,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "state": "FAILED",
+     "year": 2022
+    },
+    {
+     "attempts": [
+      {
+       "attempt": 1,
+       "finished_at": 1792353691.2090983,
+       "returncode": 2,
+       "started_at": 1792353570.9676762,
+       "state": "INCOMPLETE"
+      },
+      {
+       "attempt": 2,
+       "finished_at": 1792353830.520023,
+       "returncode": 2,
+       "started_at": 1792353721.2131662,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "state": "FAILED",
+     "year": 2023
+    },
+    {
+     "attempts": [
+      {
+       "attempt": 1,
+       "finished_at": 1792353949.5447905,
+       "returncode": 2,
+       "started_at": 1792353830.5242057,
+       "state": "INCOMPLETE"
+      },
+      {
+       "attempt": 2,
+       "finished_at": 1792354089.9105616,
+       "returncode": 2,
+       "started_at": 1792353979.5491114,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "state": "FAILED",
+     "year": 2024
+    },
+    {
+     "attempts": [
+      {
+       "attempt": 1,
+       "finished_at": 1792354213.326163,
+       "returncode": 2,
+       "started_at": 1792354089.9146667,
+       "state": "INCOMPLETE"
+      },
+      {
+       "attempt": 2,
+       "finished_at": 1792354352.7178833,
+       "returncode": 2,
+       "started_at": 1792354243.3300762,
+       "state": "INCOMPLETE"
+      }
+     ],
+     "state": "FAILED",
+     "year": 2025
+    }
+   ],
+   "quality": {
+    "eurusd": {
+     "admitted": false,
+     "missing_expected_open_hours": 1103,
+     "observed_rows": 36553
+    },
+    "gbpusd": {
+     "admitted": false,
+     "missing_expected_open_hours": 1108,
+     "observed_rows": 36481
+    }
+   },
+   "schema": "financial_data.native_fx_controller.v1",
+   "started_at": 1792352794.423761,
+   "state": "RECOVERY_AWAITING_CLOCK_CALENDAR_AND_GAP_ACCEPTANCE",
+   "total_years": 6
+  }
+ },
+ "primary_files": [
+  {
+   "bytes": 491935,
+   "rel": "2020/eurusd/2020-1h.parquet",
+   "sha256": "409091e8a4271e9486d94b95f8069b53bf6550c9cf035127166e9a8e8e34fcce"
+  },
+  {
+   "bytes": 507305,
+   "rel": "2020/gbpusd/2020-1h.parquet",
+   "sha256": "75b64c428f9526573ce9a1c8ed15bc6107a171727b6d7b295f6f1f55cffbe913"
+  },
+  {
+   "bytes": 469141,
+   "rel": "2021/eurusd/2021-1h.parquet",
+   "sha256": "b092fc304269423cc9b54682d7a81448c886485149af32e76300a2baffe5633f"
+  },
+  {
+   "bytes": 465540,
+   "rel": "2021/gbpusd/2021-1h.parquet",
+   "sha256": "b42a24ad769f45153ae70639ad3a21e34677bba66480c2375562f5e8eeb220cd"
+  },
+  {
+   "bytes": 522786,
+   "rel": "2022/eurusd/2022-1h.parquet",
+   "sha256": "26f8d922aa79719324ac45baf26c4371a17df686ae2393c3da9d8a3d5ad59419"
+  },
+  {
+   "bytes": 537218,
+   "rel": "2022/gbpusd/2022-1h.parquet",
+   "sha256": "b6ae86bb0c389beba3a204481fdd8fd5a6d0d30000cbb9483ac2185ffdf2b5fc"
+  },
+  {
+   "bytes": 432103,
+   "rel": "2023/eurusd/2023-1h.parquet",
+   "sha256": "bf88b1403d5862d7e4622167878bf2a8366ea83d47935ba70269dd9187889b72"
+  },
+  {
+   "bytes": 484812,
+   "rel": "2023/gbpusd/2023-1h.parquet",
+   "sha256": "bb7854355f74e7699011903ef358d769311c979ef87f64e1140d09cda2efde10"
+  },
+  {
+   "bytes": 406452,
+   "rel": "2024/eurusd/2024-1h.parquet",
+   "sha256": "75dfbb2891738bb6d617cb69860e09026b3452ef9d88b09e5c3455271929da39"
+  },
+  {
+   "bytes": 427612,
+   "rel": "2024/gbpusd/2024-1h.parquet",
+   "sha256": "202241efc55887795e08f4e1d093628baea4ff4ddb9376342c43c54e6738c776"
+  },
+  {
+   "bytes": 453626,
+   "rel": "2025/eurusd/2025-1h.parquet",
+   "sha256": "b8802b4cd52cfdb5ef5936fe18a792efb457891623fa365118af239e15cd3b1b"
+  },
+  {
+   "bytes": 458600,
+   "rel": "2025/gbpusd/2025-1h.parquet",
+   "sha256": "152be7d20256e784f12e4c78e350972aa8ac396e6fe02632896e87c8a9c92a5e"
+  }
+ ],
+ "quality": {
+  "eurusd": {
+   "admitted": false,
+   "calendar_basis": "ASSUMED_NY_17_TO_17_NO_HOLIDAY_CERTIFICATE",
+   "calendar_holidays_certified": false,
+   "crossed_side_bar_endpoints": 904,
+   "executable_spread_eligible": false,
+   "identical_duplicates_removed": 0,
+   "interpolated_values": 0,
+   "missing_by_ny_hour": {
+    "0": 46,
+    "1": 44,
+    "10": 44,
+    "11": 44,
+    "12": 44,
+    "13": 44,
+    "14": 44,
+    "15": 49,
+    "16": 53,
+    "17": 48,
+    "18": 47,
+    "19": 48,
+    "2": 44,
+    "20": 49,
+    "21": 49,
+    "22": 49,
+    "23": 49,
+    "3": 44,
+    "4": 44,
+    "5": 44,
+    "6": 44,
+    "7": 44,
+    "8": 44,
+    "9": 44
+   },
+   "missing_by_ny_weekday": {
+    "0": 217,
+    "1": 181,
+    "2": 229,
+    "3": 234,
+    "4": 176,
+    "6": 66
+   },
+   "missing_expected_open_hours": 1103,
+   "missing_runs": [
+    [
+     "2020-01-01T00:00:00+00:00",
+     "2020-01-03T21:00:00+00:00",
+     70
+    ],
+    [
+     "2020-12-24T20:00:00+00:00",
+     "2020-12-25T21:00:00+00:00",
+     26
+    ],
+    [
+     "2020-12-31T20:00:00+00:00",
+     "2021-01-01T21:00:00+00:00",
+     26
+    ],
+    [
+     "2021-12-24T20:00:00+00:00",
+     "2021-12-24T21:00:00+00:00",
+     2
+    ],
+    [
+     "2021-12-31T21:00:00+00:00",
+     "2021-12-31T21:00:00+00:00",
+     1
+    ],
+    [
+     "2022-12-25T22:00:00+00:00",
+     "2022-12-25T22:00:00+00:00",
+     1
+    ],
+    [
+     "2022-12-30T21:00:00+00:00",
+     "2022-12-30T21:00:00+00:00",
+     1
+    ],
+    [
+     "2023-01-01T22:00:00+00:00",
+     "2023-01-02T05:00:00+00:00",
+     8
+    ],
+    [
+     "2023-07-02T21:00:00+00:00",
+     "2023-07-07T20:00:00+00:00",
+     120
+    ],
+    [
+     "2023-12-25T01:00:00+00:00",
+     "2023-12-26T04:00:00+00:00",
+     28
+    ],
+    [
+     "2023-12-29T21:00:00+00:00",
+     "2023-12-29T21:00:00+00:00",
+     1
+    ],
+    [
+     "2024-01-01T00:00:00+00:00",
+     "2024-01-02T04:00:00+00:00",
+     29
+    ],
+    [
+     "2024-08-25T21:00:00+00:00",
+     "2024-08-30T20:00:00+00:00",
+     120
+    ],
+    [
+     "2024-12-15T22:00:00+00:00",
+     "2024-12-20T21:00:00+00:00",
+     120
+    ],
+    [
+     "2024-12-22T22:00:00+00:00",
+     "2024-12-27T21:00:00+00:00",
+     120
+    ],
+    [
+     "2024-12-31T21:00:00+00:00",
+     "2025-01-02T04:00:00+00:00",
+     32
+    ],
+    [
+     "2025-01-05T22:00:00+00:00",
+     "2025-01-10T21:00:00+00:00",
+     120
+    ],
+    [
+     "2025-07-13T21:00:00+00:00",
+     "2025-07-18T20:00:00+00:00",
+     120
+    ],
+    [
+     "2025-07-20T21:00:00+00:00",
+     "2025-07-25T20:00:00+00:00",
+     120
+    ],
+    [
+     "2025-12-24T20:00:00+00:00",
+     "2025-12-26T05:00:00+00:00",
+     34
+    ],
+    [
+     "2025-12-31T20:00:00+00:00",
+     "2025-12-31T23:00:00+00:00",
+     4
+    ]
+   ],
+   "missing_total": 1103,
+   "missing_year_files": [],
+   "months": [
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 70,
+     "month": "2020-01",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2020-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2020-03",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2020-04",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2020-05",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2020-06",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 549,
+     "missing_expected_open_hours": 0,
+     "month": "2020-07",
+     "observed_rows": 549
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2020-08",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2020-09",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2020-10",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 506,
+     "missing_expected_open_hours": 0,
+     "month": "2020-11",
+     "observed_rows": 506
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 30,
+     "month": "2020-12",
+     "observed_rows": 522
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 22,
+     "month": "2021-01",
+     "observed_rows": 482
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2021-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 553,
+     "missing_expected_open_hours": 0,
+     "month": "2021-03",
+     "observed_rows": 553
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2021-04",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2021-05",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2021-06",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2021-07",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2021-08",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2021-09",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2021-10",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 527,
+     "missing_expected_open_hours": 0,
+     "month": "2021-11",
+     "observed_rows": 527
+    },
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 3,
+     "month": "2021-12",
+     "observed_rows": 547
+    },
+    {
+     "expected_open_hours": 506,
+     "missing_expected_open_hours": 0,
+     "month": "2022-01",
+     "observed_rows": 506
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2022-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 553,
+     "missing_expected_open_hours": 0,
+     "month": "2022-03",
+     "observed_rows": 553
+    },
+    {
+     "expected_open_hours": 501,
+     "missing_expected_open_hours": 0,
+     "month": "2022-04",
+     "observed_rows": 501
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2022-05",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2022-06",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2022-07",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2022-08",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2022-09",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2022-10",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 527,
+     "missing_expected_open_hours": 0,
+     "month": "2022-11",
+     "observed_rows": 527
+    },
+    {
+     "expected_open_hours": 526,
+     "missing_expected_open_hours": 2,
+     "month": "2022-12",
+     "observed_rows": 524
+    },
+    {
+     "expected_open_hours": 530,
+     "missing_expected_open_hours": 8,
+     "month": "2023-01",
+     "observed_rows": 522
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2023-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 0,
+     "month": "2023-03",
+     "observed_rows": 550
+    },
+    {
+     "expected_open_hours": 483,
+     "missing_expected_open_hours": 0,
+     "month": "2023-04",
+     "observed_rows": 483
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2023-05",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2023-06",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 120,
+     "month": "2023-07",
+     "observed_rows": 387
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2023-08",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 501,
+     "missing_expected_open_hours": 0,
+     "month": "2023-09",
+     "observed_rows": 501
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2023-10",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 527,
+     "missing_expected_open_hours": 0,
+     "month": "2023-11",
+     "observed_rows": 527
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 29,
+     "month": "2023-12",
+     "observed_rows": 476
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 29,
+     "month": "2024-01",
+     "observed_rows": 523
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2024-02",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 505,
+     "missing_expected_open_hours": 0,
+     "month": "2024-03",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2024-04",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 549,
+     "missing_expected_open_hours": 0,
+     "month": "2024-05",
+     "observed_rows": 553
+    },
+    {
+     "expected_open_hours": 483,
+     "missing_expected_open_hours": 0,
+     "month": "2024-06",
+     "observed_rows": 494
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2024-07",
+     "observed_rows": 556
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 120,
+     "month": "2024-08",
+     "observed_rows": 412
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2024-09",
+     "observed_rows": 514
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2024-10",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 501,
+     "missing_expected_open_hours": 0,
+     "month": "2024-11",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 530,
+     "missing_expected_open_hours": 243,
+     "month": "2024-12",
+     "observed_rows": 289
+    },
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 149,
+     "month": "2025-01",
+     "observed_rows": 401
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2025-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2025-03",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2025-04",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2025-05",
+     "observed_rows": 530
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2025-06",
+     "observed_rows": 509
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 240,
+     "month": "2025-07",
+     "observed_rows": 312
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2025-08",
+     "observed_rows": 521
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2025-09",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 549,
+     "missing_expected_open_hours": 0,
+     "month": "2025-10",
+     "observed_rows": 549
+    },
+    {
+     "expected_open_hours": 482,
+     "missing_expected_open_hours": 0,
+     "month": "2025-11",
+     "observed_rows": 482
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 38,
+     "month": "2025-12",
+     "observed_rows": 515
+    }
+   ],
+   "observed_rows": 36553,
+   "outlier_reference": "TRAIN_ONLY",
+   "outside_assumed_open_schedule_rows": 72,
+   "outside_required_range_rows": 16,
+   "quote_view": "BID",
+   "return_outliers": {
+    "count": 1277,
+    "reference": {
+     "mad": 0.00044363302039732155,
+     "median": 0.0,
+     "n": 24539
+    },
+    "state": "FLAGGED_NOT_REMOVED"
+   },
+   "schema": "financial_data.native_fx_quality.v1",
+   "source_sha256": {
+    "2020/eurusd/2020-1h.parquet": "409091e8a4271e9486d94b95f8069b53bf6550c9cf035127166e9a8e8e34fcce",
+    "2021/eurusd/2021-1h.parquet": "b092fc304269423cc9b54682d7a81448c886485149af32e76300a2baffe5633f",
+    "2022/eurusd/2022-1h.parquet": "26f8d922aa79719324ac45baf26c4371a17df686ae2393c3da9d8a3d5ad59419",
+    "2023/eurusd/2023-1h.parquet": "bf88b1403d5862d7e4622167878bf2a8366ea83d47935ba70269dd9187889b72",
+    "2024/eurusd/2024-1h.parquet": "75dfbb2891738bb6d617cb69860e09026b3452ef9d88b09e5c3455271929da39",
+    "2025/eurusd/2025-1h.parquet": "b8802b4cd52cfdb5ef5936fe18a792efb457891623fa365118af239e15cd3b1b"
+   },
+   "state": "SOURCE_VALIDATION_REQUIRED"
+  },
+  "gbpusd": {
+   "admitted": false,
+   "calendar_basis": "ASSUMED_NY_17_TO_17_NO_HOLIDAY_CERTIFICATE",
+   "calendar_holidays_certified": false,
+   "crossed_side_bar_endpoints": 410,
+   "executable_spread_eligible": false,
+   "identical_duplicates_removed": 0,
+   "interpolated_values": 0,
+   "missing_by_ny_hour": {
+    "0": 46,
+    "1": 44,
+    "10": 44,
+    "11": 44,
+    "12": 44,
+    "13": 44,
+    "14": 44,
+    "15": 49,
+    "16": 52,
+    "17": 51,
+    "18": 49,
+    "19": 49,
+    "2": 44,
+    "20": 49,
+    "21": 49,
+    "22": 49,
+    "23": 49,
+    "3": 44,
+    "4": 44,
+    "5": 44,
+    "6": 44,
+    "7": 44,
+    "8": 44,
+    "9": 44
+   },
+   "missing_by_ny_weekday": {
+    "0": 217,
+    "1": 181,
+    "2": 229,
+    "3": 234,
+    "4": 175,
+    "6": 72
+   },
+   "missing_expected_open_hours": 1108,
+   "missing_runs": [
+    [
+     "2020-01-01T00:00:00+00:00",
+     "2020-01-03T21:00:00+00:00",
+     70
+    ],
+    [
+     "2020-03-29T21:00:00+00:00",
+     "2020-03-29T21:00:00+00:00",
+     1
+    ],
+    [
+     "2020-12-24T20:00:00+00:00",
+     "2020-12-25T21:00:00+00:00",
+     26
+    ],
+    [
+     "2020-12-31T20:00:00+00:00",
+     "2021-01-01T21:00:00+00:00",
+     26
+    ],
+    [
+     "2021-12-24T20:00:00+00:00",
+     "2021-12-24T21:00:00+00:00",
+     2
+    ],
+    [
+     "2021-12-31T21:00:00+00:00",
+     "2021-12-31T21:00:00+00:00",
+     1
+    ],
+    [
+     "2022-12-25T22:00:00+00:00",
+     "2022-12-25T22:00:00+00:00",
+     1
+    ],
+    [
+     "2022-12-30T21:00:00+00:00",
+     "2022-12-30T21:00:00+00:00",
+     1
+    ],
+    [
+     "2023-01-01T22:00:00+00:00",
+     "2023-01-02T05:00:00+00:00",
+     8
+    ],
+    [
+     "2023-07-02T21:00:00+00:00",
+     "2023-07-07T20:00:00+00:00",
+     120
+    ],
+    [
+     "2023-12-24T22:00:00+00:00",
+     "2023-12-26T04:00:00+00:00",
+     31
+    ],
+    [
+     "2023-12-31T22:00:00+00:00",
+     "2024-01-02T04:00:00+00:00",
+     31
+    ],
+    [
+     "2024-08-25T21:00:00+00:00",
+     "2024-08-30T20:00:00+00:00",
+     120
+    ],
+    [
+     "2024-12-15T22:00:00+00:00",
+     "2024-12-20T21:00:00+00:00",
+     120
+    ],
+    [
+     "2024-12-22T22:00:00+00:00",
+     "2024-12-27T21:00:00+00:00",
+     120
+    ],
+    [
+     "2024-12-31T21:00:00+00:00",
+     "2025-01-02T04:00:00+00:00",
+     32
+    ],
+    [
+     "2025-01-05T22:00:00+00:00",
+     "2025-01-10T21:00:00+00:00",
+     120
+    ],
+    [
+     "2025-07-13T21:00:00+00:00",
+     "2025-07-18T20:00:00+00:00",
+     120
+    ],
+    [
+     "2025-07-20T21:00:00+00:00",
+     "2025-07-25T20:00:00+00:00",
+     120
+    ],
+    [
+     "2025-12-24T20:00:00+00:00",
+     "2025-12-26T05:00:00+00:00",
+     34
+    ],
+    [
+     "2025-12-31T20:00:00+00:00",
+     "2025-12-31T23:00:00+00:00",
+     4
+    ]
+   ],
+   "missing_total": 1108,
+   "missing_year_files": [],
+   "months": [
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 70,
+     "month": "2020-01",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2020-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 1,
+     "month": "2020-03",
+     "observed_rows": 530
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2020-04",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2020-05",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2020-06",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 549,
+     "missing_expected_open_hours": 0,
+     "month": "2020-07",
+     "observed_rows": 549
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2020-08",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2020-09",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2020-10",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 506,
+     "missing_expected_open_hours": 0,
+     "month": "2020-11",
+     "observed_rows": 506
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 30,
+     "month": "2020-12",
+     "observed_rows": 522
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 22,
+     "month": "2021-01",
+     "observed_rows": 482
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2021-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 553,
+     "missing_expected_open_hours": 0,
+     "month": "2021-03",
+     "observed_rows": 553
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2021-04",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2021-05",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2021-06",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2021-07",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2021-08",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2021-09",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2021-10",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 527,
+     "missing_expected_open_hours": 0,
+     "month": "2021-11",
+     "observed_rows": 527
+    },
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 3,
+     "month": "2021-12",
+     "observed_rows": 547
+    },
+    {
+     "expected_open_hours": 506,
+     "missing_expected_open_hours": 0,
+     "month": "2022-01",
+     "observed_rows": 506
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2022-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 553,
+     "missing_expected_open_hours": 0,
+     "month": "2022-03",
+     "observed_rows": 553
+    },
+    {
+     "expected_open_hours": 501,
+     "missing_expected_open_hours": 0,
+     "month": "2022-04",
+     "observed_rows": 501
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2022-05",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2022-06",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2022-07",
+     "observed_rows": 504
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2022-08",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2022-09",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2022-10",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 527,
+     "missing_expected_open_hours": 0,
+     "month": "2022-11",
+     "observed_rows": 527
+    },
+    {
+     "expected_open_hours": 526,
+     "missing_expected_open_hours": 2,
+     "month": "2022-12",
+     "observed_rows": 524
+    },
+    {
+     "expected_open_hours": 530,
+     "missing_expected_open_hours": 8,
+     "month": "2023-01",
+     "observed_rows": 522
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2023-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 0,
+     "month": "2023-03",
+     "observed_rows": 550
+    },
+    {
+     "expected_open_hours": 483,
+     "missing_expected_open_hours": 0,
+     "month": "2023-04",
+     "observed_rows": 483
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2023-05",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2023-06",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 120,
+     "month": "2023-07",
+     "observed_rows": 387
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2023-08",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 501,
+     "missing_expected_open_hours": 0,
+     "month": "2023-09",
+     "observed_rows": 501
+    },
+    {
+     "expected_open_hours": 531,
+     "missing_expected_open_hours": 0,
+     "month": "2023-10",
+     "observed_rows": 531
+    },
+    {
+     "expected_open_hours": 527,
+     "missing_expected_open_hours": 0,
+     "month": "2023-11",
+     "observed_rows": 527
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 33,
+     "month": "2023-12",
+     "observed_rows": 471
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 29,
+     "month": "2024-01",
+     "observed_rows": 523
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2024-02",
+     "observed_rows": 505
+    },
+    {
+     "expected_open_hours": 505,
+     "missing_expected_open_hours": 0,
+     "month": "2024-03",
+     "observed_rows": 506
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2024-04",
+     "observed_rows": 529
+    },
+    {
+     "expected_open_hours": 549,
+     "missing_expected_open_hours": 0,
+     "month": "2024-05",
+     "observed_rows": 550
+    },
+    {
+     "expected_open_hours": 483,
+     "missing_expected_open_hours": 0,
+     "month": "2024-06",
+     "observed_rows": 483
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2024-07",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 120,
+     "month": "2024-08",
+     "observed_rows": 405
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2024-09",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 0,
+     "month": "2024-10",
+     "observed_rows": 552
+    },
+    {
+     "expected_open_hours": 501,
+     "missing_expected_open_hours": 0,
+     "month": "2024-11",
+     "observed_rows": 501
+    },
+    {
+     "expected_open_hours": 530,
+     "missing_expected_open_hours": 243,
+     "month": "2024-12",
+     "observed_rows": 287
+    },
+    {
+     "expected_open_hours": 550,
+     "missing_expected_open_hours": 149,
+     "month": "2025-01",
+     "observed_rows": 401
+    },
+    {
+     "expected_open_hours": 480,
+     "missing_expected_open_hours": 0,
+     "month": "2025-02",
+     "observed_rows": 480
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2025-03",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2025-04",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 525,
+     "missing_expected_open_hours": 0,
+     "month": "2025-05",
+     "observed_rows": 525
+    },
+    {
+     "expected_open_hours": 507,
+     "missing_expected_open_hours": 0,
+     "month": "2025-06",
+     "observed_rows": 507
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 240,
+     "month": "2025-07",
+     "observed_rows": 312
+    },
+    {
+     "expected_open_hours": 504,
+     "missing_expected_open_hours": 0,
+     "month": "2025-08",
+     "observed_rows": 505
+    },
+    {
+     "expected_open_hours": 528,
+     "missing_expected_open_hours": 0,
+     "month": "2025-09",
+     "observed_rows": 528
+    },
+    {
+     "expected_open_hours": 549,
+     "missing_expected_open_hours": 0,
+     "month": "2025-10",
+     "observed_rows": 549
+    },
+    {
+     "expected_open_hours": 482,
+     "missing_expected_open_hours": 0,
+     "month": "2025-11",
+     "observed_rows": 482
+    },
+    {
+     "expected_open_hours": 552,
+     "missing_expected_open_hours": 38,
+     "month": "2025-12",
+     "observed_rows": 514
+    }
+   ],
+   "observed_rows": 36481,
+   "outlier_reference": "TRAIN_ONLY",
+   "outside_assumed_open_schedule_rows": 5,
+   "outside_required_range_rows": 16,
+   "quote_view": "BID",
+   "return_outliers": {
+    "count": 1117,
+    "reference": {
+     "mad": 0.0005330388310132439,
+     "median": 7.0531063927903315e-06,
+     "n": 24536
+    },
+    "state": "FLAGGED_NOT_REMOVED"
+   },
+   "schema": "financial_data.native_fx_quality.v1",
+   "source_sha256": {
+    "2020/gbpusd/2020-1h.parquet": "75b64c428f9526573ce9a1c8ed15bc6107a171727b6d7b295f6f1f55cffbe913",
+    "2021/gbpusd/2021-1h.parquet": "b42a24ad769f45153ae70639ad3a21e34677bba66480c2375562f5e8eeb220cd",
+    "2022/gbpusd/2022-1h.parquet": "b6ae86bb0c389beba3a204481fdd8fd5a6d0d30000cbb9483ac2185ffdf2b5fc",
+    "2023/gbpusd/2023-1h.parquet": "bb7854355f74e7699011903ef358d769311c979ef87f64e1140d09cda2efde10",
+    "2024/gbpusd/2024-1h.parquet": "202241efc55887795e08f4e1d093628baea4ff4ddb9376342c43c54e6738c776",
+    "2025/gbpusd/2025-1h.parquet": "152be7d20256e784f12e4c78e350972aa8ac396e6fe02632896e87c8a9c92a5e"
+   },
+   "state": "SOURCE_VALIDATION_REQUIRED"
+  }
+ },
+ "read_once_on": "2026-10-18",
+ "report_sha256": {
+  "CLOCK_COMPARISON.json": {
+   "bytes": 64524,
+   "sha256": "dc2d50eb1a6e8011720329508df647fe002e4c1ebb24e94731f0b259945b05fe"
+  },
+  "EFFECTIVE_CONFIG.json": {
+   "bytes": 1962,
+   "sha256": "f67b837a3ee70b48dfcf23499ee72f1d2b7c8a3f5fbda9e170143f6ba3dee774"
+  },
+  "GAP_RECOVERY_PLAN.json": {
+   "bytes": 94032,
+   "sha256": "a979b50bd63554e3ec1aaf805bdfbc8d0733f78df7560b497f9eb02310e4776e"
+  },
+  "GAP_RECOVERY_STATUS.json": {
+   "bytes": 253,
+   "sha256": "bae7d9e7a6b01b54f278a6f466f916c9aac8fff35cbfd02f9e04979f0cccb4e7"
+  },
+  "PUBLICATION_STATUS.json": {
+   "bytes": 564,
+   "sha256": "f09ffa6a53de16799aeb0ebb17bf307d2c457e1900cdb7a09e55414f26801eba"
+  },
+  "QUALITY.eurusd.json": {
+   "bytes": 54735,
+   "sha256": "429ea0f26d3d41331821ce3dc9718a8ddc1efd6d54f3fff771560bde200fbeeb"
+  },
+  "QUALITY.gbpusd.json": {
+   "bytes": 54943,
+   "sha256": "434b944681ddaf3a52495518c88539b585e07e06f99d0e551b9b228a957815f8"
+  },
+  "STATUS.json": {
+   "bytes": 3711,
+   "sha256": "b9b6200e77b31cba0b118e3a4609f93768251194999d416761d945f8b14491bb"
+  }
+ },
+ "schema": "financial_data.data_closure_d1_read_once.v1",
+ "year_status": {
+  "2020": {
+   "failures": [
+    {
+     "job": "eurusd-2020-01",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2020-01",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    }
+   ],
+   "minutes_lt_120": [
+    [
+     "eurusd",
+     52,
+     94
+    ],
+    [
+     "eurusd",
+     53,
+     94
+    ],
+    [
+     "gbpusd",
+     14,
+     119
+    ],
+    [
+     "gbpusd",
+     52,
+     94
+    ],
+    [
+     "gbpusd",
+     53,
+     94
+    ]
+   ],
+   "weeks_ok": [
+    [
+     "eurusd",
+     2
+    ],
+    [
+     "eurusd",
+     3
+    ],
+    [
+     "eurusd",
+     4
+    ],
+    [
+     "eurusd",
+     5
+    ],
+    [
+     "eurusd",
+     6
+    ],
+    [
+     "eurusd",
+     7
+    ],
+    [
+     "eurusd",
+     8
+    ],
+    [
+     "eurusd",
+     9
+    ],
+    [
+     "eurusd",
+     10
+    ],
+    [
+     "eurusd",
+     11
+    ],
+    [
+     "eurusd",
+     12
+    ],
+    [
+     "eurusd",
+     13
+    ],
+    [
+     "eurusd",
+     14
+    ],
+    [
+     "eurusd",
+     15
+    ],
+    [
+     "eurusd",
+     16
+    ],
+    [
+     "eurusd",
+     17
+    ],
+    [
+     "eurusd",
+     18
+    ],
+    [
+     "eurusd",
+     19
+    ],
+    [
+     "eurusd",
+     20
+    ],
+    [
+     "eurusd",
+     21
+    ],
+    [
+     "eurusd",
+     22
+    ],
+    [
+     "eurusd",
+     23
+    ],
+    [
+     "eurusd",
+     24
+    ],
+    [
+     "eurusd",
+     25
+    ],
+    [
+     "eurusd",
+     26
+    ],
+    [
+     "eurusd",
+     27
+    ],
+    [
+     "eurusd",
+     28
+    ],
+    [
+     "eurusd",
+     29
+    ],
+    [
+     "eurusd",
+     30
+    ],
+    [
+     "eurusd",
+     31
+    ],
+    [
+     "eurusd",
+     32
+    ],
+    [
+     "eurusd",
+     33
+    ],
+    [
+     "eurusd",
+     34
+    ],
+    [
+     "eurusd",
+     35
+    ],
+    [
+     "eurusd",
+     36
+    ],
+    [
+     "eurusd",
+     37
+    ],
+    [
+     "eurusd",
+     38
+    ],
+    [
+     "eurusd",
+     39
+    ],
+    [
+     "eurusd",
+     40
+    ],
+    [
+     "eurusd",
+     41
+    ],
+    [
+     "eurusd",
+     42
+    ],
+    [
+     "eurusd",
+     43
+    ],
+    [
+     "eurusd",
+     44
+    ],
+    [
+     "eurusd",
+     45
+    ],
+    [
+     "eurusd",
+     46
+    ],
+    [
+     "eurusd",
+     47
+    ],
+    [
+     "eurusd",
+     48
+    ],
+    [
+     "eurusd",
+     49
+    ],
+    [
+     "eurusd",
+     50
+    ],
+    [
+     "eurusd",
+     51
+    ],
+    [
+     "eurusd",
+     52
+    ],
+    [
+     "eurusd",
+     53
+    ],
+    [
+     "gbpusd",
+     2
+    ],
+    [
+     "gbpusd",
+     3
+    ],
+    [
+     "gbpusd",
+     4
+    ],
+    [
+     "gbpusd",
+     5
+    ],
+    [
+     "gbpusd",
+     6
+    ],
+    [
+     "gbpusd",
+     7
+    ],
+    [
+     "gbpusd",
+     8
+    ],
+    [
+     "gbpusd",
+     9
+    ],
+    [
+     "gbpusd",
+     10
+    ],
+    [
+     "gbpusd",
+     11
+    ],
+    [
+     "gbpusd",
+     12
+    ],
+    [
+     "gbpusd",
+     13
+    ],
+    [
+     "gbpusd",
+     14
+    ],
+    [
+     "gbpusd",
+     15
+    ],
+    [
+     "gbpusd",
+     16
+    ],
+    [
+     "gbpusd",
+     17
+    ],
+    [
+     "gbpusd",
+     18
+    ],
+    [
+     "gbpusd",
+     19
+    ],
+    [
+     "gbpusd",
+     20
+    ],
+    [
+     "gbpusd",
+     21
+    ],
+    [
+     "gbpusd",
+     22
+    ],
+    [
+     "gbpusd",
+     23
+    ],
+    [
+     "gbpusd",
+     24
+    ],
+    [
+     "gbpusd",
+     25
+    ],
+    [
+     "gbpusd",
+     26
+    ],
+    [
+     "gbpusd",
+     27
+    ],
+    [
+     "gbpusd",
+     28
+    ],
+    [
+     "gbpusd",
+     29
+    ],
+    [
+     "gbpusd",
+     30
+    ],
+    [
+     "gbpusd",
+     31
+    ],
+    [
+     "gbpusd",
+     32
+    ],
+    [
+     "gbpusd",
+     33
+    ],
+    [
+     "gbpusd",
+     34
+    ],
+    [
+     "gbpusd",
+     35
+    ],
+    [
+     "gbpusd",
+     36
+    ],
+    [
+     "gbpusd",
+     37
+    ],
+    [
+     "gbpusd",
+     38
+    ],
+    [
+     "gbpusd",
+     39
+    ],
+    [
+     "gbpusd",
+     40
+    ],
+    [
+     "gbpusd",
+     41
+    ],
+    [
+     "gbpusd",
+     42
+    ],
+    [
+     "gbpusd",
+     43
+    ],
+    [
+     "gbpusd",
+     44
+    ],
+    [
+     "gbpusd",
+     45
+    ],
+    [
+     "gbpusd",
+     46
+    ],
+    [
+     "gbpusd",
+     47
+    ],
+    [
+     "gbpusd",
+     48
+    ],
+    [
+     "gbpusd",
+     49
+    ],
+    [
+     "gbpusd",
+     50
+    ],
+    [
+     "gbpusd",
+     51
+    ],
+    [
+     "gbpusd",
+     52
+    ],
+    [
+     "gbpusd",
+     53
+    ]
+   ]
+  },
+  "2021": {
+   "failures": [
+    {
+     "job": "eurusd-2021-53",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2021-53",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    }
+   ],
+   "minutes_lt_120": [
+    [
+     "eurusd",
+     51,
+     118
+    ],
+    [
+     "eurusd",
+     52,
+     119
+    ],
+    [
+     "gbpusd",
+     51,
+     118
+    ],
+    [
+     "gbpusd",
+     52,
+     119
+    ]
+   ],
+   "weeks_ok": [
+    [
+     "eurusd",
+     1
+    ],
+    [
+     "eurusd",
+     2
+    ],
+    [
+     "eurusd",
+     3
+    ],
+    [
+     "eurusd",
+     4
+    ],
+    [
+     "eurusd",
+     5
+    ],
+    [
+     "eurusd",
+     6
+    ],
+    [
+     "eurusd",
+     7
+    ],
+    [
+     "eurusd",
+     8
+    ],
+    [
+     "eurusd",
+     9
+    ],
+    [
+     "eurusd",
+     10
+    ],
+    [
+     "eurusd",
+     11
+    ],
+    [
+     "eurusd",
+     12
+    ],
+    [
+     "eurusd",
+     13
+    ],
+    [
+     "eurusd",
+     14
+    ],
+    [
+     "eurusd",
+     15
+    ],
+    [
+     "eurusd",
+     16
+    ],
+    [
+     "eurusd",
+     17
+    ],
+    [
+     "eurusd",
+     18
+    ],
+    [
+     "eurusd",
+     19
+    ],
+    [
+     "eurusd",
+     20
+    ],
+    [
+     "eurusd",
+     21
+    ],
+    [
+     "eurusd",
+     22
+    ],
+    [
+     "eurusd",
+     23
+    ],
+    [
+     "eurusd",
+     24
+    ],
+    [
+     "eurusd",
+     25
+    ],
+    [
+     "eurusd",
+     26
+    ],
+    [
+     "eurusd",
+     27
+    ],
+    [
+     "eurusd",
+     28
+    ],
+    [
+     "eurusd",
+     29
+    ],
+    [
+     "eurusd",
+     30
+    ],
+    [
+     "eurusd",
+     31
+    ],
+    [
+     "eurusd",
+     32
+    ],
+    [
+     "eurusd",
+     33
+    ],
+    [
+     "eurusd",
+     34
+    ],
+    [
+     "eurusd",
+     35
+    ],
+    [
+     "eurusd",
+     36
+    ],
+    [
+     "eurusd",
+     37
+    ],
+    [
+     "eurusd",
+     38
+    ],
+    [
+     "eurusd",
+     39
+    ],
+    [
+     "eurusd",
+     40
+    ],
+    [
+     "eurusd",
+     41
+    ],
+    [
+     "eurusd",
+     42
+    ],
+    [
+     "eurusd",
+     43
+    ],
+    [
+     "eurusd",
+     44
+    ],
+    [
+     "eurusd",
+     45
+    ],
+    [
+     "eurusd",
+     46
+    ],
+    [
+     "eurusd",
+     47
+    ],
+    [
+     "eurusd",
+     48
+    ],
+    [
+     "eurusd",
+     49
+    ],
+    [
+     "eurusd",
+     50
+    ],
+    [
+     "eurusd",
+     51
+    ],
+    [
+     "eurusd",
+     52
+    ],
+    [
+     "gbpusd",
+     1
+    ],
+    [
+     "gbpusd",
+     2
+    ],
+    [
+     "gbpusd",
+     3
+    ],
+    [
+     "gbpusd",
+     4
+    ],
+    [
+     "gbpusd",
+     5
+    ],
+    [
+     "gbpusd",
+     6
+    ],
+    [
+     "gbpusd",
+     7
+    ],
+    [
+     "gbpusd",
+     8
+    ],
+    [
+     "gbpusd",
+     9
+    ],
+    [
+     "gbpusd",
+     10
+    ],
+    [
+     "gbpusd",
+     11
+    ],
+    [
+     "gbpusd",
+     12
+    ],
+    [
+     "gbpusd",
+     13
+    ],
+    [
+     "gbpusd",
+     14
+    ],
+    [
+     "gbpusd",
+     15
+    ],
+    [
+     "gbpusd",
+     16
+    ],
+    [
+     "gbpusd",
+     17
+    ],
+    [
+     "gbpusd",
+     18
+    ],
+    [
+     "gbpusd",
+     19
+    ],
+    [
+     "gbpusd",
+     20
+    ],
+    [
+     "gbpusd",
+     21
+    ],
+    [
+     "gbpusd",
+     22
+    ],
+    [
+     "gbpusd",
+     23
+    ],
+    [
+     "gbpusd",
+     24
+    ],
+    [
+     "gbpusd",
+     25
+    ],
+    [
+     "gbpusd",
+     26
+    ],
+    [
+     "gbpusd",
+     27
+    ],
+    [
+     "gbpusd",
+     28
+    ],
+    [
+     "gbpusd",
+     29
+    ],
+    [
+     "gbpusd",
+     30
+    ],
+    [
+     "gbpusd",
+     31
+    ],
+    [
+     "gbpusd",
+     32
+    ],
+    [
+     "gbpusd",
+     33
+    ],
+    [
+     "gbpusd",
+     34
+    ],
+    [
+     "gbpusd",
+     35
+    ],
+    [
+     "gbpusd",
+     36
+    ],
+    [
+     "gbpusd",
+     37
+    ],
+    [
+     "gbpusd",
+     38
+    ],
+    [
+     "gbpusd",
+     39
+    ],
+    [
+     "gbpusd",
+     40
+    ],
+    [
+     "gbpusd",
+     41
+    ],
+    [
+     "gbpusd",
+     42
+    ],
+    [
+     "gbpusd",
+     43
+    ],
+    [
+     "gbpusd",
+     44
+    ],
+    [
+     "gbpusd",
+     45
+    ],
+    [
+     "gbpusd",
+     46
+    ],
+    [
+     "gbpusd",
+     47
+    ],
+    [
+     "gbpusd",
+     48
+    ],
+    [
+     "gbpusd",
+     49
+    ],
+    [
+     "gbpusd",
+     50
+    ],
+    [
+     "gbpusd",
+     51
+    ],
+    [
+     "gbpusd",
+     52
+    ]
+   ]
+  },
+  "2022": {
+   "failures": [
+    {
+     "job": "eurusd-2022-53",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2022-53",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    }
+   ],
+   "minutes_lt_120": [
+    [
+     "eurusd",
+     52,
+     118
+    ],
+    [
+     "gbpusd",
+     52,
+     118
+    ]
+   ],
+   "weeks_ok": [
+    [
+     "eurusd",
+     1
+    ],
+    [
+     "eurusd",
+     2
+    ],
+    [
+     "eurusd",
+     3
+    ],
+    [
+     "eurusd",
+     4
+    ],
+    [
+     "eurusd",
+     5
+    ],
+    [
+     "eurusd",
+     6
+    ],
+    [
+     "eurusd",
+     7
+    ],
+    [
+     "eurusd",
+     8
+    ],
+    [
+     "eurusd",
+     9
+    ],
+    [
+     "eurusd",
+     10
+    ],
+    [
+     "eurusd",
+     11
+    ],
+    [
+     "eurusd",
+     12
+    ],
+    [
+     "eurusd",
+     13
+    ],
+    [
+     "eurusd",
+     14
+    ],
+    [
+     "eurusd",
+     15
+    ],
+    [
+     "eurusd",
+     16
+    ],
+    [
+     "eurusd",
+     17
+    ],
+    [
+     "eurusd",
+     18
+    ],
+    [
+     "eurusd",
+     19
+    ],
+    [
+     "eurusd",
+     20
+    ],
+    [
+     "eurusd",
+     21
+    ],
+    [
+     "eurusd",
+     22
+    ],
+    [
+     "eurusd",
+     23
+    ],
+    [
+     "eurusd",
+     24
+    ],
+    [
+     "eurusd",
+     25
+    ],
+    [
+     "eurusd",
+     26
+    ],
+    [
+     "eurusd",
+     27
+    ],
+    [
+     "eurusd",
+     28
+    ],
+    [
+     "eurusd",
+     29
+    ],
+    [
+     "eurusd",
+     30
+    ],
+    [
+     "eurusd",
+     31
+    ],
+    [
+     "eurusd",
+     32
+    ],
+    [
+     "eurusd",
+     33
+    ],
+    [
+     "eurusd",
+     34
+    ],
+    [
+     "eurusd",
+     35
+    ],
+    [
+     "eurusd",
+     36
+    ],
+    [
+     "eurusd",
+     37
+    ],
+    [
+     "eurusd",
+     38
+    ],
+    [
+     "eurusd",
+     39
+    ],
+    [
+     "eurusd",
+     40
+    ],
+    [
+     "eurusd",
+     41
+    ],
+    [
+     "eurusd",
+     42
+    ],
+    [
+     "eurusd",
+     43
+    ],
+    [
+     "eurusd",
+     44
+    ],
+    [
+     "eurusd",
+     45
+    ],
+    [
+     "eurusd",
+     46
+    ],
+    [
+     "eurusd",
+     47
+    ],
+    [
+     "eurusd",
+     48
+    ],
+    [
+     "eurusd",
+     49
+    ],
+    [
+     "eurusd",
+     50
+    ],
+    [
+     "eurusd",
+     51
+    ],
+    [
+     "eurusd",
+     52
+    ],
+    [
+     "gbpusd",
+     1
+    ],
+    [
+     "gbpusd",
+     2
+    ],
+    [
+     "gbpusd",
+     3
+    ],
+    [
+     "gbpusd",
+     4
+    ],
+    [
+     "gbpusd",
+     5
+    ],
+    [
+     "gbpusd",
+     6
+    ],
+    [
+     "gbpusd",
+     7
+    ],
+    [
+     "gbpusd",
+     8
+    ],
+    [
+     "gbpusd",
+     9
+    ],
+    [
+     "gbpusd",
+     10
+    ],
+    [
+     "gbpusd",
+     11
+    ],
+    [
+     "gbpusd",
+     12
+    ],
+    [
+     "gbpusd",
+     13
+    ],
+    [
+     "gbpusd",
+     14
+    ],
+    [
+     "gbpusd",
+     15
+    ],
+    [
+     "gbpusd",
+     16
+    ],
+    [
+     "gbpusd",
+     17
+    ],
+    [
+     "gbpusd",
+     18
+    ],
+    [
+     "gbpusd",
+     19
+    ],
+    [
+     "gbpusd",
+     20
+    ],
+    [
+     "gbpusd",
+     21
+    ],
+    [
+     "gbpusd",
+     22
+    ],
+    [
+     "gbpusd",
+     23
+    ],
+    [
+     "gbpusd",
+     24
+    ],
+    [
+     "gbpusd",
+     25
+    ],
+    [
+     "gbpusd",
+     26
+    ],
+    [
+     "gbpusd",
+     27
+    ],
+    [
+     "gbpusd",
+     28
+    ],
+    [
+     "gbpusd",
+     29
+    ],
+    [
+     "gbpusd",
+     30
+    ],
+    [
+     "gbpusd",
+     31
+    ],
+    [
+     "gbpusd",
+     32
+    ],
+    [
+     "gbpusd",
+     33
+    ],
+    [
+     "gbpusd",
+     34
+    ],
+    [
+     "gbpusd",
+     35
+    ],
+    [
+     "gbpusd",
+     36
+    ],
+    [
+     "gbpusd",
+     37
+    ],
+    [
+     "gbpusd",
+     38
+    ],
+    [
+     "gbpusd",
+     39
+    ],
+    [
+     "gbpusd",
+     40
+    ],
+    [
+     "gbpusd",
+     41
+    ],
+    [
+     "gbpusd",
+     42
+    ],
+    [
+     "gbpusd",
+     43
+    ],
+    [
+     "gbpusd",
+     44
+    ],
+    [
+     "gbpusd",
+     45
+    ],
+    [
+     "gbpusd",
+     46
+    ],
+    [
+     "gbpusd",
+     47
+    ],
+    [
+     "gbpusd",
+     48
+    ],
+    [
+     "gbpusd",
+     49
+    ],
+    [
+     "gbpusd",
+     50
+    ],
+    [
+     "gbpusd",
+     51
+    ],
+    [
+     "gbpusd",
+     52
+    ]
+   ]
+  },
+  "2023": {
+   "failures": [
+    {
+     "job": "eurusd-2023-27",
+     "reason": "QUOTE_SCHEMA",
+     "type": "ValueError"
+    },
+    {
+     "job": "gbpusd-2023-27",
+     "reason": "QUOTE_SCHEMA",
+     "type": "ValueError"
+    }
+   ],
+   "minutes_lt_120": [
+    [
+     "eurusd",
+     1,
+     112
+    ],
+    [
+     "eurusd",
+     50,
+     121
+    ],
+    [
+     "eurusd",
+     52,
+     91
+    ],
+    [
+     "eurusd",
+     53,
+     91
+    ],
+    [
+     "gbpusd",
+     1,
+     112
+    ],
+    [
+     "gbpusd",
+     52,
+     89
+    ],
+    [
+     "gbpusd",
+     53,
+     89
+    ]
+   ],
+   "weeks_ok": [
+    [
+     "eurusd",
+     1
+    ],
+    [
+     "eurusd",
+     2
+    ],
+    [
+     "eurusd",
+     3
+    ],
+    [
+     "eurusd",
+     4
+    ],
+    [
+     "eurusd",
+     5
+    ],
+    [
+     "eurusd",
+     6
+    ],
+    [
+     "eurusd",
+     7
+    ],
+    [
+     "eurusd",
+     8
+    ],
+    [
+     "eurusd",
+     9
+    ],
+    [
+     "eurusd",
+     10
+    ],
+    [
+     "eurusd",
+     11
+    ],
+    [
+     "eurusd",
+     12
+    ],
+    [
+     "eurusd",
+     13
+    ],
+    [
+     "eurusd",
+     14
+    ],
+    [
+     "eurusd",
+     15
+    ],
+    [
+     "eurusd",
+     16
+    ],
+    [
+     "eurusd",
+     17
+    ],
+    [
+     "eurusd",
+     18
+    ],
+    [
+     "eurusd",
+     19
+    ],
+    [
+     "eurusd",
+     20
+    ],
+    [
+     "eurusd",
+     21
+    ],
+    [
+     "eurusd",
+     22
+    ],
+    [
+     "eurusd",
+     23
+    ],
+    [
+     "eurusd",
+     24
+    ],
+    [
+     "eurusd",
+     25
+    ],
+    [
+     "eurusd",
+     26
+    ],
+    [
+     "eurusd",
+     28
+    ],
+    [
+     "eurusd",
+     29
+    ],
+    [
+     "eurusd",
+     30
+    ],
+    [
+     "eurusd",
+     31
+    ],
+    [
+     "eurusd",
+     32
+    ],
+    [
+     "eurusd",
+     33
+    ],
+    [
+     "eurusd",
+     34
+    ],
+    [
+     "eurusd",
+     35
+    ],
+    [
+     "eurusd",
+     36
+    ],
+    [
+     "eurusd",
+     37
+    ],
+    [
+     "eurusd",
+     38
+    ],
+    [
+     "eurusd",
+     39
+    ],
+    [
+     "eurusd",
+     40
+    ],
+    [
+     "eurusd",
+     41
+    ],
+    [
+     "eurusd",
+     42
+    ],
+    [
+     "eurusd",
+     43
+    ],
+    [
+     "eurusd",
+     44
+    ],
+    [
+     "eurusd",
+     45
+    ],
+    [
+     "eurusd",
+     46
+    ],
+    [
+     "eurusd",
+     47
+    ],
+    [
+     "eurusd",
+     48
+    ],
+    [
+     "eurusd",
+     49
+    ],
+    [
+     "eurusd",
+     50
+    ],
+    [
+     "eurusd",
+     51
+    ],
+    [
+     "eurusd",
+     52
+    ],
+    [
+     "eurusd",
+     53
+    ],
+    [
+     "gbpusd",
+     1
+    ],
+    [
+     "gbpusd",
+     2
+    ],
+    [
+     "gbpusd",
+     3
+    ],
+    [
+     "gbpusd",
+     4
+    ],
+    [
+     "gbpusd",
+     5
+    ],
+    [
+     "gbpusd",
+     6
+    ],
+    [
+     "gbpusd",
+     7
+    ],
+    [
+     "gbpusd",
+     8
+    ],
+    [
+     "gbpusd",
+     9
+    ],
+    [
+     "gbpusd",
+     10
+    ],
+    [
+     "gbpusd",
+     11
+    ],
+    [
+     "gbpusd",
+     12
+    ],
+    [
+     "gbpusd",
+     13
+    ],
+    [
+     "gbpusd",
+     14
+    ],
+    [
+     "gbpusd",
+     15
+    ],
+    [
+     "gbpusd",
+     16
+    ],
+    [
+     "gbpusd",
+     17
+    ],
+    [
+     "gbpusd",
+     18
+    ],
+    [
+     "gbpusd",
+     19
+    ],
+    [
+     "gbpusd",
+     20
+    ],
+    [
+     "gbpusd",
+     21
+    ],
+    [
+     "gbpusd",
+     22
+    ],
+    [
+     "gbpusd",
+     23
+    ],
+    [
+     "gbpusd",
+     24
+    ],
+    [
+     "gbpusd",
+     25
+    ],
+    [
+     "gbpusd",
+     26
+    ],
+    [
+     "gbpusd",
+     28
+    ],
+    [
+     "gbpusd",
+     29
+    ],
+    [
+     "gbpusd",
+     30
+    ],
+    [
+     "gbpusd",
+     31
+    ],
+    [
+     "gbpusd",
+     32
+    ],
+    [
+     "gbpusd",
+     33
+    ],
+    [
+     "gbpusd",
+     34
+    ],
+    [
+     "gbpusd",
+     35
+    ],
+    [
+     "gbpusd",
+     36
+    ],
+    [
+     "gbpusd",
+     37
+    ],
+    [
+     "gbpusd",
+     38
+    ],
+    [
+     "gbpusd",
+     39
+    ],
+    [
+     "gbpusd",
+     40
+    ],
+    [
+     "gbpusd",
+     41
+    ],
+    [
+     "gbpusd",
+     42
+    ],
+    [
+     "gbpusd",
+     43
+    ],
+    [
+     "gbpusd",
+     44
+    ],
+    [
+     "gbpusd",
+     45
+    ],
+    [
+     "gbpusd",
+     46
+    ],
+    [
+     "gbpusd",
+     47
+    ],
+    [
+     "gbpusd",
+     48
+    ],
+    [
+     "gbpusd",
+     49
+    ],
+    [
+     "gbpusd",
+     50
+    ],
+    [
+     "gbpusd",
+     51
+    ],
+    [
+     "gbpusd",
+     52
+    ],
+    [
+     "gbpusd",
+     53
+    ]
+   ]
+  },
+  "2024": {
+   "failures": [
+    {
+     "job": "eurusd-2024-01",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "eurusd-2024-35",
+     "reason": "No columns to parse from file",
+     "type": "EmptyDataError"
+    },
+    {
+     "job": "eurusd-2024-51",
+     "reason": "No columns to parse from file",
+     "type": "EmptyDataError"
+    },
+    {
+     "job": "eurusd-2024-52",
+     "reason": "No columns to parse from file",
+     "type": "EmptyDataError"
+    },
+    {
+     "job": "gbpusd-2024-01",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2024-35",
+     "reason": "No columns to parse from file",
+     "type": "EmptyDataError"
+    },
+    {
+     "job": "gbpusd-2024-51",
+     "reason": "No columns to parse from file",
+     "type": "EmptyDataError"
+    },
+    {
+     "job": "gbpusd-2024-52",
+     "reason": "No columns to parse from file",
+     "type": "EmptyDataError"
+    }
+   ],
+   "minutes_lt_120": [
+    [
+     "eurusd",
+     11,
+     122
+    ],
+    [
+     "eurusd",
+     14,
+     123
+    ],
+    [
+     "eurusd",
+     18,
+     122
+    ],
+    [
+     "eurusd",
+     21,
+     122
+    ],
+    [
+     "eurusd",
+     22,
+     122
+    ],
+    [
+     "eurusd",
+     23,
+     123
+    ],
+    [
+     "eurusd",
+     25,
+     123
+    ],
+    [
+     "eurusd",
+     26,
+     123
+    ],
+    [
+     "eurusd",
+     28,
+     123
+    ],
+    [
+     "eurusd",
+     30,
+     121
+    ],
+    [
+     "eurusd",
+     31,
+     123
+    ],
+    [
+     "eurusd",
+     32,
+     124
+    ],
+    [
+     "eurusd",
+     36,
+     122
+    ],
+    [
+     "eurusd",
+     37,
+     123
+    ],
+    [
+     "eurusd",
+     39,
+     122
+    ],
+    [
+     "eurusd",
+     45,
+     123
+    ],
+    [
+     "eurusd",
+     50,
+     122
+    ],
+    [
+     "eurusd",
+     53,
+     88
+    ],
+    [
+     "gbpusd",
+     6,
+     121
+    ],
+    [
+     "gbpusd",
+     12,
+     121
+    ],
+    [
+     "gbpusd",
+     14,
+     121
+    ],
+    [
+     "gbpusd",
+     19,
+     121
+    ],
+    [
+     "gbpusd",
+     53,
+     88
+    ]
+   ],
+   "weeks_ok": [
+    [
+     "eurusd",
+     2
+    ],
+    [
+     "eurusd",
+     3
+    ],
+    [
+     "eurusd",
+     4
+    ],
+    [
+     "eurusd",
+     5
+    ],
+    [
+     "eurusd",
+     6
+    ],
+    [
+     "eurusd",
+     7
+    ],
+    [
+     "eurusd",
+     8
+    ],
+    [
+     "eurusd",
+     9
+    ],
+    [
+     "eurusd",
+     10
+    ],
+    [
+     "eurusd",
+     11
+    ],
+    [
+     "eurusd",
+     12
+    ],
+    [
+     "eurusd",
+     13
+    ],
+    [
+     "eurusd",
+     14
+    ],
+    [
+     "eurusd",
+     15
+    ],
+    [
+     "eurusd",
+     16
+    ],
+    [
+     "eurusd",
+     17
+    ],
+    [
+     "eurusd",
+     18
+    ],
+    [
+     "eurusd",
+     19
+    ],
+    [
+     "eurusd",
+     20
+    ],
+    [
+     "eurusd",
+     21
+    ],
+    [
+     "eurusd",
+     22
+    ],
+    [
+     "eurusd",
+     23
+    ],
+    [
+     "eurusd",
+     24
+    ],
+    [
+     "eurusd",
+     25
+    ],
+    [
+     "eurusd",
+     26
+    ],
+    [
+     "eurusd",
+     27
+    ],
+    [
+     "eurusd",
+     28
+    ],
+    [
+     "eurusd",
+     29
+    ],
+    [
+     "eurusd",
+     30
+    ],
+    [
+     "eurusd",
+     31
+    ],
+    [
+     "eurusd",
+     32
+    ],
+    [
+     "eurusd",
+     33
+    ],
+    [
+     "eurusd",
+     34
+    ],
+    [
+     "eurusd",
+     36
+    ],
+    [
+     "eurusd",
+     37
+    ],
+    [
+     "eurusd",
+     38
+    ],
+    [
+     "eurusd",
+     39
+    ],
+    [
+     "eurusd",
+     40
+    ],
+    [
+     "eurusd",
+     41
+    ],
+    [
+     "eurusd",
+     42
+    ],
+    [
+     "eurusd",
+     43
+    ],
+    [
+     "eurusd",
+     44
+    ],
+    [
+     "eurusd",
+     45
+    ],
+    [
+     "eurusd",
+     46
+    ],
+    [
+     "eurusd",
+     47
+    ],
+    [
+     "eurusd",
+     48
+    ],
+    [
+     "eurusd",
+     49
+    ],
+    [
+     "eurusd",
+     50
+    ],
+    [
+     "eurusd",
+     53
+    ],
+    [
+     "gbpusd",
+     2
+    ],
+    [
+     "gbpusd",
+     3
+    ],
+    [
+     "gbpusd",
+     4
+    ],
+    [
+     "gbpusd",
+     5
+    ],
+    [
+     "gbpusd",
+     6
+    ],
+    [
+     "gbpusd",
+     7
+    ],
+    [
+     "gbpusd",
+     8
+    ],
+    [
+     "gbpusd",
+     9
+    ],
+    [
+     "gbpusd",
+     10
+    ],
+    [
+     "gbpusd",
+     11
+    ],
+    [
+     "gbpusd",
+     12
+    ],
+    [
+     "gbpusd",
+     13
+    ],
+    [
+     "gbpusd",
+     14
+    ],
+    [
+     "gbpusd",
+     15
+    ],
+    [
+     "gbpusd",
+     16
+    ],
+    [
+     "gbpusd",
+     17
+    ],
+    [
+     "gbpusd",
+     18
+    ],
+    [
+     "gbpusd",
+     19
+    ],
+    [
+     "gbpusd",
+     20
+    ],
+    [
+     "gbpusd",
+     21
+    ],
+    [
+     "gbpusd",
+     22
+    ],
+    [
+     "gbpusd",
+     23
+    ],
+    [
+     "gbpusd",
+     24
+    ],
+    [
+     "gbpusd",
+     25
+    ],
+    [
+     "gbpusd",
+     26
+    ],
+    [
+     "gbpusd",
+     27
+    ],
+    [
+     "gbpusd",
+     28
+    ],
+    [
+     "gbpusd",
+     29
+    ],
+    [
+     "gbpusd",
+     30
+    ],
+    [
+     "gbpusd",
+     31
+    ],
+    [
+     "gbpusd",
+     32
+    ],
+    [
+     "gbpusd",
+     33
+    ],
+    [
+     "gbpusd",
+     34
+    ],
+    [
+     "gbpusd",
+     36
+    ],
+    [
+     "gbpusd",
+     37
+    ],
+    [
+     "gbpusd",
+     38
+    ],
+    [
+     "gbpusd",
+     39
+    ],
+    [
+     "gbpusd",
+     40
+    ],
+    [
+     "gbpusd",
+     41
+    ],
+    [
+     "gbpusd",
+     42
+    ],
+    [
+     "gbpusd",
+     43
+    ],
+    [
+     "gbpusd",
+     44
+    ],
+    [
+     "gbpusd",
+     45
+    ],
+    [
+     "gbpusd",
+     46
+    ],
+    [
+     "gbpusd",
+     47
+    ],
+    [
+     "gbpusd",
+     48
+    ],
+    [
+     "gbpusd",
+     49
+    ],
+    [
+     "gbpusd",
+     50
+    ],
+    [
+     "gbpusd",
+     53
+    ]
+   ]
+  },
+  "2025": {
+   "failures": [
+    {
+     "job": "eurusd-2025-01",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "eurusd-2025-02",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "eurusd-2025-29",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "eurusd-2025-30",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2025-01",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2025-02",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2025-29",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    },
+    {
+     "job": "gbpusd-2025-30",
+     "reason": "404 Client Error: Not Found",
+     "type": "HTTPError"
+    }
+   ],
+   "minutes_lt_120": [
+    [
+     "eurusd",
+     20,
+     125
+    ],
+    [
+     "eurusd",
+     26,
+     122
+    ],
+    [
+     "eurusd",
+     31,
+     127
+    ],
+    [
+     "eurusd",
+     33,
+     124
+    ],
+    [
+     "eurusd",
+     34,
+     125
+    ],
+    [
+     "eurusd",
+     35,
+     121
+    ],
+    [
+     "eurusd",
+     36,
+     123
+    ],
+    [
+     "eurusd",
+     49,
+     121
+    ],
+    [
+     "eurusd",
+     52,
+     86
+    ],
+    [
+     "eurusd",
+     53,
+     86
+    ],
+    [
+     "gbpusd",
+     35,
+     121
+    ],
+    [
+     "gbpusd",
+     52,
+     86
+    ],
+    [
+     "gbpusd",
+     53,
+     86
+    ]
+   ],
+   "weeks_ok": [
+    [
+     "eurusd",
+     3
+    ],
+    [
+     "eurusd",
+     4
+    ],
+    [
+     "eurusd",
+     5
+    ],
+    [
+     "eurusd",
+     6
+    ],
+    [
+     "eurusd",
+     7
+    ],
+    [
+     "eurusd",
+     8
+    ],
+    [
+     "eurusd",
+     9
+    ],
+    [
+     "eurusd",
+     10
+    ],
+    [
+     "eurusd",
+     11
+    ],
+    [
+     "eurusd",
+     12
+    ],
+    [
+     "eurusd",
+     13
+    ],
+    [
+     "eurusd",
+     14
+    ],
+    [
+     "eurusd",
+     15
+    ],
+    [
+     "eurusd",
+     16
+    ],
+    [
+     "eurusd",
+     17
+    ],
+    [
+     "eurusd",
+     18
+    ],
+    [
+     "eurusd",
+     19
+    ],
+    [
+     "eurusd",
+     20
+    ],
+    [
+     "eurusd",
+     21
+    ],
+    [
+     "eurusd",
+     22
+    ],
+    [
+     "eurusd",
+     23
+    ],
+    [
+     "eurusd",
+     24
+    ],
+    [
+     "eurusd",
+     25
+    ],
+    [
+     "eurusd",
+     26
+    ],
+    [
+     "eurusd",
+     27
+    ],
+    [
+     "eurusd",
+     28
+    ],
+    [
+     "eurusd",
+     31
+    ],
+    [
+     "eurusd",
+     32
+    ],
+    [
+     "eurusd",
+     33
+    ],
+    [
+     "eurusd",
+     34
+    ],
+    [
+     "eurusd",
+     35
+    ],
+    [
+     "eurusd",
+     36
+    ],
+    [
+     "eurusd",
+     37
+    ],
+    [
+     "eurusd",
+     38
+    ],
+    [
+     "eurusd",
+     39
+    ],
+    [
+     "eurusd",
+     40
+    ],
+    [
+     "eurusd",
+     41
+    ],
+    [
+     "eurusd",
+     42
+    ],
+    [
+     "eurusd",
+     43
+    ],
+    [
+     "eurusd",
+     44
+    ],
+    [
+     "eurusd",
+     45
+    ],
+    [
+     "eurusd",
+     46
+    ],
+    [
+     "eurusd",
+     47
+    ],
+    [
+     "eurusd",
+     48
+    ],
+    [
+     "eurusd",
+     49
+    ],
+    [
+     "eurusd",
+     50
+    ],
+    [
+     "eurusd",
+     51
+    ],
+    [
+     "eurusd",
+     52
+    ],
+    [
+     "eurusd",
+     53
+    ],
+    [
+     "gbpusd",
+     3
+    ],
+    [
+     "gbpusd",
+     4
+    ],
+    [
+     "gbpusd",
+     5
+    ],
+    [
+     "gbpusd",
+     6
+    ],
+    [
+     "gbpusd",
+     7
+    ],
+    [
+     "gbpusd",
+     8
+    ],
+    [
+     "gbpusd",
+     9
+    ],
+    [
+     "gbpusd",
+     10
+    ],
+    [
+     "gbpusd",
+     11
+    ],
+    [
+     "gbpusd",
+     12
+    ],
+    [
+     "gbpusd",
+     13
+    ],
+    [
+     "gbpusd",
+     14
+    ],
+    [
+     "gbpusd",
+     15
+    ],
+    [
+     "gbpusd",
+     16
+    ],
+    [
+     "gbpusd",
+     17
+    ],
+    [
+     "gbpusd",
+     18
+    ],
+    [
+     "gbpusd",
+     19
+    ],
+    [
+     "gbpusd",
+     20
+    ],
+    [
+     "gbpusd",
+     21
+    ],
+    [
+     "gbpusd",
+     22
+    ],
+    [
+     "gbpusd",
+     23
+    ],
+    [
+     "gbpusd",
+     24
+    ],
+    [
+     "gbpusd",
+     25
+    ],
+    [
+     "gbpusd",
+     26
+    ],
+    [
+     "gbpusd",
+     27
+    ],
+    [
+     "gbpusd",
+     28
+    ],
+    [
+     "gbpusd",
+     31
+    ],
+    [
+     "gbpusd",
+     32
+    ],
+    [
+     "gbpusd",
+     33
+    ],
+    [
+     "gbpusd",
+     34
+    ],
+    [
+     "gbpusd",
+     35
+    ],
+    [
+     "gbpusd",
+     36
+    ],
+    [
+     "gbpusd",
+     37
+    ],
+    [
+     "gbpusd",
+     38
+    ],
+    [
+     "gbpusd",
+     39
+    ],
+    [
+     "gbpusd",
+     40
+    ],
+    [
+     "gbpusd",
+     41
+    ],
+    [
+     "gbpusd",
+     42
+    ],
+    [
+     "gbpusd",
+     43
+    ],
+    [
+     "gbpusd",
+     44
+    ],
+    [
+     "gbpusd",
+     45
+    ],
+    [
+     "gbpusd",
+     46
+    ],
+    [
+     "gbpusd",
+     47
+    ],
+    [
+     "gbpusd",
+     48
+    ],
+    [
+     "gbpusd",
+     49
+    ],
+    [
+     "gbpusd",
+     50
+    ],
+    [
+     "gbpusd",
+     51
+    ],
+    [
+     "gbpusd",
+     52
+    ],
+    [
+     "gbpusd",
+     53
+    ]
+   ]
+  }
+ }
+}
