@@ -265,6 +265,59 @@ native coverage are required afterwards. This is not an authorization to
 replace a missing quote with a fitted price or to treat assumed holidays as
 verified market closures.
 
+### Execution And Status
+
+Use `configs/native_fx_recovery.v1.json` and the predictor revision containing
+`recover_fxcm_quotes --periodicity H1 --quote-view BID`. The controller records
+the runtime file hashes, its own hash and numeric versions in its identity.
+Changing these requires a new control root, not an overwrite of old terminals.
+Keep `CURATION_ROOT` on ext4 and `BULK_ROOT` on the mounted large volume.
+
+```bash
+python _scripts/native_fx_recovery.py run --root "$CURATION_ROOT" --output "$BULK_ROOT" --config configs/native_fx_recovery.v1.json --predictor-root "$PREDICTOR_ROOT"
+python _scripts/native_fx_recovery.py status --root "$CURATION_ROOT"
+```
+
+The process continues through every required year without a human approving
+the next one. A failed acquisition year means one or more requested weekly
+files were unavailable; it does not discard that year's observed rows. The
+independent monthly audit determines actual missing hours, including an absent
+month or a boundary week. Week identifiers alone do not prove missing data.
+
+After both quality reports exist, run the missing-date follower. Its batches
+contain at most 14 native dates and adjacent-day overlap. It checks each
+archive's actual date, resumes cached observations and respects provider
+cooldowns. It does not guess the alternative source's UTC clock or merge prices.
+
+```bash
+python _scripts/recover_native_fx_gaps.py run --root "$CURATION_ROOT" --output "$ALTERNATIVE_RAW_ROOT" --config configs/native_fx_recovery.v1.json
+python _scripts/recover_native_fx_gaps.py status --root "$CURATION_ROOT"
+```
+
+Publish only the new source-quality records, under `financial-data` /
+`NATIVE_SOURCE_QUALITY`, never a forecasting phase or an admitted-lake claim.
+The publisher reuses predictor's existing governed outbox. Its code commit is
+pinned explicitly; source files are verified against their recorded hashes.
+Credentials come from the service's existing EnvironmentFile, never this repo.
+
+```bash
+python _scripts/publish_native_fx_quality.py run --root "$CURATION_ROOT" --predictor-root "$PREDICTOR_ROOT" --warehouse-url "$WAREHOUSE_URL" --token-env DATA_GOV_LAKE_TOKEN --mirror-host "$MIRROR_HOST" --mirror-relative-path "$MIRROR_RELATIVE_PATH" --code-commit "$PUBLISHER_COMMIT"
+python _scripts/publish_native_fx_quality.py status --root "$CURATION_ROOT"
+```
+
+Operational deployment uses a persistent acquisition service and two bounded
+oneshot timers for gap recovery and publication. A normal successor does not
+need agent approval or log polling. The timers wait for actual prerequisite
+files, not a narrative status. They retry publication without retraining or
+redownloading completed batches. A publication is complete only with exact
+warehouse readback and matching closed analytical copies locally and on a
+second machine. `QUALITY_PUBLISHED_NOT_ADMITTED` still prohibits modeling.
+
+The acquisition ETA covers remaining source requests only. It does not include
+unmeasured alternative-source work, calendar resolution, whole-inventory
+curation, preprocessing or recomputed selection; retry/blocked states have no
+promised completion ETA.
+
 Tests must demonstrate detection of a missing month despite100% finite retained
 rows, one missing open hour versus a weekend, conflicting duplicates, bad OHLC,
 misaligned timezone/DST, publication after t, future perturbations, stale daily
