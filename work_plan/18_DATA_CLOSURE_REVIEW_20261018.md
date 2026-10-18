@@ -53,6 +53,44 @@ reports and their two verified physical copies remain unchanged.
 
 ## Remaining work
 
+### Provider clock resolved from primary documentation
+
+The official Forexite page explicitly defines its GMT+1 label as CET in winter
+and CEST in summer, including the MetaStock minute archive family:
+https://www.forexite.com/free_forex_quotes/forex_history.html . The earlier
+unknown-clock qualification above is superseded for this source convention.
+The retained Windows-1251 HTML has SHA-256
+`f5c2e0a29e0f6744ef575373e2f94bb687bf385621c5469f8c97703ce930b6f0`.
+`configs/forexite_metastock_clock.v1.json` binds that primary evidence and the
+independent October witness. Europe/Berlin implements those seasonal offsets.
+This does NOT establish bid/ask/mid or minute-start versus minute-end labels.
+
+`_scripts/normalize_forexite_clock.py` completed 86/86 candidate Parquet files,
+206,858 rows, into a separate output tree. Prices/native labels are preserved,
+`timestamp_utc_label` is added, no availability instant is invented, and no
+interpolation or lake admission occurs. Ambiguous/nonexistent DST labels raise
+an explicit error. These 86 files include diagnostic dates outside the recovery
+request cohort; they are not the 84/110 requested-date coverage statistic.
+
+Reproduction (bulk roots are operator configuration, never checked into Git):
+
+```bash
+python _scripts/normalize_forexite_clock.py \
+  --candidate-root <native-candidates> --output-root <new-normalized-directory> \
+  --contract configs/forexite_metastock_clock.v1.json \
+  --source-evidence <retained-provider-html>
+python _scripts/normalize_forexite_clock.py --status --output-root <normalized-directory>
+```
+
+`publish_forexite_clock.py` checks source/output bytes and counts, then uses the
+existing governed outbox, warehouse readback and closed DuckDB copies. Its
+`--root` must remain on ext4 (queue/lock), with `--local-copy` on bulk storage.
+Its `--status --root <publication-root>` reports delivery separately from data
+admission. All file/metric identities are new; previous reports are not relabeled.
+New focused tests: 25 passed (clock normalization, source comparison and
+publication validation); initial publisher test collection failed before its
+implementation. Public source artifacts remain outside Git.
+
 Map missing observations to actual provider file intervals and actual session
 closures, resolve timestamp/quote semantics, verify replacements, then admit
 the inventory and recompute preprocessing/selection. The candidate inventory
