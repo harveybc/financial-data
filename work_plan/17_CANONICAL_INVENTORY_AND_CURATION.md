@@ -255,6 +255,8 @@ each acquisition year and forces GPUs invisible.
 | NR06 | Return-outlier reference is TRAIN-only; zero scale is NOT_ESTIMABLE |
 | NR07 | Bounded retries, sequential successors, restart identity and read-only status are tested |
 | NR08 | Acquisition success does not imply admission, selection or training permission |
+| NR09 | Quality-only reports preserve undefined metrics, verify actual source digests and cannot relabel old experiments |
+| NR10 | The existing governed outbox requires exact warehouse readback; closed analytical copies are hashed locally and on a second host |
 
 These tests precede implementation. Real source readback, clock witnesses and
 native coverage are required afterwards. This is not an authorization to
