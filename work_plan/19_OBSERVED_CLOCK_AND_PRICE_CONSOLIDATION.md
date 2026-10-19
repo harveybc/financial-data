@@ -53,3 +53,35 @@ After this acceptance, consolidate native H1, authenticated boundary quotes and
 corrected complete replacement hours with per-bar source identity. Recompute
 monthly coverage and every source transition. Publish the actual unresolved
 timestamps and recover them, then rebuild admitted preprocessing/selection.
+
+## Independent coherent source and operating-calendar acceptance
+
+The independent, pinned Yllvar/fx-historical-data source declares UTC bar-open
+labels and H1 aggregation from M30. Recompute its H1/M30 identity from raw
+files, corroborate its declared zero-hour offset against native FXCM on common
+support with all six hourly negative controls, and reject unverified source
+hours. Prefer its coherent time series; use verified native observations only
+at the few absent or incomplete H1 timestamps, retaining exact per-row source.
+
+`fx_business_calendar.v1.json` defines conservative business operating hours:
+New York weekly sessions and the dated FXCM regional holiday exclusions already
+retained from primary notices. The initial New Year date is an explicit
+business blackout. This is an operating policy, not certification that every
+global venue shares those boundaries. Its identity must govern preparation,
+the simulator and all controls together. Do not infer another closure merely
+because observations are missing. Buffer the actual configured sessions by the
+same 12-hour forced-flat/reopen rule.
+
+Core-price admission requires zero absent required hours on this frozen
+calendar, all 72 months retained, valid positive OHLC, UTC availability at bar
+end, raw file integrity, M30 lineage or verified native fallback, and recorded
+outlier/source-transition diagnostics. Any new unexplained absent hour rejects
+admission. Admission here covers the two core price series, not all catalog
+variables or final feature selection.
+
+The raw-price SAC control can run independently after this core acceptance and
+the real execution-path check. It is a baseline without final feature selection.
+Selection rebuilding remains required for the selected-input/modular comparison;
+do not claim that a raw baseline completes that phase. Preserve the 4-year TRAIN,
+one-year VALIDATION and separate 2025 evaluation periods. Keep all treatment
+and control populations aligned, and report warmup/other exclusions explicitly.
