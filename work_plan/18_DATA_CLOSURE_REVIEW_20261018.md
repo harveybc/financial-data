@@ -215,3 +215,10 @@ against independent raw observations, produce verified replacement hours with
 explicit source provenance, account separately for holiday closures and genuine
 missing observations, and rebuild the admitted inventory. The source ZIPs now
 exist locally; do not report them as waiting for a download or credentials.
+
+The 2024/2025 diagnostics were subsequently published and read back as well:
+2 reports / 7,590 metrics (2024) and 2 reports / 7,605 metrics (2025), zero
+pending/mismatches. Together with 2023: 6 reports / 22,890 metrics. Each closed
+snapshot has matching copies on two machines. Respective snapshot SHA-256:
+`45419a616fead78543a5913becbe032a71c22c99fd85a976bcef3ecdcb929f13`
+and `8110c25d0cd2ad2243d555c13fccaef2c28ab617097c4366de661c7783ed4aae`.
