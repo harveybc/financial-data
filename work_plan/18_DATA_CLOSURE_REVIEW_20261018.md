@@ -120,3 +120,98 @@ the inventory and recompute preprocessing/selection. The candidate inventory
 is 394 records across different roles, not 394 accepted features. Its original
 nonfinite counts must be regenerated before admission using the corrected code.
 No inference, interpolation, training or calendar acceptance occurred here.
+
+## Raw clock replay and source-boundary recovery
+
+`histdata_clock_resolution.py` now replays the original 2023 ZIPs, checks OHLC,
+counts only complete 60-minute hours and compares fixed EST, US Eastern and a
+European-DST cohort hypothesis on identical timestamps. Empty common support
+is an error, not completed evidence. Seven tests pass, including a changed
+retained metric rejected by a fresh raw-source replay before publication.
+
+Actual comparison: 1,539 pair/date/hypothesis rows; EURUSD has 4,205 shared
+hours over 257 dates, GBPUSD 4,319 over 256 dates. Disagreement with declared
+fixed EST changes at European DST dates, not US dates. This is evidence of a
+source-clock conflict, NOT an automatic choice of whichever offset scores best.
+Raw archives and the current lake remain unchanged. The new report digest is
+`c2ef457e30ff75acf2ba1813d80469a4a12f39b24f1e46b3eb9f56afbe9a57ab`.
+
+Publication at `b6ae8413f`: 2 reports / 7,695 metrics read back, zero pending or
+mismatched reports. Closed 2,895,872-byte DuckDB copies match on two machines:
+`7b7fedd9ad674688b1be1568df2b94687aeee0becdc5e5b2f2426a9f11a1aa8e`.
+The publisher reused the existing outbox/warehouse and stayed within 164.2 MiB,
+without swap; elapsed 67.063 s. Expanded focused suite: 82 passed, 1 skipped,
+4 existing timezone-to-month/week warnings. No financial training.
+
+Reproduce with operator-configured roots (no credentials in command arguments):
+
+```bash
+python _scripts/histdata_clock_resolution.py --primary-root <native-hourly-root> \
+  --histdata-root <raw-annual-root> --year 2023 --output <fresh-report-path>
+python _scripts/publish_forexite_clock.py --root <ext4-publication-root> \
+  --histdata-report <report-path> --primary-root <native-hourly-root> \
+  --histdata-root <raw-annual-root> --predictor-root <predictor-checkout> \
+  --warehouse-url <configured-warehouse> --code-commit <verified-code-pin> \
+  --local-copy <bulk-closed-copy> --mirror-host <configured-mirror> \
+  --mirror-relative-path <closed-copy-relative-to-home>
+python _scripts/publish_forexite_clock.py --root <ext4-publication-root> --status
+```
+
+Actual source boundaries, not filename years, recover missing observations:
+FXCM `H1/{EURUSD,GBPUSD}/2019/53.csv.gz` contains 40 missing hours per pair,
+2020-01-02 06:00 through 2020-01-03 21:00 UTC. The two original compressed
+response hashes are respectively
+`f8fc2ef1c558eb4b73759886222df9c0ef9b60803a94b36442d67d3446c961e7`
+and `fc0875b0e27323b59a8dc4dd2043457588521d09d99aea73af4258398e3ccfc0`.
+Seven genuinely absent session weeks remain per pair; the 24 failed URL names
+were not 24 missing session weeks. A bounded minute-archive fallback for both
+pairs in 2024 weeks 35/51/52 and 2025 weeks 2/29/30 returned 12 HTTP 404s.
+Retained acquisition STATUS receipts distinguish absence from successful repair;
+do not poll the same missing URLs as though that were advancing the repair.
+
+Calendar investigation found indicative Saturday quotes in native archives.
+Do not treat a published quote as proof that trading was open. Dated regional
+holiday notices also conflict with archive boundaries; those dates must remain
+explicitly unresolved until the operational calendar is established. None of
+these findings permits interpolation or treating closed hours as missing ticks.
+
+Boundary candidate builder `recover_fxcm_boundary.py` (@5866040b6) executed:
+40 original missing rows for each pair, original prices preserved, zero overlap
+with baseline files, no interpolation or merge. It authenticates the two source
+responses, checks all twelve baseline file hashes and writes a completion
+manifest atomically with fsync. Its read-only status checks output hashes and
+counts. Manifest digest:
+`40026a5e33b174525668205a90401db3dfeec5286ffe7d87beee49590bb1db7d`.
+25 tests pass when PREDICTOR_ROOT points to the actual parser checkout; omission
+of that environment variable skips parser integration tests and is not acceptance.
+
+```bash
+python _scripts/recover_fxcm_boundary.py --predictor-root <parser-checkout> \
+  --primary-root <native-hourly-root> --evidence-root <retained-fetch-evidence> \
+  --output-root <new-boundary-directory>
+python _scripts/recover_fxcm_boundary.py --status --output-root <boundary-directory>
+```
+
+The annual alternative download, unlike the unsuccessful monthly fallback,
+completed four new original ZIPs, both pairs for 2024 and 2025, without failure:
+
+| Pair/year | Observed minutes | Candidate hours | Hours missing at least one minute |
+|---|---:|---:|---:|
+| EURUSD 2024 | 372379 | 6243 | 733 |
+| EURUSD 2025 | 372024 | 6225 | 497 |
+| GBPUSD 2024 | 372047 | 6243 | 711 |
+| GBPUSD 2025 | 371031 | 6225 | 640 |
+
+These hour counts are acquisition candidates, not coverage certification. The
+unchanged acquisition parser records the provider's declared fixed-EST clock;
+that conflicts with the observed seasonal alignment and must not silently become
+the admitted clock. HistData's primary ASCII specification identifies OHLC as
+bid prices: https://www.histdata.com/f-a-q/data-files-detailed-specification/ .
+The raw-clock comparison was also executed for 2024 (1518 comparison rows) and
+2025 (1521); it still does not select a timezone automatically.
+
+Next concrete recovery work: resolve and freeze the cohort-specific time rule
+against independent raw observations, produce verified replacement hours with
+explicit source provenance, account separately for holiday closures and genuine
+missing observations, and rebuild the admitted inventory. The source ZIPs now
+exist locally; do not report them as waiting for a download or credentials.
