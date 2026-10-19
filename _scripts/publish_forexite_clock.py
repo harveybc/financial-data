@@ -1,4 +1,4 @@
-"""Publish verified clock-only evidence through the existing governed outbox."""
+"""Publish clock-only evidence through the existing governed outbox; never admit data."""
 import argparse
 import fcntl
 import hashlib
@@ -69,6 +69,9 @@ def main():
     parser = argparse.ArgumentParser(__doc__)
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--status', action='store_true')
+    parser.add_argument('--histdata-report')
+    parser.add_argument('--primary-root')
+    parser.add_argument('--histdata-root')
     for name in ('native-root', 'normalized-root', 'contract', 'source-evidence', 'predictor-root',
                  'warehouse-url', 'code-commit', 'local-copy', 'mirror-host', 'mirror-relative-path'):
         parser.add_argument('--' + name)
@@ -79,9 +82,11 @@ def main():
         state = json.loads(status.read_text())
         print(json.dumps(state, indent=2))
         return 0 if state['state'] == 'CLOCK_EVIDENCE_PUBLISHED_NOT_ADMITTED' else 2
-    if any(getattr(args, name) is None for name in ('native_root', 'normalized_root', 'contract',
-            'source_evidence', 'predictor_root', 'warehouse_url', 'code_commit', 'local_copy',
-            'mirror_host', 'mirror_relative_path')):
+    required = ('predictor_root', 'warehouse_url', 'code_commit', 'local_copy',
+                'mirror_host', 'mirror_relative_path')
+    required += (('primary_root', 'histdata_root') if args.histdata_report else
+                 ('native_root', 'normalized_root', 'contract', 'source_evidence'))
+    if any(getattr(args, name) is None for name in required):
         parser.error('all publication arguments are required')
     # Keep queue/WAL on the coordinator filesystem, never the bulk NTFS volume.
     args.root.mkdir(parents=True, exist_ok=True)
@@ -90,21 +95,29 @@ def main():
         box = None
         try:
             repo = Path(__file__).resolve().parents[1]
-            for name in ('publish_forexite_clock.py', 'normalize_forexite_clock.py',
-                         'publish_native_fx_quality.py'):
+            producer = 'histdata_clock_resolution.py' if args.histdata_report else 'normalize_forexite_clock.py'
+            for name in ('publish_forexite_clock.py', producer, 'publish_native_fx_quality.py'):
                 pinned = subprocess.run(['git', '-C', str(repo), 'show',
                     args.code_commit + ':_scripts/' + name], capture_output=True, check=True).stdout
                 if hashlib.sha256(pinned).hexdigest() != sha(repo / '_scripts' / name):
                     raise ValueError('PUBLICATION_CODE_NOT_PINNED')
-            report = build_verified_report(args.native_root, args.normalized_root, args.contract,
-                                           args.source_evidence, args.code_commit)
+            if args.histdata_report:
+                from histdata_clock_resolution import build_verified_reports
+                new_reports = build_verified_reports(args.histdata_report, args.primary_root,
+                                                     args.histdata_root, args.code_commit)
+            else:
+                new_reports = [build_verified_report(args.native_root, args.normalized_root, args.contract,
+                                                     args.source_evidence, args.code_commit)]
             sys.path.insert(0, str(Path(args.predictor_root).resolve()))
             from tools.i6dmo.outbox import HttpWarehouse, Outbox
             box = Outbox(args.root / 'clock-outbox.sqlite')
-            box.enqueue(report, source_unit='forexite-clock-normalization')
+            for report in new_reports:
+                box.enqueue(report, source_unit=('histdata-clock-diagnostic' if args.histdata_report
+                                                 else 'forexite-clock-normalization'))
             delivery = box.pump(HttpWarehouse(args.warehouse_url, args.token_env))
             reports = [json.loads(item['body']) for item in box.items()]
-            physical = args.root / 'forexite_clock_quality.duckdb'
+            physical = args.root / ('histdata_clock_quality.duckdb' if args.histdata_report
+                                    else 'forexite_clock_quality.duckdb')
             digest = snapshot(physical, reports)
             if copy_closed(physical, args.local_copy) != digest:
                 raise ValueError('LOCAL_MIRROR_MISMATCH')
