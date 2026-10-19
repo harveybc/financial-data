@@ -26,3 +26,16 @@ def test_core_report_preserves_partial_scope_and_monthly_counts():
 def test_non_admission_cannot_publish_as_admitted():
     with pytest.raises(ValueError, match='CORE_ADMISSION'):
         module.build_report(dict(status='PREPARING'), 'c'*64, 'd'*40)
+
+
+def test_publication_cannot_overwrite_admission_evidence(tmp_path):
+    source = tmp_path/'admission'
+    with pytest.raises(ValueError, match='OVERLAPS_ADMISSION'):
+        module.require_safe_targets(source, tmp_path/'operations', source/'eurusd.parquet')
+    module.require_safe_targets(source, tmp_path/'operations', tmp_path/'mirror'/'copy.db')
+
+
+def test_other_identity_is_rejected_before_enqueue_or_pump():
+    with pytest.raises(ValueError, match='MIXED_PUBLICATION'):
+        module.require_current_reports([{'experiment_key': 'different'}], {'experiment_key': 'current'})
+    module.require_current_reports([], {'experiment_key': 'current'})

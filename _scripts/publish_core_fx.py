@@ -31,6 +31,17 @@ def build_report(receipt, admission_sha, code_commit):
         metrics=metrics)
 
 
+def require_safe_targets(source, root, local_copy):
+    source, root, local_copy = map(Path.resolve, (source, root, local_copy))
+    if root.is_relative_to(source) or local_copy.is_relative_to(source) or source.is_relative_to(local_copy):
+        raise ValueError('PUBLICATION_TARGET_OVERLAPS_ADMISSION')
+
+
+def require_current_reports(existing, report):
+    if any(item != report for item in existing):
+        raise ValueError('MIXED_PUBLICATION_IDENTITIES_USE_NEW_OPERATIONAL_ROOT')
+
+
 def main():
     p = argparse.ArgumentParser(__doc__)
     for name in ('admission-root', 'root', 'predictor-root', 'local-copy'):
@@ -40,6 +51,7 @@ def main():
     p.add_argument('--token-env', default='DATA_GOV_LAKE_TOKEN')
     a = p.parse_args()
     source, root = a.admission_root.resolve(), a.root.resolve()
+    require_safe_targets(source, root, a.local_copy)
     repo = Path(__file__).resolve().parents[1]
     verify_pinned(repo, a.code_commit, ('_scripts/admit_core_fx.py', '_scripts/publish_core_fx.py'))
     if root.is_relative_to(source) or root.is_relative_to(repo):
@@ -63,7 +75,11 @@ def main():
     root.mkdir(parents=True, exist_ok=True)
     box = Outbox(root/'core-admission-outbox.sqlite')
     try:
-        box.enqueue(build_report(receipt, admission_sha, a.code_commit), source_unit='core-eurusd-admission')
+        report = build_report(receipt, admission_sha, a.code_commit)
+        existing = [{k: v for k, v in json.loads(row['body']).items() if k != 'report_sha256'}
+                    for row in box.items()]
+        require_current_reports(existing, report)
+        box.enqueue(report, source_unit='core-eurusd-admission')
         delivery = box.pump(HttpWarehouse(a.warehouse_url, a.token_env))
         reports = [json.loads(row['body']) for row in box.items()]
         physical = root/'core-admission.duckdb'
