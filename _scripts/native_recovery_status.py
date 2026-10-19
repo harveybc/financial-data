@@ -1,6 +1,7 @@
 """Read-only stage status. Source files and candidate dates are not admission."""
 import argparse
 from datetime import date
+import importlib
 import json
 from pathlib import Path
 
@@ -49,6 +50,26 @@ def snapshot(root,alternative_output=None):
             calendar_disposition='UNVERIFIED') for d in sorted(dates-set(available))],
         clock_verified=False,admitted=False)
     result['publication']=load(root/'PUBLICATION_STATUS.json')
+    configured=load(root/'SUPPLEMENTARY_ROOTS.json')
+    if configured:
+        if configured.get('schema')!='financial_data.supplementary_roots.v1':
+            raise ValueError('UNKNOWN_SUPPLEMENTARY_ROOTS_SCHEMA')
+        for key,module in (('histdata_corrected','normalize_histdata_observed_clock'),
+                           ('observations_consolidated','consolidate_fx_observations')):
+            if key not in configured:continue
+            try:
+                body=importlib.import_module(module).status(Path(configured[key]))
+                if key=='histdata_corrected':
+                    result[key]=dict(state=body['state'],clock_verified=body['clock_verified'],
+                                     files=len(body['files']),complete_hours=sum(f['rows'] for f in body['files']))
+                else:
+                    result[key]=dict(state=body['state'],pairs={p:{k:v[k] for k in (
+                        'rows','missing_expected_open_hours','observations_excluded_by_closed_weekly_schedule')}
+                        for p,v in body['pairs'].items()})
+                    if any(v['missing_expected_open_hours'] for v in body['pairs'].values()):
+                        result['state']='RECOVERING_REMAINING_OBSERVATIONS_AND_CALENDAR'
+            except (OSError,ValueError,KeyError,TypeError) as exc:
+                result[key]=dict(state='UNAVAILABLE',error_type=type(exc).__name__)
     return result
 
 

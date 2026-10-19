@@ -62,3 +62,39 @@ def test_unavailable_dates_show_weekdays_without_certifying_closures(tmp_path):
     assert details[0]['weekday']=='Saturday'
     assert details[1]['weekday']=='Friday'
     assert all(d['calendar_disposition']=='UNVERIFIED' for d in details)
+
+
+def test_supplementary_correction_and_consolidation_are_visible_without_admission(tmp_path, monkeypatch):
+    import sys
+    import types
+    put(tmp_path/'SUPPLEMENTARY_ROOTS.json', dict(schema='financial_data.supplementary_roots.v1',
+        histdata_corrected=str(tmp_path/'corrected'), observations_consolidated=str(tmp_path/'consolidated')))
+    monkeypatch.setitem(sys.modules, 'normalize_histdata_observed_clock', types.SimpleNamespace(
+        status=lambda p: dict(state='CLOCK_CORRECTED_COMPLETE_HOUR_CANDIDATES', clock_verified=True,
+                              files=[dict(rows=60), dict(rows=120)])))
+    monkeypatch.setitem(sys.modules, 'consolidate_fx_observations', types.SimpleNamespace(
+        status=lambda p: dict(state='OBSERVATIONS_CONSOLIDATED_REQUIRES_CALENDAR_AND_COVERAGE',
+            pairs={'eurusd': dict(rows=100, missing_expected_open_hours=2,
+                                  observations_excluded_by_closed_weekly_schedule=1)})))
+    before = sorted(str(p) for p in tmp_path.rglob('*'))
+    result = module.snapshot(tmp_path)
+    assert result['histdata_corrected']['clock_verified'] is True
+    assert result['histdata_corrected']['complete_hours'] == 180
+    assert result['observations_consolidated']['pairs']['eurusd']['missing_expected_open_hours'] == 2
+    assert result['state'] == 'RECOVERING_REMAINING_OBSERVATIONS_AND_CALENDAR'
+    assert result['data_admission_complete'] is False
+    assert sorted(str(p) for p in tmp_path.rglob('*')) == before
+
+
+def test_changed_supplementary_outputs_report_unavailable_not_complete(tmp_path, monkeypatch):
+    import sys
+    import types
+    put(tmp_path/'SUPPLEMENTARY_ROOTS.json', dict(schema='financial_data.supplementary_roots.v1',
+        histdata_corrected=str(tmp_path/'corrected')))
+    def changed(path):
+        raise ValueError('NORMALIZED_OUTPUT_CHANGED')
+    monkeypatch.setitem(sys.modules, 'normalize_histdata_observed_clock', types.SimpleNamespace(status=changed))
+    result = module.snapshot(tmp_path)
+    assert result['histdata_corrected']['state'] == 'UNAVAILABLE'
+    assert result['histdata_corrected']['error_type'] == 'ValueError'
+    assert 'clock_verified' not in result['histdata_corrected']
