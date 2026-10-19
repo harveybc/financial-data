@@ -49,9 +49,17 @@ def years(c):
     return range(pd.Timestamp(c['required_start']).year,pd.Timestamp(c['required_end_exclusive']).year)
 
 
-def audit(frame,c):
+def weekly_open_grid(c):
+    grid=pd.date_range(pd.Timestamp(c['required_start']),pd.Timestamp(c['required_end_exclusive']),
+                       freq='h',inclusive='left')
+    ny=grid.tz_convert('America/New_York');day=ny.dayofweek;hour=ny.hour
+    return grid[(day<4)|((day==4)&(hour<17))|((day==6)&(hour>=17))]
+
+
+def audit(frame,c,bid_only=False):
     data=frame.copy()
-    columns=[side+k for side in ('Bid','Ask') for k in ('Open','High','Low','Close')]
+    sides=('Bid',) if bid_only else ('Bid','Ask')
+    columns=[side+k for side in sides for k in ('Open','High','Low','Close')]
     if not set(columns+['timestamp','available_at']).issubset(data.columns):raise ValueError('QUOTE_SCHEMA')
     ts=pd.to_datetime(data.timestamp,utc=True,errors='raise')
     available=pd.to_datetime(data.available_at,utc=True,errors='raise')
@@ -61,10 +69,10 @@ def audit(frame,c):
         raise ValueError('HOURLY_CLOCK_ALIGNMENT')
     values=data[columns].to_numpy(float)
     if not np.isfinite(values).all() or (values<=0).any():raise ValueError('INVALID_QUOTES')
-    for side in ('Bid','Ask'):
+    for side in sides:
         if (data[side+'High']<data[[side+'Open',side+'Low',side+'Close']].max(axis=1)).any() or (data[side+'Low']>data[[side+'Open',side+'High',side+'Close']].min(axis=1)).any():
             raise ValueError('INVALID_OHLC')
-    side_crossings=int(((data.AskClose<data.BidClose)|(data.AskOpen<data.BidOpen)).sum())
+    side_crossings=None if bid_only else int(((data.AskClose<data.BidClose)|(data.AskOpen<data.BidOpen)).sum())
     data['timestamp']=ts;data['available_at']=available
     duplicates=data[data.timestamp.duplicated(keep=False)]
     if not duplicates.empty and (duplicates.groupby('timestamp')[columns+['available_at']].nunique()>1).any().any():
@@ -75,8 +83,7 @@ def audit(frame,c):
     outside=int(((data.index<start)|(data.index>=end)).sum())
     data=data[(data.index>=start)&(data.index<end)]
     grid=pd.date_range(start,end,freq='h',inclusive='left')
-    ny=grid.tz_convert('America/New_York');day=ny.dayofweek;hour=ny.hour
-    expected=grid[(day<4)|((day==4)&(hour<17))|((day==6)&(hour>=17))]
+    expected=weekly_open_grid(c)
     missing=expected.difference(data.index)
     months=[]
     for month in sorted(set(grid.strftime('%Y-%m'))):
