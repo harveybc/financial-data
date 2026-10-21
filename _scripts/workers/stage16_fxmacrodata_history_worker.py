@@ -43,11 +43,15 @@ TEST_START = "2025-01-01"
 FAMILIES = {
     "usd": ["policy_rate", "non_farm_payrolls", "unemployment", "average_hourly_earnings", "initial_jobless_claims",
             "inflation", "inflation_mom", "core_inflation", "core_inflation_mom", "pce", "core_pce", "ppi", "gdp",
-            "retail_sales", "durable_goods_orders", "industrial_production", "pmi", "nmi", "consumer_sentiment",
+            "retail_sales", "durable_goods_orders", "industrial_production", "consumer_sentiment",
             "business_sentiment", "job_openings"],
     "eur": ["policy_rate", "unemployment", "inflation", "inflation_mom", "core_inflation", "ppi", "gdp", "retail_sales"],
 }
 ENDPOINTS = ("announcements", "predictions")
+ALIASES={'inflation_mom':('inflation',{'frequency':'mom'}),
+         'core_inflation_mom':('core_inflation',{'frequency':'mom'}),
+         'consumer_sentiment':('consumer_confidence',{}),
+         'business_sentiment':('business_confidence',{})}
 
 
 class Refusal(RuntimeError):
@@ -174,11 +178,15 @@ def run(args, fetch: Callable[[str, dict, str], tuple[int, bytes]] | None = None
     pending=deque(reqs);seen=set()
     while pending and stats['http_requests']<args.max_requests:
         rq=pending.popleft()
+        parts=rq['endpoint'].split('/')
+        if parts[-1] in ALIASES:
+            canonical,selectors=ALIASES[parts[-1]]
+            rq=dict(endpoint='/'.join([*parts[:-1],canonical]),params={**rq['params'],**selectors})
         params={**rq['params'],'limit':100,'as_of':args.date_to+'T00:00:00Z'}
         if rq['endpoint'].startswith('predictions/'):
-            params.update(pre_release_only='true',event_compatible_only='true')
+            params.update(pre_release_only='true',event_compatible_only='true',official_limit=0)
         elif rq['endpoint'].startswith('announcements/'):
-            params.update(value_mode='source',series_mode='raw',availability='public',revisions='all')
+            params.update(value_mode='source',series_mode='raw',availability='public',revisions='latest')
         rq={**rq,'params':params};pin=request_sha(rq['endpoint'],params)
         if pin in seen:
             stats['pagination_errors'].append('CURSOR_CYCLE:'+rq['endpoint']);continue
@@ -239,6 +247,8 @@ def run(args, fetch: Callable[[str, dict, str], tuple[int, bytes]] | None = None
     summary.update(stats,remaining_requests=len(pending),
         complete=not pending and not stats['failed'] and not stats['pagination_errors'] and not stats['pagination_unverified'],
         scope='RETAINED_CANDIDATES_NOT_ADMITTED',timestamp_labels_are_not_pit_certification=True,
+        official_native_period_arrays='EXCLUDED_NOT_EVENT_LINKED_CONSENSUS',
+        unsupported_indicators=['usd/pmi','usd/nmi'],
         finished_utc=datetime.now(timezone.utc).isoformat())
     (out / "SUMMARY.json").write_text(json.dumps(summary, indent=1))
     return summary

@@ -21,6 +21,15 @@ intraday availability. Unknown timing stays unknown; nowcasts are not consensus.
 The API's native-period official-forecast array is retained raw; truncation is
 reported, not silently treated as complete event-specific coverage.
 
+Live contract correction after the first full probe: announcements require
+revisions=latest at an as_of cutoff; all was refused. MOM aliases use the
+canonical inflation series with frequency=mom; confidence aliases use the
+catalogue names. USD pmi/nmi are not served by this provider and are explicitly
+excluded, not filled. Subsequent event-linked acquisition sets official_limit=0:
+native-period quarterly/annual survey arrays are outside the requested monthly
+event-consensus scope and cannot be labelled as those releases' consensus.
+Their first500 rows remain in the initial raw receipts, not silently erased.
+
 Primary contracts:
 - https://fxmacrodata.com/documentation/point-in-time-backtesting
 - https://fxmacrodata.com/documentation/predictions

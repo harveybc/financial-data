@@ -50,3 +50,25 @@ def test_reexecution_never_overwrites_retained_raw(tmp_path,monkeypatch):
     args=W.parser().parse_args(['--out',str(tmp_path),'--probe'])
     with pytest.raises(W.Refusal):W.run(args,fetch=lambda *a:pytest.fail('network'))
     assert (tmp_path/'RAW.jsonl').read_text()=='retained'
+
+
+def test_live_contract_options_and_derived_secret_redaction(tmp_path,monkeypatch):
+    secret='private-test-key';monkeypatch.setenv('FXMACRODATA_API_KEY',secret)
+    args=W.parser().parse_args(['--out',str(tmp_path),'--probe'])
+    def fetch(ep,params,key):
+        assert params['limit']==100 and params['as_of']=='2025-01-01T00:00:00Z'
+        if ep.startswith('announcements/'):
+            assert params['revisions']=='latest'
+            return 200,b'{"data":[],"pagination":{"has_more":false}}'
+        assert params['official_limit']==0 and params['pre_release_only']=='true'
+        return 200,json.dumps({'has_more':False,'data':[{'announcement_datetime':1000,
+            'predictions':[{'generated_at':900,'prediction_class':'model_nowcast','source_url':'https://example.com/?api_key='+key}]}]}).encode()
+    s=W.run(args,fetch=fetch,throttle=W.Throttle(0))
+    assert s['complete'] and s['prediction_classes']=={'model_nowcast':3}
+    assert secret not in (tmp_path/'FORECASTS.jsonl').read_text()
+
+
+def test_catalogue_supported_scope_and_mom_alias():
+    requests=W.plan(['usd','eur'],'2020-01-01','2025-01-01',True)
+    assert all(not r['endpoint'].endswith(('/pmi','/nmi')) for r in requests)
+    assert W.ALIASES['inflation_mom']==('inflation',{'frequency':'mom'})
