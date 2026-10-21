@@ -25,8 +25,10 @@ Usage (dry run first; the real run is executed by the governed data path, not by
 from __future__ import annotations
 
 import argparse
+from collections import deque
 import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -36,7 +38,7 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlencode
 
-BASE_URL = "https://fxmacrodata.com/api/v1"
+BASE_URL = "https://api.fxmacrodata.com/v1"
 TEST_START = "2025-01-01"
 FAMILIES = {
     "usd": ["policy_rate", "non_farm_payrolls", "unemployment", "average_hourly_earnings", "initial_jobless_claims",
@@ -91,7 +93,7 @@ class Throttle:
 def label_consensus(row: dict) -> str:
     """PRE_RELEASE / CONSENSUS_VINTAGE_AFTER_RELEASE / CONSENSUS_VINTAGE_UNKNOWN from the provider's own fields."""
     rel = row.get("announcement_datetime")
-    vin = next((row.get(k) for k in ("prediction_datetime", "forecast_datetime", "published_at", "vintage_datetime",
+    vin = next((row.get(k) for k in ("generated_at", "prediction_datetime", "forecast_datetime", "published_at", "vintage_datetime",
                                       "updated_at") if row.get(k) is not None), None)
     if rel is None or vin is None:
         return "CONSENSUS_VINTAGE_UNKNOWN"
@@ -103,12 +105,46 @@ def label_consensus(row: dict) -> str:
             v = datetime.fromisoformat(str(vin).replace("Z", "+00:00")).timestamp()
         except ValueError:
             return "CONSENSUS_VINTAGE_UNKNOWN"
+    if not math.isfinite(v) or not math.isfinite(r):return "CONSENSUS_VINTAGE_UNKNOWN"
     return "PRE_RELEASE" if v < r else "CONSENSUS_VINTAGE_AFTER_RELEASE"
+
+
+def forecast_rows(payload):
+    rows=[]
+    for group in payload.get('data',[]):
+        if not isinstance(group,dict):continue
+        if 'predictions' not in group:
+            rows.append(group);continue
+        parent={k:v for k,v in group.items() if k!='predictions'}
+        for forecast in group['predictions']:
+            if isinstance(forecast,dict):
+                row={**parent,**forecast}
+                row['announcement_datetime']=parent.get('announcement_datetime')
+                row['announcement_id']=parent.get('announcement_id')
+                rows.append(row)
+    return rows
+
+
+def next_page(endpoint,payload):
+    if endpoint.startswith('announcements/'):
+        page=payload.get('pagination',{})
+        if not page.get('has_more'):return None
+        offset=page.get('next_offset')
+        if type(offset) is not int or offset<=0:raise Refusal('ANNOUNCEMENT_CURSOR_MISSING')
+        result={'offset':offset}
+        if payload.get('dataset_version'):result['dataset_version']=payload['dataset_version']
+        return result
+    if not payload.get('has_more'):return None
+    cursor=payload.get('next_cursor')
+    if not isinstance(cursor,str) or not cursor:raise Refusal('FORECAST_CURSOR_MISSING')
+    return {'before_date':cursor}
 
 
 def run(args, fetch: Callable[[str, dict, str], tuple[int, bytes]] | None = None, throttle: Throttle | None = None) -> dict:
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    if any((out/name).exists() for name in ('RAW.jsonl','SUMMARY.json','FORECASTS.jsonl')):
+        raise Refusal('OUTPUT_ALREADY_RETAINED_USE_NEW_RUN_DIRECTORY')
     reqs = plan(args.currencies, args.date_from, args.date_to, not args.no_predictions,
                 tuple(args.date_params.split(",")))
     if args.probe:
@@ -127,15 +163,31 @@ def run(args, fetch: Callable[[str, dict, str], tuple[int, bytes]] | None = None
         import requests
 
         def fetch(endpoint, params, k):
-            r = requests.get(f"{BASE_URL}/{endpoint}", params={**params, "api_key": k}, timeout=45)
+            r = requests.get(f"{BASE_URL}/{endpoint}", params=params, headers={'X-API-Key':k},
+                             timeout=45,allow_redirects=False)
             return r.status_code, r.content
     th = throttle or Throttle()
-    raw = open(out / "RAW.jsonl", "a")
-    stats = {"ok": 0, "failed": 0, "rows": 0, "consensus_labels": {}}
-    for rq in reqs:
+    raw = open(out / "RAW.jsonl", "x")
+    forecasts=open(out/'FORECASTS.jsonl','x')
+    stats = {"ok": 0, "failed": 0, "rows": 0, "consensus_labels": {},'prediction_classes':{},
+             'http_requests':0,'pagination_errors':[],'pagination_unverified':[]}
+    pending=deque(reqs);seen=set()
+    while pending and stats['http_requests']<args.max_requests:
+        rq=pending.popleft()
+        params={**rq['params'],'limit':100,'as_of':args.date_to+'T00:00:00Z'}
+        if rq['endpoint'].startswith('predictions/'):
+            params.update(pre_release_only='true',event_compatible_only='true')
+        elif rq['endpoint'].startswith('announcements/'):
+            params.update(value_mode='source',series_mode='raw',availability='public',revisions='all')
+        rq={**rq,'params':params};pin=request_sha(rq['endpoint'],params)
+        if pin in seen:
+            stats['pagination_errors'].append('CURSOR_CYCLE:'+rq['endpoint']);continue
+        seen.add(pin)
         status, body = None, b""
         for attempt in (1, 2):
+            if stats['http_requests']>=args.max_requests:break
             th.wait()
+            stats['http_requests']+=1
             try:
                 status, body = fetch(rq["endpoint"], rq["params"], key)
             except Exception as exc:                      # network error: one retry, then recorded
@@ -153,18 +205,41 @@ def run(args, fetch: Callable[[str, dict, str], tuple[int, bytes]] | None = None
         if status == 200:
             stats["ok"] += 1
             try:
-                rows = json.loads(body).get("data", [])
+                payload=json.loads(body)
+                rows = payload.get("data", [])
             except (ValueError, AttributeError):
-                rows = []
+                rows = [];payload={}
+                stats['pagination_errors'].append('INVALID_JSON:'+rq['endpoint'])
             stats["rows"] += len(rows) if isinstance(rows, list) else 0
             if rq["endpoint"].startswith("predictions/") and isinstance(rows, list):
-                for r_ in rows:
+                for r_ in forecast_rows(payload):
                     lab = label_consensus(r_) if isinstance(r_, dict) else "CONSENSUS_VINTAGE_UNKNOWN"
                     stats["consensus_labels"][lab] = stats["consensus_labels"].get(lab, 0) + 1
+                    kind=r_.get('prediction_class','UNDECLARED')
+                    stats['prediction_classes'][kind]=stats['prediction_classes'].get(kind,0)+1
+                    forecasts.write(redact(json.dumps(dict(row=r_,timestamp_order=lab,
+                        genuine_consensus=kind in ('compiled_consensus','forecaster_survey'),
+                        response_sha256=rec['response_sha256'],request_sha256=pin,
+                        source_point_in_time_safe=payload.get('data_quality',{}).get('point_in_time_safe'),
+                        admitted=False)),key)+'\n')
+            try:
+                extra=next_page(rq['endpoint'],payload)
+                if extra:pending.appendleft(dict(endpoint=rq['endpoint'],params={**params,**extra}))
+                if rq['endpoint'].startswith('announcements/') and 'pagination' not in payload:
+                    stats['pagination_unverified'].append(rq['endpoint'])
+                if rq['endpoint'].startswith('predictions/') and 'has_more' not in payload:
+                    stats['pagination_unverified'].append(rq['endpoint'])
+                if payload.get('official_forecasts_truncated'):
+                    stats['pagination_errors'].append('OFFICIAL_ARRAY_TRUNCATED:'+rq['endpoint'])
+            except Refusal as exc:stats['pagination_errors'].append(str(exc)+':'+rq['endpoint'])
         else:
             stats["failed"] += 1
     raw.close()
-    summary.update(stats, finished_utc=datetime.now(timezone.utc).isoformat())
+    forecasts.close()
+    summary.update(stats,remaining_requests=len(pending),
+        complete=not pending and not stats['failed'] and not stats['pagination_errors'] and not stats['pagination_unverified'],
+        scope='RETAINED_CANDIDATES_NOT_ADMITTED',timestamp_labels_are_not_pit_certification=True,
+        finished_utc=datetime.now(timezone.utc).isoformat())
     (out / "SUMMARY.json").write_text(json.dumps(summary, indent=1))
     return summary
 
@@ -190,7 +265,7 @@ def main(argv=None) -> int:
         print(json.dumps({"refused": str(exc)}))
         return 2
     print(json.dumps({k: v for k, v in s.items() if k != "requests"}))
-    return 0
+    return 0 if s['dry_run'] or s['complete'] else 3
 
 
 if __name__ == "__main__":
