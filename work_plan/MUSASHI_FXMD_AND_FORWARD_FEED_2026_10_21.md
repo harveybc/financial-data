@@ -61,3 +61,22 @@ PRE:5 intended history-contract failures. POST:13 unit tests across original,
 pagination/classification and forward-feed suites. These are synthetic checks;
 real acquisition/readback and initial feed snapshot are separate deployment
 evidence to record below. Private locations belong only in the private handoff.
+
+## Deployment Return
+
+History runtimef212e9332:56/56 planned requests HTTP200, zero failures/cursor
+errors.354 announcement rows with confirmed publication markers:66 in2020,
+72 each2021-2024, zero outside requested publication years. Zero historical
+calendar rows and zero event-linked forecasts under the fixed2025-01-01 cutoff.
+This closes the credential/execution dependency, NOT delivery of a complete
+2020-2024 event-consensus calendar. Query completion and data coverage differ.
+Initial unfiltered probe contains Cleveland Fed model nowcasts, explicitly not
+human consensus; those must not be relabelled or substituted into monthly-event
+surprises without series and availability checks.
+
+Read-only feed runtime2ed83c5f9: READY,102 completed H1 bars; timer120s enabled.
+Initial history is context only. Native SAC was independently verified running
+window7/stride2 at35000/100000 transitions; its queue was not stopped for this
+work.15 final synthetic tests pass. No LLM inference or trading orders were
+started. The machine-readable private handoff gives source paths and the
+EnvironmentFile path, never the credential value.
