@@ -1,0 +1,3938 @@
+{
+ "by_class": {
+  "CAUSAL": 52,
+  "UNRESOLVED_PRODUCER": 45
+ },
+ "columns_examined": 97,
+ "dag_sha256": "e95f9f7ef8d9a7db85733c777b4eae82d27d252cf2cbf52b5c53c79621fd5852",
+ "derived_at": "2026-09-12T00:00:00Z",
+ "grants_nothing": "a lineage describes how a value comes to exist. It confers no eligibility",
+ "nodes": [
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "1482f6479060421dfe4fc07193cc9fb3f9447ce1143d5dc6458172927703447b",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "0.0",
+     "file": "_scripts/workers/stage31_prepare_inputs_worker.py",
+     "inputs": [],
+     "line": 132,
+     "repository": "financial-data",
+     "symbol": "load_base",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 1
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 1
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "returns",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 187,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 5
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": true,
+   "producers": [
+    {
+     "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "close.pct_change(5)",
+     "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+     "inputs": [],
+     "line": 275,
+     "repository": "financial-data",
+     "symbol": "_compute_basic_features",
+     "window_hint": {
+      "calls": [
+       "pct_change"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with; the only producer found lives under a retired or invalidated path, so this graph describes code that may not be the one that built the view",
+   "window_policy": "rolling/ewm pct_change"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 5
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 10
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 10
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 20
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": true,
+   "producers": [
+    {
+     "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "close.pct_change(20)",
+     "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+     "inputs": [],
+     "line": 276,
+     "repository": "financial-data",
+     "symbol": "_compute_basic_features",
+     "window_hint": {
+      "calls": [
+       "pct_change"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with; the only producer found lives under a retired or invalidated path, so this graph describes code that may not be the one that built the view",
+   "window_policy": "rolling/ewm pct_change"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 20
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 60
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "lagged_return",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 60
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 10
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 10
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_ratio",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 10
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 20
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 20
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_ratio",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 20
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 50
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 50 bars)) + 14400s causal latency",
+    "lookback_bars": 50,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 50,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 50
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": true,
+   "producers": [
+    {
+     "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "close.ewm(span=50).mean()",
+     "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+     "inputs": [],
+     "line": 280,
+     "repository": "financial-data",
+     "symbol": "_compute_basic_features",
+     "window_hint": {
+      "calls": [
+       "ewm",
+       "mean"
+      ],
+      "center": null,
+      "lookback": 50,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with; the only producer found lives under a retired or invalidated path, so this graph describes code that may not be the one that built the view",
+   "window_policy": "rolling/ewm ewm, mean"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_ratio",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 50
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 100
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 100
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_ratio",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 100
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 200
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 200 bars)) + 14400s causal latency",
+    "lookback_bars": 200,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 200,
+   "name_hypothesis": {
+    "shape": "rolling_mean",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 200
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": true,
+   "producers": [
+    {
+     "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "close.ewm(span=200).mean()",
+     "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+     "inputs": [],
+     "line": 281,
+     "repository": "financial-data",
+     "symbol": "_compute_basic_features",
+     "window_hint": {
+      "calls": [
+       "ewm",
+       "mean"
+      ],
+      "center": null,
+      "lookback": 200,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with; the only producer found lives under a retired or invalidated path, so this graph describes code that may not be the one that built the view",
+   "window_policy": "rolling/ewm ewm, mean"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "rolling_ratio",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 200
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "ema12 - ema26",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 130,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "macd"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "ema(out['macd'], 9)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "macd"
+     ],
+     "line": 131,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "macd",
+    "macd_signal"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 6,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "out['macd'] - out['macd_signal']",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "macd",
+      "macd_signal"
+     ],
+     "line": 132,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    },
+    {
+     "code_sha256": "27502c9b252073033d56c0c1e2a911325855273f08c77a332613979e5de0133b",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "macd_line - signal",
+     "file": "trading_research/project2/part_II_redux/scripts/build_pathb_features.py",
+     "inputs": [],
+     "line": 101,
+     "repository": "financial-data",
+     "symbol": "compute_features",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    },
+    {
+     "code_sha256": "25a0fbf9660b84c81f254d2d9f1b61abd95868a5139cd35fed9e74fbdf06af59",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "macd_line - signal_line",
+     "file": "trading_research/project2/part_II_redux/scripts/stage_ii7_ic_analysis.py",
+     "inputs": [],
+     "line": 54,
+     "repository": "financial-data",
+     "symbol": "compute_features",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 7
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 14
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": true,
+   "producers": [
+    {
+     "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "100 - 100 / (1 + rs)",
+     "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+     "inputs": [],
+     "line": 289,
+     "repository": "financial-data",
+     "symbol": "_compute_basic_features",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with; the only producer found lives under a retired or invalidated path, so this graph describes code that may not be the one that built the view",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 21
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 2,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "100 * (close - low14) / (high14 - low14)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 138,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    },
+    {
+     "code_sha256": "27502c9b252073033d56c0c1e2a911325855273f08c77a332613979e5de0133b",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "stoch_k",
+     "file": "trading_research/project2/part_II_redux/scripts/build_pathb_features.py",
+     "inputs": [],
+     "line": 94,
+     "repository": "financial-data",
+     "symbol": "compute_features",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 3 bars)) + 14400s causal latency",
+    "lookback_bars": 3,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "stoch_k"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 3,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "out['stoch_k'].rolling(3).mean()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "stoch_k"
+     ],
+     "line": 139,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "mean",
+       "rolling"
+      ],
+      "center": null,
+      "lookback": 3,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm mean, rolling"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "-100 * (high14 - close) / (high14 - low14)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 140,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 14
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(typical - mean_typical_14) / (0.015 * mean_abs_dev_14)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 144,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "close.diff(10)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 147,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "diff"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm diff"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "close.diff(20)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 148,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "diff"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm diff"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "bb_mid + 2 * bb_std",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 152,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "bb_mid",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 153,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "bb_mid - 2 * bb_std",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 154,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "bb_lower",
+    "bb_upper"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(close - out['bb_lower']) / (out['bb_upper'] - out['bb_lower'])",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "bb_lower",
+      "bb_upper"
+     ],
+     "line": 155,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "bb_lower",
+    "bb_middle",
+    "bb_upper"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(out['bb_upper'] - out['bb_lower']) / out['bb_middle']",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "bb_lower",
+      "bb_middle",
+      "bb_upper"
+     ],
+     "line": 156,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 14 bars)) + 14400s causal latency",
+    "lookback_bars": 14,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 14,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 14
+   },
+   "producer_count": 2,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "tr.rolling(14).mean()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 158,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "mean",
+       "rolling"
+      ],
+      "center": null,
+      "lookback": 14,
+      "shift": null
+     }
+    },
+    {
+     "code_sha256": "6804d4cd58b53f435ceee52902eb9106eb4033f3861b212fb84e93e36e23a332",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "tr.rolling(14).mean()",
+     "file": "trading_research/project2/part_II_invalidated/scripts/ic_analysis.py",
+     "inputs": [],
+     "line": 297,
+     "repository": "financial-data",
+     "symbol": "_compute_basic_features",
+     "window_hint": {
+      "calls": [
+       "mean",
+       "rolling"
+      ],
+      "center": null,
+      "lookback": 14,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm mean, rolling"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "atr_14"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "out['atr_14'] / close",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "atr_14"
+     ],
+     "line": 159,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "ema_10",
+    "ema_50"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(out['ema_10'] - out['ema_50']) / close",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "ema_10",
+      "ema_50"
+     ],
+     "line": 163,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "ema_100",
+    "ema_20"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(out['ema_20'] - out['ema_100']) / close",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "ema_100",
+      "ema_20"
+     ],
+     "line": 164,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "np.log(close.replace(0, np.nan)).diff(50) / 50",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 165,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "diff",
+       "log",
+       "replace"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm diff, log, replace"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "trend_slope_50"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "out['trend_slope_50'].abs()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "trend_slope_50"
+     ],
+     "line": 166,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "abs"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm abs"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(signed * volume.fillna(0)).cumsum()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 170,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "cumsum",
+       "fillna"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm cumsum, fillna"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "obv"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "out['obv'].diff(20)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "obv"
+     ],
+     "line": 171,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "diff"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm diff"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [
+    "volume_sma_20"
+   ],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "volume / out['volume_sma_20']",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [
+      "volume_sma_20"
+     ],
+     "line": 174,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 60 bars)) + 14400s causal latency",
+    "lookback_bars": 60,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 60,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(typical * volume).rolling(60).sum() / volume.rolling(60).sum()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 175,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [
+       "rolling",
+       "sum"
+      ],
+      "center": null,
+      "lookback": 60,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm rolling, sum"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "indicator",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": 14
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "100 - 100 / (1 + positive / negative)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 179,
+     "repository": "financial-data",
+     "symbol": "compute_technical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 12 bars)) + 14400s causal latency",
+    "lookback_bars": 12,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 12,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "returns.pow(2).rolling(12).sum()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 193,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [
+       "pow",
+       "rolling",
+       "sum"
+      ],
+      "center": null,
+      "lookback": 12,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm pow, rolling, sum"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 48 bars)) + 14400s causal latency",
+    "lookback_bars": 48,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 48,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "returns.pow(2).rolling(48).sum()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 194,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [
+       "pow",
+       "rolling",
+       "sum"
+      ],
+      "center": null,
+      "lookback": 48,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm pow, rolling, sum"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "rolling_autocorr(returns, 100, 1)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 195,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "rolling_autocorr(returns, 100, 5)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 196,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "rolling_autocorr(returns.pow(2), 100, 1)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 197,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [
+       "pow"
+      ],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm pow"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 252 bars)) + 14400s causal latency",
+    "lookback_bars": 252,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 252,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(vol20 > vol252.rolling(252).quantile(0.75)).astype('float')",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 200,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [
+       "astype",
+       "quantile",
+       "rolling"
+      ],
+      "center": null,
+      "lookback": 252,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm astype, quantile, rolling"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 252 bars)) + 14400s causal latency",
+    "lookback_bars": 252,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 252,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(vol20 < vol252.rolling(252).quantile(0.25)).astype('float')",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 201,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [
+       "astype",
+       "quantile",
+       "rolling"
+      ],
+      "center": null,
+      "lookback": 252,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm astype, quantile, rolling"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 1 bars)) + 14400s causal latency",
+    "lookback_bars": 1,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "hurst_proxy(returns, 200)",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 202,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "causal_latency_seconds": 14400,
+    "earliest_available_time": "close(bar_t) = event_time(bar_t) + 14400s",
+    "formula": "max(event_time(inputs over the last 100 bars)) + 14400s causal latency",
+    "lookback_bars": 100,
+    "reason": "derived from the producer's declared causal policy and the located window"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "lookback_bars": 100,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+     "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+     "expression": "(close - close.rolling(100).mean()) / close.rolling(100).std()",
+     "file": "_scripts/workers/stage22_trading_features_worker.py",
+     "inputs": [],
+     "line": 203,
+     "repository": "financial-data",
+     "symbol": "compute_statistical",
+     "window_hint": {
+      "calls": [
+       "mean",
+       "rolling",
+       "std"
+      ],
+      "center": null,
+      "lookback": 100,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "rolling/ewm mean, rolling, std"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "OPEN",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "LOW",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "HIGH",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": false,
+   "class": "CAUSAL",
+   "column": "CLOSE",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": 1,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": 0,
+   "why": "a raw bar field: known at the close of the bar it describes",
+   "window_policy": "single bar"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the producer was not located"
+   },
+   "centered": null,
+   "class": "UNRESOLVED_PRODUCER",
+   "column": "BC-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 0,
+   "producer_is_retired_path": false,
+   "producers": [],
+   "shift": null,
+   "why": "no producer in the searched repositories assigns this column, so its graph, its window and its availability are unknown. Nothing is asserted",
+   "window_policy": "UNKNOWN"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "BH-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [
+    "HIGH",
+    "LOW"
+   ],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "9293ac4cd046f98604e42eb3e9ae6e341b18a716bb1826367c69fc458a02d564",
+     "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+     "expression": "hourly_trimmed['HIGH'] - hourly_trimmed['LOW']",
+     "file": "app/plugins/tech_indicator.py",
+     "inputs": [
+      "HIGH",
+      "LOW"
+     ],
+     "line": 324,
+     "repository": "feature-eng",
+     "symbol": "process_additional_datasets",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "BH-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [
+    "HIGH",
+    "OPEN"
+   ],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "9293ac4cd046f98604e42eb3e9ae6e341b18a716bb1826367c69fc458a02d564",
+     "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+     "expression": "hourly_trimmed['HIGH'] - hourly_trimmed['OPEN']",
+     "file": "app/plugins/tech_indicator.py",
+     "inputs": [
+      "HIGH",
+      "OPEN"
+     ],
+     "line": 325,
+     "repository": "feature-eng",
+     "symbol": "process_additional_datasets",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "formula": "UNAVAILABLE",
+    "reason": "the view declares no parseable timeframe"
+   },
+   "centered": null,
+   "class": "CAUSAL",
+   "column": "BO-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "direct_inputs": [
+    "LOW",
+    "OPEN"
+   ],
+   "entity": {
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "lookback_bars": null,
+   "name_hypothesis": {
+    "shape": "unknown",
+    "status": "HYPOTHESIS_FROM_NAME_ONLY",
+    "window_from_name": null
+   },
+   "producer_count": 1,
+   "producer_is_retired_path": false,
+   "producers": [
+    {
+     "code_sha256": "9293ac4cd046f98604e42eb3e9ae6e341b18a716bb1826367c69fc458a02d564",
+     "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+     "expression": "hourly_trimmed['OPEN'] - hourly_trimmed['LOW']",
+     "file": "app/plugins/tech_indicator.py",
+     "inputs": [
+      "LOW",
+      "OPEN"
+     ],
+     "line": 326,
+     "repository": "feature-eng",
+     "symbol": "process_additional_datasets",
+     "window_hint": {
+      "calls": [],
+      "center": null,
+      "lookback": null,
+      "shift": null
+     }
+    }
+   ],
+   "shift": null,
+   "why": "the producing window looks back only, so the value is known at the close of the bar it is stamped with",
+   "window_policy": "elementwise"
+  }
+ ],
+ "producer_files_scanned": 250,
+ "producer_repositories": {
+  "feature-eng": {
+   "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+   "path": "feature-eng",
+   "present": true
+  },
+  "feature-extractor": {
+   "commit": "0f234a85d95420fab80b81aefabeadbc0f16e945",
+   "path": "feature-extractor",
+   "present": true
+  },
+  "financial-data": {
+   "commit": "205e0ef539c23aa2c9b313e598acbfb1d3b615b3",
+   "path": "financial-data",
+   "present": true
+  }
+ },
+ "resolved_only_in_retired_paths": [
+  "ema_200",
+  "ema_50",
+  "return_20",
+  "return_5",
+  "rsi_14"
+ ],
+ "rules": {
+  "availability": "max(input event times) + the located causal latency. event_time is never copied and no latency is invented",
+  "graph": "a node records the producing repository, commit, file, symbol and code digest, its direct inputs and its window; it is not serial and admits several inputs",
+  "unknown": "a column whose producer is not located is UNRESOLVED_PRODUCER and asserts nothing"
+ },
+ "schema": "financial_data.feature_dag.v1",
+ "unresolved_producers": [
+  "BC-BO",
+  "close_sma_ratio_10",
+  "close_sma_ratio_100",
+  "close_sma_ratio_20",
+  "close_sma_ratio_200",
+  "close_sma_ratio_50",
+  "ema_10",
+  "ema_100",
+  "ema_20",
+  "hist_vol_10",
+  "hist_vol_20",
+  "hist_vol_60",
+  "log_return_10",
+  "log_return_20",
+  "log_return_5",
+  "log_return_60",
+  "return_1",
+  "return_10",
+  "return_60",
+  "roc_10",
+  "roc_20",
+  "roc_60",
+  "roll_kurt_ret_20",
+  "roll_kurt_ret_252",
+  "roll_kurt_ret_60",
+  "roll_mean_ret_20",
+  "roll_mean_ret_252",
+  "roll_mean_ret_60",
+  "roll_skew_ret_20",
+  "roll_skew_ret_252",
+  "roll_skew_ret_60",
+  "roll_std_ret_20",
+  "roll_std_ret_252",
+  "roll_std_ret_60",
+  "rsi_21",
+  "rsi_7",
+  "sma_10",
+  "sma_100",
+  "sma_20",
+  "sma_200",
+  "sma_50",
+  "statistical__log_return_1",
+  "typical_price",
+  "volume_sma_10",
+  "volume_sma_20"
+ ]
+}

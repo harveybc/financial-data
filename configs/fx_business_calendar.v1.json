@@ -1,0 +1,122 @@
+{
+  "schema": "financial_data.fx_business_calendar.v1",
+  "calendar_id": "fx_business_2020_2025_v1",
+  "coverage_start": "2020-01-01T00:00:00Z",
+  "coverage_end_exclusive": "2026-01-01T00:00:00Z",
+  "timezone": "America/New_York",
+  "weekly_open_day": 6,
+  "weekly_open_hour": 17,
+  "weekly_close_day": 4,
+  "weekly_close_hour": 17,
+  "forced_flatten_hours": 12,
+  "reopen_min_hours": 12,
+  "scope": "DECLARED_CONSERVATIVE_BUSINESS_OPERATING_CALENDAR",
+  "global_venue_calendar_certified": false,
+  "note": "Dated regional FXCM schedules define conservative business exclusions. Native quotes in an exclusion do not authorize trading. Initial Jan 1 is an explicit business blackout for the documented New Year holiday; no exact global reopening is inferred.",
+  "sources": [
+    {
+      "id": "holiday2020",
+      "url": "https://www.fxcm.com/il/client-notifications/17-12-20/"
+    },
+    {
+      "id": "holiday2021",
+      "url": "https://docs.fxcorporate.com/il/clients-notification/2021/FXCMCFDHolidayHours-Dec21-il-he.pdf"
+    },
+    {
+      "id": "holiday2022",
+      "url": "https://docs.fxcorporate.com/il/clients-notification/2022/FXCMCFDHolidayHours-Dec22-il-he.pdf"
+    },
+    {
+      "id": "holiday2023",
+      "url": "https://docs.fxcorporate.com/il/clients-notification/2023/FXCMCFDHolidayHours-December2023-il-he.pdf"
+    },
+    {
+      "id": "holiday2024",
+      "url": "https://docs.fxcorporate.com/il/clients-notification/2024/FXCMCFDHolidayHours-Dec2024-il-he.pdf"
+    },
+    {
+      "id": "holiday2025",
+      "url": "https://docs.fxcorporate.com/il/clients-notification/2025/FXCMCFDHolidayHours-December2025-il-he.pdf"
+    }
+  ],
+  "closed_intervals": [
+    {
+      "start": "2020-01-01T00:00:00Z",
+      "end": "2020-01-02T00:00:00Z",
+      "source": "INITIAL_NEW_YEAR_BUSINESS_BLACKOUT",
+      "kind": "EXPLICIT_BUSINESS_POLICY"
+    },
+    {
+      "start": "2021-12-24T19:00:00+00:00",
+      "end": "2021-12-25T00:00:00+00:00",
+      "source": "holiday2021",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2021-12-31T20:00:00+00:00",
+      "end": "2022-01-01T00:00:00+00:00",
+      "source": "holiday2021",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2022-12-25T00:00:00+00:00",
+      "end": "2022-12-26T07:00:00+00:00",
+      "source": "holiday2022",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2023-01-01T00:00:00+00:00",
+      "end": "2023-01-02T07:00:00+00:00",
+      "source": "holiday2022",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2020-12-24T19:00:00+00:00",
+      "end": "2020-12-26T00:00:00+00:00",
+      "source": "holiday2020",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2020-12-31T19:00:00+00:00",
+      "end": "2021-01-02T00:00:00+00:00",
+      "source": "holiday2020",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2023-12-22T21:00:00+00:00",
+      "end": "2023-12-26T06:00:00+00:00",
+      "source": "holiday2023",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2023-12-29T21:00:00+00:00",
+      "end": "2024-01-02T06:00:00+00:00",
+      "source": "holiday2023",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2024-12-24T20:00:00+00:00",
+      "end": "2024-12-26T06:00:00+00:00",
+      "source": "holiday2024",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2024-12-31T21:00:00+00:00",
+      "end": "2025-01-02T06:00:00+00:00",
+      "source": "holiday2024",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2025-12-24T19:00:00+00:00",
+      "end": "2025-12-26T07:00:00+00:00",
+      "source": "holiday2025",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    },
+    {
+      "start": "2025-12-31T19:00:00+00:00",
+      "end": "2026-01-02T07:00:00+00:00",
+      "source": "holiday2025",
+      "kind": "DOCUMENTED_FXCM_REGIONAL_HOLIDAY_OPERATING_EXCLUSION"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+ "schema": "financial_data.prospective_rerun.config.v1",
+ "run_id": "eth_h4_stage22_rerun_v1",
+ "order_items": ["C94", "C95"],
+ "successor_dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+ "historical_dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+ "producer": {
+  "repository": "financial-data",
+  "file": "_scripts/workers/stage22_trading_features_worker.py",
+  "symbols": {
+   "reader": "read_asset",
+   "technical": "compute_technical",
+   "statistical": "compute_statistical"
+  },
+  "not_executed": ["process_asset_tf", "write_docs", "log", "notify", "write_report", "main"]
+ },
+ "assembler": {
+  "repository": "financial-data",
+  "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+  "symbol": "assemble"
+ },
+ "inputs": {
+  "raw_ohlcv": {
+   "root_id": "financial-data",
+   "path": "features/trading_asset_data/ethusdt/4h.parquet",
+   "sha256": "37321161d3e0d372abd0c3a0cc867ed4b2faf1fdf1e4569d55da6f6a1a1df099",
+   "established_by": [
+    "CODE: _scripts/workers/stage22_trading_features_worker.py process_asset_tf reads ROOT/features/trading_asset_data/<asset>/<tf>.parquet (asset=ethusdt, tf=4h)",
+    "RECEIPT: _metadata/stage22_trading_features_dragon_crypto.json (sha256 00277f7f7c14d60f716675ca08b4f4d9fdca515f40b268fa51c3f0fa1e26b861, untracked) record asset=ethusdt timeframe=4h status=ok source=features/trading_asset_data/ethusdt/4h.parquet, 18337 rows",
+    "UPSTREAM: features/trading_asset_data/ethusdt/provenance.json (sha256 52b2ab5daebb75107765f659def5274d69a605ab84a40523ac25fc7ef7fa9b5b, tracked) Stage 2.1 wrote this file with 18337 rows from market_data/crypto/spot_top50/ethusdt/4h.parquet",
+    "LIMIT: the digest was computed on 2026-09-12; no digest was recorded at Stage 2.2 run time, so equality with the bytes the historical run read is not proven",
+    "NOT_THE_STAGE22_INPUT: the export metadata's raw_ohlcv (market_data/crypto/spot_top50/ethusdt/4h.parquet, sha256 7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5) is the Stage 2.1 source, not what Stage 2.2 reads"
+   ]
+  }
+ },
+ "comparisons": {
+  "technical": {
+   "root_id": "financial-data",
+   "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+   "sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+   "kind": "parquet_table",
+   "key": "timestamp",
+   "successor_output": "technical"
+  },
+  "statistical": {
+   "root_id": "financial-data",
+   "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+   "sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+   "kind": "parquet_table",
+   "key": "timestamp",
+   "successor_output": "statistical"
+  },
+  "historical_model_ready_csv": {
+   "root_id": "predictor",
+   "path": "examples/data/project3/ethusdt_4h_tech_stat_full_model_ready.csv",
+   "sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f",
+   "kind": "csv_table",
+   "key": "DATE_TIME"
+  }
+ },
+ "expected_raw_schema": {
+  "timestamp": "timestamp[ms, tz=UTC]",
+  "open": "double",
+  "high": "double",
+  "low": "double",
+  "close": "double",
+  "volume": "double",
+  "close_time": "timestamp[ms, tz=UTC]",
+  "quote_volume": "double",
+  "trade_count": "int64",
+  "taker_buy_base_volume": "double",
+  "taker_buy_quote_volume": "double"
+ },
+ "expected_output_columns": ["DATE_TIME", "typical_price", "OPEN", "HIGH", "LOW", "CLOSE", "VOLUME", "return_1", "log_return_1", "return_5", "log_return_5", "return_10", "log_return_10", "return_20", "log_return_20", "return_60", "log_return_60", "sma_10", "ema_10", "close_sma_ratio_10", "sma_20", "ema_20", "close_sma_ratio_20", "sma_50", "ema_50", "close_sma_ratio_50", "sma_100", "ema_100", "close_sma_ratio_100", "sma_200", "ema_200", "close_sma_ratio_200", "macd", "macd_signal", "macd_hist", "rsi_7", "rsi_14", "rsi_21", "stoch_k", "stoch_d", "williams_r_14", "cci_14", "roc_10", "roc_20", "roc_60", "mom_10", "mom_20", "bb_upper", "bb_middle", "bb_lower", "bb_pct_b", "bb_width", "atr_14", "natr_14", "hist_vol_10", "hist_vol_20", "hist_vol_60", "ema_cross_10_50", "ema_cross_20_100", "trend_slope_50", "trend_strength_50", "obv", "obv_delta_20", "volume_sma_10", "volume_sma_20", "volume_ratio_20", "vwap_60", "mfi_14", "statistical__log_return_1", "roll_mean_ret_20", "roll_std_ret_20", "roll_skew_ret_20", "roll_kurt_ret_20", "roll_mean_ret_60", "roll_std_ret_60", "roll_skew_ret_60", "roll_kurt_ret_60", "roll_mean_ret_252", "roll_std_ret_252", "roll_skew_ret_252", "roll_kurt_ret_252", "realized_var_12", "realized_var_48", "autocorr_lag1_100", "autocorr_lag5_100", "sqret_autocorr_lag1_100", "vol_regime_high", "vol_regime_low", "hurst_proxy_200", "zscore_close_100"],
+ "seeds": {
+  "numpy_global": 0,
+  "producers_use_randomness": false
+ },
+ "e2e_probe": {
+  "cut_fractions": [0.01, 0.25, 0.5, 0.75, 0.99],
+  "modes": ["truncate", "scale_noise", "nan_inject", "zeros_and_spikes"],
+  "seed": 20260912
+ },
+ "budget": {
+  "wall_seconds": 1800
+ }
+}

@@ -1,0 +1,1589 @@
+{
+ "bridge_sha256": "e9276155b3e7c4b5817cef50e3e168915b3f1967bf829e997fd4c2b02ea2ad08",
+ "by_kind": {
+  "DERIVED_FEATURE": 88,
+  "OHLCV_RAW": 9
+ },
+ "candidate_sha256": "d75e17ea3b06a9fe269c982dfb937d0424ba2a315de38f40928dc6b488e7839b",
+ "candidate_submission": "a candidate submission for EXTERNAL review may be built from the resolved columns; this tool emits no authorization and grants no eligibility",
+ "candidate_submission_file": "FINANCIAL_AVAILABILITY_CANDIDATE.v1.json",
+ "columns_examined": 97,
+ "columns_resolved": 89,
+ "columns_unresolved": 8,
+ "derived_at": "2026-09-12T00:00:00Z",
+ "disposition": "FINANCIAL_AVAILABILITY_CANDIDATE_READY",
+ "inventory_sha256": "03be76a4c545eb60319053caf693560383b2c9f3119b2b2dcd70c19b7018a2a0",
+ "lineage": [
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "RESOLVED_FROM_VIEW_PROVENANCE",
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "entity": {
+    "domain": "crypto_spot",
+    "provider": "Binance-derived Project 3 export",
+    "state": "RESOLVED_FROM_VIEW_PROVENANCE",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "OPEN",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "LOW",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "HIGH",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "CLOSE",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "OHLCV_RAW"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "BC-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "BH-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "BH-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  },
+  {
+   "availability_state": "PRODUCER_DEFICIT",
+   "column": "BO-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "earliest_available_time": "UNAVAILABLE",
+   "entity": {
+    "domain": "forex",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "state": "PRODUCER_DEFICIT",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE"
+   },
+   "event_time": "the bar this row describes",
+   "kind": "DERIVED_FEATURE",
+   "upstream": "computed inside this view's producer from the OHLCV of the same bar; the lake census does not carry it as a conceptual variable"
+  }
+ ],
+ "lineage_sha256": "d78151dcc8e014f167391551132dc210a6242239a320f1fd8839a67ff829407e",
+ "producer_deficits": [
+  {
+   "consequence": "every column of this view stays UNAVAILABLE until the producer publishes these fields; a new view identity follows, it is not patched in place",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "holder": "the producer of this view",
+   "missing_availability_fields": [
+    "availability_policy declaring causal latency",
+    "a parseable timeframe"
+   ],
+   "missing_entity_fields": [
+    "symbol/timeframe in the dataset id",
+    "provider"
+   ],
+   "producer": "legacy predictor dataset; provider not recorded",
+   "relative_path": "examples/data/phase_1/base_d6.csv",
+   "requires_owner_decision": false
+  }
+ ],
+ "resolved_by_kind": {
+  "DERIVED_FEATURE": 84,
+  "OHLCV_RAW": 5
+ },
+ "rules": {
+  "available_time": "max(input event times) + the declared causal latency; event_time is never copied and latency is never invented",
+  "entity": "derived from the model-ready view's own provenance; never chosen from candidates"
+ },
+ "schema": "financial_data.feature_lineage.v1"
+}

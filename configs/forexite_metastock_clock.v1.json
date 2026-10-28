@@ -1,0 +1,18 @@
+{
+  "schema": "financial_data.forexite_metastock_clock.v1",
+  "status": "CLOCK_VERIFIED_QUOTE_SIDE_AND_BAR_LABEL_UNRESOLVED",
+  "provider": "Forexite",
+  "archive_family": "MetaStock minute text archives",
+  "timezone": "Europe/Berlin",
+  "source_url": "https://www.forexite.com/free_forex_quotes/forex_history.html",
+  "source_encoding": "windows-1251",
+  "source_artifact": "forexite-forex-history-20261018.html",
+  "source_sha256": "f5c2e0a29e0f6744ef575373e2f94bb687bf385621c5469f8c97703ce930b6f0",
+  "reviewed_on": "2026-10-18",
+  "reviewed_claim": "The provider explicitly defines GMT+1 as CET in winter and CEST in summer; MetaStock minute files use that clock. Europe/Berlin implements these rules for the required 2020-2025 interval.",
+  "independent_overlap_witness_sha256": "4da0ca2acad1a783e429549b24910b13c25e723468e118278ffc35e5d953ea8d",
+  "quote_side": "UNRESOLVED",
+  "minute_bar_label": "UNRESOLVED_START_OR_END",
+  "ambiguous_or_nonexistent_time": "REJECT_NOT_GUESS_OR_DROP",
+  "admitted": false
+}

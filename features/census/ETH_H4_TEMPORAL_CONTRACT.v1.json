@@ -1,0 +1,567 @@
+{
+  "artifact": "ETH_H4_TEMPORAL_CONTRACT.v1",
+  "bound_files": {
+    "candidate_provenance": {
+      "bytes": 2036,
+      "digest_check": "RECORDED_NOT_PINNED",
+      "relative_path": "features/trading_asset_data/ethusdt/provenance.json",
+      "root_id": "financial-data",
+      "sha256": "52b2ab5daebb75107765f659def5274d69a605ab84a40523ac25fc7ef7fa9b5b"
+    },
+    "candidate_source_parquet": {
+      "bytes": 1578451,
+      "digest_check": "VERIFIED_AGAINST_PINNED_DIGEST",
+      "relative_path": "features/trading_asset_data/ethusdt/4h.parquet",
+      "root_id": "financial-data",
+      "sha256": "37321161d3e0d372abd0c3a0cc867ed4b2faf1fdf1e4569d55da6f6a1a1df099"
+    },
+    "dataset_inventory": {
+      "bytes": 63266,
+      "digest_check": "RECORDED_NOT_PINNED",
+      "relative_path": "examples/research/crispdm_dataset_inventory.v1.json",
+      "root_id": "predictor",
+      "sha256": "3fff5700e5833354fae82ef15ccc52dfe6449bcdbd6637a960189cf800ae1d8f"
+    },
+    "dataset_registry": {
+      "bytes": 4928,
+      "digest_check": "RECORDED_NOT_PINNED",
+      "relative_path": "examples/research/crispdm_dataset_registry.v1.json",
+      "root_id": "predictor",
+      "sha256": "5c169ab5fdcf2f141069fcd9400d297959a6d4471c7bba0a3617a6439834c291"
+    },
+    "declared_upstream_parquet": {
+      "bytes": 1578451,
+      "digest_check": "VERIFIED_AGAINST_PINNED_DIGEST",
+      "relative_path": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+      "root_id": "financial-data",
+      "sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5"
+    },
+    "export_metadata": {
+      "bytes": 6143,
+      "digest_check": "RECORDED_NOT_PINNED",
+      "relative_path": "examples/data/project3/ethusdt_4h_tech_stat_export_metadata.json",
+      "root_id": "predictor",
+      "sha256": "b4ffd1ad3faa1e8ca636eb5444157cf66a797133293200604fc3a64a25190428"
+    },
+    "model_ready_csv": {
+      "bytes": 17573555,
+      "digest_check": "VERIFIED_AGAINST_PINNED_DIGEST",
+      "relative_path": "examples/data/project3/ethusdt_4h_tech_stat_full_model_ready.csv",
+      "root_id": "predictor",
+      "sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f"
+    },
+    "upstream_provenance": {
+      "bytes": 305,
+      "digest_check": "RECORDED_NOT_PINNED",
+      "relative_path": "market_data/crypto/spot_top50/ethusdt/provenance.json",
+      "root_id": "financial-data",
+      "sha256": "6315552b8c8b772d7ce7204b5dc177c77d79c852f82c4a73f0343032a9646dad"
+    }
+  },
+  "contract": {
+    "bar_close_time_convention": "INCLUSIVE_LAST_MILLISECOND",
+    "contract_id": "financial_data.eth_h4_temporal_contract.v1",
+    "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+    "dataset_sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f",
+    "information_complete_not_before": "PER_BAR_CLOSE_TIME",
+    "nominal_bar_seconds": 14400,
+    "provenance": {
+      "basis": "Exact OHLCV match of all 18085/18085 CSV rows to the candidate parquet on DATE_TIME == open time (max abs error 0.0 per column). No artifact declares the candidate parquet as the CSV's source: the CSV's export metadata declares raw_ohlcv = market_data/crypto/spot_top50/ethusdt/4h.parquet by absolute PATH ONLY (no digest). The candidate's own provenance.json declares that same upstream as its 4h source, the upstream's provenance.json declares a sha256 equal to the upstream bytes read here, and the candidate is value-identical to the upstream on every column after renaming open_time -> timestamp (bytes differ). The CSV -> candidate binding is therefore evidenced by exact match; the declaration reaches the candidate only through the upstream, by path.",
+      "status": "EVIDENCED_BY_EXACT_MATCH_WITH_DECLARED_UPSTREAM"
+    },
+    "provider_delivery_latency": {
+      "evidence": "No artifact records when Binance delivered any bar; no latency was observed or declared. UNOBSERVED is not zero.",
+      "seconds": null,
+      "status": "UNOBSERVED"
+    },
+    "timestamp_semantics": "BAR_OPEN"
+  },
+  "gates": {
+    "E5a": {
+      "closed_reason_counts": {},
+      "scope": "Timestamp availability of the raw OHLCV bars of this exact CSV (sha256 above). Derived feature columns' causal lookback is NOT adjudicated here.",
+      "status": "OPEN"
+    },
+    "E5b": {
+      "closed_reason_counts": {
+        "OPERATIONAL_DELIVERY_BOUND_NOT_RESOLVED": 18085,
+        "PROVIDER_DELIVERY_LATENCY_UNOBSERVED": 18085
+      },
+      "note": "This order grants no live viability.",
+      "status": "CLOSED"
+    }
+  },
+  "information_complete_not_before_rule": "Per bar: the bar's own close_time as recorded in the candidate parquet. Never open_time + nominal_bar_seconds; truncated bars complete at their actual (earlier) close_time.",
+  "measurements": {
+    "csv_first_open_time_utc": "2017-09-28T04:00:00.000Z",
+    "csv_float_parser": "pandas round_trip",
+    "csv_last_open_time_utc": "2025-12-31T20:00:00.000Z",
+    "csv_rows": 18085,
+    "csv_timestamp_column": "DATE_TIME",
+    "csv_timestamp_format": "YYYY-MM-DD HH:MM:SS without offset; interpreted as UTC per registry timestamp_semantics BAR_OPEN_TIME_UTC",
+    "join": "CSV DATE_TIME == parquet timestamp (open time, ms UTC)",
+    "matched_rows_contiguous_in_source": true,
+    "matched_source_index_range": [
+      252,
+      18336
+    ],
+    "ohlcv_exactly_equal_rows": {
+      "CLOSE": 18085,
+      "HIGH": 18085,
+      "LOW": 18085,
+      "OPEN": 18085,
+      "VOLUME": 18085
+    },
+    "ohlcv_max_abs_error": {
+      "CLOSE": 0.0,
+      "HIGH": 0.0,
+      "LOW": 0.0,
+      "OPEN": 0.0,
+      "VOLUME": 0.0
+    },
+    "rows_matched": 18085,
+    "rows_unmatched": 0
+  },
+  "order_items": [
+    "C81",
+    "C82",
+    "C83"
+  ],
+  "producer": {
+    "byte_discipline": "Each source opened once, read into memory, hashed, compared with its pinned digest, and parsed from that same buffer (pandas.read_csv(io.BytesIO), pyarrow.parquet.read_table(pyarrow.BufferReader)).",
+    "library": "_scripts/temporal_availability.py",
+    "relative_path": "_scripts/materialize_eth_h4_temporal_contract.py",
+    "root_id": "financial-data"
+  },
+  "provenance": {
+    "basis": "Exact OHLCV match of all 18085/18085 CSV rows to the candidate parquet on DATE_TIME == open time (max abs error 0.0 per column). No artifact declares the candidate parquet as the CSV's source: the CSV's export metadata declares raw_ohlcv = market_data/crypto/spot_top50/ethusdt/4h.parquet by absolute PATH ONLY (no digest). The candidate's own provenance.json declares that same upstream as its 4h source, the upstream's provenance.json declares a sha256 equal to the upstream bytes read here, and the candidate is value-identical to the upstream on every column after renaming open_time -> timestamp (bytes differ). The CSV -> candidate binding is therefore evidenced by exact match; the declaration reaches the candidate only through the upstream, by path.",
+    "declarations": {
+      "candidate_provenance_4h_source": "market_data/crypto/spot_top50/ethusdt/4h.parquet",
+      "candidate_provenance_4h_unexpected_gaps": 3,
+      "export_metadata_declares_digests": false,
+      "export_metadata_model_ready_csv_names_this_csv": true,
+      "export_metadata_model_ready_rows": 18085,
+      "export_metadata_names_candidate_parquet": false,
+      "export_metadata_sources.raw_ohlcv_names_declared_upstream": true,
+      "upstream_provenance_declared_sha256": "7a6b79833355d7c22a3db30e6494ced078d628338d76e671af320a06b35fc9e5",
+      "upstream_provenance_digest_equals_bytes": true
+    },
+    "declared_upstream_value_identical_after_rename": true,
+    "status": "EVIDENCED_BY_EXACT_MATCH_WITH_DECLARED_UPSTREAM"
+  },
+  "provider_delivery_latency": "UNOBSERVED",
+  "row_evaluation": {
+    "E5a": {
+      "closed_reason_counts": {},
+      "status": "OPEN"
+    },
+    "E5b": {
+      "closed_reason_counts": {
+        "OPERATIONAL_DELIVERY_BOUND_NOT_RESOLVED": 18085,
+        "PROVIDER_DELIVERY_LATENCY_UNOBSERVED": 18085
+      },
+      "status": "CLOSED"
+    },
+    "causal_information_bound_reason_counts": {
+      "FOLLOWED_BY_GAP": 8,
+      "PER_BAR_CLOSE_TIME": 18085,
+      "TRUNCATED_BAR": 20
+    },
+    "causal_information_bound_status_counts": {
+      "RESOLVED": 18085
+    },
+    "operational_delivery_bound_reason_counts": {
+      "PROVIDER_DELIVERY_LATENCY_UNOBSERVED": 18085
+    },
+    "operational_delivery_bound_status_counts": {
+      "UNOBSERVED": 18085
+    },
+    "rows_evaluated": 18085
+  },
+  "schema": {
+    "id": "financial_data.temporal_availability_schema.v1",
+    "relative_path": "features/census/TEMPORAL_AVAILABILITY_SCHEMA.v1.json",
+    "root_id": "financial-data",
+    "self_digest": "71f1529897e0436592690cb12a55888b688cf9d316fe68dd6d3d12c675011302"
+  },
+  "self_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "json.dumps(document_without_self_digest, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')",
+    "value": "1739f5fb7a3dc8c76925d01ff5abac8dc7901e3467bf3e5589f1ec76e8ea45da"
+  },
+  "source_bar_structure": {
+    "close_time_at_or_after_next_open": 0,
+    "close_time_before_open_time": 0,
+    "close_time_exceeds_nominal_bar": 0,
+    "full_nominal_span_bars": 18316,
+    "gaps": [
+      {
+        "delta_seconds": 115200,
+        "exceeds_twice_nominal": true,
+        "missing_nominal_bars": 7,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2018-02-09T08:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-02-08T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 43200,
+        "exceeds_twice_nominal": true,
+        "missing_nominal_bars": 2,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2018-06-26T12:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-06-26T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 28800,
+        "exceeds_twice_nominal": false,
+        "missing_nominal_bars": 1,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2018-07-04T08:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-07-04T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 28800,
+        "exceeds_twice_nominal": false,
+        "missing_nominal_bars": 1,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2018-11-14T08:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-11-14T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 28800,
+        "exceeds_twice_nominal": false,
+        "missing_nominal_bars": 1,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2019-03-12T08:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2019-03-12T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 43200,
+        "exceeds_twice_nominal": true,
+        "missing_nominal_bars": 2,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2019-05-15T12:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2019-05-15T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 28800,
+        "exceeds_twice_nominal": false,
+        "missing_nominal_bars": 1,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2019-08-15T08:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2019-08-15T00:00:00.000Z"
+      },
+      {
+        "delta_seconds": 28800,
+        "exceeds_twice_nominal": false,
+        "missing_nominal_bars": 1,
+        "next_bar_in_model_ready_csv": true,
+        "next_open_time_utc": "2020-02-19T16:00:00.000Z",
+        "previous_bar_in_model_ready_csv": true,
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2020-02-19T08:00:00.000Z"
+      }
+    ],
+    "gaps_greater_than_nominal_total": 8,
+    "gaps_greater_than_twice_nominal_total": 3,
+    "open_times_off_nominal_grid": 0,
+    "open_times_strictly_increasing": true,
+    "source_rows": 18337,
+    "truncated_bars": [
+      {
+        "close_time_ms": 1504713600000,
+        "close_time_utc": "2017-09-06T16:00:00.000Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": false,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1504713600000,
+        "open_time_utc": "2017-09-06T16:00:00.000Z",
+        "span_seconds": 0.0
+      },
+      {
+        "close_time_ms": 1515034814849,
+        "close_time_utc": "2018-01-04T03:00:14.849Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1515024000000,
+        "open_time_utc": "2018-01-04T00:00:00.000Z",
+        "span_seconds": 10814.849
+      },
+      {
+        "close_time_ms": 1518049694799,
+        "close_time_utc": "2018-02-08T00:28:14.799Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1518048000000,
+        "open_time_utc": "2018-02-08T00:00:00.000Z",
+        "span_seconds": 1694.799
+      },
+      {
+        "close_time_ms": 1529978399999,
+        "close_time_utc": "2018-06-26T01:59:59.999Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1529971200000,
+        "open_time_utc": "2018-06-26T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1530663745562,
+        "close_time_utc": "2018-07-04T00:22:25.562Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1530662400000,
+        "open_time_utc": "2018-07-04T00:00:00.000Z",
+        "span_seconds": 1345.562
+      },
+      {
+        "close_time_ms": 1539928799999,
+        "close_time_utc": "2018-10-19T05:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1539921600000,
+        "open_time_utc": "2018-10-19T04:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1542160799999,
+        "close_time_utc": "2018-11-14T01:59:59.999Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1542153600000,
+        "open_time_utc": "2018-11-14T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1552355999999,
+        "close_time_utc": "2019-03-12T01:59:59.999Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1552348800000,
+        "open_time_utc": "2019-03-12T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1557889199999,
+        "close_time_utc": "2019-05-15T02:59:59.999Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1557878400000,
+        "open_time_utc": "2019-05-15T00:00:00.000Z",
+        "span_seconds": 10799.999
+      },
+      {
+        "close_time_ms": 1565834399999,
+        "close_time_utc": "2019-08-15T01:59:59.999Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1565827200000,
+        "open_time_utc": "2019-08-15T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1573610399999,
+        "close_time_utc": "2019-11-13T01:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1573603200000,
+        "open_time_utc": "2019-11-13T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1574647199999,
+        "close_time_utc": "2019-11-25T01:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1574640000000,
+        "open_time_utc": "2019-11-25T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1582112132298,
+        "close_time_utc": "2020-02-19T11:35:32.298Z",
+        "followed_by_gap": true,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1582099200000,
+        "open_time_utc": "2020-02-19T08:00:00.000Z",
+        "span_seconds": 12932.298
+      },
+      {
+        "close_time_ms": 1587779999999,
+        "close_time_utc": "2020-04-25T01:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1587772800000,
+        "open_time_utc": "2020-04-25T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1593309599999,
+        "close_time_utc": "2020-06-28T01:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1593302400000,
+        "open_time_utc": "2020-06-28T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1608558440528,
+        "close_time_utc": "2020-12-21T13:47:20.528Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1608552000000,
+        "open_time_utc": "2020-12-21T12:00:00.000Z",
+        "span_seconds": 6440.528
+      },
+      {
+        "close_time_ms": 1613014855829,
+        "close_time_utc": "2021-02-11T03:40:55.829Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1613001600000,
+        "open_time_utc": "2021-02-11T00:00:00.000Z",
+        "span_seconds": 13255.829
+      },
+      {
+        "close_time_ms": 1618883999999,
+        "close_time_utc": "2021-04-20T01:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1618876800000,
+        "open_time_utc": "2021-04-20T00:00:00.000Z",
+        "span_seconds": 7199.999
+      },
+      {
+        "close_time_ms": 1619323259271,
+        "close_time_utc": "2021-04-25T04:00:59.271Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1619323200000,
+        "open_time_utc": "2021-04-25T04:00:00.000Z",
+        "span_seconds": 59.271
+      },
+      {
+        "close_time_ms": 1628819999000,
+        "close_time_utc": "2021-08-13T01:59:59.000Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1628812800000,
+        "open_time_utc": "2021-08-13T00:00:00.000Z",
+        "span_seconds": 7199.0
+      },
+      {
+        "close_time_ms": 1632898799999,
+        "close_time_utc": "2021-09-29T06:59:59.999Z",
+        "followed_by_gap": false,
+        "in_model_ready_csv": true,
+        "nominal_span_seconds": 14399.999,
+        "open_time_ms": 1632888000000,
+        "open_time_utc": "2021-09-29T04:00:00.000Z",
+        "span_seconds": 10799.999
+      }
+    ],
+    "truncated_bars_in_model_ready_csv": 20,
+    "truncated_bars_total": 21
+  },
+  "stage_2_1_gap_count_reconciliation": "candidate provenance.json reports unexpected_gaps = 3 using the rule delta > 2 x step (_scripts/workers/stage21_trading_asset_worker.py validate_frequency); this artifact counts delta > 1 x step = 8, of which 3 exceed 2 x step.",
+  "undeclared_datasets": [
+    {
+      "E5a": {
+        "gate": "E5a",
+        "reasons": [
+          "CAUSAL_INFORMATION_BOUND_NOT_RESOLVED",
+          "PROVENANCE_UNDECLARED",
+          "TIMESTAMP_SEMANTICS_UNDECLARED"
+        ],
+        "status": "CLOSED"
+      },
+      "E5b": {
+        "gate": "E5b",
+        "reasons": [
+          "CAUSAL_INFORMATION_BOUND_NOT_RESOLVED",
+          "PROVENANCE_UNDECLARED",
+          "TIMESTAMP_SEMANTICS_UNDECLARED"
+        ],
+        "status": "CLOSED"
+      },
+      "causal_information_bound": {
+        "contract_id": "predictor.legacy.eurusd_1h.phase1_test.v1.temporal_contract.undeclared",
+        "dataset_sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95",
+        "kind": "causal_information_bound",
+        "reasons": [
+          "PROVENANCE_UNDECLARED",
+          "TIMESTAMP_SEMANTICS_UNDECLARED"
+        ],
+        "status": "UNRESOLVED",
+        "utc_ms": null
+      },
+      "contract": {
+        "contract_id": "predictor.legacy.eurusd_1h.phase1_test.v1.temporal_contract.undeclared",
+        "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+        "dataset_sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95",
+        "information_complete_not_before": "UNDECLARED",
+        "nominal_bar_seconds": null,
+        "provenance": {
+          "basis": "Inventory provider 'legacy predictor dataset; provider not recorded', availability_policy 'UNDECLARED', registry timestamp_semantics 'BAR_TIMEZONE_UNDECLARED'. The ETH decision is not generalized to this dataset.",
+          "status": "UNDECLARED"
+        },
+        "provider_delivery_latency": {
+          "evidence": "No provider recorded.",
+          "seconds": null,
+          "status": "UNOBSERVED"
+        },
+        "timestamp_semantics": "UNDECLARED"
+      },
+      "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+      "digest_note": "Taken from the inventory; the dataset bytes were NOT re-read by this tool.",
+      "inventory_physical_sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95",
+      "operational_delivery_bound": {
+        "contract_id": "predictor.legacy.eurusd_1h.phase1_test.v1.temporal_contract.undeclared",
+        "dataset_sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95",
+        "kind": "operational_delivery_bound",
+        "reasons": [
+          "CAUSAL_BOUND_NOT_RESOLVED",
+          "PROVENANCE_UNDECLARED",
+          "TIMESTAMP_SEMANTICS_UNDECLARED"
+        ],
+        "status": "UNRESOLVED",
+        "utc_ms": null
+      },
+      "relative_path": "examples/data/phase_1/base_d6.csv",
+      "root_id": "predictor"
+    }
+  ]
+}

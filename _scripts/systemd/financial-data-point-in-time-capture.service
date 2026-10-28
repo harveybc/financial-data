@@ -1,0 +1,27 @@
+# The point-in-time capture, as a systemd --user oneshot driven by its timer.
+#
+# No path of this machine is written into this file: every location comes from
+# %h/.config/financial-data/point-in-time-capture.env, which the installer
+# writes outside the repository. FD_PYTHON, FD_REPO, FD_PIT_STORE, FD_PIT_LOG
+# and FD_PIT_LAST_RUN are defined there.
+#
+# The worker opens local parquet files only. It needs no network, no
+# credential and no GPU, and CUDA is blanked so it can never take one.
+
+[Unit]
+Description=financial-data point-in-time capture (receipt clocks for macro releases)
+ConditionPathExists=%h/.config/financial-data/point-in-time-capture.env
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/financial-data/point-in-time-capture.env
+Environment=PYTHONUNBUFFERED=1
+Environment=CUDA_VISIBLE_DEVICES=
+WorkingDirectory=%h
+ExecStart=/bin/sh -c 'exec "$FD_PYTHON" "$FD_REPO/_scripts/workers/stage13_point_in_time_capture_worker.py" --once --repo-root "$FD_REPO" --store "$FD_PIT_STORE" --log "$FD_PIT_LOG" --json "$FD_PIT_LAST_RUN"'
+# a pass reads two parquet files and appends small JSON rows; if it ever needs
+# more than this, something has changed that a person should look at
+MemoryMax=1G
+CPUQuota=50%
+Nice=10
+TimeoutStartSec=900

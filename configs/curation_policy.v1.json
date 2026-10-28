@@ -1,0 +1,13 @@
+{
+  "schema": "financial_data.curation_policy.v1",
+  "status": "CONTRACT_NOT_DEPLOYMENT_CERTIFICATE",
+  "split": {"train": ["2020-01-01", "2024-01-01"], "validation": ["2024-01-01", "2025-01-01"], "test": ["2025-01-01", "2026-01-01"], "end_exclusive": true},
+  "native_data": {"missing_price_action": "RECOVER_OBSERVED_QUOTES", "price_interpolation": false, "price_forward_fill": false, "price_backward_fill": false, "synthetic_closed_market_bars": false, "calendar_per_source": true, "timestamp_convention_per_source": true, "recovery_before_discard": true},
+  "admission": {"required_months_complete": true, "unresolved_expected_open_gaps_allowed": 0, "conflicting_duplicates_allowed": 0, "invalid_price_ohlc_allowed": 0, "finite_fraction_over_existing_rows_is_sufficient": false, "independent_value_comparison_on_doubt": true, "unknown_provider_label_alone_is_rejection": false, "availability_after_decision_allowed": false, "source_and_prepared_coverage_required": true, "admitted_root_only": true},
+  "outliers": {"action": "FLAG_AND_VERIFY_NOT_AUTOMATIC_DELETE", "reference_fit": "TRAIN_ONLY", "modified_absolute_z_threshold": 3.5, "iqr_fence_multiplier": 1.5, "zero_scale_result": "NOT_ESTIMABLE", "target_cleaning": false, "default_clipping": false},
+  "preprocessing": {"train_only_fit": true, "joins": "BACKWARD_AS_OF_AVAILABLE_TIME", "staleness_per_source": true, "window_contains_current_t": true, "input_downsampling_smoothing": false, "future_perturbation_test": true, "post_transform_checks": true, "post_window_monthly_checks": true},
+  "selection": {"recompute_after_repair": true, "reuse_affected_metrics": false, "individual_quality_before_rankings": true, "pairwise_support_counts": true, "temporal_stability": true, "causal_not_identified": "NEUTRAL", "test_hyperparameter_selection": false, "naive": "ONE_PER_HORIZON_SAME_ROWS_AND_SCALE"},
+  "business": {"refit_cadence": "WEEKLY", "force_flat_hours_before_close": 12, "entry_delay_hours_after_open": 12, "input_history_may_cross_closed_sessions": true, "closed_session_ticks_are_invented": false},
+  "storage": {"queue_and_locks": "EXT4", "bulk_data": "CONFIGURED_LARGE_VOLUME", "large_databases_in_git": false, "invalid_experiment_archives": false, "delete_superseded_bad_unused_data_after_recovery": true},
+  "operation": {"gpu_before_data_and_selection_acceptance": false, "max_heavy_gpu_jobs_on_shared_host": 1, "bounded_memory_per_source_job": true, "bounded_retries": true, "automatic_stage_successors": true, "agent_log_polling": false, "read_only_status_each_level": true, "eta": "MEASURED_OR_EXPLICITLY_UNAVAILABLE", "warehouse_readback_required": true}
+}

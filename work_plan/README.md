@@ -1,5 +1,13 @@
 # Financial Data Lake — Project 3
 
+## Current Priority: Data Curation
+
+The 2026-10-18 owner directive requires inventory, actual recovery and validation
+before lake admission, preprocessing and selection. Do not infer data health
+from old experiment results. See [the complete procedure](17_CANONICAL_INVENTORY_AND_CURATION.md)
+and [the JSON policy](../configs/curation_policy.v1.json). No interpolated prices,
+synthetic weekend bars, target cleaning or retained invalid-run archives.
+
 ## Purpose
 
 Comprehensive multi-asset, multi-source financial data repository for systematic RL trading research. Built during Project 3 (2026).

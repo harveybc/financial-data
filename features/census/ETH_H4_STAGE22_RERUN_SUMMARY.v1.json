@@ -1,0 +1,48 @@
+{
+ "comparison_summary": {
+  "historical_model_ready_csv": {
+   "bytes_identical": false,
+   "columns_all_equal": 89,
+   "columns_compared": 89,
+   "columns_with_differences": [],
+   "rows_common": 18085,
+   "rows_only_new": 0,
+   "rows_only_old": 0
+  },
+  "statistical": {
+   "bytes_identical": false,
+   "columns_all_equal": 22,
+   "columns_compared": 22,
+   "columns_with_differences": [],
+   "rows_common": 18337,
+   "rows_only_new": 0,
+   "rows_only_old": 0
+  },
+  "technical": {
+   "bytes_identical": false,
+   "columns_all_equal": 61,
+   "columns_compared": 61,
+   "columns_with_differences": [],
+   "rows_common": 18337,
+   "rows_only_new": 0,
+   "rows_only_old": 0
+  }
+ },
+ "e2e_columns_pass": 89,
+ "e2e_verdict": "PASS",
+ "note": "a NEW successor dataset produced by the current committed producer; value equality with the historical artifacts is reported, and does not make the historical run bound",
+ "post_run_manifest_sha256": "7971157d03d420d1bc32a0c4fe7cd40b8641c1c3c5ab8bd4533e469f61700624",
+ "pre_run_manifest_sha256": "9820d32d8747309d5e6c667df19966d44e042391d42f2b9fa6750c4a47f9222c",
+ "rows": {
+  "raw": 18337,
+  "statistical": 18337,
+  "successor": 18085,
+  "technical": 18337
+ },
+ "run_id": "eth_h4_stage22_rerun_v1",
+ "schema": "financial_data.eth_h4_stage22_rerun_summary.v1",
+ "status": "COMPLETED",
+ "successor_dataset_sha256": "427a754ba3774e381e4f1353690b997d4e0ca89bf4ce6439ff2f8d651fd16d7c",
+ "successor_root_logical": "crispdm-successors/eth_h4_stage22_rerun_v1",
+ "wall_seconds": 5.426
+}

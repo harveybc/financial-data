@@ -1,0 +1,61 @@
+{
+ "binds": {
+  "bridge_sha256": "2ba028b7ad2667904282630f1860f0892e78172e32b741311ee1b5bfa19dc457",
+  "census_sha256": "e1845971c3decbc4221db5373c0dbc627a4eec81154a302019d0bdf53cf74881"
+ },
+ "derived_at": "2026-09-10T00:00:00Z",
+ "disposition": "FINANCIAL_AVAILABILITY_EVIDENCE_REQUIRED",
+ "disposition_sha256": "09d1a120f79df8a4b5aed40310601e6b35302cd9f1c2513f78665e404730647c",
+ "not_done_and_why": {
+  "manifest_submission": "no resolved subject set exists to submit",
+  "successor_index": "an index bound to zero new contracts would restate the current one under a new digest",
+  "successor_selection_design": "a design bound to an empty universe is not a design"
+ },
+ "schema": "financial_data.availability_disposition.v1",
+ "what_the_bridge_established": {
+  "column_to_variable": {
+   "count": 89,
+   "meaning": "these columns are DERIVED features \u2014 technical and statistical indicators computed downstream of the lake \u2014 so no conceptual variable of the 1,965-variable census carries them. They have no lake provenance to inherit; their availability is a property of the DERIVATION, which is not yet declared anywhere."
+  },
+  "columns_examined": 94,
+  "rl_columns_are_a_subset_of_the_supervised_view": true,
+  "subset_note": "the 83 RL feature_columns are a STRICT SUBSET of the 94 columns of the supervised model-ready view: both consumers read the same physical view. This closes the observation_contract-versus-feature_columns gap by physical evidence rather than by a configuration match, which is why no configuration was edited.",
+  "unresolved_by_stage": {
+   "column_to_variable": 89,
+   "variable_to_entity": 5
+  },
+  "variable_to_entity": {
+   "columns": [
+    "CLOSE",
+    "HIGH",
+    "LOW",
+    "OPEN",
+    "VOLUME"
+   ],
+   "count": 5,
+   "meaning": "OPEN, HIGH, LOW, CLOSE and VOLUME each exist on 128 entities of the lake. The view does not declare WHICH instrument it drew them from, and a bridge never chooses between 128 candidates."
+  }
+ },
+ "what_would_unblock_it": [
+  {
+   "gap": "the derivation contract of the 89 engineered columns",
+   "needed": "a producer artifact naming, per engineered column, the lake variables it consumes and the lag its computation introduces",
+   "owner_decision_required": false,
+   "who_holds_it": "the feature-engineering producer, not the owner"
+  },
+  {
+   "gap": "the instrument binding of the 5 OHLCV columns",
+   "needed": "the model-ready view declaring the entity it was built from (symbol and timeframe), which the view's own manifest could carry",
+   "owner_decision_required": false,
+   "who_holds_it": "financial-data view producer"
+  },
+  {
+   "gap": "the eight availability fields per family",
+   "needed": "provider, observation and available timestamp columns, revision policy, timezone, latency and license scope, from a worker or provider statement",
+   "owner_decision_required": false,
+   "who_holds_it": "acquisition workers in financial-data"
+  }
+ ],
+ "why": "the bridge resolved 0 of 94 consumed columns to a family with a complete temporal contract, so there is no non-empty resolved set for a manifest submission, a successor index or a successor selection design to bind. Per C29 the disposition governs and no selection is executed.",
+ "zero_is_a_valid_answer": "the goal was never a positive count; forcing one would have required inventing an availability the sources do not state"
+}

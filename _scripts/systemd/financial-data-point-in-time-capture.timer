@@ -1,0 +1,26 @@
+# Every three hours, at seven minutes past, UTC.
+#
+# Why three hours: the receipt clock's resolution is the interval between
+# passes, so the interval is the width of the upper bound this store puts on a
+# publication instant. Three hours costs nothing and bounds every release to
+# the pass that first saw it. Going finer would not buy a tighter bound today,
+# because the archives this worker reads are themselves refreshed by
+# acquisition workers that run far less often than that -- the binding
+# constraint is the source's refresh cadence, not ours, and the document says
+# so rather than letting a dense capture imply a precision we do not have.
+#
+# Persistent=true so a machine that was asleep catches up on the next boot: a
+# missed pass is a hole in the record that cannot be filled afterwards.
+
+[Unit]
+Description=Run the financial-data point-in-time capture every three hours
+
+[Timer]
+OnCalendar=*-*-* 00,03,06,09,12,15,18,21:07:00 UTC
+RandomizedDelaySec=5min
+Persistent=true
+AccuracySec=1min
+Unit=financial-data-point-in-time-capture.service
+
+[Install]
+WantedBy=timers.target

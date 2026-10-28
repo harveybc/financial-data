@@ -1,0 +1,23 @@
+{
+  "schema": "financial_data.histdata_observed_clock.v1",
+  "hypothesis": "EUROPEAN_DST_COHORT_HYPOTHESIS",
+  "basis": "EMPIRICAL_COHORT_CORRECTION_WITH_INDEPENDENT_CONTROLS",
+  "provider_declared_clock": "FIXED_EST_CONTRADICTED_BY_RETAINED_OBSERVATIONS",
+  "quote_view": "BID",
+  "witness_dates": ["2023-01-03", "2023-06-30", "2023-07-10"],
+  "minimum_consecutive_pairs": 120,
+  "minimum_return_correlation": 0.75,
+  "minimum_control_margin": 0.25,
+  "maximum_witness_p95_quote_difference": 0.0006,
+  "minimum_primary_paired_hours": 1000,
+  "maximum_primary_median_quote_difference": 0.0001,
+  "maximum_primary_p95_quote_difference": 0.0002,
+  "sources": [
+    {"pair": "eurusd", "year": 2023, "file": "histdata-annual/eurusd-2023/source.zip", "sha256": "26e41c4bccfd70f2c76ef7f3ffcba0e3b7097231927a41640f4a7c442815f34a"},
+    {"pair": "eurusd", "year": 2024, "file": "histdata-annual-2024-2025/eurusd-2024/source.zip", "sha256": "58f074ba6b835eb2fbeaeb6678502a23b26768eefdfa509eb75ff5296bb2904d"},
+    {"pair": "eurusd", "year": 2025, "file": "histdata-annual-2024-2025/eurusd-2025/source.zip", "sha256": "b7c23d20b9577588a8b13508d58fedbe487e569b7b8b5dd368bd1d2b61115de0"},
+    {"pair": "gbpusd", "year": 2023, "file": "histdata-annual/gbpusd-2023/source.zip", "sha256": "4e7031d841a953ae76d1ba056780838bddd08e0d5eac62dd21c64b28b7b1a68b"},
+    {"pair": "gbpusd", "year": 2024, "file": "histdata-annual-2024-2025/gbpusd-2024/source.zip", "sha256": "030b05b4c670c7e152bf4aa4112488c96695d2dcc2b31ca13a3b4834b8431077"},
+    {"pair": "gbpusd", "year": 2025, "file": "histdata-annual-2024-2025/gbpusd-2025/source.zip", "sha256": "7b69c334eadd10568168634cff3ca37b06e5fb9057db4da9b590e2ef2034854e"}
+  ]
+}

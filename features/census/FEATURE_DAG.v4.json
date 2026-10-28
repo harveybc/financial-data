@@ -1,0 +1,3665 @@
+{
+ "additive": "v1, v2 and v3 are left byte-identical",
+ "binding_manifest_sha256": "f6ad3ecc912ba89a743e2f4547b8ea2ac858644732cc3873ccbe2c41c8229de3",
+ "bindings_established": 89,
+ "by_class": {
+  "CAUSAL_ACTIVE": 89
+ },
+ "causal_active_columns": 89,
+ "classes": [
+  "CAUSAL_ACTIVE",
+  "NON_CAUSAL",
+  "UNRESOLVED",
+  "UNRESOLVED_PRODUCER_BINDING"
+ ],
+ "columns_examined": 89,
+ "dag_sha256": "c4e25cd1fce1af6c1feb40715186502491c7ac54a88f2b0a9bbb039873d24022",
+ "derived_at": "2026-09-12T12:00:00Z",
+ "e2e_verdict": "PASS",
+ "historical_causal_active_columns": 0,
+ "historical_nodes": [
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "OPEN",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "LOW",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "HIGH",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "CLOSE",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BC-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BH-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BH-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  },
+  {
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BO-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "source": "FEATURE_DAG.v3.json"
+  }
+ ],
+ "historical_nodes_carried_from_v3": 97,
+ "nodes": [
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+    "producer_output_column": "typical_price",
+    "symbol": "derive_bar_columns"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 1,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+    "producer_output_column": "OPEN",
+    "symbol": "derive_bar_columns"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "open"
+    ],
+    "lookback_bars": 1,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+    "producer_output_column": "HIGH",
+    "symbol": "derive_bar_columns"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "high"
+    ],
+    "lookback_bars": 1,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+    "producer_output_column": "LOW",
+    "symbol": "derive_bar_columns"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 6,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "low"
+    ],
+    "lookback_bars": 1,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+    "producer_output_column": "CLOSE",
+    "symbol": "derive_bar_columns"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 1,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/assemble_eth_h4_model_ready_successor.py",
+    "producer_output_column": "VOLUME",
+    "symbol": "derive_bar_columns"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "volume"
+    ],
+    "lookback_bars": 1,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "return_1",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "log_return_1",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 2,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "return_5",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "log_return_5",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 6,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "return_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "log_return_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 11,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "return_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "log_return_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "return_60",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "log_return_60",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 61,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "sma_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 10,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "close_sma_ratio_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 10,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "sma_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "close_sma_ratio_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "sma_50",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 50,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_50",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "close_sma_ratio_50",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 50,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "sma_100",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 100,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_100",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "close_sma_ratio_100",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 100,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "sma_200",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 200,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_200",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "close_sma_ratio_200",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 200,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "macd",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "macd_signal",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "macd_hist",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "rsi_7",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "rsi_14",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "rsi_21",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "stoch_k",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 14,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "stoch_d",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 16,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "williams_r_14",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 14,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "cci_14",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 27,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roc_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roc_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roc_60",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "mom_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 11,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "mom_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "bb_upper",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "bb_middle",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "bb_lower",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "bb_pct_b",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "bb_width",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "atr_14",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 15,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "natr_14",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low"
+    ],
+    "lookback_bars": 15,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "hist_vol_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 11,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "hist_vol_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "hist_vol_60",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 61,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_cross_10_50",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "ema_cross_20_100",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "trend_slope_50",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 51,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "trend_strength_50",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 51,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "obv",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "volume"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "obv_delta_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "volume"
+    ],
+    "lookback_bars": "UNBOUNDED",
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "volume_sma_10",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "volume"
+    ],
+    "lookback_bars": 10,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "volume_sma_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "volume"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "volume_ratio_20",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "volume"
+    ],
+    "lookback_bars": 20,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "vwap_60",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low",
+     "volume"
+    ],
+    "lookback_bars": 60,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "mfi_14",
+    "symbol": "compute_technical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 8,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close",
+     "high",
+     "low",
+     "volume"
+    ],
+    "lookback_bars": 15,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "log_return_1",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 2,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_mean_ret_20",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_std_ret_20",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_skew_ret_20",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_kurt_ret_20",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 21,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_mean_ret_60",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 61,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_std_ret_60",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 61,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_skew_ret_60",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 61,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_kurt_ret_60",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 61,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_mean_ret_252",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 253,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_std_ret_252",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 253,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_skew_ret_252",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 253,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "roll_kurt_ret_252",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 253,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "realized_var_12",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 13,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "realized_var_48",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 49,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "autocorr_lag1_100",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 102,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "autocorr_lag5_100",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 106,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "sqret_autocorr_lag1_100",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 102,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "vol_regime_high",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 504,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "vol_regime_low",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 504,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "hurst_proxy_200",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 202,
+    "unresolved_because": []
+   }
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "timestamp semantics are owned by the temporal availability work; this DAG derives no time"
+   },
+   "binding": {
+    "codes": [],
+    "complete": true,
+    "file": "_scripts/workers/stage22_trading_features_worker.py",
+    "producer_output_column": "zscore_close_100",
+    "symbol": "compute_statistical"
+   },
+   "class": "CAUSAL_ACTIVE",
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+   "e2e_prefix_invariance": {
+    "compared_values": 178612,
+    "runs_fail": 0,
+    "runs_pass": 16,
+    "runs_vacuous": 4,
+    "sensitive_runs": 7,
+    "verdict": "PASS"
+   },
+   "reason_codes": [],
+   "static": {
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "leaves": [
+     "close"
+    ],
+    "lookback_bars": 100,
+    "unresolved_because": []
+   }
+  }
+ ],
+ "rules": {
+  "availability": "no availability time and no license are granted",
+  "causal_active": "complete binding AND end-to-end prefix invariance PASS for the column AND static STATIC_CAUSAL of the bound symbol at the recorded commit",
+  "historical": "historical classes are v3's, verbatim; zero CAUSAL_ACTIVE",
+  "no_drop": "every expected successor column is listed; one whose producer or assembly did not run stays UNRESOLVED_PRODUCER_BINDING",
+  "non_causal": "a static forward read or an end-to-end FAIL"
+ },
+ "schema": "financial_data.feature_dag.v4",
+ "successor_dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.successor_stage22_rerun.v1",
+ "successor_root_id": "crispdm-successors/eth_h4_stage22_rerun_v1"
+}

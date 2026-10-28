@@ -1,0 +1,971 @@
+{
+  "artifact": "ETH_H4_TEMPORAL_CONTRACT.v2",
+  "availability_contract": {
+    "bar_close_time_convention": "INCLUSIVE_LAST_MILLISECOND",
+    "contract_id": "financial_data.eth_h4_temporal_contract.v1",
+    "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+    "dataset_sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f",
+    "information_complete_not_before": "PER_BAR_CLOSE_TIME",
+    "nominal_bar_seconds": 14400,
+    "provenance": {
+      "basis": "Exact OHLCV match of all 18085/18085 CSV rows to the candidate parquet on DATE_TIME == open time (max abs error 0.0 per column). No artifact declares the candidate parquet as the CSV's source: the CSV's export metadata declares raw_ohlcv = market_data/crypto/spot_top50/ethusdt/4h.parquet by absolute PATH ONLY (no digest). The candidate's own provenance.json declares that same upstream as its 4h source, the upstream's provenance.json declares a sha256 equal to the upstream bytes read here, and the candidate is value-identical to the upstream on every column after renaming open_time -> timestamp (bytes differ). The CSV -> candidate binding is therefore evidenced by exact match; the declaration reaches the candidate only through the upstream, by path.",
+      "status": "EVIDENCED_BY_EXACT_MATCH_WITH_DECLARED_UPSTREAM"
+    },
+    "provider_delivery_latency": {
+      "evidence": "No artifact records when Binance delivered any bar; no latency was observed or declared. UNOBSERVED is not zero.",
+      "seconds": null,
+      "status": "UNOBSERVED"
+    },
+    "timestamp_semantics": "BAR_OPEN"
+  },
+  "bar_layer_summary": {
+    "availability_status_counts": {
+      "RESOLVED": 18085
+    },
+    "available": 18085,
+    "close_time_absent": 0,
+    "interval_complete": 18065,
+    "missing_nominal_intervals_inside_span": 16,
+    "next_step_state_counts": {
+      "GAP": 8,
+      "REGULAR": 18076,
+      "UNKNOWN_LAST_ROW": 1
+    },
+    "nominal_positions_spanned": 18101,
+    "rows": 18085,
+    "truncated": 20
+  },
+  "bound_files": {
+    "candidate_source_parquet": {
+      "bytes": 1578451,
+      "digest_check": "VERIFIED_AGAINST_PINNED_DIGEST",
+      "relative_path": "features/trading_asset_data/ethusdt/4h.parquet",
+      "root_id": "financial-data",
+      "sha256": "37321161d3e0d372abd0c3a0cc867ed4b2faf1fdf1e4569d55da6f6a1a1df099"
+    },
+    "model_ready_csv": {
+      "bytes": 17573555,
+      "digest_check": "VERIFIED_AGAINST_PINNED_DIGEST",
+      "relative_path": "examples/data/project3/ethusdt_4h_tech_stat_full_model_ready.csv",
+      "root_id": "predictor",
+      "sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f"
+    },
+    "v1_contract": {
+      "bytes": 22830,
+      "digest_check": "VERIFIED_AGAINST_PINNED_DIGEST",
+      "relative_path": "features/census/ETH_H4_TEMPORAL_CONTRACT.v1.json",
+      "root_id": "financial-data",
+      "sha256": "6e3a0c8d67dd2ec64dcad8bd7bb7ca0154dd514b43e9e2990de83578cc794254"
+    }
+  },
+  "contract_id": "financial_data.eth_h4_temporal_contract.v2",
+  "dataset": {
+    "bar_close_time_convention": "INCLUSIVE_LAST_MILLISECOND",
+    "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+    "first_open_time_utc": "2017-09-28T04:00:00.000Z",
+    "grid_anchor_ms": 0,
+    "last_open_time_utc": "2025-12-31T20:00:00.000Z",
+    "nominal_bar_seconds": 14400,
+    "rows": 18085,
+    "sample_timeline": "The 18,085-row CSV only; the 252 source bars before its first row are not part of any window."
+  },
+  "definitions": {
+    "gap": "next observed open - open > nominal_ms; the intervals in between are ABSENT, never filled.",
+    "next_bar": "The next NOMINAL interval open_t + nominal_ms. If no row has that open time the target is absent (TARGET_NOMINAL_BAR_ABSENT); the next observed row is never substituted.",
+    "prefix_invariance": "sample_eligible, ineligibility_reasons and eligible_support_through of a row depend only on rows with open time in [open_t - (max(L,W)-1)*nominal, open_t + h*nominal] and earlier rows (support). Rolling-origin roles are not prefix-invariant. A structurally invalid dataset is refused as a whole.",
+    "sample_ineligible_if": "its lookback, operator window or target contains a truncated bar, an unavailable bar, an absent nominal interval (gap), or reaches before the first row / after the last row.",
+    "truncated_bar": "close_time - open_time < nominal_ms - 1 (INCLUSIVE_LAST_MILLISECOND)."
+  },
+  "gates": {
+    "E5a": {
+      "source": "v1, unchanged",
+      "status": "OPEN"
+    },
+    "E5b": {
+      "source": "v1, unchanged",
+      "status": "CLOSED"
+    },
+    "note": "v2 changes no gate. Eligibility is a sample-level screen constraint, not an availability verdict."
+  },
+  "layers": {
+    "availability": "v1 causal_information_bound RESOLVED for the bar (temporal_availability.py, unchanged).",
+    "completeness": "close_time present and close_time - open_time == nominal_ms - (1 if INCLUSIVE_LAST_MILLISECOND else 0); shorter = TRUNCATED.",
+    "eligibility": "Sample at nominal position q is ELIGIBLE iff every position of lookback [q-L+1,q], operator window [q-W+1,q] and target [q+1,q+h] is a present, available, complete bar. No interpolation, no filling; next bar = next NOMINAL interval.",
+    "regularity": "next_open - open == nominal_ms -> REGULAR; greater -> GAP (missing = step/nominal - 1); last row -> UNKNOWN_LAST_ROW."
+  },
+  "mask_artifact": {
+    "bytes": 453551,
+    "columns": [
+      "row_index",
+      "open_time_ms",
+      "close_time_ms",
+      "bar_available",
+      "bar_interval_complete",
+      "bar_truncated",
+      "next_step_state",
+      "missing_nominal_intervals_after",
+      "sample_eligible",
+      "ineligibility_reasons",
+      "eligible_support_through",
+      "origin_1_role",
+      "origin_2_role",
+      "origin_3_role",
+      "origin_4_role",
+      "origin_5_role"
+    ],
+    "content_digest_rule": "sha256 of json.dumps({'columns': names, 'rows': table.to_pydict()}, sort_keys=True, separators=(',', ':'))",
+    "content_sha256": "80ff84b2c35570a11c08f1fd9c1c56b6509fbfa398cd679ea3ecf045e33885d3",
+    "format": "parquet (snappy)",
+    "format_justification": "18,085 rows x per-row reason lists and per-origin roles; parquet keeps typed nulls and list<string> reasons; the JSON binds it by sha256 and by a library-independent content digest.",
+    "relative_path": "features/census/ETH_H4_SAMPLE_ELIGIBILITY_MASK.v1.parquet",
+    "root_id": "financial-data",
+    "rows": 18085,
+    "sha256": "b5c2e3b5811c11c4bdf32c7736037ecc68bff50f0edf59e40a0bfdc185939e85"
+  },
+  "order_items": [
+    "C98",
+    "C99"
+  ],
+  "parameter_provenance": {
+    "from_design_draft": [
+      "model_lookback_bars",
+      "max_operator_warmup_bars",
+      "target_horizon_nominal_bars",
+      "n_rolling_origins",
+      "test_block_bars",
+      "embargo_bars",
+      "development_window",
+      "inner_validation_fraction"
+    ],
+    "not_in_design_draft": {
+      "inner_validation_embargo_bars": "Default 0 (purge only). The draft states no embargo between inner train and validation."
+    }
+  },
+  "parameters": {
+    "development_window": "EXPANDING",
+    "embargo_bars": 24,
+    "inner_validation_embargo_bars": 0,
+    "inner_validation_fraction": 0.1,
+    "max_operator_warmup_bars": 512,
+    "model_lookback_bars": 24,
+    "n_rolling_origins": 5,
+    "target_horizon_nominal_bars": 1,
+    "test_block_bars": 1000
+  },
+  "producer": {
+    "availability_library": "_scripts/temporal_availability.py",
+    "byte_discipline": "Each source opened once, read into memory, hashed, compared with its pinned digest, parsed from that same buffer. All digests verified before any parse.",
+    "library": "_scripts/temporal_quality.py",
+    "relative_path": "_scripts/materialize_eth_h4_temporal_quality.py",
+    "root_id": "financial-data"
+  },
+  "propagation": {
+    "gap_events": [
+      {
+        "first_affected_open_time_utc": "2018-02-08T00:00:00.000Z",
+        "last_affected_open_time_utc": "2018-05-05T08:00:00.000Z",
+        "missing_nominal_intervals": 7,
+        "next_open_time_utc": "2018-02-09T08:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-02-08T00:00:00.000Z",
+        "previous_row_index": 797,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2018-06-26T00:00:00.000Z",
+        "last_affected_open_time_utc": "2018-09-19T12:00:00.000Z",
+        "missing_nominal_intervals": 2,
+        "next_open_time_utc": "2018-06-26T12:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-06-26T00:00:00.000Z",
+        "previous_row_index": 1618,
+        "samples_affected_union": 511,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 510,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2018-07-04T00:00:00.000Z",
+        "last_affected_open_time_utc": "2018-09-27T08:00:00.000Z",
+        "missing_nominal_intervals": 1,
+        "next_open_time_utc": "2018-07-04T08:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-07-04T00:00:00.000Z",
+        "previous_row_index": 1664,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2018-11-14T00:00:00.000Z",
+        "last_affected_open_time_utc": "2019-02-07T08:00:00.000Z",
+        "missing_nominal_intervals": 1,
+        "next_open_time_utc": "2018-11-14T08:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2018-11-14T00:00:00.000Z",
+        "previous_row_index": 2461,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2019-03-12T00:00:00.000Z",
+        "last_affected_open_time_utc": "2019-06-05T08:00:00.000Z",
+        "missing_nominal_intervals": 1,
+        "next_open_time_utc": "2019-03-12T08:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2019-03-12T00:00:00.000Z",
+        "previous_row_index": 3168,
+        "samples_affected_union": 510,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 509,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2019-05-15T00:00:00.000Z",
+        "last_affected_open_time_utc": "2019-08-08T12:00:00.000Z",
+        "missing_nominal_intervals": 2,
+        "next_open_time_utc": "2019-05-15T12:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2019-05-15T00:00:00.000Z",
+        "previous_row_index": 3551,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2019-08-15T00:00:00.000Z",
+        "last_affected_open_time_utc": "2019-11-08T08:00:00.000Z",
+        "missing_nominal_intervals": 1,
+        "next_open_time_utc": "2019-08-15T08:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2019-08-15T00:00:00.000Z",
+        "previous_row_index": 4101,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1
+      },
+      {
+        "first_affected_open_time_utc": "2020-02-19T08:00:00.000Z",
+        "last_affected_open_time_utc": "2020-05-14T16:00:00.000Z",
+        "missing_nominal_intervals": 1,
+        "next_open_time_utc": "2020-02-19T16:00:00.000Z",
+        "previous_bar_truncated": true,
+        "previous_open_time_utc": "2020-02-19T08:00:00.000Z",
+        "previous_row_index": 5230,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1
+      }
+    ],
+    "samples_affected_by_any_gap": 3501,
+    "samples_affected_by_any_truncated_bar": 7279,
+    "samples_affected_by_truncation_and_gap": 3489,
+    "samples_affected_by_truncation_or_gap": 7291,
+    "truncated_bar_events": [
+      {
+        "first_affected_open_time_utc": "2018-01-03T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2018-03-30T04:00:00.000Z",
+        "open_time_utc": "2018-01-04T00:00:00.000Z",
+        "row_index": 587,
+        "samples_affected_union": 506,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 505,
+        "samples_via_target": 1,
+        "span_ms": 10814849
+      },
+      {
+        "first_affected_open_time_utc": "2018-02-07T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2018-05-04T04:00:00.000Z",
+        "open_time_utc": "2018-02-08T00:00:00.000Z",
+        "row_index": 797,
+        "samples_affected_union": 506,
+        "samples_via_lookback": 17,
+        "samples_via_operator_window": 505,
+        "samples_via_target": 1,
+        "span_ms": 1694799
+      },
+      {
+        "first_affected_open_time_utc": "2018-06-25T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2018-09-19T04:00:00.000Z",
+        "open_time_utc": "2018-06-26T00:00:00.000Z",
+        "row_index": 1618,
+        "samples_affected_union": 510,
+        "samples_via_lookback": 22,
+        "samples_via_operator_window": 509,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2018-07-03T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2018-09-27T04:00:00.000Z",
+        "open_time_utc": "2018-07-04T00:00:00.000Z",
+        "row_index": 1664,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1,
+        "span_ms": 1345562
+      },
+      {
+        "first_affected_open_time_utc": "2018-10-19T00:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2019-01-12T08:00:00.000Z",
+        "open_time_utc": "2018-10-19T04:00:00.000Z",
+        "row_index": 2306,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2018-11-13T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2019-02-07T04:00:00.000Z",
+        "open_time_utc": "2018-11-14T00:00:00.000Z",
+        "row_index": 2461,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2019-03-11T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2019-06-05T04:00:00.000Z",
+        "open_time_utc": "2019-03-12T00:00:00.000Z",
+        "row_index": 3168,
+        "samples_affected_union": 510,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 509,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2019-05-14T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2019-08-08T04:00:00.000Z",
+        "open_time_utc": "2019-05-15T00:00:00.000Z",
+        "row_index": 3551,
+        "samples_affected_union": 511,
+        "samples_via_lookback": 22,
+        "samples_via_operator_window": 510,
+        "samples_via_target": 1,
+        "span_ms": 10799999
+      },
+      {
+        "first_affected_open_time_utc": "2019-08-14T20:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2019-11-08T04:00:00.000Z",
+        "open_time_utc": "2019-08-15T00:00:00.000Z",
+        "row_index": 4101,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2019-11-12T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2020-02-06T04:00:00.000Z",
+        "open_time_utc": "2019-11-13T00:00:00.000Z",
+        "row_index": 4640,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2019-11-24T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2020-02-18T04:00:00.000Z",
+        "open_time_utc": "2019-11-25T00:00:00.000Z",
+        "row_index": 4712,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2020-02-19T04:00:00.000Z",
+        "followed_by_gap": true,
+        "last_affected_open_time_utc": "2020-05-14T12:00:00.000Z",
+        "open_time_utc": "2020-02-19T08:00:00.000Z",
+        "row_index": 5230,
+        "samples_affected_union": 512,
+        "samples_via_lookback": 23,
+        "samples_via_operator_window": 511,
+        "samples_via_target": 1,
+        "span_ms": 12932298
+      },
+      {
+        "first_affected_open_time_utc": "2020-04-24T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2020-07-19T04:00:00.000Z",
+        "open_time_utc": "2020-04-25T00:00:00.000Z",
+        "row_index": 5623,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2020-06-27T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2020-09-21T04:00:00.000Z",
+        "open_time_utc": "2020-06-28T00:00:00.000Z",
+        "row_index": 6007,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2020-12-21T08:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2021-03-16T16:00:00.000Z",
+        "open_time_utc": "2020-12-21T12:00:00.000Z",
+        "row_index": 7066,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 6440528
+      },
+      {
+        "first_affected_open_time_utc": "2021-02-10T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2021-05-07T04:00:00.000Z",
+        "open_time_utc": "2021-02-11T00:00:00.000Z",
+        "row_index": 7375,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 13255829
+      },
+      {
+        "first_affected_open_time_utc": "2021-04-19T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2021-07-14T04:00:00.000Z",
+        "open_time_utc": "2021-04-20T00:00:00.000Z",
+        "row_index": 7783,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 7199999
+      },
+      {
+        "first_affected_open_time_utc": "2021-04-25T00:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2021-07-19T08:00:00.000Z",
+        "open_time_utc": "2021-04-25T04:00:00.000Z",
+        "row_index": 7814,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 59271
+      },
+      {
+        "first_affected_open_time_utc": "2021-08-12T20:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2021-11-06T04:00:00.000Z",
+        "open_time_utc": "2021-08-13T00:00:00.000Z",
+        "row_index": 8473,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 7199000
+      },
+      {
+        "first_affected_open_time_utc": "2021-09-29T00:00:00.000Z",
+        "followed_by_gap": false,
+        "last_affected_open_time_utc": "2021-12-23T08:00:00.000Z",
+        "open_time_utc": "2021-09-29T04:00:00.000Z",
+        "row_index": 8756,
+        "samples_affected_union": 513,
+        "samples_via_lookback": 24,
+        "samples_via_operator_window": 512,
+        "samples_via_target": 1,
+        "span_ms": 10799999
+      }
+    ]
+  },
+  "rolling_origins": {
+    "origins": [
+      {
+        "development_region": {
+          "first_open_time_utc": "2017-09-28T04:00:00.000Z",
+          "last_nominal_open_time_utc": "2023-09-16T12:00:00.000Z",
+          "nominal_positions": 13077,
+          "rows_present": 13061,
+          "validation_first_open_time_utc": "2023-06-21T00:00:00.000Z"
+        },
+        "eligible_sample_counts": {
+          "development_region_eligible_before_purge": 5259,
+          "development_train": 4732,
+          "test": 999,
+          "validation": 525
+        },
+        "embargo": {
+          "first_nominal_open_time_utc": "2023-09-16T16:00:00.000Z",
+          "last_nominal_open_time_utc": "2023-09-20T12:00:00.000Z",
+          "nominal_positions": 24,
+          "rows_present": 24
+        },
+        "ineligible_by_region": {
+          "AFTER_TEST_BLOCK": {
+            "ineligible_samples": 1,
+            "reason_counts_multilabel": {
+              "TARGET_NOMINAL_BAR_ABSENT": 1
+            }
+          },
+          "DEVELOPMENT": {
+            "ineligible_samples": 7802,
+            "reason_counts_multilabel": {
+              "LOOKBACK_BEFORE_FIRST_BAR": 23,
+              "LOOKBACK_CONTAINS_TRUNCATED_BAR": 464,
+              "LOOKBACK_CROSSES_GAP": 184,
+              "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 511,
+              "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 7270,
+              "OPERATOR_WINDOW_CROSSES_GAP": 3495,
+              "TARGET_CONTAINS_TRUNCATED_BAR": 20,
+              "TARGET_NOMINAL_BAR_ABSENT": 8
+            }
+          },
+          "EMBARGO": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          },
+          "TEST_BLOCK": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          }
+        },
+        "origin": 1,
+        "role_counts": {
+          "AFTER_TEST_BLOCK": 3999,
+          "DEV_TARGET_CROSSES_EMBARGO_START": 1,
+          "EMBARGO": 24,
+          "INNER_TRAIN_PURGED_BEFORE_VALIDATION": 1,
+          "NOT_ELIGIBLE": 7803,
+          "TEST": 999,
+          "TEST_TARGET_CROSSES_BLOCK_END": 1,
+          "TRAIN": 4732,
+          "VALIDATION": 525
+        },
+        "status": "SUPPORTED",
+        "status_reasons": [],
+        "test_block": {
+          "first_nominal_open_time_utc": "2023-09-20T16:00:00.000Z",
+          "last_nominal_open_time_utc": "2024-03-05T04:00:00.000Z",
+          "nominal_positions": 1000,
+          "nominal_positions_absent": 0,
+          "rows_present": 1000
+        },
+        "test_samples_with_history_before_test_start": {
+          "lookback": 23,
+          "operator_window": 511
+        }
+      },
+      {
+        "development_region": {
+          "first_open_time_utc": "2017-09-28T04:00:00.000Z",
+          "last_nominal_open_time_utc": "2024-03-01T04:00:00.000Z",
+          "nominal_positions": 14077,
+          "rows_present": 14061,
+          "validation_first_open_time_utc": "2023-11-18T00:00:00.000Z"
+        },
+        "eligible_sample_counts": {
+          "development_region_eligible_before_purge": 6259,
+          "development_train": 5632,
+          "test": 999,
+          "validation": 625
+        },
+        "embargo": {
+          "first_nominal_open_time_utc": "2024-03-01T08:00:00.000Z",
+          "last_nominal_open_time_utc": "2024-03-05T04:00:00.000Z",
+          "nominal_positions": 24,
+          "rows_present": 24
+        },
+        "ineligible_by_region": {
+          "AFTER_TEST_BLOCK": {
+            "ineligible_samples": 1,
+            "reason_counts_multilabel": {
+              "TARGET_NOMINAL_BAR_ABSENT": 1
+            }
+          },
+          "DEVELOPMENT": {
+            "ineligible_samples": 7802,
+            "reason_counts_multilabel": {
+              "LOOKBACK_BEFORE_FIRST_BAR": 23,
+              "LOOKBACK_CONTAINS_TRUNCATED_BAR": 464,
+              "LOOKBACK_CROSSES_GAP": 184,
+              "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 511,
+              "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 7270,
+              "OPERATOR_WINDOW_CROSSES_GAP": 3495,
+              "TARGET_CONTAINS_TRUNCATED_BAR": 20,
+              "TARGET_NOMINAL_BAR_ABSENT": 8
+            }
+          },
+          "EMBARGO": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          },
+          "TEST_BLOCK": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          }
+        },
+        "origin": 2,
+        "role_counts": {
+          "AFTER_TEST_BLOCK": 2999,
+          "DEV_TARGET_CROSSES_EMBARGO_START": 1,
+          "EMBARGO": 24,
+          "INNER_TRAIN_PURGED_BEFORE_VALIDATION": 1,
+          "NOT_ELIGIBLE": 7803,
+          "TEST": 999,
+          "TEST_TARGET_CROSSES_BLOCK_END": 1,
+          "TRAIN": 5632,
+          "VALIDATION": 625
+        },
+        "status": "SUPPORTED",
+        "status_reasons": [],
+        "test_block": {
+          "first_nominal_open_time_utc": "2024-03-05T08:00:00.000Z",
+          "last_nominal_open_time_utc": "2024-08-18T20:00:00.000Z",
+          "nominal_positions": 1000,
+          "nominal_positions_absent": 0,
+          "rows_present": 1000
+        },
+        "test_samples_with_history_before_test_start": {
+          "lookback": 23,
+          "operator_window": 511
+        }
+      },
+      {
+        "development_region": {
+          "first_open_time_utc": "2017-09-28T04:00:00.000Z",
+          "last_nominal_open_time_utc": "2024-08-14T20:00:00.000Z",
+          "nominal_positions": 15077,
+          "rows_present": 15061,
+          "validation_first_open_time_utc": "2024-04-16T00:00:00.000Z"
+        },
+        "eligible_sample_counts": {
+          "development_region_eligible_before_purge": 7259,
+          "development_train": 6532,
+          "test": 999,
+          "validation": 725
+        },
+        "embargo": {
+          "first_nominal_open_time_utc": "2024-08-15T00:00:00.000Z",
+          "last_nominal_open_time_utc": "2024-08-18T20:00:00.000Z",
+          "nominal_positions": 24,
+          "rows_present": 24
+        },
+        "ineligible_by_region": {
+          "AFTER_TEST_BLOCK": {
+            "ineligible_samples": 1,
+            "reason_counts_multilabel": {
+              "TARGET_NOMINAL_BAR_ABSENT": 1
+            }
+          },
+          "DEVELOPMENT": {
+            "ineligible_samples": 7802,
+            "reason_counts_multilabel": {
+              "LOOKBACK_BEFORE_FIRST_BAR": 23,
+              "LOOKBACK_CONTAINS_TRUNCATED_BAR": 464,
+              "LOOKBACK_CROSSES_GAP": 184,
+              "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 511,
+              "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 7270,
+              "OPERATOR_WINDOW_CROSSES_GAP": 3495,
+              "TARGET_CONTAINS_TRUNCATED_BAR": 20,
+              "TARGET_NOMINAL_BAR_ABSENT": 8
+            }
+          },
+          "EMBARGO": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          },
+          "TEST_BLOCK": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          }
+        },
+        "origin": 3,
+        "role_counts": {
+          "AFTER_TEST_BLOCK": 1999,
+          "DEV_TARGET_CROSSES_EMBARGO_START": 1,
+          "EMBARGO": 24,
+          "INNER_TRAIN_PURGED_BEFORE_VALIDATION": 1,
+          "NOT_ELIGIBLE": 7803,
+          "TEST": 999,
+          "TEST_TARGET_CROSSES_BLOCK_END": 1,
+          "TRAIN": 6532,
+          "VALIDATION": 725
+        },
+        "status": "SUPPORTED",
+        "status_reasons": [],
+        "test_block": {
+          "first_nominal_open_time_utc": "2024-08-19T00:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-02-01T12:00:00.000Z",
+          "nominal_positions": 1000,
+          "nominal_positions_absent": 0,
+          "rows_present": 1000
+        },
+        "test_samples_with_history_before_test_start": {
+          "lookback": 23,
+          "operator_window": 511
+        }
+      },
+      {
+        "development_region": {
+          "first_open_time_utc": "2017-09-28T04:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-01-28T12:00:00.000Z",
+          "nominal_positions": 16077,
+          "rows_present": 16061,
+          "validation_first_open_time_utc": "2024-09-13T00:00:00.000Z"
+        },
+        "eligible_sample_counts": {
+          "development_region_eligible_before_purge": 8259,
+          "development_train": 7432,
+          "test": 999,
+          "validation": 825
+        },
+        "embargo": {
+          "first_nominal_open_time_utc": "2025-01-28T16:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-02-01T12:00:00.000Z",
+          "nominal_positions": 24,
+          "rows_present": 24
+        },
+        "ineligible_by_region": {
+          "AFTER_TEST_BLOCK": {
+            "ineligible_samples": 1,
+            "reason_counts_multilabel": {
+              "TARGET_NOMINAL_BAR_ABSENT": 1
+            }
+          },
+          "DEVELOPMENT": {
+            "ineligible_samples": 7802,
+            "reason_counts_multilabel": {
+              "LOOKBACK_BEFORE_FIRST_BAR": 23,
+              "LOOKBACK_CONTAINS_TRUNCATED_BAR": 464,
+              "LOOKBACK_CROSSES_GAP": 184,
+              "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 511,
+              "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 7270,
+              "OPERATOR_WINDOW_CROSSES_GAP": 3495,
+              "TARGET_CONTAINS_TRUNCATED_BAR": 20,
+              "TARGET_NOMINAL_BAR_ABSENT": 8
+            }
+          },
+          "EMBARGO": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          },
+          "TEST_BLOCK": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          }
+        },
+        "origin": 4,
+        "role_counts": {
+          "AFTER_TEST_BLOCK": 999,
+          "DEV_TARGET_CROSSES_EMBARGO_START": 1,
+          "EMBARGO": 24,
+          "INNER_TRAIN_PURGED_BEFORE_VALIDATION": 1,
+          "NOT_ELIGIBLE": 7803,
+          "TEST": 999,
+          "TEST_TARGET_CROSSES_BLOCK_END": 1,
+          "TRAIN": 7432,
+          "VALIDATION": 825
+        },
+        "status": "SUPPORTED",
+        "status_reasons": [],
+        "test_block": {
+          "first_nominal_open_time_utc": "2025-02-01T16:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-07-18T04:00:00.000Z",
+          "nominal_positions": 1000,
+          "nominal_positions_absent": 0,
+          "rows_present": 1000
+        },
+        "test_samples_with_history_before_test_start": {
+          "lookback": 23,
+          "operator_window": 511
+        }
+      },
+      {
+        "development_region": {
+          "first_open_time_utc": "2017-09-28T04:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-07-14T04:00:00.000Z",
+          "nominal_positions": 17077,
+          "rows_present": 17061,
+          "validation_first_open_time_utc": "2025-02-10T00:00:00.000Z"
+        },
+        "eligible_sample_counts": {
+          "development_region_eligible_before_purge": 9259,
+          "development_train": 8332,
+          "test": 999,
+          "validation": 925
+        },
+        "embargo": {
+          "first_nominal_open_time_utc": "2025-07-14T08:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-07-18T04:00:00.000Z",
+          "nominal_positions": 24,
+          "rows_present": 24
+        },
+        "ineligible_by_region": {
+          "AFTER_TEST_BLOCK": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          },
+          "DEVELOPMENT": {
+            "ineligible_samples": 7802,
+            "reason_counts_multilabel": {
+              "LOOKBACK_BEFORE_FIRST_BAR": 23,
+              "LOOKBACK_CONTAINS_TRUNCATED_BAR": 464,
+              "LOOKBACK_CROSSES_GAP": 184,
+              "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 511,
+              "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 7270,
+              "OPERATOR_WINDOW_CROSSES_GAP": 3495,
+              "TARGET_CONTAINS_TRUNCATED_BAR": 20,
+              "TARGET_NOMINAL_BAR_ABSENT": 8
+            }
+          },
+          "EMBARGO": {
+            "ineligible_samples": 0,
+            "reason_counts_multilabel": {}
+          },
+          "TEST_BLOCK": {
+            "ineligible_samples": 1,
+            "reason_counts_multilabel": {
+              "TARGET_NOMINAL_BAR_ABSENT": 1
+            }
+          }
+        },
+        "origin": 5,
+        "role_counts": {
+          "AFTER_TEST_BLOCK": 0,
+          "DEV_TARGET_CROSSES_EMBARGO_START": 1,
+          "EMBARGO": 24,
+          "INNER_TRAIN_PURGED_BEFORE_VALIDATION": 1,
+          "NOT_ELIGIBLE": 7803,
+          "TEST": 999,
+          "TEST_TARGET_CROSSES_BLOCK_END": 0,
+          "TRAIN": 8332,
+          "VALIDATION": 925
+        },
+        "status": "SUPPORTED",
+        "status_reasons": [],
+        "test_block": {
+          "first_nominal_open_time_utc": "2025-07-18T08:00:00.000Z",
+          "last_nominal_open_time_utc": "2025-12-31T20:00:00.000Z",
+          "nominal_positions": 1000,
+          "nominal_positions_absent": 0,
+          "rows_present": 1000
+        },
+        "test_samples_with_history_before_test_start": {
+          "lookback": 23,
+          "operator_window": 511
+        }
+      }
+    ],
+    "rule": "Deterministic rolling-origin assignment on the eligible timeline. Rule (positions are nominal grid indices, all blocks in NOMINAL bars): * Anchor: q_last = position of the LAST eligible sample; the last test block ends at B_n = q_last + h (the last eligible sample's target). * Test block j (j = 1..n, oldest first): B_j = B_n - (n - j) * test_block, T_j = B_j - test_block + 1; positions [T_j, B_j]; blocks are contiguous and non-overlapping. * Embargo: positions [T_j - embargo, T_j - 1]. * Development region (EXPANDING): positions [first bar, dev_end], dev_end = T_j - embargo - 1. * TEST: eligible, T_j <= q and q + h <= B_j. An eligible q in the block whose target passes B_j is TEST_TARGET_CROSSES_BLOCK_END. * EMBARGO: eligible q inside the embargo. * DEV_TARGET_CROSSES_EMBARGO_START: eligible q <= dev_end, q + h > dev_end. * D = remaining eligible development samples, ordered. n_val = floor(Fraction(str(inner_validation_fraction)) * |D|); VALIDATION is the last n_val of D, starting at position V. TRAIN: q + h <= V - 1 - inner_validation_embargo_bars; other D samples before V are INNER_TRAIN_PURGED_BEFORE_VALIDATION. * Test samples' lookback/operator windows MAY reach before T_j (causal past); they are counted, not excluded. * Every ineligible sample is NOT_ELIGIBLE in every origin; q > B_j is AFTER_TEST_BLOCK."
+  },
+  "sample_summary": {
+    "eligible": 10282,
+    "ineligible": 7803,
+    "ineligible_only_by_history_or_dataset_end": 512,
+    "ineligible_with_any_gap_or_absent_target_reason": 3502,
+    "ineligible_with_any_truncation_reason": 7279,
+    "ineligible_with_truncation_gap_or_absent_target_reason": 7292,
+    "reason_counts_multilabel": {
+      "LOOKBACK_BEFORE_FIRST_BAR": 23,
+      "LOOKBACK_CONTAINS_TRUNCATED_BAR": 464,
+      "LOOKBACK_CONTAINS_UNAVAILABLE_BAR": 0,
+      "LOOKBACK_CROSSES_GAP": 184,
+      "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 511,
+      "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 7270,
+      "OPERATOR_WINDOW_CONTAINS_UNAVAILABLE_BAR": 0,
+      "OPERATOR_WINDOW_CROSSES_GAP": 3495,
+      "TARGET_CONTAINS_TRUNCATED_BAR": 20,
+      "TARGET_CONTAINS_UNAVAILABLE_BAR": 0,
+      "TARGET_NOMINAL_BAR_ABSENT": 9
+    },
+    "reason_set_counts": {
+      "LOOKBACK_BEFORE_FIRST_BAR|OPERATOR_WINDOW_BEFORE_FIRST_BAR": 23,
+      "LOOKBACK_CONTAINS_TRUNCATED_BAR|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 264,
+      "LOOKBACK_CONTAINS_TRUNCATED_BAR|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR|TARGET_NOMINAL_BAR_ABSENT": 6,
+      "LOOKBACK_CONTAINS_TRUNCATED_BAR|OPERATOR_WINDOW_CROSSES_GAP|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 24,
+      "LOOKBACK_CONTAINS_TRUNCATED_BAR|OPERATOR_WINDOW_CROSSES_GAP|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR|TARGET_NOMINAL_BAR_ABSENT": 2,
+      "LOOKBACK_CROSSES_GAP|LOOKBACK_CONTAINS_TRUNCATED_BAR|OPERATOR_WINDOW_CROSSES_GAP|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 168,
+      "LOOKBACK_CROSSES_GAP|OPERATOR_WINDOW_CROSSES_GAP|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 16,
+      "OPERATOR_WINDOW_BEFORE_FIRST_BAR": 488,
+      "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 3509,
+      "OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR|TARGET_CONTAINS_TRUNCATED_BAR": 8,
+      "OPERATOR_WINDOW_CROSSES_GAP": 12,
+      "OPERATOR_WINDOW_CROSSES_GAP|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR": 3270,
+      "OPERATOR_WINDOW_CROSSES_GAP|OPERATOR_WINDOW_CONTAINS_TRUNCATED_BAR|TARGET_CONTAINS_TRUNCATED_BAR": 3,
+      "TARGET_CONTAINS_TRUNCATED_BAR": 9,
+      "TARGET_NOMINAL_BAR_ABSENT": 1
+    },
+    "total": 18085
+  },
+  "schema": {
+    "id": "financial_data.temporal_quality_schema.v1",
+    "relative_path": "features/census/TEMPORAL_QUALITY_SCHEMA.v1.json",
+    "root_id": "financial-data",
+    "self_digest": "14a4c820fa9655d12524ad5cc96ad979100ea48f78a441db8e068d49160b636b"
+  },
+  "self_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "json.dumps(document_without_self_digest, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')",
+    "value": "e218f71b146df3edb54f46d42fcc9f30f313745694ba69b1b8674c7a57af35f0"
+  },
+  "supersedes": {
+    "artifact": "ETH_H4_TEMPORAL_CONTRACT.v1",
+    "auditor_acceptance_scope": "AVAILABILITY only. Truncated bars and gaps do not contradict per-row availability but forbid treating every pair of rows as a regular H4 horizon.",
+    "contract_id": "financial_data.eth_h4_temporal_contract.v1",
+    "disposition": "PRESERVED_BYTE_FOR_BYTE; read, never written. v1 remains the governing AVAILABILITY contract; v2 adds completeness, regularity and eligibility.",
+    "relative_path": "features/census/ETH_H4_TEMPORAL_CONTRACT.v1.json",
+    "root_id": "financial-data",
+    "self_digest": "1739f5fb7a3dc8c76925d01ff5abac8dc7901e3467bf3e5589f1ec76e8ea45da",
+    "sha256": "6e3a0c8d67dd2ec64dcad8bd7bb7ca0154dd514b43e9e2990de83578cc794254"
+  },
+  "v1_cross_check": {
+    "gap_positions_equal_v1": true,
+    "gaps_inside_dataset_recomputed": 8,
+    "truncated_bars_in_dataset_recomputed": 20,
+    "truncated_bars_outside_dataset": [
+      {
+        "effect": "NONE: before the first CSV row; the sample timeline is the CSV rows",
+        "open_time_utc": "2017-09-06T16:00:00.000Z"
+      }
+    ],
+    "truncated_open_times_equal_v1": true,
+    "v1_gaps_greater_than_nominal_total": 8,
+    "v1_truncated_bars_in_model_ready_csv": 20,
+    "v1_truncated_bars_total": 21
+  }
+}

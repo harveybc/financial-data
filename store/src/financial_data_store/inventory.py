@@ -621,11 +621,53 @@ class Plugin:
             part.unlink(missing_ok=True)
 
     def governed_download(self, resource_id, start=None, end=None):
-        """Deliver bytes selected only by the declared availability timestamp."""
+        """Deliver bytes selected only by the declared availability timestamp.
+
+        RETROSPECTIVE ARCHIVES (2026-09-20). A resource listed in `untimed` is one whose rows'
+        availability was never observed: its labels are data, not evidence of when anything became
+        knowable. Before this change the method parsed `available_time_column` for every resource,
+        so such an archive was refused outright ("unparseable time column") when its labels were
+        local wall-clock strings, and refused again ("spans holdout") whenever a holdout was
+        declared — the opposite of what an archive needs. Now an untimed resource is delivered
+        WHOLE and AS_IS with an UNDECLARED scope, and every date range over it is refused by its
+        own contract rather than by a date comparison. No time parsing happens on that path, and
+        nothing about availability is invented: the delivery publishes UNKNOWN.
+        """
         contract = self._resource_contract(resource_id)
         suffix = Path(resource_id).suffix.lower()
         if suffix not in {".csv", ".parquet"}:
             raise UnsupportedError("unsupported file type")
+        untimed = resource_id in (self.params.get("untimed") or [])
+        if untimed:
+            if (start is None) != (end is None):
+                raise ValueError("invalid from/to")
+            if start is not None:
+                raise UnsupportedError(
+                    "this resource is a retrospective archive: its rows' availability was never "
+                    "observed, so a date range over it would assert availability that no evidence "
+                    "supports; request the whole resource"
+                )
+            fd = self._open_resource(resource_id)
+            try:
+                source_sha = self._sha256_fd(fd)
+                size = os.fstat(fd).st_size
+                os.lseek(fd, 0, os.SEEK_SET)
+                return {
+                    "filename": Path(resource_id).name,
+                    "sha256": source_sha,
+                    "bytes": size,
+                    "source_sha256": source_sha,
+                    "delivery": "AS_IS",
+                    "time_column": "",
+                    "availability_contract_sha256": hashlib.sha256(
+                        json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
+                    ).hexdigest(),
+                    "availability": dict(UNDECLARED_SCOPE),
+                    "handle": os.fdopen(fd, "rb"),
+                }
+            except BaseException:
+                os.close(fd)
+                raise
         fd = self._open_resource(resource_id)
         try:
             source_sha = self._sha256_fd(fd)

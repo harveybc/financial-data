@@ -1,0 +1,5997 @@
+{
+ "additive": "v1 and v2 are left byte-identical; v3 replaces neither file",
+ "binding_manifest_sha256": "aaeca2f72d435a87a9ea189eae645e25fbe0664efa1fc0ff21c7c83455d7ed59",
+ "bindings_established": 0,
+ "by_class": {
+  "STATIC_CAUSAL_CANDIDATE_UNBOUND": 83,
+  "UNRESOLVED_PRODUCER_BINDING": 14
+ },
+ "classes": [
+  "CAUSAL_ACTIVE",
+  "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+  "NON_CAUSAL",
+  "HISTORICAL_OR_RETIRED_PRODUCER",
+  "EXTERNAL_LATENCY_REQUIRED",
+  "UNRESOLVED",
+  "UNRESOLVED_PRODUCER_BINDING"
+ ],
+ "columns_examined": 97,
+ "dag_sha256": "840490e19f2d09a744b57e887cef8cc33f071cf9ed6a0d9507c40a5ed6ec3ca3",
+ "derived_at": "2026-09-12T00:00:00Z",
+ "grants_nothing": "a lineage describes how a value comes to exist. It confers no eligibility",
+ "guards": {
+  "binding_requirement": true,
+  "callable_following": true,
+  "positional_index": true,
+  "producer_conflict": true,
+  "reaching_definitions": true,
+  "scope_isolation": true,
+  "window_composition": true
+ },
+ "nodes": [
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_ARTIFACT_CONTAINS_COLUMN"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_ARTIFACT_CONTAINS_COLUMN",
+    "NO_STATIC_CANDIDATE",
+    "PRODUCER_NOT_BOUND",
+    "STATIC_UNRESOLVED"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "UNRESOLVED",
+    "forward_reads": [],
+    "selection": null,
+    "unresolved_because": [
+     "NO_STATIC_CANDIDATE"
+    ]
+   },
+   "why": "no analysed symbol outputs this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_ARTIFACT_VALUE_EQUALITY"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "OPEN"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_ARTIFACT_VALUE_EQUALITY",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_ARTIFACT_VALUE_EQUALITY"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "HIGH"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_ARTIFACT_VALUE_EQUALITY",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_ARTIFACT_VALUE_EQUALITY"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "LOW"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_ARTIFACT_VALUE_EQUALITY",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_ARTIFACT_VALUE_EQUALITY"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "CLOSE"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_ARTIFACT_VALUE_EQUALITY",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_ARTIFACT_VALUE_EQUALITY"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "VOLUME"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_ARTIFACT_VALUE_EQUALITY",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 2,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 2,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 6,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 6,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 11,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 11,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 61,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 61,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 10,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 10,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 10,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 10,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 50,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 50,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 50,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 50,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 100,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 100,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 100,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 100,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 200,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 200,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 200,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 200,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rsi"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rsi"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rsi"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 14,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 14,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 16,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 16,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 14,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 14,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 27,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 27,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 11,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 11,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/true_range"
+   ],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 15,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 15,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/true_range"
+   ],
+   "leaves": [
+    "close",
+    "high",
+    "low"
+   ],
+   "lookback_bars": 15,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 15,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 11,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 11,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 61,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 61,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/ema"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 51,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 51,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 51,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 51,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "volume"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "volume"
+   ],
+   "lookback_bars": "UNBOUNDED",
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": "UNBOUNDED",
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "volume"
+   ],
+   "lookback_bars": 10,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 10,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "volume"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "volume"
+   ],
+   "lookback_bars": 20,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 20,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low",
+    "volume"
+   ],
+   "lookback_bars": 60,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 60,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_technical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close",
+    "high",
+    "low",
+    "volume"
+   ],
+   "lookback_bars": 15,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 111,
+      "lookback_bars": 15,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_technical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "COLUMN_RENAMED_BY_UNRECORDED_EXPORT:FAMILY_PREFIX_ON_COLLISION",
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 2,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "COLUMN_RENAMED_BY_UNRECORDED_EXPORT:FAMILY_PREFIX_ON_COLLISION",
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 2,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 21,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 21,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 61,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 61,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 61,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 61,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 61,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 61,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 61,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 61,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 253,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 253,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 253,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 253,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 253,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 253,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 253,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 253,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 13,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 13,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 49,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 49,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rolling_autocorr"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 102,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 102,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rolling_autocorr"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 106,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 106,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rolling_autocorr"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 102,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 102,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 504,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 504,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 504,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 504,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/hurst_proxy",
+    "financial-data/_scripts/workers/stage22_trading_features_worker.py/rolling_autocorr"
+   ],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 202,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 202,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class STATIC_CAUSAL_CANDIDATE_UNBOUND: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+     "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+    ],
+    "evidence_selected_symbol": [
+     "financial-data",
+     "_scripts/workers/stage22_trading_features_worker.py",
+     "compute_statistical"
+    ],
+    "status": "NOT_BOUND"
+   },
+   "class": "STATIC_CAUSAL_CANDIDATE_UNBOUND",
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "Binance-derived Project 3 export",
+    "symbol": "ETHUSDT",
+    "timeframe": "4h",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "close"
+   ],
+   "lookback_bars": 100,
+   "prefix_invariance": {
+    "eligibility": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY",
+    "eligible_for_class": false,
+    "verdict": "PASS"
+   },
+   "reason_codes": [
+    "PRODUCER_NOT_BOUND",
+    "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+    "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+   ],
+   "static": {
+    "candidates": [
+     {
+      "code_sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+      "codes": [],
+      "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+      "file": "_scripts/workers/stage22_trading_features_worker.py",
+      "line": 183,
+      "lookback_bars": 100,
+      "repository": "financial-data",
+      "static_class": "STATIC_CAUSAL",
+      "symbol": "compute_statistical"
+     }
+    ],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "EVIDENCE_SELECTED",
+    "unresolved_because": []
+   },
+   "why": "every reaching path ends at an input column and none reads forward"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "OPEN",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "OPEN"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "LOW",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "LOW"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "HIGH",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "HIGH"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "CLOSE",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [
+    "CLOSE"
+   ],
+   "lookback_bars": 1,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "RAW_FIELD_WITHOUT_PROVIDER_BINDING"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "STATIC_CAUSAL",
+    "forward_reads": [],
+    "selection": "RAW_FIELD",
+    "unresolved_because": []
+   },
+   "why": "a raw bar field"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BC-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "NO_STATIC_CANDIDATE",
+    "PRODUCER_NOT_BOUND",
+    "STATIC_UNRESOLVED"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "UNRESOLVED",
+    "forward_reads": [],
+    "selection": null,
+    "unresolved_because": [
+     "NO_STATIC_CANDIDATE"
+    ]
+   },
+   "why": "no analysed symbol outputs this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BH-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "PRODUCER_NOT_BOUND",
+    "STATIC_UNRESOLVED",
+    "WRITE_DOES_NOT_REACH_AN_ESCAPE"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "UNRESOLVED",
+    "forward_reads": [],
+    "selection": null,
+    "unresolved_because": [
+     "WRITE_DOES_NOT_REACH_AN_ESCAPE"
+    ]
+   },
+   "why": "no analysed symbol outputs this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BH-BO",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "PRODUCER_NOT_BOUND",
+    "STATIC_UNRESOLVED",
+    "WRITE_DOES_NOT_REACH_AN_ESCAPE"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "UNRESOLVED",
+    "forward_reads": [],
+    "selection": null,
+    "unresolved_because": [
+     "WRITE_DOES_NOT_REACH_AN_ESCAPE"
+    ]
+   },
+   "why": "no analysed symbol outputs this column"
+  },
+  {
+   "availability": {
+    "earliest_available_time": "UNAVAILABLE",
+    "reason": "class UNRESOLVED_PRODUCER_BINDING: only a bound, proven-causal output can be given an availability time"
+   },
+   "binding": {
+    "codes": [
+     "NO_PROVENANCE_EVIDENCE"
+    ],
+    "evidence_selected_symbol": null,
+    "status": "NOT_BOUND"
+   },
+   "class": "UNRESOLVED_PRODUCER_BINDING",
+   "column": "BO-BL",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "entity": {
+    "contract_source": "NO_CONTRACT_DECLARED",
+    "provider": "legacy predictor dataset; provider not recorded",
+    "symbol": "UNDERIVABLE",
+    "timeframe": "UNDERIVABLE",
+    "timestamp_semantics": "UNDECLARED"
+   },
+   "helpers_followed": [],
+   "leaves": [],
+   "lookback_bars": null,
+   "prefix_invariance": {
+    "eligibility": "NO_EVIDENCE_SELECTED_PRODUCER",
+    "eligible_for_class": false,
+    "verdict": "NOT_RUN"
+   },
+   "reason_codes": [
+    "NO_PROVENANCE_EVIDENCE",
+    "PRODUCER_NOT_BOUND",
+    "STATIC_UNRESOLVED",
+    "WRITE_DOES_NOT_REACH_AN_ESCAPE"
+   ],
+   "static": {
+    "candidates": [],
+    "class": "UNRESOLVED",
+    "forward_reads": [],
+    "selection": null,
+    "unresolved_because": [
+     "WRITE_DOES_NOT_REACH_AN_ESCAPE"
+    ]
+   },
+   "why": "no analysed symbol outputs this column"
+  }
+ ],
+ "producer_files_scanned": 256,
+ "producer_repositories": {
+  "feature-eng": {
+   "commit": "ff5d7def4ae8d00d2b346ff4eb194b9c28c95260",
+   "present": true
+  },
+  "feature-extractor": {
+   "commit": "0f234a85d95420fab80b81aefabeadbc0f16e945",
+   "present": true
+  },
+  "financial-data": {
+   "commit": "3497fdc251ab8af2d625212f29bce43da97f8dd3",
+   "present": true
+  }
+ },
+ "rules": {
+  "availability": "anything but CAUSAL_ACTIVE is UNAVAILABLE; no timestamp semantics are invented here",
+  "binding": "CAUSAL_ACTIVE requires a BOUND producer (see PRODUCER_BINDING_MANIFEST.v1.json); a static causal candidate without one is STATIC_CAUSAL_CANDIDATE_UNBOUND",
+  "callables": "user callables passed to apply/map/transform/pipe/agg/rolling().apply are followed; an unfollowable one is UNRESOLVED",
+  "dynamic": "a bound, executable producer must also pass the prefix-invariance probe; the probe never replaces the static proof",
+  "forward": "negative shift/diff, any np.roll, bfill, interpolate, centred windows and full-sample reductions make a path NON_CAUSAL",
+  "lookback": "lookback_bars = bars of history a value depends on, current bar included (max offset + 1); UNBOUNDED for ewm, expanding, cumulative ops, ffill and pandas' default-padding pct_change",
+  "positional": "every positional index is UNRESOLVED",
+  "reaching": "statements run in order; branches join the definitions that may reach a use; disagreement in class or lookback is UNRESOLVED",
+  "scope": "nested function, lambda and class bodies are never executed as the outer body",
+  "unknown": "unknown calls, dynamic dispatch, cycles, depth and budget exhaustion are UNRESOLVED"
+ },
+ "schema": "financial_data.feature_dag.v3",
+ "static_by_class": {
+  "STATIC_CAUSAL": 92,
+  "UNRESOLVED": 5
+ },
+ "symbols_analyzed": 71,
+ "symbols_indexed": 2538
+}

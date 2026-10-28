@@ -1,0 +1,3222 @@
+{
+ "bindings": [],
+ "bindings_established": 0,
+ "datasets": [
+  {
+   "artifacts": [
+    {
+     "columns": 88,
+     "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+     "receipts": [],
+     "repository": "financial-data",
+     "sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+     "source_key": "stage_a_train_csv",
+     "tracked_in_git": false,
+     "writers": []
+    },
+    {
+     "columns": 22,
+     "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+     "receipts": [
+      {
+       "generated_at": "2026-05-02T00:55:47.639223+00:00",
+       "path": "_metadata/stage22_trading_features_dragon_crypto.json",
+       "record_keys": [
+        "asset",
+        "source",
+        "statistical_path",
+        "statistical_validation",
+        "status",
+        "technical_path",
+        "technical_validation",
+        "timeframe"
+       ],
+       "records_code_identity": false,
+       "repository": "financial-data",
+       "sha256": "00277f7f7c14d60f716675ca08b4f4d9fdca515f40b268fa51c3f0fa1e26b861",
+       "stage": "Stage 2.2",
+       "tracked_in_git": false,
+       "type": "RUN_RECEIPT_NAMES_ARTIFACT"
+      }
+     ],
+     "repository": "financial-data",
+     "sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+     "source_key": "statistical",
+     "tracked_in_git": false,
+     "writers": [
+      {
+       "file": "_scripts/workers/stage22_trading_features_worker.py",
+       "producer_definitions_in_module": 1,
+       "producer_symbol": "compute_statistical",
+       "repository": "financial-data",
+       "sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+       "type": "STATIC_WRITER_OF_ARTIFACT",
+       "writer_line": 272,
+       "writer_symbol": "process_asset_tf"
+      }
+     ]
+    },
+    {
+     "columns": 61,
+     "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+     "receipts": [
+      {
+       "generated_at": "2026-05-02T00:55:47.639223+00:00",
+       "path": "_metadata/stage22_trading_features_dragon_crypto.json",
+       "record_keys": [
+        "asset",
+        "source",
+        "statistical_path",
+        "statistical_validation",
+        "status",
+        "technical_path",
+        "technical_validation",
+        "timeframe"
+       ],
+       "records_code_identity": false,
+       "repository": "financial-data",
+       "sha256": "00277f7f7c14d60f716675ca08b4f4d9fdca515f40b268fa51c3f0fa1e26b861",
+       "stage": "Stage 2.2",
+       "tracked_in_git": false,
+       "type": "RUN_RECEIPT_NAMES_ARTIFACT"
+      }
+     ],
+     "repository": "financial-data",
+     "sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+     "source_key": "technical",
+     "tracked_in_git": false,
+     "writers": [
+      {
+       "file": "_scripts/workers/stage22_trading_features_worker.py",
+       "producer_definitions_in_module": 1,
+       "producer_symbol": "compute_technical",
+       "repository": "financial-data",
+       "sha256": "7495a0d974a7eb086eef0c11927b1c536946746ee3544ad82f6c256d1c6ee050",
+       "type": "STATIC_WRITER_OF_ARTIFACT",
+       "writer_line": 271,
+       "writer_symbol": "process_asset_tf"
+      }
+     ]
+    }
+   ],
+   "columns": {
+    "CLOSE": {
+     "artifact_matches": [
+      {
+       "artifact_column": "CLOSE",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      }
+     ],
+     "codes": [
+      "NO_ARTIFACT_VALUE_EQUALITY"
+     ],
+     "evidence_selected_symbol": null,
+     "status": "NOT_BOUND"
+    },
+    "HIGH": {
+     "artifact_matches": [
+      {
+       "artifact_column": "HIGH",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      }
+     ],
+     "codes": [
+      "NO_ARTIFACT_VALUE_EQUALITY"
+     ],
+     "evidence_selected_symbol": null,
+     "status": "NOT_BOUND"
+    },
+    "LOW": {
+     "artifact_matches": [
+      {
+       "artifact_column": "LOW",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      }
+     ],
+     "codes": [
+      "NO_ARTIFACT_VALUE_EQUALITY"
+     ],
+     "evidence_selected_symbol": null,
+     "status": "NOT_BOUND"
+    },
+    "OPEN": {
+     "artifact_matches": [
+      {
+       "artifact_column": "OPEN",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      }
+     ],
+     "codes": [
+      "NO_ARTIFACT_VALUE_EQUALITY"
+     ],
+     "evidence_selected_symbol": null,
+     "status": "NOT_BOUND"
+    },
+    "VOLUME": {
+     "artifact_matches": [
+      {
+       "artifact_column": "VOLUME",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      }
+     ],
+     "codes": [
+      "NO_ARTIFACT_VALUE_EQUALITY"
+     ],
+     "evidence_selected_symbol": null,
+     "status": "NOT_BOUND"
+    },
+    "atr_14": {
+     "artifact_column": "atr_14",
+     "artifact_matches": [
+      {
+       "artifact_column": "atr_14",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "atr_14",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "autocorr_lag1_100": {
+     "artifact_column": "autocorr_lag1_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "autocorr_lag1_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "autocorr_lag1_100",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "autocorr_lag5_100": {
+     "artifact_column": "autocorr_lag5_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "autocorr_lag5_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "autocorr_lag5_100",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "bb_lower": {
+     "artifact_column": "bb_lower",
+     "artifact_matches": [
+      {
+       "artifact_column": "bb_lower",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "bb_lower",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "bb_middle": {
+     "artifact_column": "bb_middle",
+     "artifact_matches": [
+      {
+       "artifact_column": "bb_middle",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "bb_middle",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "bb_pct_b": {
+     "artifact_column": "bb_pct_b",
+     "artifact_matches": [
+      {
+       "artifact_column": "bb_pct_b",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "bb_pct_b",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "bb_upper": {
+     "artifact_column": "bb_upper",
+     "artifact_matches": [
+      {
+       "artifact_column": "bb_upper",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "bb_upper",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "bb_width": {
+     "artifact_column": "bb_width",
+     "artifact_matches": [
+      {
+       "artifact_column": "bb_width",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "bb_width",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "cci_14": {
+     "artifact_column": "cci_14",
+     "artifact_matches": [
+      {
+       "artifact_column": "cci_14",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "cci_14",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "close_sma_ratio_10": {
+     "artifact_column": "close_sma_ratio_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "close_sma_ratio_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "close_sma_ratio_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "close_sma_ratio_100": {
+     "artifact_column": "close_sma_ratio_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "close_sma_ratio_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "close_sma_ratio_100",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "close_sma_ratio_20": {
+     "artifact_column": "close_sma_ratio_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "close_sma_ratio_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "close_sma_ratio_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "close_sma_ratio_200": {
+     "artifact_column": "close_sma_ratio_200",
+     "artifact_matches": [
+      {
+       "artifact_column": "close_sma_ratio_200",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "close_sma_ratio_200",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "close_sma_ratio_50": {
+     "artifact_column": "close_sma_ratio_50",
+     "artifact_matches": [
+      {
+       "artifact_column": "close_sma_ratio_50",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "close_sma_ratio_50",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_10": {
+     "artifact_column": "ema_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_100": {
+     "artifact_column": "ema_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_100",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_20": {
+     "artifact_column": "ema_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_200": {
+     "artifact_column": "ema_200",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_200",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_200",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_50": {
+     "artifact_column": "ema_50",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_50",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_50",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_cross_10_50": {
+     "artifact_column": "ema_cross_10_50",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_cross_10_50",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_cross_10_50",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "ema_cross_20_100": {
+     "artifact_column": "ema_cross_20_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "ema_cross_20_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "ema_cross_20_100",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "hist_vol_10": {
+     "artifact_column": "hist_vol_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "hist_vol_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "hist_vol_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "hist_vol_20": {
+     "artifact_column": "hist_vol_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "hist_vol_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "hist_vol_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "hist_vol_60": {
+     "artifact_column": "hist_vol_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "hist_vol_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "hist_vol_60",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "hurst_proxy_200": {
+     "artifact_column": "hurst_proxy_200",
+     "artifact_matches": [
+      {
+       "artifact_column": "hurst_proxy_200",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "hurst_proxy_200",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "log_return_1": {
+     "artifact_column": "log_return_1",
+     "artifact_matches": [
+      {
+       "artifact_column": "log_return_1",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "log_return_1",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      },
+      {
+       "artifact_column": "log_return_1",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "disambiguation": "FAMILY_PREFIX_COLLISION_RULE",
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "log_return_10": {
+     "artifact_column": "log_return_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "log_return_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "log_return_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "log_return_20": {
+     "artifact_column": "log_return_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "log_return_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "log_return_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "log_return_5": {
+     "artifact_column": "log_return_5",
+     "artifact_matches": [
+      {
+       "artifact_column": "log_return_5",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "log_return_5",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "log_return_60": {
+     "artifact_column": "log_return_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "log_return_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "log_return_60",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "macd": {
+     "artifact_column": "macd",
+     "artifact_matches": [
+      {
+       "artifact_column": "macd",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "macd",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "macd_hist": {
+     "artifact_column": "macd_hist",
+     "artifact_matches": [
+      {
+       "artifact_column": "macd_hist",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "macd_hist",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "macd_signal": {
+     "artifact_column": "macd_signal",
+     "artifact_matches": [
+      {
+       "artifact_column": "macd_signal",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "macd_signal",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "mfi_14": {
+     "artifact_column": "mfi_14",
+     "artifact_matches": [
+      {
+       "artifact_column": "mfi_14",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "mfi_14",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "mom_10": {
+     "artifact_column": "mom_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "mom_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "mom_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "mom_20": {
+     "artifact_column": "mom_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "mom_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "mom_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "natr_14": {
+     "artifact_column": "natr_14",
+     "artifact_matches": [
+      {
+       "artifact_column": "natr_14",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "natr_14",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "obv": {
+     "artifact_column": "obv",
+     "artifact_matches": [
+      {
+       "artifact_column": "obv",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "obv",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "obv_delta_20": {
+     "artifact_column": "obv_delta_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "obv_delta_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "obv_delta_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "realized_var_12": {
+     "artifact_column": "realized_var_12",
+     "artifact_matches": [
+      {
+       "artifact_column": "realized_var_12",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "realized_var_12",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "realized_var_48": {
+     "artifact_column": "realized_var_48",
+     "artifact_matches": [
+      {
+       "artifact_column": "realized_var_48",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "realized_var_48",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "return_1": {
+     "artifact_column": "return_1",
+     "artifact_matches": [
+      {
+       "artifact_column": "return_1",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "return_1",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "return_10": {
+     "artifact_column": "return_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "return_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "return_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "return_20": {
+     "artifact_column": "return_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "return_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "return_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "return_5": {
+     "artifact_column": "return_5",
+     "artifact_matches": [
+      {
+       "artifact_column": "return_5",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "return_5",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "return_60": {
+     "artifact_column": "return_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "return_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "return_60",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roc_10": {
+     "artifact_column": "roc_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "roc_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roc_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roc_20": {
+     "artifact_column": "roc_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "roc_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roc_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roc_60": {
+     "artifact_column": "roc_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "roc_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roc_60",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_kurt_ret_20": {
+     "artifact_column": "roll_kurt_ret_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_kurt_ret_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_kurt_ret_20",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_kurt_ret_252": {
+     "artifact_column": "roll_kurt_ret_252",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_kurt_ret_252",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_kurt_ret_252",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_kurt_ret_60": {
+     "artifact_column": "roll_kurt_ret_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_kurt_ret_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_kurt_ret_60",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_mean_ret_20": {
+     "artifact_column": "roll_mean_ret_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_mean_ret_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_mean_ret_20",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_mean_ret_252": {
+     "artifact_column": "roll_mean_ret_252",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_mean_ret_252",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_mean_ret_252",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_mean_ret_60": {
+     "artifact_column": "roll_mean_ret_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_mean_ret_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_mean_ret_60",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_skew_ret_20": {
+     "artifact_column": "roll_skew_ret_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_skew_ret_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_skew_ret_20",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_skew_ret_252": {
+     "artifact_column": "roll_skew_ret_252",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_skew_ret_252",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_skew_ret_252",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_skew_ret_60": {
+     "artifact_column": "roll_skew_ret_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_skew_ret_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_skew_ret_60",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_std_ret_20": {
+     "artifact_column": "roll_std_ret_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_std_ret_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_std_ret_20",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_std_ret_252": {
+     "artifact_column": "roll_std_ret_252",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_std_ret_252",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_std_ret_252",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "roll_std_ret_60": {
+     "artifact_column": "roll_std_ret_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "roll_std_ret_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "roll_std_ret_60",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "rsi_14": {
+     "artifact_column": "rsi_14",
+     "artifact_matches": [
+      {
+       "artifact_column": "rsi_14",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "rsi_14",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "rsi_21": {
+     "artifact_column": "rsi_21",
+     "artifact_matches": [
+      {
+       "artifact_column": "rsi_21",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "rsi_21",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "rsi_7": {
+     "artifact_column": "rsi_7",
+     "artifact_matches": [
+      {
+       "artifact_column": "rsi_7",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "rsi_7",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "sma_10": {
+     "artifact_column": "sma_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "sma_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "sma_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "sma_100": {
+     "artifact_column": "sma_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "sma_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "sma_100",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "sma_20": {
+     "artifact_column": "sma_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "sma_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "sma_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "sma_200": {
+     "artifact_column": "sma_200",
+     "artifact_matches": [
+      {
+       "artifact_column": "sma_200",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "sma_200",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "sma_50": {
+     "artifact_column": "sma_50",
+     "artifact_matches": [
+      {
+       "artifact_column": "sma_50",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "sma_50",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "sqret_autocorr_lag1_100": {
+     "artifact_column": "sqret_autocorr_lag1_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "sqret_autocorr_lag1_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "sqret_autocorr_lag1_100",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "statistical__log_return_1": {
+     "artifact_column": "log_return_1",
+     "artifact_matches": [
+      {
+       "artifact_column": "statistical__log_return_1",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "log_return_1",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "FAMILY_PREFIX_ON_COLLISION",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "COLUMN_RENAMED_BY_UNRECORDED_EXPORT:FAMILY_PREFIX_ON_COLLISION",
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "stoch_d": {
+     "artifact_column": "stoch_d",
+     "artifact_matches": [
+      {
+       "artifact_column": "stoch_d",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "stoch_d",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "stoch_k": {
+     "artifact_column": "stoch_k",
+     "artifact_matches": [
+      {
+       "artifact_column": "stoch_k",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "stoch_k",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "trend_slope_50": {
+     "artifact_column": "trend_slope_50",
+     "artifact_matches": [
+      {
+       "artifact_column": "trend_slope_50",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "trend_slope_50",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "trend_strength_50": {
+     "artifact_column": "trend_strength_50",
+     "artifact_matches": [
+      {
+       "artifact_column": "trend_strength_50",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "trend_strength_50",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "typical_price": {
+     "artifact_matches": [],
+     "codes": [
+      "NO_ARTIFACT_CONTAINS_COLUMN"
+     ],
+     "evidence_selected_symbol": null,
+     "status": "NOT_BOUND"
+    },
+    "vol_regime_high": {
+     "artifact_column": "vol_regime_high",
+     "artifact_matches": [
+      {
+       "artifact_column": "vol_regime_high",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "vol_regime_high",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "vol_regime_low": {
+     "artifact_column": "vol_regime_low",
+     "artifact_matches": [
+      {
+       "artifact_column": "vol_regime_low",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "vol_regime_low",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "volume_ratio_20": {
+     "artifact_column": "volume_ratio_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "volume_ratio_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "volume_ratio_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "volume_sma_10": {
+     "artifact_column": "volume_sma_10",
+     "artifact_matches": [
+      {
+       "artifact_column": "volume_sma_10",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "volume_sma_10",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "volume_sma_20": {
+     "artifact_column": "volume_sma_20",
+     "artifact_matches": [
+      {
+       "artifact_column": "volume_sma_20",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "volume_sma_20",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "vwap_60": {
+     "artifact_column": "vwap_60",
+     "artifact_matches": [
+      {
+       "artifact_column": "vwap_60",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "vwap_60",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "williams_r_14": {
+     "artifact_column": "williams_r_14",
+     "artifact_matches": [
+      {
+       "artifact_column": "williams_r_14",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "williams_r_14",
+       "artifact_sha256": "7c0c927d6185c33a22476c21a73051380de83cc8fa1dee3d05ff0bdb10b54be6",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/technical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_technical"
+     ],
+     "status": "NOT_BOUND"
+    },
+    "zscore_close_100": {
+     "artifact_column": "zscore_close_100",
+     "artifact_matches": [
+      {
+       "artifact_column": "zscore_close_100",
+       "artifact_sha256": "b624f4cc8e7d1ad8f37591c7ffee7e181d39b50a7faaa999c289abea2f466e01",
+       "name_rule": "EXACT_NAME",
+       "path": "experiments/stage_a_screening/inputs/ethusdt/4h/tech_stat/train.csv",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": false
+      },
+      {
+       "artifact_column": "zscore_close_100",
+       "artifact_sha256": "9ed54a89eb7f94228ced151b67bf2f1f4b52ee12b7b1628d83e4d7b7044df20a",
+       "name_rule": "EXACT_NAME",
+       "path": "features/trading_asset_features/ethusdt/4h/statistical.parquet",
+       "repository": "financial-data",
+       "values_equal_float32_at_matching_timestamps": true
+      }
+     ],
+     "code_identity": {
+      "commits_touching_file": 1,
+      "first_commit": "1ff99ca438c9bc1ee4636c52230373c469547061"
+     },
+     "codes": [
+      "RECEIPT_RECORDS_NO_CODE_IDENTITY",
+      "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE"
+     ],
+     "evidence_selected_symbol": [
+      "financial-data",
+      "_scripts/workers/stage22_trading_features_worker.py",
+      "compute_statistical"
+     ],
+     "status": "NOT_BOUND"
+    }
+   },
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "evidence": [
+    {
+     "naming_keys": [
+      "model_ready_csv"
+     ],
+     "path": "examples/data/project3/ethusdt_4h_tech_stat_export_metadata.json",
+     "records_source_digests": false,
+     "repository": "predictor",
+     "sha256": "b4ffd1ad3faa1e8ca636eb5444157cf66a797133293200604fc3a64a25190428",
+     "type": "EXPORT_METADATA_NAMES_DATASET"
+    },
+    {
+     "path": "examples/data/project3/ethusdt_4h_tech_stat_full_model_ready.manifest.json",
+     "repository": "predictor",
+     "sha256": "860726e2f5c6d6b26f5a44d79863856b7c9fc80e957b88bf1b66a5f64f7b5b4b",
+     "type": "DATASET_MANIFEST_DIGEST_MATCH"
+    }
+   ],
+   "gaps": [
+    "SOURCE_WITHOUT_TIMESTAMP:raw_ohlcv",
+    "SOURCE_ABSENT_OR_NOT_TABULAR:train_metadata",
+    "EXPORT_STEP_CODE_ABSENT"
+   ],
+   "inventory_physical_sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f",
+   "recomputed_physical_sha256": "1b447c66e68495e826c53e2ab2b08ecd3922c8fdc735747628f8d0435ebe440f",
+   "relative_path": "examples/data/project3/ethusdt_4h_tech_stat_full_model_ready.csv"
+  },
+  {
+   "columns": {},
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "evidence": [],
+   "gaps": [
+    "NO_EXPORT_METADATA_NAMES_THIS_DATASET"
+   ],
+   "inventory_physical_sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95",
+   "recomputed_physical_sha256": "d701af612eeada01df7ab7e7009d95ff8da6aeb270ff026eea7055b3de9adc95",
+   "relative_path": "examples/data/phase_1/base_d6.csv"
+  }
+ ],
+ "derived_at": "2026-09-12T00:00:00Z",
+ "manifest_sha256": "aaeca2f72d435a87a9ea189eae645e25fbe0664efa1fc0ff21c7c83455d7ed59",
+ "probes": [
+  {
+   "bound": false,
+   "eligibility": {
+    "eligible": true,
+    "imports": [
+     "__future__",
+     "argparse",
+     "datetime",
+     "json",
+     "numpy",
+     "os",
+     "pandas",
+     "pathlib",
+     "subprocess",
+     "sys",
+     "typing"
+    ],
+    "reason": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY"
+   },
+   "eligible_for_class": false,
+   "file": "_scripts/workers/stage22_trading_features_worker.py",
+   "probe": {
+    "cut_row": 900,
+    "failed_columns": [],
+    "rows": 1200,
+    "verdict": "PASS"
+   },
+   "repository": "financial-data",
+   "symbol": "compute_statistical"
+  },
+  {
+   "bound": false,
+   "eligibility": {
+    "eligible": true,
+    "imports": [
+     "__future__",
+     "argparse",
+     "datetime",
+     "json",
+     "numpy",
+     "os",
+     "pandas",
+     "pathlib",
+     "subprocess",
+     "sys",
+     "typing"
+    ],
+    "reason": "IMPORTS_STDLIB_NUMPY_PANDAS_ONLY"
+   },
+   "eligible_for_class": false,
+   "file": "_scripts/workers/stage22_trading_features_worker.py",
+   "probe": {
+    "cut_row": 900,
+    "failed_columns": [],
+    "rows": 1200,
+    "verdict": "PASS"
+   },
+   "repository": "financial-data",
+   "symbol": "compute_technical"
+  }
+ ],
+ "rules": {
+  "bound": "BOUND requires: the recomputed physical digest equals the inventory; an export record names the dataset and its source artifact; the artifact column equals the dataset column value-for-value at matching timestamps; a run receipt names the artifact; exactly one static writer of the artifact calls a producer that outputs the column; and a code identity (commit or code digest) recorded AT RUN TIME",
+  "not_by_name": "no producer is chosen by column name or by order",
+  "zero_is_reportable": "no binding is manufactured"
+ },
+ "schema": "financial_data.producer_binding_manifest.v1"
+}

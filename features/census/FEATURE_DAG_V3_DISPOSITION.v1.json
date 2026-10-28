@@ -1,0 +1,81 @@
+{
+ "accepted_as": "a static inventory of candidate lineages only",
+ "authorized_next_path": "C94-C97: a prospective rerun of the current committed producer on the recorded physical inputs creates a NEW successor dataset with its own bindings (PRODUCER_BINDING_MANIFEST.v2, FEATURE_DAG.v4)",
+ "availability_granted": "NONE: every column stays UNAVAILABLE",
+ "bindings_established": 0,
+ "by_class": {
+  "STATIC_CAUSAL_CANDIDATE_UNBOUND": 83,
+  "UNRESOLVED_PRODUCER_BINDING": 14
+ },
+ "by_dataset_and_class": {
+  "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1": {
+   "STATIC_CAUSAL_CANDIDATE_UNBOUND": 83,
+   "UNRESOLVED_PRODUCER_BINDING": 6
+  },
+  "predictor.legacy.eurusd_1h.phase1_test.v1": {
+   "UNRESOLVED_PRODUCER_BINDING": 8
+  }
+ },
+ "causal_active_columns": 0,
+ "columns_examined": 97,
+ "decided_at": "2026-09-12T00:00:00Z",
+ "declared_limitations": {
+  "binding_codes_by_column_count": {
+   "COLUMN_RENAMED_BY_UNRECORDED_EXPORT:FAMILY_PREFIX_ON_COLLISION": 1,
+   "NO_ARTIFACT_CONTAINS_COLUMN": 1,
+   "NO_ARTIFACT_VALUE_EQUALITY": 5,
+   "RECEIPT_RECORDS_NO_CODE_IDENTITY": 83,
+   "RUN_PRECEDES_FIRST_COMMIT_OF_PRODUCER_FILE": 83
+  },
+  "binding_gaps_by_dataset": {
+   "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1": [
+    "EXPORT_STEP_CODE_ABSENT",
+    "SOURCE_ABSENT_OR_NOT_TABULAR:train_metadata",
+    "SOURCE_WITHOUT_TIMESTAMP:raw_ohlcv"
+   ],
+   "predictor.legacy.eurusd_1h.phase1_test.v1": [
+    "NO_EXPORT_METADATA_NAMES_THIS_DATASET"
+   ]
+  },
+  "dynamic_probe": [
+   "the v3 prefix-invariance probe ran on synthetic OHLCV only, per producer symbol, not end to end through an assembler",
+   "its write guard patches Python entry points; a C extension could bypass it"
+  ],
+  "provenance": [
+   "the Stage 2.2 run receipt records no commit and no code digest",
+   "the Stage 2.2 run predates the first commit of the producer file",
+   "the code that assembled the historical model-ready CSV is in no repository (EXPORT_STEP_CODE_ABSENT)",
+   "typical_price has no source artifact",
+   "OHLCV values are not value-equal to any named source artifact",
+   "statistical__log_return_1 was renamed by an unrecorded export"
+  ],
+  "static_analysis": [
+   "an abstract interpreter over one producer symbol; unknown calls, dynamic dispatch, positional indices, cycles and budget exhaustion are UNRESOLVED",
+   "static STATIC_CAUSAL describes the code as read in the scanned checkout, not the code that produced the historical bytes"
+  ],
+  "temporal": [
+   "timestamp semantics are UNDECLARED in v3; no availability time is derived"
+  ]
+ },
+ "disposition": "STATIC_CANDIDATE_INVENTORY_UNBOUND",
+ "historical_dataset": {
+  "causal_active_columns": 0,
+  "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+  "statement": "stays at zero CAUSAL_ACTIVE; a later successor rerun never binds the historical run"
+ },
+ "license": "NONE: this disposition licenses no column for any use",
+ "licenses_granted": 0,
+ "order_item": "C93",
+ "rewritten": false,
+ "schema": "financial_data.feature_dag_disposition.v1",
+ "subject": {
+  "binding_manifest": {
+   "file": "features/census/PRODUCER_BINDING_MANIFEST.v1.json",
+   "file_sha256": "5f24ff8545f96cdedc10bd9ab7acbf308ae3f16b0898cbf96657851beb6062d6",
+   "manifest_sha256": "aaeca2f72d435a87a9ea189eae645e25fbe0664efa1fc0ff21c7c83455d7ed59"
+  },
+  "dag_sha256": "840490e19f2d09a744b57e887cef8cc33f071cf9ed6a0d9507c40a5ed6ec3ca3",
+  "file": "features/census/FEATURE_DAG.v3.json",
+  "file_sha256": "cf2da14190236e3e267d9671e053b02bfa30dc5562aa78c179854e31e1b5e19a"
+ }
+}

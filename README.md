@@ -113,12 +113,13 @@ trains the corresponding autoencoder representations (Stage 2.4).
 
 ### Research corpus
 
-[`trading_research/`](trading_research) is the cross-repo research authority:
+[`trading_research/`](trading_research) holds the cross-repo research:
 evaluation harnesses, baseline and sensitivity studies, portfolio analyses,
 extended-history tooling and audit documents that classify and review the
 surrounding repositories. Conclusions recorded here (for example, which
 repositories are superseded) are treated as evidence by the rest of the
-stack's documentation.
+stack's documentation. It also contains the only committed bulk CSV data in
+this repository.
 
 ## Requirements and usage
 

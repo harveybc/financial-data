@@ -1,0 +1,832 @@
+{
+ "bridge_sha256": "e9276155b3e7c4b5817cef50e3e168915b3f1967bf829e997fd4c2b02ea2ad08",
+ "candidate_sha256": "d75e17ea3b06a9fe269c982dfb937d0424ba2a315de38f40928dc6b488e7839b",
+ "columns": [
+  {
+   "column": "CLOSE",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "OHLCV_RAW",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "HIGH",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "OHLCV_RAW",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "LOW",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "OHLCV_RAW",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "OPEN",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "OHLCV_RAW",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "VOLUME",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "OHLCV_RAW",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "atr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "autocorr_lag5_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "bb_lower",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "bb_middle",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "bb_pct_b",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "bb_upper",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "bb_width",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "cci_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "close_sma_ratio_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "close_sma_ratio_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "close_sma_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "close_sma_ratio_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "close_sma_ratio_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_cross_10_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "ema_cross_20_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "hist_vol_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "hist_vol_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "hist_vol_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "hurst_proxy_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "log_return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "log_return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "log_return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "log_return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "macd",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "macd_hist",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "macd_signal",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "mfi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "mom_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "mom_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "natr_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "obv",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "obv_delta_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "realized_var_12",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "realized_var_48",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "return_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "return_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "return_5",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "return_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roc_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roc_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roc_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_kurt_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_kurt_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_kurt_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_mean_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_mean_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_mean_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_skew_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_skew_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_skew_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_std_ret_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_std_ret_252",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "roll_std_ret_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "rsi_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "rsi_21",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "rsi_7",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "sma_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "sma_200",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "sma_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "sqret_autocorr_lag1_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "statistical__log_return_1",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "stoch_d",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "stoch_k",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "trend_slope_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "trend_strength_50",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "typical_price",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "vol_regime_high",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "vol_regime_low",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "volume_ratio_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "volume_sma_10",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "volume_sma_20",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "vwap_60",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "williams_r_14",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  },
+  {
+   "column": "zscore_close_100",
+   "dataset_id": "financial_data.project3.ethusdt_4h_tech_stat.model_ready.v1",
+   "earliest_available_time": "event_time + one bar; the producer declares features are computed causally through the bar close, so the earliest a value is knowable is that close",
+   "kind": "DERIVED_FEATURE",
+   "provider": "Binance-derived Project 3 export",
+   "symbol": "ETHUSDT",
+   "timeframe": "4h"
+  }
+ ],
+ "columns_total": 89,
+ "derived_at": "2026-09-12T00:00:00Z",
+ "excluded_with_named_deficit": [
+  {
+   "consequence": "every column of this view stays UNAVAILABLE until the producer publishes these fields; a new view identity follows, it is not patched in place",
+   "dataset_id": "predictor.legacy.eurusd_1h.phase1_test.v1",
+   "holder": "the producer of this view",
+   "missing_availability_fields": [
+    "availability_policy declaring causal latency",
+    "a parseable timeframe"
+   ],
+   "missing_entity_fields": [
+    "symbol/timeframe in the dataset id",
+    "provider"
+   ],
+   "producer": "legacy predictor dataset; provider not recorded",
+   "relative_path": "examples/data/phase_1/base_d6.csv",
+   "requires_owner_decision": false
+  }
+ ],
+ "grants_nothing": "this is a SUBMISSION. It states which consumed columns now have a derived entity and a derived earliest-available time, and asks for a decision. It confers no eligibility, opens no selection, and is not self-authorizing",
+ "inventory_sha256": "03be76a4c545eb60319053caf693560383b2c9f3119b2b2dcd70c19b7018a2a0",
+ "lineage_sha256": "d78151dcc8e014f167391551132dc210a6242239a320f1fd8839a67ff829407e",
+ "requires": "EXTERNAL_REVIEW",
+ "schema": "financial_data.availability_candidate.v1"
+}
